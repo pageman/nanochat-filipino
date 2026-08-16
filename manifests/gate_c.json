@@ -1,0 +1,19 @@
+{
+  "gate": "C",
+  "status": "pass",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "started_at_utc": "2026-08-16T03:06:30Z",
+  "ended_at_utc": "2026-08-16T03:07:11Z",
+  "operator_or_job": "Paul Pajo",
+  "hashes": {
+    "source_parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+    "canonical_jsonl": "aec6da3c8fadf2243c1ea3545289d9f651cd0c2a9e95adcaf8e340dde051d652",
+    "canary_first_last_100": "ddce068a726eac1cbd3eba6c6544a32d3d76f9b44b55bb826afd6ae9a0245161"
+  },
+  "artifacts": [
+    "manifests/corpus_audit.json",
+    "scripts/p1/gate_c_audit.py",
+    "data/interim/wikitext-tl39/documents_canonical.jsonl",
+    "artifacts/p1/p1-20260816T025911Z-0067a57/corpus_row_stats.json"
+  ]
+}

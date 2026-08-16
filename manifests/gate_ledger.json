@@ -1,0 +1,635 @@
+{
+  "schema_version": "1.0",
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "registration": {
+    "platform": "AsPredicted",
+    "identifier": "306780",
+    "url": "https://aspredicted.org/6r6v4v.pdf",
+    "registration_pdf_sha256": "a34f119df557d2e763aa154e02b76b0ebcbcba1f3fb32c3219d85ae6395cc5ca",
+    "registration_pdf_path": "docs/run-cards/AsPredicted-306780.pdf"
+  },
+  "clarification_note": {
+    "path": "docs/EXECUTION-CLARIFICATIONS-p1.1.md",
+    "sha256": "71c2b992ef1771fc7f31cad6d2f259d23d5c3b99367e7b9cbdcf7ae749552c8e",
+    "dated_before_gate_a": true
+  },
+  "confirmatory_outcomes": {
+    "val_bpb_computed": true,
+    "test_bpb_computed": true,
+    "test_read_events": 1,
+    "D_star": 20,
+    "D_star_model_tag": "p1-fixed-d20-3x",
+    "val_bpb_full": {
+      "8": 1.179134743718777,
+      "12": 1.180823927886072,
+      "16": 1.1955463669138386,
+      "20": 1.172247965803217
+    },
+    "test_bpb": 1.164768333672231,
+    "practically_indistinguishable_0.01": true
+  },
+  "immutable_execution_definitions": {
+    "canonical_text": "source text with LF line endings only; no detokenization",
+    "t_train": "sum(len(tau(document_text))) over frozen canonical train documents; no BOS; no packing; no crop",
+    "d_3x": "3 * T_train",
+    "p_scaling": "pinned base_train scaling parameter count recorded per depth",
+    "target_param_data_ratio": "D_3x / P_scaling; must be positive",
+    "checkpoint_rule": "final checkpoint at fixed D_3x budget",
+    "model_selection_rule": "exact minimum final val_bpb_full; sub-0.01 BPB gaps are practically indistinguishable in one-seed interpretation",
+    "byte_unigram": "Laplace add-one smoothing p(b)=(c[b]+1)/(N+256), trained on train UTF-8 bytes only",
+    "article_fallback": "use deterministic heading parser; if any parser invariant fails, use reconstructed_row_70_15_15"
+  },
+  "gates": [
+    {
+      "id": "A",
+      "name": "Environment",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T02:59:18Z",
+      "ended_at_utc": "2026-08-16T03:05:00Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "nanochat commit pinned to 92d63d4 full SHA",
+        "lockfile hash recorded",
+        "hardware manifest recorded",
+        "NANOCHAT_BASE_DIR isolated",
+        "NANOCHAT_DATA_DIR hook patch hash recorded",
+        "nanochat.dataset downloader not executed"
+      ],
+      "artifacts": [
+        "manifests/gate_a.json",
+        "manifests/p_scaling_capture.json",
+        "patches/nanochat-NANOCHAT_DATA_DIR.patch",
+        "docs/run-cards/p1-20260816T025911Z-0067a57.md",
+        "scripts/p1/env.sh",
+        "scripts/p1/test_data_dir_hook.py",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/"
+      ],
+      "hashes": {
+        "nanochat_commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "uv.lock.pinned": "de7891b832854162111208644ddb72685069ce8128e2bed9dbb7993aa6af5861",
+        "uv.lock.resolved": "e5781572a832a650eefe821b2cf316b56673ff01b082cec3200d049b970c112c",
+        "hook_patch": "faaded83ef79e6d5b2e6856a444cf17e20ddb534ddd29d6b600f9568304ec4ff"
+      },
+      "notes": "C0 Mac for A-F. uv sync re-resolved the lock. P_scaling = transformer_matrices + lm_head from model.num_scaling_params(). ClimbMix downloader not run.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T02:59:18Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:05:00Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Download",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:02:43Z",
+      "ended_at_utc": "2026-08-16T03:03:23Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "current WikiText-TL-39 parquet acquired",
+        "file type is Parquet",
+        "text column confirmed",
+        "row count recorded",
+        "source SHA-256 recorded",
+        "source manifest written"
+      ],
+      "artifacts": [
+        "manifests/source_manifest.json",
+        "manifests/gate_b.json",
+        "docs/data-cards/wikitext-tl39-p1-20260816T025911Z-0067a57.md",
+        "scripts/p1/gate_b_integrity.py",
+        "data/raw/wikitext-tl39/train.parquet",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/gate_b_integrity.json",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/train.parquet.sha256"
+      ],
+      "hashes": {
+        "train.parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+        "huggingface_revision": "7c1a76c2c1864abf434453e312f034d0cf211fff"
+      },
+      "notes": "1,524,071 rows, text:string, 119,483,881 bytes. Legacy S3 404. B1–B8 passed. Raw file chmod a-w.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:02:43Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:03:23Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Audit",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:06:30Z",
+      "ended_at_utc": "2026-08-16T03:07:11Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "raw file remains immutable",
+        "null, empty, length, Unicode, @-@ residue, and duplicates audited",
+        "canonical LF-only normalization documented",
+        "eligible drop rate is at most 5 percent"
+      ],
+      "artifacts": [
+        "manifests/corpus_audit.json",
+        "manifests/gate_c.json",
+        "scripts/p1/gate_c_audit.py",
+        "data/interim/wikitext-tl39/documents_canonical.jsonl",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/corpus_row_stats.json"
+      ],
+      "hashes": {
+        "source_parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+        "canonical_jsonl": "aec6da3c8fadf2243c1ea3545289d9f651cd0c2a9e95adcaf8e340dde051d652"
+      },
+      "notes": "Registered drops 0/1524071. Reconstruction invariants passed: 120971 articles (Table 1 train docs 120975). Exact duplicates counted, not removed. Split not created.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:06:30Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:07:11Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Split",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:10:01Z",
+      "ended_at_utc": "2026-08-16T03:10:44Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "original split recovery attempted",
+        "split unit automatically selected by parser invariants or row fallback",
+        "70/15/15 deterministic hash split written if original split unavailable",
+        "exact overlap across train, validation, and test is zero",
+        "test manifest isolated and protected"
+      ],
+      "artifacts": [
+        "manifests/split_manifest.json",
+        "manifests/test_manifest.json",
+        "manifests/gate_d.json",
+        "scripts/p1/gate_d_split.py",
+        "data/interim/wikitext-tl39/splits/train.jsonl",
+        "data/interim/wikitext-tl39/splits/val.jsonl",
+        "data/processed/wikitext-tl39/test/test.jsonl",
+        "data/processed/wikitext-tl39/test/test_manifest.json"
+      ],
+      "hashes": {
+        "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+        "val": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+        "test": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+      },
+      "notes": "2019 files not recovered. Label reconstructed_article_70_15_15. Unique article texts 53718 (from 120971 lines). Exact hash overlap 0. Test isolated and chmod 0444. D3 title overlap is letter-index pages only.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:10:01Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:10:44Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Shards",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:14:07Z",
+      "ended_at_utc": "2026-08-16T03:14:40Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "text-only Parquet schema",
+        "zstd compression and row group 1024 recorded",
+        "at least one training shard and lexicographically final validation shard",
+        "test absent from active training directory",
+        "fresh-process read test passed",
+        "shard checksums written"
+      ],
+      "artifacts": [
+        "manifests/shard_manifest.json",
+        "manifests/shard_index.json",
+        "manifests/gate_e.json",
+        "scripts/p1/gate_e_shards.py",
+        "data/processed/wikitext-tl39/active/shard_00000.parquet",
+        "data/processed/wikitext-tl39/active/shard_00001.parquet",
+        "data/processed/wikitext-tl39/active/shard_00002.parquet"
+      ],
+      "hashes": {
+        "shard_00000.parquet": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+        "shard_00001.parquet": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+        "shard_00002.parquet": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+      },
+      "notes": "Active dir has train shards 00000/00001 and val 00002 last. 29 long articles chunked. Test not in active. ClimbMix downloader not run.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:14:07Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:14:40Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Tokenizer",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:16:44Z",
+      "ended_at_utc": "2026-08-16T03:17:09Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "32768 BPE trained on train only",
+        "token_bytes.pt saved",
+        "Tagalog Unicode round trip passed",
+        "bytes per token logged for train, validation, and test",
+        "tokenizer manifest and hashes written"
+      ],
+      "artifacts": [
+        "manifests/tokenizer_manifest.json",
+        "manifests/gate_f.json",
+        "scripts/p1/gate_f_eval.py",
+        "data/cache/p1-20260816T025911Z-0067a57/tokenizer/",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/tokenizer/",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/tokenizer_eval.json"
+      ],
+      "hashes": {
+        "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+      },
+      "notes": "Train-only 32768 BPE. Val shard excluded from training. Fertility on test is not confirmatory BPB. GPT-2 comparison is descriptive.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:16:44Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:17:09Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "name": "Budget desk calculation",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T03:21:50Z",
+      "ended_at_utc": "2026-08-16T03:21:52Z",
+      "operator_or_job": "Paul Pajo",
+      "acceptance_checks": [
+        "T_train counted by frozen no-BOS/no-packing/no-crop definition",
+        "D_3x calculated",
+        "P_total and P_scaling recorded per depth",
+        "positive ratio recorded per depth",
+        "num_iterations, total_batch_size, and D_actual recorded per depth",
+        "sequence length fixed at 2048"
+      ],
+      "artifacts": [
+        "manifests/budget_manifest.json",
+        "manifests/token_statistics.json",
+        "data/manifests/token_statistics.json",
+        "manifests/gate_g.json",
+        "scripts/p1/gate_g_budget.py",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/gate_g_budget.json"
+      ],
+      "hashes": {
+        "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "train.jsonl": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+        "budget_manifest.json": "0c67582d377e6bdb39bd009d8f38beb076db36601506825cefae7391fbf28c81",
+        "token_statistics.json": "633e10ca61cf00c0a197b01a2e97005b4a55aa6b8d2ccd6c6eb31e72e223f594"
+      },
+      "notes": "T_train=6401013; D_3x=19203039; common B=65536; N=294; D_actual=19267584 (+0.336%). All four depths configure at T=2048. R_d is small but positive (0.458/0.174/0.082/0.044). P1.1 does not skip depths for low rho. No training. Test not reread. Next is Gate H on a named NVIDIA GPU host.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T03:21:50Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T03:21:52Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "name": "Smoke",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T06:40:48Z",
+      "ended_at_utc": "2026-08-16T06:45:00Z",
+      "operator_or_job": "Paul Pajo / Runpod p7e5zk3njnglgy",
+      "acceptance_checks": [
+        "d4 ran for 20 to 100 steps",
+        "CORE disabled",
+        "loss is finite",
+        "checkpoint written",
+        "fresh-process checkpoint reload passed",
+        "finite validation BPB evaluated",
+        "active data path verified as non-ClimbMix"
+      ],
+      "artifacts": [
+        "manifests/gate_h.json",
+        "manifests/runpod_host_preflight.json",
+        "docs/run-cards/deviations/2026-08-16-runpod-a40-host-named.md",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/gate-h/meta_000030.json"
+      ],
+      "hashes": {
+        "model_000030.pt": "e58bb5abeeb9eaa895b25e9e1101dbbc134be790427f4d630b7b577e7dd56c77",
+        "meta_000030.json": "08c7400fd1d64d2db453a1f8222a7936d50bf336e8ad21e1b9628c77a168f2e6"
+      },
+      "notes": "Official NVIDIA CUDA H on Runpod A40 CA-MTL-1. Train loss 10.397 -> 10.084. Fresh-process train/val bpb 2.877429 / 2.914874 (eval-tokens=4096, not confirmatory val_bpb_full). Samples had Tagalog function words, not ClimbMix English. CORE off. test_read_events remain 0. Confirmatory I not started.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T06:40:00Z",
+          "kind": "host_named"
+        },
+        {
+          "at_utc": "2026-08-16T06:40:48Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T06:45:00Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "name": "Confirmatory D_3x training",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T07:02:00Z",
+      "ended_at_utc": "2026-08-16T07:41:32Z",
+      "operator_or_job": "Paul Pajo / Runpod 68bei7d3vx4krc",
+      "acceptance_checks": [
+        "four depths 8/12/16/20 trained to step 294",
+        "common B=65536 and N=294",
+        "T=2048 not shrunk",
+        "no --target-param-data-ratio=-1",
+        "CORE off",
+        "test absent from active directory during training",
+        "final checkpoints are model_000294.pt"
+      ],
+      "artifacts": [
+        "manifests/runpod_gate_i_preflight.json",
+        "docs/run-cards/deviations/2026-08-16-runpod-a40-gate-i-host.md"
+      ],
+      "notes": "Serial I on A40 EU-SE-1. SERIES_DONE 2026-08-16T07:41:32Z. Mid-run val BPB did not select. Card-eval 262144-token val is not val_bpb_full.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T07:02:00Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T07:41:32Z",
+          "kind": "pass"
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "name": "Full-val BPB, baselines, one test read",
+      "status": "pass",
+      "started_at_utc": "2026-08-16T07:50:27Z",
+      "ended_at_utc": "2026-08-16T07:59:01Z",
+      "operator_or_job": "Paul Pajo / Runpod 68bei7d3vx4krc",
+      "acceptance_checks": [
+        "val_bpb_full on four final step-294 checkpoints",
+        "train_bpb_full for the train-val gap",
+        "untrained same-depth val BPB seed 0",
+        "Laplace add-1 byte unigram on val",
+        "D* exact minimum final val_bpb_full among baseline-passing depths",
+        "one test_bpb on D* only"
+      ],
+      "artifacts": [
+        "manifests/gate_j.json",
+        "manifests/test_access_log.json",
+        "artifacts/p1/p1-20260816T025911Z-0067a57/gate-j/",
+        "scripts/p1/gate_j_full_bpb.py"
+      ],
+      "notes": "D*=20, val_bpb_full=1.172248, test_bpb=1.164768. Margin to d8 is 0.0069 BPB (practically indistinguishable at one-seed 0.01 rule). test_read_events=1.",
+      "events": [
+        {
+          "at_utc": "2026-08-16T07:50:27Z",
+          "kind": "started"
+        },
+        {
+          "at_utc": "2026-08-16T07:56:24Z",
+          "kind": "val_baselines_done"
+        },
+        {
+          "at_utc": "2026-08-16T07:59:01Z",
+          "kind": "pass"
+        }
+      ]
+    }
+  ],
+  "transition_rule": "Gate I may not begin unless every Gate A through H has status pass. A status never overwrites prior event history; corrections append an event.",
+  "event_log": [
+    {
+      "at_utc": "2026-08-16T02:50:00Z",
+      "kind": "ledger_initialized",
+      "note": "Initialized from manifests/gate_ledger.template.json before Gate A. No confirmatory BPB computed."
+    },
+    {
+      "at_utc": "2026-08-16T02:56:00Z",
+      "kind": "registration_pdf_restored",
+      "note": "Copied official 1-page AsPredicted #306780 PDF from Downloads into docs/run-cards/AsPredicted-306780.pdf. SHA-256 a34f119df557d2e763aa154e02b76b0ebcbcba1f3fb32c3219d85ae6395cc5ca. Confirmed %PDF-1.4, 1 page. aspredicted.org/6r6v4v.pdf served HTML in curl; local official download is the archival copy."
+    },
+    {
+      "at_utc": "2026-08-16T03:05:00Z",
+      "kind": "gate_pass",
+      "gate": "A",
+      "note": "Environment locked. Next allowed gate is B. Do not start H/I on this Mac."
+    },
+    {
+      "at_utc": "2026-08-16T03:03:23Z",
+      "kind": "gate_pass",
+      "gate": "B",
+      "note": "Source parquet hashed and write-protected. Next allowed gate is C."
+    },
+    {
+      "at_utc": "2026-08-16T03:07:11Z",
+      "kind": "gate_pass",
+      "gate": "C",
+      "note": "Audit complete. Next allowed gate is D (recover-or-reconstruct split)."
+    },
+    {
+      "at_utc": "2026-08-16T03:10:44Z",
+      "kind": "gate_pass",
+      "gate": "D",
+      "note": "Split frozen as reconstructed_article_70_15_15. Next allowed gate is E (shards). Do not read test BPB."
+    },
+    {
+      "at_utc": "2026-08-16T03:14:40Z",
+      "kind": "gate_pass",
+      "gate": "E",
+      "note": "Shards packed. Next allowed gate is F (train-only 32768 BPE). Do not read test BPB."
+    },
+    {
+      "at_utc": "2026-08-16T03:17:09Z",
+      "kind": "gate_pass",
+      "gate": "F",
+      "note": "Tokenizer frozen. Next allowed gate is G (T_train and D_3x desk calculation)."
+    },
+    {
+      "at_utc": "2026-08-16T03:21:52Z",
+      "kind": "gate_pass",
+      "gate": "G",
+      "note": "Budget frozen. Next allowed gate is H (d4 smoke) on a named NVIDIA GPU host. Do not train confirmatory depths on this Mac. Do not read test BPB."
+    },
+    {
+      "at_utc": "2026-08-16T03:28:00Z",
+      "kind": "mac_mps_preh_declared",
+      "gate": "H",
+      "note": "Dated card docs/run-cards/deviations/2026-08-16-mac-mps-preh-infrastructure.md written before a Mac M4 MPS d4 engineering smoke. This does not start official Gate H. Ledger H remains not_started. gpu_host_for_H_I remains null."
+    },
+    {
+      "at_utc": "2026-08-16T03:30:03Z",
+      "kind": "mac_mps_preh_pass",
+      "gate": "H",
+      "note": "Mac M4 MPS d4 infrastructure validation succeeded (finite loss, checkpoint, fresh reload val bpb=3.294264 engineering-only). Official Gate H remains not_started. Do not treat this as NVIDIA H or as confirmatory BPB."
+    },
+    {
+      "at_utc": "2026-08-16T03:34:00Z",
+      "kind": "mac_mps_gatei_preflight_declared",
+      "note": "Dated card docs/run-cards/deviations/2026-08-16-mac-mps-gatei-infrastructure.md written before generating Gate I run cards and before any Mac d8-d20 dry run. Official H remains not_started. Confirmatory Gate I is not started. gpu_host_for_H_I remains null."
+    },
+    {
+      "at_utc": "2026-08-16T03:39:56Z",
+      "kind": "mac_mps_gatei_preflight_recorded",
+      "note": "Gate I apparatus generated. Mac one-step T=2048 dry runs: d8/d12/d16 infrastructure pass; d20 MPS OOM, T not shrunk. No depth ranking. No test read. Official H remains not_started. Confirmatory I not started."
+    },
+    {
+      "at_utc": "2026-08-16T04:21:00Z",
+      "kind": "dgx_spark_host_offer_recorded",
+      "note": "Offer document received to run official H/I on a DGX Spark. Conditionally eligible only. gpu_host_for_H_I remains null until Spark CUDA preflight. Transfer zip and HANDOFF-dgx-spark-gate-h-i.md prepared. Official H still not_started."
+    },
+    {
+      "at_utc": "2026-08-16T06:40:00Z",
+      "kind": "gpu_host_named",
+      "note": "Runpod Secure A40 pod p7e5zk3njnglgy named as gpu_host_for_H_I after manifests/runpod_host_preflight.json ok=true. See docs/run-cards/deviations/2026-08-16-runpod-a40-host-named.md."
+    },
+    {
+      "at_utc": "2026-08-16T06:45:00Z",
+      "kind": "gate_pass",
+      "gate": "H",
+      "note": "Official p1-smoke-d4 CUDA smoke passed on Runpod A40. Fresh-process val bpb=2.914874 is smoke-only, not confirmatory val_bpb_full. Next allowed gate is I on a named NVIDIA host. Do not read test BPB."
+    },
+    {
+      "at_utc": "2026-08-16T07:02:00Z",
+      "kind": "gate_i_started",
+      "gate": "I",
+      "note": "New Runpod A40 pod 68bei7d3vx4krc named for confirmatory I after no-test package, --require-pre-i exit 0, and d20 T=2048 memfit at device-batch-size=8. Serial d8/d12/d16/d20 launched. test_read_events remain 0. H host p7e5zk3njnglgy preserved separately. API key rotation deferred by operator."
+    },
+    {
+      "at_utc": "2026-08-16T07:41:32Z",
+      "kind": "gate_pass",
+      "gate": "I",
+      "note": "Four confirmatory D_3x runs reached model_000294.pt. Next allowed gate is J (val_bpb_full, baselines, one test read). Do not select D* from 262144-token card evals."
+    },
+    {
+      "at_utc": "2026-08-16T07:59:01Z",
+      "kind": "gate_pass",
+      "gate": "J",
+      "note": "val_bpb_full computed on four finals. D*=20 by exact minimum. test_bpb=1.164768 once. test_read_events=1. Sub-0.01 margin vs d8 governs interpretation, not a second selection rule."
+    },
+    {
+      "at_utc": "2026-08-16T08:07:54Z",
+      "kind": "aspredicted_closeout_started",
+      "note": "Optional Q7 extra seeds at d8/d12, Q8 D_1x pilots, D* qualitative samples, and document-level val bootstrap launched on 68bei7d3vx4krc. Seed-0 D* and the one test read stay frozen. No additional test reads."
+    },
+    {
+      "at_utc": "2026-08-16T08:54:39Z",
+      "kind": "aspredicted_closeout_done",
+      "note": "Q7 extra-seed vals complete (test not read). Q8 D_1x pilots complete. Document bootstrap CIs overlap. Qualitative samples written; no native-speaker scores. Seed-0 D* and test_bpb unchanged."
+    },
+    {
+      "at_utc": "2026-08-16T07:50:27Z",
+      "kind": "final_validation_preflight_passed",
+      "depth": 8,
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "Gate J used the already-passed I-host preflight (runpod_gate_i_preflight.json ok=true, test absent). Evaluator gate_j_full_bpb.py; no test path."
+    },
+    {
+      "at_utc": "2026-08-16T07:50:27Z",
+      "kind": "final_validation_preflight_passed",
+      "depth": 12,
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "Same shared Gate J job / I-host preflight as d8. Test absent."
+    },
+    {
+      "at_utc": "2026-08-16T07:50:27Z",
+      "kind": "final_validation_preflight_passed",
+      "depth": 16,
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "Same shared Gate J job / I-host preflight as d8. Test absent."
+    },
+    {
+      "at_utc": "2026-08-16T07:50:27Z",
+      "kind": "final_validation_preflight_passed",
+      "depth": 20,
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "Same shared Gate J job / I-host preflight as d8. Test absent."
+    },
+    {
+      "at_utc": "2026-08-16T07:56:24Z",
+      "kind": "final_validation_completed",
+      "depth": 8,
+      "result_artifact_sha256": "74765238b1ab0358ae02000ccb5b1b8738a27a96e7f07eee10797dd58ec5423f",
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "val_bpb_full=1.179134743718777; finite; no rank stated in this event."
+    },
+    {
+      "at_utc": "2026-08-16T07:56:24Z",
+      "kind": "final_validation_completed",
+      "depth": 12,
+      "result_artifact_sha256": "ecb4e8bbe8e37cdaa35acad468c8dd95d28e4bd266df6e55e777f11924f7cebd",
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "val_bpb_full=1.180823927886072; finite; no rank stated in this event."
+    },
+    {
+      "at_utc": "2026-08-16T07:56:24Z",
+      "kind": "final_validation_completed",
+      "depth": 16,
+      "result_artifact_sha256": "86091351a47a2fdbd35e89e2cdbdb49bc7283645bce39a17614770523d77e7ab",
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "val_bpb_full=1.1955463669138386; finite; no rank stated in this event."
+    },
+    {
+      "at_utc": "2026-08-16T07:56:24Z",
+      "kind": "final_validation_completed",
+      "depth": 20,
+      "result_artifact_sha256": "906f6dc465303ea39f37d1689ab05915c986f77a90b90d68e8e3f831e1219195",
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "val_bpb_full=1.172247965803217; finite; no rank stated in this event."
+    },
+    {
+      "at_utc": "2026-08-16T07:56:24Z",
+      "kind": "validation_selection_frozen",
+      "D_star": 20,
+      "sealed_artifact_sha256": "9d461cc5ad606d129e1de0be12ad372e63f5ee8bc4886b2969506625b057467f",
+      "selection_record_sha256": "a44e63b0a5b008cab353d09670b0fc827d86ff046d965dc480744a283afcea7e",
+      "test_read_count_at_freeze": 0,
+      "recorded_at_utc": "2026-08-16T09:12:46Z",
+      "note": "Exact minimum final val_bpb_full is d20. Named selection_record.json reconstructed later from the sealed 07:56:24Z summary."
+    },
+    {
+      "at_utc": "2026-08-16T09:12:46Z",
+      "kind": "closeout_checklist_filled",
+      "note": "Super-Exhaustive Close-Out Checklist filled from sealed Gate J artifacts. Bundle at transfer/p1.1-closeout-bundle-20260816/. D* and test_bpb unchanged."
+    },
+    {
+      "at_utc": "2026-08-16T09:13:00Z",
+      "kind": "closeout_checklist_filled",
+      "note": "Super-Exhaustive Close-Out Checklist filled from sealed Gate J artifacts. Bundle at transfer/p1.1-closeout-bundle-20260816/. D* and test_bpb unchanged."
+    }
+  ]
+}

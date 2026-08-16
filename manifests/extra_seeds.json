@@ -1,0 +1,31 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "kind": "aspredicted_q7_optional_extra_seeds",
+  "status": "val_complete_test_not_read",
+  "rule": "Two more seeds at depths 8 and 12 only. Val first. Their test BPB was not read. Seed-0 D* was not reopened.",
+  "seed0_torch_seed": 42,
+  "selection_influence": false,
+  "results": {
+    "8": {
+      "seeds": {
+        "0": {"tag": "p1-fixed-d8-3x", "torch_seed": 42, "val_bpb_full": 1.179134743718777},
+        "1": {"tag": "p1-fixed-d8-3x-s1", "torch_seed": 1, "val_bpb_full": 1.1984386169786438},
+        "2": {"tag": "p1-fixed-d8-3x-s2", "torch_seed": 2, "val_bpb_full": 1.195101178450334}
+      },
+      "mean": 1.1908915130492517,
+      "sample_sd": 0.010317501771264899,
+      "n": 3
+    },
+    "12": {
+      "seeds": {
+        "0": {"tag": "p1-fixed-d12-3x", "torch_seed": 42, "val_bpb_full": 1.180823927886072},
+        "1": {"tag": "p1-fixed-d12-3x-s1", "torch_seed": 1, "val_bpb_full": 1.197418198805255},
+        "2": {"tag": "p1-fixed-d12-3x-s2", "torch_seed": 2, "val_bpb_full": 1.1840827025224316}
+      },
+      "mean": 1.1874416097379195,
+      "sample_sd": 0.00879227786733926,
+      "n": 3
+    }
+  },
+  "note": "Means differ by 0.0034 BPB. Sample SDs are ~0.01. This does not reopen D* and does not authorize a depth ranking."
+}

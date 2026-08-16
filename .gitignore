@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Runtime data and models (never commit)
+data/raw/
+data/interim/
+data/processed/
+data/cache/
+artifacts/
+reports/generated/
+wandb/
+.cache/
+
+# nanochat clone and local caches
+vendor/nanochat/
+vendor/nanochat-lock/
+*.pt
+*.pkl
+*.bin
+*.safetensors
+*.parquet
+!docs/**/*.md
+
+# Never publish
+docs/run-cards/aspredicted-p1-submitted.txt
+transfer/

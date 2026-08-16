@@ -1,0 +1,14 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "kind": "aspredicted_q5_optional_document_bootstrap",
+  "used_to_pick_D_star": false,
+  "packing": "per_document_non_overlapping_T2048_not_bos_bestfit",
+  "n_resamples": 1000,
+  "bootstrap_seed": 0,
+  "results": {
+    "8": {"document_sum": 1.3071714603397773, "mean": 1.3057277899332023, "ci95": [1.2346300202558262, 1.3782074011236172]},
+    "12": {"document_sum": 1.3157177654703158, "mean": 1.3141908733940546, "ci95": [1.2419418059330052, 1.3905261626182257]},
+    "16": {"document_sum": 1.3052800153229838, "mean": 1.3035908238997118, "ci95": [1.2315089060141953, 1.37869028263073]},
+    "20": {"document_sum": 1.3172125142092599, "mean": 1.3152596543422566, "ci95": [1.2460183973661412, 1.3896416074393239]}
+  }
+}

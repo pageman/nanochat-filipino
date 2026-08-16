@@ -1,0 +1,66 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "registration": "AsPredicted #306780",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "selection_rule": "exact_minimum_final_val_bpb_full",
+  "evaluation_checkpoint_rule": "final_checkpoint_at_fixed_budget",
+  "one_seed_interpretation": "gaps_below_0.01_bpb_practically_indistinguishable",
+  "candidates": [
+    {
+      "depth": 8,
+      "model_tag": "p1-fixed-d8-3x",
+      "checkpoint_sha256": "9c407f4fbc6f5bb2b40a36ae49fb38d088fa025b4f317e1ddaa629cc2068bbea",
+      "val_bpb_full": 1.179134743718777,
+      "train_bpb_full": 0.8367023539971217,
+      "validation_artifact_sha256": "74765238b1ab0358ae02000ccb5b1b8738a27a96e7f07eee10797dd58ec5423f",
+      "eligibility": "eligible",
+      "baseline_pass": true
+    },
+    {
+      "depth": 12,
+      "model_tag": "p1-fixed-d12-3x",
+      "checkpoint_sha256": "5dfccc27b8b27c7c03faaeb92c1cbf1c884659b03795baa18921386d15e5277e",
+      "val_bpb_full": 1.180823927886072,
+      "train_bpb_full": 0.5288177282371906,
+      "validation_artifact_sha256": "ecb4e8bbe8e37cdaa35acad468c8dd95d28e4bd266df6e55e777f11924f7cebd",
+      "eligibility": "eligible",
+      "baseline_pass": true
+    },
+    {
+      "depth": 16,
+      "model_tag": "p1-fixed-d16-3x",
+      "checkpoint_sha256": "525301ebe3bc80875b31dd3f7fa19e12fc5405565f7b973811c0647168445cbf",
+      "val_bpb_full": 1.1955463669138386,
+      "train_bpb_full": 0.45804527986583565,
+      "validation_artifact_sha256": "86091351a47a2fdbd35e89e2cdbdb49bc7283645bce39a17614770523d77e7ab",
+      "eligibility": "eligible",
+      "baseline_pass": true
+    },
+    {
+      "depth": 20,
+      "model_tag": "p1-fixed-d20-3x",
+      "checkpoint_sha256": "9e30fff3d6effc7c71af92e8488f9375a5d70cf1962ba371bee0e639836dde38",
+      "val_bpb_full": 1.172247965803217,
+      "train_bpb_full": 0.6723927158066969,
+      "validation_artifact_sha256": "906f6dc465303ea39f37d1689ab05915c986f77a90b90d68e8e3f831e1219195",
+      "eligibility": "eligible",
+      "baseline_pass": true
+    }
+  ],
+  "selected_depth": 20,
+  "selected_model_tag": "p1-fixed-d20-3x",
+  "selected_checkpoint_sha256": "9e30fff3d6effc7c71af92e8488f9375a5d70cf1962ba371bee0e639836dde38",
+  "selected_val_bpb_full": 1.172247965803217,
+  "nearest_competitor_depth": 8,
+  "nearest_competitor_gap_bpb": 0.006886777915559916,
+  "practically_indistinguishable_0.01": true,
+  "selection_timestamp_utc": "2026-08-16T07:56:24Z",
+  "sealed_selection_artifact": "artifacts/p1/p1-20260816T025911Z-0067a57/gate-j/val_baselines_summary.json",
+  "sealed_selection_artifact_sha256": "9d461cc5ad606d129e1de0be12ad372e63f5ee8bc4886b2969506625b057467f",
+  "sealed_artifact_test_read_count": 0,
+  "named_file_materialized_at_utc": "2026-08-16T09:13:00Z",
+  "named_file_note": "The filename manifests/selection_record.json was written after the one permitted test read. The sealed selection already existed in val_baselines_summary.json at 2026-08-16T07:56:24Z with test_read_count=0, before the 2026-08-16T07:58:35Z test mount. This file reconstructs that sealed decision; it does not reopen D*.",
+  "test_bpb_before_selection": false,
+  "test_access_events_before_selection": 0,
+  "record_sha256": "fb8aa513f56560af599bb86c4597508920f8618263d2d1d8e3c907575c7dcf68"
+}

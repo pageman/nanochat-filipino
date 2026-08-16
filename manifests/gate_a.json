@@ -1,0 +1,36 @@
+{
+  "gate": "A",
+  "status": "pass",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "started_at_utc": "2026-08-16T02:59:18Z",
+  "ended_at_utc": "2026-08-16T03:05:00Z",
+  "operator_or_job": "Paul Pajo",
+  "nanochat_commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "python": "3.10.21",
+  "uv": "0.12.5",
+  "torch": "2.9.1+cpu",
+  "hashes": {
+    "uv.lock.pinned": "de7891b832854162111208644ddb72685069ce8128e2bed9dbb7993aa6af5861",
+    "uv.lock.resolved": "e5781572a832a650eefe821b2cf316b56673ff01b082cec3200d049b970c112c",
+    "hook_patch": "faaded83ef79e6d5b2e6856a444cf17e20ddb534ddd29d6b600f9568304ec4ff"
+  },
+  "artifacts": [
+    "docs/run-cards/p1-20260816T025911Z-0067a57.md",
+    "patches/nanochat-NANOCHAT_DATA_DIR.patch",
+    "manifests/p_scaling_capture.json",
+    "manifests/execution_host.json",
+    "scripts/p1/env.sh",
+    "scripts/p1/test_data_dir_hook.py",
+    "artifacts/p1/p1-20260816T025911Z-0067a57/"
+  ],
+  "acceptance": {
+    "nanochat_pinned": true,
+    "lockfile_hash_recorded": true,
+    "hardware_manifest_recorded": true,
+    "NANOCHAT_BASE_DIR_isolated": true,
+    "hook_patch_hash_recorded": true,
+    "nanochat_dataset_downloader_not_executed": true,
+    "p_scaling_capture_identified": true
+  },
+  "notes": "uv sync --extra cpu re-resolved uv.lock. ClimbMix downloader was not run. Default ~/.cache/nanochat does not exist."
+}

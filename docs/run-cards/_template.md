@@ -1,0 +1,21 @@
+# Run card (copy to `${RUN_ID}.md`)
+
+- Protocol: P1.0
+- Date (UTC):
+- Operator:
+- Hardware class / `nvidia-smi`:
+- nanochat commit:
+- NANOCHAT_BASE_DIR:
+- Parquet SHA256:
+- Split seed: 20260816
+- Detokenize: yes
+- Vocab size: 32768
+- Depth / dim / heads / P:
+- max_seq_len / device_batch / total_batch / iterations / epochs:
+- T_train / T_val / T_test (BPE):
+- rho (tokens seen / P):
+- dtype / fp8:
+- val_bpb_full / test_bpb:
+- random_val_bpb / byte_unigram_val_bpb:
+- Deviations from P1.0:
+- Pass/fail gates: A B C D E F G H I J L

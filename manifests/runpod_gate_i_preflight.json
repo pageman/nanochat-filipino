@@ -1,0 +1,96 @@
+{
+  "ok": true,
+  "hashes": {
+    "train.parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+    "train.jsonl": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+    "val.jsonl": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+    "shard_00000.parquet": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+    "shard_00001.parquet": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+    "shard_00002.parquet": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  },
+  "checks": [
+    {
+      "name": "no_test_jsonl",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "test_absent_from_active",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "active_three_shards",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_train.parquet",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_train.jsonl",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_val.jsonl",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_shard_00000.parquet",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_shard_00001.parquet",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_shard_00002.parquet",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_tokenizer.pkl",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hash_token_bytes.pt",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cuda",
+      "ok": true,
+      "detail": {
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "gpu": "NVIDIA A40"
+      }
+    },
+    {
+      "name": "d20_instantiate_t2048",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "d20_memfit_t2048",
+      "ok": true,
+      "detail": {
+        "device_batch_size": 8
+      }
+    }
+  ],
+  "device_batch_for_d20": 8,
+  "checked_at_utc": "2026-08-16T07:01:15Z",
+  "pod_id": "68bei7d3vx4krc",
+  "gpu": "NVIDIA A40",
+  "dc": "EU-SE-1"
+}

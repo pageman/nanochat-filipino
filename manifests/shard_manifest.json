@@ -1,0 +1,41 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "E",
+  "status": "pass",
+  "checked_at_utc": "2026-08-16T03:14:40Z",
+  "split_name": "reconstructed_article_70_15_15",
+  "active_dir": "data/processed/wikitext-tl39/active",
+  "schema": ["text"],
+  "compression": "zstd",
+  "compression_level": 3,
+  "row_group_size": 1024,
+  "padding_empty_strings": false,
+  "n_articles_over_50000_chars_chunked": 29,
+  "chunk_rule": "documents > 50000 chars split to <=10000-char newline chunks; all chunks stay in the same split",
+  "shards": {
+    "shard_00000.parquet": {
+      "role": "train",
+      "sha256": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+      "n_rows": 18876,
+      "n_parent_articles": 18801,
+      "bytes": 4772977
+    },
+    "shard_00001.parquet": {
+      "role": "train",
+      "sha256": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+      "n_rows": 18896,
+      "n_parent_articles": 18801,
+      "bytes": 4985263
+    },
+    "shard_00002.parquet": {
+      "role": "val",
+      "sha256": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+      "n_rows": 8104,
+      "n_parent_articles": 8058,
+      "bytes": 2261779
+    }
+  },
+  "lexicographically_final_is_val": true,
+  "test_in_active_dir": false,
+  "nanochat_dataset_downloader_run": false
+}

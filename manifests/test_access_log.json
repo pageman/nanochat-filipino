@@ -1,0 +1,36 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "rule": "Zero test-read events before validation-only D* selection. Exactly one planned read after selection unless a labeled report-all-depth extension is authorized.",
+  "test_read_events": 1,
+  "events": [
+    {
+      "at_utc": "2026-08-16T07:58:35Z",
+      "kind": "confirmatory_test_bpb",
+      "model_tag": "p1-fixed-d20-3x",
+      "checkpoint_step": 294,
+      "D_star": 20,
+      "test_bpb": 1.164768333672231,
+      "test_jsonl_sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "path_on_host": "/workspace/exports/gate_j/test.jsonl",
+      "not_in_active_training_dir": true,
+      "used_to_select_D_star": false,
+      "note": "Single confirmatory test read after validation-only D* selection."
+    }
+  ],
+  "f2_authorization": {
+    "event_type": "confirmatory_test_evaluation",
+    "utc_time": "2026-08-16T07:58:35Z",
+    "operator_or_job": "Paul Pajo / scripts/p1/gate_j_full_bpb.py --phase test on 68bei7d3vx4krc",
+    "selected_depth": 20,
+    "selected_checkpoint_sha256": "9e30fff3d6effc7c71af92e8488f9375a5d70cf1962ba371bee0e639836dde38",
+    "selection_record_sha256": "482917f327f2fa53bf8f8af30a1dc12ec13915a4d37086fcc1c57ec48f988cfe",
+    "sealed_selection_artifact_sha256": "9d461cc5ad606d129e1de0be12ad372e63f5ee8bc4886b2969506625b057467f",
+    "test_manifest_sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+    "test_access_count_before_event": 0,
+    "intended_access_count_after_event": 1,
+    "evaluator_command_hash": "405d97a83fbdceaed4f7845cc5c53f65688866aa18eb001cf20961c89a814016",
+    "host_environment_fingerprint_hash": "5cbe846f6181e6d105a19d8ac2ba49c4ed5d9f2fd0f832db457816060f8fe4c4",
+    "reason": "Registered secondary test_bpb only; not model selection.",
+    "note": "F2 fields were filled into this log after the named selection_record.json was materialized. The live authorization at 07:58:35Z used val_baselines_summary.json (test_read_count=0) as the sealed selection."
+  }
+}

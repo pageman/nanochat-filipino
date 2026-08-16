@@ -1,0 +1,79 @@
+# P1.1 frozen charter. Do not edit the confirmatory question, grid, metric, or one-test-touch rule.
+# Changes to those require project1_v2.yaml and a new registration.
+# Pre-start operational definitions: docs/EXECUTION-CLARIFICATIONS-p1.1.md
+# Gate ledger: manifests/gate_ledger.json (from manifests/gate_ledger.template.json)
+
+project: project1_wikitext_tl39
+protocol: P1.1
+language_label: Tagalog/Filipino
+source_dataset: Wikitext-TL39
+source_url: https://huggingface.co/datasets/linkanjarad/Wikitext-TL39
+source_file: data/train.parquet
+source_file_url: https://huggingface.co/datasets/linkanjarad/Wikitext-TL39/resolve/main/data/train.parquet
+legacy_s3_url: https://s3.us-east-2.amazonaws.com/blaisecruz.com/datasets/wikitext-tl-39/wikitext-tl-39.zip
+legacy_s3_status: HTTP 404
+
+nanochat_repo: https://github.com/karpathy/nanochat
+nanochat_commit: 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+data_path_adapter: NANOCHAT_DATA_DIR  # one-line hook; preferred publication config
+data_path_fallback: isolated_NANOCHAT_BASE_DIR_symlink_smoke_only
+
+sequence_length: 2048
+tokenizer_vocab_size: 32768
+tokenizer_doc_cap_chars: 10000
+tokenizer_max_chars: 2000000000
+tokenizer_train_split: train_only
+
+split_policy: recover_original_else_reconstructed_70_15_15
+split_seed: 42
+split_assignment: lexicographic_sha256_utf8_70_15_15
+split_unit: article_if_reconstruction_passes_audit_else_parquet_row
+historical_split_recovered: null  # fill after Phase 4
+
+canonical_normalization: source_text_plus_line_ending_normalization
+canonical_detokenize_moses: false
+clean_ablation: false  # if true, write a separate package; never overwrite canonical
+
+primary_metric: heldout_tagalog_bits_per_byte
+primary_comparison: fixed_data_family_D_3x
+secondary_metrics:
+  - validation_loss
+  - training_loss
+  - bytes_per_token
+  - tokens_per_byte
+  - train_validation_gap
+  - throughput_tokens_per_second
+  - mfu
+  - peak_memory
+  - checkpoint_reload_success
+forbidden_primary_metrics:
+  - dclm_core
+  - english_mmlu_arc_gsm8k
+  - training_loss_alone
+
+depths:
+  smoke: [4]
+  pilot: [8, 12]
+  production: [8, 12, 16, 20]
+  optional: [24]
+
+experiment_families:
+  native_depth:
+    purpose: nanochat compatibility
+    target_param_data_ratio: 12
+    confirmatory: false
+  fixed_data:
+    purpose: isolate depth under equal model-visible tokens
+    budgets_of_T_train: [1, 3, 10]
+    primary_budget: 3
+    confirmatory: true
+    note: Keep target-param-data-ratio positive and set num-iterations and total-batch-size explicitly. Never set ratio to -1.
+
+seeds:
+  smoke: 1
+  pilot_d8_d12: 3
+  production_d16_d20: [1, 2]
+  bitwise_determinism: false
+
+core_metric_every: -1
+target_param_data_ratio_negative: forbidden

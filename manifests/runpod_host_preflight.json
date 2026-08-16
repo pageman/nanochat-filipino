@@ -1,0 +1,198 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "purpose": "runpod_cuda_preflight_before_naming_host",
+  "names_the_official_host": false,
+  "official_gate_h_started": false,
+  "checked_at_utc": "2026-08-16T06:39:56Z",
+  "platform": {
+    "system": "Linux",
+    "release": "6.8.0-65-generic",
+    "machine": "x86_64",
+    "python": "3.10.19"
+  },
+  "nvidia_smi": "Sun Aug 16 06:39:56 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:52:00.0 Off |                    0 |\n|  0%   37C    P0            108W /  300W |     343MiB /  46068MiB |     62%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            2074      C   ...dor/nanochat/.venv/bin/python        336MiB |\n+-----------------------------------------------------------------------------------------+",
+  "hashes": {
+    "train.parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+    "train.jsonl": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+    "val.jsonl": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+    "test.jsonl": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+    "shard_00000.parquet": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+    "shard_00001.parquet": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+    "shard_00002.parquet": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  },
+  "instantiation": [
+    {
+      "depth": 4,
+      "ok": true,
+      "p_total": 36700242,
+      "t": 2048
+    },
+    {
+      "depth": 8,
+      "ok": true,
+      "p_total": 125829354,
+      "t": 2048
+    },
+    {
+      "depth": 12,
+      "ok": true,
+      "p_total": 286261730,
+      "t": 2048
+    },
+    {
+      "depth": 16,
+      "ok": true,
+      "p_total": 536871738,
+      "t": 2048
+    },
+    {
+      "depth": 20,
+      "ok": true,
+      "p_total": 896533746,
+      "t": 2048
+    }
+  ],
+  "checks": [
+    {
+      "name": "x86_64_or_amd64",
+      "ok": true,
+      "detail": "x86_64"
+    },
+    {
+      "name": "data_dir_is_tagalog_active",
+      "ok": true,
+      "detail": "/workspace/p1/nanochat-filipino/data/processed/wikitext-tl39/active"
+    },
+    {
+      "name": "dataset_downloader_not_requested",
+      "ok": true,
+      "detail": "this script never calls nanochat.dataset"
+    },
+    {
+      "name": "hash_train.parquet",
+      "ok": true,
+      "detail": {
+        "expected": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+        "actual": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9"
+      }
+    },
+    {
+      "name": "hash_train.jsonl",
+      "ok": true,
+      "detail": {
+        "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+        "actual": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687"
+      }
+    },
+    {
+      "name": "hash_val.jsonl",
+      "ok": true,
+      "detail": {
+        "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+        "actual": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c"
+      }
+    },
+    {
+      "name": "hash_test.jsonl",
+      "ok": true,
+      "detail": {
+        "expected": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+        "actual": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+      }
+    },
+    {
+      "name": "hash_shard_00000.parquet",
+      "ok": true,
+      "detail": {
+        "expected": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+        "actual": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9"
+      }
+    },
+    {
+      "name": "hash_shard_00001.parquet",
+      "ok": true,
+      "detail": {
+        "expected": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+        "actual": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976"
+      }
+    },
+    {
+      "name": "hash_shard_00002.parquet",
+      "ok": true,
+      "detail": {
+        "expected": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+        "actual": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+      }
+    },
+    {
+      "name": "hash_tokenizer.pkl",
+      "ok": true,
+      "detail": {
+        "expected": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "actual": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+      }
+    },
+    {
+      "name": "hash_token_bytes.pt",
+      "ok": true,
+      "detail": {
+        "expected": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+        "actual": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+      }
+    },
+    {
+      "name": "test_absent_from_active",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "cuda_available",
+      "ok": true,
+      "detail": {
+        "torch": "2.9.1+cu128",
+        "torch_cuda": "12.8",
+        "cuda_available": true,
+        "device_count": 1,
+        "device_name": "NVIDIA A40",
+        "capability": [
+          8,
+          6
+        ],
+        "matmul_finite": true
+      }
+    },
+    {
+      "name": "cuda_matmul_finite",
+      "ok": true,
+      "detail": 191.72906494140625
+    },
+    {
+      "name": "instantiate_d4_t2048",
+      "ok": true,
+      "detail": 36700242
+    },
+    {
+      "name": "instantiate_d8_t2048",
+      "ok": true,
+      "detail": 125829354
+    },
+    {
+      "name": "instantiate_d12_t2048",
+      "ok": true,
+      "detail": 286261730
+    },
+    {
+      "name": "instantiate_d16_t2048",
+      "ok": true,
+      "detail": 536871738
+    },
+    {
+      "name": "instantiate_d20_t2048",
+      "ok": true,
+      "detail": 896533746
+    }
+  ],
+  "ok": true
+}

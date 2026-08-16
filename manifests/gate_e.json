@@ -1,0 +1,13 @@
+{
+  "gate": "E",
+  "status": "pass",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "started_at_utc": "2026-08-16T03:14:07Z",
+  "ended_at_utc": "2026-08-16T03:14:40Z",
+  "operator_or_job": "Paul Pajo",
+  "hashes": {
+    "shard_00000.parquet": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+    "shard_00001.parquet": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+    "shard_00002.parquet": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+  }
+}

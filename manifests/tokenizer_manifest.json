@@ -1,0 +1,33 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "F",
+  "status": "pass",
+  "checked_at_utc": "2026-08-16T03:17:09Z",
+  "vocab_size": 32768,
+  "train_only": true,
+  "train_shards": ["shard_00000.parquet", "shard_00001.parquet"],
+  "val_shard_excluded": "shard_00002.parquet",
+  "doc_cap_chars_for_training_only": 10000,
+  "max_chars": 400000000,
+  "bos_not_in_fertility_or_T_train": true,
+  "paths": {
+    "live": "data/cache/p1-20260816T025911Z-0067a57/tokenizer",
+    "copy": "artifacts/p1/p1-20260816T025911Z-0067a57/tokenizer"
+  },
+  "hashes": {
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  },
+  "bytes_per_token": {
+    "ours_train": 4.556331474408816,
+    "ours_val": 4.530962999642008,
+    "ours_test": 4.433260550651355,
+    "gpt2_train": 2.7562181179404432,
+    "gpt2_val": 2.7584748058533837,
+    "gpt2_test": 2.757772957020042
+  },
+  "roundtrip_doc_fraction": {"train": 1.0, "val": 1.0, "test": 1.0},
+  "gpt2_comparison_is_descriptive_only": true,
+  "test_read_kind": "tokenizer_fertility_not_confirmatory_bpb",
+  "confirmatory_test_bpb_computed": false
+}

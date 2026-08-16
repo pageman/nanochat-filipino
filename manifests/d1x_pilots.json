@@ -1,0 +1,28 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "kind": "aspredicted_q8_secondary_d1x_pilots",
+  "status": "complete",
+  "confirmatory": false,
+  "used_to_pick_D_star": false,
+  "num_iterations": 98,
+  "d_actual": 6422528,
+  "results": {
+    "8": {
+      "tag": "p1-fixed-d8-1x-s0",
+      "torch_seed": 42,
+      "checkpoint_step": 98,
+      "val_bpb_full": 1.4201878264540952,
+      "train_bpb_full": 1.3318241831237683,
+      "val_minus_train_gap_bpb": 0.08836364333032698
+    },
+    "12": {
+      "tag": "p1-fixed-d12-1x-s0",
+      "torch_seed": 42,
+      "checkpoint_step": 98,
+      "val_bpb_full": 1.428634853501551,
+      "train_bpb_full": 1.3329412182245337,
+      "val_minus_train_gap_bpb": 0.09569363527701724
+    }
+  },
+  "note": "Both D_1x vals are worse than the matching D_3x seed-0 vals (1.179 / 1.181). Secondary only."
+}

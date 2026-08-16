@@ -1,0 +1,15 @@
+{
+  "gate": "D",
+  "status": "pass",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "started_at_utc": "2026-08-16T03:10:01Z",
+  "ended_at_utc": "2026-08-16T03:10:44Z",
+  "operator_or_job": "Paul Pajo",
+  "split_name": "reconstructed_article_70_15_15",
+  "historical_split_recovered": false,
+  "hashes": {
+    "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+    "val": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+    "test": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+  }
+}

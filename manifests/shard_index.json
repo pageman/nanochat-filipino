@@ -1,0 +1,20 @@
+{
+  "shard_00000.parquet": {
+    "role": "train",
+    "n_chunks": 18876,
+    "n_parent_articles": 18801,
+    "parent_doc_ids_sha256": "305a2dc8ec6ed40d9993971604f324bf5fa6eb9db8558ff18c10705c9d80b603"
+  },
+  "shard_00001.parquet": {
+    "role": "train",
+    "n_chunks": 18896,
+    "n_parent_articles": 18801,
+    "parent_doc_ids_sha256": "754f9a5124cd60d059fb71948eab2329ed16324ffe32d951f42190818eb7fa9b"
+  },
+  "shard_00002.parquet": {
+    "role": "val",
+    "n_chunks": 8104,
+    "n_parent_articles": 8058,
+    "parent_doc_ids_sha256": "e19ffce6ddf343135fcef33eaa35429b55e2a1bd7d69a36472838321c0ad8895"
+  }
+}

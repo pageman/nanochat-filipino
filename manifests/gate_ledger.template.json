@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0",
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "registration": {
+    "platform": "AsPredicted",
+    "identifier": "306780",
+    "url": "https://aspredicted.org/6r6v4v.pdf",
+    "registration_pdf_sha256": null
+  },
+  "clarification_note": {
+    "path": "docs/EXECUTION-CLARIFICATIONS-p1.1.md",
+    "sha256": null,
+    "dated_before_gate_a": null
+  },
+  "confirmatory_outcomes": {
+    "val_bpb_computed": false,
+    "test_bpb_computed": false,
+    "test_read_events": 0
+  },
+  "immutable_execution_definitions": {
+    "canonical_text": "source text with LF line endings only; no detokenization",
+    "t_train": "sum(len(tau(document_text))) over frozen canonical train documents; no BOS; no packing; no crop",
+    "d_3x": "3 * T_train",
+    "p_scaling": "pinned base_train scaling parameter count recorded per depth",
+    "target_param_data_ratio": "D_3x / P_scaling; must be positive",
+    "checkpoint_rule": "final checkpoint at fixed D_3x budget",
+    "model_selection_rule": "exact minimum final val_bpb_full; sub-0.01 BPB gaps are practically indistinguishable in one-seed interpretation",
+    "byte_unigram": "Laplace add-one smoothing p(b)=(c[b]+1)/(N+256), trained on train UTF-8 bytes only",
+    "article_fallback": "use deterministic heading parser; if any parser invariant fails, use reconstructed_row_70_15_15"
+  },
+  "gates": [
+    {
+      "id": "A",
+      "name": "Environment",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "nanochat commit pinned to 92d63d4 full SHA",
+        "lockfile hash recorded",
+        "hardware manifest recorded",
+        "NANOCHAT_BASE_DIR isolated",
+        "NANOCHAT_DATA_DIR hook patch hash recorded",
+        "nanochat.dataset downloader not executed"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "B",
+      "name": "Download",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "current WikiText-TL-39 parquet acquired",
+        "file type is Parquet",
+        "text column confirmed",
+        "row count recorded",
+        "source SHA-256 recorded",
+        "source manifest written"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "C",
+      "name": "Audit",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "raw file remains immutable",
+        "null, empty, length, Unicode, @-@ residue, and duplicates audited",
+        "canonical LF-only normalization documented",
+        "eligible drop rate is at most 5 percent"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "D",
+      "name": "Split",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "original split recovery attempted",
+        "split unit automatically selected by parser invariants or row fallback",
+        "70/15/15 deterministic hash split written if original split unavailable",
+        "exact overlap across train, validation, and test is zero",
+        "test manifest isolated and protected"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "E",
+      "name": "Shards",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "text-only Parquet schema",
+        "zstd compression and row group 1024 recorded",
+        "at least one training shard and lexicographically final validation shard",
+        "test absent from active training directory",
+        "fresh-process read test passed",
+        "shard checksums written"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "F",
+      "name": "Tokenizer",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "32768 BPE trained on train only",
+        "token_bytes.pt saved",
+        "Tagalog Unicode round trip passed",
+        "bytes per token logged for train, validation, and test",
+        "tokenizer manifest and hashes written"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "G",
+      "name": "Budget desk calculation",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "T_train counted by frozen no-BOS/no-packing/no-crop definition",
+        "D_3x calculated",
+        "P_total and P_scaling recorded per depth",
+        "positive ratio recorded per depth",
+        "num_iterations, total_batch_size, and D_actual recorded per depth",
+        "sequence length fixed at 2048"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    },
+    {
+      "id": "H",
+      "name": "Smoke",
+      "status": "not_started",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "operator_or_job": null,
+      "acceptance_checks": [
+        "d4 ran for 20 to 100 steps",
+        "CORE disabled",
+        "loss is finite",
+        "checkpoint written",
+        "fresh-process checkpoint reload passed",
+        "finite validation BPB evaluated",
+        "active data path verified as non-ClimbMix"
+      ],
+      "artifacts": [],
+      "hashes": {},
+      "notes": null,
+      "events": []
+    }
+  ],
+  "transition_rule": "Gate I may not begin unless every Gate A through H has status pass. A status never overwrites prior event history; corrections append an event.",
+  "event_log": []
+}

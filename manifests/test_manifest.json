@@ -1,0 +1,11 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "split_name": "reconstructed_article_70_15_15",
+  "split": "test",
+  "path": "data/processed/wikitext-tl39/test/test.jsonl",
+  "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+  "n_units": 8058,
+  "n_chars": 6249461,
+  "isolated_from_active_training_dir": true,
+  "read_only": true
+}

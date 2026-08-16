@@ -1,0 +1,38 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "gate": "G",
+  "definition": "sum(len(tokenizer.encode(document_text))) over frozen canonical split documents; no BOS; no packing; no crop",
+  "tokenizer_hash": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "train_split_hash": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+  "val_split_hash": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+  "t_train": 6401013,
+  "t_val": 1494445,
+  "t_test": 1409676,
+  "t_test_source": "gate_f_fertility_not_reread",
+  "t_test_note": "Cited from artifacts/p1/.../tokenizer_eval.json to avoid a new test-split read. Not confirmatory test_bpb.",
+  "train": {
+    "n_docs": 37602,
+    "n_tokens": 6401013,
+    "n_bytes": 29165137,
+    "n_chars": 29165137,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "val": {
+    "n_docs": 8058,
+    "n_tokens": 1494445,
+    "n_bytes": 6771275,
+    "n_chars": 6771275,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "bytes": {
+    "train": 29165137,
+    "val": 6771275
+  },
+  "matched_gate_f_fertility_train_val": true,
+  "test_not_reread": true
+}

@@ -1,0 +1,42 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "H",
+  "status": "pass",
+  "classification": "official_nvidia_cuda_smoke",
+  "not_confirmatory_val_bpb_full": true,
+  "host": {
+    "pod_id": "p7e5zk3njnglgy",
+    "gpu": "NVIDIA A40",
+    "data_center": "CA-MTL-1",
+    "device_type": "cuda",
+    "torch": "2.9.1+cu128"
+  },
+  "model_tag": "p1-smoke-d4",
+  "command": {
+    "depth": 4,
+    "max_seq_len": 512,
+    "device_batch_size": 1,
+    "total_batch_size": 2048,
+    "num_iterations": 30,
+    "eval_tokens": 4096,
+    "core_metric_every": -1
+  },
+  "acceptance": {
+    "H1_train_loss_finite_step_30": 10.084134,
+    "H2_loss_moved": {"step_1": 10.397174, "step_30": 10.084134},
+    "H3_checkpoint": "data/cache/p1-20260816T025911Z-0067a57/base_checkpoints/p1-smoke-d4/model_000030.pt",
+    "H4_sample": "Tagalog function words (mga, ang, na, tao); not fluent English ClimbMix",
+    "H5_core_disabled": true,
+    "H6_fresh_process_bpb": {"train_bpb": 2.877429, "val_bpb": 2.914874},
+    "H7_data_dir": "wikitext-tl39/active",
+    "H8_device": "cuda NVIDIA A40"
+  },
+  "hashes": {
+    "model_000030.pt": "e58bb5abeeb9eaa895b25e9e1101dbbc134be790427f4d630b7b577e7dd56c77",
+    "meta_000030.json": "08c7400fd1d64d2db453a1f8222a7936d50bf336e8ad21e1b9628c77a168f2e6",
+    "optim_000030_rank0.pt": "18e088806e2412605210f58aaae78ba3028fa8a0943e663b75376067da4fc0d6"
+  },
+  "started_at_utc": "2026-08-16T06:40:48Z",
+  "ended_at_utc": "2026-08-16T06:45:00Z",
+  "notes": "Smoke only. val_bpb is eval-tokens=4096, not confirmatory val_bpb_full. test_read_events remain 0. Confirmatory I not started."
+}

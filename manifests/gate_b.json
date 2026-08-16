@@ -1,0 +1,19 @@
+{
+  "gate": "B",
+  "status": "pass",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "started_at_utc": "2026-08-16T03:02:43Z",
+  "ended_at_utc": "2026-08-16T03:03:23Z",
+  "operator_or_job": "Paul Pajo",
+  "hashes": {
+    "train.parquet": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+    "huggingface_revision": "7c1a76c2c1864abf434453e312f034d0cf211fff"
+  },
+  "artifacts": [
+    "manifests/source_manifest.json",
+    "docs/data-cards/wikitext-tl39-p1-20260816T025911Z-0067a57.md",
+    "scripts/p1/gate_b_integrity.py",
+    "data/raw/wikitext-tl39/train.parquet",
+    "artifacts/p1/p1-20260816T025911Z-0067a57/gate_b_integrity.json"
+  ]
+}

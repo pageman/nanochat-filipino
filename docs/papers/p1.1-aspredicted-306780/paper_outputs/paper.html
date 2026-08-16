@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paul Pajo Independent Researcher paulamerigo.pajojr@benilde.edu.ph" />
+  <meta name="dcterms.date" content="2026-08-16" />
+  <title>Equal-Exposure Depth and Held-Out Tagalog Bits-per-Byte on WikiText-TL-39</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Equal-Exposure Depth and Held-Out Tagalog
+Bits-per-Byte on WikiText-TL-39</h1>
+<p class="author">Paul Pajo<br />
+Independent Researcher<br />
+<code>paulamerigo.pajojr@benilde.edu.ph</code></p>
+<p class="date">16 August 2026</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>Does increasing decoder depth from 8 to 20 reduce held-out Tagalog
+bits-per-byte (BPB) when every depth sees the same model-visible token
+budget on WikiText-TL-39? This question was preregistered as AsPredicted
+#306780 before confirmatory BPB existed. The study uses one public
+Parquet mirror of Cruz and Cheng’s 2019 Tagalog Wikipedia
+language-modeling corpus, a train-only 32<span>,</span>768-merge
+byte-pair encoding (BPE) tokenizer, sequence length <span
+class="math inline">\(T=2048\)</span>, and Karpathy’s nanochat base
+trainer pinned at commit <code>92d63d4</code>. Original 2019 train,
+validation, and test files were not recovered. Splits were rebuilt by
+exact UTF-8 hash on reconstructed articles (label
+<code>reconstructed_article_70_15_15</code>). The common budget is <span
+class="math inline">\(D_{3x}=3\times T_{\mathrm{train}}\)</span>,
+implemented as <span class="math inline">\(N=294\)</span> steps at batch
+<span class="math inline">\(B=65{,}536\)</span> tokens (<span
+class="math inline">\(D_{\mathrm{actual}}=19{,}267{,}584\)</span>).
+Primary outcome is full-split validation BPB after the final checkpoint.
+Depth 20 is the exact numerical minimum (<span
+class="math inline">\(1.172248\)</span>), <span
+class="math inline">\(0.006887\)</span> below depth 8. With one seed,
+gaps below <span class="math inline">\(0.01\)</span> BPB are not
+interpreted as a ranking. The series is not a clean fall-then-flatten:
+validation BPB rises from 8 to 16, then dips at 20, while the
+train–validation gap widens from 8 to 16. One test BPB (<span
+class="math inline">\(1.164768\)</span>) was read after validation-only
+selection. All four trained models beat an untrained same-depth control
+and a train-fitted UTF-8 byte unigram. The contribution is a locked
+equal-exposure measurement on this corpus, not a claim that deeper
+models are always better, and not a chat, classification, or English
+CORE result.</p>
+</div>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#sec:intro" id="toc-sec:intro">Introduction</a></li>
+<li><a href="#sec:related" id="toc-sec:related">Related work</a>
+<ul>
+<li><a href="#filipino-and-tagalog-language-resources"
+id="toc-filipino-and-tagalog-language-resources">Filipino and Tagalog
+language resources</a></li>
+<li><a href="#language-modeling-evaluation"
+id="toc-language-modeling-evaluation">Language-modeling
+evaluation</a></li>
+<li><a href="#scaling-depth-and-data-constraints"
+id="toc-scaling-depth-and-data-constraints">Scaling, depth, and data
+constraints</a></li>
+<li><a href="#tokenization" id="toc-tokenization">Tokenization</a></li>
+<li><a href="#preregistration-and-confirmatory-practice"
+id="toc-preregistration-and-confirmatory-practice">Preregistration and
+confirmatory practice</a></li>
+</ul></li>
+<li><a href="#sec:glossary" id="toc-sec:glossary">Glossary</a></li>
+<li><a href="#sec:methods" id="toc-sec:methods">Methods</a>
+<ul>
+<li><a href="#registration-and-authority"
+id="toc-registration-and-authority">Registration and authority</a></li>
+<li><a href="#corpus-and-canonical-text"
+id="toc-corpus-and-canonical-text">Corpus and canonical text</a></li>
+<li><a href="#split" id="toc-split">Split</a></li>
+<li><a href="#tokenizer" id="toc-tokenizer">Tokenizer</a></li>
+<li><a href="#model-and-budget" id="toc-model-and-budget">Model and
+budget</a></li>
+<li><a href="#host" id="toc-host">Host</a></li>
+<li><a href="#evaluation" id="toc-evaluation">Evaluation</a></li>
+<li><a href="#what-was-not-done" id="toc-what-was-not-done">What was not
+done</a></li>
+</ul></li>
+<li><a href="#sec:results" id="toc-sec:results">Results</a>
+<ul>
+<li><a href="#primary-confirmatory-table"
+id="toc-primary-confirmatory-table">Primary confirmatory table</a></li>
+<li><a href="#prediction-outcome" id="toc-prediction-outcome">Prediction
+outcome</a></li>
+<li><a href="#secondary-confirmatory-test"
+id="toc-secondary-confirmatory-test">Secondary confirmatory
+test</a></li>
+<li><a href="#required-baselines" id="toc-required-baselines">Required
+baselines</a></li>
+<li><a href="#secondary-analyses-not-used-for-dast"
+id="toc-secondary-analyses-not-used-for-dast">Secondary analyses, not
+used for <span class="math inline">\(D^{\ast}\)</span></a></li>
+</ul></li>
+<li><a href="#sec:discussion"
+id="toc-sec:discussion">Discussion</a></li>
+<li><a href="#sec:limits" id="toc-sec:limits">Limitations</a></li>
+<li><a href="#sec:future" id="toc-sec:future">Future research</a></li>
+<li><a href="#sec:conclusion"
+id="toc-sec:conclusion">Conclusion</a></li>
+<li><a href="#novelty-statement" id="toc-novelty-statement">Novelty
+statement</a></li>
+<li><a href="#data-code-and-weights"
+id="toc-data-code-and-weights">Data, code, and weights</a></li>
+<li><a href="#ethics" id="toc-ethics">Ethics</a></li>
+<li><a href="#acknowledgements"
+id="toc-acknowledgements">Acknowledgements</a></li>
+<li><a href="#funding" id="toc-funding">Funding</a></li>
+</ul>
+</nav>
+<p><strong>Keywords:</strong> Tagalog language modeling; bits-per-byte;
+transformer depth; equal-exposure scaling; WikiText-TL-39;
+preregistration; low-resource NLP; nanochat; BPE; confirmatory
+evaluation.</p>
+<p><strong>arXiv categories:</strong> cs.CL, cs.LG.</p>
+<p><strong>Code and weights:</strong> study repository
+<code>nanochat-filipino</code>; model card and seed-0 checkpoints at <a
+href="https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x"
+class="uri">https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x</a>.
+Registration: <a href="https://aspredicted.org/6r6v4v.pdf"
+class="uri">https://aspredicted.org/6r6v4v.pdf</a>.</p>
+<h1 id="sec:intro">Introduction</h1>
+<p>Tagalog language modeling still sits on a small public
+Wikipedia-style corpus rather than on a web-scale mix. Cruz and Cheng
+introduced WikiText-TL-39 as a Tagalog analogue of WikiText, with about
+39 million training tokens in the 2019 release <span class="citation"
+data-cites="cruz2019eval"></span>. Later Filipino pretraining work moved
+to larger mixed corpora and encoder models <span class="citation"
+data-cites="cruz2022tlunified"></span>. Those later resources answer a
+different question. They do not say what happens to held-out BPB when a
+decoder-only Transformer is made deeper while the number of
+model-visible tokens is held fixed on the original WikiText-TL-39
+package.</p>
+<p>Scaling studies in English treat depth, width, data, and compute as
+jointly chosen <span class="citation"
+data-cites="kaplan2020scaling hoffmann2022chinchilla muennighoff2023dataconstrained"></span>.
+A common operational shortcut is to let a larger model see more tokens,
+or to train to a native parameter-to-data ratio. That shortcut confounds
+depth with exposure. The present study removes that confound for one
+corpus and one trainer. Every confirmatory depth sees the same <span
+class="math inline">\(D_{3x}=3\times T_{\mathrm{train}}\)</span> budget.
+The trainer is nanochat, a small public decoder stack with an official
+depth dial <span class="citation"
+data-cites="karpathy2026nanochat"></span>. The metric is bits per UTF-8
+byte, which compares models across tokenizers <span class="citation"
+data-cites="shannon1951prediction brown2020gpt3 melis2018eval"></span>.</p>
+<p>The original 2019 split files were not recoverable from the public
+Hugging Face Parquet mirror or from the historical S3 zip. That fact is
+part of the result, not a silent cleanup. The study therefore uses a
+documented article-hash 70/15/15 reconstruction and prints that label on
+every table.</p>
+<p>The confirmatory question, filed before confirmatory BPB existed,
+is:</p>
+<blockquote>
+<p>Does increasing nanochat depth from 8 to 20 reduce held-out Tagalog
+BPB when every depth sees <span class="math inline">\(D_{3x}=3\times
+T_{\mathrm{train}}\)</span> on WikiText-TL-39?</p>
+</blockquote>
+<p>The registered prediction was that validation BPB would fall then
+flatten, or that the train–validation gap would widen. The filing stated
+that the study would not claim that deeper is always better, and that it
+is not a CORE, chat, or classification test <span class="citation"
+data-cites="aspredicted306780"></span>.</p>
+<p>This paper contributes four things.</p>
+<ol>
+<li><p>A preregistered equal-exposure depth grid <span
+class="math inline">\(\{8,12,16,20\}\)</span> on WikiText-TL-39, with
+<span class="math inline">\(T\)</span>, tokenizer, split, and token
+budget frozen before confirmatory outcomes.</p></li>
+<li><p>A recoverable data path: Parquet hash, LF-only canonical text,
+reconstructed-article split, train-only 32<span>,</span>768 BPE, and
+isolated test text.</p></li>
+<li><p>A one-test-touch evaluation: full validation BPB on every depth,
+exact-minimum selection of <span
+class="math inline">\(D^{\ast}\)</span>, then one test BPB on <span
+class="math inline">\(D^{\ast}\)</span> only.</p></li>
+<li><p>A negative main claim at the registered practical threshold: with
+one seed, the <span class="math inline">\(0.006887\)</span> BPB gap
+between depth 20 and depth 8 is below <span
+class="math inline">\(0.01\)</span> and is not a depth ranking.</p></li>
+</ol>
+<p>The paper follows the close-out checklist for AsPredicted #306780. It
+does not amend that registration.</p>
+<h1 id="sec:related">Related work</h1>
+<h2 id="filipino-and-tagalog-language-resources">Filipino and Tagalog
+language resources</h2>
+<p>Cruz and Cheng constructed WikiText-TL-39 by scraping Tagalog
+Wikipedia with a WikiText-like pipeline and released it as a
+language-modeling benchmark <span class="citation"
+data-cites="cruz2019eval"></span>. The same line of work later built
+TLUnified and RoBERTa-Tagalog models for classification <span
+class="citation" data-cites="cruz2022tlunified"></span> and studied
+transfer under labeled-data scarcity <span class="citation"
+data-cites="cruz2020fakenews"></span>. Those papers treat Filipino as a
+low-resource language in the practical sense: public text exists, but
+clean long-context language-modeling splits and decoder scaling
+measurements remain thin.</p>
+<p>Work from Cheng’s group in 2023–2026 stayed close to concrete
+Philippine tasks rather than to English leaderboard transfer. Examples
+include semantic grammar-error correction <span class="citation"
+data-cites="espiritu2023balarila"></span>, automatic Filipino WordNet
+induction <span class="citation"
+data-cites="velasco2023wordnet"></span>, telecommunications named-entity
+recognition <span class="citation" data-cites="chan2023ner"></span>,
+Chavacano language identification <span class="citation"
+data-cites="vicente2024vardial"></span>, 19th-century authorship
+attribution <span class="citation" data-cites="espiritu2024aa"></span>,
+formality style transfer <span class="citation"
+data-cites="loquinte2024formality"></span>, synthetic-data detection of
+AI-generated Filipino news <span class="citation"
+data-cites="ong2025aigenerated"></span>, sarcasm detection <span
+class="citation" data-cites="marcellana2025sarcasm"></span>,
+sparse-autoencoder analysis of code correctness <span class="citation"
+data-cites="tahimic2025sae"></span>, and a Chavacano machine-translation
+corpus <span class="citation" data-cites="vicente2026chavacano"></span>.
+The house style is consistent: name the language and the missing
+resource, build or adapt a dataset, report exact scores, and keep the
+claim inside the constructed task. The present paper uses that style on
+a language-modeling question that those later papers do not answer.</p>
+<p>Southeast Asian multilingual surveys and encoder models provide
+broader context <span class="citation"
+data-cites="conneau2020xlmr cahyawijaya2023nusacrowd"></span> but mix
+languages and objectives. They are not a substitute for a locked Tagalog
+Wikipedia BPB measurement.</p>
+<h2 id="language-modeling-evaluation">Language-modeling evaluation</h2>
+<p>WikiText established a clean Wikipedia language-modeling setup in
+English <span class="citation" data-cites="merity2017pointer"></span>.
+BPB and related byte-normalized losses remain the fair comparison when
+vocabularies differ <span class="citation"
+data-cites="shannon1951prediction graves2013generating melis2018eval brown2020gpt3 gao2020pile"></span>.
+This study uses nanochat’s official <code>evaluate_bpb</code>: mean
+token negative log-likelihood divided by <span class="math inline">\(\ln
+2\)</span> times mean UTF-8 bytes per token, with special tokens
+excluded.</p>
+<h2 id="scaling-depth-and-data-constraints">Scaling, depth, and data
+constraints</h2>
+<p>Kaplan et al. described power-law loss versus compute, data, and
+parameters <span class="citation"
+data-cites="kaplan2020scaling henighan2020scaling"></span>. Hoffmann et
+al. argued that many large models were undertrained relative to their
+parameter count <span class="citation"
+data-cites="hoffmann2022chinchilla"></span>. Muennighoff et al. studied
+repeated epochs when unique data are scarce <span class="citation"
+data-cites="muennighoff2023dataconstrained"></span>. Pythia documented
+checkpointed decoder scaling under a shared recipe <span
+class="citation" data-cites="biderman2023pythia"></span>.
+Depth-versus-width analyses show that extra layers are not a free
+improvement once data and compute are fixed <span class="citation"
+data-cites="levine2020depth press2020reordering tay2022scale"></span>.
+The present grid is closer to a data-constrained equal-exposure test
+than to a Chinchilla-optimal sweep: <span
+class="math inline">\(R_d=D_{3x}/P_{\mathrm{scaling}}\)</span> falls
+from <span class="math inline">\(0.46\)</span> at depth 8 to <span
+class="math inline">\(0.044\)</span> at depth 20.</p>
+<h2 id="tokenization">Tokenization</h2>
+<p>BPE remains the default subword method for this trainer <span
+class="citation"
+data-cites="sennrich2016bpe kudo2018sentencepiece"></span>. GPT-2’s
+English BPE is a known baseline, not a selection rule <span
+class="citation" data-cites="radford2019gpt2"></span>. Fertility on this
+validation split is descriptive only (Tagalog 32<span>,</span>768 BPE
+<span class="math inline">\(\approx 4.53\)</span> bytes/token versus
+GPT-2 <span class="math inline">\(\approx 2.76\)</span>).</p>
+<h2 id="preregistration-and-confirmatory-practice">Preregistration and
+confirmatory practice</h2>
+<p>Preregistration reduces undisclosed flexibility in analysis <span
+class="citation"
+data-cites="simmons2011falsepositive wagenmakers2012confirmatory nosek2018prereg munafo2017manifesto"></span>.
+AsPredicted #306780 locked the question, depths, corpus, tokenizer size,
+sequence length, primary metric, baselines, exclusions, and the
+one-test-touch rule before confirmatory BPB existed <span
+class="citation" data-cites="aspredicted306780"></span>. Execution
+clarifications defined <span
+class="math inline">\(T_{\mathrm{train}}\)</span>, <span
+class="math inline">\(P_{\mathrm{scaling}}\)</span>, the
+final-checkpoint rule, and unigram smoothing without adding a new
+hypothesis.</p>
+<h1 id="sec:glossary">Glossary</h1>
+<div class="description">
+<p>Bits per byte. Primary unit. Lower is better.</p>
+<p>Official full-split validation BPB after the final checkpoint.
+Primary dependent variable.</p>
+<p>The same formula on the isolated test split. Secondary. Read once,
+after <span class="math inline">\(D^{\ast}\)</span> is sealed.</p>
+<p>Sum of BPE token lengths over frozen canonical train articles. No
+BOS, no packing, no crop. Here <span
+class="math inline">\(6{,}401{,}013\)</span>.</p>
+<p>Registered exposure target <span class="math inline">\(3\times
+T_{\mathrm{train}}=19{,}203{,}039\)</span> tokens.</p>
+<p>Tokens seen in training: <span class="math inline">\(N\times
+B=294\times 65{,}536=19{,}267{,}584\)</span> (<span
+class="math inline">\(+0.336\%\)</span> overshoot from integer
+steps).</p>
+<p>All nanochat parameters, including value embeddings.</p>
+<p>Transformer matrices plus language-model head. Used for <span
+class="math inline">\(R_d=D_{3x}/P_{\mathrm{scaling}}\)</span>.</p>
+<p>Depth with the exact lowest final <code>val_bpb_full</code>. Here
+20.</p>
+<p>Context length in tokens. Frozen at 2048.</p>
+<p>Byte-pair encoding. One 32<span>,</span>768-merge tokenizer, train
+documents only.</p>
+<p>nanochat packing that prefixes BOS and packs documents into
+length-<span class="math inline">\(T\)</span> blocks, cropping
+leftovers.</p>
+<p>English multiple-choice suite. Excluded from this study.</p>
+<p>Supervised fine-tuning for chat. Excluded.</p>
+<p>nanochat’s default pretraining mix. Never downloaded.</p>
+<p>Source text with newline normalization only. No Moses
+detokenization.</p>
+</div>
+<h1 id="sec:methods">Methods</h1>
+<h2 id="registration-and-authority">Registration and authority</h2>
+<p>AsPredicted #306780 is the governing record (PDF SHA-256
+<code>a34f119d…cc5ca</code>) <span class="citation"
+data-cites="aspredicted306780"></span>. A pre-Gate-A note defined
+computations already named by the registration. Manifests and deviation
+cards document execution. They do not revise the question. Exploratory
+items (extra seeds, <span class="math inline">\(D_{1x}\)</span> pilots,
+gzip, document bootstrap, samples) stay outside the primary table.</p>
+<h2 id="corpus-and-canonical-text">Corpus and canonical text</h2>
+<p>Source: <code>linkanjarad/Wikitext-TL39</code>, file
+<code>data/train.parquet</code>, SHA-256 <code>706d7064…3caf9</code>,
+<span class="math inline">\(1{,}524{,}071\)</span> rows. The historical
+S3 zip returned 404. No extra pretraining documents were added.
+Canonical text is source text with LF line endings only. Registered
+drops (null/empty after LF, or length <span
+class="math inline">\(&gt;200{,}000\)</span>) were zero. Reconstruction
+produced <span class="math inline">\(120{,}971\)</span> article lines
+(<span class="math inline">\(53{,}718\)</span> unique texts).
+Near-duplicates were counted, not removed.</p>
+<h2 id="split">Split</h2>
+<p>The 2019 train, validation, and test files were not recovered.
+Articles were assigned by <code>sha256</code> of UTF-8 text,
+lexicographic order, 70/15/15, no shuffle seed. Exact text-hash
+intersections are empty. Counts: <span
+class="math inline">\(37{,}602\)</span> / <span
+class="math inline">\(8{,}058\)</span> / <span
+class="math inline">\(8{,}058\)</span> unique texts. Every caption uses
+the label <code>reconstructed_article_70_15_15</code>. Test JSONL was
+write-protected and kept out of the active training directory.</p>
+<h2 id="tokenizer">Tokenizer</h2>
+<p>One nanochat BPE tokenizer, vocabulary <span
+class="math inline">\(32{,}768\)</span>, trained on frozen train text
+only (<code>tokenizer.pkl</code> SHA-256 <code>04436b85…bc5a8</code>;
+<code>token_bytes.pt</code> SHA-256 <code>a5dbc1c8…2132</code>).
+Validation and test text were not used to train it. GPT-2 fertility was
+measured and not used to choose a vocabulary <span class="citation"
+data-cites="radford2019gpt2"></span>.</p>
+<h2 id="model-and-budget">Model and budget</h2>
+<p>Architecture: pinned nanochat decoder <span class="citation"
+data-cites="karpathy2026nanochat"></span>, commit
+<code>92d63d4e8bb4df75c3b71618f31ddde2378b2bcd</code>, plus a documented
+<code>NANOCHAT_DATA_DIR</code> hook (patch SHA-256
+<code>faaded83…c4ff</code>). Depths: 8, 12, 16, 20. <span
+class="math inline">\(T=2048\)</span>. Attention backend on the official
+host was the CUDA path; Mac MPS jobs were infrastructure only and are
+not confirmatory.</p>
+<p><span
+class="math inline">\(T_{\mathrm{train}}=6{,}401{,}013\)</span>. <span
+class="math inline">\(D_{3x}=19{,}203{,}039\)</span>. Common <span
+class="math inline">\(B=65{,}536\)</span>, <span
+class="math inline">\(N=294\)</span>, <span
+class="math inline">\(D_{\mathrm{actual}}=19{,}267{,}584\)</span>. The
+trainer received an explicit <code>--num-iterations 294</code>. The
+ratio <code>--target-param-data-ratio</code> was the small positive
+<span class="math inline">\(R_d\)</span>, never <span
+class="math inline">\(-1\)</span> and never the native default 12. CORE
+evaluation was off. Device batch size could shrink to fit VRAM; <span
+class="math inline">\(T\)</span> and depth could not.</p>
+<table id="tab:budget">
+<caption>Equal-exposure contract. <span
+class="math inline">\(R_d=D_{3x}/P_{\mathrm{scaling}}\)</span>. Seed 0.
+Split label: <code>reconstructed_article_70_15_15</code>.</caption>
+<thead>
+<tr>
+<th style="text-align: right;">Depth</th>
+<th style="text-align: right;"><span
+class="math inline">\(P_{\mathrm{total}}\)</span></th>
+<th style="text-align: right;"><span
+class="math inline">\(P_{\mathrm{scaling}}\)</span></th>
+<th style="text-align: right;"><span
+class="math inline">\(R_d\)</span></th>
+<th style="text-align: right;"><span
+class="math inline">\(D_{\mathrm{actual}}\)</span></th>
+<th style="text-align: right;">Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">8</td>
+<td
+style="text-align: right;">125<span>,</span>829<span>,</span>354</td>
+<td style="text-align: right;">41<span>,</span>943<span>,</span>232</td>
+<td style="text-align: right;">0.457834</td>
+<td style="text-align: right;">19<span>,</span>267<span>,</span>584</td>
+<td style="text-align: right;">0.027</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td
+style="text-align: right;">286<span>,</span>261<span>,</span>730</td>
+<td
+style="text-align: right;">110<span>,</span>100<span>,</span>912</td>
+<td style="text-align: right;">0.174413</td>
+<td style="text-align: right;">19<span>,</span>267<span>,</span>584</td>
+<td style="text-align: right;">0.061</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td
+style="text-align: right;">536<span>,</span>871<span>,</span>738</td>
+<td
+style="text-align: right;">234<span>,</span>881<span>,</span>792</td>
+<td style="text-align: right;">0.081756</td>
+<td style="text-align: right;">19<span>,</span>267<span>,</span>584</td>
+<td style="text-align: right;">0.119</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td
+style="text-align: right;">896<span>,</span>533<span>,</span>746</td>
+<td
+style="text-align: right;">435<span>,</span>160<span>,</span>240</td>
+<td style="text-align: right;">0.044129</td>
+<td style="text-align: right;">19<span>,</span>267<span>,</span>584</td>
+<td style="text-align: right;">0.204</td>
+</tr>
+</tbody>
+</table>
+<h2 id="host">Host</h2>
+<p>Official training and full evaluation ran on one Runpod Secure A40
+(48 GB), EU-SE-1, pod <code>68bei7d3vx4krc</code>, tag
+<code>p1-gate-i</code>. A Mac MPS path validated wiring and recorded a
+depth-20 unified-memory out-of-memory at <span
+class="math inline">\(T=2048\)</span>. That out-of-memory did not drop
+depth 20. A DGX Spark offer was packed and not used as the official
+host.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>Evaluator: <code>scripts/p1/gate_j_full_bpb.py</code>, wrapping
+official <code>evaluate_bpb</code>. Packing: one-pass BOS-bestfit, <span
+class="math inline">\(T=2048\)</span>, device batch 8. Checkpoint:
+<code>model_000294.pt</code> only. Mid-run card evaluation used <span
+class="math inline">\(262{,}144\)</span> tokens and is diagnostic.
+Selection: exact minimum final <code>val_bpb_full</code>. Gaps below
+<span class="math inline">\(0.01\)</span> BPB govern interpretation and
+do not create a second selection rule.</p>
+<p>Baselines, validation only: (i) untrained same-depth model; (ii)
+train-fitted UTF-8 byte unigram with Laplace add-1, <span
+class="math inline">\(p(b)=(c[b]+1)/(N+256)\)</span>. The unigram is
+fitted on raw train bytes, not on validation or test bytes.</p>
+<p>Test access: one <code>--phase test</code> call after a sealed
+validation summary with <code>test_read_count=0</code>
+(2026-08-16T07:56:24Z). The named <code>selection_record.json</code> was
+written later and reconstructs that seal. It does not reopen <span
+class="math inline">\(D^{\ast}\)</span>.</p>
+<h2 id="what-was-not-done">What was not done</h2>
+<p>No ClimbMix download. No <code>python -m nanochat.dataset</code>. No
+confirmatory SFT, CORE, classification, NLI, dengue, or hate-speech
+tasks. No Moses detokenization as canonical text. No d24. No <span
+class="math inline">\(D_{10x}\)</span>. No silent <span
+class="math inline">\(T\)</span> change after out-of-memory.
+Native-speaker sample ratings were not collected and were not
+invented.</p>
+<h1 id="sec:results">Results</h1>
+<h2 id="primary-confirmatory-table">Primary confirmatory table</h2>
+<p>Table <a href="#tab:primary" data-reference-type="ref"
+data-reference="tab:primary">2</a> is the registered comparison. All
+four trained validation BPB values are finite and strictly below both
+baselines.</p>
+<table id="tab:primary">
+<caption>Primary confirmatory outcomes. Final step 294, seed 0 (torch
+42), <span class="math inline">\(T=2048\)</span>, split
+<code>reconstructed_article_70_15_15</code>. Evaluator: official
+<code>evaluate_bpb</code>.</caption>
+<thead>
+<tr>
+<th style="text-align: right;"><span
+class="math inline">\(D\)</span></th>
+<th style="text-align: right;">val BPB</th>
+<th style="text-align: right;">train BPB</th>
+<th style="text-align: right;">gap</th>
+<th style="text-align: right;">untrained</th>
+<th style="text-align: right;">unigram</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.179135</td>
+<td style="text-align: right;">0.836702</td>
+<td style="text-align: right;">0.342432</td>
+<td style="text-align: right;">3.289109</td>
+<td style="text-align: right;">4.453225</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.180824</td>
+<td style="text-align: right;">0.528818</td>
+<td style="text-align: right;">0.652006</td>
+<td style="text-align: right;">3.289358</td>
+<td style="text-align: right;">4.453225</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">1.195546</td>
+<td style="text-align: right;">0.458045</td>
+<td style="text-align: right;">0.737501</td>
+<td style="text-align: right;">3.289354</td>
+<td style="text-align: right;">4.453225</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;"><strong>1.172248</strong></td>
+<td style="text-align: right;">0.672393</td>
+<td style="text-align: right;">0.499855</td>
+<td style="text-align: right;">3.289106</td>
+<td style="text-align: right;">4.453225</td>
+</tr>
+</tbody>
+</table>
+<figure id="fig:valbpb" data-latex-placement="t">
+
+<figcaption>Validation BPB versus depth at fixed <span
+class="math inline">\(D_{\mathrm{actual}}\)</span>. Axis starts at 1.155
+to show the sub-0.03 spread. The visual dip at depth 20 is smaller than
+the registered 0.01 interpretation threshold. Source: Table <a
+href="#tab:primary" data-reference-type="ref"
+data-reference="tab:primary">2</a>.</figcaption>
+</figure>
+<p><span class="math inline">\(D^{\ast}=20\)</span> by exact numerical
+minimum. Margin to depth 8 is <span
+class="math inline">\(0.006887\)</span> BPB; to depth 12 is <span
+class="math inline">\(0.008576\)</span> BPB. With one seed, those gaps
+are not a ranking. Depth 20 and depth 8 are practically
+indistinguishable at the registered threshold.</p>
+<h2 id="prediction-outcome">Prediction outcome</h2>
+<p>The numerical minimum is at depth 20. The series does not show a
+clean fall-then-flatten across <span class="math inline">\(8\rightarrow
+12\rightarrow 16\rightarrow 20\)</span>. Validation BPB rises from 8 to
+16, then depth 20 is lowest by a sub-0.01 margin over depth 8. The
+train–validation gap widens from 8 to 16 (<span
+class="math inline">\(0.342\)</span> to <span
+class="math inline">\(0.738\)</span>) and is <span
+class="math inline">\(0.500\)</span> at depth 20. Falsification in the
+strong form (larger depths keep improving held-out BPB at <span
+class="math inline">\(D_{3x}\)</span> with no increase in the
+train–validation gap) did not occur. The study does not claim that
+deeper is always better.</p>
+<h2 id="secondary-confirmatory-test">Secondary confirmatory test</h2>
+<p>After the sealed validation selection, one test BPB was computed on
+depth 20 only: <span class="math inline">\(1.164768\)</span>. Test
+SHA-256 <code>3bd19345…93baf</code>. Test was not used to choose <span
+class="math inline">\(D^{\ast}\)</span>. No test BPB is reported for
+depths 8, 12, or 16. Confirmatory test-read events equal 1.</p>
+<h2 id="required-baselines">Required baselines</h2>
+<p>All four trained models beat the untrained control (<span
+class="math inline">\(\approx 3.289\)</span>) and the byte unigram
+(<span class="math inline">\(4.453225\)</span>). That answers the
+registered baseline check. It does not rank depths.</p>
+<h2 id="secondary-analyses-not-used-for-dast">Secondary analyses, not
+used for <span class="math inline">\(D^{\ast}\)</span></h2>
+<p>These numbers are retained because the close-out checklist requires
+them. They are not confirmatory depth rankings.</p>
+<ul>
+<li><p>In-training 262<span>,</span>144-token card BPB: 1.124545 (d8),
+1.125139 (d12), 1.137399 (d16), 1.117213 (d20).</p></li>
+<li><p>Depth 12 mid-run minimum <span
+class="math inline">\(1.084991\)</span> at step 200 was not
+selected.</p></li>
+<li><p><span class="math inline">\(D_{1x}\)</span> pilots (step 98): d8
+<span class="math inline">\(1.420188\)</span>, d12 <span
+class="math inline">\(1.428635\)</span>, both worse than matching <span
+class="math inline">\(D_{3x}\)</span> seed-0 validation BPB.</p></li>
+<li><p>Extra seeds 1 and 2 at d8 and d12, validation only: d8 mean <span
+class="math inline">\(1.190892\)</span> (sample SD <span
+class="math inline">\(0.010318\)</span>); d12 mean <span
+class="math inline">\(1.187442\)</span> (sample SD <span
+class="math inline">\(0.008792\)</span>). The <span
+class="math inline">\(0.0069\)</span> d20–d8 gap sits inside that noise
+scale.</p></li>
+<li><p>Document-level non-overlapping bootstrap (1000 resamples, not
+BOS-bestfit): all four 95% intervals overlap (about <span
+class="math inline">\(1.23\)</span>–<span
+class="math inline">\(1.39\)</span>).</p></li>
+<li><p>gzip <span class="math inline">\(-9\)</span> on raw validation
+UTF-8: <span class="math inline">\(2.739\)</span> bits/byte. A
+compressor is not a causal language model.</p></li>
+<li><p>Samples from <span class="math inline">\(D^{\ast}\)</span> are
+Tagalog-Wikipedia-flavored and often incoherent. They are not a
+metric.</p></li>
+</ul>
+<p>Packed <code>val_bpb_full</code> scores <span
+class="math inline">\(5{,}868{,}797\)</span> target bytes (<span
+class="math inline">\(1{,}286{,}864\)</span> tokens). Raw validation
+UTF-8 is <span class="math inline">\(6{,}771{,}275\)</span> bytes. The
+unigram uses the raw stream, as registered.</p>
+<h1 id="sec:discussion">Discussion</h1>
+<p>The honest reading is narrow. On this reconstructed WikiText-TL-39
+package, at <span class="math inline">\(D_{3x}\)</span> and one seed,
+making nanochat deeper from 8 to 20 does not produce a validation-BPB
+gap that clears the study’s own <span
+class="math inline">\(0.01\)</span> rule. The train–validation gap does
+widen as depth increases from 8 to 16, which matches one branch of the
+registered prediction and is consistent with data-constrained
+scaling <span class="citation"
+data-cites="hoffmann2022chinchilla muennighoff2023dataconstrained"></span>.
+Depth 20 then shows a smaller gap than depth 16 and a slightly lower
+validation BPB than depth 8. That pattern is a one-seed observation, not
+a law.</p>
+<p><span class="math inline">\(R_d\)</span> at depth 20 is <span
+class="math inline">\(0.044\)</span>. A Chinchilla-style reading would
+say the larger models are starved of unique tokens <span
+class="citation" data-cites="hoffmann2022chinchilla"></span>. The study
+did not skip those depths, because the grid was filed in advance.
+Skipping them after seeing BPB would have been a protocol break.</p>
+<p>The reconstructed split is a limitation that must stay in the
+caption. Claiming the original 2019 Cruz–Cheng files would be
+false <span class="citation" data-cites="cruz2019eval"></span>. Article
+reconstruction (<span class="math inline">\(120{,}971\)</span> versus
+the 2019 table’s <span class="math inline">\(120{,}975\)</span>) was
+close enough to keep the article unit. Moses-token counts on this mirror
+are lower than the 2019 table. The package is the registered Parquet
+file, not a byte-identical 2019 dump.</p>
+<p>Cheng-group papers from 2023–2026 typically report a task score on a
+constructed Philippine dataset and stop <span class="citation"
+data-cites="espiritu2023balarila vicente2024vardial ong2025aigenerated"></span>.
+This paper does the same for language-modeling BPB. It does not convert
+a <span class="math inline">\(0.0069\)</span> dip into a general
+statement about Filipino, chat quality, or English transfer.</p>
+<h1 id="sec:limits">Limitations</h1>
+<ul>
+<li><p>Original 2019 splits were not recovered.</p></li>
+<li><p>One seed for the four-depth comparison.</p></li>
+<li><p>WikiText-TL-39 is 2019 Tagalog Wikipedia, not general Filipino
+web text and not code-switched Taglish <span class="citation"
+data-cites="cruz2019eval"></span>.</p></li>
+<li><p>BOS-bestfit packing crops long documents. Packed target bytes are
+13.3% below raw validation UTF-8.</p></li>
+<li><p>Twenty-nine long articles were newline-chunked for shards.
+Official <span class="math inline">\(T_{\mathrm{train}}\)</span> is
+full-article encode.</p></li>
+<li><p>FlashAttention versus SDPA can change numerics across hosts.
+Confirmatory numbers are from the named A40.</p></li>
+<li><p>No chat, SFT, instruction following, CORE, or
+classification.</p></li>
+<li><p>Native-speaker ratings do not exist.</p></li>
+<li><p>Extra-seed and <span class="math inline">\(D_{1x}\)</span> files
+may remain only on a stopped pod volume. Confirmatory weights and logs
+are on the author’s archive and on Hugging Face.</p></li>
+</ul>
+<h1 id="sec:future">Future research</h1>
+<p>The following items are exploratory unless a new registration says
+otherwise.</p>
+<ol>
+<li><p>More seeds on the same frozen <span
+class="math inline">\(D_{3x}\)</span> grid, validation only, to test
+whether the <span class="math inline">\(0.0069\)</span> gap is stable.
+Extra-seed SDs already suggest it may not be.</p></li>
+<li><p>A separately labeled <span class="math inline">\(D_{10x}\)</span>
+or native-ratio family. Those runs see the corpus more often and are not
+this experiment <span class="citation"
+data-cites="muennighoff2023dataconstrained"></span>.</p></li>
+<li><p>Recovering or reconstructing a closer match to the 2019 files, if
+a verified archive appears.</p></li>
+<li><p>Measuring crop rate and document-length effects under BOS-bestfit
+versus per-document packing.</p></li>
+<li><p>Train-only tokenizer ablations (vocabulary size, byte fallback)
+that do not leak validation text.</p></li>
+<li><p>Downstream Philippine tasks from the Cheng-group line (grammar
+correction, NER, authorship, Chavacano) as transfer probes, not as
+replacements for BPB <span class="citation"
+data-cites="espiritu2023balarila chan2023ner espiritu2024aa vicente2026chavacano"></span>.</p></li>
+<li><p>Larger unique Tagalog corpora (TLUnified-scale or later) with the
+same equal-exposure discipline <span class="citation"
+data-cites="cruz2022tlunified"></span>.</p></li>
+<li><p>Chat SFT and CORE, only as named follow-ons.</p></li>
+</ol>
+<h1 id="sec:conclusion">Conclusion</h1>
+<p>This paper reported a preregistered, equal-exposure depth sweep of
+nanochat on WikiText-TL-39. The original 2019 splits were not recovered.
+The study used a documented article-hash reconstruction, a train-only
+32<span>,</span>768 BPE tokenizer, and a common <span
+class="math inline">\(19.27\)</span> million token budget. Depth 20 had
+the lowest final validation BPB (<span
+class="math inline">\(1.172248\)</span>). The margin to depth 8 was
+<span class="math inline">\(0.006887\)</span> BPB. Under the registered
+one-seed rule, that is not a depth ranking. The train–validation gap
+widened from depth 8 to 16. One test BPB was read after selection. All
+four models beat untrained and byte-unigram controls.</p>
+<p>The original contribution is the locked measurement: same tokens,
+same tokenizer, same split, four depths, one test touch, and a refusal
+to promote a sub-0.01 gap. The paper does not claim a general Filipino
+foundation model, a chat system, or that deeper is always better.</p>
+<h1 class="unnumbered" id="novelty-statement">Novelty statement</h1>
+<p>The paper advances Tagalog language-modeling evidence by replacing an
+informal “train a deeper nanochat” demonstration with a preregistered
+equal-exposure comparison on a public Wikipedia-style corpus. It records
+a recoverable split after the 2019 files disappeared from the public
+mirror, and it separates confirmatory BPB from diagnostic curves, extra
+seeds, and samples. The empirical advance is negative at the study’s own
+threshold: depth is not a ranking factor on this budget and seed.</p>
+<h1 class="unnumbered" id="data-code-and-weights">Data, code, and
+weights</h1>
+<p>Parquet source: <code>linkanjarad/Wikitext-TL39</code>. Registration:
+AsPredicted #306780. Evaluator and manifests: study repository. Seed-0
+checkpoints: <code>d20/</code>, <code>d16/</code>, <code>d12/</code>,
+<code>d8/</code> at <a
+href="https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x"
+class="uri">https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x</a>.
+Held-out <code>test.jsonl</code> is not redistributed in public zips.
+ResearchBox #8735 is the preregistration deposit box.</p>
+<h1 class="unnumbered" id="ethics">Ethics</h1>
+<p>The corpus is public Wikipedia-derived text. No human-subjects
+experiment was run. Sample ratings were not fabricated. Secrets (host
+credentials, box passcodes) are not published with this paper.</p>
+<h1 class="unnumbered" id="acknowledgements">Acknowledgements</h1>
+<p>WikiText-TL-39 is due to Cruz and Cheng <span class="citation"
+data-cites="cruz2019eval"></span>. nanochat is due to Karpathy <span
+class="citation" data-cites="karpathy2026nanochat"></span>. Cheng is not
+a coauthor of this study. Errors are the author’s.</p>
+<h1 class="unnumbered" id="funding">Funding</h1>
+<p>No external grant funded the confirmatory runs. Official training
+used a rented A40.</p>
+<div class="thebibliography">
+<p><span>99</span></p>
+<p>J. C. B. Cruz and C. Cheng. Evaluating language model finetuning
+techniques for low-resource languages. <em>arXiv:1907.00409</em>,
+2019.</p>
+<p>S. Merity, C. Xiong, J. Bradbury, and R. Socher. Pointer sentinel
+mixture models. In <em>International Conference on Learning
+Representations</em>, 2017.</p>
+<p>J. C. B. Cruz and C. Cheng. Improving large-scale language models and
+resources for Filipino. In <em>Proceedings of the Thirteenth Language
+Resources and Evaluation Conference</em>, pages 6548–6555, Marseille,
+2022.</p>
+<p>J. C. B. Cruz, J. A. Tan, and C. Cheng. Localization of fake news
+detection via multitask transfer learning. In <em>Proceedings of the
+Twelfth Language Resources and Evaluation Conference</em>, pages
+2596–2604, 2020.</p>
+<p>A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N.
+Gomez, <span>Ł</span>. Kaiser, and I. Polosukhin. Attention is all you
+need. In <em>Advances in Neural Information Processing Systems</em>,
+2017.</p>
+<p>J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess,
+R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei. Scaling laws for
+neural language models. <em>arXiv:2001.08361</em>, 2020.</p>
+<p>T. Henighan, J. Kaplan, M. Katz, M. Chen, C. Hesse, J. Jackson,
+H. Jun, T. B. Brown, P. Dhariwal, S. Gray, C. Hallacy, B. Mann,
+A. Radford, A. Ramesh, N. Ryder, D. M. Ziegler, J. Schulman, D. Amodei,
+and S. McCandlish. Scaling laws for autoregressive generative modeling.
+<em>arXiv:2010.14701</em>, 2020.</p>
+<p>J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai,
+E. Rutherford, D. de Las Casas, L. A. Hendricks, J. Welbl, A. Clark,
+T. Hennigan, E. Noland, K. Millican, G. van den Driessche, B. Damoc,
+A. Guy, S. Osindero, K. Simonyan, E. Elsen, J. W. Rae, O. Vinyals, and
+L. Sifre. Training compute-optimal large language models.
+<em>arXiv:2203.15556</em>, 2022.</p>
+<p>N. Muennighoff, A. Rush, B. Barak, T. L. Scao, N. Tazi, A. Piktus,
+S. Pyysalo, T. Wolf, and C. A. Raffel. Scaling data-constrained language
+models. In <em>Advances in Neural Information Processing Systems</em>,
+2023.</p>
+<p>S. Biderman, H. Schoelkopf, Q. G. Anthony, H. Bradley, K. O’Brien,
+E. Hallahan, M. A. Khan, S. Purohit, U. S. Prashanth, E. Raff,
+A. Skowron, L. Sutawika, and O. van der Wal. Pythia: A suite for
+analyzing large language models across training and scaling. In
+<em>Proceedings of the 40th International Conference on Machine
+Learning</em>, 2023.</p>
+<p>T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal,
+A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal,
+A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. M.
+Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin,
+S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford,
+I. Sutskever, and D. Amodei. Language models are few-shot learners. In
+<em>Advances in Neural Information Processing Systems</em>, 2020.</p>
+<p>A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever.
+Language models are unsupervised multitask learners. OpenAI technical
+report, 2019.</p>
+<p>R. Sennrich, B. Haddow, and A. Birch. Neural machine translation of
+rare words with subword units. In <em>Proceedings of the 54th Annual
+Meeting of the Association for Computational Linguistics</em>, pages
+1715–1725, 2016.</p>
+<p>T. Kudo and J. Richardson. SentencePiece: A simple and language
+independent subword tokenizer and detokenizer for neural text
+processing. In <em>Proceedings of the 2018 Conference on Empirical
+Methods in Natural Language Processing: System Demonstrations</em>,
+pages 66–71, 2018.</p>
+<p>L. Gao, S. Biderman, S. Black, L. Golding, T. Hoppe, C. Foster,
+J. Phang, H. He, A. Thite, N. Nabeshima, S. Presser, and C. Leahy. The
+Pile: An 800GB dataset of diverse text for language modeling.
+<em>arXiv:2101.00027</em>, 2020.</p>
+<p>C. E. Shannon. Prediction and entropy of printed English. <em>Bell
+System Technical Journal</em>, 30(1):50–64, 1951.</p>
+<p>A. Graves. Generating sequences with recurrent neural networks.
+<em>arXiv:1308.0850</em>, 2013.</p>
+<p>G. Melis, C. Dyer, and P. Blunsom. On the state of the art of
+evaluation in neural language models. In <em>International Conference on
+Learning Representations</em>, 2018.</p>
+<p>Y. Levine, N. Wies, O. Sharir, H. Bata, and A. Shashua. The
+depth-to-width interplay in self-attention. In <em>Advances in Neural
+Information Processing Systems</em>, 2020.</p>
+<p>O. Press, N. A. Smith, and O. Levy. Improving transformer models by
+reordering their sublayers. In <em>Proceedings of the 58th Annual
+Meeting of the Association for Computational Linguistics</em>, pages
+2996–3005, 2020.</p>
+<p>Y. Tay, M. Dehghani, J. Rao, W. Fedus, S. Abnar, H. W. Chung,
+S. Narang, D. Yogatama, A. Vaswani, and D. Metzler. Scale efficiently:
+Insights from pre-training and fine-tuning transformers. In
+<em>International Conference on Learning Representations</em>, 2022.</p>
+<p>A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek,
+F. Guzm<span>á</span>n, E. Grave, M. Ott, L. Zettlemoyer, and
+V. Stoyanov. Unsupervised cross-lingual representation learning at
+scale. In <em>Proceedings of the 58th Annual Meeting of the Association
+for Computational Linguistics</em>, pages 8440–8451, 2020.</p>
+<p>S. Cahyawijaya, H. Lovenia, A. F. Aji, G. I. Winata, B. Wilie,
+R. Mahendra, C. Wibowo, A. Romiadhon, Y. Lovenia, and P. Fung.
+NusaCrowd: Open source initiative for Indonesian NLP resources. In
+<em>Findings of the Association for Computational Linguistics: ACL
+2023</em>, 2023.</p>
+<p>P. Espiritu, J. Jadie, A. Ponce, and C. Cheng. Balarila: Deep
+learning for semantic grammar error correction in low-resource settings.
+In <em>Proceedings of the First Workshop in South East Asian Language
+Processing</em>, 2023.</p>
+<p>D. J. Velasco, A. Alba, T. G. Pelagio, B. A. Ramirez, J. C. B. Cruz,
+U. Chua, B. P. Samson, and C. Cheng. Towards automatic construction of
+Filipino WordNet: Word sense induction and synset induction using
+sentence embeddings. In <em>Proceedings of the First Workshop in South
+East Asian Language Processing</em>, 2023.</p>
+<p>K. Chan, K. A. De Las Alas, C. Orcena, D. J. Velasco, Q. J. San Juan,
+and C. Cheng. Practical approaches for low-resource named entity
+recognition of Filipino telecommunications domain. In <em>Proceedings of
+the 37th Pacific Asia Conference on Language, Information and
+Computation</em>, 2023.</p>
+<p>A. J. Vicente and C. Cheng. Language identification of Philippine
+Creole Spanish: Discriminating Chavacano from related languages. In
+<em>Proceedings of the Eleventh Workshop on NLP for Similar Languages,
+Varieties and Dialects</em>, 2024.</p>
+<p>P. Espiritu, J. Jabanes, and C. Cheng. Authorship attribution in
+19th-century Philippine literature using a deep learning multi-label
+classifier. In <em>Proceedings of the 38th Pacific Asia Conference on
+Language, Information and Computation</em>, 2024.</p>
+<p>K. U. Loquinte and C. Cheng. Modified iterative matching and
+translation approach for formality style transfer in a low-resource
+setting. In <em>Proceedings of the 38th Pacific Asia Conference on
+Language, Information and Computation</em>, 2024.</p>
+<p>C. Ong and C. Cheng. Detecting AI-generated Filipino text: A
+synthetic data approach with pre-trained LLMs. In <em>2025 International
+Conference on Asian Language Processing (IALP)</em>, pages 42–47,
+2025.</p>
+<p>P. J. Marcellana and C. Cheng. Leveraging synthetic data and LLMs for
+sarcasm detection. In <em>2025 International Conference on Asian
+Language Processing (IALP)</em>, 2025.</p>
+<p>K. Tahimic and C. Cheng. Mechanistic interpretability of code
+correctness in LLMs via sparse autoencoders. <em>arXiv:2510.02917</em>,
+2025.</p>
+<p>A. J. Vicente, T. F. Amamampang, D. D. Lahaylahay, and C. Cheng.
+ChavacanoMT: A corpus and evaluation of neural machine translation for
+Philippine Creole Spanish. <em>Language Resources and Evaluation</em>,
+2026.</p>
+<p>B. A. Nosek, C. R. Ebersole, A. C. DeHaven, and D. T. Mellor. The
+preregistration revolution. <em>Proceedings of the National Academy of
+Sciences</em>, 115(11):2600–2606, 2018.</p>
+<p>J. P. Simmons, L. D. Nelson, and U. Simonsohn. False-positive
+psychology: Undisclosed flexibility in data collection and analysis
+allows presenting anything as significant. <em>Psychological
+Science</em>, 22(11):1359–1366, 2011.</p>
+<p>E.-J. Wagenmakers, R. Wetzels, D. Borsboom, H. L. van der Maas, and
+R. Kievit. An agenda for purely confirmatory research. <em>Perspectives
+on Psychological Science</em>, 7(6):632–638, 2012.</p>
+<p>M. R. Munafo, B. A. Nosek, D. V. Bishop, K. S. Button, C. D.
+Chambers, N. Percie du Sert, U. Simonsohn, E.-J. Wagenmakers, J. J.
+Ware, and J. P. A. Ioannidis. A manifesto for reproducible science.
+<em>Nature Human Behaviour</em>, 1:0021, 2017.</p>
+<p>P. Pajo. NANOCHAT-FILIPINO P1.1: WikiText-TL-39 fixed-budget depth vs
+held-out BPB. AsPredicted #306780, 15 August 2026. <a
+href="https://aspredicted.org/6r6v4v.pdf"
+class="uri">https://aspredicted.org/6r6v4v.pdf</a>.</p>
+<p>A. Karpathy. nanochat. Software repository, 2026. <a
+href="https://github.com/karpathy/nanochat"
+class="uri">https://github.com/karpathy/nanochat</a>.</p>
+</div>
+</body>
+</html>

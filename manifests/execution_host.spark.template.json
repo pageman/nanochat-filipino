@@ -1,0 +1,22 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "status": "template_only_do_not_use_until_spark_preflight_passes",
+  "rule": "Fill this on the Spark after scripts/p1/spark_host_preflight.py exits 0. Then merge into execution_host.json. Do not name the host from the Mac.",
+  "gpu_host_for_H_I": {
+    "role": "official_gate_h_and_confirmatory_gate_i",
+    "class": "nvidia_cuda",
+    "product": "NVIDIA DGX Spark",
+    "gpu": "GB10 / Blackwell — fill exact nvidia-smi name",
+    "cpu_arch": "aarch64",
+    "unified_memory_bytes": null,
+    "hostname": "FILL",
+    "os": "FILL",
+    "driver": "FILL",
+    "cuda": "FILL",
+    "torch": "FILL",
+    "torch_index": "FILL e.g. pytorch-cu128 ARM64 wheel or recorded container digest",
+    "preflight_json": "manifests/spark_host_preflight.json",
+    "named_at_utc": "FILL after preflight pass",
+    "notes": "ARM64 CUDA host. Do not modify nanochat model/dataloader/tokenizer/split/eval code to fit the device."
+  }
+}

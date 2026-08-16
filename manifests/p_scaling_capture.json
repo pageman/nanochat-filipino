@@ -1,0 +1,22 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "nanochat_commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "source_files": {
+    "base_train": "vendor/nanochat/scripts/base_train.py",
+    "gpt": "vendor/nanochat/nanochat/gpt.py"
+  },
+  "method": {
+    "P_total": "After model construction, param_counts = model.num_scaling_params(); P_total = param_counts['total']. This equals sum(p.numel() for p in model.parameters()). Logged as the 'total' row in the Parameter counts block.",
+    "P_scaling": "get_scaling_params(m) in scripts/base_train.py lines 263-267: params_counts = m.num_scaling_params(); P_scaling = params_counts['transformer_matrices'] + params_counts['lm_head']. Assigned to num_scaling_params. Embeddings (wte, value_embeds) and scalars are excluded.",
+    "R_d": "D_3x / P_scaling. Must be positive. Never pass --target-param-data-ratio=-1.",
+    "log_fields_to_copy": [
+      "Parameter counts: total",
+      "Parameter counts: transformer_matrices",
+      "Parameter counts: lm_head",
+      "Tokens : Scaling params ratio"
+    ]
+  },
+  "do_not_assume": "P_total == P_scaling",
+  "identified_at_utc": "2026-08-16T03:02:00Z",
+  "gate": "A"
+}

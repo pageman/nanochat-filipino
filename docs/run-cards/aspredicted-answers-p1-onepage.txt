@@ -1,0 +1,23 @@
+P1.1 AsPredicted ONE-PAGE cut. Replace the current boxes with these.
+Q1 radio stays: It's complicated.
+
+2)
+Does increasing nanochat depth from 8 to 20 reduce held-out Tagalog bits-per-byte (BPB) when every depth sees the same model-visible token budget D_3x = 3 * T_train on WikiText-TL-39? Prediction: val BPB falls then flattens, or the train-val gap widens. We will not claim deeper is always better. This is not a CORE, chat, or classification test.
+
+3)
+Primary DV: val_bpb_full on the held-out val split. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), nanochat token_bytes.pt, special tokens excluded; full val set after training (not --eval-tokens). Secondary: test_bpb, same formula/packing/T=2048, once, after freezing the best-val checkpoint. Selection uses val only.
+
+4)
+No human participants. Four confirmatory depths (8, 12, 16, 20), same WikiText-TL-39 package, same train-only 32768 BPE, same 70/15/15 split, T=2048, budget D_3x = 3 * T_train (actual tokens = num_iterations * total_batch_size). Native --target-param-data-ratio=12 runs, if any, are not equal-exposure comparisons.
+
+5)
+Compare val_bpb_full across the four D_3x depths. Also report the train-val BPB gap. Each trained val_bpb_full must be below (i) an untrained same-depth model and (ii) a train-fitted UTF-8 byte unigram on the same val bytes. D* = lowest val_bpb_full; test_bpb is for D* and is not used to choose D*. One seed: point estimates; ignore gaps < 0.01 BPB. Three seeds: mean and sample SD. No token-level CIs. No CORE in the confirmatory comparison.
+
+6)
+Drop a unit only if null/empty after LF-normalize, or length > 200000 characters. If drops exceed 5%, stop. Split is invalid if any exact text hash is in more than one of train/val/test. Exclude a run from the confirmatory table only for NaN/Inf BPB, non-WikiText-TL-39 data in the train dir, test file in the train dir, val/test used in tokenizer training, target-param-data-ratio=-1, or a silent change of depth/T after OOM. Do not drop a depth because BPB looks bad. d4 smoke (20-100 steps) is not confirmatory.
+
+7)
+Corpus is fixed: linkanjarad/Wikitext-TL39 data/train.parquet. No added documents. Use original 2019 splits if found; else sort sha256(utf-8 text) and take 70/15/15. T_train = BPE tokens in train after tokenizer training. Each confirmatory run: D_3x tokens, four depths, one seed. Extra seeds at 8 and 12 only if resources allow, and before looking at those seeds' test BPB.
+
+8)
+Q1: Cruz and Cheng (2019) already collected the public corpus. We have not trained the confirmatory models or computed val_bpb/test_bpb. This files the analysis plan before those outcomes exist. Secondary (not used to pick D* or the tokenizer): Tagalog vs GPT-2 bytes/token; native-ratio vs D_3x corpus passes; d8/d12 D_1x pilots. Exploratory: clean ablation, Moses detok, other vocabs, d24, D_10x, CORE, downstream tasks. Canonical text is the source (no detokenize). Test data stay outside the train directory.

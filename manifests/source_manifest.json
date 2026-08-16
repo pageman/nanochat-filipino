@@ -1,0 +1,33 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "B",
+  "dataset_id": "linkanjarad/Wikitext-TL39",
+  "source_file": "data/train.parquet",
+  "source_url": "https://huggingface.co/datasets/linkanjarad/Wikitext-TL39/resolve/main/data/train.parquet",
+  "local_path": "data/raw/wikitext-tl39/train.parquet",
+  "huggingface_revision_sha": "7c1a76c2c1864abf434453e312f034d0cf211fff",
+  "downloaded_at_utc": "2026-08-16T03:02:43Z",
+  "checked_at_utc": "2026-08-16T03:03:23Z",
+  "bytes": 119483881,
+  "sha256": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+  "magic": "PAR1",
+  "num_rows": 1524071,
+  "num_row_groups": 1,
+  "schema": ["text"],
+  "text_type": "string",
+  "legacy_s3_url": "https://s3.us-east-2.amazonaws.com/blaisecruz.com/datasets/wikitext-tl-39/wikitext-tl-39.zip",
+  "legacy_s3_status": 404,
+  "legacy_s3_role": "historical context only; not an alternative source",
+  "integrity": {
+    "B1_exists": true,
+    "B2_magic": true,
+    "B3_size": true,
+    "B4_rows": true,
+    "B5_schema": true,
+    "B6_empty_rate": 0.0,
+    "B7_tagalog_sniff_rate": 0.943,
+    "B8_moses_sample_rate": 0.272
+  },
+  "immutable": true,
+  "notes": "Single public train split. Original 2019 train/val/test files were not part of this download. Gate D will attempt recovery separately."
+}

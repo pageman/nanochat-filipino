@@ -1,0 +1,51 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "run_id": "p1-20260816T025911Z-0067a57",
+  "gate": "J",
+  "status": "pass",
+  "started_at_utc": "2026-08-16T07:50:27Z",
+  "ended_at_utc": "2026-08-16T07:59:01Z",
+  "operator_or_job": "Paul Pajo / Runpod 68bei7d3vx4krc",
+  "selection_rule": "exact_minimum_final_val_bpb_full",
+  "evaluation_checkpoint_rule": "final_checkpoint_at_fixed_budget",
+  "test_selection_source": "validation_only",
+  "checkpoint_step": 294,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "device_batch_size": 8,
+  "max_seq_len": 2048,
+  "untrained_seed": 0,
+  "byte_unigram_val_bpb": 4.45322529848965,
+  "val_bpb_full": {
+    "8": 1.179134743718777,
+    "12": 1.180823927886072,
+    "16": 1.1955463669138386,
+    "20": 1.172247965803217
+  },
+  "train_bpb_full": {
+    "8": 0.8367023539971217,
+    "12": 0.5288177282371906,
+    "16": 0.45804527986583565,
+    "20": 0.6723927158066969
+  },
+  "val_minus_train_gap_bpb": {
+    "8": 0.3424323897216553,
+    "12": 0.6520061996488814,
+    "16": 0.7375010870480029,
+    "20": 0.4998552499965201
+  },
+  "all_depths_baseline_pass": true,
+  "D_star": 20,
+  "D_star_model_tag": "p1-fixed-d20-3x",
+  "D_star_val_bpb_full": 1.172247965803217,
+  "D_star_margin_to_next": 0.006886777915559916,
+  "practically_indistinguishable_0.01": true,
+  "test_bpb": 1.164768333672231,
+  "test_read_count": 1,
+  "test_jsonl_sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+  "artifacts": [
+    "artifacts/p1/p1-20260816T025911Z-0067a57/gate-j/val_baselines_summary.json",
+    "artifacts/p1/p1-20260816T025911Z-0067a57/gate-j/p1-fixed-d20-3x_test_bpb.json",
+    "scripts/p1/gate_j_full_bpb.py"
+  ],
+  "notes": "Official evaluate_bpb on one-pass BOS-bestfit packed splits. Card-eval 262144-token val BPB is not the primary DV. D* is d20 by exact minimum; margin to d8 is 0.0069 BPB so one-seed interpretation treats them as practically indistinguishable. Test was read once after selection from an isolated path, not the active train directory."
+}

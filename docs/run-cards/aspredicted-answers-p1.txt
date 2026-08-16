@@ -1,0 +1,111 @@
+P1.1 AsPredicted PASTE PACK
+Source of style: https://datacolada.org/64 (short, specific, only p-hackable decisions)
+Form note: Q1 "Yes" is not an accepted answer. Use "It's complicated."
+ASCII only. Do not start confirmatory (fixed-data d8+) training before submit.
+
+================================================================
+1) Data collection
+================================================================
+SELECT THIS RADIO BUTTON:
+
+  It's complicated. We have already collected some data but explain
+  in Question 8 why readers may consider this a valid pre-registration
+  nevertheless.
+
+Do NOT select Yes (form rejects it).
+Do NOT select No (the WikiText-TL-39 corpus already exists).
+
+================================================================
+2) Hypothesis
+================================================================
+We are testing whether, on the public WikiText-TL-39 Tagalog corpus, a deeper nanochat GPT gets a lower held-out bits-per-byte (BPB) when depth is the only intended difference.
+
+Main question: Does increasing transformer depth from 8 to 20 reduce held-out Tagalog BPB when every depth is trained on the same number of model-visible tokens?
+
+Prediction: Under a fixed budget D_3x = 3 * T_train (T_train = BPE token count of the training split after we train a 32768-vocabulary tokenizer on train documents only), validation BPB will fall from depth 8 to a minimum somewhere in {8, 12, 16, 20}, then flatten or the train-validation BPB gap will widen. We will not claim "deeper is always better."
+
+This question is about the fixed-budget depth comparison only. It is not a test of English DCLM CORE, chat ability, dengue/hate-speech accuracy, or a native nanochat --target-param-data-ratio=12 run (those native-horizon runs, if done, are not treated as the same experiment because they can see the small corpus many more times).
+
+Falsification: larger depths keep improving held-out BPB at D_3x with no increase in the train-validation gap.
+
+================================================================
+3) Dependent variable
+================================================================
+Primary DV: validation bits-per-byte (val_bpb_full) on the held-out validation split. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), using nanochat token_bytes.pt, special tokens excluded. Computed on the full validation set after training (not the truncated in-training --eval-tokens stream).
+
+Secondary confirmatory DV: test_bpb, same formula, packing, sequence length (2048), and stride as validation. Computed once, after the checkpoint with the best val_bpb_full is frozen. Checkpoint selection uses validation only.
+
+================================================================
+4) Conditions
+================================================================
+No human participants. The manipulated factor is model depth.
+
+Confirmatory between-run conditions: four depths (8, 12, 16, 20), each trained with official nanochat base_train on the same WikiText-TL-39 package, same train-only 32768 BPE tokenizer, same reconstructed-or-recovered 70/15/15 split, sequence length 2048, and the same token budget D_3x = 3 * T_train (T_train measured after tokenizer training; actual tokens = num_iterations * total_batch_size).
+
+A native-horizon family that uses nanochat default --target-param-data-ratio=12 is a compatibility condition and will not be treated as equal data exposure.
+
+================================================================
+5) Analyses
+================================================================
+For each confirmatory depth, compute val_bpb_full. The primary comparison is val_bpb_full across depths 8, 12, 16, and 20 at D_3x. We will also report the train-val BPB gap at the same step.
+
+We will compare each trained val_bpb_full to (i) an untrained same-depth model and (ii) a UTF-8 byte-unigram fitted on train text only, both on the same validation bytes. The trained model must be lower than both.
+
+D* is the depth with the lowest val_bpb_full. test_bpb is computed only for D* (and we may also report test_bpb for all four depths, but we will not choose D* using test).
+
+With one seed, we report point estimates only. Differences smaller than 0.01 BPB are not interpreted. If three seeds are run at a depth, we report mean and sample SD. If per-document NLL and byte totals are stored, we will report a document-level bootstrap 95% interval (1000 resamples). We will not use token-level CIs.
+
+English DCLM CORE will not be used in the confirmatory comparison.
+
+================================================================
+6) Outliers and Exclusions
+================================================================
+Drop a document/row before training only if it is null or empty after converting line endings to LF, or if character length is greater than 200,000. If more than 5% of units are dropped, we stop and do not train.
+
+A split is invalid if any exact text hash appears in more than one of train/val/test. Near-duplicates are reported, not removed.
+
+A trained run is excluded from the confirmatory table only if: val_bpb is NaN or Inf; ClimbMix or other non-WikiText-TL-39 shards were in the training directory; the test file was in the active training directory; validation or test text was used to train the tokenizer; --target-param-data-ratio was set to -1; or depth or sequence length was changed after an OOM without a new run id.
+
+We will not drop a depth because its BPB looks bad. A d4 smoke run (20-100 steps) is not a confirmatory observation.
+
+================================================================
+7) Sample Size
+================================================================
+The corpus is the public WikiText-TL-39 Hugging Face parquet (linkanjarad/Wikitext-TL39, data/train.parquet). We will not add more documents.
+
+If the original 2019 train/val/test files are found, we use those. Otherwise we assign units by sorting sha256(utf-8 text) lexicographically and taking 70% train, 15% validation, 15% test.
+
+T_train is the BPE token count of the training split after tokenizer training. Each confirmatory run trains for D_3x = 3 * T_train model-visible tokens (num_iterations = ceil(D_3x / total_batch_size)).
+
+We will run four confirmatory depths (8, 12, 16, 20), one seed each. If resources allow, we will add two more seeds at depths 8 and 12 only, before looking at those extra seeds' test BPB.
+
+================================================================
+8) Other
+================================================================
+Q1 explanation: The text corpus was collected by Cruz and Cheng (2019) and is public. We have not trained the confirmatory models or computed val_bpb or test_bpb. This registration is filed before those outcomes exist. That is why we treat it as a valid pre-registration of the analysis, not of data collection.
+
+Secondary (not used to pick D* or the tokenizer): (a) bytes/token of the Tagalog 32768 tokenizer vs GPT-2 on the same held-out text; (b) approximate corpus passes under native ratio=12 vs D_3x; (c) d8/d12 pilots at D_1x.
+
+Exploratory, not confirmatory: clean-data ablation, Moses detokenization, vocab 16k/64k, d24, D_10x, English CORE, downstream classification.
+
+We will not set --target-param-data-ratio=-1. Test data stay outside the training directory. Canonical text preserves the source (no detokenize).
+
+================================================================
+9) Name
+================================================================
+NANOCHAT-FILIPINO P1.1 - WikiText-TL-39 fixed-budget depth vs held-out BPB
+
+================================================================
+10) Type of study
+================================================================
+SELECT: Observational/archival study
+
+(Do not select Experiment, Survey, or Class project.)
+
+================================================================
+11) Data source
+================================================================
+SELECT: Other
+
+IF A TEXT BOX APPEARS, PASTE:
+Public Hugging Face dataset linkanjarad/Wikitext-TL39 (WikiText-TL-39; Cruz and Cheng 2019)

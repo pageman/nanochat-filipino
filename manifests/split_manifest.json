@@ -1,0 +1,48 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "D",
+  "status": "pass",
+  "checked_at_utc": "2026-08-16T03:10:44Z",
+  "historical_split_recovered": false,
+  "split_name": "reconstructed_article_70_15_15",
+  "split_unit": "article",
+  "assignment_rule": "lexicographic_sha256_utf8_70_15_15",
+  "seed_used": null,
+  "n_canonical_article_lines": 120971,
+  "n_unique_text_hashes": 53718,
+  "duplicate_article_texts_collapsed": 67253,
+  "note_uniques": "Split identity is sha256(utf-8 canonical article text). Identical texts collapse to one unit. Near-duplicates were not removed.",
+  "recovery": {
+    "result": "not_recovered",
+    "hf_linkanjarad_files": [".gitattributes", "README.md", "data/train.parquet"],
+    "legacy_s3": 404,
+    "seacrowd_still_points_at_dead_s3_zip": true
+  },
+  "paths": {
+    "train": "data/interim/wikitext-tl39/splits/train.jsonl",
+    "val": "data/interim/wikitext-tl39/splits/val.jsonl",
+    "test": "data/processed/wikitext-tl39/test/test.jsonl",
+    "test_manifest": "data/processed/wikitext-tl39/test/test_manifest.json",
+    "active_training_dir": "data/processed/wikitext-tl39/active"
+  },
+  "file_sha256": {
+    "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+    "val": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+    "test": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+  },
+  "stats": {
+    "train": {"n_units": 37602, "unit_fraction": 0.6999888305595889, "n_chars": 29165137, "char_fraction": 0.6913484284182053, "n_bytes": 29165137},
+    "val": {"n_units": 8058, "unit_fraction": 0.15000558472020553, "n_chars": 6771275, "char_fraction": 0.16051048653183023, "n_bytes": 6771275},
+    "test": {"n_units": 8058, "unit_fraction": 0.15000558472020553, "n_chars": 6249461, "char_fraction": 0.14814108504996448, "n_bytes": 6249461}
+  },
+  "checks": {
+    "D1_exact_set_intersection": 0,
+    "D2_exact_hash_overlap": 0,
+    "D3_identical_title_overlap": {"train_val": 17, "train_test": 13, "val_test": 5},
+    "D3_note": "Letter-index titles such as '= A =' overlap; texts do not. Registered hard stop is exact text-hash overlap, which is zero.",
+    "D4_unit_ratio_in_band": true,
+    "D5_char_ratio_in_band": true
+  },
+  "test_chmod": "0444",
+  "test_read_events": 0
+}

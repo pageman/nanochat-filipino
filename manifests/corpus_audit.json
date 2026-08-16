@@ -1,0 +1,51 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "C",
+  "status": "pass",
+  "checked_at_utc": "2026-08-16T03:07:11Z",
+  "source_sha256_verified": "706d706496e3a085cf4506f97aa8b03faa20d4773d69453eaab4e3ca8f33caf9",
+  "raw_writable": false,
+  "canonical_normalization": "LF line endings only; no detokenize, NFC, language filter, or dedup",
+  "registered_drop_rule": "null/empty after LF-normalize, or length > 200000 characters",
+  "n_rows": 1524071,
+  "n_null": 0,
+  "n_empty_after_lf": 0,
+  "n_overlength": 0,
+  "n_kept": 1524071,
+  "registered_drops": 0,
+  "registered_drop_rate": 0.0,
+  "n_short_lt_40_kept": 198883,
+  "length_chars": {
+    "min": 1,
+    "median": 117,
+    "mean": 136.86611778585117,
+    "p95": 306,
+    "max": 7645
+  },
+  "n_header_rows": 120971,
+  "header_row_fraction": 0.0793735987365418,
+  "moses_marker_row_fraction": 0.2654561368860112,
+  "canary_sha256_first_last_100_nonempty": "ddce068a726eac1cbd3eba6c6544a32d3d76f9b44b55bb826afd6ae9a0245161",
+  "exact_duplicate_groups": 157945,
+  "exact_duplicate_extra_copies": 1205434,
+  "near_duplicate_removal": false,
+  "reconstruction": {
+    "heading_regex": "(?m)^= [^=\\n][^\\n]*? =$",
+    "n_article_candidates": 120971,
+    "table1_train_documents": 120975,
+    "n_preamble_rows": 0,
+    "invariants_all_true": true,
+    "reconstruction_ok": true,
+    "canonical_split_unit_recommendation": "article",
+    "split_not_created": true
+  },
+  "moses_census": {
+    "T_moses_total": 36562228,
+    "table1_train_moses": 39267089,
+    "ratio_to_table1_train": 0.93111633510699,
+    "status": "ok"
+  },
+  "canonical_jsonl": "data/interim/wikitext-tl39/documents_canonical.jsonl",
+  "canonical_jsonl_sha256": "aec6da3c8fadf2243c1ea3545289d9f651cd0c2a9e95adcaf8e340dde051d652",
+  "full_stats": "artifacts/p1/p1-20260816T025911Z-0067a57/corpus_row_stats.json"
+}
