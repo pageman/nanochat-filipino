@@ -8,6 +8,7 @@ Clean-room experiments that train Tagalog / Filipino language models with [Karpa
 **Charter:** [configs/project1.yaml](configs/project1.yaml)  
 **What changed vs P1.0:** [docs/RECONCILE-p1.1.md](docs/RECONCILE-p1.1.md)  
 **Implementation plan folded in:** [docs/SOURCE-implementation-plan-2026-08-16.md](docs/SOURCE-implementation-plan-2026-08-16.md)  
+**Paper:** https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39  
 **AsPredicted #306780:** https://aspredicted.org/6r6v4v.pdf (anonymous)  
 **ResearchBox #8735:** https://researchbox.org/8735  
 **Results:** [docs/run-cards/RESULTS-p1.1-aspredicted-306780.md](docs/run-cards/RESULTS-p1.1-aspredicted-306780.md)  

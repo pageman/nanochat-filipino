@@ -14,6 +14,7 @@ datasets:
 
 # Model card — `p1-fixed-d20-3x`
 
+**Paper:** https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39  
 **Code:** https://github.com/pageman/nanochat-filipino
 
 **Intended use:** research base language model for Tagalog Wikipedia-style text. Primary reported number is held-out bits-per-byte on WikiText-TL-39 (`reconstructed_article_70_15_15`).
@@ -30,6 +31,6 @@ datasets:
 
 **Carbon / compute:** one A40 at $0.44/hr; the four-depth seed-0 series was under 0.5 GPU-hours of training. Extra seeds and pilots are separate.
 
-**Citations:** Cruz & Cheng (2019), arXiv:1907.00409; Karpathy nanochat; AsPredicted #306780. Study repository: https://github.com/pageman/nanochat-filipino
+**Citations:** Pajo (2026), https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39; Cruz & Cheng (2019), arXiv:1907.00409; Karpathy nanochat; AsPredicted #306780. Study repository: https://github.com/pageman/nanochat-filipino
 
 **License:** Hub field is `other`. These are research checkpoints trained on WikiText-TL-39 (Wikipedia-derived Tagalog text). This is not a legal clearance; check the source dataset and nanochat terms before reuse.
