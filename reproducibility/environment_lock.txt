@@ -1,0 +1,10 @@
+study_id: NANOCHAT-FILIPINO-P1.1
+run_id: p1-20260816T025911Z-0067a57
+nanochat_commit: 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+data_dir_hook: patches/nanochat-NANOCHAT_DATA_DIR.patch
+container_image: runpod/pytorch:1.0.3-cu1281-torch291-ubuntu2404
+torch: 2.9.1+cu128
+official_host: Runpod Secure A40 48GB, EU-SE-1, pod 68bei7d3vx4krc, name p1-gate-i
+evaluator: scripts/p1/gate_j_full_bpb.py
+primary_metric: val_bpb_full via official evaluate_bpb, BOS-bestfit, T=2048
+not_primary: checkpoint metadata val_bpb (eval_tokens=262144)

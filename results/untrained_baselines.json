@@ -1,0 +1,48 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "registration": "AsPredicted #306780",
+  "purpose": "Same-depth untrained validation BPB required by AsPredicted Q5. Not used to select D*.",
+  "untrained_seed": 0,
+  "checkpoint_step": 294,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "sequence_len": 2048,
+  "note": "These are official evaluate_bpb full-split values. They are not the 262144-token training-loop val_bpb stored in checkpoint metadata.",
+  "depths": {
+    "8": {
+      "model_tag": "p1-fixed-d8-3x",
+      "architecture": "nanochat depth 8",
+      "val_bpb_untrained": 3.2891086622190406,
+      "total_nats": 13379897.0,
+      "total_bytes": 5868797,
+      "n_scored_tokens": 1286864,
+      "n_excluded_positions": 7472
+    },
+    "12": {
+      "model_tag": "p1-fixed-d12-3x",
+      "architecture": "nanochat depth 12",
+      "val_bpb_untrained": 3.289357928426657,
+      "total_nats": 13380911.0,
+      "total_bytes": 5868797,
+      "n_scored_tokens": 1286864,
+      "n_excluded_positions": 7472
+    },
+    "16": {
+      "model_tag": "p1-fixed-d16-3x",
+      "architecture": "nanochat depth 16",
+      "val_bpb_untrained": 3.28935399523206,
+      "total_nats": 13380895.0,
+      "total_bytes": 5868797,
+      "n_scored_tokens": 1286864,
+      "n_excluded_positions": 7472
+    },
+    "20": {
+      "model_tag": "p1-fixed-d20-3x",
+      "architecture": "nanochat depth 20",
+      "val_bpb_untrained": 3.289105958147755,
+      "total_nats": 13379886.0,
+      "total_bytes": 5868797,
+      "n_scored_tokens": 1286864,
+      "n_excluded_positions": 7472
+    }
+  }
+}

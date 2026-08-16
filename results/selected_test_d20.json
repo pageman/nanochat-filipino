@@ -1,0 +1,33 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P1.1",
+  "gate": "J",
+  "phase": "test",
+  "evaluated_at_utc": "2026-08-16T07:59:01Z",
+  "model_tag": "p1-fixed-d20-3x",
+  "checkpoint_step": 294,
+  "test_jsonl_sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+  "test_parquet_sha256": "a2bc5b0be97cadd1b835fb3a435fa0cd61cd2b92ca909f16adb4d47c70bbaff0",
+  "test_read_count": 1,
+  "test_bpb": 1.164768333672231,
+  "components": {
+    "bpb": 1.164768333672231,
+    "total_nats": 4383024.5,
+    "total_bytes": 5428863,
+    "n_scored_tokens": 1198803,
+    "n_excluded_positions": 13613,
+    "finite": true,
+    "n_source_docs": 8058,
+    "n_rows": 589,
+    "n_batches": 74,
+    "n_docs_packed": 8058,
+    "n_cropped_fills": 274,
+    "n_padded_positions": 6147,
+    "device_batch_size": 8,
+    "sequence_len": 2048,
+    "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+    "stride": "non_overlapping_T_official_bos_bestfit",
+    "label": "p1-fixed-d20-3x/test",
+    "wall_sec": 21.021122217178345
+  },
+  "note": "Single confirmatory test read after validation-only D* selection. Not used to choose D*."
+}
