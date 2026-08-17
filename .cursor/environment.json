@@ -1,0 +1,4 @@
+{
+  "name": "nanochat-filipino (CPU dev/verification)",
+  "install": "bash scripts/setup_cloud_env.sh"
+}
