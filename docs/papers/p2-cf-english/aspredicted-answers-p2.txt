@@ -1,0 +1,97 @@
+P2 AsPredicted PASTE PACK — 2-PAGE CUT (file this)
+AsPredicted rejects 3 pages. These Q2-Q8 keep the five review fixes.
+Do NOT amend #306780. Q1 radio stays: It's complicated.
+Title stays: P2: EN retention after TL continuation (nanochat, WikiText-103 then TL-39)
+Independent stays. Type: Observational/archival. Data source: Other (unchanged sentence).
+
+Protocol SHA256 da7ac07b86d097770c10e76c79f0534d6c609ceea71baabcf587a4fcd01bc0e8
+Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+
+================================================================
+2) Hypothesis
+================================================================
+After EN0 (WikiText-103 nanochat) passes P0-E, does frozen P1.1 Tagalog continuation raise English held-out BPB more than matched extra English?
+
+C_en = English val_bpb_full(A2) - English val_bpb_full(A1). Predict C_en >= 0.01 at d20. C_en is the declared Tagalog stream vs the declared extra-English stream (equal model-visible tokens), not pure language identity.
+
+G_tl = Tagalog val_bpb_full(A2) - Tagalog val_bpb_full(A1). Predict G_tl <= -0.01. A0 to A2 Tagalog change is descriptive only.
+
+A3 is a 50/50 document mix trade-off arm, not token-equated mitigation. Report C_en(A3) and G_tl(A3) with realized document/byte/token shares. Smaller C_en alone is not mitigation.
+
+P0-E, before any Tagalog train token: EN0 English val_bpb_full is >= 0.01 below both an untrained same-depth model and a train-fitted add-one UTF-8 byte unigram on the same WT103 val bytes. If either fails, do not call the parent English-pretrained and do not interpret A2 as CF.
+
+Do not claim P1.1 d20 forgot English. Do not load P1.1 weights as parent. Not CORE/chat/SFT. Does not amend #306780.
+
+================================================================
+3) Dependent variable
+================================================================
+Primary DVs: English val_bpb_full on WT103-raw val; Tagalog val_bpb_full on frozen P1.1 reconstructed_article_70_15_15 val. Same English 32768 BPE. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), official evaluate_bpb (copy of P1.1 gate_j_full_bpb.py), T=2048, BOS-bestfit, full val (not --eval-tokens).
+
+Contrasts at d20 val: C_en and G_tl as in Q2; A3 vs A1 the same way. Report unique documents, canonical bytes, unique BPE tokens, and revisit/epoch for A1/A2/A3 (not used to pick arms).
+
+After d20 val is sealed, evaluate A2 d20 only once on official WT103-raw English test and once on frozen P1.1 test.jsonl (P2 English BPE). These are secondary treatment outcomes, not test-set C_en/G_tl (A1 is not tested), and do not select anything. P1.1 test.jsonl is a legacy external holdout, not a virgin P2 test. Do not reuse P1.1 test_bpb=1.164768.
+
+================================================================
+4) Conditions
+================================================================
+No human participants. Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd; tok_train -> base_train -> evaluate_bpb; T=2048; CORE off. No HF Trainer, llama.cpp, or python -m nanochat.dataset.
+
+EN0: WT103-raw, English 32768 BPE, d8 and d20, D_3x_en = 3*T_en_train, N_EN0 = ceil(D_3x_en/65536), final ckpt.
+
+A0: freeze EN0 d20. A1/A2/A3 required at d20 only from EN0 d20. d8 continuation is exploratory.
+
+A1: extra English, official WT103-raw train. A2: frozen P1.1 Tagalog train. A3: 50/50 documents, not tokens. Freeze mix before any EN0 val_bpb_full: seed 42, sha256-sort each language, take K=min(n_en,n_tl), interleave EN/TL, cycle, pack to D_phase2. Report realized shares.
+
+D_phase2 = 294*65536 = 19267584 English-BPE tokens. Fresh Adam. LR peak = 0.3*EN0 peak. Warmup < N (default 14 if 14<N). Never load P1.1 model_000294.pt.
+
+================================================================
+5) Analyses
+================================================================
+P0-E at d8 and d20 before any Tagalog train token (untrained and byte-unigram floors, 0.01). If P0-E fails, stop the CF claim.
+
+Primary contrasts at d20 final val only: C_en and G_tl. A0 Tagalog val is descriptive. A3: report C_en(A3), G_tl(A3), mix shares; do not call smaller C_en mitigation.
+
+One seed: point estimates only. No seed interval, token-level CI, or significance test. |C_en| or |G_tl| < 0.01 is not a ranking. 0.01 is a practical cutoff. No CORE in the confirmatory comparison. A2 English trajectory is descriptive. 1/5/10% replay, FilBench, EWC, tokenizer swap, CORE/SFT are exploratory.
+
+================================================================
+6) Outliers and Exclusions
+================================================================
+Drop a unit only if null/empty after LF, or length > 200000 chars; if drops > 5%, stop. Official WT103-raw splits. Frozen P1.1 Tagalog train SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687. Split invalid if any exact hash is in more than one of train/val/test per language.
+
+Exclude a run only for: NaN/Inf; ClimbMix; val/test in train dir; new tokenizer after BPB; ratio -1; HF Trainer; writing into p1-fixed-d20-3x; loading P1.1 model_000294.pt; P0-E-fail called English-pretrained; P1.1 test_bpb reused as A2; attention patch; warmup >= iterations.
+
+Do not drop an arm because C_en or G_tl looks bad. Do not relabel A3 as mitigation after seeing shares. d4 smoke is not confirmatory.
+
+================================================================
+7) Sample Size
+================================================================
+English: Salesforce/wikitext, wikitext-103-raw-v1, official splits, no added docs. Tagalog: frozen P1.1 reconstructed_article_70_15_15 train, no rebuild.
+
+EN0: one seed, d8 and d20, N_EN0 = ceil(3*T_en_train/65536), B=65536, T=2048.
+
+A1/A2/A3: one seed each at d20, N=294, D_phase2=19267584. d8 continuation exploratory.
+
+After d20 val seal: test A2 d20 only, one English WT103-raw test_bpb and one Tagalog P1.1 test.jsonl BPB (P2 English BPE), P2 test-access log. A1 is not test-evaluated.
+
+================================================================
+8) Other
+================================================================
+Q1: P1.1 corpus and P1.1 outcomes exist. No P2 EN0/A1/A2/A3 or P2 English-BPE evaluation outcome has been computed.
+
+New study. Does not amend #306780. Reuses frozen P1.1 Tagalog files as documented inputs; does not reuse P1.1 confirmatory BPB as P2 observations.
+
+Descriptive: unique docs/bytes/tokens/epochs; A2 English trajectory; PTPP R_d; fertility; P1.1 d20 on English UTF-8 as never-trained-on-English OOD (not BWT).
+
+Exploratory: d8 A1/A2/A3; 1/5/10% replay; FilBench; EWC; tokenizer swap; CORE; SFT; Spark/MPS.
+
+Protocol SHA256 da7ac07b86d097770c10e76c79f0534d6c609ceea71baabcf587a4fcd01bc0e8. Pin 92d63d4. Test files stay outside train dirs.
+
+================================================================
+9) Name (unchanged, 74 chars)
+================================================================
+P2: EN retention after TL continuation (nanochat, WikiText-103 then TL-39)
+
+================================================================
+11) Data source Other text (unchanged)
+================================================================
+WikiText-103 raw (Merity et al. 2016; Salesforce/wikitext, wikitext-103-raw-v1). Frozen P1.1 WikiText-TL-39 train (Cruz and Cheng 2019; reconstructed_article_70_15_15). P1.1 weights are a Tagalog-from-scratch reference, not the CF parent.

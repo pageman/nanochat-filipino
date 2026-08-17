@@ -1,0 +1,305 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "gate": "B",
+  "status": "pass",
+  "at_utc": "2026-08-17T15:13:38Z",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "dataset_id": "Salesforce/wikitext",
+  "config": "wikitext-103-raw-v1",
+  "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "hf_last_modified": "2024-01-04T16:49:18.000Z",
+  "citation": "Merity et al. 2016, arXiv:1609.07843",
+  "license_card": [
+    "cc-by-sa-3.0",
+    "gfdl",
+    "HF README also states CC BY-SA 4.0"
+  ],
+  "source_rule": "PDF names Hugging Face Salesforce/wikitext config wikitext-103-raw-v1 official splits. Not WikiText-2. Not wikitext-103-v1 word-level. Not WikiText-TL-39.",
+  "raw_dir": "data/raw/wikitext-103-raw",
+  "files": [
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/test-00000-of-00001.parquet",
+      "split": "test",
+      "bytes": 732610,
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "num_rows": 4358,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00000-of-00002.parquet",
+      "split": "train",
+      "bytes": 156987808,
+      "sha256": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+      "num_rows": 900675,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00001-of-00002.parquet",
+      "split": "train",
+      "bytes": 157088770,
+      "sha256": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+      "num_rows": 900675,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/validation-00000-of-00001.parquet",
+      "split": "validation",
+      "bytes": 657209,
+      "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "num_rows": 3760,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    }
+  ],
+  "split_rows": {
+    "train": 1801350,
+    "validation": 3760,
+    "test": 4358
+  },
+  "expected_rows": {
+    "train": 1801350,
+    "validation": 3760,
+    "test": 4358
+  },
+  "wc_c_bytes": {
+    "test-00000-of-00001.parquet": 732610,
+    "train-00000-of-00002.parquet": 156987808,
+    "train-00001-of-00002.parquet": 157088770,
+    "validation-00000-of-00001.parquet": 657209
+  },
+  "surface_audit": {
+    "nonempty_rows": 1170381,
+    "empty_rows": 639087,
+    "rows_with_unk": 0,
+    "unk_rate": 0.0,
+    "rows_with_at_hyphen": 410505,
+    "rows_with_at_comma": 69460,
+    "article_header_rows": 29566,
+    "note": "WikiText-103 raw is not Moses-tokenized like WikiText-TL-39. Residual @-@/@,@ can still appear in the HF raw dump; <unk> rate must stay low or the file is the word-level variant.",
+    "samples": [
+      " Robert Boulter is an English film , television and theatre actor . He had a guest @-@ starring role on the television series The Bill in 2000 . This was followed by a starring role in the play Herons written by Simon Stephens , which was p",
+      " In 2006 , Boulter starred alongside Whishaw in the play Citizenship written by Mark Ravenhill . He appeared on a 2006 episode of the television series , Doctors , followed by a role in the 2007 theatre production of How to Curse directed b",
+      " In 2000 Boulter had a guest @-@ starring role on the television series The Bill ; he portrayed \" Scott Parry \" in the episode , \" In Safe Hands \" . Boulter starred as \" Scott \" in the play Herons written by Simon Stephens , which was perfo",
+      " He had a recurring role in 2003 on two episodes of The Bill , as character \" Connor Price \" . In 2004 Boulter landed a role as \" Craig \" in the episode \" Teddy 's Story \" of the television series The Long Firm ; he starred alongside actors",
+      " In 2006 Boulter starred in the play Citizenship written by Mark Ravenhill . The play was part of a series which featured different playwrights , titled Burn / Chatroom / Citizenship . In a 2006 interview , fellow actor Ben Whishaw identifi",
+      " Boulter starred in two films in 2008 , Daylight Robbery by filmmaker Paris Leonti , and Donkey Punch directed by Olly Blackburn . Boulter portrayed a character named \" Sean \" in Donkey Punch , who tags along with character \" Josh \" as the ",
+      " Du Fu ( Wade \u2013 Giles : Tu Fu ; Chinese : \u675c\u752b ; 712 \u2013 770 ) was a prominent Chinese poet of the Tang dynasty . Along with Li Bai ( Li Po ) , he is frequently called the greatest of the Chinese poets . His greatest ambition was to serve his c",
+      " Although initially he was little @-@ known to other writers , his works came to be hugely influential in both Chinese and Japanese literary culture . Of his poetic writing , nearly fifteen hundred poems have been preserved over the ages . "
+    ]
+  },
+  "did_not_mix_into_wikitext_tl39": true,
+  "did_not_download_climbmix_fineweb_dclm": true,
+  "checks": [
+    {
+      "id": "B1_three_splits_four_files",
+      "ok": true,
+      "detail": [
+        "test-00000-of-00001.parquet",
+        "train-00000-of-00002.parquet",
+        "train-00001-of-00002.parquet",
+        "validation-00000-of-00001.parquet"
+      ]
+    },
+    {
+      "id": "B2_no_wikitext2",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "B3_no_wordlevel_v1_dir",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "B4_no_tagalog_parquet_in_english_dir",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "exists_test-00000-of-00001.parquet",
+      "ok": true,
+      "detail": "/Users/paulpajo/Projects/nanochat-filipino/data/raw/wikitext-103-raw/wikitext-103-raw-v1/test-00000-of-00001.parquet"
+    },
+    {
+      "id": "bytes_test-00000-of-00001.parquet",
+      "ok": true,
+      "detail": {
+        "stat": 732610,
+        "expected": 732610
+      }
+    },
+    {
+      "id": "sha256_test-00000-of-00001.parquet",
+      "ok": true,
+      "detail": {
+        "got": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+        "expected_lfs_oid": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91"
+      }
+    },
+    {
+      "id": "parquet_magic_test-00000-of-00001.parquet",
+      "ok": true,
+      "detail": "PAR1"
+    },
+    {
+      "id": "text_col_test-00000-of-00001.parquet",
+      "ok": true,
+      "detail": [
+        "text"
+      ]
+    },
+    {
+      "id": "exists_train-00000-of-00002.parquet",
+      "ok": true,
+      "detail": "/Users/paulpajo/Projects/nanochat-filipino/data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00000-of-00002.parquet"
+    },
+    {
+      "id": "bytes_train-00000-of-00002.parquet",
+      "ok": true,
+      "detail": {
+        "stat": 156987808,
+        "expected": 156987808
+      }
+    },
+    {
+      "id": "sha256_train-00000-of-00002.parquet",
+      "ok": true,
+      "detail": {
+        "got": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+        "expected_lfs_oid": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212"
+      }
+    },
+    {
+      "id": "parquet_magic_train-00000-of-00002.parquet",
+      "ok": true,
+      "detail": "PAR1"
+    },
+    {
+      "id": "text_col_train-00000-of-00002.parquet",
+      "ok": true,
+      "detail": [
+        "text"
+      ]
+    },
+    {
+      "id": "exists_train-00001-of-00002.parquet",
+      "ok": true,
+      "detail": "/Users/paulpajo/Projects/nanochat-filipino/data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00001-of-00002.parquet"
+    },
+    {
+      "id": "bytes_train-00001-of-00002.parquet",
+      "ok": true,
+      "detail": {
+        "stat": 157088770,
+        "expected": 157088770
+      }
+    },
+    {
+      "id": "sha256_train-00001-of-00002.parquet",
+      "ok": true,
+      "detail": {
+        "got": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+        "expected_lfs_oid": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720"
+      }
+    },
+    {
+      "id": "parquet_magic_train-00001-of-00002.parquet",
+      "ok": true,
+      "detail": "PAR1"
+    },
+    {
+      "id": "text_col_train-00001-of-00002.parquet",
+      "ok": true,
+      "detail": [
+        "text"
+      ]
+    },
+    {
+      "id": "exists_validation-00000-of-00001.parquet",
+      "ok": true,
+      "detail": "/Users/paulpajo/Projects/nanochat-filipino/data/raw/wikitext-103-raw/wikitext-103-raw-v1/validation-00000-of-00001.parquet"
+    },
+    {
+      "id": "bytes_validation-00000-of-00001.parquet",
+      "ok": true,
+      "detail": {
+        "stat": 657209,
+        "expected": 657209
+      }
+    },
+    {
+      "id": "sha256_validation-00000-of-00001.parquet",
+      "ok": true,
+      "detail": {
+        "got": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+        "expected_lfs_oid": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c"
+      }
+    },
+    {
+      "id": "parquet_magic_validation-00000-of-00001.parquet",
+      "ok": true,
+      "detail": "PAR1"
+    },
+    {
+      "id": "text_col_validation-00000-of-00001.parquet",
+      "ok": true,
+      "detail": [
+        "text"
+      ]
+    },
+    {
+      "id": "B6_train_rows",
+      "ok": true,
+      "detail": {
+        "train": 1801350,
+        "validation": 3760,
+        "test": 4358
+      }
+    },
+    {
+      "id": "B7_val_rows",
+      "ok": true,
+      "detail": {
+        "train": 1801350,
+        "validation": 3760,
+        "test": 4358
+      }
+    },
+    {
+      "id": "B8_test_rows",
+      "ok": true,
+      "detail": {
+        "train": 1801350,
+        "validation": 3760,
+        "test": 4358
+      }
+    },
+    {
+      "id": "B9_is_raw_not_wordlevel",
+      "ok": true,
+      "detail": {
+        "unk_rows": 0,
+        "nonempty": 1170381,
+        "unk_rate": 0.0
+      }
+    },
+    {
+      "id": "B10_not_empty",
+      "ok": true,
+      "detail": 1170381
+    }
+  ],
+  "next_gate": "C"
+}

@@ -1,0 +1,24 @@
+P2 AsPredicted ONE-PAGE cut. Use these boxes if the form/PDF must stay one page.
+Q1 radio stays: It's complicated.
+ASCII only. Do not amend #306780.
+
+2)
+After an English WikiText-103 nanochat parent (EN0) passes P0-E, does Tagalog continuation on frozen P1.1 WikiText-TL-39 raise English held-out BPB more than matched extra English? Prediction: C_en = English val_bpb_full(A2) - English val_bpb_full(A1) >= 0.01. A2 Tagalog val_bpb_full is >= 0.01 below A0. A3 (50/50 mix, same budget) has smaller C_en than A2. P0-E: EN0 English val_bpb_full is >= 0.01 below untrained, same English 32768 BPE; if it fails we do not call the parent English-pretrained. Not CORE/chat/SFT. Does not amend #306780.
+
+3)
+Primary forgetting DV: English val_bpb_full on WikiText-103 raw val. Primary acquisition DV: Tagalog val_bpb_full on frozen P1.1 val, same English 32768 BPE. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), official evaluate_bpb, T=2048, BOS-bestfit, full val (not --eval-tokens). Contrast: C_en = English val(A2) - English val(A1). Secondary: one English test_bpb and one Tagalog test_bpb after val seal. Do not reuse P1.1 test_bpb=1.164768.
+
+4)
+No human participants. Pin 92d63d4; tok_train -> base_train -> evaluate_bpb; T=2048; CORE off. EN0: WT103-raw, English 32768 BPE, depths 8 and 20, D_3x_en = 3*T_en_train. A0: freeze EN0. A1: extra English, D_phase2. A2: P1.1 Tagalog train from EN0, D_phase2. A3: 50/50 documents, D_phase2. D_phase2 = 294*65536 = 19267584 English-BPE tokens. Fresh Adam, LR peak = 0.3*EN0 peak. Never load P1.1 model_000294.pt as start weights.
+
+5)
+Test P0-E at d8 and d20 before any Tagalog train token; if it fails, stop the CF claim. Primary test: C_en at d20 from final English val_bpb_full. Also report Tagalog val A0 vs A2 and A3 C_en vs A2. One seed: point estimates. Gaps < 0.01 BPB are not rankings. No CORE in the confirmatory comparison. A2 English trajectory is descriptive. 1/5/10% replay, FilBench, EWC, tokenizer swap, CORE/SFT are exploratory.
+
+6)
+Drop a unit only if null/empty after LF, or length > 200000 chars; if drops > 5%, stop. Use official WT103 raw splits. Tagalog data is frozen P1.1 train (SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687). Exclude a run only for NaN/Inf, ClimbMix, val/test in train dir, new tokenizer after BPB, ratio -1, HF Trainer, writing into p1-fixed-d20-3x, loading P1.1 weights as parent, P0-E-fail called English-pretrained, P1.1 test_bpb reused as A2, attention patch, warmup >= iterations. d4 smoke is not confirmatory.
+
+7)
+English corpus: Salesforce/wikitext, wikitext-103-raw-v1, official splits, no added docs. Tagalog: frozen P1.1 reconstructed_article_70_15_15 train, no rebuild. EN0: one seed, d8 and d20, N_EN0 = ceil(3*T_en_train/65536), B=65536, T=2048. A1/A2/A3: one seed at d20, N=294. One English test and one Tagalog test after val seal, P2 ledger only.
+
+8)
+Q1: WT103 and WikiText-TL-39 already exist. P1.1 Tagalog BPB already exists (#306780). We have not trained P2 EN0 or computed P2 val_bpb_full/test_bpb. This files P2 before those outcomes. New study; does not amend #306780. Exploratory: 1/5/10% replay, FilBench, EWC, tokenizer swap, CORE, SFT, Spark/MPS. Protocol SHA256 da7ac07b86d097770c10e76c79f0534d6c609ceea71baabcf587a4fcd01bc0e8. Pin 92d63d4. Test files stay outside train dirs.

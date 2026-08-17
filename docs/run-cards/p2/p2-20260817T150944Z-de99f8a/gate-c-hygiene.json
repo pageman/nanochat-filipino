@@ -1,0 +1,83 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "C",
+  "status": "pass",
+  "at_utc": "2026-08-17T15:23:30Z",
+  "host": "Mac/CPU",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "script": "scripts/p2/gate_c_hygiene.py",
+  "checks": [
+    {
+      "id": "C1_p2_cache_only",
+      "ok": true,
+      "detail": {
+        "base": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p2-20260817T150944Z-de99f8a",
+        "entries": [
+          ".p2_run_id"
+        ]
+      }
+    },
+    {
+      "id": "C2_no_climbmix_fineweb_dclm_oscar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C3_p11_active_readonly",
+      "ok": true,
+      "detail": {
+        "active": "/Users/paulpajo/Projects/nanochat-filipino/data/processed/wikitext-tl39/active",
+        "mode": "0o555",
+        "writable": [],
+        "write_probe_blocked": true,
+        "write_probe_error": "PermissionError: [Errno 13] Permission denied: '/Users/paulpajo/Projects/nanochat-filipino/data/processed/wikitext-tl39/active/.p2_write_probe'"
+      }
+    },
+    {
+      "id": "C4_p11_test_not_in_p2_train",
+      "ok": true,
+      "detail": {
+        "p11_test": "/Users/paulpajo/Projects/nanochat-filipino/data/processed/wikitext-tl39/test/test.jsonl",
+        "test_mode": "0o444",
+        "in_p2_cache": [],
+        "in_english_raw": [],
+        "test_writable": false
+      }
+    },
+    {
+      "id": "C5_no_secrets_in_files_that_will_be_committed",
+      "ok": true,
+      "detail": {
+        "hits": [],
+        "gitignored_passcodes_loaded": 2,
+        "note": "Passcode values are not written to this JSON."
+      }
+    },
+    {
+      "id": "C6_p1_submitted_not_staged",
+      "ok": true,
+      "detail": {
+        "staged": [],
+        "p1_submitted_ignored": true,
+        "p2_submitted_ignored": true
+      }
+    },
+    {
+      "id": "C7_p1_d20_not_lfs_push_target",
+      "ok": true,
+      "detail": {
+        "git_lfs_installed": false,
+        "lfs_files": "none",
+        "lfsconfig_exists": false,
+        "gitattributes_has_lfs": false,
+        "env_sh_forbids_p1_hub": true,
+        "p2_hub": "pageman/nanochat-filipino-p2-en-then-tl"
+      }
+    }
+  ],
+  "started_en0": false,
+  "next_gate": "D",
+  "next_gate_note": "Official WikiText-103 raw train/valid/test article split. Do not re-hash 70/15/15. No GPU. Do not start EN0."
+}

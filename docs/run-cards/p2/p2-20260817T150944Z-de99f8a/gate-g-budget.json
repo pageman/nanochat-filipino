@@ -1,0 +1,241 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "G",
+  "status": "pass",
+  "at_utc": "2026-08-17T15:47:30Z",
+  "started_at_utc": "2026-08-17T15:47:12Z",
+  "host": "Mac/CPU",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "script": "scripts/p2/gate_g_budget.py",
+  "token_count_definition": "sum(len(tau(document_text))) over frozen English train jsonl documents; no BOS; no packing; no crop; tokenizer SHA 946a04ef\u2026ace6",
+  "tokenizer_pkl_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+  "english_train_jsonl_sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+  "t_en_train": 118286771,
+  "t_en_val": 248877,
+  "t_en_test": "not_read",
+  "train": {
+    "n_docs": 28472,
+    "n_tokens": 118286771,
+    "n_bytes": 539903397,
+    "n_chars": 538902181,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "val": {
+    "n_docs": 60,
+    "n_tokens": 248877,
+    "n_bytes": 1145486,
+    "n_chars": 1143388,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "d_1x_en": 118286771,
+  "d_3x_en": 354860313,
+  "B": 65536,
+  "N_EN0": 5415,
+  "d_actual_en0": 354877440,
+  "d_actual_minus_d_3x": 17127,
+  "d_actual_relative_overshoot": 4.826406158301506e-05,
+  "iteration_rule": "N_EN0 = ceil(D_3x_en / 65536)",
+  "N_phase2": 294,
+  "D_phase2": 19267584,
+  "D_phase2_source": "PDF: P1.1 D_actual = 294*65536, not English D_3x",
+  "sequence_len": 2048,
+  "must_pass_num_iterations_explicitly": true,
+  "never_target_param_data_ratio_minus_one": true,
+  "core_metric_every": -1,
+  "optimizer_en0": {
+    "class": "MuonAdamW (Muon matrices, AdamW embeddings/unembeddings/scalars)",
+    "embedding_lr": 0.3,
+    "unembedding_lr": 0.008,
+    "matrix_lr": 0.02,
+    "scalar_lr": 0.5,
+    "weight_decay": 0.28,
+    "batch_lr_scale_for_B_65536": 0.3535533905932738,
+    "B_REF": 524288,
+    "warmup_steps": 40,
+    "warmup_rule": "min(40, 5% of N_EN0), strictly < N_EN0",
+    "warmdown_ratio": 0.65,
+    "final_lr_frac": 0.05
+  },
+  "optimizer_phase2": {
+    "fresh_adam_muon_same_classes": true,
+    "lr_peak": "0.3 * EN0 scheduled peak (PDF)",
+    "warmup_steps": 14,
+    "N": 294,
+    "never_load_p11_model_000294": true
+  },
+  "checkpoint_cadence": {
+    "save_every": 200,
+    "eval_every": 50,
+    "sample_every": 200,
+    "eval_tokens_inloop": 124438,
+    "eval_tokens_rule": "min(262144, 0.5*T_en_val), at least 8192; confirmatory val_bpb_full is the whole English val, not this cap",
+    "final_checkpoint_only_also_allowed": "pin default save-every=-1 saves at end; P2 records save-every=200 like P1.1"
+  },
+  "depths": [
+    {
+      "depth": 8,
+      "n_embd": 512,
+      "n_head": 4,
+      "sequence_len": 2048,
+      "p_total": 125829354,
+      "p_scaling": 41943232,
+      "target_param_data_ratio": 8.460490431447916,
+      "num_iterations_en0": 5415,
+      "d_actual_en0": 354877440
+    },
+    {
+      "depth": 20,
+      "n_embd": 1280,
+      "n_head": 10,
+      "sequence_len": 2048,
+      "p_total": 896533746,
+      "p_scaling": 435160240,
+      "target_param_data_ratio": 0.8154704414171663,
+      "num_iterations_en0": 5415,
+      "d_actual_en0": 354877440
+    }
+  ],
+  "cost_a40": {
+    "gpu": "NVIDIA A40 48GB Secure Cloud",
+    "usd_per_hour": 0.44,
+    "source": "P1.1 named host $0.44/hr; Runpod list 2026-08-17 secure still 0.44",
+    "p1_throughput_basis": {
+      "d8_wall_s_for_294": 226,
+      "d20_wall_s_for_294": 1002,
+      "effective_tok_s_d8": 85254.79646017699,
+      "effective_tok_s_d20": 19229.125748502993,
+      "includes_p1_inloop_eval": true,
+      "note": "EN0 has more eval-every=50 events; 1.25 contingency covers extra eval and host variance."
+    },
+    "hours": {
+      "en0_d8": 1.1562641723356009,
+      "en0_d20": 5.126445578231293,
+      "a1_a2_a3_d20": 0.835,
+      "h_d4_smoke_approx_as_d8_30_steps": 0.006405895691609978,
+      "confirmatory_train_sum": 7.1177097505668945,
+      "with_contingency_1_25": 8.897137188208617
+    },
+    "usd_confirmatory_scaled": 3.1317922902494337,
+    "usd_with_contingency": 3.914740362811792,
+    "not_rented": true,
+    "user_must_read_before_gate_h": true
+  },
+  "preflight": {
+    "ok": true,
+    "tokenizer_pkl": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+    "mix_order_sha256": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+    "mix_K": 28472,
+    "p2_checkpoints": [],
+    "checks": [
+      {
+        "id": "P_tok_identity",
+        "ok": true
+      },
+      {
+        "id": "P_en_test_isolated",
+        "ok": true
+      },
+      {
+        "id": "P_tl_test_isolated",
+        "ok": true
+      },
+      {
+        "id": "P_a3_test_isolated",
+        "ok": true
+      },
+      {
+        "id": "P_a3_mix_sha",
+        "ok": true
+      },
+      {
+        "id": "P_a3_interleave_en_tl",
+        "ok": true
+      },
+      {
+        "id": "P_tl_copy_hashes",
+        "ok": true
+      },
+      {
+        "id": "P_no_p11_parent_in_p2_cache",
+        "ok": true
+      },
+      {
+        "id": "P_no_climbmix_in_p2_cache",
+        "ok": true
+      },
+      {
+        "id": "P_en_train_jsonl_hash",
+        "ok": true
+      },
+      {
+        "id": "P_en_val_jsonl_hash",
+        "ok": true
+      },
+      {
+        "id": "P_tl_train_jsonl_hash",
+        "ok": true
+      },
+      {
+        "id": "P_prohibited_modes",
+        "ok": true,
+        "detail": "No EN0, no BPB, no python -m nanochat.dataset, no HF Trainer, no ratio -1, no Spark/MPS confirmatory"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "G1_tokenizer_sha_946a04",
+      "ok": true
+    },
+    {
+      "id": "G2_vocab_32768",
+      "ok": true
+    },
+    {
+      "id": "G3_t_en_val_matches_gate_f",
+      "ok": true
+    },
+    {
+      "id": "G4_n_en0_ge_200",
+      "ok": true
+    },
+    {
+      "id": "G5_n_en0_gg_294",
+      "ok": true
+    },
+    {
+      "id": "G6_b_65536",
+      "ok": true
+    },
+    {
+      "id": "G7_warmup_lt_n",
+      "ok": true
+    },
+    {
+      "id": "G8_d_phase2_from_pdf",
+      "ok": true
+    },
+    {
+      "id": "G9_no_english_test_read",
+      "ok": true
+    },
+    {
+      "id": "G10_preflight",
+      "ok": true
+    },
+    {
+      "id": "G11_no_en0_no_bpb",
+      "ok": true
+    }
+  ],
+  "started_en0": false,
+  "computed_bpb": false,
+  "next_gate": "H",
+  "next_gate_note": "CUDA A40-class d4 smoke. Not Mac MPS. Not Spark until unpatched labeled re-entry. Do not start EN0 until H passes. Read cost_a40 before renting."
+}

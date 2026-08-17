@@ -1,0 +1,113 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "gate": "H-preflight",
+  "status": "not_ready",
+  "at_utc": "2026-08-17T15:57:41Z",
+  "host": "PaulPajos-MacBook-Pro.local",
+  "uname": "macOS-15.7.7-arm64-arm-64bit",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "hashes": {
+    "tokenizer.pkl": {
+      "ok": true,
+      "got": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+      "expected": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6"
+    },
+    "token_bytes.pt": {
+      "ok": true,
+      "got": "5ae2ea1d214f2b7f98eeba606d461db62d04101e7a947a3201ec6bb2a7062d42",
+      "expected": "5ae2ea1d214f2b7f98eeba606d461db62d04101e7a947a3201ec6bb2a7062d42"
+    },
+    "train_00000.parquet": {
+      "ok": true,
+      "got": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861",
+      "expected": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861"
+    },
+    "train_00001.parquet": {
+      "ok": true,
+      "got": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c",
+      "expected": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c"
+    },
+    "train_00002.parquet": {
+      "ok": true,
+      "got": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7",
+      "expected": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7"
+    },
+    "train_00003.parquet": {
+      "ok": true,
+      "got": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b",
+      "expected": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b"
+    },
+    "val.parquet": {
+      "ok": true,
+      "got": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+      "expected": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f"
+    }
+  },
+  "nvidia_smi_head": "nvidia-smi_not_on_path",
+  "checks": [
+    {
+      "id": "H0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "H0_flash_attention_unpatched",
+      "ok": true,
+      "detail": "empty"
+    },
+    {
+      "id": "H0_hashes",
+      "ok": true
+    },
+    {
+      "id": "H0_last_shard_val",
+      "ok": true,
+      "detail": [
+        "train_00000.parquet",
+        "train_00001.parquet",
+        "train_00002.parquet",
+        "train_00003.parquet",
+        "val.parquet"
+      ]
+    },
+    {
+      "id": "H0_no_test_in_en_dir",
+      "ok": true
+    },
+    {
+      "id": "H0_not_p11_tokenizer",
+      "ok": true
+    },
+    {
+      "id": "H0_cuda",
+      "ok": false,
+      "detail": {
+        "gpu": null,
+        "sm": null
+      }
+    },
+    {
+      "id": "H0_nvidia_smi",
+      "ok": false,
+      "detail": "nvidia-smi_not_on_path"
+    },
+    {
+      "id": "H0_warmup_legal_in_smoke_script",
+      "ok": true,
+      "detail": "3 < 30"
+    },
+    {
+      "id": "H0_did_not_train",
+      "ok": true
+    },
+    {
+      "id": "H0_en0_not_started",
+      "ok": true
+    }
+  ],
+  "names_the_host": false,
+  "started_en0": false,
+  "note": "Exit 0 means this machine may run scripts/p2/gate_h_smoke.sh. It does not pass Gate H and does not start EN0."
+}

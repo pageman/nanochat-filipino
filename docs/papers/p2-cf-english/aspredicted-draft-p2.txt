@@ -1,0 +1,43 @@
+SUPERSEDED. Do not file this draft.
+File docs/papers/p2-cf-english/aspredicted-answers-p2.txt instead (P0-E tokenizer-matched; D_phase2 locked to 19267584).
+Do NOT start confirmatory EN0/A2 BPB before file (wiring pilots allowed).
+Do NOT amend AsPredicted #306780. This is a new study.
+
+TITLE
+P2: English retention after Tagalog continuation (nanochat, WikiText-103 then WikiText-TL-39)
+
+TYPE
+Observational/archival computational study (public Wikipedia-derived text; no new human subjects)
+
+DATA SOURCE
+Other: WikiText-103 raw (English pretrain). Frozen P1.1 WikiText-TL-39 train split (Filipino continuation; reconstructed_article_70_15_15). P1.1 weights are a Tagalog-from-scratch REFERENCE and English negative control, not the CF parent.
+
+Q1 (data exist?)
+P1.1 Tagalog BPB exists (Pajo 2026 / #306780). English-parent nanochat BPB and Tagalog-continuation BPB do NOT exist at filing.
+
+HYPOTHESIS
+An English-pretrained nanochat that passes provenance P0 will, after matched-budget continuation on WikiText-TL-39, show higher English val_bpb_full than after matched extra-English continuation (C_en = A2-A1 >= 0.01). The same A2 run will show lower Tagalog val_bpb_full than A0 (learned Filipino) but is not required to match P1.1 d20 (different BPE and init). If P0 fails, we do not call the parent English-pretrained.
+
+DEPENDENT VARIABLES
+Primary forgetting: English val_bpb_full, official evaluate_bpb, T=2048, BOS-bestfit, WikiText-103 raw val.
+Primary acquisition: Tagalog val_bpb_full on frozen reconstructed_article_70_15_15, same formula.
+Contrast: C_en = English val(A2) - English val(A1).
+Provenance P0 (before any Tagalog train token): EN0 English BPB < untrained; EN0 English BPB < P1.1 d20 on the same English UTF-8 by >= 0.01; EN0 Tagalog BPB > P1.1 d20 Tagalog BPB by >= 0.01.
+
+CONDITIONS / ARMS
+All weights: nanochat commit 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd only. tok_train -> base_train -> evaluate_bpb. Depth dial. T=2048. CORE off. No HF Trainer, no llama.cpp, no ClimbMix downloader.
+EN0: from-scratch English WikiText-103 raw, English-train 32768 BPE via scripts.tok_train, scripts.base_train depths 8 and 20 required.
+A0: freeze EN0, dual evaluate_bpb.
+A1: extra English, D_phase2, base_train.
+A2: P1.1 Tagalog train, D_phase2, base_train from EN0 (CF intervention).
+A3: 50/50 documents, D_phase2, base_train.
+D_phase2 = 294*65536 English-BPE tokens unless this PDF names English D_3x. Fresh optimizer. LR peak = 0.3 * EN0 peak. Never load P1.1 model_000294.pt as start weights.
+
+EXCLUSIONS
+NaN/Inf; ClimbMix; python -m nanochat.dataset; val/test in train dir; new tokenizer after seeing BPB; ratio -1; CORE/SFT/EWC/replay as confirmatory; Hugging Face Trainer as the LM; writing into p1-fixed-d20-3x; using P1.1 test_bpb=1.164768 as an after-Tagalog number; calling P0-fail runs English-pretrained; any non-nanochat architecture.
+
+INFERENCE
+Gaps |C_en| or |d20-d8| below 0.01 BPB are not rankings. Seed interval containing 0 is not a ranking.
+
+THIS IS NOT
+P1.1. Tagalog-parent English continuation. Chat. CORE as primary. Amending #306780.

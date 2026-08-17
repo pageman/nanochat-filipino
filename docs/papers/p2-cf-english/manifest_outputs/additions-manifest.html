@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paul Pajo Independent Researcher paulamerigo.pajojr@benilde.edu.ph" />
+  <meta name="dcterms.date" content="2026-08-16" />
+  <title>Additions Manifest for a Tagalog-English Catastrophic Forgetting Paper</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Additions Manifest for a Tagalog-English Catastrophic
+Forgetting Paper</h1>
+<p class="author">Paul Pajo<br />
+Independent Researcher<br />
+<code>paulamerigo.pajojr@benilde.edu.ph</code></p>
+<p class="date">16 August 2026</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>This is not the P1.1 results paper and not a table of invented
+English-continuation scores. It is the complete specification that turns
+Pajo (2026) — equal-exposure nanochat depth versus held-out Tagalog
+bits-per-byte on WikiText-TL-39, AsPredicted #306780 — into a
+<em>new</em> catastrophic-forgetting (CF) study relative to English,
+with a new paper, a new GitHub repository, and a new Hugging Face
+repository. Twenty-seven additions are stratified into six layers:
+explicit, implicit, inferred, extrapolated, residual, hidden. Each
+addition names the P1.1 anchor (including Table 2 BPB values), the
+CF-paper section it lands in, the GitHub artifact, the Hub artifact,
+whether it is blocking, and the pass/fail test. A super-granular
+procedure then orders registration, corpus, pilots, confirmatory runs,
+close-out, paper writing, and publication so that a second operator can
+execute without improvising. Critical path: extra-seed matrix <span
+class="math inline">\(\rightarrow\)</span> <span
+class="math inline">\(D_{1x}\)</span> English pilots <span
+class="math inline">\(\rightarrow\)</span> new AsPredicted PDF <span
+class="math inline">\(\rightarrow\)</span> English-native from-scratch
+baseline <span class="math inline">\(\rightarrow\)</span> full phase-2
+grid. Do not amend #306780. Do not upload phase-2 weights into
+<code>pageman/nanochat-filipino-p1-fixed-d20-3x</code>. Do not treat Hub
+metadata <code>val_bpb</code> (262<span>,</span>144-token loop) as the
+before-score.</p>
+</div>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#sec:howto" id="toc-sec:howto">How to read this
+document</a></li>
+<li><a href="#sec:anchors" id="toc-sec:anchors">Frozen parent anchors
+(do not recompute)</a></li>
+<li><a href="#sec:master" id="toc-sec:master">Master table of 27
+additions</a></li>
+<li><a href="#sec:L1" id="toc-sec:L1">Layer 1 — Explicit additions
+(E1–E5)</a>
+<ul>
+<li><a href="#e1.-multiple-seeds-blocking"
+id="toc-e1.-multiple-seeds-blocking">E1. Multiple seeds
+(blocking)</a></li>
+<li><a href="#e2.-split-label-on-every-cf-caption-blocking"
+id="toc-e2.-split-label-on-every-cf-caption-blocking">E2. Split label on
+every CF caption (blocking)</a></li>
+<li><a href="#e3.-bos-bestfit-crop-asymmetry-blocking"
+id="toc-e3.-bos-bestfit-crop-asymmetry-blocking">E3. BOS-bestfit crop
+asymmetry (blocking)</a></li>
+<li><a
+href="#e4.-native-speaker-ratings-remain-absent-non-blocking-must-declare"
+id="toc-e4.-native-speaker-ratings-remain-absent-non-blocking-must-declare">E4.
+Native-speaker ratings remain absent (non-blocking, must
+declare)</a></li>
+<li><a
+href="#e5.-no-downstream-classification-core-sft-as-primary-blocking"
+id="toc-e5.-no-downstream-classification-core-sft-as-primary-blocking">E5.
+No downstream classification / CORE / SFT as primary (blocking)</a></li>
+</ul></li>
+<li><a href="#sec:L2" id="toc-sec:L2">Layer 2 — Implicit additions
+(I1–I5)</a>
+<ul>
+<li><a
+href="#i1.-english-corpus-split-and-tokenizer-specification-blocking"
+id="toc-i1.-english-corpus-split-and-tokenizer-specification-blocking">I1.
+English corpus, split, and tokenizer specification (blocking)</a></li>
+<li><a
+href="#i2.-two-phase-training-protocol-and-learning-rate-lock-blocking"
+id="toc-i2.-two-phase-training-protocol-and-learning-rate-lock-blocking">I2.
+Two-phase training protocol and learning-rate lock (blocking)</a></li>
+<li><a
+href="#i3.-forgetting-metric-deltamathrmbpb_mathrmtag-and-threshold-blocking"
+id="toc-i3.-forgetting-metric-deltamathrmbpb_mathrmtag-and-threshold-blocking">I3.
+Forgetting metric <span
+class="math inline">\(\Delta\mathrm{BPB}_{\mathrm{tag}}\)</span> and
+threshold (blocking)</a></li>
+<li><a href="#i4.-forward-transfer-plasticity-metric-blocking"
+id="toc-i4.-forward-transfer-plasticity-metric-blocking">I4.
+Forward-transfer / plasticity metric (blocking)</a></li>
+<li><a href="#i5.-joint-training-upper-bound-blocking"
+id="toc-i5.-joint-training-upper-bound-blocking">I5. Joint-training
+upper bound (blocking)</a></li>
+</ul></li>
+<li><a href="#sec:L3" id="toc-sec:L3">Layer 3 — Inferred additions
+(N1–N4)</a>
+<ul>
+<li><a
+href="#n1.-depth-stability-hypothesis-preregister-as-directional-not-as-a-ranking"
+id="toc-n1.-depth-stability-hypothesis-preregister-as-directional-not-as-a-ranking">N1.
+Depth-stability hypothesis (preregister as directional, not as a
+ranking)</a></li>
+<li><a
+href="#n2.-equal-exposure-as-cf-control-intro-load-bearing-paragraph"
+id="toc-n2.-equal-exposure-as-cf-control-intro-load-bearing-paragraph">N2.
+Equal-exposure as CF control (intro load-bearing paragraph)</a></li>
+<li><a href="#n3.-0.01-bpb-threshold-inheritance"
+id="toc-n3.-0.01-bpb-threshold-inheritance">N3. 0.01 BPB threshold
+inheritance</a></li>
+<li><a href="#n4.-r_d-as-plasticity-index"
+id="toc-n4.-r_d-as-plasticity-index">N4. <span
+class="math inline">\(R_d\)</span> as plasticity index</a></li>
+</ul></li>
+<li><a href="#sec:L4" id="toc-sec:L4">Layer 4 — Extrapolated additions
+(X1–X5)</a>
+<ul>
+<li><a href="#x1.-ewc-baseline-secondary-family-after-untreated-a2"
+id="toc-x1.-ewc-baseline-secondary-family-after-untreated-a2">X1. EWC
+baseline (secondary family, after untreated A2)</a></li>
+<li><a href="#x2.-experience-replay-secondary"
+id="toc-x2.-experience-replay-secondary">X2. Experience replay
+(secondary)</a></li>
+<li><a href="#x3.-stabilityplasticity-scatter"
+id="toc-x3.-stabilityplasticity-scatter">X3. Stability–plasticity
+scatter</a></li>
+<li><a href="#x4.-bwt-and-fwt-with-bpb-sign-conventions"
+id="toc-x4.-bwt-and-fwt-with-bpb-sign-conventions">X4. BWT and FWT with
+BPB sign conventions</a></li>
+<li><a
+href="#x5.-category-pre-registration-retention-forgetting-collapse"
+id="toc-x5.-category-pre-registration-retention-forgetting-collapse">X5.
+Category pre-registration: retention / forgetting / collapse</a></li>
+</ul></li>
+<li><a href="#sec:L5" id="toc-sec:L5">Layer 5 — Residual additions
+(R1–R5)</a>
+<ul>
+<li><a href="#r1.-extra-seed-matrix" id="toc-r1.-extra-seed-matrix">R1.
+Extra-seed matrix</a></li>
+<li><a href="#r2.-document-level-bootstrap-after-phase-2"
+id="toc-r2.-document-level-bootstrap-after-phase-2">R2. Document-level
+bootstrap after phase 2</a></li>
+<li><a
+href="#r3.-mid-run-tagalog-bpb-trajectory-during-english-training"
+id="toc-r3.-mid-run-tagalog-bpb-trajectory-during-english-training">R3.
+Mid-run Tagalog BPB trajectory during English training</a></li>
+<li><a href="#r4.-gzip-entropy-normalization"
+id="toc-r4.-gzip-entropy-normalization">R4. gzip entropy
+normalization</a></li>
+<li><a href="#r5.-d_1x-english-pilots-blocking-on-the-critical-path"
+id="toc-r5.-d_1x-english-pilots-blocking-on-the-critical-path">R5. <span
+class="math inline">\(D_{1x}\)</span> English pilots (blocking on the
+critical path)</a></li>
+</ul></li>
+<li><a href="#sec:L6" id="toc-sec:L6">Layer 6 — Hidden additions
+(H1–H6)</a>
+<ul>
+<li><a
+href="#h1.-language-versus-domain-confound-blocking-for-the-phrase-relative-to-english"
+id="toc-h1.-language-versus-domain-confound-blocking-for-the-phrase-relative-to-english">H1.
+Language-versus-domain confound (blocking for the phrase “relative to
+English”)</a></li>
+<li><a href="#h2.-tokenizer-fertility-asymmetry-blocking"
+id="toc-h2.-tokenizer-fertility-asymmetry-blocking">H2. Tokenizer
+fertility asymmetry (blocking)</a></li>
+<li><a
+href="#h3.-test-set-authority-chain-and-a-second-tagalog-test-read-blocking"
+id="toc-h3.-test-set-authority-chain-and-a-second-tagalog-test-read-blocking">H3.
+Test-set authority chain and a second Tagalog test read
+(blocking)</a></li>
+<li><a href="#h4.-null-result-reframing-intro"
+id="toc-h4.-null-result-reframing-intro">H4. Null-result reframing
+(intro)</a></li>
+<li><a href="#h5.-separate-aspredicted-researchbox-blocking"
+id="toc-h5.-separate-aspredicted-researchbox-blocking">H5. Separate
+AsPredicted / ResearchBox (blocking)</a></li>
+<li><a
+href="#h6.-english-native-from-scratch-baseline-blocking-for-relative-to-english"
+id="toc-h6.-english-native-from-scratch-baseline-blocking-for-relative-to-english">H6.
+English-native from-scratch baseline (blocking for “relative to
+English”)</a></li>
+</ul></li>
+<li><a href="#sec:grid" id="toc-sec:grid">Unified experimental grid
+(after PDF)</a></li>
+<li><a href="#sec:steps" id="toc-sec:steps">Super-granular procedure</a>
+<ul>
+<li><a href="#gate-p2-0-freeze-the-parent-read-only"
+id="toc-gate-p2-0-freeze-the-parent-read-only">Gate P2-0 — Freeze the
+parent (read-only)</a></li>
+<li><a href="#gate-p2-1-create-empty-p2-github-repository"
+id="toc-gate-p2-1-create-empty-p2-github-repository">Gate P2-1 — Create
+empty P2 GitHub repository</a></li>
+<li><a href="#gate-p2-2-create-empty-p2-hugging-face-repository"
+id="toc-gate-p2-2-create-empty-p2-hugging-face-repository">Gate P2-2 —
+Create empty P2 Hugging Face repository</a></li>
+<li><a href="#gate-p2-3-english-and-news-corpus-audit-i1-h1-h2"
+id="toc-gate-p2-3-english-and-news-corpus-audit-i1-h1-h2">Gate P2-3 —
+English and news corpus audit (I1, H1, H2)</a></li>
+<li><a href="#gate-p2-4-d_1x-english-pilots-r5"
+id="toc-gate-p2-4-d_1x-english-pilots-r5">Gate P2-4 — <span
+class="math inline">\(D_{1x}\)</span> English pilots (R5)</a></li>
+<li><a href="#gate-p2-5-file-the-new-aspredicted-h5"
+id="toc-gate-p2-5-file-the-new-aspredicted-h5">Gate P2-5 — File the new
+AsPredicted (H5)</a></li>
+<li><a href="#gate-p2-6-english-native-from-scratch-en0-h6"
+id="toc-gate-p2-6-english-native-from-scratch-en0-h6">Gate P2-6 —
+English-native from-scratch EN0 (H6)</a></li>
+<li><a href="#gate-p2-7-confirmatory-phase-2-grid"
+id="toc-gate-p2-7-confirmatory-phase-2-grid">Gate P2-7 — Confirmatory
+phase-2 grid</a></li>
+<li><a href="#gate-p2-8-seal-c-then-optional-test-h3-i3"
+id="toc-gate-p2-8-seal-c-then-optional-test-h3-i3">Gate P2-8 — Seal
+<span class="math inline">\(C\)</span>, then optional test (H3,
+I3)</a></li>
+<li><a href="#gate-p2-9-secondary-methods-x1x3-optional"
+id="toc-gate-p2-9-secondary-methods-x1x3-optional">Gate P2-9 — Secondary
+methods (X1–X3), optional</a></li>
+<li><a href="#gate-p2-10-paper-compilation"
+id="toc-gate-p2-10-paper-compilation">Gate P2-10 — Paper
+compilation</a></li>
+<li><a href="#gate-p2-11-publish-github-and-hub-close-out"
+id="toc-gate-p2-11-publish-github-and-hub-close-out">Gate P2-11 —
+Publish GitHub and Hub close-out</a></li>
+</ul></li>
+<li><a href="#sec:map" id="toc-sec:map">Paper section <span
+class="math inline">\(\leftrightarrow\)</span> addition map</a></li>
+<li><a href="#sec:readme" id="toc-sec:readme">GitHub README claim /
+not-claim (copy text)</a></li>
+<li><a href="#sec:out" id="toc-sec:out">What remains out of paper
+1</a></li>
+<li><a href="#app:cards" id="toc-app:cards">Per-addition operator card
+(copy into the ledger)</a></li>
+<li><a href="#app:json" id="toc-app:json">JSON schemas (GitHub
+<code>manifests/</code> and <code>results/</code>)</a>
+<ul>
+<li><a href="#seed_matrix.json-e1-r1"
+id="toc-seed_matrix.json-e1-r1"><code>seed_matrix.json</code> (E1,
+R1)</a></li>
+<li><a href="#source_manifest_en.json-i1"
+id="toc-source_manifest_en.json-i1"><code>source_manifest_en.json</code>
+(I1)</a></li>
+<li><a href="#budget_phase2.json-i2"
+id="toc-budget_phase2.json-i2"><code>budget_phase2.json</code>
+(I2)</a></li>
+<li><a href="#delta_tagalog.json-i3"
+id="toc-delta_tagalog.json-i3"><code>delta_tagalog.json</code>
+(I3)</a></li>
+<li><a href="#test_access_log_p2.json-h3"
+id="toc-test_access_log_p2.json-h3"><code>test_access_log_p2.json</code>
+(H3)</a></li>
+<li><a href="#category.json-x5"
+id="toc-category.json-x5"><code>category.json</code> (X5)</a></li>
+</ul></li>
+<li><a href="#app:cmd" id="toc-app:cmd">Command templates (do not
+improvise flags)</a></li>
+<li><a href="#app:hf" id="toc-app:hf">Hugging Face README body
+(paste)</a></li>
+<li><a href="#app:paras" id="toc-app:paras">Paper paragraph inserts (do
+not paraphrase into hype)</a></li>
+<li><a href="#app:ticks" id="toc-app:ticks">Gate file checklist (tick in
+the ledger, not in chat)</a></li>
+<li><a href="#app:compute" id="toc-app:compute">Compute sketch (not a
+budget promise)</a></li>
+<li><a href="#app:fail" id="toc-app:fail">Failure modes mapped to
+addition IDs</a></li>
+<li><a href="#status" id="toc-status">Status</a></li>
+</ul>
+</nav>
+<p><strong>Parent paper:</strong> <a
+href="https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39"
+class="uri">https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39</a><br />
+<strong>Parent code:</strong> <a
+href="https://github.com/pageman/nanochat-filipino"
+class="uri">https://github.com/pageman/nanochat-filipino</a><br />
+<strong>Parent weights:</strong> <a
+href="https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x"
+class="uri">https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x</a><br />
+<strong>Stage-1 CF manuscript:</strong>
+<code>docs/papers/p2-cf-english/paper.tex</code><br />
+<strong>This manifest:</strong>
+<code>docs/papers/p2-cf-english/additions-manifest.tex</code><br />
+<strong>Intended new code repo:</strong>
+<code>pageman/nanochat-filipino-p2-cf-en</code><br />
+<strong>Intended new Hub repo:</strong>
+<code>pageman/nanochat-filipino-p2-cf-en</code></p>
+<h1 id="sec:howto">How to read this document</h1>
+<p>A naive CF checklist (“add EWC, add replay, measure accuracy drop”)
+would be a wrong answer here. P1.1 is not an English classifier. It is a
+Tagalog language-modeling measurement with four locked depths, a common
+<span class="math inline">\(D_{\mathrm{actual}}=19{,}267{,}584\)</span>
+tokens, a reconstructed split label, a 0.01 BPB interpretation rule, and
+a one-test-touch clock. Every addition below is anchored to that
+architecture.</p>
+<p>Wrong answers, named so they can be rejected on sight:</p>
+<ol>
+<li><p>Describe generic CF methodology without Table 2’s exact BPB
+values (d8 <span class="math inline">\(1.179135\)</span>, d12 <span
+class="math inline">\(1.180824\)</span>, d16 <span
+class="math inline">\(1.195546\)</span>, d20 <span
+class="math inline">\(1.172248\)</span>).</p></li>
+<li><p>Ignore equal exposure as the structural asset, or call the
+parents “trained to convergence” (they were not; <span
+class="math inline">\(R_d\)</span> is <span
+class="math inline">\(0.458\)</span> at d8 and <span
+class="math inline">\(0.044\)</span> at d20).</p></li>
+<li><p>Treat “English” as a monolith: no file, no raw-versus-Moses
+decision, no token-count basis, no domain control.</p></li>
+<li><p>Skip the registration-authority chain (new PDF <span
+class="math inline">\(&gt;\)</span> this manifest <span
+class="math inline">\(&gt;\)</span> P2 ledger <span
+class="math inline">\(&gt;\)</span> deviation card).</p></li>
+<li><p>Reuse P1.1’s one <code>test_bpb</code>=1.164768 as a post-English
+number.</p></li>
+<li><p>Write new weights into the parent Hub repository.</p></li>
+<li><p>Use loop <code>val_bpb</code> from <code>meta_000294.json</code>
+(d20 <span class="math inline">\(1.117213\)</span>) as <span
+class="math inline">\(\mathrm{BPB}_{\mathrm{before}}\)</span>.</p></li>
+<li><p>Retrain the tokenizer after seeing English fertility.</p></li>
+<li><p>Conflate forgetting, collapse, and retention without predeclared
+bins.</p></li>
+<li><p>Put Design B (Cebuano) or SFT into the first confirmatory
+table.</p></li>
+</ol>
+<p>Layer confidence, as used while writing: explicit 99%; residual 95%;
+implicit 90%; inferred 85%; extrapolated 80%; hidden 75%. Hidden items
+are the most load-bearing and the easiest to miss.</p>
+<h1 id="sec:anchors">Frozen parent anchors (do not recompute)</h1>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">d8</th>
+<th style="text-align: right;">d12</th>
+<th style="text-align: right;">d16</th>
+<th style="text-align: right;">d20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>val_bpb_full</code> (DV)</td>
+<td style="text-align: right;">1.179135</td>
+<td style="text-align: right;">1.180824</td>
+<td style="text-align: right;">1.195546</td>
+<td style="text-align: right;"><strong>1.172248</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>train_bpb_full</code></td>
+<td style="text-align: right;">0.836702</td>
+<td style="text-align: right;">0.528818</td>
+<td style="text-align: right;">0.458045</td>
+<td style="text-align: right;">0.672393</td>
+</tr>
+<tr>
+<td style="text-align: left;">val<span
+class="math inline">\(-\)</span>train gap</td>
+<td style="text-align: right;">0.342432</td>
+<td style="text-align: right;">0.652006</td>
+<td style="text-align: right;">0.737501</td>
+<td style="text-align: right;">0.499855</td>
+</tr>
+<tr>
+<td style="text-align: left;">untrained val</td>
+<td style="text-align: right;">3.289109</td>
+<td style="text-align: right;">3.289358</td>
+<td style="text-align: right;">3.289354</td>
+<td style="text-align: right;">3.289106</td>
+</tr>
+<tr>
+<td style="text-align: left;">byte unigram val</td>
+<td style="text-align: right;">4.453225</td>
+<td style="text-align: right;">4.453225</td>
+<td style="text-align: right;">4.453225</td>
+<td style="text-align: right;">4.453225</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hub loop <code>val_bpb</code></td>
+<td style="text-align: right;">1.124545</td>
+<td style="text-align: right;">1.125139</td>
+<td style="text-align: right;">1.137399</td>
+<td style="text-align: right;">1.117213</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(P_{\mathrm{scaling}}\)</span></td>
+<td style="text-align: right;">41.9M</td>
+<td style="text-align: right;">110.1M</td>
+<td style="text-align: right;">234.9M</td>
+<td style="text-align: right;">435.2M</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(R_d=D_{3x}/P_{\mathrm{scaling}}\)</span></td>
+<td style="text-align: right;">0.457834</td>
+<td style="text-align: right;">0.174413</td>
+<td style="text-align: right;">0.081756</td>
+<td style="text-align: right;">0.044129</td>
+</tr>
+<tr>
+<td style="text-align: left;">checkpoint SHA prefix</td>
+<td style="text-align: right;"><code>9c407f4f</code></td>
+<td style="text-align: right;"><code>5dfccc27</code></td>
+<td style="text-align: right;"><code>525301eb</code></td>
+<td style="text-align: right;"><code>9e30fff3</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Shared: nanochat
+<code>92d63d4e8bb4df75c3b71618f31ddde2378b2bcd</code>; tokenizer
+<code>04436b85…bc5a8</code>; <code>token_bytes.pt</code>
+<code>a5dbc1c8…2132</code>; <span class="math inline">\(T=2048\)</span>;
+<span class="math inline">\(B=65{,}536\)</span>; <span
+class="math inline">\(N=294\)</span>; split
+<code>reconstructed_article_70_15_15</code>; packed val target bytes
+<span class="math inline">\(5{,}868{,}797\)</span>; one parent test read
+on d20 only. Extra-seed sample SD at d8 <span
+class="math inline">\(\approx 0.010318\)</span> (val only; not used to
+pick <span class="math inline">\(D^{\ast}\)</span>).</p>
+<h1 id="sec:master">Master table of 27 additions</h1>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">One-line name</th>
+<th style="text-align: left;">Blocking?</th>
+<th style="text-align: left;">First artifact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">E1</td>
+<td style="text-align: left;">Explicit</td>
+<td style="text-align: left;">Multi-seed phase-2 matrix</td>
+<td style="text-align: left;">Yes</td>
+<td
+style="text-align: left;"><code>manifests/seed_matrix.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">E2</td>
+<td style="text-align: left;">Explicit</td>
+<td style="text-align: left;">Split label on every CF caption</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">caption template</td>
+</tr>
+<tr>
+<td style="text-align: left;">E3</td>
+<td style="text-align: left;">Explicit</td>
+<td style="text-align: left;">BOS-bestfit crop accounting</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">crop audit JSON</td>
+</tr>
+<tr>
+<td style="text-align: left;">E4</td>
+<td style="text-align: left;">Explicit</td>
+<td style="text-align: left;">No native-speaker ratings</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">ethics paragraph</td>
+</tr>
+<tr>
+<td style="text-align: left;">E5</td>
+<td style="text-align: left;">Explicit</td>
+<td style="text-align: left;">No downstream classifiers</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">exclusions list</td>
+</tr>
+<tr>
+<td style="text-align: left;">I1</td>
+<td style="text-align: left;">Implicit</td>
+<td style="text-align: left;">English corpus/split/tokenizer</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><code>source_manifest_en.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">I2</td>
+<td style="text-align: left;">Implicit</td>
+<td style="text-align: left;">Two-phase train + LR lock</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><code>phase2_train.yaml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">I3</td>
+<td style="text-align: left;">Implicit</td>
+<td style="text-align: left;"><span
+class="math inline">\(\Delta\mathrm{BPB}_{\mathrm{tag}}\)</span> + 0.01
+rule</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">analysis plan</td>
+</tr>
+<tr>
+<td style="text-align: left;">I4</td>
+<td style="text-align: left;">Implicit</td>
+<td style="text-align: left;">Forward-transfer English BPB</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><code>results/en_val.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">I5</td>
+<td style="text-align: left;">Implicit</td>
+<td style="text-align: left;">Joint-training ceiling (A3)</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">arm A3 run cards</td>
+</tr>
+<tr>
+<td style="text-align: left;">N1</td>
+<td style="text-align: left;">Inferred</td>
+<td style="text-align: left;">Depth-stability hypothesis</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">AsPredicted box</td>
+</tr>
+<tr>
+<td style="text-align: left;">N2</td>
+<td style="text-align: left;">Inferred</td>
+<td style="text-align: left;">Equal-exposure as CF control</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">intro paragraph</td>
+</tr>
+<tr>
+<td style="text-align: left;">N3</td>
+<td style="text-align: left;">Inferred</td>
+<td style="text-align: left;">Inherit 0.01 as <span
+class="math inline">\(\Delta\)</span> threshold</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">glossary</td>
+</tr>
+<tr>
+<td style="text-align: left;">N4</td>
+<td style="text-align: left;">Inferred</td>
+<td style="text-align: left;"><span class="math inline">\(R_d\)</span>
+as plasticity index</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Table <span
+class="math inline">\(R_d\)</span> vs <span
+class="math inline">\(\Delta\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">X1</td>
+<td style="text-align: left;">Extrapolated</td>
+<td style="text-align: left;">EWC baseline (secondary family)</td>
+<td style="text-align: left;">After A2</td>
+<td style="text-align: left;"><code>arm-EWC/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">X2</td>
+<td style="text-align: left;">Extrapolated</td>
+<td style="text-align: left;">Experience-replay baseline</td>
+<td style="text-align: left;">After A2</td>
+<td style="text-align: left;"><code>arm-ER/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">X3</td>
+<td style="text-align: left;">Extrapolated</td>
+<td style="text-align: left;">Stability–plasticity scatter</td>
+<td style="text-align: left;">After A2</td>
+<td style="text-align: left;">figure spec</td>
+</tr>
+<tr>
+<td style="text-align: left;">X4</td>
+<td style="text-align: left;">Extrapolated</td>
+<td style="text-align: left;">BWT/FWT sign conventions</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">metric card</td>
+</tr>
+<tr>
+<td style="text-align: left;">X5</td>
+<td style="text-align: left;">Extrapolated</td>
+<td style="text-align: left;">Collapse/forgetting/retention bins</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">category card</td>
+</tr>
+<tr>
+<td style="text-align: left;">R1</td>
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;">Extra-seed matrix reuse</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">copy P1.1 seeds</td>
+</tr>
+<tr>
+<td style="text-align: left;">R2</td>
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;">Post-phase-2 document bootstrap</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">bootstrap script</td>
+</tr>
+<tr>
+<td style="text-align: left;">R3</td>
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;">Mid-run Tagalog BPB trajectory</td>
+<td style="text-align: left;">Diagnostic</td>
+<td style="text-align: left;">eval-every log</td>
+</tr>
+<tr>
+<td style="text-align: left;">R4</td>
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;">gzip entropy normalization</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">gzip JSON</td>
+</tr>
+<tr>
+<td style="text-align: left;">R5</td>
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;"><span
+class="math inline">\(D_{1x}\)</span> English pilots</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">pilot run cards</td>
+</tr>
+<tr>
+<td style="text-align: left;">H1</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">Tagalog-news domain control</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">arm A4 spec</td>
+</tr>
+<tr>
+<td style="text-align: left;">H2</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">Tokenizer fertility asymmetry</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">fertility table</td>
+</tr>
+<tr>
+<td style="text-align: left;">H3</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">Second Tagalog test-read clock</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><code>test_access_log_p2.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">H4</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">Null P1.1 as CF asset</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">intro reframing</td>
+</tr>
+<tr>
+<td style="text-align: left;">H5</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">New AsPredicted, not an amendment</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">new PDF</td>
+</tr>
+<tr>
+<td style="text-align: left;">H6</td>
+<td style="text-align: left;">Hidden</td>
+<td style="text-align: left;">English-native from-scratch baseline</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">arm EN0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Critical path (do not reorder):</strong> R1/E1 seed matrix
+<span class="math inline">\(\rightarrow\)</span> R5 English <span
+class="math inline">\(D_{1x}\)</span> pilots <span
+class="math inline">\(\rightarrow\)</span> H5 CF registration PDF <span
+class="math inline">\(\rightarrow\)</span> H6 English-native baseline
+<span class="math inline">\(\rightarrow\)</span> I1–I5 + H1 full phase-2
+grid <span class="math inline">\(\rightarrow\)</span> X1–X3 secondary
+methods <span class="math inline">\(\rightarrow\)</span>
+paper/GitHub/Hub close-out.</p>
+<p>X1–X3 are <em>not</em> the first confirmatory table. They start after
+untreated A2<span class="math inline">\(-\)</span>A1 exists, unless the
+new PDF names them confirmatory (not recommended for paper 1).</p>
+<h1 id="sec:L1">Layer 1 — Explicit additions (E1–E5)</h1>
+<p>These are things P1.1 already names as missing or constrained. A CF
+paper that ignores them repeats the parent limitation as if it were
+unknown.</p>
+<h3 class="unnumbered" id="e1.-multiple-seeds-blocking">E1. Multiple
+seeds (blocking)</h3>
+<p>P1.1’s four-depth table is one seed (torch 42). Extra seeds 1–2 exist
+only at d8/d12 on validation, sample SD <span
+class="math inline">\(\approx 0.010\)</span> at d8, which already
+swallows the <span class="math inline">\(0.006887\)</span> d20–d8 parent
+gap. CF deltas will sit in that noise. Specification: continuation seeds
+<span class="math inline">\(\{0,1,2\}\)</span> on arms A1 and A2 at all
+four depths (<span class="math inline">\(4\times 2\times 3=24\)</span>
+confirmatory trainings). A0 and A3 at seed 0 unless budget allows
+parity. GitHub: <code>manifests/seed_matrix.json</code> with parent seed
+versus continuation seed. Hub:
+<code>d{8,12,16,20}/a2/seed{0,1,2}/</code>. Pass: three finite Tagalog
+<code>val_bpb_full</code> values per cell; sample SD reported; no
+ranking if the seed interval of A2<span
+class="math inline">\(-\)</span>A1 contains 0.</p>
+<h3 class="unnumbered"
+id="e2.-split-label-on-every-cf-caption-blocking">E2. Split label on
+every CF caption (blocking)</h3>
+<p>P1.1 never recovered 2019 files. Label
+<code>reconstructed_article_70_15_15</code> must appear on every Tagalog
+retention table, including after English training. The English split
+gets its own label, e.g. <code>wikitext103raw_article_70_15_15</code>,
+never mixed into Tagalog captions. GitHub: caption lint in
+<code>scripts/p2/check_captions.py</code>. Pass: zero Tagalog tables
+without the reconstructed label.</p>
+<h3 class="unnumbered" id="e3.-bos-bestfit-crop-asymmetry-blocking">E3.
+BOS-bestfit crop asymmetry (blocking)</h3>
+<p>Packed Tagalog val scores <span
+class="math inline">\(5{,}868{,}797\)</span> target bytes versus <span
+class="math inline">\(6{,}771{,}275\)</span> raw UTF-8 (13.3% below).
+English documents have a different length distribution, so crop rate
+will change. If packing is unchanged, Tagalog packed-byte count after
+phase 2 must still equal <span
+class="math inline">\(5{,}868{,}797\)</span> or the evaluator moved.
+GitHub: <code>results/packing_audit.json</code> with
+<code>n_cropped_fills</code> for Tagalog and English. Pass: Tagalog
+packed bytes identical to parent; English crop rate reported, not
+“fixed” after seeing <span class="math inline">\(\Delta\)</span>.</p>
+<h3 class="unnumbered"
+id="e4.-native-speaker-ratings-remain-absent-non-blocking-must-declare">E4.
+Native-speaker ratings remain absent (non-blocking, must declare)</h3>
+<p>P1.1 invented no 1–5 ratings. CF samples after English continuation
+will look like mixed Taglish or broken English. Do not score them.
+Ethics paragraph only. Hub: no sample leaderboard.</p>
+<h3 class="unnumbered"
+id="e5.-no-downstream-classification-core-sft-as-primary-blocking">E5.
+No downstream classification / CORE / SFT as primary (blocking)</h3>
+<p>P1.1 excluded CORE, chat, dengue, hate-speech, NLI. CF paper primary
+remains BPB. Permuted-MNIST-style accuracy is not this study. GitHub
+exclusions YAML. Pass: no CORE flag other than <code>-1</code>; no SFT
+data in confirmatory trains.</p>
+<h1 id="sec:L2">Layer 2 — Implicit additions (I1–I5)</h1>
+<p>Structurally required by any two-phase LM CF design, never spelled as
+a CF protocol in P1.1.</p>
+<h3 class="unnumbered"
+id="i1.-english-corpus-split-and-tokenizer-specification-blocking">I1.
+English corpus, split, and tokenizer specification (blocking)</h3>
+<p>English is not “some English.” Lock: WikiText-103 <em>raw</em> (not
+Moses <code>@-@</code> WT103) so both languages are encyclopedia
+prose <span class="citation" data-cites="merity2017pointer"></span>.
+Canonical: LF only. Split: SHA-256 of UTF-8, 70/15/15, independent of
+Tagalog. Tokenizer: <em>parent Tagalog 32<span>,</span>768 BPE
+only</em>. Token budget counted as <span
+class="math inline">\(\sum\mathrm{len}(\tau(d))\)</span> under that BPE,
+not GPT-2 tokens, not words. Record file SHA, <span
+class="math inline">\(T_{\mathrm{en,train}}\)</span>, fertility
+(bytes/token) on English train/val. If raw WT103 is unavailable, stop
+and file a deviation <em>before</em> using tokenized WT103. Do not
+substitute TLUnified, OSCAR, ClimbMix, or C4 as the confirmatory English
+stream (domain shift stacked on language). GitHub:
+<code>manifests/source_manifest_en.json</code>,
+<code>split_manifest_en.json</code>, <code>fertility_en.json</code>. Hub
+README: English source hash, not the text.</p>
+<h3 class="unnumbered"
+id="i2.-two-phase-training-protocol-and-learning-rate-lock-blocking">I2.
+Two-phase training protocol and learning-rate lock (blocking)</h3>
+<p>Phase 1 is finished: load <code>model_000294.pt</code> only. Parent
+optimizer states were never published, so Adam moments cannot resume.
+Phase 2: fresh optimizer; <span class="math inline">\(T=2048\)</span>;
+<span class="math inline">\(B=65{,}536\)</span>; <span
+class="math inline">\(N=294\)</span>; <span
+class="math inline">\(D_{\mathrm{phase2}}=19{,}267{,}584\)</span>;
+<code>--num-iterations 294</code> explicit;
+<code>--target-param-data-ratio</code> <span
+class="math inline">\(=\)</span> parent <span
+class="math inline">\(R_d\)</span> for that depth, never <span
+class="math inline">\(-1\)</span>; CORE off; device-batch 8, halve only
+for VRAM. Peak LR <span class="math inline">\(=0.3\times\)</span> parent
+scheduled peak (from <code>meta_000294.json</code> or trainer formula).
+Warmup <span class="math inline">\(\min(40,\lfloor
+0.05N\rfloor)=14\)</span>. This is continuation, not a second pretrain.
+GitHub: <code>configs/phase2.yaml</code>, command generator mirroring
+<code>scripts/p1/generate_gate_i_runcards.py</code>. Hub: each run
+folder stores the exact command string.</p>
+<h3 class="unnumbered"
+id="i3.-forgetting-metric-deltamathrmbpb_mathrmtag-and-threshold-blocking">I3.
+Forgetting metric <span
+class="math inline">\(\Delta\mathrm{BPB}_{\mathrm{tag}}\)</span> and
+threshold (blocking)</h3>
+<p><span
+class="math display">\[\Delta\mathrm{BPB}_{\mathrm{tag}}(d,a,s)=\mathrm{val\_bpb\_full}_{\mathrm{after}}(d,a,s)-\mathrm{val\_bpb\_full}_{\mathrm{P1.1}}(d).\]</span>
+Before-score is Table 2, not Hub loop val. Confirmatory contrast: <span
+class="math display">\[C(d,s)=\mathrm{val\_bpb\_full}(d,\mathrm{A2},s)-\mathrm{val\_bpb\_full}(d,\mathrm{A1},s).\]</span>
+Positive <span class="math inline">\(C\)</span> means English hurt
+Tagalog more than extra Tagalog did. Material if <span
+class="math inline">\(|\bar C|\ge 0.01\)</span>. Evaluator: copy
+<code>scripts/p1/gate_j_full_bpb.py</code> byte-identical except output
+paths. GitHub: <code>results/delta_tagalog.json</code>. Pass: parent
+before-scores match Table 2 to printed precision.</p>
+<h3 class="unnumbered"
+id="i4.-forward-transfer-plasticity-metric-blocking">I4.
+Forward-transfer / plasticity metric (blocking)</h3>
+<p>Retention without acquisition is incomplete. Secondary: English
+<code>val_bpb_full</code> after A2 (and A3, EN0). Not used to pick
+depth. Same <code>evaluate_bpb</code>, English val JSONL, <span
+class="math inline">\(T=2048\)</span>. GitHub:
+<code>results/en_val.json</code>. Sign convention: lower English BPB is
+better plasticity; do not subtract it from Tagalog <span
+class="math inline">\(\Delta\)</span> into one scalar.</p>
+<h3 class="unnumbered" id="i5.-joint-training-upper-bound-blocking">I5.
+Joint-training upper bound (blocking)</h3>
+<p>Arm A3: 50/50 <em>document</em> mix of Tagalog train and English
+train, same <span class="math inline">\(D_{\mathrm{phase2}}\)</span>,
+shuffled at document level, never concatenating a Tagalog article to an
+English article inside one packed row as a silent curriculum. A3 is a
+ceiling on retention under mixed exposure, not a proof of “no
+forgetting.” GitHub: mixer script with seed. Pass: token counts 50/50
+<span class="math inline">\(\pm\)</span> documented remainder <span
+class="math inline">\(&lt;B\)</span>.</p>
+<h1 id="sec:L3">Layer 3 — Inferred additions (N1–N4)</h1>
+<p>Follow-on logic from Table 2’s actual pattern, not from a generic
+“deeper is more stable” slogan.</p>
+<h3 class="unnumbered"
+id="n1.-depth-stability-hypothesis-preregister-as-directional-not-as-a-ranking">N1.
+Depth-stability hypothesis (preregister as directional, not as a
+ranking)</h3>
+<p>Table 2 train–val gaps: d8 <span
+class="math inline">\(0.342\)</span>, d12 <span
+class="math inline">\(0.652\)</span>, d16 <span
+class="math inline">\(0.738\)</span>, d20 <span
+class="math inline">\(0.500\)</span>. The widest gap is d16, not d20;
+d20 is the <code>val_bpb_full</code> minimum by <span
+class="math inline">\(0.006887\)</span> over d8. Inferred directional
+guess for <em>untreated</em> English forgetting: <span
+class="math display">\[\bar C(d16)\;&gt;\;\bar C(d20)\;&gt;\;\bar
+C(d8)\]</span> i.e. mid-depth most unstable, deepest not automatically
+most stable, shallowest least overfit and maybe most robust. This is a
+hypothesis to put in the new AsPredicted box. It is <em>not</em> a
+license to rank depths if gaps <span
+class="math inline">\(&lt;0.01\)</span> or seed intervals overlap.
+Alternative reading: <span class="math inline">\(R_d\)</span> not gap
+predicts <span class="math inline">\(C\)</span>; then <span
+class="math inline">\(C\)</span> should fall as <span
+class="math inline">\(R_d\)</span> rises (d8 most data-rich, least
+plastic). Pre-register <em>which</em> of gap-order vs <span
+class="math inline">\(R_d\)</span>-order is primary; the other is
+secondary. Recommendation: primary = <span
+class="math inline">\(R_d\)</span>-order test (d8 vs d20 contrast of
+<span class="math inline">\(\bar C\)</span>); gap-order is specified
+secondary because it uses P1.1’s most distinctive shape.</p>
+<h3 class="unnumbered"
+id="n2.-equal-exposure-as-cf-control-intro-load-bearing-paragraph">N2.
+Equal-exposure as CF control (intro load-bearing paragraph)</h3>
+<p>Most CF depth claims confound size with extra pretraining tokens.
+P1.1 removed that confound for phase 1. The CF intro must say: parents
+saw the same <span class="math inline">\(19.27\)</span>M tokens;
+therefore a later depth effect on <span class="math inline">\(C\)</span>
+cannot be dismissed as “d20 simply trained longer in phase 1.” Residual:
+they are still not equally optimized (<span
+class="math inline">\(R_d\)</span> differs). Caption that residual every
+time N2 is invoked.</p>
+<h3 class="unnumbered" id="n3.-0.01-bpb-threshold-inheritance">N3. 0.01
+BPB threshold inheritance</h3>
+<p>P1.1 used <span class="math inline">\(0.01\)</span> so a <span
+class="math inline">\(0.006887\)</span> dip was not a ranking. CF
+inherits <span class="math inline">\(0.01\)</span> as the
+material-forgetting threshold for <span class="math inline">\(\bar
+C\)</span> and for d20<span class="math inline">\(-\)</span>d8 of <span
+class="math inline">\(\bar C\)</span>, unless the new PDF names another
+number <em>before</em> phase-2 BPB. Do not tighten to <span
+class="math inline">\(0.001\)</span> after seeing a small <span
+class="math inline">\(C\)</span>.</p>
+<h3 class="unnumbered" id="n4.-r_d-as-plasticity-index">N4. <span
+class="math inline">\(R_d\)</span> as plasticity index</h3>
+<p>Plot <span class="math inline">\(\bar C\)</span> against <span
+class="math inline">\(R_d\in\{0.458,0.174,0.082,0.044\}\)</span>. If
+<span class="math inline">\(|C|\)</span> rises as <span
+class="math inline">\(R_d\)</span> falls, the story is residual
+undertraining, not “depth is a stability dial.” GitHub:
+<code>results/rd_vs_C.json</code>. Hub model card: one sentence that
+<span class="math inline">\(R_d\)</span> is not a hyperparameter
+sweep.</p>
+<h1 id="sec:L4">Layer 4 — Extrapolated additions (X1–X5)</h1>
+<p>What the CF canon expects if this paper is to be readable next to
+EWC/GEM/ER. These are integration points, not replacements for A2<span
+class="math inline">\(-\)</span>A1.</p>
+<h3 class="unnumbered"
+id="x1.-ewc-baseline-secondary-family-after-untreated-a2">X1. EWC
+baseline (secondary family, after untreated A2)</h3>
+<p>Kirkpatrick et al. elastic weight consolidation on the parent, then
+English A2-budget <span class="citation"
+data-cites="kirkpatrick2017ewc"></span>. Fisher estimated on Tagalog
+train only, <span class="math inline">\(\lambda\)</span> predeclared
+(recommend a two-value grid <span
+class="math inline">\(\{10,100\}\)</span> as exploratory unless PDF says
+otherwise). Same tokenizer, <span class="math inline">\(T\)</span>,
+<span class="math inline">\(B\)</span>, <span
+class="math inline">\(N\)</span>. Do not tune <span
+class="math inline">\(\lambda\)</span> on Tagalog val after seeing <span
+class="math inline">\(C\)</span>. GitHub:
+<code>scripts/p2/ewc_train.py</code>, <code>arm-EWC/</code>. Hub:
+separate folders, <code>parent_sha256</code> pinned. Not confirmatory
+for paper 1 unless the PDF says so.</p>
+<h3 class="unnumbered" id="x2.-experience-replay-secondary">X2.
+Experience replay (secondary)</h3>
+<p>Replay buffer = frozen Tagalog train documents. Mix ratios <span
+class="math inline">\(\{0,0.05,0.20,0.50\}\)</span> of phase-2 tokens,
+remainder English, total still <span
+class="math inline">\(D_{\mathrm{phase2}}\)</span>. Ratio <span
+class="math inline">\(0\)</span> is A2; do not double-count. Selection
+of ratio is not allowed from Tagalog test. This is Design D; paper 1 may
+report seed-0 d20 only as exploratory.</p>
+<h3 class="unnumbered" id="x3.-stabilityplasticity-scatter">X3.
+Stability–plasticity scatter</h3>
+<p><span class="math inline">\(x\)</span> = Tagalog <span
+class="math inline">\(\Delta\mathrm{BPB}_{\mathrm{tag}}\)</span> (A2;
+higher <span class="math inline">\(x\)</span> = more forgetting). <span
+class="math inline">\(y\)</span> = English val BPB (higher <span
+class="math inline">\(y\)</span> = worse acquisition). One point per
+depth<span class="math inline">\(\times\)</span>seed. Joint A3 and EN0
+as reference symbols. No Pareto claim without the 0.01 rule.</p>
+<h3 class="unnumbered"
+id="x4.-bwt-and-fwt-with-bpb-sign-conventions">X4. BWT and FWT with BPB
+sign conventions</h3>
+<p>Standard accuracy BWT is after-minus-before on old tasks (negative =
+forgetting). For BPB, <em>positive</em> after-minus-before on Tagalog is
+forgetting. Define: <span class="math display">\[\begin{align*}
+\mathrm{BWT}_{\mathrm{BPB}} &amp;=
+\mathrm{val\_bpb\_full}^{\mathrm{tag}}(\mathrm{after})-\mathrm{val\_bpb\_full}^{\mathrm{tag}}(\mathrm{P1.1}),\\
+\mathrm{FWT}_{\mathrm{BPB}} &amp;=
+\mathrm{val\_bpb\_full}^{\mathrm{en}}(\mathrm{A2})-\mathrm{val\_bpb\_full}^{\mathrm{en}}(\mathrm{EN0}).
+\end{align*}\]</span> FWT uses the English-native from-scratch model
+(H6) as the reference, not a random init. Negative FWT<span
+class="math inline">\(_{\mathrm{BPB}}\)</span> means the Tagalog parent
+helped English (forward transfer). Publish the formulas in a metric card
+so reviewers do not flip signs.</p>
+<h3 class="unnumbered"
+id="x5.-category-pre-registration-retention-forgetting-collapse">X5.
+Category pre-registration: retention / forgetting / collapse</h3>
+<p>Bins on Tagalog A2 <code>val_bpb_full</code> relative to parent:</p>
+<ul>
+<li><p><strong>Retention:</strong> <span class="math inline">\(\bar C
+&lt; 0.01\)</span> and no collapse flag.</p></li>
+<li><p><strong>Forgetting:</strong> <span class="math inline">\(\bar C
+\ge 0.01\)</span> and not collapse.</p></li>
+<li><p><strong>Collapse:</strong> after A2, Tagalog val BPB <span
+class="math inline">\(\ge\)</span> parent untrained, or <span
+class="math inline">\(\ge 4.453225\)</span>, or <span
+class="math inline">\(\Delta\ge 1.0\)</span>.</p></li>
+</ul>
+<p>A run cannot be titled “collapse” because <span
+class="math inline">\(\Delta=0.02\)</span>. GitHub:
+<code>results/category.json</code>.</p>
+<h1 id="sec:L5">Layer 5 — Residual additions (R1–R5)</h1>
+<p>P1.1 suppressed or sidelined items that become CF assets.</p>
+<h3 class="unnumbered" id="r1.-extra-seed-matrix">R1. Extra-seed
+matrix</h3>
+<p>P1.1 extra seeds at d8/d12 are secondary for <span
+class="math inline">\(D^{\ast}\)</span> and primary for noise-scale
+planning. Copy the protocol: validation only, no test, same evaluator.
+Extend to d16/d20 <em>before</em> claiming CF seed needs. If P1.1
+extra-seed files exist only on a stopped pod, treat them as unavailable
+and rerun rather than inventing SD.</p>
+<h3 class="unnumbered"
+id="r2.-document-level-bootstrap-after-phase-2">R2. Document-level
+bootstrap after phase 2</h3>
+<p>P1.1 bootstrap used per-document non-overlap, not BOS-bestfit; all
+four 95% CIs overlapped (<span class="math inline">\(\sim
+1.23\)</span>–<span class="math inline">\(1.39\)</span>). Re-run the
+same bootstrap on post-A2 Tagalog val as a secondary packing, labeled
+not-<code>val_bpb_full</code>. Do not pick depth from it.</p>
+<h3 class="unnumbered"
+id="r3.-mid-run-tagalog-bpb-trajectory-during-english-training">R3.
+Mid-run Tagalog BPB trajectory during English training</h3>
+<p>P1.1 forbade selecting <span class="math inline">\(D^{\ast}\)</span>
+from step-200 d12 min <span class="math inline">\(1.084991\)</span>. CF
+still <em>records</em> Tagalog val every 50 steps at
+<code>eval-tokens=262144</code> during A2 as a diagnostic curve of when
+forgetting happens. Primary remains final-step full BPB. GitHub:
+<code>results/trajectories/</code> with an explicit
+<code>not_primary: true</code> flag.</p>
+<h3 class="unnumbered" id="r4.-gzip-entropy-normalization">R4. gzip
+entropy normalization</h3>
+<p>P1.1 gzip <span class="math inline">\(-9\)</span> on raw val UTF-8
+was <span class="math inline">\(2.739\)</span> bits/byte. After A2, gzip
+of Tagalog val does not change (data are frozen). gzip is not a
+forgetting metric. Optional: gzip of English val as a compressor
+baseline for plasticity, never as BWT.</p>
+<h3 class="unnumbered"
+id="r5.-d_1x-english-pilots-blocking-on-the-critical-path">R5. <span
+class="math inline">\(D_{1x}\)</span> English pilots (blocking on the
+critical path)</h3>
+<p>P1.1 <span class="math inline">\(D_{1x}\)</span> pilots (step 98)
+showed d8/d12 worse than <span class="math inline">\(D_{3x}\)</span>.
+Before spending 24 confirmatory A1/A2 runs, run d8 and d20, seed 0,
+<span class="math inline">\(N=98\)</span>, English only, Tagalog
+val_bpb_full. Purpose: wiring, VRAM, fertility shock, not <span
+class="math inline">\(C\)</span>. If Tagalog BPB becomes NaN, stop.
+GitHub: <code>docs/run-cards/p2-pilots/</code>. These pilots must finish
+<em>or be waived by a dated deviation</em> before the confirmatory PDF
+claims the grid is feasible. They must not leak into the confirmatory
+table.</p>
+<h1 id="sec:L6">Layer 6 — Hidden additions (H1–H6)</h1>
+<p>Frame shifts P1.1 could suppress because it never left Tagalog
+Wikipedia. In a CF paper they become load-bearing.</p>
+<h3 class="unnumbered"
+id="h1.-language-versus-domain-confound-blocking-for-the-phrase-relative-to-english">H1.
+Language-versus-domain confound (blocking for the phrase “relative to
+English”)</h3>
+<p>A2 on English Wikipedia changes language <em>and</em> dump
+statistics. To isolate language, add arm A4: matched-budget continuation
+on <strong>Tagalog news</strong> (TLUnified or a predeclared news dump),
+same tokenizer, same <span
+class="math inline">\(D_{\mathrm{phase2}}\)</span> <span
+class="citation" data-cites="cruz2022tlunified"></span>. Contrast of
+interest for “English caused it”: <span
+class="math display">\[C_{\mathrm{lang}}=C_{\mathrm{A2}}-C_{\mathrm{A4}}.\]</span>
+If A4 forgets as much as A2, the cause is domain shift or extra
+training, not English. A4 is confirmatory for the title phrase “relative
+to English”; if compute forces a cut, the title must drop that phrase
+and say “relative to extra Tagalog Wikipedia” (A2<span
+class="math inline">\(-\)</span>A1 only). Do not harvest TLUnified after
+seeing A2.</p>
+<h3 class="unnumbered"
+id="h2.-tokenizer-fertility-asymmetry-blocking">H2. Tokenizer fertility
+asymmetry (blocking)</h3>
+<p>Parent BPE was trained on Tagalog only. P1.1 val fertility <span
+class="math inline">\(\approx 4.53\)</span> bytes/token versus GPT-2
+<span class="math inline">\(\approx 2.76\)</span>. On English, the same
+BPE will over-segment (“shred”) English into shorter tokens, raising
+English token counts for the same UTF-8 bytes and making English
+acquisition look harder than a GPT-2-tokenized English LM. That is part
+of the intervention. Report English bytes/token before any phase-2
+claim. Forbidden fix: train a bilingual tokenizer after seeing English
+BPB. Optional later paper: matched-fertility byte-level models.</p>
+<h3 class="unnumbered"
+id="h3.-test-set-authority-chain-and-a-second-tagalog-test-read-blocking">H3.
+Test-set authority chain and a second Tagalog test read (blocking)</h3>
+<p>P1.1: <code>test_read_events</code>=1, d20 only, <span
+class="math inline">\(1.164768\)</span>, SHA <code>3bd19345…</code>. A
+CF paper that wants a Tagalog <em>test</em> <span
+class="math inline">\(\Delta\)</span> needs a <strong>new</strong>
+predeclared event: one test read after all validation <span
+class="math inline">\(C\)</span> are sealed, on a predeclared subset
+(recommend d20 seed-0 A1 and A2 only, or all depths seed-0 A2 only —
+pick in the PDF). Clock: <code>test_access_log_p2.json</code> starts at
+0. P1.1’s <span class="math inline">\(1.164768\)</span> is the parent
+before-test for d20 only; other depths have no parent test BPB and
+cannot have a test <span class="math inline">\(\Delta\)</span> without a
+new parent test, which P1.1 forbade. Therefore confirmatory Tagalog test
+<span class="math inline">\(\Delta\)</span> is d20-only, or the PDF must
+say “validation only, no test <span
+class="math inline">\(\Delta\)</span>.” Recommended: validation <span
+class="math inline">\(C\)</span> is primary; one d20 A2 test BPB is
+secondary; no test for d8/d12/d16.</p>
+<h3 class="unnumbered" id="h4.-null-result-reframing-intro">H4.
+Null-result reframing (intro)</h3>
+<p>P1.1’s non-ranking at <span class="math inline">\(0.01\)</span> is
+the CF paper’s strongest asset: depth was not a performance dial, so a
+later depth effect on <span class="math inline">\(C\)</span> is new
+information rather than “bigger models were already better.” Write that
+paragraph before methods. Do not reopen <span
+class="math inline">\(D^{\ast}\)</span>.</p>
+<h3 class="unnumbered"
+id="h5.-separate-aspredicted-researchbox-blocking">H5. Separate
+AsPredicted / ResearchBox (blocking)</h3>
+<p>New PDF, new box. Authority: new PDF <span
+class="math inline">\(&gt;\)</span> this manifest <span
+class="math inline">\(&gt;\)</span>
+<code>docs/papers/p2-cf-english/paper.tex</code> <span
+class="math inline">\(&gt;\)</span> P2 ledger <span
+class="math inline">\(&gt;\)</span> deviation. Filing occurs after R5
+pilots show feasibility and before any confirmatory A2
+<code>val_bpb_full</code>. Draft:
+<code>docs/papers/p2-cf-english/aspredicted-draft-p2.txt</code> (extend
+it with H1/H6/N1 before filing).</p>
+<h3 class="unnumbered"
+id="h6.-english-native-from-scratch-baseline-blocking-for-relative-to-english">H6.
+English-native from-scratch baseline (blocking for “relative to
+English”)</h3>
+<p>The title phrase is not only “Tagalog model then English data.” It
+also requires an English-native model trained <em>from scratch</em> on
+the same English stream, same <span
+class="math inline">\(D_{\mathrm{phase2}}\)</span>, same Tagalog BPE
+(fair tokenizer), same depths, seed 0: arm EN0. Plasticity FWT compares
+A2 English BPB to EN0. A Tagalog parent that reaches EN0 English BPB has
+transferred; one that is far worse has paid a
+tokenizer-and-initialization tax. EN0 is not a parent of forgetting (it
+never saw Tagalog). GitHub: <code>runs/en0-d{8,12,16,20}/</code>. Hub:
+<code>en0/</code> not inside <code>p1-fixed-d20-3x</code>.</p>
+<h1 id="sec:grid">Unified experimental grid (after PDF)</h1>
+<p>Confirmatory family (paper 1):</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Arm</th>
+<th style="text-align: left;">Parent</th>
+<th style="text-align: left;">Phase-2 stream</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A0</td>
+<td style="text-align: left;">P1.1 <span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;">Eval drift</td>
+</tr>
+<tr>
+<td style="text-align: left;">A1</td>
+<td style="text-align: left;">P1.1 <span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">Tagalog Wiki train</td>
+<td style="text-align: left;">Continued-training drift</td>
+</tr>
+<tr>
+<td style="text-align: left;">A2</td>
+<td style="text-align: left;">P1.1 <span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">English WT103-raw train</td>
+<td style="text-align: left;">Language+dump intervention</td>
+</tr>
+<tr>
+<td style="text-align: left;">A3</td>
+<td style="text-align: left;">P1.1 <span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">50/50 documents</td>
+<td style="text-align: left;">Joint ceiling</td>
+</tr>
+<tr>
+<td style="text-align: left;">A4</td>
+<td style="text-align: left;">P1.1 <span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">Tagalog news train</td>
+<td style="text-align: left;">Domain control (H1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">EN0</td>
+<td style="text-align: left;">random</td>
+<td style="text-align: left;">English WT103-raw train</td>
+<td style="text-align: left;">English-native baseline (H6)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Primary contrast: <span class="math inline">\(\bar
+C(d)=\overline{\mathrm{A2}-\mathrm{A1}}\)</span> over seeds <span
+class="math inline">\(\{0,1,2\}\)</span>. Language isolation: <span
+class="math inline">\(\overline{\mathrm{A2}-\mathrm{A4}}\)</span> at
+seed 0 if A4 is confirmatory. Plasticity: A2 English BPB versus EN0.
+Secondary after freeze: EWC, ER ratios.</p>
+<h1 id="sec:steps">Super-granular procedure</h1>
+<p>Execute in order. A later gate may not start if the previous gate’s
+JSON <code>status</code> is not <code>pass</code>. Deviation cards
+cannot make a departed run confirmatory after seeing BPB.</p>
+<h2 id="gate-p2-0-freeze-the-parent-read-only">Gate P2-0 — Freeze the
+parent (read-only)</h2>
+<ol>
+<li><p>Verify local or Hub SHA-256 for d8/d12/d16/d20
+<code>model_000294.pt</code> against §<a href="#sec:anchors"
+data-reference-type="ref" data-reference="sec:anchors">2</a>.</p></li>
+<li><p>Verify tokenizer.pkl and token_bytes.pt hashes.</p></li>
+<li><p>Copy <code>scripts/p1/gate_j_full_bpb.py</code> into the new repo
+without editing packing math.</p></li>
+<li><p>Write <code>PARENT.md</code> with ResearchGate URL, GitHub URL,
+Hub URL, commit <code>92d63d4</code>, AsPredicted #306780, and “do not
+amend.”</p></li>
+<li><p>Do not run Tagalog test BPB. Do not touch
+<code>test.jsonl</code>.</p></li>
+</ol>
+<h2 id="gate-p2-1-create-empty-p2-github-repository">Gate P2-1 — Create
+empty P2 GitHub repository</h2>
+<ol>
+<li><p><code>gh repo create pageman/nanochat-filipino-p2-cf-en --public</code>.</p></li>
+<li><p>Orphan first commit (same discipline as P1.1 public-main): no
+passcodes, no <code>transfer/</code>, no <code>test.jsonl</code>, no
+<code>.pt</code> weights.</p></li>
+<li><p>Root files: <code>LICENSE</code> (MIT),
+<code>LICENSE-RESEARCH.md</code>, <code>DATA_AND_CODE_NOTICES.md</code>
+(WikiText-TL-39 + WikiText-103 + news dump if A4),
+<code>PARENT.md</code>, <code>README.md</code> (claim / not-claim /
+Quick Start / bibtex / DeepWiki / parent links).</p></li>
+<li><p>Tree:</p>
+<pre><code>p2-cf-en/
+  README.md PARENT.md LICENSE LICENSE-RESEARCH.md
+  DATA_AND_CODE_NOTICES.md
+  configs/phase2.yaml
+  docs/PROTOCOL-p2-cf-en.md
+  docs/papers/   (this manifest + Stage-1 paper)
+  docs/run-cards/p2-pilots/
+  manifests/  (seed, source_en, split_en, fertility, budget_phase2,
+               gate_ledger, test_access_log_p2, selection_record_p2)
+  patches/    (copy NANOCHAT_DATA_DIR.patch)
+  reproducibility/
+  results/    (empty JSON schemas with nulls)
+  scripts/p2/</code></pre></li>
+<li><p><code>.gitignore</code>: <code>*.pt</code>, <code>*.pkl</code>,
+<code>*.parquet</code>, <code>artifacts/</code>,
+<code>vendor/nanochat/</code>, passcode files.</p></li>
+<li><p>Push orphan <code>main</code> only. Do not force-push parent
+history that contains secrets.</p></li>
+</ol>
+<h2 id="gate-p2-2-create-empty-p2-hugging-face-repository">Gate P2-2 —
+Create empty P2 Hugging Face repository</h2>
+<ol>
+<li><p><code>hf repo create pageman/nanochat-filipino-p2-cf-en --type model --private</code>
+then make public after card review, or public immediately if card has no
+secrets.</p></li>
+<li><p>YAML: <code>license: other</code>; languages <code>tl</code>,
+<code>en</code>; tags <code>nanochat</code>,
+<code>catastrophic-forgetting</code>, <code>bits-per-byte</code>;
+datasets <code>linkanjarad/Wikitext-TL39</code> plus the locked English
+id.</p></li>
+<li><p>README <strong>Paper</strong> / <strong>Code</strong> /
+<strong>Parent</strong> block:</p>
+<pre><code>parent_base_repo: pageman/nanochat-filipino-p1-fixed-d20-3x
+parent_paper: https://www.researchgate.net/publication/412302216_...
+parent_code: https://github.com/pageman/nanochat-filipino
+this_code: https://github.com/pageman/nanochat-filipino-p2-cf-en</code></pre></li>
+<li><p>Folder schema (create <code>.gitkeep</code> only until weights
+exist):</p>
+<pre><code>d8/a0/ d8/a1/seed0/ d8/a2/seed{0,1,2}/ d8/a3/ d8/a4/ d8/en0/
+... same for d12 d16 d20
+ewc/  er/   # secondary, later</code></pre></li>
+<li><p>Each future weight folder: <code>model_*.pt</code>,
+<code>meta_*.json</code>, <code>SHA256</code>, command string. No
+optimizer states required. No Tagalog <code>test.jsonl</code>.</p></li>
+<li><p>Do not push into <code>p1-fixed-d20-3x</code>.</p></li>
+</ol>
+<h2 id="gate-p2-3-english-and-news-corpus-audit-i1-h1-h2">Gate P2-3 —
+English and news corpus audit (I1, H1, H2)</h2>
+<ol>
+<li><p>Download WikiText-103 raw; hash; LF-only canonical; article
+reconstruct; 70/15/15 hash split; write
+<code>split_manifest_en.json</code>.</p></li>
+<li><p>Encode train with frozen parent BPE; write <span
+class="math inline">\(T_{\mathrm{en,train}}\)</span>, bytes/token,
+compare to Tagalog <span class="math inline">\(4.53\)</span>.</p></li>
+<li><p>If A4 is confirmatory: lock Tagalog news source, same pipeline,
+<code>split_manifest_news.json</code>. News val/test never enter Tagalog
+Wikipedia val/test.</p></li>
+<li><p>Place shards via <code>NANOCHAT_DATA_DIR</code> hook. Never
+<code>python -m nanochat.dataset</code>.</p></li>
+<li><p>Write-protect English test JSONL; keep out of active train
+dir.</p></li>
+</ol>
+<h2 id="gate-p2-4-d_1x-english-pilots-r5">Gate P2-4 — <span
+class="math inline">\(D_{1x}\)</span> English pilots (R5)</h2>
+<ol>
+<li><p>Host card: named NVIDIA GPU, image, torch, device-batch.</p></li>
+<li><p>d8 seed0 A2 <span class="math inline">\(N=98\)</span>; d20 seed0
+A2 <span class="math inline">\(N=98\)</span>.</p></li>
+<li><p>Tagalog <code>val_bpb_full</code> once at end (full evaluator),
+plus loop logs.</p></li>
+<li><p>Pass: finite BPB, hashes unchanged, no test read, VRAM fit at
+<span class="math inline">\(T=2048\)</span>.</p></li>
+<li><p>Fail: stop confirmatory; deviation or smaller device-batch only
+(not smaller <span class="math inline">\(T\)</span>).</p></li>
+</ol>
+<h2 id="gate-p2-5-file-the-new-aspredicted-h5">Gate P2-5 — File the new
+AsPredicted (H5)</h2>
+<ol>
+<li><p>Expand <code>aspredicted-draft-p2.txt</code> with N1 (which depth
+order is primary), H1 (A4 yes/no), H6 (EN0 required), H3 (test policy),
+X5 bins, 0.01 rule, equal <span
+class="math inline">\(D_{\mathrm{phase2}}\)</span>, frozen
+tokenizer.</p></li>
+<li><p>File PDF. Store SHA-256. ResearchBox deposit without passcode in
+git.</p></li>
+<li><p>Set ledger <code>registration.url</code>. No confirmatory A2 full
+BPB before this timestamp.</p></li>
+</ol>
+<h2 id="gate-p2-6-english-native-from-scratch-en0-h6">Gate P2-6 —
+English-native from-scratch EN0 (H6)</h2>
+<ol>
+<li><p>From random init, depths 8 and 20 seed 0 at minimum; 12 and 16 if
+budget.</p></li>
+<li><p>Same English train stream, <span
+class="math inline">\(N=294\)</span>, Tagalog BPE, <span
+class="math inline">\(T=2048\)</span>.</p></li>
+<li><p>English val BPB only until sealed; English test at most once
+later.</p></li>
+<li><p>Upload to Hub <code>en0/d8</code>, <code>en0/d20</code>. GitHub
+manifests only.</p></li>
+</ol>
+<h2 id="gate-p2-7-confirmatory-phase-2-grid">Gate P2-7 — Confirmatory
+phase-2 grid</h2>
+<ol>
+<li><p>Serial or documented-parallel: for <span
+class="math inline">\(d\in\{8,12,16,20\}\)</span>, A0 (eval only), A1
+seeds 0–2, A2 seeds 0–2, A3 seed 0, A4 seed 0 if confirmatory.</p></li>
+<li><p>After each run: finite check; SHA of weights; Tagalog full val
+BPB; do not look at Tagalog test.</p></li>
+<li><p>Write per-cell JSON: nats, bytes, excluded specials, packed bytes
+(must match parent on Tagalog).</p></li>
+<li><p>A0 must recover Table 2 within documented host noise; if not,
+stop (evaluator/host drift).</p></li>
+</ol>
+<h2 id="gate-p2-8-seal-c-then-optional-test-h3-i3">Gate P2-8 — Seal
+<span class="math inline">\(C\)</span>, then optional test (H3, I3)</h2>
+<ol>
+<li><p>Compute <span class="math inline">\(\bar C(d)\)</span> and sample
+SD from A1/A2 seeds. Write <code>selection_record_p2.json</code> with
+<code>test_read_count=0</code>.</p></li>
+<li><p>Apply 0.01 rule and X5 bins. Do not drop depths.</p></li>
+<li><p>If PDF allows: one Tagalog test read on predeclared cells; append
+<code>test_access_log_p2.json</code>; never use test to choose
+depth.</p></li>
+<li><p>English test at most once, after English val sealed, not mixed
+with Tagalog test in one command.</p></li>
+</ol>
+<h2 id="gate-p2-9-secondary-methods-x1x3-optional">Gate P2-9 — Secondary
+methods (X1–X3), optional</h2>
+<p>Only after Gate P2-8 JSON exists. EWC/ER cannot rewrite <span
+class="math inline">\(C\)</span>. Label exploratory unless the PDF
+already included them (it should not, for paper 1).</p>
+<h2 id="gate-p2-10-paper-compilation">Gate P2-10 — Paper
+compilation</h2>
+<ol>
+<li><p>Fill Stage-1 <code>docs/papers/p2-cf-english/paper.tex</code>
+Table phase-2 with real numbers; do not edit P1.1 Table 2.</p></li>
+<li><p>Intro uses H4+N2. Methods use I1–I5, H2, H6. Results: <span
+class="math inline">\(C(d)\)</span>, A4 if run, EN0, scatter X3,
+categories X5.</p></li>
+<li><p>Limitations: single parent seed, <span
+class="math inline">\(R_d\)</span> residual, fertility shredding,
+reconstructed split, packing crop.</p></li>
+<li><p>Acknowledgements may match P1.1. Cheng is not coauthor.</p></li>
+<li><p>Build <code>tex,md,txt,html,docx,pdf</code>. Cite parent
+ResearchGate URL.</p></li>
+<li><p>Do not claim “deeper is always more stable.” Do not claim P1.1
+showed forgetting.</p></li>
+</ol>
+<h2 id="gate-p2-11-publish-github-and-hub-close-out">Gate P2-11 —
+Publish GitHub and Hub close-out</h2>
+<ol>
+<li><p>GitHub: results JSON, run cards, deviation cards, paper outputs
+(no <code>test.jsonl</code>).</p></li>
+<li><p>Hub: upload only new run folders; model card copies <span
+class="math inline">\(\Delta\)</span> table and points at GitHub
+<code>results/</code> for audit; parent SHAs listed; loop vs full BPB
+distinction restated.</p></li>
+<li><p>Tag Hub revision. Record commit in
+<code>final_checkpoint_manifest_p2.json</code>.</p></li>
+<li><p>DeepWiki link after GitHub is public:
+<code>https://deepwiki.com/pageman/nanochat-filipino-p2-cf-en</code>.</p></li>
+</ol>
+<h1 id="sec:map">Paper section <span
+class="math inline">\(\leftrightarrow\)</span> addition map</h1>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CF paper section</th>
+<th style="text-align: left;">Additions that must appear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Title / abstract</td>
+<td style="text-align: left;">H4, H5, H6, I3, X5, N3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introduction</td>
+<td style="text-align: left;">H4, N2, N1 (as hypothesis), parent Table 2
+cite</td>
+</tr>
+<tr>
+<td style="text-align: left;">Related work</td>
+<td style="text-align: left;">X1, X2, X4, McCloskey/French/Luo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Registration</td>
+<td style="text-align: left;">H5, H3, E1, N3</td>
+</tr>
+<tr>
+<td style="text-align: left;">English data</td>
+<td style="text-align: left;">I1, H1, H2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase-2 train</td>
+<td style="text-align: left;">I2, E3, R5, R3 (diagnostic)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Metrics</td>
+<td style="text-align: left;">I3, I4, X4, X5, N4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Arms</td>
+<td style="text-align: left;">I5, H1, H6, A0–A4, EN0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Results</td>
+<td style="text-align: left;">E1, N1 test, X3, R2 optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">Limitations</td>
+<td style="text-align: left;">E2, E4, E5, <span
+class="math inline">\(R_d\)</span>, fertility, reconstructed split</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ethics / lineage</td>
+<td style="text-align: left;">parent URLs, no passcode, no parent-Hub
+overwrite</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="sec:readme">GitHub README claim / not-claim (copy text)</h1>
+<p><strong>Claim:</strong> This repository is the close-out archive for
+a preregistered equal-exposure continuation study: frozen P1.1 Tagalog
+nanochat parents, matched <span
+class="math inline">\(D_{\mathrm{phase2}}\)</span>, Tagalog
+<code>val_bpb_full</code> contrast A2<span
+class="math inline">\(-\)</span>A1, optional language-versus-news
+control, English-native from-scratch reference.</p>
+<p><strong>Not-claim:</strong> Not P1.1. Not a chat model. Not CORE. Not
+proof that deeper models forget less. Not an amendment of AsPredicted
+#306780. Not a dump of <code>test.jsonl</code>. Checkpoints live on
+Hugging Face <code>pageman/nanochat-filipino-p2-cf-en</code>. Parent
+weights stay at
+<code>pageman/nanochat-filipino-p1-fixed-d20-3x</code>.</p>
+<h1 id="sec:out">What remains out of paper 1</h1>
+<p>Design B (Cebuano/Ilocano/Hiligaynon). PackNet / GEM as confirmatory.
+SFT arm E. Changing tokenizer. ClimbMix. Reopening <span
+class="math inline">\(D^{\ast}\)</span>. Using loop val as BWT.
+Native-speaker scores. Downstream NER/GCE as forgetting metrics.</p>
+<h1 id="app:cards">Per-addition operator card (copy into the
+ledger)</h1>
+<p>For each ID, the operator writes one JSON object before the next ID
+starts. Fields: <code>id</code>, <code>layer</code>,
+<code>started_at_utc</code>, <code>ended_at_utc</code>,
+<code>operator</code>, <code>status</code> <span
+class="math inline">\(\in\)</span>
+{<code>not_started</code>,<code>pass</code>,<code>fail</code>,<code>deferred</code>},
+<code>artifacts[]</code>, <code>hashes{}</code>, <code>notes</code>,
+<code>confirmatory</code> (bool). Deferred is allowed only for X1, X2,
+X3, R2, R4, and for A4 if the PDF dropped the phrase “relative to
+English.” Deferred is not allowed for H5, I3, E1, I1, H2, H3, H6 if the
+title keeps “relative to English.”</p>
+<h1 id="app:json">JSON schemas (GitHub <code>manifests/</code> and
+<code>results/</code>)</h1>
+<h2 id="seed_matrix.json-e1-r1"><code>seed_matrix.json</code> (E1,
+R1)</h2>
+<p>Keys: <code>parent_seed</code> (always 0 / torch 42),
+<code>continuation_seeds</code> <span
+class="math inline">\([0,1,2]\)</span>,
+<code>arms_requiring_three_seeds</code> <span
+class="math inline">\([\mathrm{A1},\mathrm{A2}]\)</span>,
+<code>arms_seed0_only</code> <span
+class="math inline">\([\mathrm{A0},\mathrm{A3},\mathrm{A4},\mathrm{EN0}]\)</span>
+unless upgraded, <code>n_confirmatory_trainings</code> (24 if A1/A2
+<span class="math inline">\(\times\)</span> 4 depths <span
+class="math inline">\(\times\)</span> 3 seeds).</p>
+<h2 id="source_manifest_en.json-i1"><code>source_manifest_en.json</code>
+(I1)</h2>
+<p>Keys: <code>dataset_id</code>, <code>revision</code>,
+<code>raw_not_moses</code> (must be true), <code>file_sha256</code>,
+<code>n_rows</code>, <code>canonical</code> <code>LF_only</code>,
+<code>tokenizer_sha256</code> (must equal <code>04436b85…</code>),
+<code>t_en_train</code>, <code>bytes_per_token_train</code>,
+<code>bytes_per_token_val</code>, <code>gpt2_bytes_per_token_val</code>
+(descriptive only).</p>
+<h2 id="budget_phase2.json-i2"><code>budget_phase2.json</code> (I2)</h2>
+<p>Keys: <code>N</code> <span class="math inline">\(294\)</span>,
+<code>B</code> <span class="math inline">\(65536\)</span>,
+<code>D_phase2</code> <span class="math inline">\(19267584\)</span>,
+<code>token_unit</code> <code>parent_tagalog_bpe</code>,
+<code>lr_peak_fraction</code> <span class="math inline">\(0.3\)</span>,
+<code>warmup</code> <span class="math inline">\(14\)</span>,
+<code>fresh_optimizer</code> true, <code>never_ratio_minus_one</code>
+true, <code>core_metric_every</code> <span
+class="math inline">\(-1\)</span>.</p>
+<h2 id="delta_tagalog.json-i3"><code>delta_tagalog.json</code> (I3)</h2>
+<p>Per depth and seed: <code>bpb_before</code> (copied from Table 2, not
+recomputed as a new truth), <code>bpb_a0</code>, <code>bpb_a1</code>,
+<code>bpb_a2</code>, <code>bpb_a3</code>, <code>C</code> <span
+class="math inline">\(=\mathrm{a2}-\mathrm{a1}\)</span>,
+<code>Delta_a2</code> <span
+class="math inline">\(=\mathrm{a2}-\mathrm{before}\)</span>,
+<code>packed_bytes</code> (must be <span
+class="math inline">\(5868797\)</span> on Tagalog val),
+<code>n_excluded</code>, <code>finite</code>.</p>
+<h2 id="test_access_log_p2.json-h3"><code>test_access_log_p2.json</code>
+(H3)</h2>
+<p>Starts <code>test_read_events</code>: <span
+class="math inline">\(0\)</span>. Each event: <code>at_utc</code>,
+<code>kind</code> (<code>tagalog_test_bpb</code> or
+<code>english_test_bpb</code>), <code>depth</code>, <code>arm</code>,
+<code>seed</code>, <code>bpb</code>, <code>file_sha256</code>,
+<code>used_to_select</code>: false. Forbidden: reading P1.1 test without
+a new event; using P1.1’s <span class="math inline">\(1.164768\)</span>
+as <code>after</code>.</p>
+<h2 id="category.json-x5"><code>category.json</code> (X5)</h2>
+<p>Per depth: <code>C_bar</code>, <code>C_sd</code>, <code>bin</code>
+<span class="math inline">\(\in\)</span>
+{<code>retention</code>,<code>forgetting</code>,<code>collapse</code>},
+<code>collapse_flags</code> (untrained, unigram, delta_ge_1).</p>
+<h1 id="app:cmd">Command templates (do not improvise flags)</h1>
+<p>Parent load is always the Hub or local SHA-pinned
+<code>model_000294.pt</code>. Phase-2 train (A2 shown; A1 swaps data dir
+to Tagalog train shards; A4 to news shards):</p>
+<pre><code>python -m scripts.base_train \
+  --device-type=cuda --depth=DEPTH --max-seq-len=2048 \
+  --device-batch-size=8 --total-batch-size=65536 \
+  --num-iterations=294 \
+  --target-param-data-ratio=PARENT_RD \
+  --eval-tokens=262144 --eval-every=50 --core-metric-every=-1 \
+  --sample-every=200 --save-every=50 --warmup-steps=14 \
+  --run=p2-a2-dDEPTH-sSEED --model-tag=p2-a2-dDEPTH-sSEED</code></pre>
+<p>Load-from-checkpoint flag must be whatever the pinned nanochat commit
+actually implements; record the exact flag in the run card
+<em>before</em> launch. If the trainer cannot load a custom
+<code>.pt</code>, stop and write a deviation; do not reimplement
+<code>load_model</code> ad hoc after seeing loss.</p>
+<p>Tagalog full eval after train (validation phase only):</p>
+<pre><code>python scripts/p2/gate_j_full_bpb.py --phase val \
+  --depth DEPTH --model-tag TAG --checkpoint-step FINAL</code></pre>
+<p><code>--phase test</code> is illegal until
+<code>test_access_log_p2.json</code> says count <span
+class="math inline">\(0\)</span> and
+<code>selection_record_p2.json</code> exists.</p>
+<p>EN0 omits parent load, same English shards, same <span
+class="math inline">\(N,B,T\)</span>, Tagalog BPE still mounted.</p>
+<h1 id="app:hf">Hugging Face README body (paste)</h1>
+<p>Paste after YAML. Keep the loop-versus-full warning:</p>
+<pre><code># nanochat-filipino-p2-cf-en
+
+Paper (Stage 1 until numbers exist): see GitHub docs/papers/p2-cf-english/
+Parent paper: https://www.researchgate.net/publication/412302216_...
+Parent weights: pageman/nanochat-filipino-p1-fixed-d20-3x
+Parent code: https://github.com/pageman/nanochat-filipino
+This code: https://github.com/pageman/nanochat-filipino-p2-cf-en
+
+This repo is continuation and English-native runs, not the P1.1 parents.
+Do not rank forgetting from meta_*.json val_bpb (eval_tokens=262144).
+Primary: Tagalog val_bpb_full contrast A2-A1. Threshold 0.01 BPB.
+Tokenizer is the frozen Tagalog 32,768 BPE. English is WikiText-103 raw.
+No test.jsonl. No SFT. No ClimbMix. License field other.</code></pre>
+<h1 id="app:paras">Paper paragraph inserts (do not paraphrase into
+hype)</h1>
+<p><strong>Intro (H4+N2).</strong> “Pajo (2026) showed that under <span
+class="math inline">\(D_{3x}\)</span> on WikiText-TL-39, nanochat depths
+8–20 are not a held-out Tagalog BPB ranking at <span
+class="math inline">\(0.01\)</span> BPB (exact minimum at depth 20,
+margin <span class="math inline">\(0.006887\)</span> to depth 8). That
+null is useful here: if depth later changes the English-continuation
+contrast <span class="math inline">\(C\)</span>, the change is not a
+restatement of a phase-1 performance ranking. Phase-1 exposure was
+matched (<span
+class="math inline">\(D_{\mathrm{actual}}=19{,}267{,}584\)</span>);
+residual <span class="math inline">\(R_d\)</span> still differs and is
+reported with <span class="math inline">\(C\)</span>.”</p>
+<p><strong>Methods tokenizer (H2).</strong> “English is encoded with the
+parent Tagalog BPE. Fertility on English is expected to be worse than
+GPT-2. Bytes/token are reported. The tokenizer is not retrained.”</p>
+<p><strong>Methods English-native (H6).</strong> “Arm EN0 trains the
+same depths from scratch on the English stream with the same BPE and
+<span class="math inline">\(D_{\mathrm{phase2}}\)</span>. FWT<span
+class="math inline">\(_{\mathrm{BPB}}\)</span> is A2 English val BPB
+minus EN0 English val BPB. EN0 never sees Tagalog and is not a
+forgetting parent.”</p>
+<p><strong>Results rule (N3+X5).</strong> “We report <span
+class="math inline">\(\bar C\)</span> and sample SD. Values below <span
+class="math inline">\(0.01\)</span> are not a ranking. Collapse is
+reserved for the predeclared binary.”</p>
+<h1 id="app:ticks">Gate file checklist (tick in the ledger, not in
+chat)</h1>
+<p>P2-0: four weight SHAs, two tokenizer SHAs, <code>PARENT.md</code>,
+evaluator copy, zero test reads.<br />
+P2-1: public GitHub, orphan commit, gitignore, MIT + research notices,
+empty results schemas.<br />
+P2-2: Hub repo, YAML <code>other</code>, parent block, empty arm
+folders, no parent-repo push.<br />
+P2-3: English raw hash, split label, fertility table, write-protected
+English test, no ClimbMix.<br />
+P2-4: d8 and d20 <span class="math inline">\(N=98\)</span> pilots,
+finite Tagalog val, host card, VRAM at <span
+class="math inline">\(T=2048\)</span>.<br />
+P2-5: new AsPredicted PDF SHA, ResearchBox without passcode in git,
+ledger URL.<br />
+P2-6: EN0 d8/d20 at least, English val sealed.<br />
+P2-7: 24 A1/A2 runs + A0/A3/(A4), packed bytes match, A0 recovers
+Table 2.<br />
+P2-8: <code>C</code> sealed at test count 0; optional one d20 test;
+categories assigned.<br />
+P2-9: EWC/ER only if labeled secondary.<br />
+P2-10: paper table filled, P1.1 table untouched, six formats
+built.<br />
+P2-11: GitHub results public, Hub weights in p2 repo only, DeepWiki
+link.</p>
+<h1 id="app:compute">Compute sketch (not a budget promise)</h1>
+<p>P1.1 seed-0 <span class="math inline">\(D_{3x}\)</span> wall times on
+A40 were about <span
+class="math inline">\(0.027/0.061/0.119/0.204\)</span> hours for
+d8/d12/d16/d20. Phase-2 is the same <span
+class="math inline">\(N\)</span> and <span
+class="math inline">\(B\)</span>, plus eval. Order-of-magnitude: 24
+A1/A2 trains <span class="math inline">\(\approx\)</span> <span
+class="math inline">\(6\times\)</span> a four-depth seed-0 sweep if
+depths are balanced, plus EN0, A3, A4, pilots. Record actual hours on
+the host card. Do not cut d20 after seeing <span
+class="math inline">\(C\)</span>.</p>
+<h1 id="app:fail">Failure modes mapped to addition IDs</h1>
+<p>NaN Tagalog BPB after A2 <span
+class="math inline">\(\rightarrow\)</span> stop, E1/R5. Packed byte
+count changed <span class="math inline">\(\rightarrow\)</span> evaluator
+moved, E3. A0 <span class="math inline">\(\neq\)</span> Table 2 <span
+class="math inline">\(\rightarrow\)</span> host/eval drift, P2-7.
+English Moses <code>@-@</code> used silently <span
+class="math inline">\(\rightarrow\)</span> I1 fail. Tokenizer retrained
+<span class="math inline">\(\rightarrow\)</span> H2 fail. Test read
+before seal <span class="math inline">\(\rightarrow\)</span> H3 fail.
+Weights pushed to parent Hub <span
+class="math inline">\(\rightarrow\)</span> lineage fail. <span
+class="math inline">\(C\)</span> computed from loop val <span
+class="math inline">\(1.117213\)</span> <span
+class="math inline">\(\rightarrow\)</span> I3 fail. Title says “relative
+to English” but A4 and EN0 absent <span
+class="math inline">\(\rightarrow\)</span> H1/H6 fail. Collapse claimed
+at <span class="math inline">\(\Delta=0.02\)</span> <span
+class="math inline">\(\rightarrow\)</span> X5 fail. #306780 edited <span
+class="math inline">\(\rightarrow\)</span> H5 fail.</p>
+<h1 class="unnumbered" id="status">Status</h1>
+<p>This manifest is a specification. Phase-2 BPB does not exist here.
+Filling <span class="math inline">\(C(d)\)</span> before H5 is a
+protocol break.</p>
+<div class="thebibliography">
+<p><span>9</span> P. Pajo. Equal-exposure depth and held-out Tagalog
+bits-per-byte on WikiText-TL-39. 2026. <a
+href="https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39"
+class="uri">https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39</a>.
+S. Merity et al. Pointer sentinel mixture models. ICLR, 2017. J. C. B.
+Cruz and C. Cheng. Improving large-scale language models and resources
+for Filipino. LREC, 2022. J. Kirkpatrick et al. Overcoming catastrophic
+forgetting in neural networks. PNAS, 2017.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "F",
+  "status": "pass",
+  "at_utc": "2026-08-17T15:40:20Z",
+  "host": "Mac/CPU",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "script": "scripts/p2/gate_f_tokenizer.py",
+  "command": [
+    "/Users/paulpajo/Projects/nanochat-filipino/vendor/nanochat/.venv/bin/python",
+    "-m",
+    "scripts.tok_train",
+    "--max-chars",
+    "2000000000",
+    "--doc-cap",
+    "10000",
+    "--vocab-size",
+    "32768"
+  ],
+  "cwd": "/Users/paulpajo/Projects/nanochat-filipino/vendor/nanochat",
+  "elapsed_s": 10.66899585723877,
+  "tok_train_log": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate-f-tok_train.log",
+  "nanochat_data_dir": "/Users/paulpajo/Projects/nanochat-filipino/data/processed/wikitext-103/en-active",
+  "nanochat_base_dir": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p2-20260817T150944Z-de99f8a",
+  "tokenizer_dir": "data/cache/p2-20260817T150944Z-de99f8a/tokenizer",
+  "flags": {
+    "max_chars": 2000000000,
+    "doc_cap": 10000,
+    "vocab_size": 32768
+  },
+  "train_parquet_names": [
+    "train_00000.parquet",
+    "train_00001.parquet",
+    "train_00002.parquet",
+    "train_00003.parquet"
+  ],
+  "excluded_last_shard": "val.parquet",
+  "input_file_sha256": {
+    "train_00000.parquet": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861",
+    "train_00001.parquet": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c",
+    "train_00002.parquet": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7",
+    "train_00003.parquet": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b"
+  },
+  "val_parquet_sha256_not_used_for_training": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+  "vocab_size": 32768,
+  "hashes": {
+    "tokenizer.pkl": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+    "token_bytes.pt": "5ae2ea1d214f2b7f98eeba606d461db62d04101e7a947a3201ec6bb2a7062d42"
+  },
+  "p11_tokenizer_pkl_not_reused": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "fertility": {
+    "english_val": {
+      "n_docs": 60,
+      "n_tokens": 248877,
+      "n_bytes": 1145486,
+      "n_chars": 1143388,
+      "n_moses_tokens": 213886,
+      "bytes_per_token": 4.602618964388031,
+      "chars_per_token": 4.594189097425636,
+      "tokens_per_moses": 1.1635964953292877,
+      "roundtrip_doc_fraction": 1.0,
+      "bos_prepended": false
+    },
+    "tagalog_val": {
+      "n_docs": 8058,
+      "n_tokens": 2631074,
+      "n_bytes": 6771275,
+      "n_chars": 6771275,
+      "n_moses_tokens": 1191422,
+      "bytes_per_token": 2.573578318207698,
+      "chars_per_token": 2.573578318207698,
+      "tokens_per_moses": 2.208347671941596,
+      "roundtrip_doc_fraction": 1.0,
+      "bos_prepended": false
+    },
+    "note": "Descriptive bytes/token only. Not confirmatory BPB. English test and Tagalog train were not encoded."
+  },
+  "checks": [
+    {
+      "id": "F1_vocab_32768",
+      "ok": true,
+      "detail": 32768
+    },
+    {
+      "id": "F2_train_only_shards",
+      "ok": true
+    },
+    {
+      "id": "F3_val_excluded_from_tok_train",
+      "ok": true
+    },
+    {
+      "id": "F4_input_hashes_match_gate_e",
+      "ok": true
+    },
+    {
+      "id": "F5_not_p11_tokenizer",
+      "ok": true
+    },
+    {
+      "id": "F6_not_tl_or_a3_data_dir",
+      "ok": true
+    },
+    {
+      "id": "F7_token_bytes_present",
+      "ok": true
+    },
+    {
+      "id": "F8_sanity_roundtrip",
+      "ok": true
+    },
+    {
+      "id": "F9_did_not_run_nanochat_dataset",
+      "ok": true
+    },
+    {
+      "id": "F10_did_not_encode_english_test_or_tagalog_train",
+      "ok": true
+    }
+  ],
+  "started_en0": false,
+  "computed_bpb": false,
+  "next_gate": "G",
+  "next_gate_note": "Measure T_en_train with this tokenizer. Expect N_EN0 >> 294. Cost A40-hours before renting. No EN0 yet."
+}

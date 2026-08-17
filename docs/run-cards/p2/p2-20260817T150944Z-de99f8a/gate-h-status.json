@@ -1,0 +1,53 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "H",
+  "status": "prepared_waiting_for_named_cuda_host",
+  "executed": false,
+  "started_en0": false,
+  "gpu_host_for_H_I": null,
+  "at_utc": "2026-08-17T15:57:41Z",
+  "packed_from": "Mac/CPU",
+  "p2_run_id": "p2-20260817T150944Z-de99f8a",
+  "handoff": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/HANDOFF-gate-h.md",
+  "preflight_script": "scripts/p2/gate_h_preflight.py",
+  "smoke_script": "scripts/p2/gate_h_smoke.sh",
+  "cuda_env": "scripts/p2/env.cuda.sh",
+  "must_not_source": "scripts/p1/env.sh",
+  "smoke": {
+    "depth": 4,
+    "T": 2048,
+    "B": 65536,
+    "num_iterations": 30,
+    "warmup_steps": 3,
+    "eval_tokens": 8192,
+    "model_tag": "p2-smoke-en-d4",
+    "checkpoint_dir": "data/cache/p2-20260817T150944Z-de99f8a/base_checkpoints/p2-smoke-en-d4/",
+    "optional_d8_not_en0": {
+      "depth": 8,
+      "num_iterations": 30,
+      "warmup_steps": 3,
+      "model_tag": "p2-smoke-en-d8-not-en0",
+      "forbidden": "--num-iterations=5415 on this tag (that is Gate I)"
+    }
+  },
+  "N_EN0": 5415,
+  "N_EN0_is_gate_i_not_this_smoke": true,
+  "a40_cost_usd_planning_estimate": 3.91,
+  "a40_cost_is_commitment": false,
+  "hard_stops": [
+    "no P1 environment",
+    "no P1.1 parent weights",
+    "no ratio=-1",
+    "no python -m nanochat.dataset",
+    "no test evaluation",
+    "no Tagalog continuation",
+    "no declaration that EN0 has started merely by preparing the GPU host"
+  ],
+  "mac_smoke_refuse_exit": 3,
+  "mac_preflight_status": "not_ready",
+  "mac_preflight_failed": ["H0_cuda", "H0_nvidia_smi"],
+  "mac_preflight_json": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate-h-preflight.json",
+  "note": "Exit from gate_h_smoke.sh on Darwin is 3. Preflight on this Mac is expected not_ready (no CUDA). Do not set status=pass until a named NVIDIA CUDA host records p2-gate-h-<gpu-id>-<timestamp>.md with H2 analogue acceptance."
+}
