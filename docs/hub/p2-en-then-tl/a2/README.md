@@ -1,5 +1,5 @@
 # P2 branch A2
 
-Tagalog continuation from A0. Only arm with authorized secondary test. Not P1.1 weights.
+Tagalog continuation from A0: [`p2-a2-tagalog-d20-model_000294.pt`](p2-a2-tagalog-d20-model_000294.pt) (step 294). Matching [`meta_000294.json`](meta_000294.json).
 
-Documentation-only until the complete A0/A1/A2/A3 `.pt` bundle is uploaded together.
+Only arm with the authorized P2 secondary test. Not P1.1 weights. Not a chat model.

@@ -9,7 +9,7 @@ Do not blend this table with P1.1 results. P1.1 remains a separate fixed-budget 
 | Test boundary | One A2-only secondary test event completed; A1/A3 were not tested |
 | AsPredicted | https://aspredicted.org/xa56bs.pdf (#306935) |
 | Code | https://github.com/pageman/nanochat-filipino |
-| Hub | https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl (**documentation-only** until A0/A1/A2/A3 `.pt` upload together) |
+| Hub | https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl (complete A0/A1/A2/A3 checkpoint bundle) |
 | GitHub subtree | `results/p2/` (seals) · `docs/p2/` (study index) · `docs/hub/p2-en-then-tl/` (Hub documentation pack) |
 | ResearchBox | https://researchbox.org/8763 (upload still a human step) |
 | Paper | Current source `docs/papers/p2-cf-english/paper.tex`. Do not ship the obsolete 16 August PDF. |

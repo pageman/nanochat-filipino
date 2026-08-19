@@ -9,19 +9,15 @@ tags:
   - continual-pretraining
 ---
 
-# Documentation-only release; complete A0/A1/A2/A3 checkpoint bundle pending
-
-**This Hub repo does not currently ship downloadable `model_*.pt` weights.** The files here are the study card, checksums, branch READMEs, and sealed evaluation summaries. Do not treat this page as a usable model until the four final checkpoints, matching `meta_*.json`, and tokenizer files are uploaded **together**.
-
-P2 is a **matched branch study**. Releasing A2 alone would obscure the frozen parent (A0), the extra-English control (A1), and the A3 trade-off arm.
-
----
-
 # nanochat-filipino P2 (EN then TL)
+
+Matched-branch **research checkpoints**: frozen English parent **A0** plus children **A1**, **A2**, and **A3**. This is not a chat, instruction, or production model. **One seed.**
+
+P2 is a matched branch study. Use the four files together; do not treat A2 as a standalone “Tagalog nanochat.”
 
 ## Identity and scope
 
-**P2 only.** Not P1.1. **Not trained from** `pageman/nanochat-filipino-p1-fixed-d20-3x`. These (pending) weights are not an instruction-tuned, chat, or SFT model.
+**P2 only.** Not P1.1. **Not trained from** `pageman/nanochat-filipino-p1-fixed-d20-3x`.
 
 - AsPredicted [#306935](https://aspredicted.org/xa56bs.pdf)
 - ResearchBox [8763](https://researchbox.org/8763)
@@ -31,18 +27,35 @@ P2 is a **matched branch study**. Releasing A2 alone would obscure the frozen pa
 
 Do not upload these files onto `pageman/nanochat-filipino-p1-fixed-d20-3x`.
 
+## Files
+
+| Path | Role |
+|---|---|
+| [`a0/p2-en0-d20-model_005415.pt`](a0/p2-en0-d20-model_005415.pt) | A0 frozen English parent (step 5415) |
+| [`a0/meta_005415.json`](a0/meta_005415.json) | A0 trainer meta (`val_bpb` here is **not** `val_bpb_full`) |
+| [`a1/p2-a1-extra-en-d20-model_000294.pt`](a1/p2-a1-extra-en-d20-model_000294.pt) | A1 extra-English control |
+| [`a1/meta_000294.json`](a1/meta_000294.json) | A1 trainer meta |
+| [`a2/p2-a2-tagalog-d20-model_000294.pt`](a2/p2-a2-tagalog-d20-model_000294.pt) | A2 Tagalog continuation (only tested arm) |
+| [`a2/meta_000294.json`](a2/meta_000294.json) | A2 trainer meta |
+| [`a3/p2-a3-mix-d20-model_000294.pt`](a3/p2-a3-mix-d20-model_000294.pt) | A3 50/50-document mix (trade-off, **not** mitigation) |
+| [`a3/meta_000294.json`](a3/meta_000294.json) | A3 trainer meta |
+| [`tokenizer.pkl`](tokenizer.pkl) | P2 English 32,768 BPE |
+| [`token_bytes.pt`](token_bytes.pt) | Token UTF-8 bytes |
+
+Optimizer states are not in this release. Load with custom nanochat (`scripts.base_train` / `evaluate_bpb`), not `transformers` `from_pretrained` as a causal LM chat pipeline.
+
 ## Research purpose
 
-Controlled, preregistered continual-pretraining evidence on English retention after Tagalog continuation. Not a leaderboard, production deployment, or instruction-following claim. **One seed.**
+Controlled, preregistered continual-pretraining evidence on English retention after Tagalog continuation. Not a leaderboard, production deployment, or instruction-following claim.
 
 ## Branch map
 
 All d20, same immutable English parent A0, same phase-2 budget \(N=294\), \(D=19{,}267{,}584\), fresh optimizer, English 32,768 BPE.
 
-- **A0** frozen English parent (`model_005415.pt`) — [a0/README.md](a0/README.md)
+- **A0** frozen English parent — [a0/README.md](a0/README.md)
 - **A1** extra-English active control from A0 — [a1/README.md](a1/README.md)
 - **A2** Tagalog-only continuation from A0 (only tested branch) — [a2/README.md](a2/README.md)
-- **A3** pre-frozen 50/50-document English–Tagalog mix from A0 (trade-off arm, **not** mitigation) — [a3/README.md](a3/README.md)
+- **A3** pre-frozen 50/50-document English–Tagalog mix from A0 — [a3/README.md](a3/README.md)
 
 ## Data provenance
 
@@ -68,9 +81,9 @@ A2-only **secondary** tests (Gate V): English WT103-raw test BPB 1.392015; P1.1 
 
 The registered English-retention-cost pattern was **not observed**. The registered Tagalog-gain pattern **was observed** in this **one-seed** fixed apparatus. No significance test, confidence interval, population effect, or universal-language claim. Do not say “Tagalog improves English” in general. A3 is a 50/50-document trade-off arm (realized UTF-8 byte share English 0.961 / Tagalog 0.039; BPE-token share English 0.933 / Tagalog 0.067), not mitigation.
 
-## Checksums (sealed locally; Hub weights pending)
+## Checksums
 
-See [`SHA256SUMS.txt`](SHA256SUMS.txt) and [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json). Optimizer states are not part of the default release.
+See [`SHA256SUMS.txt`](SHA256SUMS.txt) and [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json). Re-hash downloads before use.
 
 | File | Role | SHA-256 | Bytes |
 |---|---|---|---:|
@@ -83,7 +96,7 @@ See [`SHA256SUMS.txt`](SHA256SUMS.txt) and [`RELEASE_MANIFEST.json`](RELEASE_MAN
 
 ## License and use restrictions
 
-YAML `license: other` matches the existing P2 Hub card. Research use of these small decoder checkpoints; not a deployment certification. Confirm data/code license compatibility before commercial reuse. See [`NOTICE.md`](NOTICE.md) and [`CITATION.cff`](CITATION.cff).
+YAML `license: other` because the training text is Wikipedia-derived. Research use of these small decoder checkpoints; not a deployment certification. Confirm data/code license compatibility before commercial reuse. See [`NOTICE.md`](NOTICE.md) and [`CITATION.cff`](CITATION.cff).
 
 ## Reproduction
 

@@ -42,7 +42,7 @@ Does **not** amend AsPredicted #306780, ResearchBox 8735, or Hub `pageman/nanoch
 **Results:** [docs/run-cards/p2/PUBLIC-STATUS.md](docs/run-cards/p2/PUBLIC-STATUS.md)  
 **Machine-readable results:** [results/p2/](results/p2/)  
 **Model card:** [docs/run-cards/p2/HF-MODEL-CARD-p2.md](docs/run-cards/p2/HF-MODEL-CARD-p2.md)  
-**Weights (not in this repo; documentation-only until A0/A1/A2/A3 upload together):** https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl  
+**Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl  
 **Hub documentation pack:** [docs/hub/p2-en-then-tl/](docs/hub/p2-en-then-tl/)  
 **DeepWiki:** https://deepwiki.com/pageman/nanochat-filipino  
 **Environment:** [scripts/p2/env.sh](scripts/p2/env.sh) · [scripts/p2/env.cuda.sh](scripts/p2/env.cuda.sh)  
@@ -55,4 +55,4 @@ Gates A–W are recorded. Confirmatory depth is d20. Sealed `C_EN = EN(A2)−EN(
 
 Trainer in-loop `val_bpb` is **not** the primary DV. Do not rank arms from loop scores or from `meta_*.json` `val_bpb`. The registered table is [results/p2/sealed_val_table.csv](results/p2/sealed_val_table.csv) · [results/p2/gate-u-seal.json](results/p2/gate-u-seal.json).
 
-Do not claim that Tagalog generally improves English. One seed; no significance test. A3 is a 50/50-document trade-off arm, not mitigation. The Hub card is documentation-only until the complete A0/A1/A2/A3 checkpoint bundle is uploaded together.
+Do not claim that Tagalog generally improves English. One seed; no significance test. A3 is a 50/50-document trade-off arm, not mitigation. Weights live on Hugging Face (`pageman/nanochat-filipino-p2-en-then-tl`), not in this git tree.

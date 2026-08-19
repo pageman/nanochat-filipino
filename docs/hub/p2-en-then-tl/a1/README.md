@@ -1,5 +1,5 @@
 # P2 branch A1
 
-Extra-English matched-budget control from A0 (`model_000294.pt`). Never tested in P2.
+Extra-English matched-budget control from A0: [`p2-a1-extra-en-d20-model_000294.pt`](p2-a1-extra-en-d20-model_000294.pt) (step 294). Matching [`meta_000294.json`](meta_000294.json).
 
-Documentation-only until the complete A0/A1/A2/A3 `.pt` bundle is uploaded together.
+Never tested in P2. Not a chat model.
