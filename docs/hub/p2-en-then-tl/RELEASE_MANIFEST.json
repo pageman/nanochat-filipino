@@ -1,0 +1,48 @@
+{
+  "study": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted": 306935,
+  "hub": "pageman/nanochat-filipino-p2-en-then-tl",
+  "status": "documentation_only_complete_checkpoint_bundle_pending",
+  "run_id": "p2-20260817T150944Z-de99f8a",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "does_not_amend_p11_hub": "pageman/nanochat-filipino-p1-fixed-d20-3x",
+  "branches": {
+    "A0": {
+      "folder": "a0/",
+      "role": "frozen EN0 d20 parent",
+      "step": 5415,
+      "sha256": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+      "parent": null
+    },
+    "A1": {
+      "folder": "a1/",
+      "role": "extra-English control",
+      "step": 294,
+      "sha256": "e2881049b194898203a954464bcb00939aa1d94b9b41131001ab705c2c92385d",
+      "parent": "A0"
+    },
+    "A2": {
+      "folder": "a2/",
+      "role": "Tagalog continuation; only tested arm",
+      "step": 294,
+      "sha256": "2b01acf8fac0e8c783162582cbb384e8ce1c37795aae2f7dd4ae34c2a5c76026",
+      "parent": "A0"
+    },
+    "A3": {
+      "folder": "a3/",
+      "role": "50/50-document mix trade-off, not mitigation",
+      "step": 294,
+      "sha256": "d6c62bb793a57c7c23d98c5bd62ec36b41606234524f76855b4459d98c42b368",
+      "parent": "A0"
+    }
+  },
+  "fresh_optimizer_on_children": true,
+  "optimizer_states_not_in_default_release": true,
+  "meta_json": {
+    "A0": "a0/meta_005415.json",
+    "A1": "a1/meta_000294.json",
+    "A2": "a2/meta_000294.json",
+    "A3": "a3/meta_000294.json",
+    "inloop_val_bpb_is_not_val_bpb_full": true
+  }
+}

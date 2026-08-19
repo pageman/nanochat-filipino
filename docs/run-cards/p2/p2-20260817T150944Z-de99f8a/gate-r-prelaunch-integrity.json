@@ -1,0 +1,76 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "R",
+  "arm": "A1",
+  "status": "prelaunch_integrity_complete_awaiting_authorization",
+  "started_a1": false,
+  "test_read_count": 0,
+  "at_utc": "2026-08-19T03:02:39Z",
+  "run_id": "p2-20260817T150944Z-de99f8a",
+  "plan_vs_preregistration": {
+    "breaks_preregistration": false,
+    "notes": [
+      "Pin has no --load; --resume-from-step would load EN0 optimizer and would not terminate at N=294 if started at step 5415. P2-only continue_from_frozen.py implements load_optimizer=False and child step 0. Vendor base_train.py is unedited.",
+      "uv sync --frozen is required. Bare uv sync would risk lock drift and is not used.",
+      "chmod on A0 is an accidental-write guard only. Authoritative identity remains SHA-256 bd35a858….",
+      "Named archive prompt v2.md was absent; Stage-0 still retrieved and SHA-matched both remote d20 log segments. Complete evidence is two files, not one.",
+      "Host vendor/nanochat has no .git; pin is proven by matching file SHA-256 of base_train.py, flash_attention.py, and uv.lock to Mac tree at 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd plus empty Mac git diff on flash_attention.py.",
+      "flash_attn is not installed; EN0/A1 use unpatched SDPA. This matches Gate H/I."
+    ]
+  },
+  "wrapper": {
+    "path_local": "scripts/p2/continue_from_frozen.py",
+    "path_host": "/workspace/nanochat-filipino/scripts/p2/continue_from_frozen.py",
+    "sha256_local": "7e6719544237f54fc75fc3770f587ba3ed929011b9f68627f398f3ed87b6552f",
+    "sha256_host": "7e6719544237f54fc75fc3770f587ba3ed929011b9f68627f398f3ed87b6552f",
+    "match": true,
+    "source_identity": "uncommitted P2-only script; does not edit vendor/nanochat/scripts/base_train.py",
+    "vendor_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+    "validate_only_exit": 0,
+    "validate_only_trained": false,
+    "refuses_resume_from_step": true,
+    "refuses_wrong_model_tag": true,
+    "refuses_N_not_294": true,
+    "refuses_nonempty_output_dir": true,
+    "writes_inside_a0_frozen": false
+  },
+  "a0": {
+    "sha256_before_chmod_host": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+    "sha256_after_chmod_host": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+    "sha256_local": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+    "host_mode_file": "444",
+    "host_mode_d20_dir": "555",
+    "host_mode_a0_frozen_parent": "777",
+    "host_mode_a0_frozen_parent_note": "Parent a0/frozen remains 777; the A1 parent file and its d20 directory are operationally read-only. Root can still write. Hash is authoritative.",
+    "local_mode_file": "444"
+  },
+  "runtime": {
+    "uv": "0.9.18",
+    "command": "uv sync --frozen",
+    "did_not_run_uv_lock": true,
+    "python": "3.10.19",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA A40",
+    "flash_attn": "not_installed_unpatched_sdpa",
+    "flash_attention_py_sha256": "a10b0b10ad91893fcf9c9b19c96bd3468a2721cf156dcdbeeeecf05f97f22c2f",
+    "mac_git_diff_flash_attention_bytes": 0,
+    "uv_lock_sha256": "e5781572a832a650eefe821b2cf316b56673ff01b082cec3200d049b970c112c",
+    "base_train_py_sha256": "87395b8078491d5088e7e8100866162b494638097215759b46d8ceb5d2f0fdcc",
+    "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+  },
+  "terminal_checkpoint_proof": {
+    "expected_path": "/workspace/nanochat-filipino/data/cache/p2-20260817T150944Z-de99f8a/base_checkpoints/p2-a1-extra-en-d20/model_000294.pt",
+    "mechanism": "vendor/nanochat/scripts/base_train.py: last_step = (step == num_iterations); save_checkpoint runs if last_step or (save_every>0 and ...). With --save-every=-1 only last_step saves. Non-resume sets step=0. At step 294 the loop saves model_000294.pt then breaks. EN0 d20 used the same --save-every=-1 path and wrote model_005415.pt, recorded in p2-en0-d20-resume-2400.log."
+  },
+  "lr_confirmation": {
+    "en0_cli": {"embedding_lr": 0.3, "unembedding_lr": 0.008, "matrix_lr": 0.02, "scalar_lr": 0.5},
+    "batch_lr_scale": 0.3535533905932738,
+    "a1_cli_0_3x": {"embedding_lr": 0.09, "unembedding_lr": 0.0024, "matrix_lr": 0.006, "scalar_lr": 0.15},
+    "a1_scheduled_peak": {"embedding_lr": 0.03181980515339464, "unembedding_lr": 0.000848528137423857, "matrix_lr": 0.002121320343559643, "scalar_lr": 0.053033008588991064}
+  },
+  "authorization_required_phrase": "Yes, launch Gate R / A1.",
+  "will_not_launch_until_that_phrase": true
+}

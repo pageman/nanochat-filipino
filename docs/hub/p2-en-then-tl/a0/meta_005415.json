@@ -1,0 +1,58 @@
+{
+  "step": 5415,
+  "val_bpb": 1.531876380039943,
+  "model_config": {
+    "sequence_len": 2048,
+    "vocab_size": 32768,
+    "n_layer": 20,
+    "n_head": 10,
+    "n_kv_head": 10,
+    "n_embd": 1280,
+    "window_pattern": "SSSL"
+  },
+  "user_config": {
+    "run": "p2-en0-d20",
+    "device_type": "cuda",
+    "fp8": false,
+    "fp8_recipe": "tensorwise",
+    "depth": 20,
+    "aspect_ratio": 64,
+    "head_dim": 128,
+    "max_seq_len": 2048,
+    "window_pattern": "SSSL",
+    "num_iterations": 5415,
+    "target_flops": -1.0,
+    "target_param_data_ratio": 12,
+    "device_batch_size": 8,
+    "total_batch_size": 65536,
+    "embedding_lr": 0.3,
+    "unembedding_lr": 0.008,
+    "weight_decay": 0.28,
+    "matrix_lr": 0.02,
+    "scalar_lr": 0.5,
+    "warmup_steps": 40,
+    "warmdown_ratio": 0.65,
+    "final_lr_frac": 0.05,
+    "resume_from_step": 2400,
+    "eval_every": 50,
+    "eval_tokens": 124438,
+    "core_metric_every": -1,
+    "core_metric_max_per_task": 500,
+    "sample_every": 200,
+    "save_every": -1,
+    "model_tag": "p2-en0-d20"
+  },
+  "device_batch_size": 8,
+  "max_seq_len": 2048,
+  "total_batch_size": 65536,
+  "dataloader_state_dict": {
+    "pq_idx": 3,
+    "rg_idx": 2,
+    "epoch": 6
+  },
+  "loop_state": {
+    "min_val_bpb": 0.9780794881731656,
+    "smooth_train_loss": 0.21873542560511497,
+    "total_training_time": 28883.568692684174
+  }
+}

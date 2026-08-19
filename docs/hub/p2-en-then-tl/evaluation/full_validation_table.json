@@ -1,0 +1,74 @@
+{
+  "source": "gate-u-seal.json",
+  "table_d20": {
+    "Untrained": {
+      "english_val_bpb_full": 3.246977715228228,
+      "tagalog_val_bpb_full": null,
+      "tagalog_note": "not required for C_en/G_tl; not recomputed"
+    },
+    "A0": {
+      "english_val_bpb_full": 1.3899902041579162,
+      "tagalog_val_bpb_full": 4.917649994523231,
+      "recomputed": false
+    },
+    "A1": {
+      "english_val_bpb_full": 1.4596750596409216,
+      "tagalog_val_bpb_full": 5.054664252288981
+    },
+    "A2": {
+      "english_val_bpb_full": 1.3856838220802419,
+      "tagalog_val_bpb_full": 1.17161579220255
+    },
+    "A3": {
+      "english_val_bpb_full": 1.2794333505881594,
+      "tagalog_val_bpb_full": 1.5288580020214302
+    },
+    "P1.1_d20_descriptive": {
+      "english_val_bpb_full": null,
+      "tagalog_val_bpb_full": 1.172248,
+      "note": "native Tagalog BPE; different tokenizer; not a C_en/G_tl input"
+    }
+  },
+  "contrasts": {
+    "C_en": {
+      "formula": "English(A2)-English(A1)",
+      "prediction": ">= 0.01",
+      "delta": -0.07399123756067971,
+      "abs_delta": 0.07399123756067971,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "G_tl": {
+      "formula": "Tagalog(A2)-Tagalog(A1)",
+      "prediction": "<= -0.01",
+      "delta": -3.883048460086431,
+      "abs_delta": 3.883048460086431,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "C_en_A3": {
+      "formula": "English(A3)-English(A1)",
+      "note": "trade-off arm; smaller C_en is not mitigation",
+      "delta": -0.18024170905276216,
+      "abs_delta": 0.18024170905276216,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "G_tl_A3": {
+      "formula": "Tagalog(A3)-Tagalog(A1)",
+      "note": "trade-off arm; not mitigation",
+      "delta": -3.5258062502675505,
+      "abs_delta": 3.5258062502675505,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "A0_minus_A2_tagalog_descriptive": {
+      "formula": "Tagalog(A0)-Tagalog(A2)",
+      "note": "AsPredicted Q2: A0 to A2 Tagalog change is descriptive only",
+      "delta": 3.746034202320681,
+      "abs_delta": 3.746034202320681,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    }
+  }
+}

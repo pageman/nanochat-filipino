@@ -1,0 +1,54 @@
+P2 Data codebook (ResearchBox 8763)
+===================================
+Column: Data
+Section: P2
+Role: Identity hashes, mix/exposure tables, and sealed numeric outcomes.
+Not raw Wikipedia dumps and not protected holdouts.
+
+ResearchBox Data cells accept only: csv, tsv, txt, dta, sas7bdat, sav, omv,
+feather, xls, xlsx, ods, zip, rds, rdata, rda.
+A zip classified as Data may contain only one file, so this packet uses
+.csv and .txt uploaded individually. JSON receipts go in Other as
+P2-data-receipts.zip. Do not upload Data.zip as Data.
+
+Deliberately absent
+-------------------
+WT103-raw English test jsonl (protected). SHA-256:
+  2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e
+P1.1 Tagalog test.jsonl (legacy holdout; one P2 touch already used). SHA-256:
+  3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf
+Model .pt weights (Hub, not this box). See checkpoint_sha256.txt
+ResearchBox passcode: never deposited.
+
+P1.1 native-BPE test_bpb=1.164768 is NOT a P2 observation.
+P2 A2 Tagalog secondary test is 1.160154 under English BPE.
+
+Files in this packet (Data-legal extensions only)
+-------------------------------------------------
+P2-DATA-CODEBOOK.txt     this cover
+sealed_val_bpb.csv       Gate U full validation table
+primary_contrasts.csv    C_EN, G_TL, A3 contrasts, A2 tests
+a3_realized_shares.csv   document / byte / BPE-token shares
+exposure_by_arm.csv      unique docs, bytes, BPE tokens, revisit
+file_hashes.csv          train/val/tokenizer/checkpoint hashes
+checkpoint_sha256.txt    A0/A1/A2/A3 and excluded-test identities
+
+JSON receipts are not in Data; they are Other/P2-data-receipts.zip.
+
+Sealed primary table (authority: gate-u-seal.json in Other/P2-data-receipts.zip)
+-------------------------------------------------------------------------
+Arm        English val BPB    Tagalog val BPB
+Untrained  3.246978           (none)
+A0         1.389990           4.917650
+A1         1.459675           5.054664
+A2         1.385684           1.171616
+A3         1.279433           1.528858
+
+C_EN = EN(A2)-EN(A1) = -0.073991  (filed >= 0.01: not observed)
+G_TL = TL(A2)-TL(A1) = -3.883048  (filed <= -0.01: observed in this one-seed apparatus)
+
+A3 realized shares (50/50 documents, not token-equated)
+------------------------------------------------------
+Documents  EN 0.5 / TL 0.5  (K=28472)
+UTF-8 bytes  EN 0.961314 / TL 0.038686
+English-BPE tokens  EN 0.933232 / TL 0.066768

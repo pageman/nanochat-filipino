@@ -2,10 +2,10 @@
   "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
   "aspredicted_id": 306935,
   "gate": "H-preflight",
-  "status": "not_ready",
-  "at_utc": "2026-08-17T15:57:41Z",
-  "host": "PaulPajos-MacBook-Pro.local",
-  "uname": "macOS-15.7.7-arm64-arm-64bit",
+  "status": "ready_for_smoke",
+  "at_utc": "2026-08-17T16:08:55Z",
+  "host": "369ea853315e",
+  "uname": "Linux-6.8.0-134-generic-x86_64-with-glibc2.39",
   "p2_run_id": "p2-20260817T150944Z-de99f8a",
   "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
   "hashes": {
@@ -45,7 +45,7 @@
       "expected": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f"
     }
   },
-  "nvidia_smi_head": "nvidia-smi_not_on_path",
+  "nvidia_smi_head": "Mon Aug 17 16:08:54 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:57:00.0 Off |                    0 |\n|  0%   34C    P8             33W /  300W |       3MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+",
   "checks": [
     {
       "id": "H0_pin",
@@ -82,16 +82,19 @@
     },
     {
       "id": "H0_cuda",
-      "ok": false,
+      "ok": true,
       "detail": {
-        "gpu": null,
-        "sm": null
+        "gpu": "NVIDIA A40",
+        "sm": [
+          8,
+          6
+        ]
       }
     },
     {
       "id": "H0_nvidia_smi",
-      "ok": false,
-      "detail": "nvidia-smi_not_on_path"
+      "ok": true,
+      "detail": "Mon Aug 17 16:08:54 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:57:00.0 Off |                    0 |\n|  0%   34C    P8             33W /  300W |       3MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+"
     },
     {
       "id": "H0_warmup_legal_in_smoke_script",

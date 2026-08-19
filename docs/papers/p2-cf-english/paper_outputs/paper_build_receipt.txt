@@ -1,0 +1,28 @@
+{
+  "compiler": "tectonic 0.17.0 (homebrew)",
+  "command": "tectonic -X compile paper.tex",
+  "cwd": "/Users/paulpajo/Projects/nanochat-filipino/docs/papers/p2-cf-english/paper_outputs",
+  "source": "docs/papers/p2-cf-english/paper.tex",
+  "source_sha256": "8679e9af7fa8cb8a9da98456e11644159bb5ff33bdaa48e028153570ceb6f4eb",
+  "pdf_sha256": "1b6fce09f75cf052cffb363e9eaa0ae45297523da4542323c035b4e6c3362c16",
+  "pdf_bytes": 77651,
+  "built_utc": "2026-08-19T08:20:12Z",
+  "obsolete_stage1_pdf": "docs/papers/p2-cf-english/paper_outputs/paper-OBSOLETE-stage1-20260816.pdf",
+    "numeric_in_pdf_stream": {
+        "1.389990": true,
+        "1.459675": true,
+        "1.385684": true,
+        "1.279433": true,
+        "unicode_minus_0.073991": true,
+        "unicode_minus_3.883048": true,
+        "1.392015": true,
+        "1.160154": true
+    },
+    "phrases_in_pdf_text": {
+        "not observed": true,
+        "observed": true,
+        "one-seed_or_one seed": true,
+        "secondary": true
+    },
+  "overfull_hbox_notes": "non-hiding overfulls on URL lines; tables present"
+}

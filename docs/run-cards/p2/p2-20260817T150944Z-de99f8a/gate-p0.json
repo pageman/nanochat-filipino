@@ -1,0 +1,61 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "P0",
+  "subgate": "P0-E",
+  "status": "pass",
+  "p0_e_all_pass": true,
+  "started_tagalog": false,
+  "test_read_count": 0,
+  "pod_id": "8ik4ix7j8iju9u",
+  "gpu": "NVIDIA A40 48GB",
+  "data_center": "EU-SE-1",
+  "started_at_utc": "2026-08-18T12:57:57Z",
+  "ended_at_utc": "2026-08-18T12:58:12Z",
+  "en0_step": 5415,
+  "p0_e_margin_required": 0.01,
+  "filed_floors": ["untrained_same_depth", "byte_unigram_add_one"],
+  "tokenizer_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+  "val_parquet_sha256": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "T": 2048,
+  "device_batch_size": 8,
+  "untrained_seed": 0,
+  "byte_unigram_english_val_bpb": 4.582801206418281,
+  "byte_unigram_source": "parquet_shards",
+  "inloop_val_is_not_val_bpb_full": true,
+  "depths": {
+    "8": {
+      "model_tag": "p2-en0-d8",
+      "checkpoint": "data/cache/p2-20260817T150944Z-de99f8a/base_checkpoints/p2-en0-d8/model_005415.pt",
+      "checkpoint_sha256": "5e1db47f0609995e2309a2c04ede4cd330aa0f2d113e07d6498790d5ca707a8c",
+      "val_bpb_full": 0.9832921389240051,
+      "untrained_val_bpb": 3.246994178810402,
+      "p0_e_gap_vs_untrained": 2.2637020398863967,
+      "beats_unigram": true,
+      "p0_e_pass": true
+    },
+    "20": {
+      "model_tag": "p2-en0-d20",
+      "checkpoint": "data/cache/p2-20260817T150944Z-de99f8a/base_checkpoints/p2-en0-d20/model_005415.pt",
+      "checkpoint_sha256": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+      "val_bpb_full": 1.3899902041579162,
+      "untrained_val_bpb": 3.246977715228228,
+      "p0_e_gap_vs_untrained": 1.8569875110703118,
+      "beats_unigram": true,
+      "p0_e_pass": true
+    }
+  },
+  "artifacts": {
+    "summary": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate_p0_val_baselines.json",
+    "summary_sha256": "3fe37fe90b43c45d1e59852fd83deb420d9d699c7e9504811a8dc7ac5ebb98c9",
+    "d8": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d8_p0e_val.json",
+    "d20": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d20_p0e_val.json",
+    "unigram": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/byte_unigram_english_val.json",
+    "log": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-gate-p0e.log"
+  },
+  "pod_stopped_after": true,
+  "pod_status_after": "EXITED",
+  "note": "Filed P0-E requires EN0 val_bpb_full >= 0.01 below both untrained (same depth, same English BPE) and a train-fitted add-one UTF-8 byte unigram on WT103 val. Both depths met both floors. Script p0_e_pass is the untrained inequality; beats_unigram is the second floor. In-loop val is not val_bpb_full. Do not start Tagalog until Gate Q (A0 freeze). Do not rank d8 vs d20 from these numbers."
+}

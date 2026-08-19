@@ -1,0 +1,76 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "Q",
+  "arm": "A0",
+  "status": "pass",
+  "immutable": true,
+  "additional_train_tokens": 0,
+  "started_tagalog_continuation": false,
+  "test_read_count": 0,
+  "host": "Mac/CPU freeze copies; Tagalog d8 CPU; Tagalog d20 CUDA on 8ik4ix7j8iju9u",
+  "at_utc": "2026-08-18T15:20:29Z",
+  "run_id": "p2-20260817T150944Z-de99f8a",
+  "en0_step": 5415,
+  "primary_confirmatory_depth": 20,
+  "english_bpe_tokenizer_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+  "tagalog_val_shard": "data/processed/p2-tl39-readonly/shard_00002.parquet",
+  "tagalog_val_shard_sha256": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+  "tagalog_val_packed_bytes_p11_invariant": 5868797,
+  "tagalog_val_packed_bytes_english_bpe": 5205755,
+  "tagalog_packed_bytes_note": "5868797 is P1.1 Tagalog-BPE packing. A0 uses P2 English BPE on the same UTF-8 val shard, so packed byte count differs. Do not treat 5205755 as a P1.1 invariant failure.",
+  "depths": {
+    "8": {
+      "depth": 8,
+      "model_tag": "p2-en0-d8",
+      "frozen_dir": "data/cache/p2-20260817T150944Z-de99f8a/a0/frozen/p2-en0-d8",
+      "checkpoint_step": 5415,
+      "checkpoint_sha256": "5e1db47f0609995e2309a2c04ede4cd330aa0f2d113e07d6498790d5ca707a8c",
+      "english_val_bpb_full": {
+        "val_bpb_full": 0.9832921389240051,
+        "source": "gate_p0_val_baselines.json",
+        "p0_summary_sha256": "3fe37fe90b43c45d1e59852fd83deb420d9d699c7e9504811a8dc7ac5ebb98c9",
+        "recomputed": false
+      },
+      "tagalog_val_bpb_full": {
+        "val_bpb_full": 4.082488404182098,
+        "source": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d8_a0_tagalog_val.json",
+        "source_sha256": "6c9842701ce0e845e410c70b9f6a94d68308adf152cf8b96dac24d1b800f7593",
+        "recomputed": true,
+        "device": "cpu",
+        "host": "Mac"
+      }
+    },
+    "20": {
+      "depth": 20,
+      "model_tag": "p2-en0-d20",
+      "frozen_dir": "data/cache/p2-20260817T150944Z-de99f8a/a0/frozen/p2-en0-d20",
+      "checkpoint_step": 5415,
+      "checkpoint_sha256": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d",
+      "english_val_bpb_full": {
+        "val_bpb_full": 1.3899902041579162,
+        "source": "gate_p0_val_baselines.json",
+        "p0_summary_sha256": "3fe37fe90b43c45d1e59852fd83deb420d9d699c7e9504811a8dc7ac5ebb98c9",
+        "recomputed": false
+      },
+      "tagalog_val_bpb_full": {
+        "val_bpb_full": 4.917649994523231,
+        "source": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d20_a0_tagalog_val.json",
+        "source_sha256": "409e19b1f5fdeabacb7412d5fc3ff43f17f610907250e99d24b9bb99f722418b",
+        "recomputed": true,
+        "device": "cuda",
+        "host": "8ik4ix7j8iju9u"
+      }
+    }
+  },
+  "p0_summary": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate_p0_val_baselines.json",
+  "p0_summary_sha256": "3fe37fe90b43c45d1e59852fd83deb420d9d699c7e9504811a8dc7ac5ebb98c9",
+  "cpu_diagnostic_d20_tagalog": {
+    "path": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d20_a0_tagalog_val.cpu-diagnostic.json",
+    "val_bpb_full": 4.921200089269101,
+    "gap_vs_cuda": 0.0035500947458703,
+    "not_a0": true
+  },
+  "note": "A0 is frozen EN0. English val copied from P0-E (not recomputed). Tagalog val is one eval on frozen EN0 under P2 English BPE (not Tagalog continuation). Official d20 Tagalog is CUDA 4.917650. A later Mac CPU rerun (4.921200) overwrote the JSON and was restored; CPU file is diagnostic only. d20 is confirmatory parent for A1/A2/A3. 0 additional train tokens."
+}

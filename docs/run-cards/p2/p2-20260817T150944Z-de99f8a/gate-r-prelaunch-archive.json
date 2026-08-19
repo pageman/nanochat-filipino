@@ -1,0 +1,54 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "gate": "R",
+  "stage": "0_remote_log_archive",
+  "status": "pass",
+  "blocked_missing_archive_evidence": false,
+  "at_utc": "2026-08-19T03:02:39Z",
+  "prompt_file_named": "p2_gate_q_aware_pretermination_archive_prompt_v2.md",
+  "prompt_file_found": false,
+  "procedure_executed": "Stage-0 read-only retrieval of remote training logs from 8ik4ix7j8iju9u plus local SHA-256 verification. Named v2 prompt file was not present in the repo, Downloads, or Desktop. Completeness rule taken from this Gate R authorization block and How P2 Connects A.6 (verify d20 log).",
+  "run_id": "p2-20260817T150944Z-de99f8a",
+  "host": "8ik4ix7j8iju9u",
+  "d20_training_log": {
+    "complete": true,
+    "note": "EN0 d20 stdout is two files because of the documented volume-full stop at step 2600 and resume from 2400. Neither file alone is the full N_EN0=5415 record. They were copied without concatenation so each SHA matches the remote original.",
+    "segment_0_to_2600": {
+      "remote": "/workspace/p2-en0-d20.log",
+      "local": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d20.log",
+      "sha256": "888f7161105fb77e6f31e5b2576d0263ae7443c39489a2eea76e5f0121ce9657",
+      "bytes": 452345,
+      "contains_step_00000": true,
+      "contains_model_005415": false,
+      "ends_at": "model_002600.pt save after step 02599"
+    },
+    "segment_resume_2400_to_5415": {
+      "remote": "/workspace/p2-en0-d20-resume-2400.log",
+      "local": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/p2-en0-d20-resume-2400.log",
+      "sha256": "aa34199ea1f789139559966f0ae12fe9a08885e096b032565586b461673302fa",
+      "bytes": 518536,
+      "contains_resuming_from_2400": true,
+      "contains_model_005415": true,
+      "contains_total_training_time_481_39m": true
+    }
+  },
+  "files": {
+    "p2-en0-d8.log": {"sha256": "223c6247507a77d17f7c9a9925b2107e6a492cde95fa4cbfae2de85c78a430b5", "bytes": 925762, "local_before_this_stage": true},
+    "p2-gate-h-smoke.log": {"sha256": "66ff475fc9560673b19580484d7cc07847077a1a36736211a132f2c46f77664b", "bytes": 10380},
+    "p2-gate-p0e.log": {"sha256": "6cd5ddb70b485c7e19ac98e5d9fd58dc6e36fe26715f87a5460b82d5712eda3c", "bytes": 2524, "matches_remote": true},
+    "p2-gate-q-d20.log": {"sha256": "85ba5aaad6c58c63a4ff4f58123fa29ae60d0cf91e6908855702d4dded9e5c1f", "bytes": 1108, "matches_remote": true},
+    "gate-q-a0.json": {"sha256": "34382c5967bff52f01862ceca9fdcb516fc95c9ea6bfbc6f2dd05f1cedcde14b", "bytes": 3679},
+    "gate-q.md": {"sha256": "bd72a654a7140e8ad37e5c83e8f34d5da33b84e3dbf135e860427b4a099ab870", "bytes": 1919},
+    "gate-i-en0-d20.json": {"sha256": "09f7cacb7ffdfbd4e9b5e8b04a2bdaa797199fbab44519e830188207d57554c1", "bytes": 1516},
+    "gate-i-en0-d8.json": {"sha256": "f61b5775fa8a70480128eb74234296fd7c0a385b1e07d1dd501a89a06b4a722d", "bytes": 1442},
+    "gate-p0.json": {"sha256": "ace046ae9971f9f92e4501b19f4cfc13748b89ce8f634f18827be52d4317850c", "bytes": 2878},
+    "gate_p0_val_baselines.json": {"sha256": "3fe37fe90b43c45d1e59852fd83deb420d9d699c7e9504811a8dc7ac5ebb98c9", "bytes": 4485},
+    "gate-h-status.json": {"sha256": "8c269d4651b0cb45a60ff3ee49c6c2c354fac7e63a14e231ea4a9a388d67621d", "bytes": 3250},
+    "LOCK.json": {"sha256": "459f0c3b5b57e2644bb74917a5708635b6dfde0e862037a89c1a64f44c9dfe8d"},
+    "PROTOCOL-p2-en-then-tl.md": {"sha256": "da7ac07b86d097770c10e76c79f0534d6c609ceea71baabcf587a4fcd01bc0e8"}
+  },
+  "started_a1": false,
+  "test_read_count": 0
+}

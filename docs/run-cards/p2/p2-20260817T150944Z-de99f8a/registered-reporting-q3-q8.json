@@ -1,0 +1,167 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "role": "registered_reporting_reconstruction_not_confirmatory",
+  "built_utc": "2026-08-19T08:37:40Z",
+  "refused_test_reads": true,
+  "computed_bpb": false,
+  "tokenizer_pkl_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+  "english_train_reused_from_gate_g": true,
+  "drop_audit": [
+    {
+      "split": "english_train_jsonl",
+      "n_documents_kept": 28472,
+      "null_or_empty_after_lf": 0,
+      "length_gt_200000_chars": 0,
+      "dropped_if_rules_applied_to_kept_file": 0,
+      "drop_fraction_of_kept": 0.0,
+      "stop_threshold_5pct_crossed": false,
+      "note": "Audit of the frozen kept jsonl. Units already absent from this file are not reconstructable here."
+    },
+    {
+      "split": "tagalog_train_jsonl",
+      "n_documents_kept": 37602,
+      "null_or_empty_after_lf": 0,
+      "length_gt_200000_chars": 0,
+      "dropped_if_rules_applied_to_kept_file": 0,
+      "drop_fraction_of_kept": 0.0,
+      "stop_threshold_5pct_crossed": false,
+      "note": "Audit of the frozen kept jsonl. Units already absent from this file are not reconstructable here."
+    }
+  ],
+  "a3_realized_shares": {
+    "unit": "documents_not_tokens",
+    "K": 28472,
+    "n_en_docs": 28472,
+    "n_tl_docs": 28472,
+    "document_share_en": 0.5,
+    "document_share_tl": 0.5,
+    "utf8_bytes_en": 539903397,
+    "utf8_bytes_tl": 21726972,
+    "byte_share_en": 0.9613144637483092,
+    "byte_share_tl": 0.038685536251690834,
+    "bpe_tokens_en": 118286771,
+    "bpe_tokens_tl": 8462807,
+    "token_share_en": 0.9332320696168314,
+    "token_share_tl": 0.06676793038316861,
+    "mix_order_sha256": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+    "not_mitigation": true
+  },
+  "exposure_table": [
+    {
+      "arm": "A1",
+      "stream": "official WT103-raw train",
+      "unique_documents": 28472,
+      "canonical_utf8_bytes": 539903397,
+      "unique_bpe_tokens_no_bos": 118286771,
+      "D_phase2_model_visible_tokens": 19267584,
+      "revisit_epochs": 0.16288874771972597,
+      "revisit_definition": "D_phase2 / unique_BPE_tokens_in_stream; values < 1 mean the unique stream was not fully replayed",
+      "not_used_to_pick_arms": true
+    },
+    {
+      "arm": "A2",
+      "stream": "frozen P1.1 Tagalog train",
+      "unique_documents": 37602,
+      "canonical_utf8_bytes": 29165137,
+      "unique_bpe_tokens_no_bos": 11352473,
+      "D_phase2_model_visible_tokens": 19267584,
+      "revisit_epochs": 1.6972146949831988,
+      "revisit_definition": "D_phase2 / unique_BPE_tokens_in_stream; values < 1 mean the unique stream was not fully replayed",
+      "not_used_to_pick_arms": true
+    },
+    {
+      "arm": "A3",
+      "stream": "seed-42 50/50-document mix of first K per language",
+      "unique_documents": 56944,
+      "canonical_utf8_bytes": 561630369,
+      "unique_bpe_tokens_no_bos": 126749578,
+      "D_phase2_model_visible_tokens": 19267584,
+      "revisit_epochs": 0.1520130031517738,
+      "revisit_definition": "D_phase2 / unique_BPE_tokens_in_stream; values < 1 mean the unique stream was not fully replayed",
+      "not_used_to_pick_arms": true
+    }
+  ],
+  "a2_full_tagalog_train_bpe": {
+    "n_docs": 37602,
+    "n_tokens": 11352473,
+    "n_bytes": 29165137,
+    "n_chars": 29165137,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "a3_mix_tagalog_subset_bpe": {
+    "n_docs": 28472,
+    "n_tokens": 8462807,
+    "n_bytes": 21726972,
+    "n_chars": 21726972,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "q8_descriptive_status": {
+    "unique_docs_bytes_tokens_epochs": "published_in_this_record",
+    "a2_english_trajectory": {
+      "status": "registered_descriptive_item_not_completed_in_main_report",
+      "reason": "A2 in-loop Validation bpb used the Tagalog data-dir last shard (diagnostic Tagalog), not English val. No A2 English BPB series was collected. Do not treat Tagalog in-loop numbers as an English trajectory.",
+      "archived_a2_inloop_tagalog_val_bpb": [
+        {
+          "step": 0,
+          "R_d": 0.0,
+          "inloop_val_bpb": 4.821579
+        },
+        {
+          "step": 50,
+          "R_d": 0.17006802721088435,
+          "inloop_val_bpb": 1.586062
+        },
+        {
+          "step": 100,
+          "R_d": 0.3401360544217687,
+          "inloop_val_bpb": 1.283334
+        },
+        {
+          "step": 150,
+          "R_d": 0.5102040816326531,
+          "inloop_val_bpb": 1.181419
+        },
+        {
+          "step": 200,
+          "R_d": 0.6802721088435374,
+          "inloop_val_bpb": 1.142912
+        },
+        {
+          "step": 250,
+          "R_d": 0.8503401360544217,
+          "inloop_val_bpb": 1.123591
+        },
+        {
+          "step": 294,
+          "R_d": 1.0,
+          "inloop_val_bpb": 1.117633
+        }
+      ],
+      "inloop_is_not_val_bpb_full": true
+    },
+    "ptpp_R_d": {
+      "status": "definition_and_arithmetic_reported; english_BPB_vs_R_d_plot_not_made",
+      "phase2_definition": "R_d(step) = (step * 65536) / 19267584 = step/294",
+      "en0_d20_data_over_p_scaling": 0.8154704414171663,
+      "phase2_d20_D_over_p_scaling": 0.044276986334964796,
+      "source_gate_g": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate-g-budget.json",
+      "not_a_primary_hypothesis": true
+    },
+    "fertility": {
+      "status": "computed_at_gate_f_descriptive_tokenizer_characterization",
+      "english_val_bytes_per_token": 4.602618964388031,
+      "tagalog_val_bytes_per_token": 2.573578318207698,
+      "not_forgetting_evidence": true,
+      "source": "docs/run-cards/p2/p2-20260817T150944Z-de99f8a/gate-f-tokenizer.json"
+    },
+    "p11_d20_on_english_utf8_ood": {
+      "status": "registered_descriptive_item_not_run",
+      "reason": "No P1.1-weights-on-WT103 English BPB was computed in P2. Not BWT. Will not be run as a post-outcome P2 rescue."
+    }
+  }
+}

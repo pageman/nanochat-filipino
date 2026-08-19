@@ -1,0 +1,23 @@
+{
+  "arm": "A1",
+  "language": "english",
+  "split": "val",
+  "bpb": 1.4596750596409216,
+  "total_nats": 631708.5,
+  "total_bytes": 624360,
+  "n_scored_tokens": 135152,
+  "n_excluded_positions": 12304,
+  "finite": true,
+  "n_source_docs": 82,
+  "n_rows": 66,
+  "n_batches": 9,
+  "n_docs_packed": 82,
+  "n_cropped_fills": 66,
+  "n_padded_positions": 12294,
+  "device_batch_size": 8,
+  "sequence_len": 2048,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "stride": "non_overlapping_T_official_bos_bestfit",
+  "label": "p2-a1-extra-en-d20/english_val",
+  "wall_sec": 3.879307985305786
+}

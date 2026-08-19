@@ -1,0 +1,23 @@
+{
+  "arm": "A2",
+  "language": "english",
+  "split": "val",
+  "bpb": 1.3856838220802419,
+  "total_nats": 599687.0625,
+  "total_bytes": 624360,
+  "n_scored_tokens": 135152,
+  "n_excluded_positions": 12304,
+  "finite": true,
+  "n_source_docs": 82,
+  "n_rows": 66,
+  "n_batches": 9,
+  "n_docs_packed": 82,
+  "n_cropped_fills": 66,
+  "n_padded_positions": 12294,
+  "device_batch_size": 8,
+  "sequence_len": 2048,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "stride": "non_overlapping_T_official_bos_bestfit",
+  "label": "p2-a2-tagalog-d20/english_val",
+  "wall_sec": 2.5689618587493896
+}

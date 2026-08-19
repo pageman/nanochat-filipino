@@ -1,0 +1,18 @@
+{
+  "unit": "documents_not_tokens",
+  "K": 28472,
+  "n_en_docs": 28472,
+  "n_tl_docs": 28472,
+  "document_share_en": 0.5,
+  "document_share_tl": 0.5,
+  "utf8_bytes_en": 539903397,
+  "utf8_bytes_tl": 21726972,
+  "byte_share_en": 0.9613144637483092,
+  "byte_share_tl": 0.038685536251690834,
+  "bpe_tokens_en": 118286771,
+  "bpe_tokens_tl": 8462807,
+  "token_share_en": 0.9332320696168314,
+  "token_share_tl": 0.06676793038316861,
+  "mix_order_sha256": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+  "not_mitigation": true
+}

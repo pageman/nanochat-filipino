@@ -1,0 +1,35 @@
+{
+  "C_en": {
+    "formula": "English(A2)-English(A1)",
+    "prediction": ">= 0.01",
+    "delta": -0.07399123756067971,
+    "abs_delta": 0.07399123756067971,
+    "material_at_0_01": true,
+    "not_a_ranking_if_below_cutoff": false
+  },
+  "G_tl": {
+    "formula": "Tagalog(A2)-Tagalog(A1)",
+    "prediction": "<= -0.01",
+    "delta": -3.883048460086431,
+    "abs_delta": 3.883048460086431,
+    "material_at_0_01": true,
+    "not_a_ranking_if_below_cutoff": false
+  },
+  "C_en_A3": {
+    "formula": "English(A3)-English(A1)",
+    "note": "trade-off arm; smaller C_en is not mitigation",
+    "delta": -0.18024170905276216,
+    "abs_delta": 0.18024170905276216,
+    "material_at_0_01": true,
+    "not_a_ranking_if_below_cutoff": false
+  },
+  "G_tl_A3": {
+    "formula": "Tagalog(A3)-Tagalog(A1)",
+    "note": "trade-off arm; not mitigation",
+    "delta": -3.5258062502675505,
+    "abs_delta": 3.5258062502675505,
+    "material_at_0_01": true,
+    "not_a_ranking_if_below_cutoff": false
+  },
+  "note": "One-seed d20. A3 is not mitigation. Tests do not alter C_en/G_tl."
+}

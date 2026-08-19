@@ -1,0 +1,14 @@
+# SHA-256 and byte sizes of the complete P2 release bundle.
+# Weights/tokenizer lines are pending Hub upload; hashes are sealed locally.
+# meta_*.json files are included in this documentation pack.
+
+bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d  2663446486  a0/p2-en0-d20-model_005415.pt  PENDING_UPLOAD
+c18d30e5a880b9170f813c646c29e1e7b95600091f4daa6cf63eaa9df4e4324a  1365  a0/meta_005415.json
+e2881049b194898203a954464bcb00939aa1d94b9b41131001ab705c2c92385d  2663446486  a1/p2-a1-extra-en-d20-model_000294.pt  PENDING_UPLOAD
+56d2f681cd692c4a0158c68323ff9bcb151f77f2b666e155d688ed03e69e8084  1380  a1/meta_000294.json
+2b01acf8fac0e8c783162582cbb384e8ce1c37795aae2f7dd4ae34c2a5c76026  2663446486  a2/p2-a2-tagalog-d20-model_000294.pt  PENDING_UPLOAD
+2559f8e943074e411e80cd174714a65854cd26f38603d3e8e8932678e7354754  1375  a2/meta_000294.json
+d6c62bb793a57c7c23d98c5bd62ec36b41606234524f76855b4459d98c42b368  2663446486  a3/p2-a3-mix-d20-model_000294.pt  PENDING_UPLOAD
+2826222843a2f554c20d0a6218f5263b749779f2d4583aad19b4343fe52d06ae  1369  a3/meta_000294.json
+946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6  414284  tokenizer.pkl  PENDING_UPLOAD
+5ae2ea1d214f2b7f98eeba606d461db62d04101e7a947a3201ec6bb2a7062d42  132649  token_bytes.pt  PENDING_UPLOAD

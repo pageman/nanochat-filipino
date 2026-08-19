@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "nanochat-filipino P2: English retention after Tagalog continuation"
+message: "If you use this study record, please cite AsPredicted #306935 and the GitHub audit trail."
+type: software
+authors:
+  - family-names: Pajo
+    given-names: Paul
+repository-code: "https://github.com/pageman/nanochat-filipino"
+url: "https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl"
+identifiers:
+  - type: url
+    value: "https://aspredicted.org/xa56bs.pdf"
+    description: AsPredicted #306935
+  - type: url
+    value: "https://researchbox.org/8763"
+    description: ResearchBox 8763
+license: other
+keywords:
+  - nanochat
+  - bits-per-byte
+  - Tagalog
+  - English
+  - continual pretraining
+notes: "One-seed confirmatory apparatus. Documentation-only Hub release until A0/A1/A2/A3 weights upload together."

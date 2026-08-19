@@ -1,0 +1,249 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "gate": "U",
+  "status": "pass",
+  "depth": 20,
+  "T": 2048,
+  "device_batch_size": 8,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "stride": "non_overlapping_T_official_bos_bestfit",
+  "evaluator": "scripts/p2/evaluate_bpb.py via scripts/p2/gate_u_seal.py",
+  "tokenizer_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+  "english_val_parquet_sha256": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+  "tagalog_val_shard_sha256": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+  "test_read_events_p2_english": 0,
+  "test_read_events_p2_tagalog": 0,
+  "test_read_count": 0,
+  "inloop_val_is_not_val_bpb_full": true,
+  "practical_cutoff_bpb": 0.01,
+  "copied_not_recomputed": {
+    "A0_english_val_bpb_full": 1.3899902041579162,
+    "A0_english_source": "gate_p0_val_baselines.json / P0-E d20",
+    "A0_tagalog_val_bpb_full": 4.917649994523231,
+    "A0_tagalog_source": "p2-en0-d20_a0_tagalog_val.json CUDA Gate Q",
+    "untrained_english_val_bpb": 3.246977715228228,
+    "byte_unigram_english_val_bpb": 4.582801206418281
+  },
+  "table_d20": {
+    "Untrained": {
+      "english_val_bpb_full": 3.246977715228228,
+      "tagalog_val_bpb_full": null,
+      "tagalog_note": "not required for C_en/G_tl; not recomputed"
+    },
+    "A0": {
+      "english_val_bpb_full": 1.3899902041579162,
+      "tagalog_val_bpb_full": 4.917649994523231,
+      "recomputed": false
+    },
+    "A1": {
+      "english_val_bpb_full": 1.4596750596409216,
+      "tagalog_val_bpb_full": 5.054664252288981
+    },
+    "A2": {
+      "english_val_bpb_full": 1.3856838220802419,
+      "tagalog_val_bpb_full": 1.17161579220255
+    },
+    "A3": {
+      "english_val_bpb_full": 1.2794333505881594,
+      "tagalog_val_bpb_full": 1.5288580020214302
+    },
+    "P1.1_d20_descriptive": {
+      "english_val_bpb_full": null,
+      "tagalog_val_bpb_full": 1.172248,
+      "note": "native Tagalog BPE; different tokenizer; not a C_en/G_tl input"
+    }
+  },
+  "cells": {
+    "A1": {
+      "model_tag": "p2-a1-extra-en-d20",
+      "checkpoint_step": 294,
+      "checkpoint_sha256": "e2881049b194898203a954464bcb00939aa1d94b9b41131001ab705c2c92385d",
+      "english_val_bpb_full": 1.4596750596409216,
+      "tagalog_val_bpb_full": 5.054664252288981,
+      "english": {
+        "bpb": 1.4596750596409216,
+        "total_nats": 631708.5,
+        "total_bytes": 624360,
+        "n_scored_tokens": 135152,
+        "n_excluded_positions": 12304,
+        "finite": true,
+        "n_source_docs": 82,
+        "n_rows": 66,
+        "n_batches": 9,
+        "n_docs_packed": 82,
+        "n_cropped_fills": 66,
+        "n_padded_positions": 12294,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a1-extra-en-d20/english_val",
+        "wall_sec": 3.879307985305786
+      },
+      "tagalog": {
+        "bpb": 5.054664252288981,
+        "total_nats": 18239020.0,
+        "total_bytes": 5205755,
+        "n_scored_tokens": 2020406,
+        "n_excluded_positions": 11210,
+        "finite": true,
+        "n_source_docs": 8104,
+        "n_rows": 990,
+        "n_batches": 124,
+        "n_docs_packed": 8104,
+        "n_cropped_fills": 676,
+        "n_padded_positions": 4098,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a1-extra-en-d20/tagalog_val",
+        "wall_sec": 35.18073225021362
+      }
+    },
+    "A2": {
+      "model_tag": "p2-a2-tagalog-d20",
+      "checkpoint_step": 294,
+      "checkpoint_sha256": "2b01acf8fac0e8c783162582cbb384e8ce1c37795aae2f7dd4ae34c2a5c76026",
+      "english_val_bpb_full": 1.3856838220802419,
+      "tagalog_val_bpb_full": 1.17161579220255,
+      "english": {
+        "bpb": 1.3856838220802419,
+        "total_nats": 599687.0625,
+        "total_bytes": 624360,
+        "n_scored_tokens": 135152,
+        "n_excluded_positions": 12304,
+        "finite": true,
+        "n_source_docs": 82,
+        "n_rows": 66,
+        "n_batches": 9,
+        "n_docs_packed": 82,
+        "n_cropped_fills": 66,
+        "n_padded_positions": 12294,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a2-tagalog-d20/english_val",
+        "wall_sec": 2.5689618587493896
+      },
+      "tagalog": {
+        "bpb": 1.17161579220255,
+        "total_nats": 4227605.0,
+        "total_bytes": 5205755,
+        "n_scored_tokens": 2020406,
+        "n_excluded_positions": 11210,
+        "finite": true,
+        "n_source_docs": 8104,
+        "n_rows": 990,
+        "n_batches": 124,
+        "n_docs_packed": 8104,
+        "n_cropped_fills": 676,
+        "n_padded_positions": 4098,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a2-tagalog-d20/tagalog_val",
+        "wall_sec": 35.58327913284302
+      }
+    },
+    "A3": {
+      "model_tag": "p2-a3-mix-d20",
+      "checkpoint_step": 294,
+      "checkpoint_sha256": "d6c62bb793a57c7c23d98c5bd62ec36b41606234524f76855b4459d98c42b368",
+      "english_val_bpb_full": 1.2794333505881594,
+      "tagalog_val_bpb_full": 1.5288580020214302,
+      "english": {
+        "bpb": 1.2794333505881594,
+        "total_nats": 553704.6875,
+        "total_bytes": 624360,
+        "n_scored_tokens": 135152,
+        "n_excluded_positions": 12304,
+        "finite": true,
+        "n_source_docs": 82,
+        "n_rows": 66,
+        "n_batches": 9,
+        "n_docs_packed": 82,
+        "n_cropped_fills": 66,
+        "n_padded_positions": 12294,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a3-mix-d20/english_val",
+        "wall_sec": 2.58309006690979
+      },
+      "tagalog": {
+        "bpb": 1.5288580020214302,
+        "total_nats": 5516661.5,
+        "total_bytes": 5205755,
+        "n_scored_tokens": 2020406,
+        "n_excluded_positions": 11210,
+        "finite": true,
+        "n_source_docs": 8104,
+        "n_rows": 990,
+        "n_batches": 124,
+        "n_docs_packed": 8104,
+        "n_cropped_fills": 676,
+        "n_padded_positions": 4098,
+        "device_batch_size": 8,
+        "sequence_len": 2048,
+        "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+        "stride": "non_overlapping_T_official_bos_bestfit",
+        "label": "p2-a3-mix-d20/tagalog_val",
+        "wall_sec": 35.654658794403076
+      }
+    }
+  },
+  "contrasts": {
+    "C_en": {
+      "formula": "English(A2)-English(A1)",
+      "prediction": ">= 0.01",
+      "delta": -0.07399123756067971,
+      "abs_delta": 0.07399123756067971,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "G_tl": {
+      "formula": "Tagalog(A2)-Tagalog(A1)",
+      "prediction": "<= -0.01",
+      "delta": -3.883048460086431,
+      "abs_delta": 3.883048460086431,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "C_en_A3": {
+      "formula": "English(A3)-English(A1)",
+      "note": "trade-off arm; smaller C_en is not mitigation",
+      "delta": -0.18024170905276216,
+      "abs_delta": 0.18024170905276216,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "G_tl_A3": {
+      "formula": "Tagalog(A3)-Tagalog(A1)",
+      "note": "trade-off arm; not mitigation",
+      "delta": -3.5258062502675505,
+      "abs_delta": 3.5258062502675505,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    },
+    "A0_minus_A2_tagalog_descriptive": {
+      "formula": "Tagalog(A0)-Tagalog(A2)",
+      "note": "AsPredicted Q2: A0 to A2 Tagalog change is descriptive only",
+      "delta": 3.746034202320681,
+      "abs_delta": 3.746034202320681,
+      "material_at_0_01": true,
+      "not_a_ranking_if_below_cutoff": false
+    }
+  },
+  "one_seed_point_estimates_only": true,
+  "evaluated_at_utc": "2026-08-19T07:17:53Z",
+  "next_gate": "V",
+  "next_requires_authorization": true,
+  "note": "Val seal only. Do not read test. A2-only test is Gate V after this seal. Does not amend #306780."
+}

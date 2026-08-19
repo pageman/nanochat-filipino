@@ -28,3 +28,31 @@ Gates A–J are complete. `D* = 20` by exact minimum `val_bpb_full = 1.172248`. 
 Hub checkpoint metadata `val_bpb` used `--eval-tokens=262144` and is **not** the primary DV. Do not rank depths from those loop scores. The registered table is [results/full_validation.json](results/full_validation.json).
 
 Do not claim that deeper is always better. Split label in every caption: `reconstructed_article_70_15_15`. SFT and English catastrophic-forgetting studies are new registrations, not this release.
+
+## Start here (P2)
+
+Does **not** amend AsPredicted #306780, ResearchBox 8735, or Hub `pageman/nanochat-filipino-p1-fixed-d20-3x`. Never use `scripts/p1/env.sh` for P2.
+
+**Project 2 protocol (P2):** [docs/papers/p2-cf-english/PROTOCOL-p2-en-then-tl.md](docs/papers/p2-cf-english/PROTOCOL-p2-en-then-tl.md)  
+**Study record:** [docs/p2/](docs/p2/)  
+**Lock:** [docs/papers/p2-cf-english/LOCK.json](docs/papers/p2-cf-english/LOCK.json)  
+**Paper (source / PDF):** [docs/papers/p2-cf-english/paper.tex](docs/papers/p2-cf-english/paper.tex) · [paper.pdf](docs/papers/p2-cf-english/paper_outputs/paper.pdf)  
+**AsPredicted #306935:** https://aspredicted.org/xa56bs.pdf (anonymous)  
+**ResearchBox #8763:** https://researchbox.org/8763  
+**Results:** [docs/run-cards/p2/PUBLIC-STATUS.md](docs/run-cards/p2/PUBLIC-STATUS.md)  
+**Machine-readable results:** [results/p2/](results/p2/)  
+**Model card:** [docs/run-cards/p2/HF-MODEL-CARD-p2.md](docs/run-cards/p2/HF-MODEL-CARD-p2.md)  
+**Weights (not in this repo; documentation-only until A0/A1/A2/A3 upload together):** https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl  
+**Hub documentation pack:** [docs/hub/p2-en-then-tl/](docs/hub/p2-en-then-tl/)  
+**DeepWiki:** https://deepwiki.com/pageman/nanochat-filipino  
+**Environment:** [scripts/p2/env.sh](scripts/p2/env.sh) · [scripts/p2/env.cuda.sh](scripts/p2/env.cuda.sh)  
+**Sealed validation table:** [results/p2/gate-u-seal.json](results/p2/gate-u-seal.json)  
+**Data/code notices:** [DATA_AND_CODE_NOTICES.md](DATA_AND_CODE_NOTICES.md)
+
+## Status (P2)
+
+Gates A–W are recorded. Confirmatory depth is d20. Sealed `C_EN = EN(A2)−EN(A1) = −0.073991` (filed ≥0.01: **not observed**). Sealed `G_TL = TL(A2)−TL(A1) = −3.883048` (filed ≤−0.01: **observed** in this one-seed apparatus). One authorized A2-only secondary test (`test_bpb` English 1.392015; Tagalog holdout under English BPE 1.160154). Do not reuse P1.1 `test_bpb = 1.164768`. A1 and A3 were not tested. This repo is the P2 audit trail: code, manifests, evaluator, and result bundles under `docs/p2/` and `results/p2/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+
+Trainer in-loop `val_bpb` is **not** the primary DV. Do not rank arms from loop scores or from `meta_*.json` `val_bpb`. The registered table is [results/p2/sealed_val_table.csv](results/p2/sealed_val_table.csv) · [results/p2/gate-u-seal.json](results/p2/gate-u-seal.json).
+
+Do not claim that Tagalog generally improves English. One seed; no significance test. A3 is a 50/50-document trade-off arm, not mitigation. The Hub card is documentation-only until the complete A0/A1/A2/A3 checkpoint bundle is uploaded together.

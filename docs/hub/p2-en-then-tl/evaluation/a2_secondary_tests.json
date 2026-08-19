@@ -1,0 +1,9 @@
+{
+  "arm": "A2",
+  "english_test_bpb": 1.3920153828330646,
+  "tagalog_test_bpb": 1.160154464725726,
+  "does_not_alter_C_en_or_G_tl": true,
+  "a1_tested": false,
+  "a3_tested": false,
+  "do_not_reuse_p11_test_bpb": 1.164768
+}

@@ -1,0 +1,9 @@
+{
+  "C_EN": -0.07399123756067971,
+  "G_TL": -3.883048460086431,
+  "filed_C_EN": ">=0.01",
+  "filed_G_TL": "<=-0.01",
+  "C_EN_observed_as_filed": false,
+  "G_TL_observed_as_filed": true,
+  "one_seed": true
+}

@@ -1,0 +1,34 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "gate": "T",
+  "arm": "A3",
+  "status": "pass",
+  "started_a3": true,
+  "pid": 9134,
+  "log_host": "/workspace/p2-a3-mix-d20.log",
+  "test_read_count": 0,
+  "at_utc": "2026-08-19T05:24:00Z",
+  "run_id": "p2-20260817T150944Z-de99f8a",
+  "model_tag": "p2-a3-mix-d20",
+  "parent": {
+    "arm": "A0",
+    "forbidden_parents": ["A1", "A2"],
+    "sha256": "bd35a8587b5df72c85e93c440cbd79ec506f712cf618f77c21b5625362272e1d"
+  },
+  "wrapper_sha256": "7e6719544237f54fc75fc3770f587ba3ed929011b9f68627f398f3ed87b6552f",
+  "nanochat_data_dir": "data/processed/p2-mix-a3-50-50",
+  "mix": {
+    "unit": "documents_not_tokens",
+    "seed": 42,
+    "K": 28472,
+    "order_sha256": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+    "not_regenerated": true
+  },
+  "authorization_from_user": "do it; sealed 294-step A3 mix continuation from immutable A0 d20 with a fresh optimizer",
+  "num_iterations": 294,
+  "inloop_val_is_not_val_bpb_full": true,
+  "no_c_en_until_gate_u": true
+}

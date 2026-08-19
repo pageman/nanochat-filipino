@@ -1,0 +1,48 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P2-EN-TL",
+  "aspredicted_id": 306935,
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "note": "P2 test ledger. Not manifests/test_access_log.json (P1.1). One authorized Gate V touch contains two prespecified component evaluations.",
+  "authorized_touches": 1,
+  "component_evaluations": 2,
+  "test_access_count_before_gate_v": 0,
+  "events": [
+    {
+      "at_utc": "2026-08-19T07:47:24Z",
+      "component": "english",
+      "role": "wt103_raw_official_english_test",
+      "model_tag": "p2-a2-tagalog-d20",
+      "checkpoint_sha256": "2b01acf8fac0e8c783162582cbb384e8ce1c37795aae2f7dd4ae34c2a5c76026",
+      "test_path": "data/interim/wikitext-103/english_test.jsonl",
+      "test_sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "bpb": 1.3920153828330646,
+      "total_nats": 444206.59375,
+      "total_bytes": 460379,
+      "n_scored_tokens": 100341,
+      "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+      "stride": "non_overlapping_T_official_bos_bestfit",
+      "secondary_treatment_outcome": true,
+      "does_not_alter_sealed_C_en_or_G_tl": true,
+      "not_a_test_set_contrast": true
+    },
+    {
+      "at_utc": "2026-08-19T07:49:00Z",
+      "component": "tagalog",
+      "role": "legacy_external_holdout_p11_test_jsonl",
+      "model_tag": "p2-a2-tagalog-d20",
+      "checkpoint_sha256": "2b01acf8fac0e8c783162582cbb384e8ce1c37795aae2f7dd4ae34c2a5c76026",
+      "test_path": "data/processed/wikitext-tl39/test/test.jsonl",
+      "test_sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "bpb": 1.160154464725726,
+      "total_nats": 3985843.5,
+      "total_bytes": 4956544,
+      "n_scored_tokens": 1928247,
+      "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+      "stride": "non_overlapping_T_official_bos_bestfit",
+      "secondary_treatment_outcome": true,
+      "does_not_alter_sealed_C_en_or_G_tl": true,
+      "not_a_test_set_contrast": true
+    }
+  ]
+}

@@ -12,3 +12,7 @@ Checkpoint metadata `val_bpb` is **not** the primary result. Those values used `
 | [selected_test_d20.json](selected_test_d20.json) | One test BPB on `D*=20` after selection. Aggregate components only. No raw `test.jsonl`. |
 
 Do not rank depths from `card_eval_val_bpb_262144` or from `meta_000294.json` `val_bpb`.
+
+## P2 (separate tree)
+
+P2 seals are in [`p2/`](p2/). Do not mix those files with this P1.1 folder. P2 primary DVs are in `p2/gate-u-seal.json`.

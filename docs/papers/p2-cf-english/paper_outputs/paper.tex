@@ -19,162 +19,288 @@
 \setlist[itemize]{leftmargin=1.4em,itemsep=0.15em}
 \setlist[enumerate]{leftmargin=1.4em,itemsep=0.15em}
 
-\title{English Retention after Tagalog Continuation:\\Did nanochat Forget English because it Learned Filipino?}
+\title{Held-Out English Bits-per-Byte after Matched-Budget Tagalog Continuation\\of a WikiText-103 nanochat Parent}
 \author{Paul Pajo\\
 Independent Researcher\\
 \texttt{paulamerigo.pajojr@benilde.edu.ph}}
-\date{16 August 2026}
+\date{19 August 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Pajo (2026) trained nanochat from scratch on WikiText-TL-39 and measured held-out Tagalog bits-per-byte (BPB) under equal exposure (AsPredicted \#306780). That study is complete and is not amended here. Those Tagalog-only checkpoints never saw English, so they cannot answer whether a model ``forgot English because it learned Tagalog.'' This Stage~1 manuscript locks the complementary experiment, still entirely inside Karpathy nanochat: \texttt{tok\_train} $\rightarrow$ \texttt{base\_train} $\rightarrow$ official \texttt{evaluate\_bpb}, commit \texttt{92d63d4}, depth dial only. Pretrain on WikiText-103 raw (English-train 32{,}768 BPE, $T=2048$), prove provenance, then continue on the frozen P1.1 WikiText-TL-39 train split. Dual confirmatory benchmarks: English \texttt{val\_bpb\_full} (retention / forgetting) and Tagalog \texttt{val\_bpb\_full} on \texttt{reconstructed\_article\_70\_15\_15} (Filipino acquisition). The forgetting contrast is extra-English continuation versus Tagalog continuation at the same token budget. P1.1 Table~2 is the Tagalog from-scratch ceiling and the English negative control. New GitHub and Hub repositories; P1.1 weights stay read-only. No phase-2 numbers are invented. No Hugging Face Trainer, CORE, chat, or SFT in the primary table.
+When an English-pretrained nanochat parent, whose English provenance has passed a filed floor, is continued for a matched token budget on WikiText-TL-39 train, does English held-out bits-per-byte (BPB) rise more than under extra-English continuation, and does Tagalog held-out BPB fall? This question was preregistered as AsPredicted \#306935 before confirmatory continuation BPB existed. It does not amend AsPredicted \#306780. The study uses WikiText-103 raw (Hugging Face \texttt{Salesforce/wikitext}, config \texttt{wikitext-103-raw-v1}), a train-only English 32{,}768-merge BPE tokenizer, sequence length $T=2048$, and Karpathy's nanochat base trainer pinned at commit \texttt{92d63d4}. Tagalog continuation uses the frozen P1.1 WikiText-TL-39 train split (\texttt{reconstructed\_article\_70\_15\_15}). Phase-2 exposure is $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens ($N=294$ steps at $B=65{,}536$), copied from P1.1 $D_{\mathrm{actual}}$, not from English $D_{3x}$. Primary outcomes are full-split English and Tagalog \texttt{val\_bpb\_full} after the final child checkpoint. In this one-seed depth-20 run, $C_{\mathrm{en}}=\mathrm{EN}(A2)-\mathrm{EN}(A1)=-0.073991$ (filed $\ge 0.01$: not observed) and $G_{\mathrm{tl}}=\mathrm{TL}(A2)-\mathrm{TL}(A1)=-3.883048$ (filed $\le -0.01$: observed in this apparatus). One authorized secondary test touch scored A2 only (English test BPB $1.392015$; legacy Tagalog holdout under English BPE $1.160154$). The contribution is a locked equal-exposure continual-pretraining measurement, not a claim that Tagalog improves English in general, and not a chat, CORE, or Hugging Face \texttt{Trainer} result.
 \end{abstract}
 
-\noindent\textbf{Keywords:} catastrophic forgetting; English retention; Tagalog acquisition; WikiText-103; WikiText-TL-39; bits-per-byte; provenance; equal-exposure; nanochat; preregistration.
+\noindent\textbf{Keywords:} catastrophic forgetting; English retention; Tagalog acquisition; WikiText-103; WikiText-TL-39; bits-per-byte; equal-exposure; nanochat; preregistration; continual pretraining.
 
 \noindent\textbf{arXiv categories:} cs.CL, cs.LG.
 
-\noindent\textbf{Status:} Stage~1. Direction recalibrated 16 August 2026. English parents and Tagalog continuation have not been run.
+\noindent\textbf{Code and weights:} study repository \url{https://github.com/pageman/nanochat-filipino} (P2 subtree); model card and (when uploaded as a complete set) branch checkpoints at \url{https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl}. Registration: \url{https://aspredicted.org/xa56bs.pdf}. ResearchBox: \url{https://researchbox.org/8763}. P1.1 paper and weights remain separate: \url{https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39}; \url{https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x}.
 
-\noindent\textbf{P1.1 (frozen, A/P/C/L/N $=25$):} \url{https://www.researchgate.net/publication/412302216_Equal-Exposure_Depth_and_Held-Out_Tagalog_Bits-per-Byte_on_WikiText-TL-39}; code \url{https://github.com/pageman/nanochat-filipino}; weights \url{https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x}.
+\section{Introduction}
+\label{sec:intro}
 
-\noindent\textbf{This study (new repos, not written onto P1.1):} \texttt{pageman/nanochat-filipino-p2-en-then-tl} on GitHub and Hugging Face.
+Pajo~\cite{pajo2026p11} trained nanochat from scratch on WikiText-TL-39 and measured held-out Tagalog BPB under equal exposure (AsPredicted \#306780). That study is complete and is not amended here. Those Tagalog-only checkpoints never saw English, so they cannot answer whether a model ``forgot English because it learned Tagalog.'' WikiText-TL-39 is a corpus, not an English-pretrained model~\cite{cruz2019eval}. English pretraining is a separate nanochat run on WikiText-103 raw~\cite{merity2017pointer}.
 
-\noindent\textbf{Direction lock:} \texttt{docs/papers/p2-cf-english/DIRECTION-RECALIBRATION.md}.
+Typical large-model forgetting work starts from an English or multilingual base and adds a new task~\cite{luo2023forgetting,ramasesh2021forgetscale,mccloskey1989catastrophic}. This paper stays in that causal direction and keeps P1.1's purity: WikiText-family text, nanochat depth dial, BPB rather than CORE~\cite{karpathy2026nanochat,pajo2026p11}. The Tagalog stage is sequential continued pretraining under language shift, not classifier fine-tuning~\cite{shi2024continual,cruz2019eval}. Equal-exposure arithmetic is copied from P1.1 so English pretraining is not a silent compute confound~\cite{kaplan2020scaling,hoffmann2022chinchilla,muennighoff2023dataconstrained}.
 
-\section{What changed, and why P1.1 cannot be the CF parent}
-\label{sec:flip}
-
-The question is: after English pretraining, how much English is lost when the same decoder is continued on Filipino Wikipedia text, and did it actually learn Filipino?
-
-WikiText-TL-39 is a corpus, not a model that was ``pretrained in English.'' English pretraining is a separate nanochat run on WikiText-103 raw~\cite{merity2017pointer}. Filipino tuning uses the frozen P1.1 train split of WikiText-TL-39~\cite{cruz2019eval,pajo2026p11}.
-
-P1.1 Hub checkpoints are a pure Tagalog speedrun~\cite{karpathy2026nanochat,aspredicted306780}. Using them as the CF parent would measure Tagalog retention under English data --- the opposite causal arrow. That draft is retired.
-
-P1.1 remains the measurement instrument for Filipino and the negative control for English (a model that was \emph{not} English-pretrained).
-
-\section{Glossary}
-\label{sec:glossary}
-
-\begin{description}[style=nextline,leftmargin=1.25em]
-\item[P1.1] Frozen Tagalog-from-scratch study. Not the English parent.
-\item[EN0] English-from-scratch nanochat on WikiText-103 raw. This \emph{is} the CF parent.
-\item[P0] Provenance battery, scored before any Tagalog training token.
-\item[A0] Frozen EN0, dual eval (English before, Tagalog before).
-\item[A1] Extra English continuation, $D_{\mathrm{phase2}}$ (drift).
-\item[A2] Tagalog continuation on P1.1 train, $D_{\mathrm{phase2}}$ (CF intervention).
-\item[A3] 50/50 English/Tagalog documents, $D_{\mathrm{phase2}}$.
-\item[$C_{\mathrm{en}}$] English \texttt{val\_bpb\_full}(A2)$-${}\texttt{val\_bpb\_full}(A1). Positive: Tagalog data hurt English more than more English did.
-\item[Acquisition] Tagalog \texttt{val\_bpb\_full}(A2) versus P1.1 Table~2 (from-scratch ceiling) and versus A0 (English parent before Filipino).
-\item[Collapse (English)] After A2, English val BPB $\ge$ EN0 untrained, or $\Delta_{\mathrm{en}}\ge 1.0$ versus A0, or English val BPB no longer beats the English byte unigram. Not a $0.02$ bump.
-\item[BPB] Bits per UTF-8 byte. Fair across the English BPE and the P1.1 Tagalog BPE. Do not mix tokenizers in one training run.
-\end{description}
-
-\section{P1.1 facts used as references, not as parents}
-\label{sec:p11}
-
-Tagalog \texttt{val\_bpb\_full} seed 0: d8 $1.179135$, d12 $1.180824$, d16 $1.195546$, d20 $1.172248$. Untrained $\approx 3.289$; unigram $4.453225$. Split \texttt{reconstructed\_article\_70\_15\_15}. nanochat \texttt{92d63d4}. $T=2048$. One Tagalog test BPB $1.164768$ on d20; this study does not reuse it as a post-continuation number.
-
-\section{Confirmatory question}
-\label{sec:question}
-
-File a new AsPredicted before EN0 confirmatory BPB (pilots allowed). Then:
+The confirmatory question, filed before confirmatory continuation BPB existed, is:
 
 \begin{quote}
 When an English-pretrained nanochat (EN0), whose English provenance has passed P0, is continued for $D_{\mathrm{phase2}}$ tokens on WikiText-TL-39 train, does English held-out BPB rise more than under matched extra-English continuation, and does Tagalog held-out BPB fall toward the P1.1 from-scratch ceiling?
 \end{quote}
 
-Prediction: $C_{\mathrm{en}}>0$ by at least $0.01$ BPB at the registered depths. Tagalog A2 BPB will be strictly below A0 Tagalog BPB (learning Filipino) but need not match P1.1 d20 (different tokenizer, different init). Depth rankings of $C_{\mathrm{en}}$ require the $0.01$ rule and more than one seed. P0 failure aborts A2.
+The registered English-cost prediction was $C_{\mathrm{en}}\ge 0.01$. The registered Tagalog-gain prediction was $G_{\mathrm{tl}}\le -0.01$. The filing stated that the study would not claim a population effect, would not reuse P1.1's native-BPE test BPB as a P2 observation, and is not a CORE, chat, or classification test~\cite{aspredicted306935}.
 
-\section{Provenance battery P0}
-\label{sec:p0}
-
-``Was it really pretrained in English?'' is an empirical gate, not a README claim.
-
-On a frozen English validation split, before any Tagalog train token:
+This paper contributes four things.
 
 \begin{enumerate}
-\item EN0 English \texttt{val\_bpb\_full} $<$ same-depth untrained.
-\item EN0 English \texttt{val\_bpb\_full} $<$ P1.1 d20 English \texttt{val\_bpb\_full} on the same UTF-8 (P1.1 Tagalog BPE), by $\ge 0.01$ BPB.
-\item EN0 Tagalog \texttt{val\_bpb\_full} $>$ P1.1 d20 Tagalog \texttt{val\_bpb\_full} (has not learned Filipino yet), by $\ge 0.01$ BPB.
-\item English-train BPE hashes recorded; train log names WikiText-103 only; no ClimbMix.
+\item A preregistered English-then-Tagalog nanochat run with frozen A0 parent, matched phase-2 budget, and dual full-split BPB, independent of \#306780.
+\item A recoverable English path: Hugging Face WikiText-103-raw revision, official Merity splits, train-only 32{,}768 BPE, and isolated test text that is not redistributed.
+\item A one-test-touch evaluation: seal English $C_{\mathrm{en}}$ and Tagalog $G_{\mathrm{tl}}$ on validation with both tests unread, then one A2-only secondary test event.
+\item A locked reading of this one-seed apparatus: the Tagalog-gain pattern was observed; the English-cost pattern was not observed (opposite sign on $C_{\mathrm{en}}$).
 \end{enumerate}
 
-If any check fails, EN0 is not an English parent.
+The paper follows the close-out record for AsPredicted \#306935. It does not amend \#306780.
 
 \section{Related work}
 \label{sec:related}
 
-Catastrophic interference is sequential overwriting of old knowledge~\cite{mccloskey1989catastrophic,french1999cf,goodfellow2013cf}. Typical LLM CF starts from an English (or multilingual) base and adds a new task~\cite{luo2023forgetting,ramasesh2021forgetscale}. This paper stays in that causal direction, but keeps P1.1's purity: WikiText-family corpora, nanochat depth dial, BPB rather than CORE~\cite{merity2017pointer,cruz2019eval,karpathy2026nanochat,pajo2026p11}. EWC and replay are later~\cite{kirkpatrick2017ewc,lopezpaz2017gem}. Equal-exposure arithmetic is copied from P1.1 so English pretraining is not a silent compute confound~\cite{kaplan2020scaling,hoffmann2022chinchilla,muennighoff2023dataconstrained}.
+\subsection{Filipino and Tagalog language resources}
+Cruz and Cheng constructed WikiText-TL-39 as a Tagalog analogue of WikiText~\cite{cruz2019eval}. P1.1 measured equal-exposure depth versus Tagalog BPB on a reconstructed-article split of that package~\cite{pajo2026p11,aspredicted306780}. Later Filipino encoder and mixed-corpus work answers a different question. Those resources do not say what happens to English held-out BPB when a decoder that was actually pretrained on WikiText-103 is continued on frozen WikiText-TL-39 train at a matched token budget.
+
+\subsection{Language-modeling evaluation}
+WikiText established a clean Wikipedia language-modeling setup in English~\cite{merity2017pointer}. BPB remains the fair comparison when vocabularies differ~\cite{shannon1951prediction,melis2018eval,brown2020gpt3}. This study uses official \texttt{evaluate\_bpb}: mean token negative log-likelihood divided by $\ln 2$ times mean UTF-8 bytes per token. In-loop trainer validation is diagnostic and is not \texttt{val\_bpb\_full}.
+
+\subsection{Scaling, depth, and data constraints}
+Kaplan et al.\ described loss versus compute, data, and parameters~\cite{kaplan2020scaling}. Hoffmann et al.\ argued that many large models were undertrained relative to parameter count~\cite{hoffmann2022chinchilla}. Muennighoff et al.\ studied repeated epochs when unique data are scarce~\cite{muennighoff2023dataconstrained}. P1.1 held $D_{3x}$ fixed across depths. P2 holds $D_{\mathrm{phase2}}=D_{\mathrm{actual}}^{\mathrm{P1.1}}=19{,}267{,}584$ fixed across A1, A2, and A3 so the forgetting contrast is not a compute contrast.
+
+\subsection{Catastrophic forgetting and continual pretraining}
+Sequential overwriting of old knowledge is the classical interference problem~\cite{mccloskey1989catastrophic,french1999cf,goodfellow2013cf}. LLM papers often start from an English base and add a new language or task~\cite{luo2023forgetting,ramasesh2021forgetscale,shi2024continual}. Elastic weight consolidation and replay are later, named follow-ons, not this experiment~\cite{kirkpatrick2017ewc,lopezpaz2017gem}. P1.1 Hub checkpoints are a Tagalog-from-scratch speedrun. Using them as the P2 parent would measure Tagalog retention under English data---the opposite causal arrow.
+
+\subsection{Preregistration and confirmatory practice}
+Preregistration reduces undisclosed flexibility~\cite{simmons2011falsepositive,wagenmakers2012confirmatory,nosek2018prereg}. AsPredicted \#306935 locked the question, parent, arms, budgets, dual BPB, $0.01$ practical cutoff, one-test-touch rule, and independence from \#306780 before confirmatory continuation BPB existed~\cite{aspredicted306935}.
+
+\section{Glossary}
+\label{sec:glossary}
+
+\begin{description}[style=nextline,leftmargin=1.25em]
+\item[P1.1] Frozen Tagalog-from-scratch equal-exposure study. Not the English parent.
+\item[EN0] English-from-scratch nanochat on WikiText-103 raw. This is the CF parent.
+\item[P0 / P0-E] Provenance battery before any Tagalog train token. P0-E: EN0 English \texttt{val\_bpb\_full} beats untrained and byte-unigram floors by $\ge 0.01$.
+\item[A0] Frozen EN0 d20 parent; dual eval; no additional train tokens.
+\item[A1] Extra-English continuation, $D_{\mathrm{phase2}}$ (active control).
+\item[A2] Tagalog continuation on frozen P1.1 train, $D_{\mathrm{phase2}}$ (intervention). Only tested arm.
+\item[A3] 50/50 English/Tagalog \emph{documents}, $D_{\mathrm{phase2}}$. Trade-off arm, not mitigation.
+\item[$C_{\mathrm{en}}$] English \texttt{val\_bpb\_full}(A2)$-${}\texttt{val\_bpb\_full}(A1). Filed $\ge 0.01$.
+\item[$G_{\mathrm{tl}}$] Tagalog \texttt{val\_bpb\_full}(A2)$-${}\texttt{val\_bpb\_full}(A1). Filed $\le -0.01$.
+\item[BPB] Bits per UTF-8 byte. Lower is better.
+\item[val\_bpb\_full] Official full-split validation BPB after the final checkpoint. Primary DV.
+\item[test\_bpb] Same formula on an isolated test split. Secondary. A2 only, after the val seal.
+\item[$D_{\mathrm{phase2}}$] Phase-2 model-visible tokens: $294\times 65{,}536=19{,}267{,}584$.
+\item[$T$] Context length. Frozen at 2048.
+\item[BPE] English 32{,}768-merge tokenizer, WikiText-103 raw \emph{train} only.
+\item[BOS-bestfit] One-pass packing with BOS, length-$T$ rows, no wrap.
+\item[CORE / SFT / ClimbMix] Excluded from confirmatory P2.
+\end{description}
 
 \section{Methods}
 \label{sec:methods}
 
-\subsection{Lineage}
-New AsPredicted. New GitHub/Hub \texttt{pageman/nanochat-filipino-p2-en-then-tl}. P1.1 repos read-only. Authority: new PDF $>$ \texttt{DIRECTION-RECALIBRATION.md} $>$ this manuscript $>$ ledger $>$ deviation.
+\subsection{Registration and authority}
+AsPredicted \#306935 is the governing record (PDF SHA-256 prefix \texttt{d6dff034})~\cite{aspredicted306935}. ResearchBox \#8763 is the deposit box. Authority: PDF \#306935 $>$ protocol $>$ this manuscript $>$ ledger $>$ deviation. The study does not amend \#306780 or ResearchBox \#8735. Exploratory items named in the form stay outside the primary table.
 
-\subsection{nanochat-only contract}
-Every trained weight in this study is a nanochat decoder from commit \texttt{92d63d4e8bb4df75c3b71618f31ddde2378b2bcd}, plus the documented \texttt{NANOCHAT\_DATA\_DIR} hook and no other model-file edits. English BPE: \texttt{python -m scripts.tok\_train} on WikiText-103 raw train. English pretrain, extra-English, Tagalog continuation, and joint mix: \texttt{python -m scripts.base\_train} with \texttt{--depth}, \texttt{--max-seq-len=2048}, \texttt{--core-metric-every=-1}. Both language scores: official \texttt{evaluate\_bpb} through a copy of \texttt{scripts/p1/gate\_j\_full\_bpb.py}. P1.1 d20 used as a negative control is the already-published nanochat checkpoint, not a retrained Hugging Face model. Forbidden: Hugging Face \texttt{Trainer} or \texttt{from\_pretrained} as the language model, llama.cpp, \texttt{python -m nanochat.dataset}, CORE, SFT, a second architecture, or loading P1.1 \texttt{model\_000294.pt} as the English parent.
+\subsection{Corpus and canonical text}
+English: Hugging Face \texttt{Salesforce/wikitext}, config \texttt{wikitext-103-raw-v1}, revision prefix \texttt{b08601e0}, downloaded 2026-08-17. Canonical English text is LF-only. No detokenize, NFC, language filter, or dedup. Residual \texttt{@-@} marks in the HF raw dump were left as released.
 
-\subsection{English phase (EN0)}
-Corpus: WikiText-103 \emph{raw}. LF-only. Article-hash 70/15/15. Tokenizer: 32{,}768 BPE on English \emph{train} only. Trainer: nanochat \texttt{92d63d4}, $T=2048$, $B=65{,}536$, $N$ from English $D_{3x}=3\times T_{\mathrm{en,train}}$ with explicit \texttt{--num-iterations}, ratio never $-1$, CORE off. Depths: 8 and 20 required; 12 and 16 if budget. Seed 0 confirmatory for EN0; extra seeds later.
+Tagalog continuation text is the frozen P1.1 train jsonl (SHA-256 prefix \texttt{2b0474c5}), not a new scrape.
 
-\subsection{Tagalog phase (A2)}
-Data: frozen P1.1 train JSONL only (hash \texttt{2b0474c5\ldots}). Encode with the \emph{English} BPE. $D_{\mathrm{phase2}}=19{,}267{,}584$ English-BPE tokens unless the PDF names English $D_{3x}$. Fresh optimizer, peak LR $=0.3\times$ EN0 peak, warmup 14. Do not load P1.1 \texttt{model\_000294.pt} as the start weight.
+\subsection{Split}
+English uses official Merity train/validation/test article splits (Gate D), not a 70/15/15 re-hash. Counts: train 28{,}472 documents, val 60, test 60. English train jsonl SHA-256 prefix \texttt{09ae691c}. Tagalog evaluation uses the P1.1 reconstructed validation shard under the \emph{English} BPE. Exact document-hash overlap across English train/val/test is 0. Drop-audit on frozen kept train jsonl files: 0 null/empty units and 0 documents $>200{,}000$ characters.
 
-\subsection{Arms}
+\subsection{Tokenizer}
+One English 32{,}768 BPE, train shards only (tokenizer SHA-256 prefixes \texttt{946a04ef} / \texttt{5ae2ea1d}). P1.1 Tagalog BPE is not used in P2 training. Fertility is descriptive (English val $4.603$ bytes/token; Tagalog val $2.574$ bytes/token) and is not forgetting evidence.
+
+\subsection{Model and budget}
+Every trained weight is a nanochat decoder from commit \texttt{92d63d4e8bb4df75c3b71618f31ddde2378b2bcd}, plus the documented \texttt{NANOCHAT\_DATA\_DIR} hook and no other model-file edits. EN0: $T=2048$, $B=65{,}536$, $N_{\mathrm{EN0}}=5415$ from English $D_{3x}=3\times T_{\mathrm{en,train}}$ with explicit \texttt{--num-iterations} (ratio never $-1$), CORE off. Confirmatory continuation is depth 20 only. Children load frozen A0 with a fresh optimizer; the pin has no \texttt{--load}. $D_{\mathrm{phase2}}=19{,}267{,}584$. Forbidden: Hugging Face \texttt{Trainer} or \texttt{from\_pretrained} as the language model, loading P1.1 \texttt{model\_000294.pt} as the English parent, \texttt{python -m nanochat.dataset}.
+
 \begin{center}
-\begin{tabular}{llp{6.6cm}}
+\begin{tabular}{llp{7.2cm}}
 \toprule
 Arm & Start & Phase-2 stream \\
 \midrule
 EN0 & random & English train (pretrain) \\
-A0 & EN0 & none (dual eval) \\
-A1 & EN0 & more English \\
-A2 & EN0 & P1.1 Tagalog train \\
-A3 & EN0 & 50/50 documents \\
+A0 & EN0 d20 & none (dual eval) \\
+A1 & A0 & official WT103-raw train \\
+A2 & A0 & frozen P1.1 Tagalog train \\
+A3 & A0 & seed-42 50/50-document mix, $K=28{,}472$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection{Dual evaluators}
-Same \texttt{evaluate\_bpb} wrapper as P1.1, two data roots. English val never in Tagalog paths. Seal English $C_{\mathrm{en}}$ and Tagalog acquisition on validation with both tests unread. Then at most one English test and at most one Tagalog test, predeclared. Loop \texttt{eval-tokens=262144} is diagnostic.
+\subsection{Host}
+Official EN0 d20 and phase-2 children ran on Runpod Secure A40 (48 GB), EU-SE-1, pod tag \texttt{p2-en0-d20}. A separate A40 smoke pod established the CUDA path. Environment: \texttt{scripts/p2/env.sh} / \texttt{scripts/p2/env.cuda.sh} only (never \texttt{scripts/p1/env.sh}).
 
-\subsection{What is not done}
-No ClimbMix. No \texttt{python -m nanochat.dataset}. No P1.1 weight as English parent. No overwrite of \texttt{p1-fixed-d20-3x}. No Hugging Face \texttt{Trainer}. No confirmatory SFT/CORE/EWC. No invented rater scores. No mixing tokenizers in one run.
+\subsection{Evaluation}
+Evaluator: \texttt{scripts/p2/evaluate\_bpb.py} via Gate U/V wrappers. Packing: one-pass BOS-bestfit, $T=2048$, device batch 8, non-overlapping stride. Packed UTF-8 bytes: English val 624{,}360; Tagalog val 5{,}205{,}755. Seal: Gate U at 2026-08-19T07:17:53Z with \texttt{test\_read\_count=0}. Test: one authorized Gate V touch, A2 only (English then Tagalog component). A1 and A3 were not tested. In-loop \texttt{eval-tokens} is not \texttt{val\_bpb\_full}.
 
-\section{Analysis plan}
-\label{sec:analysis}
-
-Primary: $\bar C_{\mathrm{en}}$ at d8 and d20, seeds as registered, threshold $0.01$. Secondary: Tagalog A2 versus P1.1 Table~2 and versus A0; A3; collapse binary on English. Falsification of forgetting: $C_{\mathrm{en}}$ not material. Falsification of acquisition: Tagalog A2 not better than A0 by $0.01$. Neither revives a P1.1 depth ranking.
+\subsection{What was not done}
+No ClimbMix. No overwrite of \texttt{p1-fixed-d20-3x}. No confirmatory SFT, CORE, EWC, or replay. No mixing tokenizers in one run. No reuse of P1.1 native-BPE test BPB $1.164768$ as a P2 observation. No P1.1-weights-on-English OOD as a post-outcome rescue. Native-speaker ratings were not collected and were not invented.
 
 \section{Results}
 \label{sec:results}
 
-P1.1 Tagalog table is cited, not rerun. EN0, P0, and A0--A3 cells are empty until the new PDF exists and the runs complete~\cite{simmons2011falsepositive,wagenmakers2012confirmatory,nosek2018prereg}.
+Phase-2 cells are one-seed d20 point estimates after AsPredicted \#306935~\cite{aspredicted306935,simmons2011falsepositive,wagenmakers2012confirmatory,nosek2018prereg}. P1.1 Tagalog Table~2 is cited, not rerun.
 
-\section{Discussion rules}
+\subsection{Primary confirmatory table}
+Table~\ref{tab:primary} is the sealed Gate~U validation table. $C_{\mathrm{en}}=\mathrm{EN}(A2)-\mathrm{EN}(A1)=-0.073991$. $G_{\mathrm{tl}}=\mathrm{TL}(A2)-\mathrm{TL}(A1)=-3.883048$.
+
+\begin{table}[t]
+\centering
+\caption{Primary confirmatory outcomes. Seed 0, depth 20, $N_{\mathrm{phase2}}=294$, $D_{\mathrm{phase2}}=19{,}267{,}584$, English 32{,}768 BPE, official \texttt{evaluate\_bpb}, $T=2048$. P1.1 d20 Tagalog $1.172248$ uses a different tokenizer and is descriptive only.}
+\label{tab:primary}
+\begin{tabular}{lrr}
+\toprule
+Arm & English val BPB & Tagalog val BPB \\
+\midrule
+Untrained & 3.246978 & --- \\
+A0 & 1.389990 & 4.917650 \\
+A1 & 1.459675 & 5.054664 \\
+A2 & 1.385684 & 1.171616 \\
+A3 & 1.279433 & 1.528858 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Prediction outcome}
+The filed English-cost pattern ($C_{\mathrm{en}}\ge 0.01$) was \textbf{not observed}: A2 English BPB was lower than A1 by $0.073991$ BPB (opposite sign; $\lvert\Delta\rvert$ is material at $0.01$). This does not license a general claim that Tagalog improves English beyond this one-seed, fixed-data, fixed-budget apparatus.
+
+The filed Tagalog-gain pattern ($G_{\mathrm{tl}}\le -0.01$) was \textbf{observed} in this one-seed apparatus. A2 Tagalog BPB was substantially below A1 under the shared English BPE.
+
+A3 versus A1: $\mathrm{EN}(A3)-\mathrm{EN}(A1)=-0.180242$; $\mathrm{TL}(A3)-\mathrm{TL}(A1)=-3.525806$. A3 is the predeclared 50/50-\emph{document} mix trade-off arm, not token-equated, and is \textbf{not} registered as mitigation. Realized mix shares (frozen seed-42 order \texttt{b6ae432b\ldots}): documents $50/50$; UTF-8 bytes English $0.961314$ / Tagalog $0.038686$; English-BPE tokens English $0.933232$ / Tagalog $0.066768$. A0 Tagalog is parent provenance; A0$\rightarrow$A2 Tagalog change is descriptive only.
+
+\subsection{Secondary confirmatory test}
+After the val seal, one authorized secondary test touch scored A2 only. English WT103-raw test BPB $1.392015$. The P1.1 Tagalog \texttt{test.jsonl} is a legacy external holdout scored under P2 English BPE: $1.160154$. These secondary results do not alter sealed $C_{\mathrm{en}}$ or $G_{\mathrm{tl}}$. P1.1's native-BPE test BPB $1.164768$ is not reused. A1 and A3 were not tested.
+
+\subsection{Required baselines}
+EN0 English \texttt{val\_bpb\_full} beat both an untrained same-depth model and a train-fitted add-one UTF-8 byte unigram ($4.582801$) by $\ge 0.01$ at depths 8 and 20 (Table~\ref{tab:p0e}). P0-E therefore passed; the d20 parent may be called English-pretrained. Confirmatory continuation uses the frozen d20 parent only.
+
+\begin{table}[t]
+\centering
+\caption{P0-E English provenance, official \texttt{evaluate\_bpb}, $T=2048$. Byte unigram $=4.582801$.}
+\label{tab:p0e}
+\begin{tabular}{lrrr}
+\toprule
+Model & val BPB & Untrained & Gap vs untrained \\
+\midrule
+EN0 d8 & 0.983292 & 3.246994 & 2.263702 \\
+EN0 d20 (A0) & 1.389990 & 3.246978 & 1.856988 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Secondary analyses, not used for $C_{\mathrm{en}}$ or $G_{\mathrm{tl}}$}
+Table~\ref{tab:exposure} reports unique-stream exposure. Revisit $=D_{\mathrm{phase2}}/T_{\mathrm{unique}}$. These descriptors were not used to pick arms.
+
+\begin{table}[t]
+\centering
+\caption{Phase-2 unique-stream exposure. $D_{\mathrm{phase2}}=19{,}267{,}584$. Not confirmatory DVs.}
+\label{tab:exposure}
+\begin{tabular}{lrrrr}
+\toprule
+Arm & Docs & Canonical bytes & Unique BPE tokens & Revisit \\
+\midrule
+A1 & 28{,}472 & 539{,}903{,}397 & 118{,}286{,}771 & 0.163 \\
+A2 & 37{,}602 & 29{,}165{,}137 & 11{,}352{,}473 & 1.697 \\
+A3 & 56{,}944 & 561{,}630{,}369 & 126{,}749{,}578 & 0.152 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Registered Question~8 items that are not primary DVs: A2 English trajectory was \textbf{not collected} (A2 in-loop validation used the Tagalog last shard). PTPP $R_d(\mathrm{step})=\mathrm{step}/294$ is defined; an English-BPB-versus-$R_d$ plot was not made. Fertility is reported above. P1.1 d20 on English UTF-8 was \textbf{not run} and will not be added as a post-outcome P2 rescue.
+
+\section{Discussion}
 \label{sec:discussion}
 
-If $C_{\mathrm{en}}$ is material and Tagalog A2 improved versus A0, the model learned Filipino and paid an English cost beyond extra English training. If Tagalog did not improve, it did not learn Filipino; do not call that English CF due to Filipino competence. If $C_{\mathrm{en}}\approx 0$ and Tagalog improved, sequential Tagalog at this budget did not overwrite English on BPB. P0 is what licenses the sentence ``pretrained in English.''
+Required narrow reading: in this preregistered, one-seed, fixed-parent, fixed-budget apparatus, the predicted English-retention-cost pattern was not observed; the A2-versus-A1 validation contrast instead favored A2 on English BPB, while the preregistered Tagalog-gain pattern was observed. Sequential Tagalog at $D_{\mathrm{phase2}}$ therefore did not overwrite English on the primary BPB contrast. This is not a claim that Tagalog continuation causes English improvement in general. P0-E still licenses ``pretrained in English'' for the d20 parent. Do not equate A2 Tagalog val $1.171616$ with P1.1's $1.172248$. Spark/MPS paths, if mentioned, are non-confirmatory.
+
+A study designed after these Gate~U numbers were seen is a post-P2 follow-up, not an outcome-independent mirror.
 
 \section{Limitations}
 \label{sec:limits}
 
-No EN0 numbers yet. English BPE on Tagalog text shreds Tagalog; BPB still compares bytes. WikiText-103 $\neq$ web English. P1.1 reconstructed split. One parent seed unless extra seeds run. Shared named entities across Wikipedias. No chat.
+\begin{itemize}
+\item One parent seed: point estimates only. No $p$-value, confidence interval, seed interval, or population-effect claim.
+\item The $0.01$ BPB rule is a practical cutoff, not a significance test; $\lvert C\rvert$ or $\lvert G\rvert<0.01$ is not a ranking.
+\item Confirmatory A1/A2/A3 at d20 only.
+\item English BPE on Tagalog text; BPB still compares bytes.
+\item Mix is 50/50 documents, $96.13\%$ English by UTF-8 and $93.32\%$ by BPE tokens.
+\item WikiText-103 is not web English. P1.1 uses a reconstructed split. Named entities may overlap.
+\item No chat. Tests are secondary and A2-only.
+\item Exploratory items named in the form (d8 continuation, replay, FilBench, EWC, tokenizer swap, CORE, SFT, Spark/MPS) were not run as P2 confirmation.
+\end{itemize}
+
+\section{Future research}
+\label{sec:future}
+
+These directions are \emph{not} P2, do not amend AsPredicted \#306935, and must not reopen sealed \(C_{\mathrm{en}}\), \(G_{\mathrm{tl}}\), or the A2-only test ledger. An informal plain-language comment that restates ``train EN0, pass P0-E, run matched continuation, then one test touch'' is educational only. It must not become a new governing rule, a replacement for \#306935, or a post-hoc selection criterion. That comment, if used uncorrected, omits A3, compresses the two-depth P0-E gate into ``the English base,'' and can be misread as authorizing an A1/A3 test comparison. P2 already executed the filed sequence: both EN0 d8 and d20 passed P0-E; A1, A2, and A3 ran at d20 from frozen A0; validation sealed first; one A2-only secondary test event followed.
+
+Do not insert a \textbf{P2.1 intermezzo} before P3 merely because the wrapper, freeze, or archive were operationally complex. Those belong in run cards unless they change treatment, outcome, or selection. A forward replication with a fresh seed is valuable, but it is a separately preregistered study (best as a P4 component), not an emergency patch on \#306935. If designed after Gate~U was unblinded, label it a post-result replication, not independent confirmation.
+
+Do not add to a future filing, as if they were silent P2 repairs: a new loss-based early-stop, a d8 continuation parent (d20 was the confirmatory continuation depth), a new mixture ratio chosen after seeing Table~\ref{tab:primary}, a seed interval computed from this one seed, a new test benchmark, SFT, a downstream task used to pick a branch, or a post-hoc A1/A3 test contrast. Do not switch the parent to d8 because EN0 d8 English val BPB was lower than d20. Do not skip A3 to save cost in a study that filed A3. Do not treat A0 Tagalog BPB as \(G_{\mathrm{tl}}\). Do not treat P0-E floors as proof that d20 is globally strong. Permissions (\texttt{chmod 444}) are not lineage proof; hashes and receipts are. A fresh optimizer is part of the treatment definition.
+
+\subsection{P3: reverse-direction continual pretraining}
+P3 answers a question P2 cannot: whether a specified frozen \emph{English} continuation stream changes retained Tagalog and acquired English predictive fit relative to matched extra-Tagalog continuation, after a \emph{fresh} Tagalog parent has cleared a Tagalog eligibility gate. It must be a \textbf{separate} AsPredicted/ResearchBox record, filed with an explicit statement that it was designed after P2 Gate~U unblinding on 19 August 2026 if that is when it is written. It must not reuse P2 or P1.1 weights as the P3 parent, must not assume the forward result is symmetric, and must not use P2 outcomes to choose P3's budget, tokenizer, mix ratio, cutoff, test, or preferred direction.
+
+Recommended mirror (names are illustrative; the P3 PDF governs):
+
+\begin{center}
+\small
+\begin{tabular}{p{0.46\textwidth}p{0.46\textwidth}}
+\toprule
+P2 (done) & P3 analogue (future filing) \\
+\midrule
+Fresh English EN0 parent & Fresh Tagalog parent TL0 under a frozen P3 protocol \\
+P0-E on d8 and d20 English val & P0-T: TL0 d8 and d20 beat untrained and Tagalog-train byte-unigram floors on full Tagalog val before English tokens enter a child \\
+A1 extra English & B1 matched extra Tagalog \\
+A2 Tagalog intervention & B2 English continuation \\
+A3 pre-frozen EN--TL document mix & B3 separately pre-frozen TL--EN mix with reported document/byte/token shares \\
+\(C_{\mathrm{en}}=\mathrm{EN}(A2)-\mathrm{EN}(A1)\) & \(C_{\mathrm{tl}}=\mathrm{TL}(B2)-\mathrm{TL}(B1)\) (Tagalog retention cost) \\
+\(G_{\mathrm{tl}}=\mathrm{TL}(A2)-\mathrm{TL}(A1)\) & \(G_{\mathrm{en}}=\mathrm{EN}(B2)-\mathrm{EN}(B1)\) (English acquisition gain) \\
+A2-only post-seal test & B2-only post-seal test, sources locked before P3 outcomes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Wording to use: P3 is a separately preregistered reverse-direction continual-pretraining study. It does not confirm P2. Wording to avoid: ``P3 confirms P2,'' ``English is more/less destructive,'' or ``we chose P3 because P2 showed \(C_{\mathrm{en}}<0\).''
+
+\subsection{P4 and other named follow-ons}
+P4 is the natural home for a fresh-seed exact forward replication of P2's A2-minus-A1 validation contrast under the same frozen corpus/tokenizer/budget/branch definitions, optionally beside a fresh-seed reverse replication and a \emph{predeclared} directional-asymmetry synthesis. If only one post-P2 study can be afforded, choose deliberately between that forward replication and P3; do not hide the choice inside a vague ``P2.1.''
+
+Other exploratory items, each requiring its own registration if confirmatory: replay or EWC; P1.1-weights-on-English UTF-8 as never-trained-on-English OOD (not BWT, not P2 rescue); A2 English in-loop trajectories under a protocol that does not reread P2 tests; downstream Philippine tasks as transfer probes; chat SFT and CORE as named follow-ons.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-Paper 1 stays a pure Tagalog base. Paper 2 trains an English nanochat, proves provenance, continues on WikiText-TL-39, and reports English forgetting and Filipino acquisition on the same BPB instrument. That is the pipeline. It is not a rewrite of AsPredicted \#306780.
+This paper reported a preregistered, equal-exposure English-then-Tagalog nanochat run. P1.1 stays a pure Tagalog base and is not amended. P2 trained an English parent, passed P0-E, continued A1/A2/A3 at $D_{\mathrm{phase2}}=19{,}267{,}584$, and sealed dual \texttt{val\_bpb\_full} before one A2-only secondary test touch. In this one-seed d20 run the registered Tagalog-gain pattern was observed and the registered English-cost pattern was not observed.
+
+The original contribution is the locked measurement: same parent, same tokens, same tokenizer, three phase-2 streams, one test touch, and a refusal to rewrite \#306780. The paper does not claim a general Filipino--English law, a chat system, or that Tagalog improves English outside this apparatus.
+
+\section*{Novelty statement}
+The paper advances Tagalog/English language-modeling evidence by replacing an informal ``continue a Tagalog nanochat'' story with a preregistered English parent, a matched extra-English control, and dual full-split BPB. It records that P1.1 checkpoints cannot be the catastrophic-forgetting parent, and it separates confirmatory validation from one secondary A2 test. The empirical advance is mixed at the study's own threshold: Tagalog adaptation was large; the predicted English cost versus extra English was not observed.
+
+\section*{Data, code, and weights}
+English source: Hugging Face \texttt{Salesforce/wikitext} / \texttt{wikitext-103-raw-v1}. Tagalog train: frozen P1.1 jsonl. Registration: AsPredicted \#306935. Code, evaluator, and run cards: \url{https://github.com/pageman/nanochat-filipino}. Model card: \url{https://huggingface.co/pageman/nanochat-filipino-p2-en-then-tl} (complete A0--A3 \texttt{.pt} set deferred until uploaded together). Held-out \texttt{test.jsonl} is not redistributed in public zips. ResearchBox \#8763 is the metadata deposit; AsCollected \#2416 records the WikiText-103 download. P1.1 weights remain at \url{https://huggingface.co/pageman/nanochat-filipino-p1-fixed-d20-3x} and are not this study's parent.
 
 \section*{Ethics}
-Public Wikipedia text. No passcodes, no \texttt{test.jsonl} in public repos. Hub license \texttt{other}. Cheng is not a coauthor.
+The corpora are public Wikipedia-derived text. No human-subjects experiment was run. Sample ratings were not fabricated. Secrets (host credentials, box passcodes) are not published with this paper. Cheng is not a coauthor.
 
 \section*{Acknowledgements}
-Thanks to AI/LLM models Manus 1.6 and Cursor Grok 4.6 High Fast for drafting, formatting, and solutioning. Special thanks to Dr.~Cheng for guidance. WikiText-TL-39: Cruz and Cheng~\cite{cruz2019eval}. WikiText-103: Merity et al.~\cite{merity2017pointer}. nanochat: Karpathy~\cite{karpathy2026nanochat}. Errors are the author's.
+Thanks to AI/LLM models Manus 1.6 and Cursor Grok 4.6 High Fast for drafting, formatting, and solutioning. Special thanks to Dr.~Cheng for guidance. WikiText-TL-39 is due to Cruz and Cheng~\cite{cruz2019eval}. WikiText-103 is due to Merity et al.~\cite{merity2017pointer}. nanochat is due to Karpathy~\cite{karpathy2026nanochat}. Cheng is not a coauthor of this study. Errors are the author's.
+
+\section*{Funding}
+This work was not supported by a dedicated grant. GPU time was paid by the author.
 
 \begin{thebibliography}{99}
 
@@ -189,6 +315,17 @@ P.~Pajo.
 \newblock NANOCHAT-FILIPINO P1.1: WikiText-TL-39 fixed-budget depth vs held-out BPB.
 \newblock AsPredicted \#306780, 15 August 2026.
 \newblock \url{https://aspredicted.org/6r6v4v.pdf}.
+
+\bibitem{aspredicted306935}
+P.~Pajo.
+\newblock P2: EN retention after TL continuation (nanochat, WikiText-103 then TL-39).
+\newblock AsPredicted \#306935, 17 August 2026.
+\newblock \url{https://aspredicted.org/xa56bs.pdf}.
+
+\bibitem{shi2024continual}
+H.~Shi et al.
+\newblock Continual learning of large language models: A comprehensive survey.
+\newblock \emph{arXiv:2404.16789}, 2024.
 
 \bibitem{cruz2019eval}
 J.~C.~B. Cruz and C.~Cheng.

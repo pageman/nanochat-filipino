@@ -1,0 +1,4 @@
+arm,stream,unique_documents,canonical_utf8_bytes,unique_bpe_tokens_no_bos,D_phase2_model_visible_tokens,revisit_epochs
+A1,official WT103-raw train,28472,539903397,118286771,19267584,0.16288874771972597
+A2,frozen P1.1 Tagalog train,37602,29165137,11352473,19267584,1.6972146949831988
+A3,seed-42 50/50-document mix of first K per language,56944,561630369,126749578,19267584,0.1520130031517738

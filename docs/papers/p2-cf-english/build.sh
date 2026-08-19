@@ -17,7 +17,7 @@ fi
 pandoc --from latex --to markdown --wrap=none "$ROOT/paper.tex" -o "$OUT/paper.md"
 pandoc --from markdown --to plain --columns=80 "$OUT/paper.md" -o "$OUT/paper.txt"
 pandoc --from latex --to html5 --standalone --mathjax --toc \
-  --metadata title="English Retention after Tagalog Continuation" \
+  --metadata title="Held-Out English Bits-per-Byte after Matched-Budget Tagalog Continuation of a WikiText-103 nanochat Parent" \
   "$ROOT/paper.tex" -o /tmp/p2_paper_raw.html
 python3 "$ROOT/inject_css.py" /tmp/p2_paper_raw.html "$OUT/paper.html"
 pandoc --from latex --to docx "$ROOT/paper.tex" -o "$OUT/paper.docx"
