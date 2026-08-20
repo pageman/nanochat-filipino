@@ -56,3 +56,28 @@ Gates A–W are recorded. Confirmatory depth is d20. Sealed `C_EN = EN(A2)−EN(
 Trainer in-loop `val_bpb` is **not** the primary DV. Do not rank arms from loop scores or from `meta_*.json` `val_bpb`. The registered table is [results/p2/sealed_val_table.csv](results/p2/sealed_val_table.csv) · [results/p2/gate-u-seal.json](results/p2/gate-u-seal.json).
 
 Do not claim that Tagalog generally improves English. One seed; no significance test. A3 is a 50/50-document trade-off arm, not mitigation. Weights live on Hugging Face (`pageman/nanochat-filipino-p2-en-then-tl`), not in this git tree.
+
+## Start here (P3)
+
+Does **not** amend AsPredicted #306780 / #306935, ResearchBox 8735 / 8763, or Hub `p1-fixed-d20-3x` / `p2-en-then-tl`. Never use `scripts/p1/env.sh` or `scripts/p2/env.sh` for P3. Fresh Tagalog parent (TL0/B0), then matched English continuation.
+
+**Project 3 protocol (P3):** [docs/papers/p3-reverse/PROTOCOL-p3-tl-then-en.md](docs/papers/p3-reverse/PROTOCOL-p3-tl-then-en.md)  
+**Study record:** [docs/p3/](docs/p3/) · https://github.com/pageman/nanochat-filipino/tree/main/docs/p3  
+**Lock:** [docs/papers/p3-reverse/LOCK.json](docs/papers/p3-reverse/LOCK.json)  
+**Paper (source / PDF):** [docs/papers/p3-reverse/paper.tex](docs/papers/p3-reverse/paper.tex) · [paper.pdf](docs/papers/p3-reverse/paper_outputs/paper.pdf)  
+**AsPredicted #307342:** https://aspredicted.org/wd2pc8.pdf (anonymous)  
+**ResearchBox #8834:** https://researchbox.org/8834  
+**AsCollected:** https://ascollected.org/F36_C2C  
+**Results:** [results/p3/](results/p3/)  
+**Hub documentation pack:** [docs/hub/p3-tl-then-en/](docs/hub/p3-tl-then-en/)  
+**Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p3-tl-then-en  
+**Environment:** [scripts/p3/env.sh](scripts/p3/env.sh) · [scripts/p3/env.cuda.sh](scripts/p3/env.cuda.sh)  
+**Data/code notices:** [DATA_AND_CODE_NOTICES.md](DATA_AND_CODE_NOTICES.md)
+
+## Status (P3)
+
+Gates A–X are complete (Gate X released). Confirmatory depth is d20. Sealed \(C_{tl}=TL(B2)-TL(B1)=1.023484\) (filed ≥0.01: **observed**). Sealed \(G_{en}=EN(B2)-EN(B1)=-1.697955\) (filed ≤−0.01: **observed** in this one-seed apparatus). One authorized B2-only secondary test (English test BPB 1.357842; Tagalog legacy holdout under P3 BPE 2.493197). Do **not** reuse P1.1 `test_bpb = 1.164768` or P2 Gate V as P3. B1 and B3 were not tested. B3 is a 50/50-document trade-off arm (realized EN UTF-8 byte share ≈0.961), not mitigation. This repo is the P3 audit trail under `docs/p3/`, `docs/papers/p3-reverse/`, `docs/run-cards/p3/`, `scripts/p3/`, and `results/p3/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+
+Trainer in-loop `val_bpb` is **not** the primary DV. The registered table is under [results/p3/released/](results/p3/released/) · [results/p3/evaluation/p3-validation-seal.json](results/p3/evaluation/p3-validation-seal.json).
+
+P3 is a **post-P2** prospective reverse-direction study. Weights live on Hugging Face (`pageman/nanochat-filipino-p3-tl-then-en`), not in this git tree.

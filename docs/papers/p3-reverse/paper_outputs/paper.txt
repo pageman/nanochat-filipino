@@ -7,7 +7,7 @@ arXiv categories: cs.CL, cs.LG.
 Registration and deposits: AsPredicted #307342
 (https://aspredicted.org/wd2pc8.pdf); ResearchBox #8834
 (https://researchbox.org/8834); AsCollected https://ascollected.org/F36_C2C;
-code https://github.com/pageman/nanochat-filipino; Hub
+study record https://github.com/pageman/nanochat-filipino/tree/main/docs/p3; Hub
 https://huggingface.co/pageman/nanochat-filipino-p3-tl-then-en. Run ID:
 p3-20260819T192700Z-92d63d4.
 
@@ -338,11 +338,16 @@ Availability
 
 - AsCollected: https://ascollected.org/F36_C2C
 
-- GitHub: https://github.com/pageman/nanochat-filipino
-  P3-only trees: scripts/p3/, docs/p3/, docs/papers/p3-reverse/,
-  docs/run-cards/p3/, results/p3/, docs/hub/p3-tl-then-en/
+- Study record (GitHub):
+  https://github.com/pageman/nanochat-filipino/tree/main/docs/p3
 
-- Hub: https://huggingface.co/pageman/nanochat-filipino-p3-tl-then-en
+- Code and audit trees (GitHub):
+  https://github.com/pageman/nanochat-filipino
+  P3-only: scripts/p3/, docs/papers/p3-reverse/, docs/run-cards/p3/,
+  results/p3/, docs/hub/p3-tl-then-en/
+
+- Weights (Hugging Face Hub):
+  https://huggingface.co/pageman/nanochat-filipino-p3-tl-then-en
   (B0+B1+B2+B3 together; not on P1.1/P2 Hub repos)
 
 Held-out test text is not redistributed. Secrets and host credentials are not
