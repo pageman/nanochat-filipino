@@ -1,0 +1,144 @@
+{
+  "status": "RECONSTRUCTED_NOT_ORIGINAL",
+  "seed": 20260820,
+  "n_per_variant": 50000,
+  "note": "Calibrated to Kosmos-published cell counts, Uniform a/\u03bb moments, equal-spin \u03bb\u00b2 KY/Weyl, D=5 generic baseline \u03bb a\u00b2, and rigid D=5 quadratic \u03b32=-0.1625. Original Edison bytes were never in this repo; SHA-256 values below are for THIS reconstruction, not the 2025 Kosmos run.",
+  "hashes": {
+    "/workspace/docs/papers/mpp-integrability/data/MP_Quantum_Corrections_Sweep_D5-D9_baseline.csv": "6753a7884d595b005b4b8c884de6a26d4db440fe190bfde79c3d70239a56f9af",
+    "/workspace/docs/papers/mpp-integrability/data/MP_Quantum_Corrections_Sweep_D5-D9_rigid.csv": "8e79007893df9e2d74c9a592620296b60724af34537efd2aeaf40576a96f9d4a",
+    "HASH_BASE": "6753a7884d595b005b4b8c884de6a26d4db440fe190bfde79c3d70239a56f9af",
+    "HASH_RIGID": "8e79007893df9e2d74c9a592620296b60724af34537efd2aeaf40576a96f9d4a"
+  },
+  "canonical_filenames": {
+    "baseline": "MP_Quantum_Corrections_Sweep_D5-D9_baseline.csv",
+    "rigid": "MP_Quantum_Corrections_Sweep_D5-D9_rigid.csv"
+  },
+  "fallback_filenames": {
+    "baseline": "Quantum Corrections Sweep D5-D9 Baseline.csv",
+    "rigid": "Quantum Corrections Sweep D5-D9 Rigid.csv"
+  },
+  "recovered": {
+    "n_base": 50000,
+    "n_rigid": 50000,
+    "cube": {
+      "5": {
+        "equal": 1992,
+        "generic": 7932
+      },
+      "6": {
+        "equal": 2047,
+        "generic": 8026
+      },
+      "7": {
+        "equal": 1915,
+        "generic": 7870
+      },
+      "8": {
+        "equal": 2055,
+        "generic": 8046
+      },
+      "9": {
+        "equal": 2013,
+        "generic": 8104
+      }
+    },
+    "spin_counts": {
+      "Generic-Multi-Spin": 20038,
+      "Single-Spin": 19940,
+      "Cohomogeneity-1_Equal-Spin": 10022
+    },
+    "a_moments": {
+      "mean": 0.7500199866202284,
+      "std": 0.4330050954813354,
+      "min": 4.596334799285978e-05,
+      "max": 1.499973751390716
+    },
+    "lambda_moments": {
+      "mean": 0.1500004764225226,
+      "std": 0.08660308632100476,
+      "min": 1.3397453427314758e-06,
+      "max": 0.29999296201876363
+    },
+    "paired_covariates": true,
+    "d5_generic_baseline_ols": {
+      "params": {
+        "const": -0.24968653850198802,
+        "log10_a": 2.0057738519428074,
+        "log10_lambda": 1.0015146927587812
+      },
+      "rsquared": 0.9970649115718779,
+      "nobs": 7932
+    },
+    "d5_generic_rigid_quadratic": {
+      "params": {
+        "const": -0.7427817119388913,
+        "log10_a": 3.563851898973119,
+        "log10_a2": -0.13734260756092465,
+        "log10_lambda": 0.8913605779309132
+      },
+      "rsquared": 0.9995627637681781,
+      "nobs": 7932,
+      "a_star": 9425682074939.48,
+      "a_star_in_range": false,
+      "a_range": [
+        7.958363961800933e-05,
+        1.4996237801778651
+      ]
+    },
+    "equal_spin_ky_ols": {
+      "params": {
+        "const": -6.4545550657812845,
+        "log10_lambda": 2.000145525316075,
+        "log10_a": -0.0005045673128083331
+      },
+      "rsquared": 0.9998073768879356,
+      "nobs": 10022
+    },
+    "P_label_ratio": {
+      "baseline_EFT_D5": 4078289.0568120712,
+      "rigidification_benchmark_D5": 1036816.6071307297,
+      "baseline_EFT_D6": 4499622.910039827,
+      "rigidification_benchmark_D6": 4499622.910039827,
+      "baseline_EFT_D7": 4506111.215509397,
+      "rigidification_benchmark_D7": 4506111.215509397,
+      "baseline_EFT_D8": 5279372.972094714,
+      "rigidification_benchmark_D8": 5279372.972094714,
+      "baseline_EFT_D9": 4646042.506390932,
+      "rigidification_benchmark_D9": 4646042.506390932
+    },
+    "weyl_love_pearson": {
+      "overall": 0.9988547301818732,
+      "generic": 0.9993662967003902,
+      "equal_spin": 0.3731062711303548
+    },
+    "median_log10_weyl_baseline": {
+      "equal": {
+        "5": -8.110585354504046,
+        "6": -8.03695066762481,
+        "7": -7.923547221508594,
+        "8": -7.908563878105134,
+        "9": -7.808617286491235
+      },
+      "generic": {
+        "5": -1.5001073504896991,
+        "6": -1.3837745482830148,
+        "7": -1.2697453151491933,
+        "8": -1.185981533398965,
+        "9": -1.1415341076721794
+      }
+    },
+    "targets": {
+      "a_mean": 0.74904,
+      "a_std": 0.433198,
+      "lambda_mean": 0.150706,
+      "lambda_std": 0.086491,
+      "base_d5_beta": {
+        "const": -0.2466,
+        "log10_a": 2.0041,
+        "log10_lambda": 1.004
+      },
+      "rigid_d5_gamma2": -0.1625,
+      "equal_spin_beta_lambda": 2.0
+    }
+  }
+}
