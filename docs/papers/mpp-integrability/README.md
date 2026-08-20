@@ -10,7 +10,7 @@ This directory is a **standalone theoretical manuscript**. It does **not** amend
 | `paper.tex` | Same paper in LaTeX |
 | `BEFORE-AFTER.md` | Compact before/after ledger |
 | `lean/` | Lean 4.34.0-rc1 + mathlib4 pin. `KillingTower.lean` is Nat-only (no `import Mathlib`, no `sorry`). `MathlibOk.lean` kernel-checks Mathlib. See `lean/README.md`. |
-| `scripts/stress50.py` | Fifty de-duplicated stress tests of the *revised* claims |
+| `KOSMOS-QUERY-MPP-DUAL-GENERATOR-AUDIT.txt` | Copy-paste query for a dual-CSV synthetic-generator audit that uses the MPP six-block recipe without physics laundering |
 
 v1 reported synthetic Kosmos-AI numbers (`ρ=0.998`, `γ₂=−0.163`, `P(D)∼10⁶`, `N∈{5×10⁴,10⁵}`) as physical results. Those numbers are **quarantined**. They are not reproduced here and are not scientific findings.
 

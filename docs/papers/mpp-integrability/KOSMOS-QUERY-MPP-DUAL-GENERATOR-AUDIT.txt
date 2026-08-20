@@ -1,0 +1,844 @@
+MPP-PRE-REGISTERED DUAL-GENERATOR AUDIT
+Copy-paste this entire document as the task query. Do not shorten it. Do not “improve” the physics. Do not merge Model_Variant. Do not call Stein qnm. Do not mention quantum hair, semiclassical protection, Type D, ultraspinning, naked singularities, or Myers–Perry solutions as empirical findings.
+
+================================================================================
+0. ROLE, OBJECT OF ANALYSIS, AND HARD BANS
+================================================================================
+
+You are a data analyst executing a frozen Myers–Perry–Pajo (MPP) six-block recipe on TWO SYNTHETIC CSV FILES. You are not a general-relativist for this run. You are not solving Einstein equations, Killing–Yano PDEs, Love-number matching problems, or Reall–Santos thermodynamics.
+
+The objects in the files named Weyl_Boost_Weight_2, KY_Residual_Norm, and Love_Number_k2 are SYNTHETIC LABELS produced by two generators:
+
+  Generator A: Model_Variant = "baseline_EFT"
+  Generator B: Model_Variant = "rigidification_benchmark"
+
+These names are historical. They do NOT mean the rows are effective-field-theory metrics, quantum-corrected black holes, or a rigidification of gravity. They mean: two label engines were applied to (possibly the same) covariate design.
+
+Allowed empirical claims (only):
+  - statements about the empirical distribution of columns in each Model_Variant;
+  - statements about whether Generator B implements a pre-registered high-spin saturation encoding that Generator A does not;
+  - statements about implied parametric forms of the labelers (e.g. KY ~ λ^2 on the equal-spin stratum).
+
+Forbidden empirical claims (never write these as findings):
+  - quantum / semiclassical / ħ / ⟨Tab⟩ backreaction;
+  - quantum hair / no-hair violation / UV completion / AdS/CFT / complexity;
+  - CMPP Type D / Type I / Type G as measured algebraic class;
+  - existence or persistence of a Killing–Yano tensor on a spacetime;
+  - tidal Love numbers of a physical black hole;
+  - ultraspinning instability (D=5 with a in [0, 1.5] is NOT an ultraspinning window; call it “high synthetic spin in the D=5 generic stratum”);
+  - naked singularities, cosmic censorship, ring-singularity resolution, RG-improved gravity as measured;
+  - Stein qnm, joblib, Sobol solutions of PDEs, nuances.yml as having been executed in gravity.
+
+If you catch yourself writing a forbidden claim, delete that sentence and replace it with a generator-dependent stem (Section 24).
+
+Central question (operational, not metaphysical):
+  Can the MPP pipeline RECOVER a high-spin saturation / λ-dependent a_crit encoding that was CLAIMED to be built into rigidification_benchmark, and does it recover that encoding in baseline_EFT?
+  If the benchmark fails the pre-registered detection rule, conclude: “the rigid CSV does not implement a detectable a_crit(λ) turnover under the pre-registered rule.”
+  Do NOT conclude: “quantum rigidification is absent in nature.”
+
+Every results sentence MUST begin with exactly one of:
+  “Within the baseline_EFT synthetic generator, …”
+  “Within the rigidification_benchmark synthetic generator, …”
+  “In the paired contrast (rigid minus baseline) at matched covariates, …”
+  “As a Gate-4 design-integrity result (not a physics result), …”
+
+================================================================================
+1. MPP SIX-BLOCK LOCK (DO NOT REORDER, DO NOT RETUNE AFTER SEEING ρ OR γ2)
+================================================================================
+
+Execute the blocks in this order. Record a one-line pass/fail at the end of each block before starting the next.
+
+BLOCK 1 — MONSTER HARVEST
+  Plug-in: frozen local CSVs only. No new sampling. No Sobol. No simulation.
+  Inputs:
+    FILE_BASE  = "MP_Quantum_Corrections_Sweep_D5-D9_baseline.csv"
+    FILE_RIGID = "MP_Quantum_Corrections_Sweep_D5-D9_rigid.csv"
+  If those exact names are absent, try in this order and LOG the name actually used:
+    "Quantum Corrections Sweep D5-D9 Baseline.csv"
+    "Quantum Corrections Sweep D5-D9 Rigid.csv"
+    any CSV whose name contains "baseline" (case-insensitive) paired with one containing "rigid"
+  If you cannot find both files, STOP. Do not invent data.
+
+BLOCK 2 — CUBE DESIGN
+  Forced strata, not discovered rare events.
+  Stratum key S = (Model_Variant, Dimension, Cohort)
+  where Cohort ∈ {Equal-Spin, Generic}
+  Equal-Spin := Spin_Configuration == "Cohomogeneity-1_Equal-Spin"
+  Generic    := Spin_Configuration ∈ {"Single-Spin", "Generic-Multi-Spin"}
+  If any other Spin_Configuration strings exist, list them, do not silently fold them into Generic, and exclude them from Generic/Equal-Spin contrasts unless you document a mapping.
+
+BLOCK 3 — LABEL ENGINE
+  The label columns are:
+    Weyl_Boost_Weight_2
+    KY_Residual_Norm
+    Love_Number_k2
+  Optional unused covariate (do not interpret as RG-improved gravity):
+    RG_Scale_r   (if present)
+  Other covariates:
+    Dimension (integer), Spin_Configuration (string), Spin_Parameter_a (float),
+    EFT_Coupling_Lambda (float), Mass_M (float if present)
+  You may FIT implied power laws as a specification check of the labeler.
+  You may NOT call this an EFT solve.
+
+BLOCK 4 — THE GATE (DESIGN INTEGRITY ONLY)
+  This Gate is NOT “Pearson ρ ≥ 0.70”. That filter selects the headline and is FORBIDDEN.
+  Gate-4 tests are listed in Section 5. If any FAIL, archive the failure log and STOP before Sections 8–23 science tables. You may still print Section 5–7 diagnostics.
+
+BLOCK 5 — UQ
+  Default RNG seed: 20260820
+  Bootstrap iterations: B = 1000
+  Confidence level: 95% (percentile method unless a column is degenerate)
+  Effect size lead: Cliff’s δ (see Section 6.4)
+  p-values are supplementary. Never lead a results paragraph with p=0 at n>1000.
+  For nested regressions, report ΔR², ΔAIC, ΔBIC, and the vertex of any quadratic in LINEAR a.
+
+BLOCK 6 — ARCHIVE
+  Every table and figure must carry Model_Variant in the title, filename, and a column.
+  Save a JSON sidecar with: file hashes, n per Cube cell, Gate-4 booleans, seed, EPS, this query’s SHA-256 if computable.
+  Suggested output directory: ./mpp_dual_generator_audit_outputs/
+
+Also freeze:
+  EPS = 1e-16
+  N_BOOT = 1000
+  N_MIN_CELL = 200
+  N_LAMBDA_BINS = 6
+  N_A_BINS = 25
+  A_RANGE_NOTE = "observed a is a synthetic coordinate; D=5 is not ultraspinning"
+  SUBSAMPLE_PLOT = 5000
+  SUBSAMPLE_SCATTER_D5 = 2000
+  ALPHA = 0.05   (only for supplementary tests; not a discovery threshold for huge n)
+
+Do not change EPS, N_BOOT, N_MIN_CELL, N_LAMBDA_BINS, or N_A_BINS after seeing results.
+
+================================================================================
+2. SOFTWARE, IMPORTS, DISPLAY
+================================================================================
+
+Use Python 3. Perform all analysis in one notebook or one script, cells in the order of this query.
+
+Imports (use these; if a library is missing, implement the formula from Section 6 rather than skipping the quantity):
+  import hashlib, json, os, warnings
+  from pathlib import Path
+  import numpy as np
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  from scipy import stats
+  import statsmodels.api as sm
+
+warnings.filterwarnings("ignore", category=FutureWarning)
+np.random.seed(20260820)
+sns.set_style("whitegrid")
+plt.rcParams["figure.dpi"] = 120
+
+Create the output directory before any savefig.
+
+Print pandas display options:
+  pd.set_option("display.max_columns", 50)
+  pd.set_option("display.width", 160)
+  pd.set_option("display.float_format", lambda x: f"{x:.6g}")
+
+At the top of the notebook, paste a markdown cell that quotes:
+  “This run audits two synthetic label engines. It does not measure black holes.”
+
+================================================================================
+3. BLOCK 1 DETAILED STEPS — HARVEST AND HASH
+================================================================================
+
+Step 3.1. Resolve filenames as in Block 1. Print the absolute paths.
+
+Step 3.2. Compute SHA-256 of each file’s raw bytes:
+  def sha256_file(path):
+      h = hashlib.sha256()
+      with open(path, "rb") as f:
+          for chunk in iter(lambda: f.read(1 << 20), b""):
+              h.update(chunk)
+      return h.hexdigest()
+  Print HASH_BASE and HASH_RIGID.
+
+Step 3.3. Load:
+  df_base  = pd.read_csv(path_base)
+  df_rigid = pd.read_csv(path_rigid)
+  Print shape, columns.tolist(), dtypes, head(5) for each.
+
+Step 3.4. If Model_Variant is missing:
+  df_base["Model_Variant"]  = "baseline_EFT"
+  df_rigid["Model_Variant"] = "rigidification_benchmark"
+  Print that you added the column.
+  If Model_Variant is present, print value_counts and STOP if unexpected labels exist. Map only if the strings are obvious synonyms (e.g. "baseline" -> "baseline_EFT"), and LOG the mapping. Do not invent a third variant.
+
+Step 3.5. Required columns check. Define:
+  REQUIRED = [
+    "Dimension", "Spin_Configuration", "Spin_Parameter_a",
+    "EFT_Coupling_Lambda", "Weyl_Boost_Weight_2",
+    "KY_Residual_Norm", "Love_Number_k2", "Model_Variant"
+  ]
+  OPTIONAL = ["Mass_M", "RG_Scale_r"]
+  For each frame, print missing REQUIRED (fatal) and missing OPTIONAL (nonfatal).
+  If any REQUIRED is missing, STOP.
+
+Step 3.6. Type coercion:
+  Dimension -> integer (error if non-integer after round-trip)
+  Spin_Configuration, Model_Variant -> string
+  numeric labels and covariates -> float
+  Print min/max of Dimension. Allowed set is {5,6,7,8,9}. If others appear, list them and exclude those rows from all later strata, recording n_excluded.
+
+Step 3.7. Non-negativity:
+  For Weyl_Boost_Weight_2, KY_Residual_Norm, Love_Number_k2, EFT_Coupling_Lambda, Spin_Parameter_a:
+  count negatives and NaNs. If any negative labels exist, STOP (logs cannot be defined honestly). If NaNs exist in REQUIRED, drop those rows and print n_dropped; if more than 1% of a file is dropped, STOP.
+
+Step 3.8. Do NOT concatenate until Section 5 pairedness has been evaluated. You may create
+  df_all_unchecked = pd.concat([df_base, df_rigid], ignore_index=True)
+  only as a temporary for column comparison, not for science tables.
+
+================================================================================
+4. BLOCK 2 DETAILED STEPS — CUBE COUNTS
+================================================================================
+
+Step 4.1. Define a function add_cohort(df):
+  df = df.copy()
+  df["Cohort"] = np.where(
+      df["Spin_Configuration"] == "Cohomogeneity-1_Equal-Spin",
+      "Equal-Spin",
+      np.where(
+          df["Spin_Configuration"].isin(["Single-Spin", "Generic-Multi-Spin"]),
+          "Generic",
+          "UNMAPPED"
+      )
+  )
+  return df
+  Apply to both frames. Print value_counts of Spin_Configuration and of Cohort for each Model_Variant.
+  If UNMAPPED > 0, print the unmapped strings and exclude UNMAPPED from contrasts.
+
+Step 4.2. Cube table: for each Model_Variant, Dimension, Cohort, compute n.
+  Print a full contingency table.
+  Flag any cell with n < N_MIN_CELL = 200 as SMALL_CELL.
+  SMALL_CELL strata are omitted from that stratum’s tests, not imputed.
+
+Step 4.3. Print whether Cube counts for baseline and rigid are identical cellwise (they were in a previous run). Store boolean CUBE_COUNTS_IDENTICAL.
+
+================================================================================
+5. BLOCK 4 DETAILED STEPS — GATE-4 DESIGN INTEGRITY (MUST PASS BEFORE SCIENCE)
+================================================================================
+
+Evaluate these booleans. Print a table Gate, Test, Pass, Detail.
+
+G4.1 FilesLoaded: both dataframes nonempty.
+
+G4.2 VariantsExclusive: set of Model_Variant values is exactly
+  {"baseline_EFT", "rigidification_benchmark"} after assignment.
+
+G4.3 RequiredColumns: Section 3.5 passed.
+
+G4.4 DimensionSet: all kept Dimension values in {5,6,7,8,9}.
+
+G4.5 LabelsNonNegative: Section 3.7 passed.
+
+G4.6 Pairedness. This is the most important Gate. Procedure:
+  COV = ["Dimension", "Spin_Configuration", "Spin_Parameter_a", "EFT_Coupling_Lambda"]
+  If Mass_M exists in both, append "Mass_M".
+  Sort both frames by COV with kind="mergesort" and reset_index(drop=True).
+  Test A — exact row-wise equality after sort:
+    PAIRED_EXACT = all(np.allclose(df_base[c], df_rigid[c]) if c != "Spin_Configuration"
+                       and c != "Dimension"
+                       else (df_base[c].astype(str).values == df_rigid[c].astype(str).values).all()
+                       for c in COV)
+    For Dimension and Spin_Configuration require exact equality of values after sort.
+    For floats use np.allclose with rtol=0, atol=0 first; if that fails, retry atol=1e-15 and REPORT the max abs diff per column.
+  Test B — if Test A fails, inner-merge on COV and compare n_merge to n_base and n_rigid.
+    PAIRED_AS_SET = (n_merge == n_base == n_rigid) and no duplicate COV keys.
+  Set PAIRED = PAIRED_EXACT or PAIRED_AS_SET.
+  If PAIRED, build a matched frame:
+    df_match with suffixes _base and _rigid for label columns, shared covariates once.
+    You will use df_match in Section 16.
+  If not PAIRED, print why (max diffs, duplicate keys, length mismatch). Do not invent matches. Skip all paired Δ tests later, but CONTINUE other per-variant tests.
+
+G4.7 CubeMinN: no analysis cell that you will use has n < N_MIN_CELL. (SMALL_CELL only drops that cell.)
+
+G4.8 NoHeadlineRhoGate: print the sentence
+  “Gate-4 does not filter on Pearson or Spearman of Weyl vs Love.”
+  This boolean is True by construction if you did not subset on correlation.
+
+GATE4_PASS = all of G4.1–G4.5, G4.7, G4.8, and G4.3.
+Pairedness G4.6 is reported separately: PAIRED true/false does not fail the whole run, but it changes which tests in Section 16 are legal.
+
+Print GATE4_PASS. If False, STOP science sections.
+
+Only after Gate-4, set:
+  df_all = pd.concat([df_base, df_rigid], ignore_index=True)
+  df_all = add_cohort(df_all)
+
+================================================================================
+6. FORMULAS YOU MUST IMPLEMENT (DO NOT HANDWAVE)
+================================================================================
+
+6.1 Logs
+  After Gate-4:
+    df_all["log10_Weyl"]   = np.log10(df_all["Weyl_Boost_Weight_2"] + EPS)
+    df_all["log10_KY"]     = np.log10(df_all["KY_Residual_Norm"] + EPS)
+    df_all["log10_Love"]   = np.log10(df_all["Love_Number_k2"] + EPS)
+    df_all["log10_lambda"] = np.log10(df_all["EFT_Coupling_Lambda"] + EPS)
+    df_all["log10_a"]      = np.log10(df_all["Spin_Parameter_a"] + EPS)
+  Print how many rows have original label == 0 (so EPS binds). If that fraction > 0.01 in a variant, warn: “log is EPS-dominated for that variant/column.”
+
+6.2 Median and MAD
+  median(x) = np.median(x)
+  MAD(x) = np.median(np.abs(x - np.median(x)))
+  (Do not multiply by 1.4826 unless you also report that you did; default is raw MAD.)
+
+6.3 Cliff’s δ
+  For samples x (Generic) and y (Equal-Spin), both 1-D:
+    Let n1, n2 = len(x), len(y)
+    If n1*n2 is large, use a U-statistic implementation:
+      U = scipy.stats.mannwhitneyu(x, y, alternative="two-sided").statistic
+      # scipy’s U is count of pairs x>y plus 0.5 ties depending on version.
+      # Compute explicitly if needed:
+    δ = (#(x_i > y_j) - #(x_i < y_j)) / (n1*n2)
+  Implement with broadcasting in chunks if memory is an issue, or:
+    from scipy.stats import mannwhitneyu
+    res = mannwhitneyu(x, y, alternative="two-sided")
+    # For scipy >= 1.7, U = res.statistic counts pairs with x>y plus 0.5 ties
+    # Cliff’s δ = (2U)/(n1 n2) - 1   IF U is defined as pairs x>y + 0.5 ties
+  VERIFY on a tiny example you print:
+    x=[1,2,3], y=[0,0,0] should give δ = +1
+    x=[0,0,0], y=[1,2,3] should give δ = -1
+    x=[1,2,3], y=[1,2,3] should give δ = 0
+  If your U-to-δ conversion fails this check, fix it before using it on the CSVs.
+  Interpret |δ|: 0.147 small, 0.33 medium, 0.474 large (Romano 2006), as a caption aid only.
+
+6.4 Bootstrap percentile CI for a scalar θ(sample)
+  For b in 1..N_BOOT: resample rows with replacement, size n, compute θ.
+  CI = (np.percentile(boot, 2.5), np.percentile(boot, 97.5))
+  Independent resamples of Generic and Equal-Spin when θ is a two-sample functional (e.g. P).
+
+6.5 Protection-style LABEL RATIO (do not call it semiclassical protection)
+  P = 10**(median(log10_Weyl_generic) - median(log10_Weyl_equalspin))
+  Bootstrap as in 6.4 with independent resamples of the two cohorts.
+  Caption words: “median generic/equal-spin ratio of the Weyl LABEL.”
+
+6.6 OLS
+  Use statsmodels OLS with add_constant. Print params, bse, conf_int(), rsquared, aic, bic, nobs.
+  Dummies: pd.get_dummies(..., drop_first=True).astype(float).
+  Cast every regressor to float.
+
+6.7 Quadratic vertex in LINEAR a
+  Model: log10_Weyl = g0 + g1 * log10_a + g2 * (log10_a)**2 + gL * log10_lambda
+  If g2 == 0: vertex undefined.
+  Else: log10(a_star) = -g1 / (2*g2),  a_star = 10**that.
+  Print a_star and whether it lies inside [min a, max a] of THAT subset.
+  If a_star is outside the subset range, write: “quadratic curvature is not a turnover in-range.”
+  Also print slope at a=min, a=median, a=max:
+    d(log10W)/d(log10 a) = g1 + 2*g2*log10_a
+
+6.8 Cliff-in-range turnover diagnostic for binned medians
+  Given bin centers c_k increasing and median m_k:
+    Split k into first third and last third (floor).
+    slope_hi = (m_last - m_first_of_last_third) / (c_last - c_first_of_last_third + EPS)
+  “Plateau/turnover candidate” if slope_hi <= 0.
+
+================================================================================
+7. BLOCK 5/1 — GLOBAL SANITY PER MODEL_VARIANT
+================================================================================
+
+For model in ["baseline_EFT", "rigidification_benchmark"]:
+  df_mv = df_all.query("Model_Variant == @model")
+  Print:
+    n
+    Spin_Configuration value_counts
+    Dimension value_counts sorted
+    Cohort value_counts
+    describe() for
+      Weyl_Boost_Weight_2, KY_Residual_Norm, Love_Number_k2,
+      EFT_Coupling_Lambda, Spin_Parameter_a
+      and Mass_M, RG_Scale_r if present
+
+  Pearson and Spearman correlation matrices on
+    ["Weyl_Boost_Weight_2", "KY_Residual_Norm", "Love_Number_k2",
+     "EFT_Coupling_Lambda", "Spin_Parameter_a"]
+  Print both matrices with 6 decimals.
+
+  Save heatmaps:
+    fig_corr_{model}_pearson.png
+    fig_corr_{model}_spearman.png
+  Caption template:
+    “Pearson/Spearman correlations among SYNTHETIC labels and covariates in {model}. Not a measurement of spacetime curvature.”
+
+  Cohort contrast of RAW Weyl and Love (not yet P(D)):
+    For Equal-Spin vs Generic: n, mean, median of Weyl and of Love
+    ratio_Weyl = median_generic_Weyl / median_equal_Weyl
+    ratio_Love = median_generic_Love / median_equal_Love
+    Print both ratios.
+    If ratio_Weyl / ratio_Love > 100, print:
+      “The Weyl label contrast and the Love label contrast differ by more than two orders of magnitude; they are not the same encoding.”
+
+  Supplementary Mann–Whitney Generic vs Equal-Spin on Weyl, alternative="greater", print U and p. Then immediately print Cliff’s δ. Lead with δ, not p.
+
+================================================================================
+8. SIMPSON / STRATIFIED WEYL–LOVE (MANDATORY BEFORE ANY OVERALL r HEADLINE)
+================================================================================
+
+For each model:
+  Compute Pearson r and Spearman ρ for Weyl vs Love:
+    (i)  overall
+    (ii) Cohort == Generic
+    (iii) Cohort == Equal-Spin
+    (iv) each Dimension
+    (v)  each Spin_Configuration
+  Print a table: Model, Slice, n, Pearson, Spearman.
+
+  RULE FOR THE WRITEUP:
+    You MAY quote overall Pearson only AFTER showing (ii) and (iii).
+    If |r_overall - r_equalspin| > 0.2, print:
+      “Overall Weyl–Love Pearson is Generic-dominated (Simpson structure). Do not use overall r as the Equal-Spin concordance.”
+
+  Save:
+    table_weyl_love_stratified.csv
+
+================================================================================
+9. BLOCK 3 SPEC CHECK — IMPLIED LABELER POWER LAWS
+================================================================================
+
+These are specification checks of the generators, not EFT.
+
+9.1 Equal-Spin KY vs λ
+  For each model, Equal-Spin rows:
+    OLS: log10_KY ~ const + log10_lambda + log10_a
+    Print β_lambda, β_a, R², CIs.
+    If β_lambda is within 0.05 of 2.0 and the CI for β_a contains 0:
+      write “Within {model}, the Equal-Spin KY LABEL is consistent with c·λ² times a spin-independent factor.”
+    Do not write “Killing–Yano residual of a metric.”
+
+9.2 D=5 Generic Weyl vs a and λ (baseline expected form)
+  For each model, Dimension==5 and Cohort==Generic:
+    OLS: log10_Weyl ~ const + log10_a + log10_lambda
+    Print β_a, β_lambda, R².
+    If baseline β_a within 0.05 of 2 and β_lambda within 0.05 of 1:
+      write “Within baseline_EFT D=5 Generic, the Weyl LABEL is consistent with c·λ·a².”
+    Compare rigid coefficients to baseline; do not call a coefficient change “quantum.”
+
+9.3 Save table_labeler_spec_checks.csv with all of the above.
+
+================================================================================
+10. WEYL LABEL STRATUM CONTRAST BY DIMENSION (FORMERLY “PROTECTION”)
+================================================================================
+
+For each Model_Variant and each Dimension in {5,6,7,8,9}:
+  If either Generic or Equal-Spin cell is SMALL_CELL, skip and record skipped.
+  Else:
+    x = log10_Weyl Generic
+    y = log10_Weyl Equal-Spin
+    record:
+      n_g, n_e
+      med_g, mad_g, med_e, mad_e
+      cliff_delta (Generic vs Equal-Spin; sign: Generic greater => δ>0)
+      mannwhitney U, p (supplementary)
+      P = 10**(med_g - med_e)
+      bootstrap CI for P (N_BOOT, independent resamples)
+  Save table_weyl_stratum_contrast.csv
+
+Print the table in full.
+
+Figure fig_weyl_violin_by_D_variant.png:
+  2 rows (Model_Variant) × 5 columns (Dimension)
+  violin or box of log10_Weyl for Generic vs Equal-Spin, no fliers if overcrowded
+  y shared
+  Title each panel “D={d} | {variant} | SYNTHETIC Weyl label”
+  Caption:
+    “Log10 Weyl LABEL by forced Cube stratum. Vertical separation is a generator contrast, not Type D suppression.”
+
+Figure fig_P_vs_D.png:
+  errorbar P vs Dimension, one curve per Model_Variant, log y-scale
+  Caption:
+    “Median generic/equal-spin ratio of the Weyl LABEL. Not a semiclassical protection factor.”
+
+If D=5 rigid P is substantially below other D (previous run: ~1e6 vs ~4e6), say:
+  “Within rigidification_benchmark, the D=5 Generic Weyl LABEL distribution is shifted relative to other D; this is a generator difference, not a dimensional law of gravity.”
+
+================================================================================
+11. KY LABEL REGRESSIONS (INTEGRABILITY PROXY OF THE LABELER)
+================================================================================
+
+For each Model_Variant × Cohort in {Generic, Equal-Spin}:
+  OLS:
+    log10_KY ~ const + log10_lambda + log10_a + Dimension dummies (drop_first)
+  Record β_lambda, SE, CI, β_a, SE, CI, R², adj R², AIC, BIC, n
+  Save table_ky_ols.csv
+
+Print a comparison sentence using only:
+  “Within {model}, |β_a| on Equal-Spin is {value} vs Generic {value}.”
+  If Equal-Spin β_a CI contains 0 and Generic β_a CI lies above 1:
+    “The KY LABELER is nearly spin-independent on the Equal-Spin stratum in this CSV.”
+  Forbidden: “hidden symmetry protected the KY tensor.”
+
+Figure fig_ky_phase.png:
+  2×2: rows Model_Variant, columns Cohort
+  scatter Spin_Parameter_a vs KY_Residual_Norm, color EFT_Coupling_Lambda, log y
+  subsample min(SUBSAMPLE_PLOT, n) with seed 20260820
+  Caption:
+    “KY LABEL vs synthetic spin, colored by λ. Fits in the tables use the full stratum, not the subsample.”
+
+================================================================================
+12. LOVE vs WEYL LABEL CONCORDANCE (NOT HAIR)
+================================================================================
+
+For each Model_Variant:
+  OLS on ALL rows of that variant:
+    log10_Love ~ const + log10_Weyl + log10_lambda + log10_a + Dimension dummies
+  Record α_W, SE, CI, α_lambda, α_a, R², AIC, BIC, n
+  Save table_love_weyl_ols.csv
+
+  ALSO fit the same OLS separately on Generic and on Equal-Spin. Store α_W per cohort.
+
+  Print explicitly:
+    Pearson_overall, α_W_overall, α_W_generic, α_W_equalspin
+  If Pearson_overall > 0.95 and α_W_overall < 0.5:
+    write “Linear-scale Pearson is high while log-log elasticity α_W is far from 1; the concordance is not a unit-slope law in log space.”
+
+Figure fig_love_vs_weyl.png:
+  two panels, one per Model_Variant
+  scatter log10_Weyl vs log10_Love, color by Cohort, subsample SUBSAMPLE_PLOT
+  Caption:
+    “Concordance of two SYNTHETIC labels. Not tidal Love numbers and not quantum hair.”
+
+================================================================================
+13. D=5 GENERIC SUBSET (RIGID-ENCODING TEST DOMAIN)
+================================================================================
+
+mask = (df_all["Dimension"]==5) & (df_all["Cohort"]=="Generic")
+df_d5g = df_all.loc[mask].copy()
+Print n total, n per Model_Variant.
+If either variant n < N_MIN_CELL, STOP this section.
+
+df_d5g_base  = df_d5g.query("Model_Variant == 'baseline_EFT'")
+df_d5g_rigid = df_d5g.query("Model_Variant == 'rigidification_benchmark'")
+
+Print min/max of Spin_Parameter_a and of EFT_Coupling_Lambda in each.
+Print A_RANGE_NOTE.
+
+Do not write “ultraspinning” or “a → 1 naked singularity.”
+
+================================================================================
+14. λ-MARGINAL SPEARMAN (SECONDARY ONLY)
+================================================================================
+
+For each variant in D=5 Generic:
+  Spearman ρ(a, log10_Weyl) and ρ(a, log10_Love) with p (supplementary)
+  Bootstrap CI for Spearman: resample rows, recompute spearmanr, percentile CI.
+  Save table_d5g_spearman_marginal.csv
+
+Caption:
+  “λ-marginal rank correlation. This CAN hide an a_crit(λ) threshold. Primary test is Section 15–16.”
+
+Compare ρ_base vs ρ_rigid. If ρ_rigid > ρ_base, print:
+  “The λ-marginal Spearman is larger in rigidification_benchmark than in baseline_EFT; this does not by itself confirm or refute a turnover. Proceed to λ-sliced tests.”
+
+================================================================================
+15. PRIMARY RIGID-ENCODING TEST: SLICE BY λ, THEN LOOK AT a
+================================================================================
+
+The claimed encoding is a_crit(λ). Pooling λ is insufficient.
+
+For each Model_Variant in D=5 Generic:
+
+  Step 15.1. Create K = N_LAMBDA_BINS equal-count bins of EFT_Coupling_Lambda
+    using pd.qcut(..., q=K, duplicates="drop").
+    Print actual number of bins and counts. If qcut drops bins, proceed with what remains (must have ≥ 3 bins; else STOP this variant’s sliced test).
+
+  Step 15.2. For each λ-bin:
+      n_bin
+      Spearman ρ(a, log10_Weyl)
+      N_A_BINS equal-width bins of a over that variant’s global [a_min, a_max] for D=5 Generic (use the same a grid for all λ-bins of that variant so curves are comparable)
+      For each a-bin with n>=10: median log10_Weyl, q25, q75
+      slope_hi diagnostic (Section 6.8)
+      boolean TURNOVER_CANDIDATE = (slope_hi <= 0)
+
+  Step 15.3. Count how many λ-bins have TURNOVER_CANDIDATE True.
+    Store N_TURNOVER_BINS.
+
+  Step 15.4. Figure fig_d5g_binned_by_lambda_{variant}.png:
+    one panel per λ-bin (or 2×3 grid)
+    median log10_Weyl vs a bin center, IQR band
+    Title: “{variant} | D=5 Generic | λ-bin {k} | SYNTHETIC Weyl label”
+
+  Step 15.5. Also produce the λ-POOLED 25-bin median curve (secondary visual)
+    fig_d5g_binned_pooled.png overlaying the two variants
+    Caption: “Pooled over λ. Secondary. Do not use alone to claim turnover.”
+
+Save table_d5g_lambda_slices.csv with one row per (Model_Variant, lambda_bin).
+
+================================================================================
+16. PAIRED Δlog10_Weyl (LEGAL ONLY IF G4.6 PAIRED IS TRUE)
+================================================================================
+
+If not PAIRED:
+  print “Paired Δ tests skipped because Gate G4.6 failed.”
+  Skip to Section 17.
+
+If PAIRED:
+  Restrict matched rows to Dimension==5 and Cohort==Generic.
+  ΔlogW = log10_Weyl_rigid - log10_Weyl_base
+  ΔlogLove = log10_Love_rigid - log10_Love_base
+  Print n_matched, describe(ΔlogW), describe(ΔlogLove)
+
+  Spearman ρ(a, ΔlogW) with bootstrap CI
+  Terciles of a: low / mid / high
+    median ΔlogW in each tercile, bootstrap CI
+  Boolean HIGH_MORE_NEGATIVE =
+    (median ΔlogW high tercile) < (median ΔlogW low tercile)
+    AND bootstrap CI of (high - low) excludes 0.
+
+  Figure fig_paired_delta_logW.png:
+    scatter a vs ΔlogW (subsample), overlay binned medians
+    Caption: “Paired generator contrast at matched covariates. Negative Δ means the rigid LABELER emitted a smaller Weyl label than the baseline LABELER at the same (D,a,λ,config).”
+
+  Optional: same figure for ΔlogLove.
+
+  If RG_Scale_r exists on both:
+    OLS ΔlogW ~ const + a + lambda + RG_Scale_r
+    Print whether RG_Scale_r CI excludes 0.
+    Caption: “This is a covariate in the CSV, not a measurement of RG-improved gravity.”
+
+================================================================================
+17. POWER-LAW vs QUADRATIC vs PIECEWISE (STILL NOT SUFFICIENT ALONE)
+================================================================================
+
+For each Model_Variant, D=5 Generic:
+
+  Model M1 (power law):
+    log10_Weyl ~ const + log10_a + log10_lambda
+  Model M2 (quadratic in log a):
+    log10_Weyl ~ const + log10_a + (log10_a)**2 + log10_lambda
+  Model M3 (piecewise linear in a, one free knot):
+    For candidate knots on a grid of 15 quantiles of a between the 20th and 80th percentile:
+      log10_Weyl ~ const + a + (a - knot)_+ + log10_lambda
+    Pick knot minimizing AIC.
+    Record knot_hat, AIC, whether the high-a slope (coef_a + coef_relu) has CI <= 0.
+
+  For M1 vs M2:
+    R², AIC, BIC, ΔR², ΔAIC, ΔBIC
+    F-test for the extra square term (supplementary)
+    Print γ2, a_star (Section 6.7), in_range boolean, slopes at min/median/max a
+
+  RULE:
+    M2 winning on AIC with a_star NOT in range is NOT detection of rigidification.
+    M3 winning on AIC AND high-a slope CI <= 0 IS evidence toward criterion B (Section 18).
+
+  Repeat M1/M2 for log10_Love as a labeler-consistency check (Section 19).
+
+  Save table_d5g_nested_models.csv
+
+================================================================================
+18. PRE-REGISTERED DETECTION RULE (DO NOT CHANGE AFTER SEEING NUMBERS)
+================================================================================
+
+For a given Model_Variant, D=5 Generic, declare
+  RIGID_ENCODING_DETECTED = True
+iff AT LEAST TWO of (A), (B), (C) hold.
+
+(A) TURNOVER IN RANGE
+  N_TURNOVER_BINS >= 3   (from Section 15; if fewer than 6 λ-bins exist, require ceil(n_bins/2) instead, and print which threshold you used because qcut dropped bins)
+
+(B) RECOVERABLE a_crit
+  Model M3 (Section 17) has lower AIC than M1 by at least 10
+  AND the high-a slope CI is entirely <= 0
+  AND knot_hat lies in the observed a range
+  (If PAIRED is false, (B) is evaluated within the variant only.)
+
+(C) PAIRED SUPPRESSION GROWS WITH a
+  Legal only if PAIRED.
+  HIGH_MORE_NEGATIVE is True (Section 16)
+  OR Spearman ρ(a, ΔlogW) CI entirely < 0.
+
+If fewer than two criteria hold:
+  RIGID_ENCODING_DETECTED = False
+
+Print a 2-row table:
+  Model_Variant | A | B | C | DETECTED
+for baseline_EFT and rigidification_benchmark.
+
+EXPECTED TEMPLATE (do not force the data to match):
+  baseline_EFT: DETECTED False
+  rigidification_benchmark: DETECTED True if the filename’s claim was actually encoded
+
+If rigidification_benchmark DETECTED is False:
+  Mandatory sentence:
+  “Within the rigidification_benchmark synthetic generator, the pre-registered rule does not detect an a_crit(λ) turnover. The CSV therefore does not implement the encoding the filename claims, or the encoding is too weak/smeared to pass A–C. This is not a result about nature.”
+
+If baseline_EFT DETECTED is True:
+  Mandatory sentence:
+  “The baseline generator also passed A–C. The two generators are not a clean negative/positive control pair.”
+
+If baseline False and rigid True:
+  Mandatory sentence:
+  “The pipeline distinguishes the two generators under the pre-registered rule. That is a statement about label engines, not about Myers–Perry rigidification.”
+
+================================================================================
+19. LOVE ECHO OF THE SAME RULE
+================================================================================
+
+Repeat Sections 14–17 with log10_Love in place of log10_Weyl (same λ bins, same a grid).
+Compute RIGID_ENCODING_DETECTED_LOVE with the same A–C (paired ΔlogLove for C).
+
+Print whether Weyl-rule and Love-rule AGREE.
+If they disagree:
+  “The two LABELS do not share the same high-a encoding. Do not treat Love as a tracer of the Weyl labeler in that generator.”
+
+Do not say “quantum hair echo.”
+
+================================================================================
+20. FIGURES — COMPLETE LIST AND CAPTION STEMS
+================================================================================
+
+Save all under ./mpp_dual_generator_audit_outputs/ with dpi=200.
+
+Must-produce:
+  01_corr_heatmaps.png
+  02_weyl_violin_by_D_variant.png
+  03_P_label_ratio_vs_D.png
+  04_ky_phase.png
+  05_love_vs_weyl_labels.png
+  06_d5g_binned_pooled.png
+  07_d5g_binned_by_lambda_baseline.png
+  08_d5g_binned_by_lambda_rigid.png
+  09_paired_delta_logW.png          (or a text file saying skipped)
+  10_nested_model_AIC_bars.png      (AIC of M1/M2/M3 per variant)
+  11_detection_rule_scorecard.png   (A/B/C true-false heatmap)
+
+Every caption MUST contain the word SYNTHETIC or LABEL or GENERATOR.
+Every caption MUST contain the Model_Variant or “both generators.”
+Suggested paper caption style if reused later:
+  “Synthetic-generator audit only. Not a GR observable.”
+
+Verbose description requirement:
+  For each figure, print a 8–15 sentence paragraph covering: what is on each axis, what each color/linetype is, what subset (n, filters), what the eye is supposed to compare, what would constitute a turnover, and what the figure is NOT (not Type D, not hair, not ultraspinning).
+
+================================================================================
+21. TABLES — COMPLETE LIST
+================================================================================
+
+  T00_gate4_scorecard.csv
+  T01_cube_counts.csv
+  T02_descriptive_by_variant.csv
+  T03_corr_pearson_by_variant.csv
+  T04_corr_spearman_by_variant.csv
+  T05_weyl_love_stratified.csv
+  T06_labeler_spec_checks.csv
+  T07_weyl_stratum_contrast.csv
+  T08_ky_ols.csv
+  T09_love_weyl_ols.csv
+  T10_d5g_spearman_marginal.csv
+  T11_d5g_lambda_slices.csv
+  T12_paired_delta_summary.csv          (or skipped)
+  T13_nested_models.csv
+  T14_detection_rule.csv
+  T15_love_echo_detection_rule.csv
+  T16_run_metadata.json   (hashes, seed, EPS, n, GATE4, PAIRED, library versions)
+
+================================================================================
+22. DISCRETIONARY CHOICES THAT ARE NOW FROZEN (DO NOT ADD SILENT ONES)
+================================================================================
+
+You MAY:
+  - subsample scatter plots as specified;
+  - use boxplots instead of violins if violins fail;
+  - use qcut duplicates="drop" as specified;
+  - skip paired plots if G4.6 failed.
+
+You MAY NOT:
+  - change EPS, B, K, n_min after seeing P or ρ;
+  - drop Equal-Spin to inflate overall r;
+  - filter |ρ|>0.7;
+  - switch to Pearson for the D=5 trend because Spearman “looked weaker”;
+  - claim M2’s significant F-test as turnover without a_star in range;
+  - combine the two variants into one headline n=100000 result;
+  - rename Love_Number_k2 as “quantum hair” in a legend.
+
+If you make any additional choice, add it to a printed list EXTRA_CHOICES with justification in ONE sentence, and state that it was not pre-registered.
+
+================================================================================
+23. BLOCK 6 ARCHIVE CHECKLIST (END OF RUN)
+================================================================================
+
+Print:
+  HASH_BASE, HASH_RIGID
+  GATE4_PASS, PAIRED
+  Cube counts identical? CUBE_COUNTS_IDENTICAL
+  Detection table (Section 18 and 19)
+  List of written files with os.path.getsize
+
+Write T16_run_metadata.json with those fields plus pandas/numpy/scipy/statsmodels versions.
+
+================================================================================
+24. FINAL WRITEUP — MANDATORY STEMS AND ORDER
+================================================================================
+
+Write the final summary as PLAIN TEXT with these numbered paragraphs, in this order, with the frozen stems. Fill the blanks from YOUR tables. Do not add a “physics implications for UV completions” section.
+
+P0. Scope
+  “This run audited two synthetic label engines (baseline_EFT and rigidification_benchmark) under a frozen MPP six-block recipe. No metric was produced. No Killing–Yano PDE was solved. No Love number of a black hole was computed.”
+
+P1. Gate
+  “As a Gate-4 design-integrity result (not a physics result), GATE4_PASS={True/False}, PAIRED={True/False}, hashes … . Science tables were {produced / not produced}.”
+
+P2. Cube
+  “Within each generator, Cube cells were … (quote n per D × Cohort). Equal-Spin is a forced stratum, not a rare-event discovery.”
+
+P3. Spec check
+  “Within the baseline_EFT synthetic generator, the Equal-Spin KY LABEL {was/was not} consistent with c·λ² … . Within the same generator, D=5 Generic Weyl LABEL {was/was not} consistent with c·λ·a² … . Within the rigidification_benchmark synthetic generator, …”
+
+P4. Stratum contrast
+  “Within the baseline_EFT synthetic generator, the median generic/equal-spin ratio of the Weyl LABEL was P(D)=… (95% CI …). Within the rigidification_benchmark synthetic generator, P(D)=… . Cliff’s δ was … . These are generator contrasts, not Type D protection.”
+
+P5. Simpson
+  “Within {model}, overall Weyl–Love Pearson was … while Equal-Spin Pearson was … and Generic Pearson was … . {State whether overall r is Generic-dominated.} Linear-scale Pearson vs log-log α_W was … .”
+
+P6. KY labeler spin slope
+  “Within {model}, Equal-Spin β_a = … (CI …); Generic β_a = … (CI …).”
+
+P7. Marginal Spearman (secondary)
+  “Within the baseline_EFT synthetic generator, λ-marginal Spearman ρ(a, log10_Weyl) on D=5 Generic was … (95% CI …). Within the rigidification_benchmark synthetic generator, it was … . This is secondary to λ-sliced tests.”
+
+P8. Detection rule
+  “Under the pre-registered rule of Section 18: baseline_EFT RIGID_ENCODING_DETECTED={True/False} with A,B,C={}. rigidification_benchmark RIGID_ENCODING_DETECTED={True/False} with A,B,C={}. {Then the matching mandatory sentence from Section 18.}”
+
+P9. Quadratic caution
+  “Within {model}, M2 gave γ2=…, a_star=…, in_range={True/False}, ΔR²=… . {If in_range is False: ‘This is not a turnover in the observed a window.’}”
+
+P10. Love echo
+  “Love-label detection {agreed/disagreed} with Weyl-label detection. {If disagreed, the Section 19 sentence.}”
+
+P11. Paper use
+  “These CSVs cannot support or refute rigidification of Myers–Perry black holes. They only audit two label engines. If cited, they belong in an appendix titled synthetic encoding check, not in a GR results section.”
+
+P12. Forbidden-term self-audit
+  Print a grep-like self-check: count occurrences in your final writeup of the substrings:
+    quantum, semiclassical, hair, Type D, ultraspin, naked, qnm, Sobol
+  If any count > 0 outside the phrases “not quantum hair”, “not Type D”, “not ultraspinning”, “not qnm”, rewrite P0–P11 until those leftover hits are gone.
+
+================================================================================
+25. EXECUTION ORDER (DO THIS SEQUENCE, NOTHING ELSE FIRST)
+================================================================================
+
+1) Section 2 imports and output dir
+2) Section 3 harvest and hash
+3) Section 4 Cube
+4) Section 5 Gate-4; stop if FAIL
+5) Section 6 logs
+6) Section 7 sanity
+7) Section 8 Simpson
+8) Section 9 spec checks
+9) Section 10 stratum contrast + figures
+10) Section 11 KY OLS + figure
+11) Section 12 Love concordance + figure
+12) Section 13 D=5 Generic subset
+13) Section 14 λ-marginal Spearman
+14) Section 15 λ-sliced tests + figures
+15) Section 16 paired Δ if legal
+16) Section 17 nested models + vertex
+17) Section 18 detection scorecard
+18) Section 19 Love echo
+19) Section 20–21 remaining figures/tables
+20) Section 23 archive
+21) Section 24 writeup with self-audit
+
+Begin now. Do not write an executive summary that precedes Gate-4. Do not skip Simpson. Do not skip a_star. Do not skip the detection table. Do not upgrade labels into gravity.
