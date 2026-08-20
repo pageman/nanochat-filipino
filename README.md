@@ -65,6 +65,7 @@ Does **not** amend AsPredicted #306780 / #306935, ResearchBox 8735 / 8763, or Hu
 **Study record:** [docs/p3/](docs/p3/) · https://github.com/pageman/nanochat-filipino/tree/main/docs/p3  
 **Lock:** [docs/papers/p3-reverse/LOCK.json](docs/papers/p3-reverse/LOCK.json)  
 **Paper (source / PDF):** [docs/papers/p3-reverse/paper.tex](docs/papers/p3-reverse/paper.tex) · [paper.pdf](docs/papers/p3-reverse/paper_outputs/paper.pdf)  
+**Paper (ResearchGate v1.2):** https://www.researchgate.net/publication/412889563_Tagalog_Retention_and_English_Acquisition_under_Equal-Budget_nanochat_Continual_Pretraining_v12_-_A_Preregistered_Post-P2_Reverse-Direction_Study_on_WikiText-TL-39_and_WikiText-103  
 **AsPredicted #307342:** https://aspredicted.org/wd2pc8.pdf (anonymous)  
 **ResearchBox #8834:** https://researchbox.org/8834  
 **AsCollected:** https://ascollected.org/F36_C2C  

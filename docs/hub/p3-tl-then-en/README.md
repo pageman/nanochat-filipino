@@ -23,6 +23,7 @@ P3 is a matched branch study. Use the four files together; do not treat B2 as a 
 - AsPredicted [#307342](https://aspredicted.org/wd2pc8.pdf)
 - ResearchBox [8834](https://researchbox.org/8834)
 - AsCollected [F36_C2C](https://ascollected.org/F36_C2C)
+- Paper (ResearchGate v1.2): [Tagalog Retention and English Acquisition under Equal-Budget nanochat Continual Pretraining v1.2](https://www.researchgate.net/publication/412889563_Tagalog_Retention_and_English_Acquisition_under_Equal-Budget_nanochat_Continual_Pretraining_v12_-_A_Preregistered_Post-P2_Reverse-Direction_Study_on_WikiText-TL-39_and_WikiText-103)
 - GitHub audit trail: [pageman/nanochat-filipino](https://github.com/pageman/nanochat-filipino) (`results/p3/`, `docs/p3/`, `docs/hub/p3-tl-then-en/`)
 - Run ID `p3-20260819T192700Z-92d63d4`
 - nanochat pin `92d63d4e8bb4df75c3b71618f31ddde2378b2bcd`
