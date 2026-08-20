@@ -28,6 +28,9 @@ so Block 1 of the frozen query can harvest either pair:
 Do not treat those `/workspace/` copies as a second dataset. Generator:
 `../scripts/reconstruct_csvs.py`.
 
+Copy-paste audit query for these files (clean-room first draft):
+`../KOSMOS-QUERY-RECONSTRUCTED-CLEANROOM-V1.txt`.
+
 ## What was matched
 
 Published Cube counts (exact):
