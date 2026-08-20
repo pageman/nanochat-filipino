@@ -1,0 +1,9 @@
+{
+  "arm": "B2_only",
+  "en_test_bpb": 1.357842,
+  "tl_legacy_holdout_bpb": 2.493197,
+  "explicit_non_reuse": [
+    "P1.1_1.164768",
+    "P2_Gate_V"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "W",
+  "status": "pass",
+  "at_utc": "2026-08-20T07:58:39Z",
+  "host": "8bed3c4b64cc",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "artifacts": [
+    {
+      "role": "gate-q-b0-freeze",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-q-b0-freeze.json",
+      "bytes": 1409,
+      "sha256": "4fb3874b4b9d1fb8fbc7ba0c880fe03be7c12c8f33e4449f6bdecd57893b784e"
+    },
+    {
+      "role": "gate-r-b1",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-r-b1.json",
+      "bytes": 953,
+      "sha256": "509544ae31091f53e48d9d55dbb36a6f5bed85ed2ae1d4a382d64ec29fbc6f7a"
+    },
+    {
+      "role": "gate-s-b2",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-s-b2.json",
+      "bytes": 968,
+      "sha256": "852ea04e3e12a02cf2abbcc71d2c8c24cd99208c3ee2144f36419af470c11f8f"
+    },
+    {
+      "role": "gate-t-b3",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-t-b3.json",
+      "bytes": 962,
+      "sha256": "a78428ae6e9695d496f58e204cd64b33b8519fadd762af080c96a5606044a6bd"
+    },
+    {
+      "role": "gate-u-seal",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-u-seal.json",
+      "bytes": 468,
+      "sha256": "ff780b9e121d039c17468f6d6a0050aea5de4ddd6d73eeb5ae0a25b0dcaf94ca"
+    },
+    {
+      "role": "gate-v-test",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-v-test.json",
+      "bytes": 305,
+      "sha256": "9100dedbd698b9152594e04beb847b6ebd88bdda2f4125ad0073c3fb5307bbd4"
+    },
+    {
+      "role": "gate-p0-t",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-p0-t.json",
+      "bytes": 1400,
+      "sha256": "566fe12398e83c57785ad1e7f3352f82fa8ab66083e9fb838c3ff0dce35ddcef"
+    },
+    {
+      "role": "gate-i-tl0",
+      "path": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-i-tl0.json",
+      "bytes": 1051,
+      "sha256": "9c10bb3c75d642a0486ed7d5c68bcf3b47441efdf230cafa2b18a80b758f6e71"
+    }
+  ],
+  "excludes": [
+    "raw_test_text",
+    "secrets",
+    "ssh_keys",
+    "optimizer_states"
+  ],
+  "no_new_computation": true,
+  "note": "Gate X unblinding is separate. Scalars remain lockboxed until Gate X."
+}

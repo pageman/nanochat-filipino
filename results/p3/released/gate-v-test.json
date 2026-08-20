@@ -1,0 +1,37 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "V",
+  "arm": "B2",
+  "authorized_touches": 1,
+  "component_evaluations": 2,
+  "english": {
+    "at_utc": "2026-08-20T07:58:12Z",
+    "component": "english",
+    "model_tag": "p3-b2-en-d20",
+    "checkpoint_sha256": "5ee34b20f6601b1753ee6338b5447e091964ddd1087ca66c57434011e6341cc1",
+    "test_path": "data/interim/wikitext-103/english_test.jsonl",
+    "bpb": 1.3578420622362768,
+    "total_nats": 362110.34375,
+    "total_bytes": 384739,
+    "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+    "stride": "non_overlapping_T_official_bos_bestfit",
+    "does_not_alter_sealed_contrasts": true
+  },
+  "tagalog": {
+    "at_utc": "2026-08-20T07:58:38Z",
+    "component": "tagalog",
+    "model_tag": "p3-b2-en-d20",
+    "checkpoint_sha256": "5ee34b20f6601b1753ee6338b5447e091964ddd1087ca66c57434011e6341cc1",
+    "test_path": "data/processed/wikitext-tl39/test/test.jsonl",
+    "bpb": 2.493197263385783,
+    "total_nats": 9381904.0,
+    "total_bytes": 5428863,
+    "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+    "stride": "non_overlapping_T_official_bos_bestfit",
+    "does_not_alter_sealed_contrasts": true
+  },
+  "at_utc": "2026-08-20T07:58:38Z",
+  "test_access": 1
+}

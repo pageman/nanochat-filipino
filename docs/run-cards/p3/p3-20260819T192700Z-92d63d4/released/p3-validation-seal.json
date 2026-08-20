@@ -1,0 +1,12 @@
+{
+  "C_tl": 1.0234843444022848,
+  "C_tl_B3": -0.275035023671399,
+  "G_en": -1.6979552308460246,
+  "G_en_B3": -1.6836840225042469,
+  "b0_en_descriptive": true,
+  "b0_en_excluded_from_contrasts": true,
+  "b0_en_val_bpb_full": 2.6188910174728046,
+  "not_mitigation": true,
+  "six_child_cells": true,
+  "test_access": 0
+}

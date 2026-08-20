@@ -1,0 +1,9 @@
+{
+  "gate": "V",
+  "status": "pass",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "lockbox": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/gate-v-test.json",
+  "safe_status": "data/cache/p3-20260819T192700Z-92d63d4/safe_progress/gate-v-status.json",
+  "no_bpb_in_receipt": true,
+  "next_gate": "W"
+}

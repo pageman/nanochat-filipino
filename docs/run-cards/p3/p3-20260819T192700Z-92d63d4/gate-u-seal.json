@@ -1,0 +1,14 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "U",
+  "status": "pass",
+  "at_utc": "2026-08-20T07:57:24Z",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "seal_path": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/p3-validation-seal.json",
+  "safe_status": "data/cache/p3-20260819T192700Z-92d63d4/safe_progress/gate-u-status.json",
+  "test_access": 0,
+  "no_bpb_in_receipt": true,
+  "next_gate": "V"
+}

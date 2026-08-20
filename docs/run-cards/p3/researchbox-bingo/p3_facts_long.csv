@@ -1,0 +1,25 @@
+variable,value,description
+study_id,NANOCHAT-FILIPINO-P3-TL-EN,Study identifier
+aspredicted_id,307342,AsPredicted registration number
+researchbox_id,8834,ResearchBox deposit number
+ascollected_url,https://ascollected.org/F36_C2C,AsCollected Version 1 URL (project 2440)
+p3_run_id,p3-20260819T192700Z-92d63d4,Execution run id
+nanochat_pin,92d63d4e8bb4df75c3b71618f31ddde2378b2bcd,Pinned nanochat commit
+designed_after_p2,true,Post-P2 reverse-direction study; not confirmation of P2
+C_tl,1.023484344402,TL(B2)-TL(B1); filed prediction >=0.01; observed
+G_en,-1.697955230846,EN(B2)-EN(B1); filed prediction <=-0.01; observed
+C_tl_B3,-0.275035023671,TL(B3)-TL(B1); trade-off; not mitigation
+G_en_B3,-1.683684022504,EN(B3)-EN(B1); trade-off; not mitigation
+b0_en_val_bpb_full,2.618891017473,Descriptive only; excluded from contrasts
+b1_tl_val_bpb_full,1.468599552157,Primary cell
+b1_en_val_bpb_full,3.032277148749,Primary cell
+b2_tl_val_bpb_full,2.492083896560,Primary cell
+b2_en_val_bpb_full,1.334321917903,Primary cell
+b3_tl_val_bpb_full,1.193564528486,Primary cell; trade-off arm
+b3_en_val_bpb_full,1.348593126245,Primary cell; trade-off arm
+b2_en_test_bpb,1.357842062236,Secondary Gate V; B2 only
+b2_tl_test_bpb,2.493197263386,Secondary Gate V; legacy holdout; B2 only
+test_access_at_seal,0,Gate U seal test_access
+test_access_after_v,1,After one B2-only two-component event
+one_seed,true,Point estimates only; no CI/p-value
+raw_test_text_in_box,false,Held-out text not redistributed

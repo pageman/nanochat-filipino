@@ -1,0 +1,36 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "P0-T",
+  "status": "pass",
+  "p0_t_status": "PASS",
+  "at_utc": "2026-08-20T03:40:16Z",
+  "host": "8bed3c4b64cc",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_p0t.sh",
+  "preflight_script": "scripts/p3/gate_p0t_preflight.py",
+  "accept_script": "scripts/p3/gate_p0t_accept.py",
+  "eval_script": "scripts/p3/evaluate_bpb.py",
+  "margin_bpb": 0.01,
+  "depths": {
+    "8": {
+      "pass_both_floors": true,
+      "checkpoint_sha256": "feaf7017cd55fab48a8acf9087b9f444b015167c7725c0d695278c20dbf462e2"
+    },
+    "20": {
+      "pass_both_floors": true,
+      "checkpoint_sha256": "ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c"
+    }
+  },
+  "test_access": 0,
+  "english_val_used": false,
+  "lockbox_eligibility": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/gate-p0-t-eligibility.json",
+  "lockbox_eval_detail": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/gate-p0-t-eval-detail.json",
+  "lockbox_eval_log": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/gate-p0-t-eval-full.log",
+  "safe_status": "data/cache/p3-20260819T192700Z-92d63d4/safe_progress/gate-p0-t-status.json",
+  "lockbox_sha256": "88a4b1d3b8bcf36a69b907495fe8a898635633431e16d8015da1d2c200dcc24a",
+  "eval_exit_code": 0,
+  "next_gate": "Q",
+  "no_bpb_in_receipt": true
+}

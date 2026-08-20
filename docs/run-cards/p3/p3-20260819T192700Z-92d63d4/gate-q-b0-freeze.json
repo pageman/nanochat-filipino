@@ -1,0 +1,44 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "Q",
+  "arm": "B0",
+  "status": "pass",
+  "immutable": true,
+  "additional_train_tokens": 0,
+  "at_utc": "2026-08-20T03:59:26Z",
+  "host": "8bed3c4b64cc",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "model_tag": "p3-tl0-d20",
+  "depth": 20,
+  "checkpoint_step": 294,
+  "checkpoint_sha256": "ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c",
+  "frozen_dir": "data/cache/p3-20260819T192700Z-92d63d4/b0/frozen/p3-tl0-d20",
+  "copied": {
+    "meta_000294.json": {
+      "path": "data/cache/p3-20260819T192700Z-92d63d4/b0/frozen/p3-tl0-d20/meta_000294.json",
+      "sha256": "ab5e213ab80739c5434a0a54e415bc3c3442909503003d769c010d3d128454e3",
+      "bytes": 1337
+    },
+    "model_000294.pt": {
+      "path": "data/cache/p3-20260819T192700Z-92d63d4/b0/frozen/p3-tl0-d20/model_000294.pt",
+      "sha256": "ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c",
+      "bytes": 2663446486
+    }
+  },
+  "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "p0_t_status": "PASS",
+  "child_parent_whitelist": [
+    "p3-tl0-d20"
+  ],
+  "forbidden_parents": [
+    "p3-tl0-d8",
+    "P1.1",
+    "P2"
+  ],
+  "fresh_optimizer_required": true,
+  "test_access": 0,
+  "next_gate": "R"
+}

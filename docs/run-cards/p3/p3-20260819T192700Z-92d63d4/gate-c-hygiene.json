@@ -1,0 +1,95 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "C",
+  "status": "pass",
+  "at_utc": "2026-08-20T00:54:38Z",
+  "host": "Mac/CPU",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_c_hygiene.py",
+  "checks": [
+    {
+      "id": "C1_p3_cache_sentinel",
+      "ok": true,
+      "detail": {
+        "entries": [
+          ".lockbox_pass",
+          "SENTINEL_P3_ONLY",
+          "lockbox/P3_BREAK_GLASS_20260819T195840Z.json",
+          "lockbox/b0_en_val_bpb_full.json",
+          "lockbox/b1_en_val_bpb_full.json",
+          "lockbox/b1_tl_val_bpb_full.json",
+          "lockbox/b2_en_val_bpb_full.json",
+          "lockbox/b2_tl_val_bpb_full.json",
+          "lockbox/b3_en_val_bpb_full.json",
+          "lockbox/b3_tl_val_bpb_full.json",
+          "lockbox/dummy_bpb.json.enc",
+          "lockbox/gate-p0-t-eligibility.json",
+          "lockbox/gate-v-test.json",
+          "lockbox/opaque_job_map.json",
+          "lockbox/p3-validation-seal.json",
+          "released_dummy/good/released_manifest.json",
+          "safe_progress/break-glass-status.json",
+          "safe_progress/gate-p0-t-status.json",
+          "safe_progress/gate-u-status.json",
+          "safe_progress/gate-v-status.json"
+        ],
+        "n_files": 22
+      }
+    },
+    {
+      "id": "C2_no_climbmix_fineweb_dclm_oscar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C3_no_p11_p2_checkpoint_in_p3_train_paths",
+      "ok": true,
+      "detail": {
+        "forbidden_sample": [
+          "/Users/paulpajo/Projects/nanochat-filipino/artifacts/p1/p1-20260816T025911Z-0067a57/checkpoints/p1-fixed-d12-3x/model_000294.pt",
+          "/Users/paulpajo/Projects/nanochat-filipino/artifacts/p1/p1-20260816T025911Z-0067a57/checkpoints/p1-fixed-d16-3x/model_000294.pt",
+          "/Users/paulpajo/Projects/nanochat-filipino/artifacts/p1/p1-20260816T025911Z-0067a57/checkpoints/p1-fixed-d8-3x/model_000294.pt",
+          "/Users/paulpajo/Projects/nanochat-filipino/artifacts/p1/p1-20260816T025911Z-0067a57/checkpoints/p1-fixed-d20-3x/model_000294.pt",
+          "/Users/paulpajo/Projects/nanochat-filipino/artifacts/p1/p1-20260816T025911Z-0067a57/hf-staging-pageman-nanochat-filipino-p1-fixed-d20-3x/d12/model_000294.pt"
+        ]
+      }
+    },
+    {
+      "id": "C4_test_absent_from_p3_train_roots",
+      "ok": true,
+      "detail": {
+        "test_hits_in_train_dirs": [],
+        "tl_test": "/Users/paulpajo/Projects/nanochat-filipino/data/processed/wikitext-tl39/test/test.jsonl",
+        "en_test": "/Users/paulpajo/Projects/nanochat-filipino/data/interim/wikitext-103/english_test.jsonl"
+      }
+    },
+    {
+      "id": "C5_no_secrets_in_p3_scripts",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C6_p3_env_forbids_p1_p2",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "C7_hubs_not_write_targets",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "C8_safe_progress_and_lockbox_exist",
+      "ok": true,
+      "detail": {
+        "safe": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p3-20260819T192700Z-92d63d4/safe_progress",
+        "lockbox": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p3-20260819T192700Z-92d63d4/lockbox"
+      }
+    }
+  ],
+  "test_access_count": 0,
+  "p3_outcome_access_count": 0,
+  "next_gate": "D"
+}

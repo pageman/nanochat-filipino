@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "b0_en_val_bpb_full.json": "82fec7f9e135ad7a419b586181c36249fc71f9f90baaecac62dc860a3e3aa5c2",
+    "b1_en_val_bpb_full.json": "32b11c1128d97d858e0d07104559b70cf68c5f401a54fe065c5fd9d955478621",
+    "b1_tl_val_bpb_full.json": "d65848bedb6e549b277d6633c6a6543ad9bdff80ed207ec8443badb104423140",
+    "b2_en_val_bpb_full.json": "8f45482908c776f26b2db967ceb860fc1e154f8a9da38c03dc406533cdf69483",
+    "b2_tl_val_bpb_full.json": "6503d3e36da01891d23d44e2fdeac2caaf8a92604ab3a8fee0515dbf574e7830",
+    "b3_en_val_bpb_full.json": "dff18cf0abca3298f379fa30c67d31afbfb757f0bf6d42b48cd5336c21b481fb",
+    "b3_tl_val_bpb_full.json": "559084d1dd46e3772276e6c7c306fdd395833402cf6dbdfe8d49a7dd22c04f96",
+    "gate-p0-t-eligibility.json": "88a4b1d3b8bcf36a69b907495fe8a898635633431e16d8015da1d2c200dcc24a",
+    "gate-v-test.json": "fae79315f6937e534da4bc7bf09951e3673a7260c18b6e4d50bae1fa8b390b9f",
+    "p3-validation-seal.json": "37844c130793c4b23413710efc46d6189e07672971a5411b5a3ef4148a8f0c2a"
+  },
+  "aspredicted_id": 307342,
+  "at_utc": "2026-08-20T08:56:47Z",
+  "gate": "X",
+  "note": "Simultaneous sealed release. No new computation.",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "raw_test_still_restricted": true,
+  "researchbox_id": 8834,
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN"
+}

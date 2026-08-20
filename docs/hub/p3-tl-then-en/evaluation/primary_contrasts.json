@@ -1,0 +1,11 @@
+{
+  "study": "P3",
+  "aspredicted": 307342,
+  "run_id": "p3-20260819T192700Z-92d63d4",
+  "C_tl": 1.023484,
+  "G_en": -1.697955,
+  "C_tl_status": "observed",
+  "G_en_status": "observed",
+  "filed_C_tl": ">=0.01",
+  "filed_G_en": "<=-0.01"
+}

@@ -1,0 +1,83 @@
+{
+  "all_pass": true,
+  "gate": "0",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "no_p3_outcomes": true,
+  "no_real_val_test_text": true,
+  "note": "ResearchBox still human. Dummy lockbox lives under gitignored data/cache.",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "researchbox_id": 8834,
+  "researchbox_url": "https://researchbox.org/8834",
+  "scripts_p3_sha256": {
+    "scripts/p3/break_glass.py": "0d1caa9655d14a64d3ce9b12a14744fc49a90d0ea82a74f3eb770482adb0bacc",
+    "scripts/p3/dummy_b2_test.py": "aff2ac4d3df22452d25d5d811f1567b85aa29d0b5aebab0c14fba54313a3efb0",
+    "scripts/p3/dummy_p0t.py": "8c5d3368f05e02181f4641316669a7d26731435ae961ea2dee04958982a151e2",
+    "scripts/p3/env.cuda.sh": "3b4d3cfea1ecc36786ae1bb615ce0db90a0b8c76c306b7e15d383fafafdd6e14",
+    "scripts/p3/env.sh": "20358ca644ac14759d9beea7ebc4635f323f350ac4dbc1d71a74c952c6e15e79",
+    "scripts/p3/evaluate_bpb.py": "996da320e198e46fbcfa59368d611603043fdd1eb8844cbab56726b38e06d411",
+    "scripts/p3/forbidden_parents.py": "568baecd8c14b3353c575f84c275bb2e0623b44613e0ef7ab1c417fc5bca54f6",
+    "scripts/p3/gate0_accept.py": "e4b03a201d2e5ecbca14582e098b27031d3a4fdedf043b606f067b771722dfc0",
+    "scripts/p3/make_validation_seal.py": "7fdde37fb14992b48f89b903f5e4a80f4054238113772b88546ec9647a01b165",
+    "scripts/p3/release_bundle.py": "533bc1c58639d54f7d3be92cbbe8e1fb8e9ee2157a87a7a9385cad1fa1a770fa"
+  },
+  "tests": {
+    "1": {
+      "lock_sha256": "e2534bf14bc16ab8115acef288621dbc36da225c9feadcbbc07a934a8e3f8b6f",
+      "name": "protocol/lock/pdf hashes agree with filing",
+      "pass": true,
+      "pdf_sha256": "6cfad0386dff689ad73fa2bf80b70dd4ad191dc44e21e3e4c11c06825ae550b1",
+      "protocol_sha256": "899ba83f0b36f2b4bf4c16b3c675e58788d7763cb439f8a8c3a3c061bda2b986"
+    },
+    "10": {
+      "name": "release refuses incomplete inventory",
+      "pass": true
+    },
+    "11": {
+      "name": "dummy released hashes match manifest",
+      "pass": true
+    },
+    "12": {
+      "name": "break-glass dummy writes audit without printing dummy BPB",
+      "pass": true,
+      "stdout": "break-glass dummy: audit written; no BPB"
+    },
+    "2": {
+      "name": "steward cannot open dummy lockbox result",
+      "pass": true
+    },
+    "3": {
+      "name": "dummy BPB string absent from safe_progress",
+      "pass": true
+    },
+    "4": {
+      "name": "opaque job labels omit B1/B2/B3",
+      "pass": true
+    },
+    "5": {
+      "name": "train env cannot resolve test path",
+      "pass": true,
+      "stdout": "P3_ROOT=$NANOCHAT_FILIPINO_ROOT\nP3_RUN_ID=p3-20260819T192700Z-92d63d4\nNANOCHAT_BASE_DIR=$NANOCHAT_FILIPINO_ROOT/data/cache/p3-20260819T192700Z-92d63d4\nP3_SAFE_PROGRESS_ROOT=$NANOCHAT_FILIPINO_ROOT/data/cache/p3-20260819T192700Z-92d63d4/safe_progress\nP3_LOCKBOX_ROOT=$NANOCHAT_FILIPINO_ROOT/data/cache/p3-20260819T192700Z-92d63d4/lockbox\nNANOCHAT_DATA_DIR=<unset>\npython=$VIRTUAL_ENV/bin/python\nNOTE: Gate 0 only. tok_train / TL0 have not started.\nTEST_EN=UNSET\nTEST_TL=UNSET"
+    },
+    "6": {
+      "name": "P1.1/P2 weight SHA256s rejected as parent",
+      "pass": true
+    },
+    "7": {
+      "name": "dummy P0-T emits only PASS/BLOCKED outside lockbox",
+      "pass": true,
+      "stdout": "P0-T: PASS"
+    },
+    "8": {
+      "name": "contrast refuses until six child + B0 EN exist",
+      "ok_rc": 0,
+      "pass": true,
+      "refuse_rc": 2,
+      "safe": "{\n  \"seven_Gate_U_val_outputs_complete\": true,\n  \"validation_seal_created\": true,\n  \"P3_test_access\": 0,\n  \"seal_sha256\": \"3a5bdb8b6b3879f1e388c7ffc12221e63a7e28b419f2f4e9bb3c08ca3063c3d4\"\n}"
+    },
+    "9": {
+      "name": "dummy test evaluator rejects B1/B3 and missing U seal",
+      "pass": true,
+      "stdout_ok": "one authorized B2-only test event completed"
+    }
+  }
+}

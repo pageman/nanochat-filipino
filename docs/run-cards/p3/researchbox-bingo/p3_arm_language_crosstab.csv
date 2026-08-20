@@ -1,0 +1,5 @@
+arm,role,tl_val_bpb_full,en_val_bpb_full,en_note,b2_en_test_bpb,b2_tl_test_bpb,C_tl_vs_B1,G_en_vs_B1,not_mitigation
+B0,frozen_TL0_d20_parent,,2.618891017473,descriptive_only_excluded_from_contrasts,,,,,
+B1,extra_Tagalog_control,1.468599552157,3.032277148749,,,,,,
+B2,English_continuation_intervention,2.492083896560,1.334321917903,,1.357842062236,2.493197263386,1.023484344402,-1.697955230846,
+B3,50_50_document_mix_tradeoff_not_mitigation,1.193564528486,1.348593126245,,,,-0.275035023671,-1.683684022504,true

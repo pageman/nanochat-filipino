@@ -1,0 +1,104 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "G",
+  "status": "pass",
+  "at_utc": "2026-08-20T00:55:37Z",
+  "host": "Mac/CPU",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_g_budget.py",
+  "tokenizer_pkl_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "t_tl_train": 6401013,
+  "d_3x_tl": 19203039,
+  "B": 65536,
+  "N_TL0": 294,
+  "d_actual_tl0": 19267584,
+  "N_phase2": 294,
+  "D_phase2": 19267584,
+  "train": {
+    "n_docs": 37602,
+    "n_tokens": 6401013,
+    "n_bytes": 29165137,
+    "n_chars": 29165137,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "depths": [
+    {
+      "depth": 8,
+      "p_scaling": 41943232,
+      "num_iterations_tl0": 294
+    },
+    {
+      "depth": 20,
+      "p_scaling": 435160240,
+      "num_iterations_tl0": 294
+    }
+  ],
+  "commands": {
+    "tl0": {
+      "depths": [
+        8,
+        20
+      ],
+      "num_iterations": 294,
+      "max_seq_len": 2048,
+      "window_pattern": "SSSL",
+      "device_batch_size": 8,
+      "total_batch_size": 65536,
+      "eval_every": -1,
+      "core_metric_every": -1,
+      "sample_every": -1,
+      "save_every": -1,
+      "warmup_steps": 14,
+      "model_tags": [
+        "p3-tl0-d8",
+        "p3-tl0-d20"
+      ]
+    },
+    "phase2": {
+      "num_iterations": 294,
+      "D_phase2": 19267584,
+      "warmup_steps": 14,
+      "load_optimizer": false,
+      "fresh_muon_adamw": true,
+      "lr_peak_rule": "0.3 * TL0 scheduled peak",
+      "opaque_labels": {
+        "job-amber": "B1",
+        "job-cobalt": "B2",
+        "job-cedar": "B3"
+      }
+    }
+  },
+  "cost_note": {
+    "p1_d8_sec_294": 226,
+    "p1_d20_sec_294": 1002,
+    "user_must_read_before_gate_h": true
+  },
+  "checks": [
+    {
+      "id": "G1_vocab_32768",
+      "ok": true
+    },
+    {
+      "id": "G2_n_tl0_ge_200",
+      "ok": true
+    },
+    {
+      "id": "G3_warmup_lt_n",
+      "ok": true
+    },
+    {
+      "id": "G4_d_phase2_locked",
+      "ok": true
+    },
+    {
+      "id": "G5_no_bpb",
+      "ok": true
+    }
+  ],
+  "computed_bpb": false,
+  "next_gate": "H"
+}

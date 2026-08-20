@@ -1,0 +1,15 @@
+artifact,path_or_label,sha2_256
+aspredicted_pdf,docs/run-cards/AsPredicted-307342.pdf,sha2-256:6cfad0386dff689ad73fa2bf80b70dd4ad191dc44e21e3e4c11c06825ae550b1
+protocol_md,docs/papers/p3-reverse/PROTOCOL-p3-tl-then-en.md,sha2-256:899ba83f0b36f2b4bf4c16b3c675e58788d7763cb439f8a8c3a3c061bda2b986
+nanochat_pin,vendor/nanochat @ 92d63d4,sha2-256:92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+tokenizer_pkl,Gate F tokenizer,sha2-256:04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8
+tl_train_jsonl,frozen P1.1 train,sha2-256:2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687
+tl_val_jsonl,frozen P1.1 val,sha2-256:4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c
+tl_test_jsonl,frozen P1.1 test hash only; text not in box,sha2-256:3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf
+en_val_manifest,WT103-raw val document manifest,sha2-256:874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b
+en_test_manifest,WT103-raw test document manifest hash only,sha2-256:2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e
+b0_ckpt,p3-tl0-d20 / B0,sha2-256:ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c
+b1_ckpt,p3-b1-extra-tl-d20,sha2-256:3f98784bf6e6bdf78785f370140a0db2dd170a848f93897d75c88b44740e2c54
+b2_ckpt,p3-b2-en-d20,sha2-256:5ee34b20f6601b1753ee6338b5447e091964ddd1087ca66c57434011e6341cc1
+b3_ckpt,p3-b3-mix-d20,sha2-256:521bea166f13a8eee57fef1ac381aa4f715037a3f3f60a85c74c05e02b55ae2d
+validation_seal,released/p3-validation-seal.json,sha2-256:37844c130793c4b23413710efc46d6189e07672971a5411b5a3ef4148a8f0c2a

@@ -1,0 +1,132 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "X-preflight",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "at_utc": "2026-08-20T08:54:36Z",
+  "ready_for_unblinding": true,
+  "checks": [
+    {
+      "check": "1_qrstuvw_all_pass",
+      "status": "PASS",
+      "detail": {
+        "statuses": {
+          "Q": "pass",
+          "R": "pass",
+          "S": "pass",
+          "T": "pass",
+          "U": "pass",
+          "V": "pass",
+          "W": "pass"
+        },
+        "missing": []
+      }
+    },
+    {
+      "check": "2_outcome_access_before_x_zero",
+      "status": "PASS",
+      "detail": {
+        "p3_outcome_access_count": {
+          "gate-c": 0,
+          "gate-e": 0
+        },
+        "LOCK.status": "gate_w_pass",
+        "LOCK.no_p3_outcomes": true,
+        "P3_UNBLINDING_EVENT_absent": true
+      }
+    },
+    {
+      "check": "3_test_counter_at_u_zero",
+      "status": "PASS",
+      "detail": {
+        "gate_u_receipt_test_access": 0,
+        "gate_u_safe_P3_test_access": 0
+      }
+    },
+    {
+      "check": "4_test_counter_after_v_one",
+      "status": "PASS",
+      "detail": {
+        "gate_v_safe_test_access_count": 1,
+        "test_access_log.authorized_touches": 1,
+        "LOCK.test_access_count": 1,
+        "gate_v_safe_event_flag": true
+      }
+    },
+    {
+      "check": "5_u_timestamp_before_v",
+      "status": "PASS",
+      "detail": {
+        "gate_u_at_utc": "2026-08-20T07:57:24Z",
+        "gate_v_at_utc": "2026-08-20T07:58:38Z",
+        "gate_v_ts_source": "test_access_log.events.at_utc(max)"
+      }
+    },
+    {
+      "check": "6_gate_v_b2_only",
+      "status": "PASS",
+      "detail": {
+        "model_tags": [
+          "p3-b2-en-d20",
+          "p3-b2-en-d20"
+        ],
+        "authorized_touches": 1,
+        "n_events": 2
+      }
+    },
+    {
+      "check": "7_b1_b3_test_records_absent",
+      "status": "PASS",
+      "detail": {
+        "p3-b1_present": false,
+        "p3-b3_present": false
+      }
+    },
+    {
+      "check": "8_gate_s_incident_disposition",
+      "status": "PASS",
+      "detail": {
+        "train_exit_code": 0,
+        "checkpoint_sha256_present": true,
+        "checkpoint_sha256_prefix": "5ee34b20f6601b17...",
+        "step": 294,
+        "nanochat_data_dir": "/workspace/nanochat-filipino/data/staging/en-clean",
+        "parent_b0_sha256_prefix": "ae621be2c90a3d29...",
+        "early_s_fail_in_q_to_w_log": true,
+        "resume_log_present": true,
+        "disposition": "partial attempt quarantined; official clean restart from B0",
+        "no_partial_ckpt_used_in_official_pass": true
+      }
+    },
+    {
+      "check": "9_hash_checks",
+      "status": "PASS",
+      "detail": {
+        "hash_source": "pod_ssh",
+        "seal_sha256_prefix": "37844c130793c4b2...",
+        "seal_matches_safe_progress": true,
+        "gate_v_lockbox_hash_present": true,
+        "gate_v_lockbox_sha256_prefix": "fae79315f6937e53...",
+        "gate_p0_t_eligibility_hash_present": true,
+        "gate_p0_t_eligibility_sha256_prefix": "88a4b1d3b8bcf36a...",
+        "closeout_manifest_gate_v": {
+          "role": "gate-v-test",
+          "match": true,
+          "sha256_prefix": "9100dedbd698b915..."
+        },
+        "local_lockbox_placeholder_detected": true,
+        "ssh_used": true
+      }
+    },
+    {
+      "check": "10_safe_log_review",
+      "status": "PASS",
+      "detail": {
+        "forbidden_pattern_hits": [],
+        "patterns": "val_bpb|C_tl|G_en|bpb=|test_bpb"
+      }
+    }
+  ],
+  "note": "Safe-only preflight. No scalar BPB values printed or released."
+}

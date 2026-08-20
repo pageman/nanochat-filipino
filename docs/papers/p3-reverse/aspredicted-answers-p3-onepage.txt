@@ -1,0 +1,24 @@
+P3 AsPredicted ONE-PAGE cut. Use these boxes if the form/PDF must stay one page.
+Q1 radio stays: It's complicated.
+ASCII only. Do not amend #306780 or #306935.
+
+2)
+This study was designed after P2 Gate U/V unblinding on 19 August 2026 (#306935). It is a post-P2 reverse-direction preregistration, not confirmation of P2, and does not amend #306780 or #306935. After a fresh Tagalog WikiText-TL-39 nanochat parent (TL0) passes P0-T, does English continuation raise Tagalog held-out BPB more than matched extra Tagalog? Prediction: C_tl = Tagalog val_bpb_full(B2) - Tagalog val_bpb_full(B1) >= 0.01. G_en = English val_bpb_full(B2) - English val_bpb_full(B1) <= -0.01. B3 (50/50 document mix, same budget) is a trade-off arm, not mitigation. P0-T: TL0 Tagalog val_bpb_full is >= 0.01 below untrained and below a Tagalog-train add-1 UTF-8 byte unigram, same P3 Tagalog 32768 BPE, at both d8 and d20; if either fails we do not call the parent Tagalog-pretrained. Not CORE/chat/SFT. Never load P1.1/P2 weights.
+
+3)
+Primary retention DV: Tagalog val_bpb_full on frozen P1.1 val documents. Primary acquisition DV: English val_bpb_full on WikiText-103 raw val. Same P3 Tagalog 32768 BPE. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), official evaluate_bpb, T=2048, BOS-bestfit, full val (not --eval-tokens). Contrast: C_tl and G_en as in Q2. Secondary: one English test_bpb and one Tagalog test_bpb after val seal, B2 only. Do not reuse P1.1 test_bpb=1.164768 or P2 test numbers.
+
+4)
+No human participants. Pin 92d63d4; tok_train -> base_train -> evaluate_bpb; T=2048; CORE off. TL0: frozen P1.1 Tagalog train documents, NEW P3 Tagalog 32768 BPE, depths 8 and 20, D_3x_tl = 3*T_tl_train. B0: freeze TL0 d20. B1: extra Tagalog, D_phase2. B2: WT103-raw train from B0, D_phase2. B3: 50/50 documents, D_phase2. D_phase2 = 294*65536 = 19267584 P3-Tagalog-BPE tokens. Fresh Adam, LR peak = 0.3*TL0 peak. Never load P1.1 or P2 .pt as start weights.
+
+5)
+Test P0-T at d8 and d20 before any English train token; if it fails, stop the reverse-CF claim. Primary test: C_tl and G_en at d20 from final val_bpb_full. Also report B3 vs B1. One seed: point estimates. Gaps < 0.01 BPB are not rankings. No CORE in the confirmatory comparison. B2 Tagalog trajectory is descriptive. Replay, FilBench, EWC, tokenizer swap, CORE/SFT are exploratory. Do not retune mix/D/cutoff/test from P2.
+
+6)
+Drop a unit only if null/empty after LF, or length > 200000 chars; if drops > 5%, stop. Official WT103 raw splits (re-download). Tagalog data is frozen P1.1 train (SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687). Exclude a run only for NaN/Inf, ClimbMix, val/test in train dir, new tokenizer after BPB, ratio -1, HF Trainer, writing into p1-fixed-d20-3x or p2-en-then-tl, loading P1.1/P2 weights as parent, P0-T-fail called Tagalog-pretrained, P1.1/P2 test_bpb reused as B2, attention patch, warmup >= iterations. d4 smoke is not confirmatory.
+
+7)
+Tagalog: frozen P1.1 reconstructed_article_70_15_15 train, no rebuild. English: Salesforce/wikitext, wikitext-103-raw-v1, official splits, no added docs. TL0: one seed, d8 and d20, N_TL0 = ceil(3*T_tl_train/65536), B=65536, T=2048. B1/B2/B3: one seed at d20, N=294. One English test and one Tagalog test after val seal, B2 only, P3 ledger only.
+
+8)
+Q1 is "It's complicated": public corpora and P1.1/P2 outcomes exist (#306780, #306935; P2 unblinded 19 August 2026), but no P3 tokenizer/TL0/children/val_bpb_full/test_bpb has been computed. This PDF locks those unobserved P3 quantities. New study; does not amend #306780 or #306935; does not reuse prior confirmatory BPB as P3 observations. Lock P3 BPB until unblinding after val seal + B2-only test. Exploratory: replay, FilBench, EWC, tokenizer swap, CORE, SFT, Spark/MPS. Protocol SHA256 9c3c3663745a2ea3de71225f72d8157c5dff381e32606572d416128431fa9698. Pin 92d63d4. Test files stay outside train dirs.

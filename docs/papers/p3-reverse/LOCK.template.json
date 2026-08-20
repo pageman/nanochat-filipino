@@ -1,0 +1,16 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "status": "template_not_filed",
+  "designed_after_p2_gate_u": true,
+  "p2_gate_u_date": "2026-08-19",
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "observation_independent_of_306780": false,
+  "observation_independent_of_306935": false,
+  "aspredicted_related_studies_checkboxes": "overlapping_306780_and_306935",
+  "aspredicted_id": null,
+  "researchbox_id": null,
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "protocol_path": "docs/papers/p3-reverse/PROTOCOL-p3-tl-then-en.md",
+  "note": "Populate hashes at Gate 0 after the filed PDF exists. Do not start Gate A while aspredicted_id is null."
+}

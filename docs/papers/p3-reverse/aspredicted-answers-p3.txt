@@ -1,0 +1,88 @@
+P3 AsPredicted PASTE PACK — 2-PAGE CUT (file this; 3-page draft is invalid)
+AsPredicted rejects 3 pages. Two pages is allowed. ASCII only.
+Q1: It's complicated. Related studies: Overlapping for #306780 and #306935 (not Independent, not Draft).
+Title: P3: TL retention after EN continuation (nanochat, TL-39 then WikiText-103)
+Type: Observational/archival. Data source: Other.
+
+Protocol SHA256 899ba83f0b36f2b4bf4c16b3c675e58788d7763cb439f8a8c3a3c061bda2b986
+Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+
+================================================================
+2) Hypothesis
+================================================================
+This study was designed after P2 Gate U/V unblinding on 19 August 2026 (#306935). It is a post-P2 reverse-direction preregistration, not confirmation of P2, and does not amend #306780 or #306935.
+
+After a newly trained P3-specific Tagalog nanochat parent (TL0; fresh weights; frozen P1.1 WikiText-TL-39 train documents; new P3 Tagalog tokenizer) passes P0-T, does English continuation on WikiText-103 raise Tagalog held-out BPB more than matched extra Tagalog?
+
+C_tl = TL val_bpb_full(B2) - TL val_bpb_full(B1). Predict C_tl >= 0.01 at d20.
+G_en = EN val_bpb_full(B2) - EN val_bpb_full(B1). Predict G_en <= -0.01.
+
+B3 is a 50/50-document mix, not mitigation. Report C_tl(B3)=TL(B3)-TL(B1) and G_en(B3)=EN(B3)-EN(B1) plus realized document/byte/token shares.
+
+P0-T, before any English train token, at BOTH d8 and d20: TL0 Tagalog val_bpb_full is >= 0.01 below untrained same-depth and below a train-fitted add-1 UTF-8 byte unigram on the same val. If either depth fails either floor, do not train B1/B2/B3; report blocked parent-eligibility.
+
+Do not load P1.1 or P2 weights. Same P3 Tagalog 32768 BPE on every arm. Not CORE/chat/SFT.
+
+================================================================
+3) Dependent variable
+================================================================
+Primary DVs: Tagalog val_bpb_full on frozen P1.1 reconstructed_article_70_15_15 val SHA256 4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c; English val_bpb_full on official WT103-raw val document manifest SHA256 874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b (not the raw HF archive hash). Same P3 Tagalog 32768 BPE. BPB = mean token NLL / (ln(2) * mean UTF-8 bytes per token), official evaluate_bpb, T=2048, BOS-bestfit, full val. meta.val_bpb is not a DV.
+
+Six child cells: B1/B2/B3 x {TL, EN}. C_tl and G_en as in Q2. During Gate U, evaluate B0 English val_bpb_full once with the same locked evaluator; record it descriptively; exclude it from C_tl, G_en, and B3 contrasts. P0-T covers B0 Tagalog.
+
+After val seal, B2 d20 only, two LEGACY EXTERNAL HOLDOUTS (not virgin P3 tests): EN WT103-raw test document manifest SHA256 2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e (used in P2 Gate V); TL P1.1 test.jsonl SHA256 3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf (used in P1.1 and P2). Unused for P3 tok/train/val. Not test-set C_tl/G_en. Do not reuse 1.164768 or P2 test numbers.
+
+================================================================
+4) Conditions
+================================================================
+No human participants. Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd; tok_train -> base_train -> evaluate_bpb; T=2048; CORE off.
+
+TL0: fresh weights; P1.1 Tagalog train SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687; NEW P3 Tagalog 32768 BPE; d8 and d20; N_TL0 = ceil(3*T_tl_train/65536). B0 = freeze TL0 d20. Never load P1.1/P2 .pt.
+
+B1 extra Tagalog. B2 official WT103-raw train. B3 50/50 documents frozen before any TL0 val (seed 42, sha256-sort, K=min, interleave). D_phase2 = 294*65536 = 19267584. Fresh pinned Muon+AdamW (load_optimizer=False; no inherited optimizer/scheduler/scaler/resume). LR peak = 0.3*TL0 peak. Warmup < N (default 14 if 14<N).
+
+================================================================
+5) Analyses
+================================================================
+P0-T at d8 and d20 before any English train token. Operators see PASS/BLOCKED only. If either depth fails either floor, do not train B1/B2/B3.
+
+Primary: C_tl and G_en on the six child cells. Gate U B0 English val is descriptive only. B3 formulas as in Q2; not mitigation.
+
+One seed: point estimates; no CI or significance test. |delta| < 0.01 is not a ranking. Do not retune mix/D/cutoff/test from P2. 294-step budget, 0.01 cutoff, and 50/50 B3 are mechanical carry-forward, not tuned to P2 magnitudes. Replay, FilBench, EWC, CORE, SFT are exploratory.
+
+================================================================
+6) Outliers and Exclusions
+================================================================
+Drop a document only if null/empty after LF or length > 200000 chars; if drops > 5%, stop. Official WT103-raw splits. Frozen P1.1 reconstructed_article_70_15_15: train SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687; val SHA256 4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c; test SHA256 3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf. No split substitution.
+
+Exclude NaN/Inf; ClimbMix; val/test in train; new tokenizer after BPB; ratio -1; HF Trainer; writing into p1-fixed-d20-3x or p2-en-then-tl; P1.1/P2 weights as parent; attention patch; test/weight-path leak without a dated deviation card. Do not drop an arm because a contrast looks bad. d4 smoke is not confirmatory.
+
+================================================================
+7) Sample Size
+================================================================
+Tagalog: frozen P1.1 reconstructed_article_70_15_15 train, no rebuild. English: Salesforce/wikitext, wikitext-103-raw-v1, official splits, re-download.
+
+TL0: one seed, d8 and d20, N_TL0 = ceil(3*T_tl_train/65536), B=65536, T=2048.
+B1/B2/B3: one seed each at d20, N=294, D_phase2=19267584.
+After val seal: test_access_count=0 until one B2-only touch (two component reads) on the Q3 legacy holdouts. B1 and B3 are not tested.
+
+================================================================
+8) Other
+================================================================
+Q1 is "It's complicated": public corpora and P1.1/P2 outcomes exist; no P3 tokenizer, TL0, B0-B3, val_bpb_full, or test_bpb has been computed.
+
+P3 is a separate preregistration and does not amend #306780 or #306935. It has overlapping source observations with them through named frozen P1.1 Tagalog artifacts and named legacy holdouts, but it has fresh P3 weights, a new P3 tokenizer, new P3 training trajectories, and no previously observed P3 outcomes.
+
+Lockbox: P3 scalars release after val seal plus the B2-only test event, except the blocked-P0-T path. One-person lab: encrypted lockbox with dated access audit.
+
+Protocol SHA256 899ba83f0b36f2b4bf4c16b3c675e58788d7763cb439f8a8c3a3c061bda2b986. Pin 92d63d4. Test files stay outside train dirs.
+
+================================================================
+9) Name (74 chars)
+================================================================
+P3: TL retention after EN continuation (nanochat, TL-39 then WikiText-103)
+
+================================================================
+11) Data source Other text
+================================================================
+Frozen P1.1 WikiText-TL-39 train documents (Cruz and Cheng 2019; reconstructed_article_70_15_15) for a newly trained P3-specific Tagalog parent initialized from fresh weights, and for extra-Tagalog continuation. WikiText-103 raw (Merity et al. 2016; Salesforce/wikitext, wikitext-103-raw-v1) for English continuation. P1.1 and P2 weights are references only, never the P3 parent.

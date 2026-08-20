@@ -1,0 +1,67 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "researchbox_url": "https://researchbox.org/8834",
+  "gate": "A",
+  "status": "pass",
+  "at_utc": "2026-08-20T00:54:21Z",
+  "host": "Mac/CPU",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_a_source_pin.py",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "allowed_diff_sha256": "d06f5f966ae4979d2103c19e63ad80cf311903b1e385577a36787e9b1a70eb6f",
+  "patch_sha256": "faaded83ef79e6d5b2e6856a444cf17e20ddb534ddd29d6b600f9568304ec4ff",
+  "sentinel": "data/cache/p3-20260819T192700Z-92d63d4/SENTINEL_P3_ONLY",
+  "checks": [
+    {
+      "id": "A1_pin_checkout",
+      "ok": true,
+      "detail": {
+        "head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "expected": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      }
+    },
+    {
+      "id": "A2_allowed_diff_only_data_hook",
+      "ok": true,
+      "detail": {
+        "patch_sha256": "faaded83ef79e6d5b2e6856a444cf17e20ddb534ddd29d6b600f9568304ec4ff",
+        "diff_chars": 825
+      }
+    },
+    {
+      "id": "A3_sentinel",
+      "ok": true,
+      "detail": "data/cache/p3-20260819T192700Z-92d63d4/SENTINEL_P3_ONLY"
+    },
+    {
+      "id": "A4_no_p1_p2_cache_in_p3_env",
+      "ok": true,
+      "detail": {
+        "p3_env_has_run_id": true
+      }
+    },
+    {
+      "id": "A5_p3_env_not_p1_copy",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "A6_no_p3_checkpoints_yet",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "A7_researchbox_recorded",
+      "ok": true,
+      "detail": {
+        "id": 8834,
+        "url": "https://researchbox.org/8834"
+      }
+    }
+  ],
+  "no_p3_outcomes": true,
+  "next_gate": "B"
+}

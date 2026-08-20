@@ -1,0 +1,92 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "gate": "H-preflight",
+  "status": "ready_for_smoke",
+  "at_utc": "2026-08-20T01:21:50Z",
+  "host": "8bed3c4b64cc",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "hashes": {
+    "tokenizer.pkl": {
+      "ok": true,
+      "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "expected": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+    },
+    "token_bytes.pt": {
+      "ok": true,
+      "got": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "expected": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+    },
+    "shard_00000.parquet": {
+      "ok": true,
+      "got": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9",
+      "expected": "aaf81d95e577742dcd33a44be2f144c253a5d5650e34b3e622e8b262ff2b6dc9"
+    },
+    "shard_00001.parquet": {
+      "ok": true,
+      "got": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976",
+      "expected": "c57c11a2625c38f7f12d1e4018e71bf1f38a56d68fcc9b4952e1b8bded854976"
+    },
+    "shard_00002.parquet": {
+      "ok": true,
+      "got": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+      "expected": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+    }
+  },
+  "checks": [
+    {
+      "id": "H0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "H0_flash_attention_unpatched",
+      "ok": true,
+      "detail": "empty"
+    },
+    {
+      "id": "H0_hashes",
+      "ok": true
+    },
+    {
+      "id": "H0_last_shard_val",
+      "ok": true,
+      "detail": [
+        "shard_00000.parquet",
+        "shard_00001.parquet",
+        "shard_00002.parquet"
+      ]
+    },
+    {
+      "id": "H0_no_test_in_tl_dir",
+      "ok": true
+    },
+    {
+      "id": "H0_cuda",
+      "ok": true,
+      "detail": {
+        "gpu": "NVIDIA A40",
+        "sm": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "id": "H0_nvidia_smi",
+      "ok": true,
+      "detail": "Thu Aug 20 01:21:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:4F:00.0 Off |                    0 |\n|  0%   32C    P8             32W /  300W |       3MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+"
+    },
+    {
+      "id": "H0_warmup_legal",
+      "ok": true,
+      "detail": "3 < 30"
+    },
+    {
+      "id": "H0_tl0_not_started",
+      "ok": true
+    }
+  ],
+  "note": "Exit 0 authorizes scripts/p3/gate_h_smoke.sh only. Not Gate H pass. TL0 has not started."
+}

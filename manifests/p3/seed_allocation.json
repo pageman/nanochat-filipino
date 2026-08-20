@@ -1,0 +1,19 @@
+{
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "aspredicted_id": 307342,
+  "seed": 42,
+  "b3_mix": {
+    "rule": "50_50_document",
+    "seed": 42,
+    "sort": "sha256",
+    "K": "min(n_en, n_tl)",
+    "interleave": "EN/TL",
+    "frozen_at": "Gate E before any TL0 val"
+  },
+  "opaque_job_labels": {
+    "job-amber": "B1",
+    "job-cobalt": "B2",
+    "job-cedar": "B3"
+  },
+  "note": "Mapping is lockbox-only during execution. Safe progress may show job-amber/cobalt/cedar only."
+}

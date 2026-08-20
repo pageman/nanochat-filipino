@@ -1,0 +1,62 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "gate": "F",
+  "status": "pass",
+  "at_utc": "2026-08-20T00:55:34Z",
+  "host": "Mac/CPU",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_f_tokenizer.py",
+  "command": [
+    "/Users/paulpajo/Projects/nanochat-filipino/vendor/nanochat/.venv/bin/python",
+    "-m",
+    "scripts.tok_train",
+    "--max-chars",
+    "2000000000",
+    "--doc-cap",
+    "10000",
+    "--vocab-size",
+    "32768"
+  ],
+  "elapsed_s": 0.0,
+  "tok_train_skipped_existing": true,
+  "tok_train_log": "docs/run-cards/p3/p3-20260819T192700Z-92d63d4/gate-f-tok_train.log",
+  "nanochat_data_dir": "data/processed/p3-tl39-active",
+  "tokenizer_dir": "data/cache/p3-20260819T192700Z-92d63d4/tokenizer",
+  "hashes": {
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  },
+  "fertility_lockbox_path": "data/cache/p3-20260819T192700Z-92d63d4/lockbox/gate-f-fertility.json",
+  "checks": [
+    {
+      "id": "F1_vocab_32768",
+      "ok": true
+    },
+    {
+      "id": "F2_train_only_tl_shards",
+      "ok": true
+    },
+    {
+      "id": "F3_fresh_tok_train_not_copied_p1_p2",
+      "ok": true,
+      "detail": {
+        "p3_pkl_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "p11_pkl_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "p2_pkl_sha256": "946a04ef05e73be625f24ea5e88bfa4531546ae7d7238fbe1b0fd68df016ace6",
+        "note": "Identical SHA to P1.1 is allowed if BPE retrains to the same fixed point; forbidden act is copying P1/P2 artifact bytes without tok_train."
+      }
+    },
+    {
+      "id": "F4_fertility_in_lockbox",
+      "ok": true
+    },
+    {
+      "id": "F5_no_bpb",
+      "ok": true
+    }
+  ],
+  "no_p3_bpb": true,
+  "next_gate": "G"
+}

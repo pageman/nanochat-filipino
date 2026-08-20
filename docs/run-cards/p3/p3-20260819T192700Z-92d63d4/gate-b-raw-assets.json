@@ -1,0 +1,232 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "researchbox_id": 8834,
+  "researchbox_url": "https://researchbox.org/8834",
+  "gate": "B",
+  "status": "pass",
+  "at_utc": "2026-08-20T00:54:37Z",
+  "host": "Mac/CPU",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "script": "scripts/p3/gate_b_raw_assets.py",
+  "f01_tagalog": {
+    "train.jsonl": {
+      "path": "data/interim/wikitext-tl39/splits/train.jsonl",
+      "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "ok": true
+    },
+    "val.jsonl": {
+      "path": "data/interim/wikitext-tl39/splits/val.jsonl",
+      "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "ok": true
+    },
+    "test.jsonl": {
+      "path": "data/processed/wikitext-tl39/test/test.jsonl",
+      "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "expected": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "ok": true
+    }
+  },
+  "f02_english_manifests": {
+    "english_train.jsonl": {
+      "path": "data/interim/wikitext-103/english_train.jsonl",
+      "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "expected": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "ok": true
+    },
+    "english_val.jsonl": {
+      "path": "data/interim/wikitext-103/english_val.jsonl",
+      "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "expected": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "ok": true
+    },
+    "english_test.jsonl": {
+      "path": "data/interim/wikitext-103/english_test.jsonl",
+      "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "expected": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "ok": true
+    }
+  },
+  "f02_english_raw": [
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/test-00000-of-00001.parquet",
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "expected": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "ok": true,
+      "bytes": 732610,
+      "num_rows": 4358,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00000-of-00002.parquet",
+      "sha256": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+      "expected": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+      "ok": true,
+      "bytes": 156987808,
+      "num_rows": 900675,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00001-of-00002.parquet",
+      "sha256": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+      "expected": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+      "ok": true,
+      "bytes": 157088770,
+      "num_rows": 900675,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    },
+    {
+      "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/validation-00000-of-00001.parquet",
+      "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "expected": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "ok": true,
+      "bytes": 657209,
+      "num_rows": 3760,
+      "columns": [
+        "text"
+      ],
+      "mode": "0o444"
+    }
+  ],
+  "hf_dataset": "Salesforce/wikitext",
+  "hf_config": "wikitext-103-raw-v1",
+  "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "rehash_note": "Existing on-disk archives verified; Gate B identity is SHA256 match to filed manifests.",
+  "checks": [
+    {
+      "id": "B1_tl_split_hashes",
+      "ok": true,
+      "detail": {
+        "train.jsonl": {
+          "path": "data/interim/wikitext-tl39/splits/train.jsonl",
+          "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+          "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+          "ok": true
+        },
+        "val.jsonl": {
+          "path": "data/interim/wikitext-tl39/splits/val.jsonl",
+          "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+          "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+          "ok": true
+        },
+        "test.jsonl": {
+          "path": "data/processed/wikitext-tl39/test/test.jsonl",
+          "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+          "expected": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "B2_en_document_manifest_hashes",
+      "ok": true,
+      "detail": {
+        "english_train.jsonl": {
+          "path": "data/interim/wikitext-103/english_train.jsonl",
+          "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+          "expected": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+          "ok": true
+        },
+        "english_val.jsonl": {
+          "path": "data/interim/wikitext-103/english_val.jsonl",
+          "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+          "expected": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+          "ok": true
+        },
+        "english_test.jsonl": {
+          "path": "data/interim/wikitext-103/english_test.jsonl",
+          "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+          "expected": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "B3_en_raw_parquet_hashes",
+      "ok": true,
+      "detail": [
+        {
+          "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/test-00000-of-00001.parquet",
+          "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+          "expected": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+          "ok": true,
+          "bytes": 732610,
+          "num_rows": 4358,
+          "columns": [
+            "text"
+          ],
+          "mode": "0o444"
+        },
+        {
+          "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00000-of-00002.parquet",
+          "sha256": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+          "expected": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212",
+          "ok": true,
+          "bytes": 156987808,
+          "num_rows": 900675,
+          "columns": [
+            "text"
+          ],
+          "mode": "0o444"
+        },
+        {
+          "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/train-00001-of-00002.parquet",
+          "sha256": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+          "expected": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720",
+          "ok": true,
+          "bytes": 157088770,
+          "num_rows": 900675,
+          "columns": [
+            "text"
+          ],
+          "mode": "0o444"
+        },
+        {
+          "path": "data/raw/wikitext-103-raw/wikitext-103-raw-v1/validation-00000-of-00001.parquet",
+          "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+          "expected": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+          "ok": true,
+          "bytes": 657209,
+          "num_rows": 3760,
+          "columns": [
+            "text"
+          ],
+          "mode": "0o444"
+        }
+      ]
+    },
+    {
+      "id": "B4_p11_split_reuse_not_rebuilt",
+      "ok": true,
+      "detail": {
+        "split_origin": "p11_reuse"
+      }
+    },
+    {
+      "id": "B5_en_test_not_used_as_train",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "B6_no_train_or_eval_started",
+      "ok": true,
+      "detail": {
+        "p3_tok_train": false,
+        "p3_base_train": false
+      }
+    }
+  ],
+  "no_train_or_eval_started": true,
+  "next_gate": "C"
+}

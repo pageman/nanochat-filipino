@@ -1,0 +1,91 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P3-TL-EN",
+  "aspredicted_id": 307342,
+  "gate": "P0-T-preflight",
+  "status": "ready_for_p0t",
+  "at_utc": "2026-08-20T03:38:17Z",
+  "host": "8bed3c4b64cc",
+  "p3_run_id": "p3-20260819T192700Z-92d63d4",
+  "checks": [
+    {
+      "id": "P0T0_gate_i_pass",
+      "ok": true,
+      "detail": {
+        "status": "pass",
+        "depths": [
+          "d8",
+          "d20"
+        ]
+      }
+    },
+    {
+      "id": "P0T0_tl0_ckpts",
+      "ok": true,
+      "detail": {
+        "8": {
+          "tag": "p3-tl0-d8",
+          "path": "data/cache/p3-20260819T192700Z-92d63d4/base_checkpoints/p3-tl0-d8/model_000294.pt",
+          "expected_sha256": "feaf7017cd55fab48a8acf9087b9f444b015167c7725c0d695278c20dbf462e2",
+          "got_sha256": "feaf7017cd55fab48a8acf9087b9f444b015167c7725c0d695278c20dbf462e2",
+          "ok": true
+        },
+        "20": {
+          "tag": "p3-tl0-d20",
+          "path": "data/cache/p3-20260819T192700Z-92d63d4/base_checkpoints/p3-tl0-d20/model_000294.pt",
+          "expected_sha256": "ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c",
+          "got_sha256": "ae621be2c90a3d295f8d21b0e53cb9d4b717803f5d5337fa68f3c3f84d57193c",
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "P0T0_hashes",
+      "ok": true,
+      "detail": {
+        "tokenizer.pkl": {
+          "ok": true,
+          "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+          "expected": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+        },
+        "shard_00002.parquet": {
+          "ok": true,
+          "got": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+          "expected": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+        },
+        "tl_train_jsonl": {
+          "ok": true,
+          "got": null,
+          "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+          "fallback": "parquet_shards"
+        },
+        "tl_val_jsonl": {
+          "ok": true,
+          "got": null,
+          "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+          "fallback": "parquet_shards"
+        }
+      }
+    },
+    {
+      "id": "P0T0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "P0T0_cuda",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    },
+    {
+      "id": "P0T0_no_prior_eligibility",
+      "ok": true,
+      "detail": "absent_or_dummy_only"
+    },
+    {
+      "id": "P0T0_test_access",
+      "ok": true,
+      "detail": "test_read_count=0 by protocol"
+    }
+  ],
+  "note": "Exit 0 authorizes gate_p0t.sh. Scalar BPB stays lockboxed."
+}
