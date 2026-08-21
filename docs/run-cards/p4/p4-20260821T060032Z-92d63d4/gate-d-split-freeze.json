@@ -1,0 +1,126 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "D",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:22:48Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_d_split_freeze.py",
+  "tagalog": {
+    "train": {
+      "path": "data/interim/wikitext-tl39/splits/train.jsonl",
+      "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "n_rows": 37602,
+      "utf8_bytes": 29165137,
+      "n_doc_ids": 37602,
+      "n_unique_doc_ids": 37602,
+      "n_unique_text_sha256": 37602
+    },
+    "val": {
+      "path": "data/interim/wikitext-tl39/splits/val.jsonl",
+      "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "n_rows": 8058,
+      "utf8_bytes": 6771275,
+      "n_doc_ids": 8058,
+      "n_unique_doc_ids": 8058,
+      "n_unique_text_sha256": 8058
+    },
+    "test": {
+      "path": "data/processed/wikitext-tl39/test/test.jsonl",
+      "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "n_rows": 8058,
+      "utf8_bytes": 6249461,
+      "n_doc_ids": 8058,
+      "n_unique_doc_ids": 8058,
+      "n_unique_text_sha256": 8058
+    }
+  },
+  "english": {
+    "train": {
+      "path": "data/interim/wikitext-103/english_train.jsonl",
+      "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "n_rows": 28472,
+      "utf8_bytes": 539903397,
+      "n_doc_ids": 28472,
+      "n_unique_doc_ids": 28232,
+      "n_unique_text_sha256": 28232
+    },
+    "val": {
+      "path": "data/interim/wikitext-103/english_val.jsonl",
+      "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "n_rows": 60,
+      "utf8_bytes": 1145486,
+      "n_doc_ids": 60,
+      "n_unique_doc_ids": 60,
+      "n_unique_text_sha256": 60
+    },
+    "test": {
+      "path": "data/interim/wikitext-103/english_test.jsonl",
+      "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "n_rows": 60,
+      "utf8_bytes": 1289062,
+      "n_doc_ids": 60,
+      "n_unique_doc_ids": 60,
+      "n_unique_text_sha256": 60
+    }
+  },
+  "checks": [
+    {
+      "id": "D1_tl_hashes_match_pdf",
+      "ok": true,
+      "detail": {
+        "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+        "val": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+        "test": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+      }
+    },
+    {
+      "id": "D2_en_hashes_match_pdf",
+      "ok": true,
+      "detail": {
+        "train": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+        "val": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+        "test": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e"
+      }
+    },
+    {
+      "id": "D3_split_origin_p11_reuse",
+      "ok": true,
+      "detail": {
+        "tagalog": "p11_reuse",
+        "english": "wikitext103_official_raw_splits",
+        "legacy_external_holdout": true
+      }
+    },
+    {
+      "id": "D4_overlap_zero",
+      "ok": true,
+      "detail": {
+        "tl_overlap": 0,
+        "en_overlap": 0
+      }
+    },
+    {
+      "id": "D5_no_test_in_train_paths",
+      "ok": true,
+      "detail": {
+        "note": "test jsonl stay in processed/holdout paths, not NANOCHAT_DATA_DIR"
+      }
+    },
+    {
+      "id": "D6_frozen_files_not_deduped",
+      "ok": true,
+      "detail": {
+        "note": "Official EN train jsonl has intra-split duplicate rows (frozen identity). MUST NOT drop them. Cross-split overlap is D4.",
+        "en_train_rows": 28472,
+        "en_train_unique_text_sha256": 28232
+      }
+    }
+  ],
+  "no_bpb": true,
+  "next_gate": "F"
+}

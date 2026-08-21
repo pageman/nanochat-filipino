@@ -1,0 +1,60 @@
+{
+  "protocol_sha256": "22c28f2bc632f132d9c95bbbcc9d1facbddf0b6b821445487e451c472ea58d4b",
+  "code_commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "token_bytes_sha256": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+  "mix_construction_version": "p4-mix-v0",
+  "q_tl_target": 0.5,
+  "q_en_target": 0.5,
+  "d_phase2_target": 19267584,
+  "target_tl_tokens": 9633792,
+  "target_en_tokens": 9633792,
+  "achieved_tl_tokens": 9633792,
+  "achieved_en_tokens": 9633792,
+  "rounding_rule": "round_half_to_even_tl_then_en_residual",
+  "token_accounting_function_sha256": "2325d01a7ef17d79bf67b36a94fe5f4540a07ea2ce5ad83f58065aa04bf24575",
+  "english_source_split_hashes": {
+    "train": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a"
+  },
+  "tagalog_source_split_hashes": {
+    "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687"
+  },
+  "english_document_order_seed": 42,
+  "tagalog_document_order_seed": 42,
+  "interleave_seed": null,
+  "interleave_algorithm": "alternate_en_tl_blocks_of_K_blk_en_first",
+  "block_schedule_digest": "9a2c828d79ebd8c4c3a3463eb69c27345c55796d29002929583abe31f13878f2",
+  "document_revisit_policy": "cyclic_per_language",
+  "document_truncation_policy": "token_boundary_last_doc_to_hit_quota",
+  "english_document_count": 1788,
+  "tagalog_document_count": 37602,
+  "english_utf8_bytes": 33650313,
+  "tagalog_utf8_bytes": 43865042,
+  "english_model_tokens": 9633792,
+  "tagalog_model_tokens": 9633792,
+  "english_share_by_tokens": 0.5,
+  "tagalog_share_by_tokens": 0.5,
+  "english_share_by_bytes": 0.43411157699013314,
+  "tagalog_share_by_bytes": 0.5658884230098669,
+  "packed_shard_paths": [
+    "data/cache/p4-20260821T060032Z-92d63d4/streams/c3_mix/train_00000.parquet",
+    "data/cache/p4-20260821T060032Z-92d63d4/streams/c3_mix/train_00001.parquet",
+    "data/cache/p4-20260821T060032Z-92d63d4/streams/c3_mix/train_00002.parquet",
+    "data/cache/p4-20260821T060032Z-92d63d4/streams/c3_mix/train_00003.parquet",
+    "data/cache/p4-20260821T060032Z-92d63d4/streams/c3_mix/val.parquet"
+  ],
+  "packed_shard_sha256": [
+    "249e2c5e9d06bf17fe14e03c02e622c9e68d90ba337e1e6e33c237fc723252f5",
+    "d24fe7f933abeb38b277b099385518718d2d57e330e5f9b5fd8b1a534e43444e",
+    "a56a729a0e3c7fd2d1e2e99236a4225bf9a86e55d6d97153063de9d6455fa523",
+    "4adbf8f9afcc9870f46f6298ac22f3691ec073d2f452f73aa65322e3ff6331de",
+    "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f"
+  ],
+  "full_stream_sha256": "2c03810b55bf405a4f97f8b9f672bac250665dec3362809e8ddbb7ed5b54c951",
+  "language_origin_mask_sha256": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46",
+  "no_wrap_before_NxB": true,
+  "created_utc": "2026-08-21T06:23:25Z",
+  "created_by": "scripts/p4/gate_e_c3_mix.py",
+  "c3_is_not_p3_b3": true,
+  "p3_b3_mix_order_sha_refused": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0"
+}

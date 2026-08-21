@@ -1,0 +1,24 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "gate": "H",
+  "authorized": true,
+  "authorizes_gate_i": false,
+  "authorizes_parent": false,
+  "authorizes_children": false,
+  "scope": "d4 Tagalog-path CUDA smoke only; tag p4-smoke-tl-d4; 30 steps; warmup 3; eval/sample/core-metric off",
+  "must_not": [
+    "p4-tl0-*",
+    "p4-c0-*",
+    "p4-c1-*",
+    "p4-c2-*",
+    "p4-c3-*",
+    "print BPB",
+    "Mac MPS"
+  ],
+  "host_class": "NVIDIA CUDA A40",
+  "authorized_at_utc": "2026-08-21T06:36:00Z",
+  "authorized_by": "operator chat: start Gate H",
+  "note": "Does not authorize Gate I."
+}

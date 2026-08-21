@@ -1,0 +1,157 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "I-preflight",
+  "status": "ready_for_tl0",
+  "at_utc": "2026-08-21T08:35:21Z",
+  "host": "6005ea03e2b9",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "N_TL0": 294,
+  "warmup_steps": 14,
+  "hashes": {
+    "tokenizer.pkl": {
+      "ok": true,
+      "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+    },
+    "token_bytes.pt": {
+      "ok": true,
+      "got": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+    },
+    "train_00000.parquet": {
+      "ok": true,
+      "got": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de"
+    },
+    "train_00001.parquet": {
+      "ok": true,
+      "got": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6"
+    },
+    "train_00002.parquet": {
+      "ok": true,
+      "got": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271"
+    },
+    "train_00003.parquet": {
+      "ok": true,
+      "got": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234"
+    },
+    "val.parquet": {
+      "ok": true,
+      "got": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02"
+    }
+  },
+  "checks": [
+    {
+      "id": "I0_not_darwin",
+      "ok": true,
+      "detail": "Linux"
+    },
+    {
+      "id": "I0_authorization",
+      "ok": true,
+      "detail": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-i-authorization.json"
+    },
+    {
+      "id": "I0_gate_h_pass",
+      "ok": true,
+      "detail": "gate-h-cuda-smoke.json"
+    },
+    {
+      "id": "I0_hashes",
+      "ok": true,
+      "detail": {
+        "tokenizer.pkl": true,
+        "token_bytes.pt": true,
+        "train_00000.parquet": true,
+        "train_00001.parquet": true,
+        "train_00002.parquet": true,
+        "train_00003.parquet": true,
+        "val.parquet": true
+      }
+    },
+    {
+      "id": "I0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "I0_flash_attention_unpatched",
+      "ok": true,
+      "detail": "empty"
+    },
+    {
+      "id": "I0_last_shard_val",
+      "ok": true,
+      "detail": [
+        "train_00000.parquet",
+        "train_00001.parquet",
+        "train_00002.parquet",
+        "train_00003.parquet",
+        "val.parquet"
+      ]
+    },
+    {
+      "id": "I0_no_test_in_c1",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_data_dir_not_c3",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_tl0_dirs_empty",
+      "ok": true,
+      "detail": {
+        "p4-tl0-d8": [],
+        "p4-tl0-d20": []
+      }
+    },
+    {
+      "id": "I0_no_forbidden_parent_ckpts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_forbidden_reject_live",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_n_tl0_locked",
+      "ok": true,
+      "detail": 294
+    },
+    {
+      "id": "I0_warmup_legal",
+      "ok": true,
+      "detail": "warmup=14 N_TL0=294"
+    },
+    {
+      "id": "I0_cuda",
+      "ok": true,
+      "detail": {
+        "gpu": "NVIDIA A40",
+        "sm": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "id": "I0_gpu_class_a40",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    },
+    {
+      "id": "I0_nvidia_smi",
+      "ok": true,
+      "detail": "Fri Aug 21 08:35:21 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:98:00.0 Off |                    0 |\n|  0%   32C    P8             31W /  300W |       3MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+"
+    }
+  ],
+  "nanochat_data_dir": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl",
+  "blinded": true,
+  "no_p4_outcomes": true,
+  "note": "Exit 0 authorizes scripts/p4/gate_i_tl0.sh only. Metrics stay in lockbox. Not C0 freeze."
+}

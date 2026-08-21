@@ -1,0 +1,18 @@
+Variable,Variable Name,Description
+var1,code_id,Stable row identifier for each file in the P4 Code inventory.
+var2,relative_path,Repository-relative path under scripts/p4/.
+var3,filename,Basename only.
+var4,extension,File extension including the leading dot.
+var5,bytes,On-disk byte length at inventory time.
+var6,sha2_256,SHA-256 of file bytes with sha2-256: prefix. Not a participant ID.
+var7,language,python or bash.
+var8,role_family,Functional family tag.
+var9,gates_crosswalk,Which P4 gate(s) the file serves.
+var10,purpose,"Operational description, not a numerical result."
+var11,header_or_docstring,Leading comment/docstring if present.
+var12,bingo_column,Always Code for this inventory.
+var13,researchbox_id,8869
+var14,aspredicted_id,307591
+var15,p4_run_id,p4-20260821T060032Z-92d63d4
+var16,zip_member_path,Path inside Code.zip.
+var17,upload_note,"This inventory is code provenance, not test.jsonl or weights."

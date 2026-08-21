@@ -1,0 +1,97 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "C",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:21:54Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_c_hygiene.py",
+  "checks": [
+    {
+      "id": "C-01_cache_sentinel",
+      "ok": true,
+      "detail": {
+        "n_files": 30
+      }
+    },
+    {
+      "id": "C-02_no_climbmix_fineweb_dclm_oscar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C-03_no_prior_checkpoint_in_p4_cache",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C-04_tests_absent_from_train_roots",
+      "ok": true,
+      "detail": {
+        "hits": []
+      }
+    },
+    {
+      "id": "C-05_no_secrets_gitignore",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C-06_pdf_not_writable",
+      "ok": true,
+      "detail": {
+        "mode": "0o444"
+      }
+    },
+    {
+      "id": "C-07_hubs_not_write_targets",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "C-08_lockbox_vs_safe",
+      "ok": true,
+      "detail": {
+        "safe": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4/safe_progress",
+        "lockbox": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4/lockbox"
+      }
+    },
+    {
+      "id": "C-09_prior_env_not_sourced",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "C-10_p3_b3_not_aliased_as_c3",
+      "ok": true,
+      "detail": {
+        "p3_b3_mix_order_sha_refused": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+        "p3_mix_order_exists": true
+      }
+    },
+    {
+      "id": "C-11_document_overlap_zero",
+      "ok": true,
+      "detail": {
+        "tl_overlap": 0,
+        "en_overlap": 0
+      }
+    },
+    {
+      "id": "C-12_source_revision_readonly",
+      "ok": true,
+      "detail": {
+        "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3"
+      }
+    }
+  ],
+  "test_access_count": 0,
+  "p4_outcome_access_count": 0,
+  "validation_scalar_access_count": 0,
+  "no_p4_outcomes": true,
+  "next_gate": "D"
+}

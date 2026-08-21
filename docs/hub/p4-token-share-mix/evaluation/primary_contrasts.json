@@ -1,0 +1,14 @@
+{
+  "study": "P4",
+  "aspredicted": 307591,
+  "run_id": "p4-20260821T060032Z-92d63d4",
+  "R_TL": -1.3166368915130797,
+  "A_EN": -1.3752772382310245,
+  "R_TL_status": "observed",
+  "A_EN_status": "observed",
+  "filed_R_TL": "<=-0.01",
+  "filed_A_EN": "<=-0.01",
+  "c0_en_excluded_from_contrasts": true,
+  "c3_is_not_p3_b3": true,
+  "one_seed": true
+}

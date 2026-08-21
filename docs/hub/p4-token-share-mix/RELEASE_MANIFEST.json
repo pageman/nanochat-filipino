@@ -1,0 +1,23 @@
+{
+  "repo_id": "pageman/nanochat-filipino-p4-token-share-mix",
+  "run_id": "p4-20260821T060032Z-92d63d4",
+  "aspredicted": 307591,
+  "researchbox": 8869,
+  "ascollected": 2471,
+  "arms": [
+    "C0",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "rule": "upload_all_four_together",
+  "c3_is_not_p3_b3": true,
+  "checksums": {
+    "c0/p4-c0-tl-d20-model_000294.pt": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+    "c1/p4-c1-tl-d20-model_000294.pt": "87b9f55146de72dd6ae53598b9aea8d99079ff0f9492b7f9ea4fdce550664c55",
+    "c2/p4-c2-en-d20-model_000294.pt": "0787aed0f13a0ab3ec144baf6802b144a18412780a2d00a64ca7adcb67a4a375",
+    "c3/p4-c3-mix-d20-model_000294.pt": "eef9a4e11c4840ac036d42c3bf4d87a2139ea1fa5809e1c756df2770fe0609f3",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  }
+}

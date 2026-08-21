@@ -1,0 +1,18 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "U",
+  "status": "pass",
+  "at_utc": "2026-08-21T13:28:05Z",
+  "host": "6005ea03e2b9",
+  "gpu": true,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "seal_path": "data/cache/p4-20260821T060032Z-92d63d4/lockbox/p4-validation-seal.json",
+  "safe_status": "data/cache/p4-20260821T060032Z-92d63d4/safe_progress/gate-u-status.json",
+  "seal_sha256": "5c7287752ba1abb39245acab43b9917ea9e089c0309959ec24990015e1ad580f",
+  "test_access": 0,
+  "no_bpb_in_receipt": true,
+  "next_gate": "V"
+}

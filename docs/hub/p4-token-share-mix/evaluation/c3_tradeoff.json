@@ -1,0 +1,16 @@
+{
+  "unit": "source_content_tokens_not_documents",
+  "q_tl": 0.5,
+  "quota_tl_tokens": 9633792,
+  "quota_en_tokens": 9633792,
+  "tagalog_share_by_tokens": 0.5,
+  "english_share_by_tokens": 0.5,
+  "tagalog_share_by_bytes": 0.5658884230098669,
+  "english_share_by_bytes": 0.43411157699013314,
+  "mix_manifest_sha256": "f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107",
+  "c3_is_not_p3_b3": true,
+  "not_byte_balanced": true,
+  "not_mitigation": true,
+  "R_TL": -1.3166368915130797,
+  "A_EN": -1.3752772382310245
+}

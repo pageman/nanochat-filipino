@@ -1,0 +1,33 @@
+variable,value,description
+study_id,NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE,Study identifier
+aspredicted_id,307591,AsPredicted registration number
+aspredicted_url,https://aspredicted.org/if84km.pdf,Filed AsPredicted PDF
+researchbox_id,8869,ResearchBox deposit number
+researchbox_url,https://researchbox.org/8869,ResearchBox (FOR PEER REVIEW; not Make Public)
+ascollected_id,2471,Current AsCollected project (NANOCHAT-FILIPINO-P4)
+ascollected_title,NANOCHAT-FILIPINO-P4,AsCollected project title
+ascollected_prior_id,2455,Gate-0 AsCollected project
+ascollected_prior_url,https://ascollected.org/DJ6_FL3,Gate-0 AsCollected Version 1 URL
+p4_run_id,p4-20260821T060032Z-92d63d4,Execution run id
+nanochat_pin,92d63d4e8bb4df75c3b71618f31ddde2378b2bcd,Pinned nanochat commit
+designed_after_p3,true,Post-P3 study; not confirmation of P3; not P3 B3 fixed
+c3_is_not_p3_b3,true,"C3 is a new token-share mix, not P3 B3"
+q_tl,0.50,Filed Tagalog source-content token share
+delta_bpb,0.01,Filed co-primary cutoff; equality at -delta counts
+R_TL,-1.316636891513,TL(C3)-TL(C2); filed prediction <= -0.01; observed
+A_EN,-1.375277238231,EN(C3)-EN(C1); filed prediction <= -0.01; observed
+grammar,both,Predeclared four-way conclusion category
+c0_en_val_bpb_full,2.615644611247,Descriptive only; excluded from contrasts
+c1_tl_val_bpb_full,0.785485694553,Primary cell
+c1_en_val_bpb_full,2.878105711370,Primary cell
+c2_tl_val_bpb_full,2.517909498112,Primary cell
+c2_en_val_bpb_full,1.333105665611,Primary cell
+c3_tl_val_bpb_full,1.201272606598,Primary cell
+c3_en_val_bpb_full,1.502828473139,Primary cell
+c3_en_test_bpb,1.513698126150,Secondary Gate V; C3 only
+c3_tl_test_bpb,1.202140100762,Secondary Gate V; C3 only
+test_access_at_seal,0,Gate U seal test_access
+test_access_after_v,1,After one C3-only two-component event
+one_seed,true,Point estimates only; no CI/p-value
+hub_status,deferred,C0+C1+C2+C3 together or none; never C3 alone
+raw_test_text_in_box,false,Held-out text not redistributed

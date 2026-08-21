@@ -1,0 +1,66 @@
+Dear Reader,
+
+Thank you for opening ResearchBox #8869, the deposit box for NANOCHAT-FILIPINO P4 (“token-share mix after a fresh Tagalog parent”).
+
+This note exists because (1) P4 is easy to confuse with P1.1, P2, and especially P3, (2) ResearchBox’s bingo columns are awkward for a computational language-model study, (3) several absences are intentional, (4) P4 was designed after P3 was unblinded and must never be sold as an independent confirmation of P3 or as “P3 B3 fixed,” and (5) C3 is not P3 B3. Please read this before citing any CSV cell or JSON field as “the P4 result.”
+
+This message is shown online only. It is not included in downloaded files.
+
+WHAT THIS BOX IS
+This is the results-provenance and reproducibility metadata deposit for one preregistered computational study: AsPredicted #307591 (https://aspredicted.org/if84km.pdf; PDF SHA-256 463b29fcff8d7c8099790325fa19d6bcf9ee29f64424c373a380566a6fe9011c). It is a one-seed, fixed-parent, fixed-budget token-share mixture trade-off experiment on nanochat, pinned at commit 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd. Run ID p4-20260821T060032Z-92d63d4. Gates 0 / A–I / P0-T / Q–W are complete. Linked public-corpus provenance: AsCollected #2471 (NANOCHAT-FILIPINO-P4). Gate 0 also recorded #2455 v1 at https://ascollected.org/DJ6_FL3.
+
+WHAT THIS BOX IS NOT
+Not ResearchBox #8735 (P1.1, AsPredicted #306780).
+Not ResearchBox #8763 (P2, AsPredicted #306935).
+Not ResearchBox #8834 (P3, AsPredicted #307342 — reverse-direction study with a 50/50-document B3 arm).
+Not a human-subjects study: no participants, Prolific IDs, surveys, or consent forms.
+Not a redistribution of raw held-out test.jsonl or WikiText-103 test article text.
+Not where model .pt weights live. If weights are released later, they must be C0+C1+C2+C3 together; Hub upload is currently deferred. Never C3 alone.
+Not an amendment to P1.1, P2, or P3. P4 does not rewrite #306780, #306935, #307342, or prior boxes.
+Not “P3 B3 fixed.” C3 is a newly constructed token-share mixture.
+
+If you arrived expecting P3 B3 document-mix numbers, switch boxes.
+
+CRITICAL DISCLOSURE (POST-P3 TIMING)
+P4 was designed after P3 Gate X unblinding on 20 August 2026. Operators may know P3 outcomes. P3 magnitudes were not P4 calibration targets. At P4 filing, no P4 parent, children, validation BPB, or test BPB existed. The C3 identity was frozen before any P4 confirmatory BPB.
+
+Required public grammar: say “post-P3 prospectively preregistered token-share trade-off.” Do not say the design was independently chosen without P3 knowledge. Do not say P4 confirms P3. Report the filed four-way conclusion (both / only-R / only-A / neither); one seed; no confidence interval, p-value, or population claim.
+
+NONINTUITIVE FILE ORGANIZATION
+Keep AsPredicted #307591 in the Preregistration column of its own row. Materials, Data, Code, and Other belong in the section “P4 Confirmatory Close-out (2026-08-21).”
+
+Materials: protocol, sanitized LOCK, study README, paper, Hub deferral stub. No raw corpora, no weights, no SSH cards, no passcode.
+Data: small CSV tables only, uploaded one file at a time. JSON seals are not Data.
+Code: Code.zip contains scripts_p4 .py and .sh files only. ResearchBox rejects a zip that mixes CSVs with scripts.
+Other: gate receipts, released/*.json, unblinding event, close-out manifests. JSON belongs here.
+
+Why Data looks “too small”: the confirmatory objects of record are JSON seals, hashes, and scripts. ResearchBox prefers tidy tables, so point estimates live in CSV under Data, machine-readable seals live under Other, and public training corpora are obtained from Hugging Face / frozen P1.1 splits rather than re-uploaded as raw text.
+
+IDIOSYNCRATIC FILE FEATURES
+p4_arm_language_crosstab.csv is the arm-by-language table. C0 English is descriptive and excluded from contrasts. C3 tests are secondary (Policy A: C3 only; C1 and C2 were never tested).
+p4_facts_long.csv is a long-form key/value list of the same facts.
+p4_codebook.csv defines the CSV columns.
+p4_hashes.csv and 64-character hex strings prefixed sha2-256: are SHA-256 digests of FILES, not people. ResearchBox may flag them as Prolific IDs. That is a false positive. P4 has no human participants.
+p4_code_crosswalk.csv is a script inventory (file ↔ gate ↔ purpose ↔ hash). Upload it under Data, not inside Code.zip. var1–var11 are: code_id, relative_path, filename, extension, bytes, sha2_256, language, role_family, gates_crosswalk, purpose, header_or_docstring.
+Code.zip needs no special software beyond a zip tool and Python 3 / bash to read sources. It does not contain weights. Do not re-run gate_v_c3_test.py; the authorized test event is closed.
+released/*.json (Other) is the Gate X simultaneous unblinding bundle. Paper numbers must match that seal. In-loop trainer BPB is not the primary DV.
+Raw test.jsonl is withheld by design (access restriction), not because of an NDA.
+
+STUDY DESIGN (ONE PARAGRAPH)
+P4 starts from a fresh Tagalog parent (new weights; frozen P1.1 WikiText-TL-39 train documents; carry-forward P3 tokenizer, both artifacts). After P0-T PASS at d8 and d20, freeze d20 as C0. Then compare three equal-budget continuations from that immutable common parent: C1 extra Tagalog (retention control), C2 pure English WikiText-103-raw (comparator), and C3 a pre-frozen mixture locked at q_TL = 0.50 source-content tokens (registered intervention; not P3 B3; not byte-balanced). Co-primary estimands: R_TL = TL(C3) − TL(C2) ≤ −0.01 and A_EN = EN(C3) − EN(C1) ≤ −0.01. Equality at −0.01 counts. Budget: N=294, B=65536, T=2048, D_phase2=19,267,584; C3 quotas 9,633,792 / 9,633,792; fresh optimizer (load_optimizer=False); warmup 14; one seed.
+
+WHAT THE SEALED NUMBERS SAY (NARROW CLAIMS)
+From the Gate X validation seal: R_TL ≈ −1.316637 (observed) and A_EN ≈ −1.375277 (observed). Conclusion category: both.
+
+Always append: one seed; no CI/p-value/population claim; C3 is not P3 B3; P4 does not amend #307342.
+
+Because both criteria were met, this additional sentence is permitted and is the only allowed “mitigation” wording: “A measured reduction in the P3-style relative Tagalog retention cost within this frozen P4 apparatus, not a general mitigation of catastrophic forgetting.”
+
+FOLLOW-UP WORK (NOT THIS BOX)
+P1.1 remains ResearchBox #8735 / AsPredicted #306780.
+P2 remains ResearchBox #8763 / AsPredicted #306935.
+P3 remains ResearchBox #8834 / AsPredicted #307342.
+A byte-balanced mix would be a new filing (P6-B). Multi-seed work would be a new filing (P5). Neither reopens P4’s sealed R_TL / A_EN. Do not add a C4 arm to this study.
+
+CONTACT
+One-person lab execution with automated gate scripts and hash receipts. Scholarly contact is on the ResearchBox author fields (De La Salle – College of Saint Benilde). For replication questions, use GitHub issues on pageman/nanochat-filipino and cite run ID p4-20260821T060032Z-92d63d4.

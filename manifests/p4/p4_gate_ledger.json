@@ -1,0 +1,161 @@
+{
+  "study": "p4_token_share_locked_mix",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "aspredicted_id": 307591,
+  "operational_note": "F MUST pass before E is marked pass. Letter names stay E and F.",
+  "gates": {
+    "0": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:12:54Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-0-lockbox-tests.json",
+      "sha256_prefix": "499b1771",
+      "safe_note": "dummy lockbox tests 1-18 pass; no BPB",
+      "next": "A"
+    },
+    "A": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:21:34Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-a-source-pin.json",
+      "sha256_prefix": "cf68a8c6",
+      "safe_note": "blinded; hashes/status only",
+      "next": "B"
+    },
+    "B": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:21:42Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-b-raw-assets.json",
+      "sha256_prefix": "c528cdcf",
+      "safe_note": "blinded; hashes/status only",
+      "next": "C"
+    },
+    "C": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:21:54Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-c-hygiene.json",
+      "sha256_prefix": "5a1b300a",
+      "safe_note": "blinded; hashes/status only",
+      "next": "D"
+    },
+    "D": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:22:48Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-d-split-freeze.json",
+      "sha256_prefix": "e6666623",
+      "safe_note": "blinded; hashes/status only",
+      "next": "F"
+    },
+    "F": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:22:48Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-f-tokenizer.json",
+      "sha256_prefix": "2992e426",
+      "safe_note": "blinded; hashes/status only",
+      "next": "E"
+    },
+    "E": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:23:25Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-e-packed-streams-and-c3-freeze.json",
+      "sha256_prefix": "7c6fa713",
+      "safe_note": "blinded; hashes/status only",
+      "next": "G"
+    },
+    "G": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:23:38Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-g-budget-command-freeze.json",
+      "sha256_prefix": "d5b6d3b9",
+      "safe_note": "blinded; hashes/status only",
+      "next": "H"
+    },
+    "H": {
+      "status": "pass",
+      "at_utc": "2026-08-21T06:51:10Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-h-cuda-smoke.json",
+      "sha256_prefix": "7633f9bf",
+      "safe_note": "blinded; hashes/status only",
+      "next": "I"
+    },
+    "I": {
+      "status": "pass",
+      "at_utc": "2026-08-21T09:09:22Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-i-tl0.json",
+      "sha256_prefix": "551e178e",
+      "safe_note": "blinded; hashes/status only",
+      "next": "P0-T"
+    },
+    "P0-T": {
+      "status": "pass",
+      "at_utc": "2026-08-21T11:16:00Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-p0-t.json",
+      "sha256_prefix": "c63ba301",
+      "safe_note": "blinded; hashes/status only",
+      "next": "Q"
+    },
+    "Q": {
+      "status": "pass",
+      "at_utc": "2026-08-21T12:02:20Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-q-c0-freeze.json",
+      "sha256_prefix": "e8f8b036",
+      "safe_note": "blinded; hashes/status only",
+      "next": "R"
+    },
+    "R": {
+      "status": "pass",
+      "at_utc": "2026-08-21T12:30:44Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-r-c1.json",
+      "sha256_prefix": "d2440385",
+      "safe_note": "blinded; hashes/status only",
+      "next": "S"
+    },
+    "S": {
+      "status": "pass",
+      "at_utc": "2026-08-21T12:58:10Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-s-c2.json",
+      "sha256_prefix": "56f4a4f4",
+      "safe_note": "blinded; hashes/status only",
+      "next": "T"
+    },
+    "T": {
+      "status": "pass",
+      "at_utc": "2026-08-21T13:25:39Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-t-c3.json",
+      "sha256_prefix": "d129afc8",
+      "safe_note": "blinded; hashes/status only",
+      "next": "U"
+    },
+    "U": {
+      "status": "pass",
+      "at_utc": "2026-08-21T13:28:05Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-u-seal.json",
+      "sha256_prefix": "4aaed260",
+      "safe_note": "blinded; hashes/status only",
+      "next": "V"
+    },
+    "V": {
+      "status": "pass",
+      "at_utc": "2026-08-21T13:31:01Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-v-test.json",
+      "sha256_prefix": "38d21ae0",
+      "safe_note": "blinded; hashes/status only",
+      "next": "X"
+    },
+    "X": {
+      "status": "pass",
+      "at_utc": "2026-08-21T13:42:01Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/P4_UNBLINDING_EVENT.json",
+      "sha256_prefix": "ac9960c8",
+      "safe_note": "blinded; hashes/status only",
+      "next": "W"
+    },
+    "W": {
+      "status": "pass",
+      "at_utc": "2026-08-21T13:44:23Z",
+      "artifact": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/p4_closeout_manifest.json",
+      "sha256_prefix": "200b512c",
+      "safe_note": "blinded; hashes/status only",
+      "next": null
+    }
+  },
+  "note": "Status enum only: not_started, prepared, pass, blocked, technical_stop, protocol_stop, awaiting_authorization. No BPB scalars. Gate 0 pass. Next is Gate A."
+}

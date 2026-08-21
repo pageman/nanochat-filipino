@@ -1,0 +1,27 @@
+{
+  "study": "p4_token_share_locked_mix",
+  "p4_run_id": null,
+  "operational_note": "F MUST pass before E is marked pass. Letter names stay E and F.",
+  "gates": {
+    "0": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "A" },
+    "A": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "B" },
+    "B": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "C" },
+    "C": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "D" },
+    "D": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "F" },
+    "F": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "E" },
+    "E": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "G" },
+    "G": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "H" },
+    "H": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "I" },
+    "I": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "P0-T" },
+    "P0-T": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "Q" },
+    "Q": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "R" },
+    "R": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "S" },
+    "S": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "T" },
+    "T": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "U" },
+    "U": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "V" },
+    "V": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "X" },
+    "X": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": "W" },
+    "W": { "status": "not_started", "at_utc": null, "artifact": null, "sha256_prefix": null, "safe_note": null, "next": null }
+  },
+  "note": "Status enum only: not_started, prepared, pass, blocked, technical_stop, protocol_stop, awaiting_authorization. No BPB scalars. Expand into manifests/p4/p4_gate_ledger.json at Gate 0. Do not invent p4_run_id before filing."
+}

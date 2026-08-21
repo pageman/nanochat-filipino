@@ -82,3 +82,28 @@ Gates A–X are complete (Gate X released). Confirmatory depth is d20. Sealed \(
 Trainer in-loop `val_bpb` is **not** the primary DV. The registered table is under [results/p3/released/](results/p3/released/) · [results/p3/evaluation/p3-validation-seal.json](results/p3/evaluation/p3-validation-seal.json).
 
 P3 is a **post-P2** prospective reverse-direction study. Weights live on Hugging Face (`pageman/nanochat-filipino-p3-tl-then-en`), not in this git tree.
+
+## Start here (P4)
+
+Does **not** amend AsPredicted #306780 / #306935 / #307342, ResearchBox 8735 / 8763 / 8834, or Hub `p1-fixed-d20-3x` / `p2-en-then-tl` / `p3-tl-then-en`. Never use `scripts/p1/env.sh`, `scripts/p2/env.sh`, or `scripts/p3/env.sh` for P4. Fresh Tagalog parent (TL0/C0), then matched C1/C2/C3. **C3 is not P3 B3.**
+
+**Project 4 protocol (P4):** [docs/papers/p4-token-share-mix/PROTOCOL-p4-token-share-mix.md](docs/papers/p4-token-share-mix/PROTOCOL-p4-token-share-mix.md)  
+**Study record:** [docs/p4/](docs/p4/) · https://github.com/pageman/nanochat-filipino/tree/main/docs/p4  
+**Lock:** [docs/papers/p4-token-share-mix/LOCK.json](docs/papers/p4-token-share-mix/LOCK.json)  
+**Paper (source / PDF):** [docs/papers/p4-token-share-mix/paper.tex](docs/papers/p4-token-share-mix/paper.tex) · [paper.pdf](docs/papers/p4-token-share-mix/paper_outputs/paper.pdf)  
+**AsPredicted #307591:** https://aspredicted.org/if84km.pdf (anonymous)  
+**ResearchBox #8869:** https://researchbox.org/8869  
+**AsCollected:** #2471 (`NANOCHAT-FILIPINO-P4`)  
+**Results:** [results/p4/](results/p4/)  
+**Hub documentation pack:** [docs/hub/p4-token-share-mix/](docs/hub/p4-token-share-mix/)  
+**Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p4-token-share-mix  
+**Environment:** [scripts/p4/env.sh](scripts/p4/env.sh) · [scripts/p4/env.cuda.sh](scripts/p4/env.cuda.sh)  
+**Data/code notices:** [DATA_AND_CODE_NOTICES.md](DATA_AND_CODE_NOTICES.md)
+
+## Status (P4)
+
+Gates 0 / A–I / P0-T / Q–W are complete (Gate X released). Confirmatory depth is d20. Sealed \(R_{\mathrm{TL}}=\mathrm{TL}(C3)-\mathrm{TL}(C2)=-1.316637\) (filed \(\le -0.01\): **observed**). Sealed \(A_{\mathrm{EN}}=\mathrm{EN}(C3)-\mathrm{EN}(C1)=-1.375277\) (filed \(\le -0.01\): **observed** in this one-seed apparatus). One authorized C3-only secondary test (English test BPB 1.513698; Tagalog 1.202140). Do **not** reuse P1.1 `test_bpb = 1.164768` or P2/P3 Gate V as P4. C1 and C2 were not tested. C3 is a token-share trade-off arm (descriptive EN UTF-8 byte share ≈0.434), not byte-balanced and not P3 B3. This repo is the P4 audit trail under `docs/p4/`, `docs/papers/p4-token-share-mix/`, `docs/run-cards/p4/`, `scripts/p4/`, and `results/p4/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+
+Trainer in-loop `val_bpb` is **not** the primary DV. The registered table is under [results/p4/released/](results/p4/released/) · [results/p4/tables.json](results/p4/tables.json).
+
+P4 is a **post-P3** prospective token-share mixture study. Weights live on Hugging Face (`pageman/nanochat-filipino-p4-token-share-mix`), not in this git tree.

@@ -1,0 +1,14 @@
+{
+  "gate": "U",
+  "cell": "c0_tl_val_bpb_full.json",
+  "model_tag": "p4-tl0-d20",
+  "split": "tagalog_val_from_p0t",
+  "val_bpb_full": 1.1721679498756241,
+  "evaluated_at_utc": "2026-08-21T13:28:05Z",
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "test_read_count": 0,
+  "detail": {
+    "copied_from": "gate-p0-t-eligibility.json",
+    "depth": 20
+  }
+}

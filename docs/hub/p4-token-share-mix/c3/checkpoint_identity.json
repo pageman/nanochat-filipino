@@ -1,0 +1,17 @@
+{
+  "arm": "C3",
+  "model_tag": "p4-c3-mix-d20",
+  "filename": "p4-c3-mix-d20-model_000294.pt",
+  "step": 294,
+  "depth": 20,
+  "checkpoint_sha256": "eef9a4e11c4840ac036d42c3bf4d87a2139ea1fa5809e1c756df2770fe0609f3",
+  "bytes": 2663446486,
+  "parent": "C0",
+  "parent_sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+  "stream": "c3_token_share_mix",
+  "q_tl": 0.5,
+  "c3_is_not_p3_b3": true,
+  "only_tested_arm": true,
+  "not_trainer_meta": true,
+  "note": "Trainer meta_000294.json was not copied off the GPU host. Official BPB is evaluation/*.json, not in-loop val_bpb."
+}

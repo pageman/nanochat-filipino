@@ -1,0 +1,27 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "gate": "I",
+  "authorized": true,
+  "authorizes_p0t": false,
+  "authorizes_children": false,
+  "authorizes_c0_freeze": false,
+  "scope": "fresh Tagalog TL0 d8 then d20; N_TL0=294; warmup=14; tags p4-tl0-d8 and p4-tl0-d20; Tagalog C1 pack only; terminal checkpoint; eval/sample/core-metric off",
+  "must_not": [
+    "English train tokens",
+    "p4-c0-* until Q",
+    "p3-tl0-*",
+    "C1/C2/C3 continuation",
+    "early stop",
+    "rank d8 vs d20 from in-loop",
+    "print BPB",
+    "Mac MPS",
+    "reuse smoke checkpoint as parent"
+  ],
+  "host_class": "NVIDIA CUDA A40",
+  "pod_id": "cjaakd9i2w8x7t",
+  "authorized_at_utc": "2026-08-21T08:31:00Z",
+  "authorized_by": "operator chat: Do Gate I",
+  "note": "Does not authorize P0-T, Q, or children."
+}

@@ -1,0 +1,30 @@
+{
+  "gate": "U",
+  "cell": "c2_tl_val_bpb_full.json",
+  "model_tag": "p4-c2-en-d20",
+  "split": "tagalog_val",
+  "val_bpb_full": 2.5179094981115533,
+  "evaluated_at_utc": "2026-08-21T13:27:27Z",
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "test_read_count": 0,
+  "detail": {
+    "bpb": 2.5179094981115533,
+    "total_nats": 10242705.0,
+    "total_bytes": 5868797,
+    "n_scored_tokens": 1286864,
+    "n_excluded_positions": 7472,
+    "finite": true,
+    "n_source_docs": 8104,
+    "n_rows": 632,
+    "n_batches": 79,
+    "n_docs_packed": 8104,
+    "n_cropped_fills": 330,
+    "n_padded_positions": 0,
+    "device_batch_size": 8,
+    "sequence_len": 2048,
+    "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+    "stride": "non_overlapping_T_official_bos_bestfit",
+    "label": "p4-c2-en-d20/tagalog_val",
+    "wall_sec": 26.889020919799805
+  }
+}

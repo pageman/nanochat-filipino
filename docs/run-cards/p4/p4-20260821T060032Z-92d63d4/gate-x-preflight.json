@@ -1,0 +1,118 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "X-preflight",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "at_utc": "2026-08-21T13:41:44Z",
+  "ready_for_unblinding": true,
+  "checks": [
+    {
+      "check": "1_qrstuv_all_pass",
+      "status": "PASS",
+      "detail": {
+        "statuses": {
+          "Q": "pass",
+          "R": "pass",
+          "S": "pass",
+          "T": "pass",
+          "U": "pass",
+          "V": "pass"
+        },
+        "missing": []
+      }
+    },
+    {
+      "check": "2_outcome_access_before_x_zero",
+      "status": "PASS",
+      "detail": {
+        "p4_outcome_access_count": 0,
+        "LOCK.status": "gate_v_pass",
+        "unblinding_status": "blinded",
+        "P4_UNBLINDING_EVENT_absent": true
+      }
+    },
+    {
+      "check": "3_test_counter_at_u_zero",
+      "status": "PASS",
+      "detail": {
+        "u_receipt": 0,
+        "u_safe": 0
+      }
+    },
+    {
+      "check": "4_test_counter_after_v_one",
+      "status": "PASS",
+      "detail": {
+        "v_receipt": 1,
+        "v_safe": 1,
+        "log_touches": 1,
+        "LOCK.test_access_count": 0
+      }
+    },
+    {
+      "check": "5_u_timestamp_before_v",
+      "status": "PASS",
+      "detail": {
+        "u": "2026-08-21T13:28:05Z",
+        "v": "2026-08-21T13:31:01Z"
+      }
+    },
+    {
+      "check": "6_gate_v_c3_only",
+      "status": "PASS",
+      "detail": {
+        "model_tags": [
+          "p4-c3-mix-d20",
+          "p4-c3-mix-d20"
+        ],
+        "n_events": 2
+      }
+    },
+    {
+      "check": "7_c1_c2_test_records_absent",
+      "status": "PASS",
+      "detail": {
+        "c1_in_log": false,
+        "c2_in_log": false
+      }
+    },
+    {
+      "check": "8_c0_c1_c2_c3_parentage",
+      "status": "PASS",
+      "detail": {
+        "c0_prefix": "34e069646be41589",
+        "r_match": true,
+        "s_match": true,
+        "t_match": true,
+        "mix_match": true
+      }
+    },
+    {
+      "check": "9_hash_checks",
+      "status": "PASS",
+      "detail": {
+        "source": "pod_ssh",
+        "seal_matches_safe": true,
+        "seal_prefix": "5c7287752ba1abb3",
+        "v_prefix": "6b3e0c32cedf714b",
+        "p0t_prefix": "07c153892a8afe09"
+      }
+    },
+    {
+      "check": "10_safe_log_review",
+      "status": "PASS",
+      "detail": {
+        "forbidden_hits": []
+      }
+    },
+    {
+      "check": "11_v_missing_jsonl_incident_documented",
+      "status": "PASS",
+      "detail": {
+        "disposition": "technical: first V attempt FileNotFoundError on english_test.jsonl before any score; files copied; V rerun once from U seal with test_access still 0 at U"
+      }
+    }
+  ],
+  "note": "Safe-only preflight. No scalar BPB values printed or released."
+}

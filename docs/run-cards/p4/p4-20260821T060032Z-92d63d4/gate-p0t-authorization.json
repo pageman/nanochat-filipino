@@ -1,0 +1,26 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "gate": "P0-T",
+  "authorized": true,
+  "authorizes_q": false,
+  "authorizes_children": false,
+  "authorizes_c0_freeze": false,
+  "scope": "CUDA Tagalog parent eligibility for p4-tl0-d8 and p4-tl0-d20 vs untrained seed 0 and add-1 byte-unigram; delta_P0T=0.01; Tagalog val only",
+  "must_not": [
+    "English val",
+    "P1.1 1.172248 floor",
+    "P2 A2 or P3 B0/B1 Tagalog val as floor",
+    "C0 English",
+    "print BPB on safe channel",
+    "Mac MPS / CPU status",
+    "freeze C0",
+    "start C1/C2/C3"
+  ],
+  "host_class": "NVIDIA CUDA A40",
+  "pod_id": "cjaakd9i2w8x7t",
+  "authorized_at_utc": "2026-08-21T11:06:00Z",
+  "authorized_by": "operator chat: do Gate P0-T next",
+  "note": "Does not authorize Gate Q or children. Safe emit is PASS/BLOCKED/TECHNICAL BLOCK only."
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "nanochat-filipino P4: token-share-locked mix after a fresh Tagalog parent"
+message: "If you use this study record, please cite AsPredicted #307591 and the GitHub audit trail."
+type: software
+authors:
+  - family-names: Pajo
+    given-names: Paul
+repository-code: "https://github.com/pageman/nanochat-filipino"
+url: "https://huggingface.co/pageman/nanochat-filipino-p4-token-share-mix"
+identifiers:
+  - type: url
+    value: "https://aspredicted.org/if84km.pdf"
+    description: AsPredicted #307591
+  - type: url
+    value: "https://researchbox.org/8869"
+    description: ResearchBox 8869
+license: other
+keywords:
+  - nanochat
+  - bits-per-byte
+  - Tagalog
+  - English
+  - continual pretraining
+  - token share
+notes: "One-seed confirmatory apparatus. Complete C0/C1/C2/C3 checkpoint bundle on this Hub repo. C3 is not P3 B3."

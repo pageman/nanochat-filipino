@@ -1,0 +1,90 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "P0-T-preflight",
+  "status": "ready_for_p0t",
+  "at_utc": "2026-08-21T11:14:33Z",
+  "host": "6005ea03e2b9",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "checks": [
+    {
+      "id": "P0T0_not_darwin",
+      "ok": true,
+      "detail": "Linux"
+    },
+    {
+      "id": "P0T0_authorization",
+      "ok": true,
+      "detail": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-p0t-authorization.json"
+    },
+    {
+      "id": "P0T0_gate_i_pass",
+      "ok": true,
+      "detail": {
+        "status": "pass",
+        "depths": [
+          "d8",
+          "d20"
+        ]
+      }
+    },
+    {
+      "id": "P0T0_tl0_ckpts",
+      "ok": true,
+      "detail": {
+        "8": true,
+        "20": true
+      }
+    },
+    {
+      "id": "P0T0_evaluator_sha_gate_a",
+      "ok": true,
+      "detail": "9afebdb405aaac0bb4287051d9b6f5d16f56d6dd9269a1e6c2c5df29becbced1"
+    },
+    {
+      "id": "P0T0_hashes",
+      "ok": true,
+      "detail": {
+        "tokenizer.pkl": true,
+        "val.parquet": true,
+        "shard_00002.parquet": true,
+        "tl_train_jsonl": true,
+        "tl_val_jsonl": true
+      }
+    },
+    {
+      "id": "P0T0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "P0T0_cuda",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    },
+    {
+      "id": "P0T0_gpu_class_a40",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    },
+    {
+      "id": "P0T0_no_prior_eligibility",
+      "ok": true,
+      "detail": "absent_or_dummy_only"
+    },
+    {
+      "id": "P0T0_test_access",
+      "ok": true,
+      "detail": "test_read_count=0 by protocol"
+    },
+    {
+      "id": "P0T0_english_val_not_in_scope",
+      "ok": true,
+      "detail": "Tagalog val only"
+    }
+  ],
+  "blinded": true,
+  "no_p4_outcomes": true,
+  "note": "Exit 0 authorizes scripts/p4/gate_p0t.sh. Scalar BPB stays lockboxed. Not Gate Q."
+}

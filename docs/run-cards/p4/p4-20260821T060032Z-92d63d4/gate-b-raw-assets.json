@@ -1,0 +1,153 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "researchbox_url": "https://researchbox.org/8869",
+  "gate": "B",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:21:42Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_b_raw_assets.py",
+  "hf_dataset": "Salesforce/wikitext",
+  "hf_config": "wikitext-103-raw-v1",
+  "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "artifacts": {
+    "tl_train": {
+      "src": "data/interim/wikitext-tl39/splits/train.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/splits/tl/train.jsonl",
+      "bytes": 36229497,
+      "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "ok": true,
+      "p11_split_reuse": true,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:41Z",
+      "is_test": false
+    },
+    "tl_val": {
+      "src": "data/interim/wikitext-tl39/splits/val.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/splits/tl/val.jsonl",
+      "bytes": 8289625,
+      "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "ok": true,
+      "p11_split_reuse": true,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:41Z",
+      "is_test": false
+    },
+    "tl_test": {
+      "src": "data/processed/wikitext-tl39/test/test.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/holdouts/tl/test.jsonl",
+      "bytes": 7763750,
+      "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "expected": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "ok": true,
+      "p11_split_reuse": true,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:41Z",
+      "is_test": true
+    },
+    "en_train": {
+      "src": "data/interim/wikitext-103/english_train.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/splits/en/train.jsonl",
+      "bytes": 550097242,
+      "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "expected": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "ok": true,
+      "p11_split_reuse": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:42Z",
+      "is_test": false
+    },
+    "en_val": {
+      "src": "data/interim/wikitext-103/english_val.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/splits/en/val.jsonl",
+      "bytes": 1166451,
+      "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "expected": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "ok": true,
+      "p11_split_reuse": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:42Z",
+      "is_test": false
+    },
+    "en_test": {
+      "src": "data/interim/wikitext-103/english_test.jsonl",
+      "dst": "data/cache/p4-20260821T060032Z-92d63d4/holdouts/en/test.jsonl",
+      "bytes": 1310320,
+      "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "expected": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "ok": true,
+      "p11_split_reuse": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "utc": "2026-08-21T06:21:42Z",
+      "is_test": true
+    }
+  },
+  "checks": [
+    {
+      "id": "B1_six_confirmatory_shas",
+      "ok": true,
+      "detail": {
+        "tl_train": {
+          "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+          "ok": true
+        },
+        "tl_val": {
+          "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+          "ok": true
+        },
+        "tl_test": {
+          "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+          "ok": true
+        },
+        "en_train": {
+          "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+          "ok": true
+        },
+        "en_val": {
+          "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+          "ok": true
+        },
+        "en_test": {
+          "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+          "ok": true
+        }
+      }
+    },
+    {
+      "id": "B2_p11_split_reuse",
+      "ok": true,
+      "detail": {
+        "split_origin": "p11_reuse",
+        "p11_split_reuse": true
+      }
+    },
+    {
+      "id": "B3_en_test_not_used_as_train",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "B4_tests_unmounted",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "B5_no_train_or_eval_started",
+      "ok": true,
+      "detail": {
+        "tok_train": false,
+        "base_train": false,
+        "packing": false
+      }
+    }
+  ],
+  "no_train_or_eval_started": true,
+  "tests_unmounted": true,
+  "next_gate": "C"
+}

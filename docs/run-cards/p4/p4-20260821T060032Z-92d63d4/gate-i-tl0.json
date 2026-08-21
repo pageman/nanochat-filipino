@@ -1,0 +1,41 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "I",
+  "status": "pass",
+  "at_utc": "2026-08-21T09:09:22Z",
+  "host": "6005ea03e2b9",
+  "gpu": true,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "depths": {
+    "d8": {
+      "status": "pass",
+      "health": "pass",
+      "checkpoint_sha256": "f9b2ffbbc72fc6168bff7f2a1a6aae79292da198d12121f71d5385741b2c6111",
+      "checkpoint_bytes": 335570367,
+      "step": 294,
+      "tokens_seen": 19267584,
+      "reload_ok": true,
+      "test_access": 0,
+      "receipt": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-i-tl0-d8.json"
+    },
+    "d20": {
+      "status": "pass",
+      "health": "pass",
+      "checkpoint_sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+      "checkpoint_bytes": 2663446486,
+      "step": 294,
+      "tokens_seen": 19267584,
+      "reload_ok": true,
+      "test_access": 0,
+      "receipt": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-i-tl0-d20.json"
+    }
+  },
+  "test_access": 0,
+  "english_train_tokens": 0,
+  "c0_not_frozen": true,
+  "next_gate": "P0-T",
+  "note": "Do not rank d8 vs d20. C0 freeze is Gate Q after P0-T PASS."
+}

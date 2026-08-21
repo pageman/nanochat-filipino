@@ -1,0 +1,144 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "E-pack",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:23:05Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_e_shards.py",
+  "c1_tl": {
+    "dir": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl",
+    "parquet_names_sorted": [
+      "train_00000.parquet",
+      "train_00001.parquet",
+      "train_00002.parquet",
+      "train_00003.parquet",
+      "val.parquet"
+    ],
+    "last_is_val": true,
+    "shards": {
+      "train_00000.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl/train_00000.parquet",
+        "sha256": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de",
+        "n_rows": 9443,
+        "bytes": 2337734,
+        "utf8_bytes": 6998379
+      },
+      "train_00001.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl/train_00001.parquet",
+        "sha256": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6",
+        "n_rows": 9443,
+        "bytes": 2438556,
+        "utf8_bytes": 7280516
+      },
+      "train_00002.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl/train_00002.parquet",
+        "sha256": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271",
+        "n_rows": 9443,
+        "bytes": 2446131,
+        "utf8_bytes": 7296433
+      },
+      "train_00003.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl/train_00003.parquet",
+        "sha256": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234",
+        "n_rows": 9443,
+        "bytes": 2553947,
+        "utf8_bytes": 7589809
+      },
+      "val.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c1_tl/val.parquet",
+        "sha256": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+        "n_rows": 8104,
+        "bytes": 2261779,
+        "utf8_bytes": 6771275
+      }
+    }
+  },
+  "c2_en": {
+    "dir": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en",
+    "parquet_names_sorted": [
+      "train_00000.parquet",
+      "train_00001.parquet",
+      "train_00002.parquet",
+      "train_00003.parquet",
+      "val.parquet"
+    ],
+    "last_is_val": true,
+    "shards": {
+      "train_00000.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en/train_00000.parquet",
+        "sha256": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861",
+        "n_rows": 9370,
+        "bytes": 46139476,
+        "utf8_bytes": 134088351
+      },
+      "train_00001.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en/train_00001.parquet",
+        "sha256": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c",
+        "n_rows": 9370,
+        "bytes": 46428708,
+        "utf8_bytes": 134722493
+      },
+      "train_00002.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en/train_00002.parquet",
+        "sha256": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7",
+        "n_rows": 9370,
+        "bytes": 46440157,
+        "utf8_bytes": 135016720
+      },
+      "train_00003.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en/train_00003.parquet",
+        "sha256": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b",
+        "n_rows": 9370,
+        "bytes": 46929470,
+        "utf8_bytes": 136075833
+      },
+      "val.parquet": {
+        "path": "data/cache/p4-20260821T060032Z-92d63d4/streams/c2_en/val.parquet",
+        "sha256": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+        "n_rows": 82,
+        "bytes": 399066,
+        "utf8_bytes": 1145486
+      }
+    }
+  },
+  "probes": {
+    "c1": {
+      "data_dir_ok": true,
+      "last": "LAST val.parquet"
+    },
+    "c2": {
+      "data_dir_ok": true,
+      "last": "LAST val.parquet"
+    }
+  },
+  "checks": [
+    {
+      "id": "E_C1_last_is_val",
+      "ok": true
+    },
+    {
+      "id": "E_C2_last_is_val",
+      "ok": true
+    },
+    {
+      "id": "E_tests_absent",
+      "ok": true
+    },
+    {
+      "id": "E_tests_untouched",
+      "ok": true
+    },
+    {
+      "id": "E_c3_not_yet",
+      "ok": true,
+      "detail": "C3 constructed by gate_e_c3_mix.py after F"
+    }
+  ],
+  "no_p4_outcomes": true,
+  "next": "gate_e_c3_mix.py"
+}

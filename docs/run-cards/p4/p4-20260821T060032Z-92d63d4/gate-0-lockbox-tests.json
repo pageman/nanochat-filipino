@@ -1,0 +1,126 @@
+{
+  "all_pass": true,
+  "ascollected_project_id": 2455,
+  "aspredicted_id": 307591,
+  "gate": "0",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "no_p4_outcomes": true,
+  "no_real_val_test_text": true,
+  "note": "Dummy lockbox lives under gitignored data/cache. ResearchBox passcode is not stored.",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "researchbox_id": 8869,
+  "scripts_p4_sha256": {
+    "scripts/p4/break_glass.py": "8a2e219285a681a27bec2603c0c7fbf7d8d5cfb575c0bd3263180b1aaf85dc4b",
+    "scripts/p4/dummy_c3_test.py": "40cbec85a3c4b2df9a073e52789348553056acf930b88743f18dba7a7a1cfef2",
+    "scripts/p4/dummy_p0t.py": "d34c9e85eb33904de92ab928bbe877d8cdd0d4e40a7b438ba201bd6285e9e9ba",
+    "scripts/p4/env.cuda.sh": "705282b5fb5b88a4371be540f9615ba44ae49b79759e16693d5f0c1b000947df",
+    "scripts/p4/env.sh": "258b4460b0d418fdfeb5f66c5de2df21ce62868be83184aad56a2bbcf121d77d",
+    "scripts/p4/evaluate_bpb.py": "3c0d3f33187840f8b68a772025382d86f2325405067a79f18263ae0695e42a34",
+    "scripts/p4/forbidden_parents.py": "19f69d5fd61e60f4a6c2e7fa5d2bf30dfdb61c86cce23b00f47509ac3a235f1d",
+    "scripts/p4/gate0_accept.py": "fe1cfa47a4b5d263c3a621c301e040510882acec59e7ac5df17a245753bd84f3",
+    "scripts/p4/make_validation_seal.py": "b7366420a5e455200a832b0c637f0f084056cbefdad06aa4b9d1ad19b16f64e0",
+    "scripts/p4/mix_construct_dummy.py": "d8bdca7d0ab5b4469abbfef7cc6b141a586eccd8e3e365951b60b6d0d5d85366",
+    "scripts/p4/p4_common.py": "443601b290fb605004518e38de33114ccfc2bf757c796b1fe523939ef2572905",
+    "scripts/p4/refuse_nanochat_dataset.py": "0f0387770fb254b8bfeb902cfd4757e59f477c44999053d941e89d2faaa464e6",
+    "scripts/p4/refuse_ratio.py": "d4e5dcf5f0d9b519dffdc3cca00a5bfbc709d0ca3325782fa410093903b222e7",
+    "scripts/p4/release_bundle.py": "0f080703fb8ba4d9024f357c0217c34288791b9441b093e61b7ecf9e839bc6bc"
+  },
+  "scripts_p4_tree_sha256": "499b1771661ed16a86630ea89679a2cadc3c32b46f78e36886b71658e770888f",
+  "tests": {
+    "1": {
+      "addendum_sha256": "f056a6f75c73a4d8dc3401ba8d7219d406aa7e498e5b0799d3d0373f9f74c216",
+      "bible_sha256": "b389b70e0b8e3af869e8dea314b1c7c6b91df313e49d1bf11d9d07961b4a5a42",
+      "distinct_lockbox_safe_mode": true,
+      "evaluate_bpb_stub_sha256": "3c0d3f33187840f8b68a772025382d86f2325405067a79f18263ae0695e42a34",
+      "lockbox_mode": "0o700",
+      "master_sha256": "22c28f2bc632f132d9c95bbbcc9d1facbddf0b6b821445487e451c472ea58d4b",
+      "name": "protocol/lock/config/evaluator hashes agree with filing",
+      "pass": true,
+      "pdf_sha256": "463b29fcff8d7c8099790325fa19d6bcf9ee29f64424c373a380566a6fe9011c",
+      "safe_progress_mode": "0o755"
+    },
+    "10": {
+      "name": "dummy test evaluator accepts C3 only after U seal",
+      "pass": true,
+      "stdout_ok": "one authorized C3-only test event completed"
+    },
+    "11": {
+      "name": "release refuses incomplete inventory",
+      "pass": true
+    },
+    "12": {
+      "name": "dummy released hashes match manifest",
+      "pass": true
+    },
+    "13": {
+      "name": "break-glass dummy writes audit without printing dummy BPB",
+      "pass": true,
+      "stdout": "break-glass dummy: audit written; no BPB"
+    },
+    "14": {
+      "name": "mix-construction dummy refuses val/test documents",
+      "pass": true
+    },
+    "15": {
+      "name": "mix-construction dummy refuses to start if tokenizer hash unset",
+      "pass": true
+    },
+    "16": {
+      "name": "env refuses if scripts/p3/env.sh was sourced",
+      "pass": true,
+      "rc": 1,
+      "stderr_tail": "P4 env refuses: scripts/p3/env.sh appears sourced (P3_RUN_ID/P3_ROOT set). Open a new shell.\n"
+    },
+    "17": {
+      "dataset_rc": 2,
+      "name": "ratio=-1 and python -m nanochat.dataset wrappers refuse",
+      "pass": true,
+      "ratio_rc": 2
+    },
+    "18": {
+      "name": "C3 reconstruction from P3 B3 mix-order SHA is refused",
+      "pass": true
+    },
+    "2": {
+      "name": "steward cannot open dummy lockbox result",
+      "pass": true
+    },
+    "3": {
+      "name": "dummy BPB string absent from safe_progress",
+      "pass": true
+    },
+    "4": {
+      "name": "opaque job labels omit C1/C2/C3",
+      "pass": true
+    },
+    "5": {
+      "name": "train env cannot resolve test path",
+      "pass": true,
+      "rc": 0,
+      "stdout": "P4_ROOT=/Users/paulpajo/Projects/nanochat-filipino\nP4_RUN_ID=p4-20260821T060032Z-92d63d4\nNANOCHAT_BASE_DIR=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4\nP4_SAFE_PROGRESS_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4/safe_progress\nP4_LOCKBOX_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4/lockbox\nNANOCHAT_DATA_DIR=<unset>\nP4_TEST_JSONL_EN=<UNSET>\nP4_TEST_JSONL_TL=<UNSET>\npython=/Users/paulpajo/Projects/nanochat-filipino/vendor/nanochat/.venv/bin/python\nNOTE: Gate 0 instrument only. tok_train / parent / children have not started.\nTEST_EN=UNSET\nTEST_TL=UNSET"
+    },
+    "6": {
+      "name": "P1.1/P2/P3 weight SHA256s rejected as parent",
+      "pass": true
+    },
+    "7": {
+      "name": "dummy P0-T emits only PASS/BLOCKED/TECHNICAL BLOCK outside lockbox",
+      "pass": true,
+      "stdout": "P0-T: PASS"
+    },
+    "8": {
+      "name": "contrast refuses until six child + C0 EN exist",
+      "ok_rc": 0,
+      "pass": true,
+      "refuse_rc": 2,
+      "safe": "{\n  \"seven_Gate_U_val_outputs_complete\": true,\n  \"validation_seal_created\": true,\n  \"P4_test_access\": 0,\n  \"seal_sha256\": \"e674da3253ab28dffe3a5c25498fbe35788a2e9b5a33485e335a04f9e167db8e\"\n}"
+    },
+    "9": {
+      "c1_rc": 2,
+      "c2_rc": 2,
+      "c3_no_seal_rc": 2,
+      "name": "dummy test evaluator rejects C1/C2 and missing U seal",
+      "pass": true
+    }
+  }
+}

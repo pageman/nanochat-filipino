@@ -13,3 +13,5 @@ This model was pretrained on WikiText-TL-39 (Cruz & Cheng, 2019), a Tagalog Wiki
 Split label in every caption: `reconstructed_article_70_15_15`. The original 2019 train/validation/test files were not recovered.
 
 Held-out `test.jsonl` is not redistributed here. ResearchBox credentials are not published.
+
+P4 weights, if used, are the complete C0+C1+C2+C3 bundle at https://huggingface.co/pageman/nanochat-filipino-p4-token-share-mix. Do not treat C3 alone as the P4 model. C3 is not P3 B3.

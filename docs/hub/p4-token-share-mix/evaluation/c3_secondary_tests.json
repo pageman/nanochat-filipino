@@ -1,0 +1,12 @@
+{
+  "arm": "C3_only",
+  "en_test_bpb": 1.513698,
+  "tl_test_bpb": 1.20214,
+  "explicit_non_reuse": [
+    "P1.1_1.164768",
+    "P2_Gate_V",
+    "P3_Gate_V"
+  ],
+  "c1_not_tested": true,
+  "c2_not_tested": true
+}

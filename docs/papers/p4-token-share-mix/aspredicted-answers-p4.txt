@@ -1,0 +1,83 @@
+P4 AsPredicted PASTE PACK -- 2-PAGE CUT (file this; 3-page draft is invalid)
+AsPredicted rejects 3 pages. Two pages is allowed. One page is better. ASCII only.
+Do not use "*" in any box: AsPredicted strips asterisks (294*65536 became 29465536; 0.3*parent became 0.3parent; a dropped "7" in token_bytes is a separate transcription error). Use "x" for multiply.
+Q1: It's complicated.
+Related studies: Overlapping for #306780, #306935, and #307342 (not Independent, not Draft).
+#307532 Myers-Perry: Independent (not Draft).
+Title: P4: token-share mix after fresh TL parent (nanochat, TL-39/WikiText-103)
+Type: Observational/archival. Data source: Other.
+
+Master SHA256 22c28f2bc632f132d9c95bbbcc9d1facbddf0b6b821445487e451c472ea58d4b
+Gate bible SHA256 b389b70e0b8e3af869e8dea314b1c7c6b91df313e49d1bf11d9d07961b4a5a42
+Addendum SHA256 f056a6f75c73a4d8dc3401ba8d7219d406aa7e498e5b0799d3d0373f9f74c216
+Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+
+================================================================
+2) Hypothesis
+================================================================
+This study was designed after released P3 findings and after the P3 B3 document/byte-share ambiguity were known (P3 Gate X 2026-08-20; #307342). It is a post-P3 token-share mixture trade-off preregistration. It does not amend #306780, #306935, or #307342. It is not "P3 B3 fixed."
+
+After a newly trained P4 Tagalog nanochat parent (fresh weights; frozen P1.1 WikiText-TL-39 train; carry-forward P3 Tagalog 32768 BPE) passes P0-T, freeze d20 as C0. Continue C0 for one shared token budget on C1 extra Tagalog, C2 pure English, and C3 a pre-frozen EN/TL mix with q_TL=0.50 Tagalog source-content tokens under the carry-forward P3 tokenizer (no BOS/pad/pack/crop). Does C3 retain more Tagalog than C2 while still acquiring more English than C1?
+
+R_TL = TL val_bpb_full(C3) - TL val_bpb_full(C2). Success: R_TL <= -0.01.
+A_EN = EN val_bpb_full(C3) - EN val_bpb_full(C1). Success: A_EN <= -0.01.
+Equality at -0.01 counts. Both required for the joint trade-off. No composite. P4 does not claim byte balancing.
+
+P0-T, before any child token, at BOTH d8 and d20: Tagalog val_bpb_full is >= 0.01 below untrained same-depth and below a train-fitted add-1 UTF-8 byte unigram. If either depth fails either floor, do not train C1/C2/C3. d8 is eligibility only; d20 is the only child parent.
+
+Do not load P1.1, P2, or P3 weights. Not CORE/chat/SFT. One seed. Mitigation is not claimed here.
+
+================================================================
+3) Dependent variable
+================================================================
+Primary DVs: Tagalog val_bpb_full on frozen P1.1 val SHA256 4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c; English val_bpb_full on WT103-raw val SHA256 874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b. Same carry-forward P3 Tagalog BPE on every arm. BPB = mean token NLL / (ln(2) x mean UTF-8 bytes per token), official evaluate_bpb, T=2048, BOS-bestfit, full val, CUDA. meta.val_bpb and C3 val.parquet are not DVs.
+
+Six child cells: C1/C2/C3 x {TL, EN}. R_TL and A_EN as in Q2. At Gate U, collect C0 English val once, descriptive, excluded from R_TL and A_EN. P0-T covers C0 Tagalog (CUDA-only status).
+
+After val seal (test_access=0), one C3-only event on EN test SHA256 2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e and TL test SHA256 3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf. C1/C2 never tested. Not a test-set R_TL/A_EN. Do not reuse 1.164768 or P2/P3 Gate V numbers.
+
+================================================================
+4) Conditions
+================================================================
+No human participants. Pin 92d63d4; base_train -> evaluate_bpb; T=2048; B=65536; CORE off. NVIDIA CUDA (A40 class). Never load P1.1/P2/P3 .pt.
+
+Parent: fresh init on P1.1 Tagalog train SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687; carry-forward P3 tokenizer.pkl SHA256 04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8 and token_bytes.pt SHA256 a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132; d8+d20; N_TL0=294. C0 = freeze d20.
+
+From C0, three siblings, D_phase2 = 294 x 65536 = 19267584, fresh Muon+AdamW (load_optimizer=False), peak LR = 0.3 x parent peak LR, warmup 14, terminal ckpt only:
+C1 extra Tagalog. C2 WT103-raw train. C3 q_TL=0.50 Tagalog source-content tokens (9633792/9633792), frozen after tokenizer freeze and before any P4 BPB; seed 42; 2048-token blocks. Serial C1 then C2 then C3. One seed.
+
+================================================================
+5) Analyses
+================================================================
+P0-T at d8 and d20 before any child token (CUDA-only status). If either floor fails, do not train C1/C2/C3.
+
+Primary: six-cell val seal then R_TL and A_EN as in Q2. Conclusions: both / only-R / only-A / neither. No composite or best-arm. C0 English val descriptive only.
+
+One seed: point estimates; no CI or p. |delta| < 0.01 is not a ranking. Do not retune q_TL/D/delta/test from P3. After U: Gate-V policy as specified in Q3. Exploratory only: byte-balanced mix, extra seeds, replay, FilBench, EWC, CORE, SFT.
+
+================================================================
+6) Outliers and Exclusions
+================================================================
+Official JSONLs are byte-identical frozen copies (train SHA256 2b0474c5... and 09ae691c...; val/test as in Q3). Hash mismatch = stop. No reclean. No split substitution. Do not drop documents to chase byte share.
+
+Exclude a run for: NaN/Inf; ClimbMix; val/test in train; inexact C3 packed quota; wrap before N x B; new tokenizer after BPB; ratio -1; HF Trainer; writing into p1/p2/p3 Hub; P1.1/P2/P3 weights as parent; child used as parent; MPS/CPU for official GPU gates; missing terminal ckpt. Partial child: quarantine; clean restart from C0. Do not drop an arm because a contrast looks bad. d4 smoke is not confirmatory.
+
+================================================================
+7) Sample Size
+================================================================
+Frozen P1.1 TL-39 train and official WT103-raw train, no added docs. Parent: one seed, d8 and d20, N=294. Children: one seed each at d20, N=294, D_phase2=19267584. Six confirmatory val cells. After val seal: one C3-only test event (two reads). C1 and C2 are not tested. No extra seeds or ratios.
+
+================================================================
+8) Other
+================================================================
+Q1 is "It's complicated": public corpora and P1.1/P2/P3 outcomes exist; no P4 parent, children, val_bpb_full, or test_bpb has been computed. This PDF locks those unobserved P4 quantities. New study; does not amend #306780, #306935, or #307342. C3 is not P3 B3. P3 magnitudes are not P4 calibration targets. Lockbox release after val seal plus C3-only test, except blocked-P0-T. Exploratory only: byte-balanced mix, extra seeds, replay, FilBench, EWC, CORE, SFT. Master SHA256 22c28f2bc632f132d9c95bbbcc9d1facbddf0b6b821445487e451c472ea58d4b. Gate-bible SHA256 b389b70e0b8e3af869e8dea314b1c7c6b91df313e49d1bf11d9d07961b4a5a42. Pre-filing addendum SHA256 f056a6f75c73a4d8dc3401ba8d7219d406aa7e498e5b0799d3d0373f9f74c216. Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd. The SHA-bound addendum fixes seeds, exact evaluator/packing, terminal-checkpoint rule, tokenizer artifacts, packed-stream quota audit, and CUDA-only P0-T status. Test files stay outside train dirs.
+
+================================================================
+9) Name (72 chars)
+================================================================
+P4: token-share mix after fresh TL parent (nanochat, TL-39/WikiText-103)
+
+================================================================
+11) Data source Other text
+================================================================
+Frozen P1.1 WikiText-TL-39 (Cruz and Cheng 2019; reconstructed_article_70_15_15) for a fresh P4 Tagalog parent, C1, and the Tagalog quota of C3. WikiText-103 raw (Merity et al. 2016; Salesforce/wikitext, wikitext-103-raw-v1) for C2 and the English quota of C3. P1.1/P2/P3 weights are references only, never the P4 parent. Tokenizer carry-forward is not weight reuse.

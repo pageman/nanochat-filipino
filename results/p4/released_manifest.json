@@ -1,0 +1,25 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "gate": "X",
+  "at_utc": "2026-08-21T13:42:01Z",
+  "artifacts": {
+    "p4-validation-seal.json": "5c7287752ba1abb39245acab43b9917ea9e089c0309959ec24990015e1ad580f",
+    "gate-v-test.json": "6b3e0c32cedf714bfc16bc698bdc34d2a68ba10f26fb791c1390f4079e0764a1",
+    "gate-p0-t-eligibility.json": "07c153892a8afe09b5291b5d346a39edafe2240dedb78136edf52368b4c26a9f",
+    "c1_en_val_bpb_full.json": "219ae523e331ee8682185f1ece8cb10f8e9d419a10f30c9d1c9a490c2d02f04b",
+    "c1_tl_val_bpb_full.json": "d329810fc2525770deab18415486f41fafd5a5d6575023f973cf1f878a762a44",
+    "c2_en_val_bpb_full.json": "d0a52773b44a1042f075c752e8771a547dd69c33d84cc1b0acf6228e7d27d20e",
+    "c2_tl_val_bpb_full.json": "c9bb735dc901a2bc6b4d4ba278b96fc8e519333f967d9520bb0204d2de14b92e",
+    "c3_en_val_bpb_full.json": "d1a070db2d4c1c18f9b11362b51a1e4e46bdc87cb6a1281c10d2b5b45da76762",
+    "c3_tl_val_bpb_full.json": "bb0554c0ed84e5aa6cd10ccd575e6b873a0c0119fef12af56c285963d032bf02",
+    "c0_en_val_bpb_full.json": "6a6a5c3cd38ae2cddd997a329404daf4c305de13fdbdf99da092c8861199d023",
+    "c0_tl_val_bpb_full.json": "a29ef3257f2283f29d62d14699ccaa3111f69642ba5fe9f3dd48931dea604804",
+    "byte_unigram_tagalog_val.json": "3ac42865de00fb7b75e9427560ee202ba794da6da2cd2f61041f7acb8f7dedb7"
+  },
+  "raw_test_still_restricted": true,
+  "c3_is_not_p3_b3": true,
+  "note": "Simultaneous sealed release. No new computation."
+}

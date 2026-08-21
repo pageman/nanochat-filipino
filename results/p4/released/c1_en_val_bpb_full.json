@@ -1,0 +1,30 @@
+{
+  "gate": "U",
+  "cell": "c1_en_val_bpb_full.json",
+  "model_tag": "p4-c1-tl-d20",
+  "split": "english_val",
+  "val_bpb_full": 2.878105711370309,
+  "evaluated_at_utc": "2026-08-21T13:26:41Z",
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "test_read_count": 0,
+  "detail": {
+    "bpb": 2.878105711370309,
+    "total_nats": 1094890.875,
+    "total_bytes": 548831,
+    "n_scored_tokens": 155642,
+    "n_excluded_positions": 8198,
+    "finite": true,
+    "n_source_docs": 82,
+    "n_rows": 76,
+    "n_batches": 10,
+    "n_docs_packed": 82,
+    "n_cropped_fills": 76,
+    "n_padded_positions": 8196,
+    "device_batch_size": 8,
+    "sequence_len": 2048,
+    "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+    "stride": "non_overlapping_T_official_bos_bestfit",
+    "label": "p4-c1-tl-d20/english_val",
+    "wall_sec": 3.6177453994750977
+  }
+}

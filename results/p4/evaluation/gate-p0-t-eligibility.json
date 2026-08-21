@@ -1,0 +1,41 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "P0-T",
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "margin_bpb": 0.01,
+  "status": "PASS",
+  "at_utc": "2026-08-21T11:16:00Z",
+  "test_read_count": 0,
+  "english_val_used": false,
+  "byte_unigram_val_bpb": 4.45322529848965,
+  "depths": {
+    "8": {
+      "depth": 8,
+      "model_tag": "p4-tl0-d8",
+      "checkpoint_sha256": "f9b2ffbbc72fc6168bff7f2a1a6aae79292da198d12121f71d5385741b2c6111",
+      "val_bpb_full": 1.1799212597259456,
+      "untrained_val_bpb": 3.2891086622190406,
+      "byte_unigram_val_bpb": 4.45322529848965,
+      "gap_vs_untrained": 2.109187402493095,
+      "gap_vs_unigram": 3.273304038763704,
+      "pass_untrained_floor": true,
+      "pass_unigram_floor": true,
+      "pass_both_floors": true
+    },
+    "20": {
+      "depth": 20,
+      "model_tag": "p4-tl0-d20",
+      "checkpoint_sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+      "val_bpb_full": 1.1721679498756241,
+      "untrained_val_bpb": 3.289105958147755,
+      "byte_unigram_val_bpb": 4.45322529848965,
+      "gap_vs_untrained": 2.1169380082721307,
+      "gap_vs_unigram": 3.2810573486140253,
+      "pass_untrained_floor": true,
+      "pass_unigram_floor": true,
+      "pass_both_floors": true
+    }
+  }
+}

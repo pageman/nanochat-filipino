@@ -1,0 +1,53 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "Q",
+  "arm": "C0",
+  "status": "pass",
+  "immutable": true,
+  "additional_train_tokens": 0,
+  "at_utc": "2026-08-21T12:01:01Z",
+  "host": "PaulPajos-MacBook-Pro.local",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "model_tag": "p4-c0-tl-d20",
+  "source_tag": "p4-tl0-d20",
+  "depth": 20,
+  "checkpoint_step": 294,
+  "checkpoint_sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+  "frozen_dir": "data/cache/p4-20260821T060032Z-92d63d4/c0/frozen/p4-c0-tl-d20",
+  "copied": {
+    "model_000294.pt": {
+      "path": "data/cache/p4-20260821T060032Z-92d63d4/c0/frozen/p4-c0-tl-d20/model_000294.pt",
+      "sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+      "bytes": 2663446486
+    }
+  },
+  "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "p0_t_status": "PASS",
+  "child_parent_whitelist": [
+    "p4-c0-tl-d20"
+  ],
+  "allowed_child_tags": [
+    "p4-c1-tl-d20",
+    "p4-c2-en-d20",
+    "p4-c3-mix-d20"
+  ],
+  "protocol_alias_c1": "p4-c1-extra-tl-d20",
+  "forbidden_parents": [
+    "p4-tl0-d8",
+    "P1.1",
+    "P2",
+    "P3",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "fresh_optimizer_required": true,
+  "load_optimizer": false,
+  "test_access": 0,
+  "next_gate": "R"
+}

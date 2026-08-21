@@ -1,0 +1,86 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "researchbox_url": "https://researchbox.org/8869",
+  "gate": "A",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:21:34Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_a_source_pin.py",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "nanochat_head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "allowed_diff_sha256": "d06f5f966ae4979d2103c19e63ad80cf311903b1e385577a36787e9b1a70eb6f",
+  "sentinel": "data/cache/p4-20260821T060032Z-92d63d4/SENTINEL_P4_ONLY",
+  "evaluator_sha256": "9afebdb405aaac0bb4287051d9b6f5d16f56d6dd9269a1e6c2c5df29becbced1",
+  "checks": [
+    {
+      "id": "A1_pin_checkout",
+      "ok": true,
+      "detail": {
+        "head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "expected": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      }
+    },
+    {
+      "id": "A2_allowed_diff_only_data_hook",
+      "ok": true,
+      "detail": {
+        "patch_sha256": "faaded83ef79e6d5b2e6856a444cf17e20ddb534ddd29d6b600f9568304ec4ff",
+        "diff_chars": 825,
+        "disallowed": [],
+        "hook_present": true
+      }
+    },
+    {
+      "id": "A3_sentinel",
+      "ok": true,
+      "detail": "data/cache/p4-20260821T060032Z-92d63d4/SENTINEL_P4_ONLY"
+    },
+    {
+      "id": "A4_base_dir_is_p4_cache",
+      "ok": true,
+      "detail": {
+        "NANOCHAT_BASE_DIR": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4"
+      }
+    },
+    {
+      "id": "A5_p4_env_not_prior_copy",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "A6_env_scan_no_prior_cache",
+      "ok": true,
+      "detail": {
+        "NANOCHAT_BASE_DIR": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p4-20260821T060032Z-92d63d4",
+        "NANOCHAT_DATA_DIR": null
+      }
+    },
+    {
+      "id": "A7_no_checkpoints_in_p4_cache",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "A8_evaluator_copied_formula_frozen",
+      "ok": true,
+      "detail": "9afebdb405aaac0bb4287051d9b6f5d16f56d6dd9269a1e6c2c5df29becbced1"
+    },
+    {
+      "id": "A9_forbidden_parents",
+      "ok": true,
+      "detail": "scripts/p4/forbidden_parents.py"
+    },
+    {
+      "id": "A10_hub_stub_no_scalars",
+      "ok": true,
+      "detail": "docs/hub/p4-token-share-mix/README.md"
+    }
+  ],
+  "no_p4_outcomes": true,
+  "next_gate": "B"
+}

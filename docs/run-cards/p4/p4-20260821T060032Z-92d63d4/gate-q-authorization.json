@@ -1,0 +1,13 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "gate": "Q",
+  "authorized": true,
+  "authorizes_x": false,
+  "authorizes_w": false,
+  "scope": "Gate Q only within Q-V serial chain",
+  "authorized_at_utc": "2026-08-21T11:18:00Z",
+  "authorized_by": "operator chat: Do Gate Q to Gate V, update every 15 minutes",
+  "must_not": ["print BPB", "unblind", "Make Public ResearchBox", "start X"]
+}

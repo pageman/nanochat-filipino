@@ -1,0 +1,18 @@
+{
+  "B": 65536,
+  "T": 2048,
+  "N_phase2": 294,
+  "D_phase2": 19267584,
+  "N_TL0": 294,
+  "q_TL": 0.5,
+  "delta_bpb": 0.01,
+  "peak_lr_child_fraction": 0.3,
+  "warmup_parent": 14,
+  "warmup_child": 14,
+  "load_optimizer": false,
+  "t_tl_train": 6401013,
+  "c3_quota_tl": 9633792,
+  "c3_quota_en": 9633792,
+  "frozen_at_gate": "G",
+  "argv_receipt": "docs/run-cards/p4/p4-20260821T060032Z-92d63d4/gate-g-budget-command-freeze.json"
+}

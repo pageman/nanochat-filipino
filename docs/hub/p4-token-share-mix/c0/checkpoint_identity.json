@@ -1,0 +1,22 @@
+{
+  "arm": "C0",
+  "model_tag": "p4-c0-tl-d20",
+  "filename": "p4-c0-tl-d20-model_000294.pt",
+  "step": 294,
+  "depth": 20,
+  "checkpoint_sha256": "34e069646be4158979809c023691188439047d6cbee08a141db432c78bcf02e2",
+  "bytes": 2663446486,
+  "additional_train_tokens": 0,
+  "immutable_parent": true,
+  "not_trainer_meta": true,
+  "architecture_from_pin_and_depth": {
+    "sequence_len": 2048,
+    "vocab_size": 32768,
+    "n_layer": 20,
+    "n_head": 10,
+    "n_kv_head": 10,
+    "n_embd": 1280,
+    "window_pattern": "SSSL"
+  },
+  "note": "Trainer meta_000294.json was not copied off the GPU host. Official BPB is evaluation/*.json, not in-loop val_bpb."
+}

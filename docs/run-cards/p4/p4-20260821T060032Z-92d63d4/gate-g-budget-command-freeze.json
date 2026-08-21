@@ -1,0 +1,146 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P4-C3-TOKEN-SHARE",
+  "aspredicted_id": 307591,
+  "researchbox_id": 8869,
+  "gate": "G",
+  "status": "pass",
+  "at_utc": "2026-08-21T06:23:38Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "script": "scripts/p4/gate_g_budget.py",
+  "tokenizer_pkl_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "t_tl_train": 6401013,
+  "d_3x_tl": 19203039,
+  "B": 65536,
+  "N_TL0": 294,
+  "N_TL0_computed_from_3x": 294,
+  "d_actual_tl0": 19267584,
+  "N_phase2": 294,
+  "D_phase2": 19267584,
+  "warmup_parent": 14,
+  "warmup_phase2": 14,
+  "c3_quota_tl": 9633792,
+  "c3_quota_en": 9633792,
+  "train": {
+    "n_docs": 37602,
+    "n_tokens": 6401013,
+    "n_bytes": 29165137,
+    "n_chars": 29165137,
+    "bos_prepended": false,
+    "packing": false,
+    "crop": false
+  },
+  "depths": [
+    {
+      "depth": 8,
+      "p_scaling": 41943232,
+      "num_iterations_tl0": 294
+    },
+    {
+      "depth": 20,
+      "p_scaling": 435160240,
+      "num_iterations_tl0": 294
+    }
+  ],
+  "commands": {
+    "parent": {
+      "class": "python -m scripts.base_train",
+      "device_type": "cuda",
+      "depths": [
+        8,
+        20
+      ],
+      "max_seq_len": 2048,
+      "window_pattern": "SSSL",
+      "device_batch_size": 8,
+      "total_batch_size": 65536,
+      "num_iterations": 294,
+      "warmup_steps": 14,
+      "eval_every": -1,
+      "core_metric_every": -1,
+      "sample_every": -1,
+      "save_every": -1,
+      "model_tags": [
+        "p4-tl0-d8",
+        "p4-tl0-d20"
+      ],
+      "runs": [
+        "p4-tl0-d8",
+        "p4-tl0-d20"
+      ],
+      "note": "terminal checkpoint only; save-every=-1 writes model_{N:06d}.pt at last step on pin 92d63d4"
+    },
+    "phase2": {
+      "wrapper": "python scripts/p4/continue_from_frozen.py",
+      "init_from": "$NANOCHAT_BASE_DIR/c0/frozen/p4-c0-tl-d20",
+      "init_step": 294,
+      "depth": 20,
+      "max_seq_len": 2048,
+      "window_pattern": "SSSL",
+      "device_batch_size": 8,
+      "total_batch_size": 65536,
+      "num_iterations": 294,
+      "warmup_steps": 14,
+      "eval_every": -1,
+      "core_metric_every": -1,
+      "sample_every": -1,
+      "resume_from_step": -1,
+      "load_optimizer": false,
+      "fresh_muon_adamw": true,
+      "lr_peak_rule": "0.3 * parent scheduled peak",
+      "allowed_model_tags": [
+        "p4-c1-tl-d20",
+        "p4-c2-en-d20",
+        "p4-c3-mix-d20"
+      ]
+    }
+  },
+  "cost_note": {
+    "class": "NVIDIA CUDA A40",
+    "expected_gpus": "H + I(d8) + I(d20) + R + S + T + U + V",
+    "must_not_shrink_N": true
+  },
+  "checks": [
+    {
+      "id": "G1_vocab_32768",
+      "ok": true
+    },
+    {
+      "id": "G2_n_tl0_filed_294",
+      "ok": true
+    },
+    {
+      "id": "G3_computed_equals_filed",
+      "ok": true,
+      "detail": {
+        "n_computed": 294,
+        "N_TL0": 294,
+        "t_tl_train": 6401013
+      }
+    },
+    {
+      "id": "G4_warmup_lt_n",
+      "ok": true
+    },
+    {
+      "id": "G5_d_phase2_locked",
+      "ok": true
+    },
+    {
+      "id": "G6_c3_quotas",
+      "ok": true,
+      "detail": {
+        "tl": 9633792,
+        "en": 9633792
+      }
+    },
+    {
+      "id": "G7_no_bpb",
+      "ok": true
+    }
+  ],
+  "computed_bpb": false,
+  "next_gate": "H"
+}

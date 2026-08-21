@@ -1,0 +1,189 @@
+**Keywords:** Tagalog retention; English acquisition; token share; continual pretraining; WikiText-TL-39; WikiText-103; bits-per-byte; nanochat; preregistration; post-P3.
+
+**arXiv categories:** cs.CL, cs.LG.
+
+**Registration and deposits (P4):** AsPredicted #307591 (<https://aspredicted.org/if84km.pdf>); ResearchBox #8869 (<https://researchbox.org/8869>; peer-review passcode `ABMSAN`; FOR PEER REVIEW, not Make Public); AsCollected #2471 (`NANOCHAT-FILIPINO-P4`); study record <https://github.com/pageman/nanochat-filipino/tree/main/docs/p4>; Hub <https://huggingface.co/pageman/nanochat-filipino-p4-token-share-mix>. Run ID: `p4-20260821T060032Z-92d63d4`.
+
+# Introduction {#sec:intro}
+
+Pajo [@pajo2026p11] measured equal-exposure Tagalog BPB across nanochat depths on WikiText-TL-39 (AsPredicted #306780). Pajo [@pajo2026p2] asked the forward continual-pretraining question from an English parent (AsPredicted #306935). Pajo [@pajo2026p3] asked the reverse from a fresh Tagalog parent, with a 50/50-*document* B3 arm (AsPredicted #307342). P3 Gate X (20 August 2026) left a document/byte-share ambiguity: document-balanced B3 is not token-share balanced under a shared tokenizer.
+
+P4 was designed after those released P3 findings were known. It is therefore a prospectively preregistered **post-P3** exposure-matched mixture trade-off study [@aspredicted307591]. It is not an amendment, correction, rescue, replication, or reinterpretation of P3. It is not "P3 B3 fixed." C3 is a newly constructed token-share mixture; C3 is not P3 B3.
+
+The confirmatory question, locked before any P4 confirmatory BPB existed, is:
+
+> After a newly trained P4 Tagalog parent passes P0-T, freeze d20 as C0 and continue it for one shared phase-two token budget on C1 extra Tagalog, C2 pure English, and C3 a mixture whose P4-tokenizer-encoded source-content token share is locked at $q_{\mathrm{TL}}=0.50$. Do $R_{\mathrm{TL}}=\mathrm{TL}(C3)-\mathrm{TL}(C2)\le -\delta$ and $A_{\mathrm{EN}}=\mathrm{EN}(C3)-\mathrm{EN}(C1)\le -\delta$ both hold at $\delta=0.01$?
+
+This paper contributes: (i) a locked token-share mixture constructed after tokenizer freeze and before any P4 BPB; (ii) a fresh Tagalog parent with P0-T PASS; (iii) six child validation cells plus descriptive C0 English, sealed before one C3-only secondary test touch; (iv) a Gate X release in which both co-primary criteria were observed in this one-seed apparatus.
+
+# Related work {#sec:related}
+
+Cruz and Cheng constructed WikiText-TL-39 [@cruz2019eval]. Sequential interference is classical [@mccloskey1989catastrophic; @french1999cf]. LLM continual-pretraining work often continues an English or multilingual base [@luo2023forgetting; @ramasesh2021forgetscale; @shi2024continual]. P4 stays inside WikiText-family text, the nanochat depth dial, and BPB rather than CORE or chat [@karpathy2026nanochat]. Equal token budgets follow the family so stream identity is not confounded with compute [@kaplan2020scaling; @hoffmann2022chinchilla; @muennighoff2023dataconstrained]. WikiText established clean Wikipedia LM evaluation in English [@merity2017pointer]. BPB remains comparable across vocabularies [@shannon1951prediction; @brown2020gpt3]. Official P4 BPB is mean token NLL divided by $\ln 2$ times mean UTF-8 bytes per token, full split, $T=2048$, BOS-best-fit. In-loop trainer BPB is not confirmatory. Preregistration reduces undisclosed flexibility [@nosek2018prereg; @wagenmakers2012confirmatory].
+
+# Methods {#sec:methods}
+
+## Registration and authority
+
+AsPredicted #307591 governs [@aspredicted307591].
+
+- PDF: <https://aspredicted.org/if84km.pdf>
+
+- PDF SHA-256:\
+
+- Protocol SHA-256 at filing:\
+
+ResearchBox #8869 is the deposit (<https://researchbox.org/8869>; peer-review passcode `ABMSAN`; the box remains FOR PEER REVIEW and is not made public by this paper). AsCollected #2471 (`NANOCHAT-FILIPINO-P4`) records public-data provenance. Authority: filed PDF $\gg$ protocol $\gg$ `LOCK.json` $\gg$ dated deviations $\gg$ this manuscript. The study does not amend #306780, #306935, or #307342. C3 is not P3 B3.
+
+## Sources, tokenizer, and parent
+
+Tagalog train/val/test documents are the frozen WikiText-TL-39 P1.1-eligible splits. English train/val/test documents are the frozen WikiText-103 P2-eligible splits. The tokenizer is the carry-forward P3 pair: `tokenizer.pkl` and `token_bytes.pt` . P1.1/P2/P3 weights were not loaded as parents. The parent was trained from random initialization on Tagalog train only (Gates I then Q). Confirmatory GPU gates used NVIDIA CUDA A40.
+
+## P0-T and C0 freeze
+
+P0-T compared full-split Tagalog validation BPB of d8 and d20 TL0 against an untrained initialization and a byte-unigram floor at $\delta_{\mathrm{P0T}}=0.01$. Official P0-T status is CUDA-only. After PASS, d20 was copied to an immutable C0 directory with `additional_train_tokens`=0. Smoke (d4) and d8 checkpoints are not C0.
+
+## Children and C3 construction
+
+C1, C2, and C3 each continued C0 for $N=294$ steps, $B=65{,}536$, $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens, seed 42, serial R$\to$S$\to$T. C1 used Tagalog train only. C2 used English train only. C3 was packed after tokenizer freeze (operational F then E) to exact source-content token quotas $9{,}633{,}792$ Tagalog and $9{,}633{,}792$ English ($q_{\mathrm{TL}}=0.50$). Byte share is descriptive, not the exposure clock. Mix-manifest SHA-256: .
+
+## Lockbox, analysis, and tests
+
+Validation BPB was lockboxed until Gate X. Gate U sealed six child cells plus descriptive C0 English with test-access count 0. Policy A authorized one C3-only test event after U (Gate V). C1 and C2 were not tested. Contrasts use the sealed validation cells; tests are secondary. Reporting precision is six decimal places. Equality at $-\delta$ counts. No composite score, confidence interval, or $p$-value.
+
+# Results {#sec:results}
+
+P0-T status is **PASS**. Depth-8 Tagalog val BPB was $1.179921$ versus untrained $3.289109$ and byte-unigram $4.453225$. Depth-20 Tagalog val BPB was $1.172168$ versus untrained $3.289106$ and the same unigram floor. C0 SHA-256 matches the Gate I d20 checkpoint .
+
+Table [1](#tab:cells){reference-type="ref" reference="tab:cells"} reports the six child validation cells and descriptive C0 English. Co-primary contrasts from the Gate U seal are $$\begin{align}
+R_{\mathrm{TL}}&=\mathrm{TL}(C3)-\mathrm{TL}(C2)=-1.316637\le -0.01 \quad\text{(observed)},\\
+A_{\mathrm{EN}}&=\mathrm{EN}(C3)-\mathrm{EN}(C1)=-1.375277\le -0.01 \quad\text{(observed)}.
+\end{align}$$ C0 English ($2.615645$) is descriptive and excluded from the contrasts.
+
+  Arm                   Tagalog val BPB   English val BPB
+  -------------------- ----------------- -----------------
+  C0 (frozen parent)          ---           $2.615645$
+  C1 extra Tagalog        $0.785486$        $2.878106$
+  C2 pure English         $2.517909$        $1.333106$
+  C3 token-share mix      $1.201273$        $1.502828$
+
+  : Full-split validation BPB after terminal d20 checkpoints. Six-decimal reporting as filed. C0 English is descriptive. {#tab:cells}
+
+Under this preregistered token-share-locked mixture, P4 observed lower Tagalog BPB than pure English continuation and lower English BPB than extra Tagalog continuation in the stated apparatus. One seed; no CI/$p$-value/population claim; C3 is not P3 B3; P4 does not amend #307342.
+
+A measured reduction in the P3-style relative Tagalog retention cost within this frozen P4 apparatus, not a general mitigation of catastrophic forgetting.
+
+One authorized C3-only secondary test event reported English test BPB $1.513698$ and Tagalog test BPB $1.202140$. Tests do not alter sealed contrasts and are not co-primary.
+
+# Discussion {#sec:disc}
+
+C3 sits between C1 and C2 on both languages, as a token-share trade-off rather than a claim that $q_{\mathrm{TL}}=0.50$ is optimal. Byte share of the packed mix is descriptive; 50/50 source-content tokens is not 50/50 documents and is not 50/50 UTF-8 bytes. The result is a pattern observed in one seed under a frozen P4 apparatus. It does not independently confirm P3. It does not show that P3 B3 was "fixed." It does not establish a universal mixture law.
+
+# Limitations {#sec:limit}
+
+One seed; one tokenizer; WikiText-family text only; no chat, SFT, CORE, or multi-seed population inference. Confirmatory GPU work used a rented NVIDIA A40. Raw test JSONL remains restricted. Hub weight release, if any, must ship C0+C1+C2+C3 together with tokenizer and meta; C3 alone is prohibited. Byte-balanced mix is a separate filing (P6-B). Multi-seed is a separate filing (P5).
+
+A technical incident at Gate V (missing English test JSONL on the GPU host) failed before any test score. Files were restored; V was rerun once from the U seal with test-access still 0 at U. Frozen English train JSONL contains intra-split duplicate rows (28,472 rows / 28,232 unique); they were not dropped. Cross-split overlap was 0.
+
+# Deviations {#sec:dev}
+
+No protocol stop. No break-glass. No additional confirmatory validation or test eval after Gate X. The V JSONL miss is a technical incident, not a science change.
+
+# Availability {#availability .unnumbered}
+
+- AsPredicted #307591: <https://aspredicted.org/if84km.pdf>
+
+- ResearchBox #8869: <https://researchbox.org/8869>\
+  (peer-review passcode `ABMSAN`; FOR PEER REVIEW; not Make Public)
+
+- AsCollected #2471 (`NANOCHAT-FILIPINO-P4`)
+
+- Study record (GitHub):\
+  <https://github.com/pageman/nanochat-filipino/tree/main/docs/p4>
+
+- Code and audit trees (GitHub):\
+  <https://github.com/pageman/nanochat-filipino>\
+  P4-only: `scripts/p4/`, `docs/papers/p4-token-share-mix/`, `docs/run-cards/p4/`, `results/p4/`, `docs/hub/p4-token-share-mix/`
+
+- Weights (Hugging Face Hub):\
+  <https://huggingface.co/pageman/nanochat-filipino-p4-token-share-mix>\
+  (C0+C1+C2+C3 together; never C3 alone; not on P1.1/P2/P3 Hub IDs).
+
+Held-out test text is not redistributed. Host credentials are not published.
+
+# Ethics {#ethics .unnumbered}
+
+Public Wikipedia-derived corpora. No human-subjects experiment. The ResearchBox remains passcode-protected for peer review and is not made public by this paper.
+
+# Acknowledgements {#acknowledgements .unnumbered}
+
+Thanks to Manus 1.6 and Cursor.com(Auto) for the drafting, formatting, and solutioning of the paper. WikiText-TL-39 is due to Cruz and Cheng [@cruz2019eval]. WikiText-103 is due to Merity et al. [@merity2017pointer]. nanochat is due to Karpathy [@karpathy2026nanochat]. Errors remain the author's.
+
+# Funding {#funding .unnumbered}
+
+No dedicated grant. GPU time (Runpod A40) was paid by the author.
+
+# Selected hashes {#app:hashes}
+
+- Pin / nanochat:
+
+- C0 / I d20:
+
+- C1:
+
+- C2:
+
+- C3:
+
+- U seal:
+
+- Evaluator:
+
+- Protocol:
+
+- Gate bible:
+
+- Addendum:
+
+- AsPredicted PDF:
+
+::: thebibliography
+99
+
+P. Pajo. Depth-wise Tagalog language-model scaling with nanochat on WikiText-TL-39. AsPredicted #306780, 2026.
+
+P. Pajo. English retention and Tagalog acquisition under equal-budget nanochat continual pretraining. AsPredicted #306935, 2026.
+
+P. Pajo. Tagalog retention and English acquisition under equal-budget nanochat continual pretraining. AsPredicted #307342, 2026.
+
+AsPredicted #307591. P4: token-share mix after fresh TL parent (nanochat, TL-39/WikiText-103). <https://aspredicted.org/if84km.pdf>, 2026.
+
+J. C. B. Cruz and C. Cheng. Evaluating Filipino linguistic resources. .
+
+A. Karpathy. nanochat. <https://github.com/karpathy/nanochat>, 2026.
+
+S. Merity, C. Xiong, J. Bradbury, and R. Socher. Pointer sentinel mixture models. *ICLR*, 2017.
+
+H. Shi et al. Continual learning of large language models: A comprehensive survey. *arXiv:2404.16789*, 2024.
+
+Y. Luo et al. An empirical study of catastrophic forgetting in large language models during continual fine-tuning. *arXiv:2308.08747*, 2023.
+
+V. V. Ramasesh, A. Lewkowycz, and E. Dyer. Effect of scale on catastrophic forgetting in neural networks. *ICLR*, 2022.
+
+M. McCloskey and N. J. Cohen. Catastrophic interference in connectionist networks: The sequential learning problem. *Psychology of Learning and Motivation*, 24:109--165, 1989.
+
+R. M. French. Catastrophic forgetting in connectionist networks. *Trends in Cognitive Sciences*, 3(4):128--135, 1999.
+
+J. Kaplan et al. Scaling laws for neural language models. *arXiv:2001.08361*, 2020.
+
+J. Hoffmann et al. Training compute-optimal large language models. *NeurIPS*, 2022.
+
+N. Muennighoff et al. Scaling data-constrained language models. *NeurIPS*, 2023.
+
+C. E. Shannon. Prediction and entropy of printed English. *Bell System Technical Journal*, 30(1):50--64, 1951.
+
+T. Brown et al. Language models are few-shot learners. *NeurIPS*, 2020.
+
+B. A. Nosek et al. The preregistration revolution. *PNAS*, 115(11):2600--2606, 2018.
+
+E.-J. Wagenmakers et al. An agenda for purely confirmatory research. *Perspectives on Psychological Science*, 7(6):632--638, 2012.
+:::

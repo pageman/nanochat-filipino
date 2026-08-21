@@ -1,0 +1,18 @@
+name,type,definition
+arm,string,Branch label C0/C1/C2/C3
+role,string,Registered role of the arm
+tl_val_bpb_full,float,Tagalog full-validation bits per UTF-8 byte
+en_val_bpb_full,float,English full-validation bits per UTF-8 byte
+en_note,string,Notes; C0 English is descriptive only
+c3_en_test_bpb,float,Secondary English holdout BPB; C3 only
+c3_tl_test_bpb,float,Secondary Tagalog legacy holdout BPB; C3 only
+R_TL,float,TL(C3)-TL(C2); co-primary; C3 row only
+A_EN,float,EN(C3)-EN(C1); co-primary; C3 row only
+c3_is_not_p3_b3,string,true; C3 is not P3 B3
+grammar,string,both / only_R / only_A / neither
+variable,string,Long-facts variable name
+value,string,Long-facts value
+description,string,Long-facts description
+artifact,string,Hashed artifact role
+path_or_label,string,Relative path or label
+sha2_256,string,SHA-256 of a FILE with sha2-256: prefix; not a participant ID

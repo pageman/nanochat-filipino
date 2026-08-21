@@ -1,0 +1,14 @@
+{
+  "B": 65536,
+  "T": 2048,
+  "N_phase2": 294,
+  "D_phase2": 19267584,
+  "N_TL0": 294,
+  "q_TL": null,
+  "delta_bpb": null,
+  "peak_lr_child_fraction": 0.3,
+  "warmup_child": 14,
+  "load_optimizer": false,
+  "frozen_at_gate": "G",
+  "note": "q_TL and delta remain null until signed in the PDF. Do not fill from P3 outcomes."
+}
