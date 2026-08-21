@@ -1,0 +1,11 @@
+# Development / verification dependencies for CPU hosts (Cloud Agents, laptops).
+#
+# This project's confirmatory training and BPB evaluation run on a named NVIDIA
+# CUDA host with a separate `vendor/nanochat` checkout (see scripts/p1/setup_spark.sh
+# and reproducibility/environment_lock.txt); torch + nanochat are intentionally NOT
+# listed here because they require a GPU and data/checkpoints that are not in this repo.
+#
+# These packages cover the Gate A-J verification and manifest tooling under scripts/p1/
+# that can run against the committed manifests/results on a plain CPU host.
+pyarrow==21.0.0
+pytest==8.4.2
