@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-08-23T19:52:17Z",
+  "seed": 1,
+  "component": "tagalog",
+  "model_tag": "p5-s1-c3-mix-d20",
+  "checkpoint_sha256": "f7c080048d4311863836fb6cf2c06d9d555514bcce7e30a5d8b819aa0dd15252",
+  "test_path": "data/processed/wikitext-tl39/test/test.jsonl",
+  "bpb": 1.2016083443380732,
+  "total_nats": 4521653.5,
+  "total_bytes": 5428863,
+  "packing": "bos_bestfit_buffer1000_one_pass_no_wrap",
+  "stride": "non_overlapping_T_official_bos_bestfit",
+  "does_not_alter_sealed_contrasts": true
+}

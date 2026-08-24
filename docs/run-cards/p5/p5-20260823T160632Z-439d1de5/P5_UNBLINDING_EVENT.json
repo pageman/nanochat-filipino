@@ -1,0 +1,67 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "event": "P5_UNBLINDING",
+  "gate": "X",
+  "at_utc": "2026-08-24T02:05:35Z",
+  "delta": 0.01,
+  "seeds": {
+    "1": {
+      "status": "eligible",
+      "R_TL": -1.214696415391244,
+      "A_EN": -1.5551720090731904,
+      "class": "both",
+      "delta": 0.01,
+      "equality_counts": true,
+      "cells": {
+        "c1_en_val_bpb_full.json": 2.972254120597337,
+        "c2_tl_val_bpb_full.json": 1.9477822478311362,
+        "c3_en_val_bpb_full.json": 1.4170821115241465,
+        "c3_tl_val_bpb_full.json": 0.7330858324398921
+      }
+    },
+    "2": {
+      "status": "eligible",
+      "R_TL": -1.3523558295132814,
+      "A_EN": -1.3882178471787994,
+      "class": "both",
+      "delta": 0.01,
+      "equality_counts": true,
+      "cells": {
+        "c1_en_val_bpb_full.json": 2.874332257007862,
+        "c2_tl_val_bpb_full.json": 2.222497576529157,
+        "c3_en_val_bpb_full.json": 1.4861144098290626,
+        "c3_tl_val_bpb_full.json": 0.8701417470158757
+      }
+    },
+    "3": {
+      "status": "eligible",
+      "R_TL": -1.334145138526857,
+      "A_EN": -1.3862277804471588,
+      "class": "both",
+      "delta": 0.01,
+      "equality_counts": true,
+      "cells": {
+        "c1_en_val_bpb_full.json": 2.8541493363566133,
+        "c2_tl_val_bpb_full.json": 2.171965613113115,
+        "c3_en_val_bpb_full.json": 1.4679215559094545,
+        "c3_tl_val_bpb_full.json": 0.8378204745862582
+      }
+    }
+  },
+  "panel_count_table": {
+    "both": 3,
+    "only-R": 0,
+    "only-A": 0,
+    "neither": 0,
+    "ineligible_parent": 0
+  },
+  "eligible_n": 3,
+  "no_mean": true,
+  "no_ci": true,
+  "no_pvalue": true,
+  "does_not_confirm_p4": true,
+  "p4_seed0_not_a_p5_cell": true
+}

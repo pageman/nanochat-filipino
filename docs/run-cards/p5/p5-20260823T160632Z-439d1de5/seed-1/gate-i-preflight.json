@@ -1,0 +1,110 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "gate": "I-preflight",
+  "seed": 1,
+  "status": "ready_for_tl0",
+  "at_utc": "2026-08-23T17:50:59Z",
+  "host": "ab4334856eae",
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "checks": [
+    {
+      "id": "I0_not_darwin",
+      "ok": true,
+      "detail": "Linux"
+    },
+    {
+      "id": "I0_authorization",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_gate_h_pass",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_prior_seed_terminal",
+      "ok": true,
+      "detail": "first seed"
+    },
+    {
+      "id": "I0_hashes",
+      "ok": true,
+      "detail": {
+        "tokenizer.pkl": true,
+        "token_bytes.pt": true,
+        "train_00000.parquet": true,
+        "train_00001.parquet": true,
+        "train_00002.parquet": true,
+        "train_00003.parquet": true,
+        "val.parquet": true
+      }
+    },
+    {
+      "id": "I0_pin",
+      "ok": true,
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+    },
+    {
+      "id": "I0_last_shard_val",
+      "ok": true,
+      "detail": [
+        "shard_00000.parquet",
+        "shard_00001.parquet",
+        "shard_00002.parquet",
+        "train_00000.parquet",
+        "train_00001.parquet",
+        "train_00002.parquet",
+        "train_00003.parquet",
+        "val.parquet"
+      ]
+    },
+    {
+      "id": "I0_no_test_in_c1",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_data_dir_not_c3",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_tl0_dirs_empty",
+      "ok": true,
+      "detail": {
+        "p5-s1-tl0-d8": [],
+        "p5-s1-tl0-d20": []
+      }
+    },
+    {
+      "id": "I0_forbidden_reject_live",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_n_tl0_locked",
+      "ok": true,
+      "detail": 294
+    },
+    {
+      "id": "I0_warmup_legal",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "I0_cuda",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    },
+    {
+      "id": "I0_gpu_class_a40",
+      "ok": true,
+      "detail": "NVIDIA A40"
+    }
+  ],
+  "blinded": true,
+  "note": "Exit 0 authorizes Gate I_1 TL0 only."
+}

@@ -1,0 +1,18 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "gate": "U",
+  "seed": 2,
+  "status": "pass",
+  "at_utc": "2026-08-23T23:39:24Z",
+  "gpu": true,
+  "blinded": true,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "seal_path": "data/cache/p5-20260823T160632Z-439d1de5/lockbox/seed-2/p5-s2-validation-seal.json",
+  "seal_sha256": "75c5ab56804c937a1436d538c3b4350830bd239924de76e4a877aa0988edfea0",
+  "test_access": 0,
+  "contrasts_computed": false,
+  "no_bpb_in_receipt": true,
+  "next_gate": "V_2"
+}

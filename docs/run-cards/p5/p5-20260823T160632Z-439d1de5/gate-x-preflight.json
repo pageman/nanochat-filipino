@@ -1,0 +1,84 @@
+{
+  "gate": "X-preflight",
+  "ready_for_unblinding": true,
+  "at_utc": "2026-08-24T02:05:35Z",
+  "terminals": {
+    "1": "V",
+    "2": "V",
+    "3": "V"
+  },
+  "checks": [
+    {
+      "check": "outcome_access_zero",
+      "status": "PASS",
+      "detail": 0
+    },
+    {
+      "check": "panel_not_yet_unblinded",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_1_terminal",
+      "status": "PASS",
+      "detail": "V"
+    },
+    {
+      "check": "seed_1_test_access_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_1_seal_exists",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_1_no_seed_level_x",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_2_terminal",
+      "status": "PASS",
+      "detail": "V"
+    },
+    {
+      "check": "seed_2_test_access_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_2_seal_exists",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_2_no_seed_level_x",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_3_terminal",
+      "status": "PASS",
+      "detail": "V"
+    },
+    {
+      "check": "seed_3_test_access_1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_3_seal_exists",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "seed_3_no_seed_level_x",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "blinded": true,
+  "no_bpb_printed": true
+}

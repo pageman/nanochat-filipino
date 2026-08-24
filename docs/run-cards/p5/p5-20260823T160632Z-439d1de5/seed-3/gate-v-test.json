@@ -1,0 +1,17 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "gate": "V",
+  "seed": 3,
+  "status": "pass",
+  "at_utc": "2026-08-24T01:49:45Z",
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "gpu": true,
+  "blinded": true,
+  "authorized_touches": 1,
+  "component_evaluations": 2,
+  "test_access": 1,
+  "no_bpb_in_receipt": true,
+  "next_gate": "X"
+}

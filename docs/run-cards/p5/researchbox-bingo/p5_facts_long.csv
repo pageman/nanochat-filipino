@@ -1,0 +1,36 @@
+variable,value,description
+study_id,NANOCHAT-FILIPINO-P5-P4-MULTI-SEED,Study identifier
+aspredicted_id,307836,AsPredicted registration number
+researchbox_id,8904,ResearchBox deposit number
+researchbox_url,https://researchbox.org/8904,ResearchBox (FOR PEER REVIEW; not Make Public)
+ascollected_id,2503,AsCollected project number
+ascollected_url,https://ascollected.org/HC8_G2F,AsCollected Version 1 public URL
+p5_run_id,p5-20260823T160632Z-439d1de5,Execution run id
+panel_seeds,"1,2,3",Closed panel; unused parent-init seeds
+nanochat_pin,92d63d4e8bb4df75c3b71618f31ddde2378b2bcd,Pinned nanochat commit
+designed_after_p4,true,Post-P4 panel; not confirmation of P4 as law
+p4_seed0_not_a_p5_cell,true,P4 seed 0 is historical only
+c3_is_not_p3_b3,true,"C3 is frozen P4 token-share mix, not P3 B3"
+q_tl,0.50,Filed Tagalog source-content token share
+delta_bpb,0.01,Filed co-primary cutoff; equality at -delta counts
+K_eligible,3,Eligible seeds after P0-T
+k_both,3,Primary panel count
+k_only_R,0,Panel count
+k_only_A,0,Panel count
+k_neither,0,Panel count
+k_ineligible_parent,0,Panel count
+no_mean,true,No across-seed mean of contrasts
+no_ci,true,No confidence interval
+no_pvalue,true,No p-value
+hub_status,deferred,C0+C1+C2+C3 per seed together or none
+raw_test_text_in_box,false,Held-out text not redistributed
+aspredicted_pdf_sha256,439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3,Local prereg PDF digest
+seed1_class,both,Per-seed four-way class
+seed1_R_TL,-1.214696,TL(C3)-TL(C2) at 6 dp
+seed1_A_EN,-1.555172,EN(C3)-EN(C1) at 6 dp
+seed2_class,both,Per-seed four-way class
+seed2_R_TL,-1.352356,TL(C3)-TL(C2) at 6 dp
+seed2_A_EN,-1.388218,EN(C3)-EN(C1) at 6 dp
+seed3_class,both,Per-seed four-way class
+seed3_R_TL,-1.334145,TL(C3)-TL(C2) at 6 dp
+seed3_A_EN,-1.386228,EN(C3)-EN(C1) at 6 dp

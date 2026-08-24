@@ -1,0 +1,14 @@
+{
+  "gate": "X",
+  "status": "pass",
+  "at_utc": "2026-08-24T02:05:35Z",
+  "event": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/P5_UNBLINDING_EVENT.json",
+  "panel_count_table": {
+    "both": 3,
+    "only-R": 0,
+    "only-A": 0,
+    "neither": 0,
+    "ineligible_parent": 0
+  },
+  "next_gate": "W"
+}

@@ -1,0 +1,28 @@
+{
+  "repo_id": "pageman/nanochat-filipino-p5-p4-multi-seed",
+  "run_id": "p5-20260823T160632Z-439d1de5",
+  "aspredicted": 307836,
+  "researchbox": null,
+  "status": "deferred",
+  "rule": "upload_c0_c1_c2_c3_together_per_eligible_seed",
+  "c3_is_not_p3_b3": true,
+  "p4_seed0_not_a_p5_cell": true,
+  "never_write_onto_p4_hub": true,
+  "panel_seeds": [1, 2, 3],
+  "checksums": {
+    "seed-1/c0": "c5bf0f495f7cb296374105c62b5946aa30cfb33fa86c58c08434c37862631ac6",
+    "seed-1/c1": "8d474aa88a250895dd410b0027277dd19a2b8f41a77544902ec4bbc774c33f14",
+    "seed-1/c2": "f9701fae3277f5c379d69d97dd3ba9b706324bf72660731b0a4fbb34371e628e",
+    "seed-1/c3": "f7c080048d4311863836fb6cf2c06d9d555514bcce7e30a5d8b819aa0dd15252",
+    "seed-2/c0": "e4c4cc7bcdf5033a97f9eedd97f7818d3c8e3ddca2b46fffc8b8c78d6137c4b1",
+    "seed-2/c1": "aaee36fd5ceb53c2e92138eb2dfa8b169bd000caf5b804d9c8645d6ad56c4f22",
+    "seed-2/c2": "e75b4c61bf3dd2cd661d931dfc63526c810dd96bf8db2fcac0f2cadb5e29c102",
+    "seed-2/c3": "0801f1437b334a68ee155623111ecba2dc03cfc49c46e8630f023c41aa21ac77",
+    "seed-3/c0": "7643b12645f487b4f38034f14985c624804ac43534cfafc723bae83edc4c3c26",
+    "seed-3/c1": "edfabbf8dbb38aefbfd61850f30efba40d8d77c8dffc02ce4db403969787b66f",
+    "seed-3/c2": "e3cd58a5fa549b62c60c568a551f3d471df5b77698208a4727c0a52266d3f58a",
+    "seed-3/c3": "1759110154b2a4176e584bcd675d4b21d10cda0f9936e8f6a188aa32ba8f2ab7",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+  }
+}

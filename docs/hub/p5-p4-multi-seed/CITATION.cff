@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "How often a frozen mix recurs across unused initializations"
+message: "If you use this study record, please cite AsPredicted #307836 and the GitHub audit trail."
+type: software
+authors:
+  - family-names: Pajo
+    given-names: Paul
+repository-code: "https://github.com/pageman/nanochat-filipino"
+url: "https://huggingface.co/pageman/nanochat-filipino-p5-p4-multi-seed"
+identifiers:
+  - type: url
+    value: "https://aspredicted.org/k6ib64.pdf"
+    description: AsPredicted #307836
+license: other
+keywords:
+  - nanochat
+  - bits-per-byte
+  - Tagalog
+  - English
+  - unused initializations
+  - recurrence count
+notes: "Closed three-seed confirmatory panel. C0/C1/C2/C3 per eligible seed together. C3 is not P3 B3. Does not confirm P4 as a law."

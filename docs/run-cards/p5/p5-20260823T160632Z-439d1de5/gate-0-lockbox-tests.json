@@ -1,0 +1,124 @@
+{
+  "all_pass": true,
+  "aspredicted_id": 307836,
+  "gate": "0",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "no_p5_outcomes": true,
+  "no_real_val_test_text": true,
+  "note": "Dummy lockbox under gitignored data/cache. Panel seed subdirs present.",
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "researchbox_id": null,
+  "scripts_p5_sha256": {
+    "scripts/p5/break_glass.py": "ab2e1b5e3e505f9407a12f84c6339c2cefca5b708ac7fbfc89921695f2818ea3",
+    "scripts/p5/continue_from_frozen.py": "07212931d36f5b19ef7c7b8854ca7d0488aa7db82f62956ff4dfdd062c3082e4",
+    "scripts/p5/dummy_c3_test.py": "40cbec85a3c4b2df9a073e52789348553056acf930b88743f18dba7a7a1cfef2",
+    "scripts/p5/dummy_p0t.py": "d34c9e85eb33904de92ab928bbe877d8cdd0d4e40a7b438ba201bd6285e9e9ba",
+    "scripts/p5/env.cuda.sh": "6a685de68419775cf088488767315db606b389ab9628bd9a05d227fcc448256b",
+    "scripts/p5/env.sh": "0aca9fe2dad30cb69960b974c3198fcb0e617ea7d9c097a85921bb77585d53cd",
+    "scripts/p5/evaluate_bpb.py": "8fa148005efb2140845e371e7b2a58ea2904ddc949ba62f0d2bfa42510b07e82",
+    "scripts/p5/forbidden_parents.py": "7f13af52a63d14e3b95e1a7ea6361210e1b5bd7dda52ab6841ff2b4e68a8cc64",
+    "scripts/p5/gate0_accept.py": "7d92e73a244a60383e3f611effe64fef0bbfc1329d7ba5b3bbea176d2c9f2f76",
+    "scripts/p5/gate0_filing_lock.py": "025fdd5aca7ceef7d5233efb7ed2b30bcf374cfc7820328ddbc67bc2de71783e",
+    "scripts/p5/gate_a_source_pin.py": "654a3d9796e2933e17434b89c478a16c07b2bb6ef4213fcba42896f21555cdb9",
+    "scripts/p5/gate_b_raw_assets.py": "4bc9fd8ca2c916b20d58e66975ff0969c98f7dd6da08110b3b991460b0a54ab8",
+    "scripts/p5/gate_c_hygiene.py": "9f6970ae6fe88326831e0fb9964824f011aab608c9e48403b783b3d8c1cecb8e",
+    "scripts/p5/gate_d_split_freeze.py": "ffe0a157bea8fe8663ec3161ae8ca590121cde55163167e23b1a3686708658f5",
+    "scripts/p5/gate_e_streams.py": "44baf7bd4d544347151460dc46e50fa73c370ebb8feabf88927ea6c404a5233b",
+    "scripts/p5/gate_f_tokenizer.py": "d822a3bba76a233ee81f194157a5b8dec6b1c8da0b858ae20a47507d052c6719",
+    "scripts/p5/gate_g_budget.py": "2219e04a1056da173ffa8fa811cf30f86381320e3b45693e6ee5a15e288e0069",
+    "scripts/p5/gate_h_accept.py": "e0150d3abe45801fe9f8de89ac82f2a431a2ea5d028536573122124f8ec15ad9",
+    "scripts/p5/gate_h_authorize.py": "660987d4d00cb9416d081a7e1af26d319d3e78c2f1a97303c49ca88e12e421f7",
+    "scripts/p5/gate_h_preflight.py": "09a6783e37d1a0e0892550683f1c758d9c84df8712ac8e39370e4f704e86e34f",
+    "scripts/p5/gate_h_smoke.sh": "afc467a575258d649afb456da8e61e98c8c03e067eedfff02c33179d8b881e63",
+    "scripts/p5/make_validation_seal.py": "b7366420a5e455200a832b0c637f0f084056cbefdad06aa4b9d1ad19b16f64e0",
+    "scripts/p5/mix_construct_dummy.py": "d8bdca7d0ab5b4469abbfef7cc6b141a586eccd8e3e365951b60b6d0d5d85366",
+    "scripts/p5/p5_common.py": "4dfe4625ca8c71ca4f94f65656a67c65c8570027456824a28551da458e74edd2",
+    "scripts/p5/pack_parquet.py": "c5004edefb1c5273497f672f830e905659dcd8d39050ff0c153832a4a5e41f18",
+    "scripts/p5/prove_parent_seed_knob.py": "b89bde097c2d882c09a953d28114dada97620a31053f6c57376e5c7406db4829",
+    "scripts/p5/refuse_nanochat_dataset.py": "0f0387770fb254b8bfeb902cfd4757e59f477c44999053d941e89d2faaa464e6",
+    "scripts/p5/refuse_ratio.py": "d4e5dcf5f0d9b519dffdc3cca00a5bfbc709d0ca3325782fa410093903b222e7",
+    "scripts/p5/release_bundle.py": "0f080703fb8ba4d9024f357c0217c34288791b9441b093e61b7ecf9e839bc6bc"
+  },
+  "scripts_p5_tree_sha256": "80e74b817d4701e49bf51885de6b25b693c84023cefcebda09a6415f348884f6",
+  "tests": {
+    "1": {
+      "addendum_filed_sha256": "839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258",
+      "addendum_local_matches_filed": false,
+      "addendum_local_sha256": "bd322b7149c5ec32a14f20fd941e8ce436746be503cb844962d8e8d14e284508",
+      "evaluate_bpb_stub_sha256": "8fa148005efb2140845e371e7b2a58ea2904ddc949ba62f0d2bfa42510b07e82",
+      "gate_plan_sha256": "d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092",
+      "name": "filing/lock/config/evaluator + panel lockbox dirs",
+      "pass": true,
+      "pdf_sha256": "439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3"
+    },
+    "10": {
+      "name": "dummy test evaluator accepts C3 only after U seal",
+      "pass": true
+    },
+    "11": {
+      "name": "release refuses incomplete inventory",
+      "pass": true
+    },
+    "12": {
+      "name": "dummy released hashes match manifest",
+      "pass": true
+    },
+    "13": {
+      "name": "break-glass dummy writes audit without printing dummy BPB",
+      "pass": true
+    },
+    "14": {
+      "name": "mix-construction dummy refuses val/test documents",
+      "pass": true
+    },
+    "15": {
+      "name": "mix-construction dummy refuses to start if tokenizer hash unset",
+      "pass": true
+    },
+    "16": {
+      "name": "env refuses if scripts/p4/env.sh was sourced",
+      "pass": true
+    },
+    "17": {
+      "name": "ratio=-1 and python -m nanochat.dataset wrappers refuse",
+      "pass": true
+    },
+    "18": {
+      "name": "C3 reconstruction from P3 B3 mix-order SHA is refused",
+      "pass": true
+    },
+    "2": {
+      "name": "steward cannot open dummy lockbox result",
+      "pass": true
+    },
+    "3": {
+      "name": "dummy BPB string absent from safe_progress",
+      "pass": true
+    },
+    "4": {
+      "name": "opaque job labels omit C1/C2/C3",
+      "pass": true
+    },
+    "5": {
+      "name": "train env cannot resolve test path",
+      "pass": true,
+      "stdout": "P5_ROOT=/Users/paulpajo/Projects/nanochat-filipino\nP5_RUN_ID=p5-20260823T160632Z-439d1de5\nNANOCHAT_BASE_DIR=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p5-20260823T160632Z-439d1de5\nP5_SAFE_PROGRESS_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p5-20260823T160632Z-439d1de5/safe_progress\nP5_LOCKBOX_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p5-20260823T160632Z-439d1de5/lockbox\nNANOCHAT_DATA_DIR=<unset>\nP5_TEST_JSONL_EN=<UNSET>\nP5_TEST_JSONL_TL=<UNSET>\nNOTE: Gate 0 filed. Shared gates A\u2013G only; no parent/child training yet.\nTEST_EN=UNSET\nTEST_TL=UNSET"
+    },
+    "6": {
+      "name": "P1.1/P2/P3/P4 weight SHA256s rejected as parent",
+      "pass": true
+    },
+    "7": {
+      "name": "dummy P0-T emits only PASS/BLOCKED/TECHNICAL BLOCK outside lockbox",
+      "pass": true
+    },
+    "8": {
+      "name": "contrast refuses until six child + C0 EN exist",
+      "pass": true
+    },
+    "9": {
+      "name": "dummy test evaluator rejects C1/C2 and missing U seal",
+      "pass": true
+    }
+  }
+}

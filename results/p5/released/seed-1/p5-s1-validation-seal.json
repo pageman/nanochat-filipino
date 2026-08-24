@@ -1,0 +1,22 @@
+{
+  "A_EN_present": false,
+  "R_TL_present": false,
+  "at_utc": "2026-08-23T19:51:32Z",
+  "c0_en_descriptive": true,
+  "contrasts_computed": false,
+  "gate": "U",
+  "inventory_sha256": {
+    "c0_en_val_bpb_full.json": "9988af758bd8ad4bb5ec368d1b128d25781282685675fda89fe3b68c281b8b58",
+    "c1_en_val_bpb_full.json": "6c8b6aa80887fcc12259550aedd5035090c7e567e03a0ec8257938e4f0d6e8b5",
+    "c1_tl_val_bpb_full.json": "d1fe16206d881ea77dbaed6487a0f77564570f5d588368c9eb704aef8cf6fccb",
+    "c2_en_val_bpb_full.json": "415beb1884a885c970d1e936bbe19c5a9ae603abcb5722d845c05ca275f7ef04",
+    "c2_tl_val_bpb_full.json": "448c0fb79d077b8b7c7d12d1722b4d666fde28aab416d414aedbeef4046bf92b",
+    "c3_en_val_bpb_full.json": "e09bdcf6e16dce75cdaa0c4a3c4f438e513e8b2a6d2c0e43a8a66fe8d642692d",
+    "c3_tl_val_bpb_full.json": "d7f5eedad5b443823380ec2137c390eddced1668c08f619e5447bb0781587a13"
+  },
+  "seal_closed": true,
+  "seed": 1,
+  "six_child_cells": true,
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "test_access": 0
+}

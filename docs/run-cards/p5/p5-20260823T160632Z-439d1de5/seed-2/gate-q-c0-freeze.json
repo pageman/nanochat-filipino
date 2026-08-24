@@ -1,0 +1,47 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "gate": "Q",
+  "seed": 2,
+  "arm": "C0",
+  "status": "pass",
+  "immutable": true,
+  "additional_train_tokens": 0,
+  "at_utc": "2026-08-23T20:25:53Z",
+  "host": "ab4334856eae",
+  "gpu": false,
+  "blinded": true,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "model_tag": "p5-s2-c0-tl-d20",
+  "source_tag": "p5-s2-tl0-d20",
+  "checkpoint_sha256": "e4c4cc7bcdf5033a97f9eedd97f7818d3c8e3ddca2b46fffc8b8c78d6137c4b1",
+  "frozen_dir": "data/cache/p5-20260823T160632Z-439d1de5/p5-s2/c0/frozen/p5-s2-c0-tl-d20",
+  "copied": {
+    "meta_000294.json": {
+      "path": "data/cache/p5-20260823T160632Z-439d1de5/p5-s2/c0/frozen/p5-s2-c0-tl-d20/meta_000294.json",
+      "sha256": "ebda2ff5f4bb65a404ae462a1353cc7b5611f64d914b8d1047f1de1744181b05",
+      "bytes": 1343
+    },
+    "model_000294.pt": {
+      "path": "data/cache/p5-20260823T160632Z-439d1de5/p5-s2/c0/frozen/p5-s2-c0-tl-d20/model_000294.pt",
+      "sha256": "e4c4cc7bcdf5033a97f9eedd97f7818d3c8e3ddca2b46fffc8b8c78d6137c4b1",
+      "bytes": 2663446486
+    }
+  },
+  "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "p0_t_status": "PASS",
+  "child_parent_whitelist": [
+    "p5-s2-c0-tl-d20"
+  ],
+  "allowed_child_tags": [
+    "p5-s2-c1-tl-d20",
+    "p5-s2-c2-en-d20",
+    "p5-s2-c3-mix-d20"
+  ],
+  "fresh_optimizer_required": true,
+  "load_optimizer": false,
+  "test_access": 0,
+  "next_gate": "R_2"
+}

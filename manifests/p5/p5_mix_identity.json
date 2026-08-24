@@ -1,0 +1,16 @@
+{
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "source_p4_run_id": "p4-20260821T060032Z-92d63d4",
+  "reuse_policy": "byte_identical_copy_from_p4_cache",
+  "mix_manifest_sha256": "f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107",
+  "language_origin_mask_sha256": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46",
+  "c3_train_shards": {
+    "train_00000.parquet": "249e2c5e9d06bf17fe14e03c02e622c9e68d90ba337e1e6e33c237fc723252f5",
+    "train_00001.parquet": "d24fe7f933abeb38b277b099385518718d2d57e330e5f9b5fd8b1a534e43444e",
+    "train_00002.parquet": "a56a729a0e3c7fd2d1e2e99236a4225bf9a86e55d6d97153063de9d6455fa523",
+    "train_00003.parquet": "4adbf8f9afcc9870f46f6298ac22f3691ec073d2f452f73aa65322e3ff6331de",
+    "val.parquet": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f"
+  },
+  "c3_is_not_p3_b3": true,
+  "created_utc": "2026-08-23T16:17:08Z"
+}

@@ -1,0 +1,18 @@
+Variable,Variable Name,Description
+var1,code_id,Stable row identifier for each file in the P5 Code inventory (P5-CODE-001 through P5-CODE-054).
+var2,relative_path,Repository-relative path under scripts/p5/ in pageman/nanochat-filipino.
+var3,filename,Basename only (e.g. gate_x_unblind.py).
+var4,extension,File extension including the leading dot (.py or .sh).
+var5,bytes,On-disk byte length of the script at inventory time (2026-08-24).
+var6,sha2_256,"SHA-256 digest of the file bytes, prefixed sha2-256:. This is a file hash, not a participant or Prolific ID."
+var7,language,python for .py files; bash for .sh launchers.
+var8,role_family,"Functional family tag (gateX, lib, env, train, evaluator, orchestrator, incident, deposit, etc.)."
+var9,gates_crosswalk,"Which P5 gate(s) or panel stage the file serves (0, A–H, I–V per seed, X, W, panel, S2, etc.)."
+var10,purpose,Short operational description of what the script does; not a numerical experimental result.
+var11,header_or_docstring,"First leading comment or docstring line from the file, if present (truncated)."
+var12,bingo_column,Always Code for this inventory; the crosswalk itself is uploaded under Data.
+var13,researchbox_id,8904 — ResearchBox deposit for P5 multi-seed panel (FOR PEER REVIEW; not #8869).
+var14,aspredicted_id,307836 — AsPredicted preregistration for P5 multi-seed panel.
+var15,p5_run_id,Execution run identifier p5-20260823T160632Z-439d1de5.
+var16,zip_member_path,Path of this file inside Code.zip (scripts_p5/<filename>).
+var17,upload_note,"This inventory documents code provenance and gate crosswalk; it is not test.jsonl, not model weights, and not a confirmatory scalar result."

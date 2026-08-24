@@ -1,0 +1,12 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "gate": "U",
+  "seed": 1,
+  "authorized": true,
+  "authorizes_other_seeds": false,
+  "host_class": "NVIDIA CUDA A40",
+  "authorized_at_utc": "2026-08-23T18:26:12Z",
+  "authorized_by": "scripts/p5/authorize_seed_gates.py"
+}

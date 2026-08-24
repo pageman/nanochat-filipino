@@ -1,0 +1,346 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{xurl}
+\setstretch{1.05}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{1.2em}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.15em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.15em}
+\newcommand{\sha}[1]{{\footnotesize\ttfamily\path{#1}}}
+
+\title{How Often a Frozen Mix Recurs across Unused Initializations:\\
+\large A Closed Three-Seed Count, Not a Population Estimate}
+\author{Paul Pajo\\
+De La Salle -- College of Saint Benilde\\
+\texttt{paulamerigo.pajojr@benilde.edu.ph}}
+\date{24 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Does a prospectively frozen token-share mixture, already measured once on a historical initialization, recur on unused parent initializations that were named before any P5 parent, child, validation BPB, or test BPB existed? This question was preregistered as AsPredicted \#307836 after P4 unblinding. P5 is a post-P4, prospectively preregistered closed panel of the frozen P4 apparatus. It does not amend AsPredicted \#306780, \#306935, \#307342, or \#307591. C3 is not P3 B3. P4 seed 0 is a previously released historical cell, not a P5 confirmatory cell. Three unused parent-init seeds $\{1,2,3\}$ were executed in that order with no replacement and no early stop. Each seed trained a fresh Tagalog parent on WikiText-TL-39 with Karpathy's nanochat trainer pinned at commit \texttt{92d63d4}, the carry-forward P4 tokenizer, $T=2048$, and NVIDIA CUDA A40. After P0-T PASS, d20 was frozen as immutable $C0_s$. Matched d20 continuations compared C1 extra Tagalog, C2 pure English, and C3 the P4-frozen mix at $q_{\mathrm{TL}}=0.50$ for $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens ($N=294$). Per-seed co-primary estimands are $R_{\mathrm{TL}}^{(s)}=\mathrm{TL}(C3_s)-\mathrm{TL}(C2_s)\le -0.01$ and $A_{\mathrm{EN}}^{(s)}=\mathrm{EN}(C3_s)-\mathrm{EN}(C1_s)\le -0.01$. The primary panel result is the count table: eligible $K_{\mathrm{elig}}=3$; both criteria met $k_{\mathrm{both}}=3$; only-$R=0$; only-$A=0$; neither $=0$; ineligible parent $=0$. In all three predeclared unused initializations, the P4 token-share mixture pattern recurred. This is a recurrence count in a closed panel, not a confidence interval, not a population effect, and not an independent confirmation of P4 as a law.
+\end{abstract}
+
+\noindent\textbf{Keywords:} unused initializations; recurrence count; closed panel; token share; Tagalog; English; bits-per-byte; nanochat; preregistration; post-P4.
+
+\noindent\textbf{arXiv categories:} cs.CL, cs.LG.
+
+\noindent\textbf{Registration and deposits (P5):} AsPredicted \#307836 (\url{https://aspredicted.org/k6ib64.pdf}); ResearchBox pending (new box, not \#8869); study record \url{https://github.com/pageman/nanochat-filipino/tree/main/docs/p5}; Hub \url{https://huggingface.co/pageman/nanochat-filipino-p5-p4-multi-seed} (weights deferred: C0+C1+C2+C3 per eligible seed together). Run ID: \texttt{p5-20260823T160632Z-439d1de5}.
+
+\section{Introduction}
+\label{sec:intro}
+
+Pajo~\cite{pajo2026p11} measured equal-exposure Tagalog BPB across nanochat depths on WikiText-TL-39 (AsPredicted \#306780). Pajo~\cite{pajo2026p2} asked the forward continual-pretraining question from an English parent (AsPredicted \#306935). Pajo~\cite{pajo2026p3} asked the reverse from a fresh Tagalog parent, with a 50/50-\emph{document} B3 arm (AsPredicted \#307342). Pajo~\cite{pajo2026p4} locked source-content token share at $q_{\mathrm{TL}}=0.50$ after a fresh Tagalog parent (AsPredicted \#307591) and observed both co-primary inequalities in \emph{one} initialization (P4 seed 0).
+
+P5 was designed after those released P4 findings were known. It is therefore a prospectively preregistered \textbf{post-P4} multi-seed panel of the frozen P4 apparatus~\cite{aspredicted307836}. It is not an amendment, correction, rescue, replication, or independent confirmation of P4. It is not ``P4 confirmed as a law.'' C3 remains the P4-frozen token-share mix; C3 is not P3 B3. P4 seed 0 is historical disclosure, not a P5 confirmatory cell.
+
+The confirmatory question, locked before any P5 confirmatory BPB existed, is:
+
+\begin{quote}
+For each unused parent-init seed $s\in\{1,2,3\}$ executed in that order: train a fresh Tagalog parent, apply P0-T, freeze d20 as $C0_s$ if PASS, and continue it on C1 extra Tagalog, C2 pure English, and C3 the P4-frozen mix. Classify each eligible seed as \texttt{both}, \texttt{only-R}, \texttt{only-A}, or \texttt{neither} at $\delta=0.01$. Report the closed-panel counts. Do not early-stop. Do not replace. Do not unblind per seed.
+\end{quote}
+
+This paper contributes: (i)~three unused Tagalog parents with P0-T PASS, each frozen as its own $C0_s$; (ii)~eighteen child validation cells plus three descriptive C0 English cells, sealed before one C3-only secondary test per eligible seed; (iii)~one panel Gate~X whose primary result is the count table $k_{\mathrm{both}}=3$ of $K_{\mathrm{elig}}=3$.
+
+\section{Related work}
+\label{sec:related}
+
+Cruz and Cheng constructed WikiText-TL-39~\cite{cruz2019eval}. Sequential interference is classical~\cite{mccloskey1989catastrophic,french1999cf}. LLM continual-pretraining work often continues an English or multilingual base~\cite{luo2023forgetting,ramasesh2021forgetscale,shi2024continual}. P5 stays inside WikiText-family text, the nanochat depth dial, and BPB rather than CORE or chat~\cite{karpathy2026nanochat}. Equal token budgets follow the family so stream identity is not confounded with compute~\cite{kaplan2020scaling,hoffmann2022chinchilla,muennighoff2023dataconstrained}. WikiText established clean Wikipedia LM evaluation in English~\cite{merity2017pointer}. BPB remains comparable across vocabularies~\cite{shannon1951prediction,brown2020gpt3}. Official P5 BPB is mean token NLL divided by $\ln 2$ times mean UTF-8 bytes per token, full split, $T=2048$, BOS-best-fit. In-loop trainer BPB is not confirmatory. Preregistration reduces undisclosed flexibility~\cite{nosek2018prereg,wagenmakers2012confirmatory}. A closed count of unused initializations is not a random-effects model and is not a population rate.
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Registration and authority}
+AsPredicted \#307836 governs~\cite{aspredicted307836}.
+\begin{itemize}[leftmargin=1.6em,itemsep=0.35em]
+\item PDF: \url{https://aspredicted.org/k6ib64.pdf}
+\item PDF SHA-256:\\\sha{439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3}
+\item Gate-plan SHA-256 at filing:\\\sha{d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092}
+\item Pre-filing addendum SHA-256:\\\sha{839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258}
+\end{itemize}
+A new ResearchBox (not \#8869) is the intended deposit; it is pending and is not made public by this paper. Authority: filed PDF $\gg$ hash-pinned plan/addendum $\gg$ \texttt{LOCK.json} $\gg$ dated deviations $\gg$ this manuscript. The study does not amend \#306780, \#306935, \#307342, or \#307591. C3 is not P3 B3. P5 is computationally independent of P4 in parents, children, ledgers, and P5 outcomes, and is not outcome-independent of P4, because released P4 seed-0 findings informed the design.
+
+\subsection{Sources, tokenizer, and hosts}
+Tagalog train/val/test documents are the frozen WikiText-TL-39 P1.1-eligible splits. English train/val/test documents are the frozen WikiText-103 P2-eligible splits. The tokenizer is the carry-forward P4 pair: \texttt{tokenizer.pkl} \sha{04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8} and \texttt{token\_bytes.pt} \sha{a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132}. P1.1/P2/P3/P4 weights were not loaded as parents. Official GPU gates used NVIDIA CUDA A40. Official evaluation used \texttt{scripts/p5/evaluate\_bpb.py}.
+
+\subsection{Panel seeds and parent initialization}
+The closed seed list is $\{1,2,3\}$ in that order. Seed 0 was used only for one nonconfirmatory d4 smoke and is not a panel cell. Wrapper Python/NumPy seed is $424242$. Immediately before \texttt{GPT.init\_weights()} for each parent d8 and d20, the wrapper set \texttt{torch.manual\_seed($s$)} and \texttt{torch.cuda.manual\_seed($s$)}. Distinct initial-state SHA-256 values were recorded before parent training.
+
+\subsection{P0-T and C0 freeze}
+P0-T compared full-split Tagalog validation BPB of d8 and d20 TL0 against a seed-matched untrained initialization and a byte-unigram floor at $\delta_{\mathrm{P0T}}=0.01$. Official P0-T status is CUDA-only; safe public output before Gate~X was restricted to PASS, BLOCKED, or TECHNICAL\_STOP. After PASS, d20 was copied to an immutable $C0_s$ directory with \texttt{additional\_train\_tokens}=0. Smoke and d8 checkpoints are not C0. A BLOCKED seed would have been reported as ineligible, not replaced; that branch was not triggered.
+
+\subsection{Children and C3 identity}
+C1, C2, and C3 each continued the same frozen $C0_s$ for $N=294$ steps, $B=65{,}536$, $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens, serial R$\to$S$\to$T, \texttt{load\_optimizer=False}, child peak learning rate $0.3\times$ the parent peak, warmup 14, terminal checkpoint only. C1 used extra Tagalog. C2 used WikiText-103 raw English train. C3 used the P4-frozen mix (not reshuffled): source-content quotas $9{,}633{,}792$ / $9{,}633{,}792$, interleave seed 42, mix-manifest SHA-256 \sha{f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107}. Packed C3 shard hashes and \texttt{language\_origin\_mask} SHA-256 \sha{140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46} were verified; matching source JSONLs or the manifest alone is not sufficient C3 identity.
+
+\subsection{Lockbox, analysis, and tests}
+Validation BPB was lockboxed until one panel Gate~X. Each eligible seed's Gate~U sealed six child cells plus descriptive C0 English with \texttt{test\_access[$s$]}=0 and no contrasts computed at seal. Policy authorized one C3-only secondary test event after U (Gate~V). C1 and C2 were not tested. Contrasts use sealed validation cells; tests are secondary and excluded from classification. Equality at $-\delta$ counts. No composite score, mean, confidence interval, $p$-value, or random-effects model.
+
+\section{Results}
+\label{sec:results}
+
+All three seeds completed the filed path through V. P0-T status is \textbf{PASS} for seeds 1, 2, and 3. Table~\ref{tab:p0t} reports Tagalog validation BPB of the trained parents against the two floors. Table~\ref{tab:cells} reports the sealed child cells. Table~\ref{tab:contrasts} reports per-seed contrasts and class. Table~\ref{tab:panel} is the primary panel result.
+
+\begin{table}[ht]
+\centering
+\caption{P0-T Tagalog full-split validation BPB (six decimals). Unigram floor is $4.453225$ for all seeds.}
+\label{tab:p0t}
+\begin{tabular}{lcccc}
+\toprule
+Seed & d8 trained & d8 untrained & d20 trained & d20 untrained \\
+\midrule
+1 & $1.026063$ & $3.289120$ & $0.713846$ & $3.288977$ \\
+2 & $1.025926$ & $3.289165$ & $0.866993$ & $3.289237$ \\
+3 & $1.025522$ & $3.289167$ & $0.835588$ & $3.289509$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Full-split validation BPB after terminal d20 checkpoints. Six-decimal reporting as filed. C0 English is descriptive and excluded from the contrasts.}
+\label{tab:cells}
+\begin{tabular}{llcc}
+\toprule
+Seed & Arm & Tagalog val BPB & English val BPB \\
+\midrule
+1 & C0 (frozen parent) & --- & $2.602629$ \\
+1 & C1 extra Tagalog & $0.307864$ & $2.972254$ \\
+1 & C2 pure English & $1.947782$ & $1.248221$ \\
+1 & C3 token-share mix & $0.733086$ & $1.417082$ \\
+\midrule
+2 & C0 (frozen parent) & --- & $2.566109$ \\
+2 & C1 extra Tagalog & $0.503637$ & $2.874332$ \\
+2 & C2 pure English & $2.222498$ & $1.319657$ \\
+2 & C3 token-share mix & $0.870142$ & $1.486114$ \\
+\midrule
+3 & C0 (frozen parent) & --- & $2.549180$ \\
+3 & C1 extra Tagalog & $0.449775$ & $2.854149$ \\
+3 & C2 pure English & $2.171966$ & $1.296541$ \\
+3 & C3 token-share mix & $0.837820$ & $1.467922$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Per-seed co-primary contrasts from sealed validation cells. Filed criterion $\le -0.01$; equality counts.}
+\label{tab:contrasts}
+\begin{tabular}{lccc}
+\toprule
+Seed & $R_{\mathrm{TL}}$ & $A_{\mathrm{EN}}$ & Class \\
+\midrule
+1 & $-1.214696$ & $-1.555172$ & both \\
+2 & $-1.352356$ & $-1.388218$ & both \\
+3 & $-1.334145$ & $-1.386228$ & both \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Primary panel result: counts in the closed $K=3$ panel. This table \emph{is} the panel claim.}
+\label{tab:panel}
+\begin{tabular}{lc}
+\toprule
+Cell & Count \\
+\midrule
+Eligible seeds $K_{\mathrm{elig}}$ & $3$ \\
+Both criteria met $k_{\mathrm{both}}$ & $3$ \\
+Only $R_{\mathrm{TL}}$ & $0$ \\
+Only $A_{\mathrm{EN}}$ & $0$ \\
+Neither & $0$ \\
+Ineligible parent & $0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Under this preregistered token-share-locked mixture, P5 seed 1 observed lower Tagalog BPB than pure English continuation and lower English BPB than extra Tagalog continuation in the stated apparatus. This is one initialization in a predeclared panel; not a CI; C3 is not P3 B3; P5 does not amend \#307591.
+
+Under this preregistered token-share-locked mixture, P5 seed 2 observed lower Tagalog BPB than pure English continuation and lower English BPB than extra Tagalog continuation in the stated apparatus. This is one initialization in a predeclared panel; not a CI; C3 is not P3 B3; P5 does not amend \#307591.
+
+Under this preregistered token-share-locked mixture, P5 seed 3 observed lower Tagalog BPB than pure English continuation and lower English BPB than extra Tagalog continuation in the stated apparatus. This is one initialization in a predeclared panel; not a CI; C3 is not P3 B3; P5 does not amend \#307591.
+
+Across the $K=3$ predeclared unused initializations, both co-primary P4 criteria were met in $k_{\mathrm{both}}=3$ of $K_{\mathrm{elig}}=3$ eligible seeds ($k_{\mathrm{inelig}}=0$ ineligible). In all $K$ predeclared unused initializations, the P4 token-share mixture pattern recurred. This is a recurrence count in a closed panel, not a population effect, not a confidence interval, and not an optimal-ratio result. P4 seed 0 is a previously released historical cell, not a P5 confirmatory cell; C3 is not B3; tests are secondary; no silent amendment of \#307591.
+
+A measured reduction in the P3-style relative Tagalog retention cost within this frozen P5 replica of the P4 apparatus, not a general mitigation of catastrophic forgetting. That optional sentence is per eligible seed (all three met both criteria) and does not replace Table~\ref{tab:panel} as the primary panel claim. It does not appear in the title.
+
+One authorized C3-only secondary test event per eligible seed reported English / Tagalog test BPB $1.426163$ / $1.201608$ (seed 1), $1.498279$ / $1.148789$ (seed 2), and $1.479601$ / $1.146587$ (seed 3). Tests do not alter sealed contrasts and are not co-primary. P4 Gate~V numbers are not reused.
+
+\section{Discussion}
+\label{sec:disc}
+
+C3 sits between C1 and C2 on both languages in every eligible seed, as a token-share trade-off rather than a claim that $q_{\mathrm{TL}}=0.50$ is optimal. Recurrence in all three unused initializations is a count, not a law. P5 does not independently confirm P4. P5 does not confirm P3. P5 does not show that P3 B3 was ``fixed.'' Mechanism (schedule topology, revisit, optimizer state) is reserved for later filings. Byte share of the packed mix remains descriptive; 50/50 source-content tokens is not 50/50 documents and is not 50/50 UTF-8 bytes.
+
+\section{Limitations}
+\label{sec:limit}
+
+$K=3$ unused initializations; one tokenizer; WikiText-family text only; no chat, SFT, CORE, FilBench, or larger-model transfer. Confirmatory GPU work used a rented NVIDIA A40. Raw test JSONL remains restricted. Hub weight release, if any, must ship C0+C1+C2+C3 together per eligible seed (or all eligible seeds together) with tokenizer and meta; C3 alone is prohibited; a single seed's C3 is not ``the P5 model''; P4 Hub IDs must not be overwritten. Byte-balanced mix remains a separate filing (P6-B). A still-larger panel would be a new filing, not ``P5 plus seed 4.''
+
+\section{Deviations}
+\label{sec:dev}
+
+No protocol stop. No break-glass. No additional confirmatory validation or test eval after Gate~X. Seed 2 Gate~S wrote a terminal C2 checkpoint, after which the host died (volume quota then GPU lockout). The official terminal checkpoint was accepted after reload and metadata step verification (\texttt{step\_source=meta}); C2 was not retrained into a filled directory. The subsequent pod restart did not rerun Gate~H or any completed parent. Frozen English train JSONL contains intra-split duplicate rows ($28{,}472$ rows / $28{,}232$ unique); they were not dropped. Cross-split overlap was 0.
+
+\section*{Availability}
+\begin{itemize}[leftmargin=1.6em,itemsep=0.35em]
+\item AsPredicted \#307836: \url{https://aspredicted.org/k6ib64.pdf}
+\item ResearchBox: pending new box (not \#8869); FOR PEER REVIEW when deposited; not Make Public
+\item Study record (GitHub):\\
+\url{https://github.com/pageman/nanochat-filipino/tree/main/docs/p5}
+\item Code and audit trees (GitHub):\\
+\url{https://github.com/pageman/nanochat-filipino}\\
+P5-only: \texttt{scripts/p5/}, \texttt{docs/papers/p5-multi-seed-p4/},
+\texttt{docs/run-cards/p5/}, \texttt{results/p5/},
+\texttt{docs/hub/p5-p4-multi-seed/}, \texttt{manifests/p5/}
+\item Weights (Hugging Face Hub):\\
+\url{https://huggingface.co/pageman/nanochat-filipino-p5-p4-multi-seed}\\
+(deferred; per eligible seed C0+C1+C2+C3 together; never C3 alone; never write onto the P4 Hub ID).
+\end{itemize}
+Held-out test text is not redistributed. Host credentials are not published. GitHub holds protocol, receipts, sealed JSON, and paper; Hugging Face holds optional weight bundles.
+
+\section*{Ethics}
+Public Wikipedia-derived corpora. No human-subjects experiment. Any ResearchBox remains passcode-protected for peer review and is not made public by this paper.
+
+\section*{Acknowledgements}
+Thanks to Manus 1.6 and Cursor.com(Auto) for the drafting, formatting, and solutioning of the paper. WikiText-TL-39 is due to Cruz and Cheng~\cite{cruz2019eval}. WikiText-103 is due to Merity et al.~\cite{merity2017pointer}. nanochat is due to Karpathy~\cite{karpathy2026nanochat}. Errors remain the author's.
+
+\section*{Funding}
+No dedicated grant. GPU time (Runpod A40) was paid by the author.
+
+\appendix
+\section{Selected hashes}
+\label{app:hashes}
+\begin{itemize}
+\item Pin / nanochat: \sha{92d63d4e8bb4df75c3b71618f31ddde2378b2bcd}
+\item AsPredicted PDF: \sha{439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3}
+\item Gate plan: \sha{d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092}
+\item Addendum: \sha{839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258}
+\item Mix manifest: \sha{f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107}
+\item Evaluator: \sha{78e77d9761fa4473344abd4773129e56f04561e615bdbcfad144ab8730ded977}
+\item Seed 1 C0 / C1 / C2 / C3: \sha{c5bf0f495f7cb296374105c62b5946aa30cfb33fa86c58c08434c37862631ac6} / \sha{8d474aa88a250895dd410b0027277dd19a2b8f41a77544902ec4bbc774c33f14} / \sha{f9701fae3277f5c379d69d97dd3ba9b706324bf72660731b0a4fbb34371e628e} / \sha{f7c080048d4311863836fb6cf2c06d9d555514bcce7e30a5d8b819aa0dd15252}
+\item Seed 2 C0 / C1 / C2 / C3: \sha{e4c4cc7bcdf5033a97f9eedd97f7818d3c8e3ddca2b46fffc8b8c78d6137c4b1} / \sha{aaee36fd5ceb53c2e92138eb2dfa8b169bd000caf5b804d9c8645d6ad56c4f22} / \sha{e75b4c61bf3dd2cd661d931dfc63526c810dd96bf8db2fcac0f2cadb5e29c102} / \sha{0801f1437b334a68ee155623111ecba2dc03cfc49c46e8630f023c41aa21ac77}
+\item Seed 3 C0 / C1 / C2 / C3: \sha{7643b12645f487b4f38034f14985c624804ac43534cfafc723bae83edc4c3c26} / \sha{edfabbf8dbb38aefbfd61850f30efba40d8d77c8dffc02ce4db403969787b66f} / \sha{e3cd58a5fa549b62c60c568a551f3d471df5b77698208a4727c0a52266d3f58a} / \sha{1759110154b2a4176e584bcd675d4b21d10cda0f9936e8f6a188aa32ba8f2ab7}
+\item U seals 1 / 2 / 3: \sha{4f843ca7b5bb6935baf0ad4e8d636accb49c88d43ce6b32f5fb6f0aaeb170874} / \sha{75c5ab56804c937a1436d538c3b4350830bd239924de76e4a877aa0988edfea0} / \sha{df15915f2c5855691b6e0a4a5b9c0e62aa9229b8a246d932a7f4926074561cf5}
+\end{itemize}
+
+\section{GitHub versus Hugging Face}
+\label{app:split}
+GitHub \texttt{pageman/nanochat-filipino} is the study record: scripts, paper, lock, ledgers, run-card receipts, sealed JSON, and Hub \emph{documentation} (model cards without weights). Hugging Face \texttt{pageman/nanochat-filipino-p5-p4-multi-seed} is the optional weight deposit: per eligible seed, C0+C1+C2+C3 plus tokenizer and evaluation JSON. Never C3 alone. Never a single seed's C3 as ``the P5 model.'' Never write onto P1.1/P2/P3/P4 Hub IDs. Raw test JSONL, passcodes, SSH keys, optimizer states, and HOST operator cards belong in neither public tree.
+
+\begin{thebibliography}{99}
+
+\bibitem{pajo2026p11}
+P.~Pajo.
+\newblock Depth-wise Tagalog language-model scaling with nanochat on WikiText-TL-39.
+\newblock AsPredicted \#306780, 2026.
+
+\bibitem{pajo2026p2}
+P.~Pajo.
+\newblock English retention and Tagalog acquisition under equal-budget nanochat continual pretraining.
+\newblock AsPredicted \#306935, 2026.
+
+\bibitem{pajo2026p3}
+P.~Pajo.
+\newblock Tagalog retention and English acquisition under equal-budget nanochat continual pretraining.
+\newblock AsPredicted \#307342, 2026.
+
+\bibitem{pajo2026p4}
+P.~Pajo.
+\newblock Token-share-locked English--Tagalog mixtures after a fresh Tagalog parent.
+\newblock AsPredicted \#307591, 2026.
+
+\bibitem{aspredicted307836}
+AsPredicted \#307836.
+\newblock P5: multi-seed panel of the P4 token-share mix after fresh TL parents.
+\newblock \url{https://aspredicted.org/k6ib64.pdf}, 2026.
+
+\bibitem{cruz2019eval}
+J.~C.~B.~Cruz and C.~Cheng.
+\newblock Evaluating Filipino linguistic resources.
+\newblock 2019.
+
+\bibitem{karpathy2026nanochat}
+A.~Karpathy.
+\newblock nanochat.
+\newblock \url{https://github.com/karpathy/nanochat}, 2026.
+
+\bibitem{merity2017pointer}
+S.~Merity, C.~Xiong, J.~Bradbury, and R.~Socher.
+\newblock Pointer sentinel mixture models.
+\newblock \emph{ICLR}, 2017.
+
+\bibitem{shi2024continual}
+H.~Shi et al.
+\newblock Continual learning of large language models: A comprehensive survey.
+\newblock \emph{arXiv:2404.16789}, 2024.
+
+\bibitem{luo2023forgetting}
+Y.~Luo et al.
+\newblock An empirical study of catastrophic forgetting in large language models during continual fine-tuning.
+\newblock \emph{arXiv:2308.08747}, 2023.
+
+\bibitem{ramasesh2021forgetscale}
+V.~V.~Ramasesh, A.~Lewkowycz, and E.~Dyer.
+\newblock Effect of scale on catastrophic forgetting in neural networks.
+\newblock \emph{ICLR}, 2022.
+
+\bibitem{mccloskey1989catastrophic}
+M.~McCloskey and N.~J.~Cohen.
+\newblock Catastrophic interference in connectionist networks: The sequential learning problem.
+\newblock \emph{Psychology of Learning and Motivation}, 24:109--165, 1989.
+
+\bibitem{french1999cf}
+R.~M.~French.
+\newblock Catastrophic forgetting in connectionist networks.
+\newblock \emph{Trends in Cognitive Sciences}, 3(4):128--135, 1999.
+
+\bibitem{kaplan2020scaling}
+J.~Kaplan et al.
+\newblock Scaling laws for neural language models.
+\newblock \emph{arXiv:2001.08361}, 2020.
+
+\bibitem{hoffmann2022chinchilla}
+J.~Hoffmann et al.
+\newblock Training compute-optimal large language models.
+\newblock \emph{NeurIPS}, 2022.
+
+\bibitem{muennighoff2023dataconstrained}
+N.~Muennighoff et al.
+\newblock Scaling data-constrained language models.
+\newblock \emph{NeurIPS}, 2023.
+
+\bibitem{shannon1951prediction}
+C.~E.~Shannon.
+\newblock Prediction and entropy of printed English.
+\newblock \emph{Bell System Technical Journal}, 30(1):50--64, 1951.
+
+\bibitem{brown2020gpt3}
+T.~Brown et al.
+\newblock Language models are few-shot learners.
+\newblock \emph{NeurIPS}, 2020.
+
+\bibitem{nosek2018prereg}
+B.~A.~Nosek et al.
+\newblock The preregistration revolution.
+\newblock \emph{PNAS}, 115(11):2600--2606, 2018.
+
+\bibitem{wagenmakers2012confirmatory}
+E.-J.~Wagenmakers et al.
+\newblock An agenda for purely confirmatory research.
+\newblock \emph{Perspectives on Psychological Science}, 7(6):632--638, 2012.
+
+\end{thebibliography}
+
+\end{document}

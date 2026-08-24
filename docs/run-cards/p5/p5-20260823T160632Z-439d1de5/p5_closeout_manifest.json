@@ -1,0 +1,363 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "researchbox_id": null,
+  "gate": "W",
+  "status": "pass",
+  "at_utc": "2026-08-24T02:05:42Z",
+  "host": "PaulPajos-MacBook-Pro.local",
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "artifacts": [
+    {
+      "role": "gate-0-filing-lock",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-0-filing-lock.json",
+      "bytes": 2737,
+      "sha256": "34b46a155fbe25c43c2f6884daf10d204372602f21be286bf7eda984e27bea94"
+    },
+    {
+      "role": "gate-0-lockbox-tests",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-0-lockbox-tests.json",
+      "bytes": 6520,
+      "sha256": "c2643091bc6494db163103a0f38d312d105e3ad256b45e1e839c1171771990f5"
+    },
+    {
+      "role": "gate-a-source-pin",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-a-source-pin.json",
+      "bytes": 1958,
+      "sha256": "ab89642c184a6bb8d1d2313078dd28a6518dd92962534d974761113ee4725ec1"
+    },
+    {
+      "role": "gate-b-raw-assets",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-b-raw-assets.json",
+      "bytes": 5333,
+      "sha256": "644065c6ceec10e2cc598773ce2c19a49891dd882ac1a68a297351457fcf79ea"
+    },
+    {
+      "role": "gate-c-hygiene",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-c-hygiene.json",
+      "bytes": 2213,
+      "sha256": "5895d3942f59c798860526cf837410c6ba5432020407635e1ebcbe92d7d494db"
+    },
+    {
+      "role": "gate-d-split-freeze",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-d-split-freeze.json",
+      "bytes": 3833,
+      "sha256": "95f73af63dae2f473c7b4481e1a29a48f6825f3b885326eae56fa2308321ccac"
+    },
+    {
+      "role": "gate-e-packed-streams",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-e-packed-streams.json",
+      "bytes": 5027,
+      "sha256": "2a111321364f04f39d9782d44b5f1ee8ad882d4a62b6761e2ad3419518746454"
+    },
+    {
+      "role": "gate-f-tokenizer",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-f-tokenizer.json",
+      "bytes": 1960,
+      "sha256": "54c61af774b8f4d06fd31d2bac1f58e70ee0f8ec4e8fdf370652c58deb12262f"
+    },
+    {
+      "role": "gate-g-budget-command-freeze",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-g-budget-command-freeze.json",
+      "bytes": 3533,
+      "sha256": "af43a05580ee55026d8ea6af16c0c8ed47ec40f232a20230541e7a810095a2fb"
+    },
+    {
+      "role": "gate-h-authorization",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-h-authorization.json",
+      "bytes": 774,
+      "sha256": "b73fa258756032bf53e501190ed3a0a82e7e62f14d5e35133cc62e2cd9e16b3c"
+    },
+    {
+      "role": "gate-h-cuda-smoke",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-h-cuda-smoke.json",
+      "bytes": 1411,
+      "sha256": "9ecb46e5b43fc3cdcdfeaf0344cb3a16503a8c726fcbb28eeda11f024c49c59d"
+    },
+    {
+      "role": "gate-h-preflight",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-h-preflight.json",
+      "bytes": 5563,
+      "sha256": "0fec76e1d6ebbfe762f32cce151335270a51b7d72fbe0593327d9796b0295260"
+    },
+    {
+      "role": "gate-x-preflight",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-x-preflight.json",
+      "bytes": 1561,
+      "sha256": "fa6b462c9255afd0d94a5e7384c9cb9bbed4adaf2f84bd6a53d4b50341fdbb6b"
+    },
+    {
+      "role": "gate-x-unblind",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-x-unblind.json",
+      "bytes": 304,
+      "sha256": "06e40434f1f1bdf2653f11754bf652b77c8652e5bf58f51e7533de0e9340b016"
+    },
+    {
+      "role": "P5_UNBLINDING_EVENT",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/P5_UNBLINDING_EVENT.json",
+      "bytes": 1833,
+      "sha256": "3380f75bb6d21ace0cdd80529a7a08aa623b3e2e1bc40999395f6d2d362c97f3"
+    },
+    {
+      "role": "seed1_gate-i-tl0",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-i-tl0.json",
+      "bytes": 674,
+      "sha256": "286dc3d4abafb35589bf098b160382dbde4c1405bd3f4e8ca6f63ff8e96df4de"
+    },
+    {
+      "role": "seed1_gate-i-tl0-d8",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-i-tl0-d8.json",
+      "bytes": 884,
+      "sha256": "02b21ecbc45dc9b7df59703c9607e927ba4b5be2292bb0110f727f2c1d1e2e6b"
+    },
+    {
+      "role": "seed1_gate-i-tl0-d20",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-i-tl0-d20.json",
+      "bytes": 889,
+      "sha256": "466476715d39a53ec657d339d51526bc948d320aa183e13332a441c54919db22"
+    },
+    {
+      "role": "seed1_gate-p0-t",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-p0-t.json",
+      "bytes": 818,
+      "sha256": "a6439ba7e5cf326a1fcb87b47076c1d601eea15c41203b8f8579a8e9639be852"
+    },
+    {
+      "role": "seed1_gate-q-c0-freeze",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-q-c0-freeze.json",
+      "bytes": 1565,
+      "sha256": "f4e3b02cc6841204db432456b06bf8e11be28919ba9e72f9ba6dc39218dc4ded"
+    },
+    {
+      "role": "seed1_gate-r-c1",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-r-c1.json",
+      "bytes": 732,
+      "sha256": "605bc574d45135a56a1fbfdfcf71b35b4a4e80cbb3a745294bd033c69a36137f"
+    },
+    {
+      "role": "seed1_gate-s-c2",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-s-c2.json",
+      "bytes": 732,
+      "sha256": "5f71f1d8a9d01147104a2764980c3f22735aeb47d1377be050110e170bb04daf"
+    },
+    {
+      "role": "seed1_gate-t-c3",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-t-c3.json",
+      "bytes": 854,
+      "sha256": "d216d93ab90f4e4bf21c5325c9001059e6c78ccb25c0a727484b7e0c44667119"
+    },
+    {
+      "role": "seed1_gate-u-seal",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-u-seal.json",
+      "bytes": 561,
+      "sha256": "64a08aa936b3c484d25ddddc2f371252c41e71174253a07b7214195095d60103"
+    },
+    {
+      "role": "seed1_gate-v-test",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-v-test.json",
+      "bytes": 402,
+      "sha256": "0c5b804807e334b48773fad0c33380cac4068e20e4a1be6fc8d8ca347f767f66"
+    },
+    {
+      "role": "seed1_validation_seal",
+      "path": "data/cache/p5-20260823T160632Z-439d1de5/lockbox/seed-1/p5-s1-validation-seal.json",
+      "bytes": 1019,
+      "sha256": "4f843ca7b5bb6935baf0ad4e8d636accb49c88d43ce6b32f5fb6f0aaeb170874"
+    },
+    {
+      "role": "seed2_gate-i-tl0",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-i-tl0.json",
+      "bytes": 674,
+      "sha256": "b5fa261d47ef56e89aa5be98a460b31e30c209250b48155b44ff6977eb554956"
+    },
+    {
+      "role": "seed2_gate-i-tl0-d8",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-i-tl0-d8.json",
+      "bytes": 884,
+      "sha256": "579a270b80ad1ded770e2fca126c3a27daba36a03af0abc73b62831d9c66424b"
+    },
+    {
+      "role": "seed2_gate-i-tl0-d20",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-i-tl0-d20.json",
+      "bytes": 889,
+      "sha256": "3a390cc152d5d7b662211ed1ce112ee6e1400e41a978c2ac4d22bd0ab3053698"
+    },
+    {
+      "role": "seed2_gate-p0-t",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-p0-t.json",
+      "bytes": 818,
+      "sha256": "149e5ac2a6c2b191d5c303638e82761186a651458094d729c748081e312c3424"
+    },
+    {
+      "role": "seed2_gate-q-c0-freeze",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-q-c0-freeze.json",
+      "bytes": 1565,
+      "sha256": "cf6102b10d7e37b90eee3402b56fb70bf8c5e91bf5f011cfa99cc32a41f95118"
+    },
+    {
+      "role": "seed2_gate-r-c1",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-r-c1.json",
+      "bytes": 732,
+      "sha256": "af5a7b6fa8b6dec056eaf01711521c3851749b958ad3b966414eb2990be3b932"
+    },
+    {
+      "role": "seed2_gate-s-c2",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-s-c2.json",
+      "bytes": 757,
+      "sha256": "dfd5bf45136b4b8624628553b40b992302f4e33ece139a38015ed277ad431c84"
+    },
+    {
+      "role": "seed2_gate-t-c3",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-t-c3.json",
+      "bytes": 878,
+      "sha256": "7a010a8719dd196c996034106e79e52b4c2c5509698a4a419b681fd43972828b"
+    },
+    {
+      "role": "seed2_gate-u-seal",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-u-seal.json",
+      "bytes": 561,
+      "sha256": "acdf5fb10eb84093550a58490a99d3f796ddcc3ab2a81b9160079091fd88000a"
+    },
+    {
+      "role": "seed2_gate-v-test",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-v-test.json",
+      "bytes": 402,
+      "sha256": "b554afa5f36f6f9798cf486490368ddb0351946c302b8d26e1fda697eabebbc2"
+    },
+    {
+      "role": "seed2_validation_seal",
+      "path": "data/cache/p5-20260823T160632Z-439d1de5/lockbox/seed-2/p5-s2-validation-seal.json",
+      "bytes": 1019,
+      "sha256": "75c5ab56804c937a1436d538c3b4350830bd239924de76e4a877aa0988edfea0"
+    },
+    {
+      "role": "seed3_gate-i-tl0",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-i-tl0.json",
+      "bytes": 674,
+      "sha256": "35d41974ae56448bef43c854fbd3a60cc7daf448c52373e4ecd2f86f8d598b1f"
+    },
+    {
+      "role": "seed3_gate-i-tl0-d8",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-i-tl0-d8.json",
+      "bytes": 884,
+      "sha256": "1596dde490f6aed10f8725c42b32a9ee0137845023ebf1ae7d797d2d29122335"
+    },
+    {
+      "role": "seed3_gate-i-tl0-d20",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-i-tl0-d20.json",
+      "bytes": 889,
+      "sha256": "cc4ca2ea2727408bd6772a39d2bf56e54aafdc46953d14fb050d496f08055c45"
+    },
+    {
+      "role": "seed3_gate-p0-t",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-p0-t.json",
+      "bytes": 818,
+      "sha256": "b4d79d3a4d2a2d8116ce0833ace9df27e2662d3efe2536239b3d7831ea8d8bc7"
+    },
+    {
+      "role": "seed3_gate-q-c0-freeze",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-q-c0-freeze.json",
+      "bytes": 1565,
+      "sha256": "7e91dadd6e9c3b5a277ab3daad436d2cdef17551eefdab27c6d9b7a12b91477c"
+    },
+    {
+      "role": "seed3_gate-r-c1",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-r-c1.json",
+      "bytes": 756,
+      "sha256": "4d13f525de95538301086eeba405e1c642c7b1f61b8e199cfe73ab122bdfde9b"
+    },
+    {
+      "role": "seed3_gate-s-c2",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-s-c2.json",
+      "bytes": 756,
+      "sha256": "2f9372770db8197c8ce788a7a4758b9594ebd9390ef356b776e8dfbe22e4b0e5"
+    },
+    {
+      "role": "seed3_gate-t-c3",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-t-c3.json",
+      "bytes": 878,
+      "sha256": "b886318f3f5a4bb3a7be6a5d7ae4c04ae795d9d74ee97023638ea4115278be06"
+    },
+    {
+      "role": "seed3_gate-u-seal",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-u-seal.json",
+      "bytes": 561,
+      "sha256": "24bb701b4461475b1ee736f12d44d07b2c5169da56964589745bd1b7d77ad2c9"
+    },
+    {
+      "role": "seed3_gate-v-test",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-v-test.json",
+      "bytes": 400,
+      "sha256": "6a5450bafd3ae4039e41522053c5349af179ab887af97ea2fa58fd6a875f7e66"
+    },
+    {
+      "role": "seed3_validation_seal",
+      "path": "data/cache/p5-20260823T160632Z-439d1de5/lockbox/seed-3/p5-s3-validation-seal.json",
+      "bytes": 1019,
+      "sha256": "df15915f2c5855691b6e0a4a5b9c0e62aa9229b8a246d932a7f4926074561cf5"
+    },
+    {
+      "role": "lock",
+      "path": "docs/papers/p5-multi-seed-p4/LOCK.json",
+      "bytes": 2350,
+      "sha256": "62cdb4a92b896e6a2470ec9a09382c6a10b036dce8eb97f8c74c67f5e5229969"
+    },
+    {
+      "role": "gate_ledger",
+      "path": "manifests/p5/p5_gate_ledger.json",
+      "bytes": 9960,
+      "sha256": "dc7455046d2a057b3f0b2edd99057918f2a6757927c272489316fb976c9b0272"
+    },
+    {
+      "role": "mix_identity",
+      "path": "manifests/p5/p5_mix_identity.json",
+      "bytes": 914,
+      "sha256": "dd5f5c78928f54ac43384c0d5ff2f7b37972c708400224ad9b9d8628f09f883b"
+    },
+    {
+      "role": "budget_manifest",
+      "path": "manifests/p5/p5_budget_manifest.json",
+      "bytes": 434,
+      "sha256": "4bd8d0026f5f7bfd38107465a09e1916dae46a5e6aa9d66297c4385420fd7d07"
+    },
+    {
+      "role": "aspredicted_pdf",
+      "path": "docs/run-cards/p5/AsPredicted-307836.pdf",
+      "bytes": 206704,
+      "sha256": "439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3"
+    },
+    {
+      "role": "sha256sums",
+      "path": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/SHA256SUMS",
+      "bytes": 7128,
+      "sha256": "8c5855bbdf900999b59c57fc7430718a622e5b7776fe7298b449a4aa230396c9"
+    }
+  ],
+  "sha256sums": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/SHA256SUMS",
+  "excludes": [
+    "raw_test_text",
+    "secrets",
+    "ssh_keys",
+    "optimizer_states",
+    "HOST_cards"
+  ],
+  "no_new_computation": true,
+  "hub": {
+    "provisional_id": "pageman/nanochat-filipino-p5-p4-multi-seed",
+    "status": "deferred",
+    "reason": "Per eligible seed, C0+C1+C2+C3 must ship together with tokenizer and meta; Hub upload deferred pending operator HF staging. Never C3 alone. Never write onto P4 Hub ID."
+  },
+  "researchbox": {
+    "id": null,
+    "status": "pending_new_box",
+    "make_public": false,
+    "operator_step": "Deposit protocol, PDF, non-sensitive receipts, released seals, paper. No test.jsonl. No passcode in git."
+  },
+  "paper": {
+    "status": "deferred",
+    "reason": "paper.tex not yet filled from released seals; build after Gate W archive."
+  },
+  "c3_is_not_p3_b3": true,
+  "does_not_confirm_p4": true,
+  "p4_seed0_not_a_p5_cell": true
+}

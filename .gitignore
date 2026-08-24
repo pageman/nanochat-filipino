@@ -26,4 +26,10 @@ vendor/nanochat-lock/
 # Never publish
 docs/run-cards/aspredicted-p1-submitted.txt
 docs/run-cards/aspredicted-p2-submitted.txt
+docs/run-cards/aspredicted-p3-submitted.txt
+docs/run-cards/aspredicted-p4-submitted.txt
+docs/run-cards/**/HOST-*.md
+**/.lockbox_pass
+
+
 transfer/

@@ -1,0 +1,89 @@
+P5 AsPredicted PASTE PACK -- 2-PAGE CUT (post-review precision edits)
+AsPredicted rejects 3 pages. Two pages is allowed. ASCII only. Do not use "*" in any box.
+Q1 radio: It's complicated.
+Related: Overlapping #306935 #307342 #307591. Disclose Overlapping #306780 in Q8. Independent #307532. No Drafts.
+Author: Paul Pajo / paulamerigo.pajojr@benilde.edu.ph / De La Salle - College of Saint Benilde
+Type: Observational/archival study (prospectively controlled computational training; no human participants)
+Data source: Other
+
+Gate-plan SHA256 d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092
+Addendum SHA256 839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258
+Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+P4 mix-manifest SHA256 f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107
+
+================================================================
+2) Hypothesis
+================================================================
+P5 is designed after released P4 findings (AsPredicted #307591; Gate X 2026-08-21; both co-primary criteria observed in one initialization). It is a post-P4, prospectively preregistered multi-seed panel of the P4 token-share apparatus. It does not amend AsPredicted #306780, #306935, #307342, or #307591. It is not an independent confirmation of P4. It is not a population estimate, confidence interval, or inferential test.
+
+For each unused parent-init seed s in {1,2,3}, the P5-owned parent launch wrapper sets torch.manual_seed(s) and torch.cuda.manual_seed(s) immediately before GPT.init_weights() for d8 and d20; constructs the official GPT model only after that Torch CPU/CUDA RNG state is set, or reinitializes every trainable GPT parameter through the pinned GPT.init_weights() call after that state is set; records wrapper SHA and SHA-256 of the serialized initial model state before parent training. Python/NumPy wrapper RNG uses fixed seed 424242. Train a fresh Tagalog WikiText-TL-39 nanochat parent (never load P1.1/P2/P3/P4 weights). If P0-T PASSes, freeze d20 as C0_s and continue it on C1 extra Tagalog, C2 pure English, and C3 the P4-frozen EN/TL mix with q_TL=0.50 Tagalog source-content tokens (reuse P4 packed stream by SHA; quotas 9633792/9633792; interleave seed 42). Does C3_s yield lower held-out Tagalog BPB than C2_s and lower held-out English BPB than C1_s?
+
+R_TL(s) = TL val_bpb_full(C3_s) - TL val_bpb_full(C2_s). Success: R_TL(s) <= -0.01.
+A_EN(s) = EN val_bpb_full(C3_s) - EN val_bpb_full(C1_s). Success: A_EN(s) <= -0.01.
+Equality at -0.01 counts. Both required for that seed's two-component trade-off pattern. No composite.
+
+The panel result is the count of eligible seeds in both / only-R / only-A / neither, plus ineligible if P0-T BLOCKED. P4 seed 0 is historical disclosure, not a P5 confirmatory cell. C3 is not P3 B3. No early stop. No replacement seed. Run seeds 1 then 2 then 3 through every filed seed. One panel unblinding after every seed's V or ineligible-parent stop. Not CORE/chat/SFT.
+
+================================================================
+3) Dependent variable
+================================================================
+Primary DVs: official val_bpb_full as in P4. Tagalog val on frozen P1.1 val SHA256 4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c; English val on WT103-raw val SHA256 874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b. Same carry-forward tokenizer on every arm. BPB = mean token NLL / (ln(2) x mean UTF-8 bytes per token), scripts/p5/evaluate_bpb.py, T=2048, BOS-bestfit, full val, CUDA. meta.val_bpb is not a DV.
+
+Per eligible seed: six child cells C1/C2/C3 x {TL, EN}; contrasts R_TL(s) and A_EN(s) as in Q2. C0_s English val once at U_s, descriptive. P0-T covers C0_s Tagalog (CUDA-only status).
+
+After that seed's val seal (test_access[s]=0), one C3-only secondary test event on EN test SHA256 2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e and TL test SHA256 3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf. C1/C2 never tested. Not a test-set R_TL/A_EN. Do not reuse P4 Gate V numbers. P5 protected-secondary policy is one C3-only test event per eligible predeclared seed, hence zero to three total P5 test events; it is not one total test event for the whole three-seed panel. Each test is post-seal, secondary, descriptive, and excluded from seed classification and the panel count table. Before panel Gate X, P0-T/U/V scalar files, evaluator stdout/stderr, and test reports are lockboxed and not inspected; test_access[s] is a count only.
+
+================================================================
+4) Conditions
+================================================================
+No human participants. Pin 92d63d4; base_train -> scripts/p5/evaluate_bpb.py; T=2048; B=65536; CORE off. Host contract: NVIDIA A40 48 GB, CUDA 12.8, torch 2.9.1+cu128, container runpod/pytorch:1.0.3-cu1281-torch291-ubuntu2404. Use scripts/p5/env.sh and scripts/p5/env.cuda.sh only; never source scripts/p4/* or scripts/p1/p2/p3/*. Never load P1.1/P2/P3/P4 .pt.
+
+Shared once: carry-forward tokenizer.pkl SHA256 04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8 and token_bytes.pt SHA256 a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132; P4 C3 mix-manifest SHA256 f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107; one d4 smoke (seed 0; nonconfirmatory).
+
+Panel K=3. Parent-init seeds 1, then 2, then 3 (same s at d8 and d20 via F5-22 wrapper). Per seed: parent on P1.1 Tagalog train SHA256 2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687, N=294; C0_s = freeze d20 after P0-T PASS. Children D_phase2 = 294 x 65536 = 19267584, fresh Muon+AdamW (load_optimizer=False), peak LR = 0.3 x parent peak LR, warmup 14, terminal ckpt only: C1 extra TL, C2 WT103-raw train, C3 P4-frozen mix (do not reshuffle). For each C3 run, trainer-consumed packed train shard SHA256 values 249e2c5e9d06bf17fe14e03c02e622c9e68d90ba337e1e6e33c237fc723252f5, d24fe7f933abeb38b277b099385518718d2d57e330e5f9b5fd8b1a534e43444e, a56a729a0e3c7fd2d1e2e99236a4225bf9a86e55d6d97153063de9d6455fa523, 4adbf8f9afcc9870f46f6298ac22f3691ec073d2f452f73aa65322e3ff6331de and language_origin_mask_sha256 140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46 must match P4; matching source JSONLs or manifest alone is insufficient. Within seed: R then S then T, then U, then one C3-only V. P0-T untrained floor uses the same seed s as the parent. P4 seed 0 is not a P5 cell.
+
+================================================================
+5) Analyses
+================================================================
+Run predeclared seed order 1, then 2, then 3. Continue through every filed seed despite any safe operational status from preceding seeds.
+
+Per seed: P0-T at d8 and d20 before any child token (CUDA-only status). Permitted safe output only: PASS, BLOCKED, or TECHNICAL_STOP. If P0-T BLOCKED: that seed is ineligible; skip its children; do not replace it; remaining filed seeds still run.
+
+If PASS: six-cell val seal then R_TL(s) and A_EN(s) as in Q2. Per-seed grammar: both / only-R / only-A / neither. Panel primary: count table over eligible seeds (plus ineligible). No mean, no CI, no p, no random-effects model, no seed dropping, no extra seed, no "P5 confirms P4." |delta| < 0.01 is not a ranking. Do not retune q_TL/D/delta from P4 magnitudes. C0 English val and C3-only tests are descriptive. Exactly one panel Gate X only after each seed has completed V or reached the filed P0-T ineligible stop. No seed-level unblinding. Up to three C3-only test events, one per eligible seed (zero to three total; not one test for the whole panel).
+
+================================================================
+6) Outliers and Exclusions
+================================================================
+Official JSONLs are byte-identical P4 copies (TL train SHA256 2b0474c5...; EN train SHA256 09ae691c...; val/test as in Q3). Hash mismatch on shared splits = panel-level protocol stop. No reclean. Do not drop documents to chase byte share. Rebuild C3 only if every SHA matches P4.
+
+Panel-level protocol stop (no remaining seed under compromised shared registry; no P5 result label): shared-input breach involving splits, tokenizer, evaluator, packed C3 trainer inputs or language-origin mask, test isolation, forbidden weight lineage, val/test in train, inexact C3 quota/order, new tokenizer, ratio -1, HF Trainer, writing into p1/p2/p3/p4 Hub, MPS/CPU for official GPU gates, child used as parent, NaN/Inf, ClimbMix, missing terminal ckpt.
+
+Seed-level protocol stop: breach demonstrably isolated to an unexecuted seed-specific staging/output path; no result for that seed; no replacement seed; remaining seeds continue only if the shared registry is independently re-verified unchanged.
+
+Technical quarantine/restart: pre-outcome failure with no official terminal checkpoint and no accessed P5 scalar; clean restart from immutable C0_s, fresh optimizer, new empty output dir; log incident.
+
+Never exclude a finite official terminal result for outcome. Do not drop an arm or a seed because a contrast looks bad or because the first two seeds recurred. d4 smoke is not confirmatory.
+
+================================================================
+7) Sample Size
+================================================================
+Frozen P1.1 TL-39 train and official WT103-raw train, no added docs. K=3 unused parent-init seeds {1,2,3}, named before filing. Per seed: parent d8 and d20, N=294; if eligible, three d20 children, N=294, D_phase2=19267584; six confirmatory val cells; one C3-only test event. No fourth seed. No early stop. Sample size is the filed panel, not a stopping rule.
+
+================================================================
+8) Other
+================================================================
+Q1 is "It's complicated": public corpora and P1.1/P2/P3/P4 outcomes exist and were known at design (P4 #307591 both-observed on seed 0). No P5 parent, children, val_bpb_full, or test_bpb has been computed. This PDF locks those unobserved P5 quantities. New study; does not amend #306780, #306935, #307342, or #307591. P5 uses archived public text but prospectively trains new computational models and generates new P5 evaluation outcomes; there are no human participants.
+
+P5 is the separately preregistered multi-seed follow-up identified by P4's one-seed limitation. P1.1 supplies the protected Tagalog corpus/split and BPB measurement apparatus; P2 supplies the canonical WikiText-103-raw stream provenance and matched-branch lineage; P3 supplies the fresh-Tagalog-parent, P0-T, common-parent, and protected-evaluation architecture; P4 supplies the distinct token-share-locked C3 treatment, contrasts, and C3-only test policy. P5 is the first predeclared multi-new-seed recurrence panel for that treatment. P5 changes only the predeclared parent-initialization seed and newly trained descendants. It does not load earlier weights, count P4 seed 0 as a P5 cell, or treat P4's released magnitudes as calibration targets. P5 is computationally independent of P4 in its parent weights, children, ledgers, and P5 outcomes; it is not outcome-independent of P4, because P4's released seed-0 results informed this pre-filed replication panel.
+
+C3 is not P3 B3. Lockbox release only at one panel Gate X. Exploratory only (not P5): byte-balanced mix (P6-B), ratio sweep, replay, FilBench, EWC, CORE, SFT. Gate-plan SHA256 d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092. Pre-filing addendum SHA256 839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258. Pin 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd. Mix-manifest SHA256 f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107. Addendum fixes wrapper boundary, protocol-stop scope, C3 trainer-input hashes, and panel test policy. Test files stay outside train dirs.
+
+================================================================
+9) Name (72 chars)
+================================================================
+P5: multi-seed panel of the P4 token-share mix after fresh TL parents
+
+================================================================
+11) Data source Other text
+================================================================
+Frozen P1.1 WikiText-TL-39 (Cruz and Cheng 2019; reconstructed_article_70_15_15) for each fresh P5 Tagalog parent, C1, and the Tagalog quota of C3. WikiText-103 raw (Merity et al. 2016; Salesforce/wikitext, wikitext-103-raw-v1) for C2 and the English quota of C3. P4 packed C3 stream reused by SHA. P1.1/P2/P3/P4 weights are references only, never a P5 parent. Tokenizer carry-forward is not weight reuse.

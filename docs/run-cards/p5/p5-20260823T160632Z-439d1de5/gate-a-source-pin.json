@@ -1,0 +1,79 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "gate": "A",
+  "status": "pass",
+  "at_utc": "2026-08-23T16:15:38Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "script": "scripts/p5/gate_a_source_pin.py",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "evaluator_sha256": "8fa148005efb2140845e371e7b2a58ea2904ddc949ba62f0d2bfa42510b07e82",
+  "checks": [
+    {
+      "id": "A1_pin_checkout",
+      "ok": true,
+      "detail": {
+        "head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "expected": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      }
+    },
+    {
+      "id": "A2_allowed_diff_only_data_hook",
+      "ok": true,
+      "detail": {
+        "disallowed": []
+      }
+    },
+    {
+      "id": "A3_sentinel",
+      "ok": true,
+      "detail": "data/cache/p5-20260823T160632Z-439d1de5/SENTINEL_P5_ONLY"
+    },
+    {
+      "id": "A4_base_dir_is_p5_cache",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "A5_p5_env_not_prior_copy",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "id": "A6_env_scan_no_prior_cache",
+      "ok": true,
+      "detail": {
+        "NANOCHAT_BASE_DIR": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p5-20260823T160632Z-439d1de5"
+      }
+    },
+    {
+      "id": "A7_no_checkpoints_in_p5_cache",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "A8_evaluator_formula_frozen",
+      "ok": true,
+      "detail": "8fa148005efb2140845e371e7b2a58ea2904ddc949ba62f0d2bfa42510b07e82"
+    },
+    {
+      "id": "A9_forbidden_parents",
+      "ok": true,
+      "detail": "scripts/p5/forbidden_parents.py"
+    },
+    {
+      "id": "A10_seed_knob_proof",
+      "ok": true,
+      "detail": {
+        "status": "pass",
+        "path": "docs/run-cards/p5/seed-knob-proof.json",
+        "distinct": true
+      }
+    }
+  ],
+  "no_p5_outcomes": true,
+  "next_gate": "B"
+}

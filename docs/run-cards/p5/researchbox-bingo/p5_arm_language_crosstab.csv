@@ -1,0 +1,13 @@
+seed,arm,role,tl_val_bpb_full,en_val_bpb_full,en_note,c3_en_test_bpb,c3_tl_test_bpb,R_TL,A_EN,per_seed_class,c3_is_not_p3_b3
+1,C0,frozen_TL0_d20_parent,,2.602629,descriptive_only_excluded_from_contrasts,,,,,,true
+1,C1,extra_Tagalog_control,0.307864,2.972254,,,,,,,true
+1,C2,pure_English_comparator,1.947782,1.248221,,,,,,,true
+1,C3,token_share_mix_qTL_0.50_not_P3_B3,0.733086,1.417082,,1.426163,1.201608,-1.214696,-1.555172,both,true
+2,C0,frozen_TL0_d20_parent,,2.566109,descriptive_only_excluded_from_contrasts,,,,,,true
+2,C1,extra_Tagalog_control,0.503637,2.874332,,,,,,,true
+2,C2,pure_English_comparator,2.222498,1.319657,,,,,,,true
+2,C3,token_share_mix_qTL_0.50_not_P3_B3,0.870142,1.486114,,1.498279,1.148789,-1.352356,-1.388218,both,true
+3,C0,frozen_TL0_d20_parent,,2.549180,descriptive_only_excluded_from_contrasts,,,,,,true
+3,C1,extra_Tagalog_control,0.449775,2.854149,,,,,,,true
+3,C2,pure_English_comparator,2.171966,1.296541,,,,,,,true
+3,C3,token_share_mix_qTL_0.50_not_P3_B3,0.837820,1.467922,,1.479601,1.146587,-1.334145,-1.386228,both,true

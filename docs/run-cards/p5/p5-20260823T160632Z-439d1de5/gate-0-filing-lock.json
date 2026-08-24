@@ -1,0 +1,86 @@
+{
+  "gate": "0",
+  "status": "pass",
+  "at_utc": "2026-08-23T16:23:40Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "aspredicted_id": 307836,
+  "aspredicted_url": "https://aspredicted.org/k6ib64.pdf",
+  "aspredicted_pdf_local": "docs/run-cards/p5/AsPredicted-307836.pdf",
+  "aspredicted_pdf_sha256": "439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3",
+  "gate_plan_path": "docs/papers/p5-multi-seed-p4/P5-GATES-EXHAUSTIVE-PLAN.md",
+  "gate_plan_sha256": "d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092",
+  "addendum_path": "docs/papers/p5-multi-seed-p4/P5-PREFILING-ADDENDUM-DRAFT.md",
+  "addendum_filed_sha256": "839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258",
+  "addendum_local_sha256": "bd322b7149c5ec32a14f20fd941e8ce436746be503cb844962d8e8d14e284508",
+  "addendum_local_matches_filed": false,
+  "addendum_note": "PDF+LOCK bind the filed addendum SHA; working draft may drift post-filing.",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "does_not_amend_307342": true,
+  "does_not_amend_307591": true,
+  "designed_after_p4_gate_x": true,
+  "panel_seeds": [
+    1,
+    2,
+    3
+  ],
+  "researchbox_id": null,
+  "checks": [
+    {
+      "id": "0_pdf_sha",
+      "ok": true,
+      "detail": "439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3"
+    },
+    {
+      "id": "0_gate_plan_sha",
+      "ok": true,
+      "detail": "d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092"
+    },
+    {
+      "id": "0_lock_pdf_binding",
+      "ok": true,
+      "detail": "439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3"
+    },
+    {
+      "id": "0_lock_plan_binding",
+      "ok": true,
+      "detail": "d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092"
+    },
+    {
+      "id": "0_lock_addendum_binding",
+      "ok": true,
+      "detail": "839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258"
+    },
+    {
+      "id": "0_panel_lockbox_dirs",
+      "ok": true,
+      "detail": [
+        "seed-1",
+        "seed-2",
+        "seed-3"
+      ]
+    },
+    {
+      "id": "0_lockbox_mode",
+      "ok": true,
+      "detail": {
+        "lockbox": "0o700",
+        "safe": "0o755"
+      }
+    },
+    {
+      "id": "0_no_p5_outcomes",
+      "ok": true,
+      "detail": "scan cache/lockbox"
+    }
+  ],
+  "no_p5_outcomes": true,
+  "next": "gate-0-lockbox-tests then Gate A (already passed if backfill)",
+  "lockbox_acceptance_tests": "pass",
+  "lockbox_tests_json": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-0-lockbox-tests.json",
+  "lockbox_tests_at_utc": "2026-08-23T16:23:40Z"
+}

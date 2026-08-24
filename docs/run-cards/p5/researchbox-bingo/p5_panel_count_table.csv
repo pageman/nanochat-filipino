@@ -1,0 +1,6 @@
+category,k,K_eligible,description
+both,3,3,Both co-primary P4 criteria met at seed level
+only-R,0,3,Only R_TL criterion met
+only-A,0,3,Only A_EN criterion met
+neither,0,3,Neither criterion met
+ineligible_parent,0,3,P0-T ineligible parent; excluded from K_elig

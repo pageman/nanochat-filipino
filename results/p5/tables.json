@@ -1,0 +1,75 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "at_utc": "2026-08-24T02:05:35Z",
+  "source": "released seals only",
+  "no_new_metrics": true,
+  "delta": 0.01,
+  "no_mean": true,
+  "no_ci": true,
+  "no_pvalue": true,
+  "does_not_confirm_p4": true,
+  "p4_seed0_not_a_p5_cell": true,
+  "c3_is_not_p3_b3": true,
+  "panel_count_table": {
+    "both": 3,
+    "only-R": 0,
+    "only-A": 0,
+    "neither": 0,
+    "ineligible_parent": 0
+  },
+  "eligible_n": 3,
+  "seeds": {
+    "1": {
+      "class": "both",
+      "R_TL": "-1.214696",
+      "A_EN": "-1.555172",
+      "cells_6dp": {
+        "c1_en": "2.972254",
+        "c2_tl": "1.947782",
+        "c3_en": "1.417082",
+        "c3_tl": "0.733086",
+        "c0_en": "2.602629",
+        "c1_tl": "0.307864",
+        "c2_en": "1.248221"
+      },
+      "c3_test_en": "1.426163",
+      "c3_test_tl": "1.201608"
+    },
+    "2": {
+      "class": "both",
+      "R_TL": "-1.352356",
+      "A_EN": "-1.388218",
+      "cells_6dp": {
+        "c1_en": "2.874332",
+        "c2_tl": "2.222498",
+        "c3_en": "1.486114",
+        "c3_tl": "0.870142",
+        "c0_en": "2.566109",
+        "c1_tl": "0.503637",
+        "c2_en": "1.319657"
+      },
+      "c3_test_en": "1.498279",
+      "c3_test_tl": "1.148789"
+    },
+    "3": {
+      "class": "both",
+      "R_TL": "-1.334145",
+      "A_EN": "-1.386228",
+      "cells_6dp": {
+        "c1_en": "2.854149",
+        "c2_tl": "2.171966",
+        "c3_en": "1.467922",
+        "c3_tl": "0.837820",
+        "c0_en": "2.549180",
+        "c1_tl": "0.449775",
+        "c2_en": "1.296541"
+      },
+      "c3_test_en": "1.479601",
+      "c3_test_tl": "1.146587"
+    }
+  },
+  "panel_sentence": "Across the K=3 predeclared unused initializations, both co-primary P4 criteria were met in k_both=3 of K_elig=3 eligible seeds (k_inelig=0 ineligible).",
+  "all_k_recurred": true
+}

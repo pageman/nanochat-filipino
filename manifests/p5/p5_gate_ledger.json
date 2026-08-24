@@ -1,0 +1,295 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "aspredicted_id": 307836,
+  "gates": {
+    "A": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:15:38Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-a-source-pin.json",
+      "sha256_prefix": "ab89642c",
+      "safe_note": "blinded; hashes/status only",
+      "next": "B"
+    },
+    "B": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:15:39Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-b-raw-assets.json",
+      "sha256_prefix": "644065c6",
+      "safe_note": "blinded; hashes/status only",
+      "next": "C"
+    },
+    "C": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:16:19Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-c-hygiene.json",
+      "sha256_prefix": "5895d394",
+      "safe_note": "blinded; hashes/status only",
+      "next": "D"
+    },
+    "D": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:16:33Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-d-split-freeze.json",
+      "sha256_prefix": "95f73af6",
+      "safe_note": "blinded; hashes/status only",
+      "next": "F"
+    },
+    "F": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:16:33Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-f-tokenizer.json",
+      "sha256_prefix": "54c61af7",
+      "safe_note": "blinded; hashes/status only",
+      "next": "E"
+    },
+    "E": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:17:08Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-e-packed-streams.json",
+      "sha256_prefix": "2a111321",
+      "safe_note": "blinded; hashes/status only",
+      "next": "G"
+    },
+    "G": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:17:12Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-g-budget-command-freeze.json",
+      "sha256_prefix": "af43a055",
+      "safe_note": "blinded; hashes/status only",
+      "next": "H"
+    },
+    "0": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:23:40Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-0-filing-lock.json",
+      "sha256_prefix": "ec3ba59b",
+      "safe_note": "blinded; hashes/status only",
+      "next": "A"
+    },
+    "0-lockbox": {
+      "status": "pass",
+      "at_utc": "2026-08-23T16:23:40Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-0-lockbox-tests.json",
+      "sha256_prefix": "c2643091",
+      "safe_note": "blinded; hashes/status only",
+      "next": "A"
+    },
+    "H": {
+      "status": "pass",
+      "at_utc": "2026-08-23T17:21:49Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/gate-h-cuda-smoke.json",
+      "sha256_prefix": "9ecb46e5",
+      "safe_note": "blinded; hashes/status only",
+      "next": "I_1"
+    },
+    "I_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T18:24:30Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-i-tl0.json",
+      "sha256_prefix": "286dc3d4",
+      "safe_note": "blinded; hashes/status only",
+      "next": "P0-T_1"
+    },
+    "P0-T_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T18:26:12Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-p0-t.json",
+      "sha256_prefix": "a6439ba7",
+      "safe_note": "blinded; hashes/status only",
+      "next": "Q_1"
+    },
+    "Q_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T18:26:42Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-q-c0-freeze.json",
+      "sha256_prefix": "f4e3b02c",
+      "safe_note": "blinded; hashes/status only",
+      "next": "R_1"
+    },
+    "R_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T18:54:25Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-r-c1.json",
+      "sha256_prefix": "605bc574",
+      "safe_note": "blinded; hashes/status only",
+      "next": "S_1"
+    },
+    "S_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T19:22:01Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-s-c2.json",
+      "sha256_prefix": "5f71f1d8",
+      "safe_note": "blinded; hashes/status only",
+      "next": "T_1"
+    },
+    "T_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T19:49:23Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-t-c3.json",
+      "sha256_prefix": "d216d93a",
+      "safe_note": "blinded; hashes/status only",
+      "next": "U_1"
+    },
+    "U_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T19:51:32Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-u-seal.json",
+      "sha256_prefix": "64a08aa9",
+      "safe_note": "blinded; hashes/status only",
+      "next": "V_1"
+    },
+    "V_1": {
+      "status": "pass",
+      "at_utc": "2026-08-23T19:52:17Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-1/gate-v-test.json",
+      "sha256_prefix": "0c5b8048",
+      "safe_note": "blinded; hashes/status only",
+      "next": "I_2"
+    },
+    "I_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T20:24:06Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-i-tl0.json",
+      "sha256_prefix": "b5fa261d",
+      "safe_note": "blinded; hashes/status only",
+      "next": "P0-T_2"
+    },
+    "P0-T_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T20:25:36Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-p0-t.json",
+      "sha256_prefix": "149e5ac2",
+      "safe_note": "blinded; hashes/status only",
+      "next": "Q_2"
+    },
+    "Q_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T20:25:53Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-q-c0-freeze.json",
+      "sha256_prefix": "cf6102b1",
+      "safe_note": "blinded; hashes/status only",
+      "next": "R_2"
+    },
+    "R_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T20:53:17Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-r-c1.json",
+      "sha256_prefix": "af5a7b6f",
+      "safe_note": "blinded; hashes/status only",
+      "next": "S_2"
+    },
+    "S_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T22:31:50Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-s-c2.json",
+      "sha256_prefix": "dfd5bf45",
+      "safe_note": "blinded; hashes/status only",
+      "next": "T_2"
+    },
+    "T_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T23:28:20Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-t-c3.json",
+      "sha256_prefix": "7a010a87",
+      "safe_note": "blinded; hashes/status only",
+      "next": "U_2"
+    },
+    "U_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T23:39:24Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-u-seal.json",
+      "sha256_prefix": "acdf5fb1",
+      "safe_note": "blinded; hashes/status only",
+      "next": "V_2"
+    },
+    "V_2": {
+      "status": "pass",
+      "at_utc": "2026-08-23T23:40:21Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-2/gate-v-test.json",
+      "sha256_prefix": "b554afa5",
+      "safe_note": "blinded; hashes/status only",
+      "next": "I_3"
+    },
+    "I_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T00:13:39Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-i-tl0.json",
+      "sha256_prefix": "35d41974",
+      "safe_note": "blinded; hashes/status only",
+      "next": "P0-T_3"
+    },
+    "P0-T_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T00:15:21Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-p0-t.json",
+      "sha256_prefix": "b4d79d3a",
+      "safe_note": "blinded; hashes/status only",
+      "next": "Q_3"
+    },
+    "Q_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T00:15:54Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-q-c0-freeze.json",
+      "sha256_prefix": "7e91dadd",
+      "safe_note": "blinded; hashes/status only",
+      "next": "R_3"
+    },
+    "R_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T00:50:34Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-r-c1.json",
+      "sha256_prefix": "4d13f525",
+      "safe_note": "blinded; hashes/status only",
+      "next": "S_3"
+    },
+    "S_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T01:18:23Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-s-c2.json",
+      "sha256_prefix": "2f937277",
+      "safe_note": "blinded; hashes/status only",
+      "next": "T_3"
+    },
+    "T_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T01:46:12Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-t-c3.json",
+      "sha256_prefix": "b886318f",
+      "safe_note": "blinded; hashes/status only",
+      "next": "U_3"
+    },
+    "U_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T01:48:43Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-u-seal.json",
+      "sha256_prefix": "24bb701b",
+      "safe_note": "blinded; hashes/status only",
+      "next": "V_3"
+    },
+    "V_3": {
+      "status": "pass",
+      "at_utc": "2026-08-24T01:49:45Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/seed-3/gate-v-test.json",
+      "sha256_prefix": "6a5450ba",
+      "safe_note": "blinded; hashes/status only",
+      "next": "X"
+    },
+    "X": {
+      "status": "pass",
+      "at_utc": "2026-08-24T02:05:35Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/P5_UNBLINDING_EVENT.json",
+      "sha256_prefix": "3380f75b",
+      "safe_note": "blinded; hashes/status only",
+      "next": "W"
+    },
+    "W": {
+      "status": "pass",
+      "at_utc": "2026-08-24T02:05:42Z",
+      "artifact": "docs/run-cards/p5/p5-20260823T160632Z-439d1de5/p5_closeout_manifest.json",
+      "sha256_prefix": "7dbe0b32",
+      "safe_note": "blinded; hashes/status only",
+      "next": null
+    }
+  }
+}

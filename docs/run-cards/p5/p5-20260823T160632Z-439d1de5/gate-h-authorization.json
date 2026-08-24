@@ -1,0 +1,28 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "gate": "H",
+  "authorized": true,
+  "authorizes_gate_i": false,
+  "authorizes_parent": false,
+  "authorizes_children": false,
+  "scope": "d4 Tagalog-path CUDA smoke only; tag p5-smoke-tl-d4; seed 0; 30 steps; warmup 3; eval/sample/core-metric off",
+  "must_not": [
+    "p5-s1-*",
+    "p5-s2-*",
+    "p5-s3-*",
+    "p5-tl0-*",
+    "p5-c0-*",
+    "p5-c1-*",
+    "p5-c2-*",
+    "p5-c3-*",
+    "print BPB",
+    "Mac MPS",
+    "CPU confirmatory"
+  ],
+  "host_class": "NVIDIA CUDA A40",
+  "authorized_at_utc": "2026-08-23T16:23:40Z",
+  "authorized_by": "operator chat: Gate 0 closeout + H authorization",
+  "note": "Does not authorize Gate I_1."
+}

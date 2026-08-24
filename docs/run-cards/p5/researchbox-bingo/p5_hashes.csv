@@ -1,0 +1,13 @@
+artifact,path_or_label,sha2_256
+aspredicted_pdf,docs/run-cards/p5/AsPredicted-307836.pdf,sha2-256:439d1de5ff9fd18e466f33192c5ac9c5c36b020ca72942ae218b9e69a8f5bbf3
+addendum_md,docs/papers/p5-multi-seed-p4/P5-PREFILING-ADDENDUM-DRAFT.md,sha2-256:839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258
+gate_plan_md,docs/papers/p5-multi-seed-p4/P5-GATES-EXHAUSTIVE-PLAN.md,sha2-256:d51115aade9c0b1fb8698eaa33540db2d75b2b27765aaaad1bf14b13b0132092
+nanochat_pin,vendor/nanochat @ 92d63d4,sha2-256:92d63d4e8bb4df75c3b71618f31ddde2378b2bcd
+evaluate_bpb_py,scripts/p5/evaluate_bpb.py,sha2-256:78e77d9761fa4473344abd4773129e56f04561e615bdbcfad144ab8730ded977
+mix_manifest,manifests/p5/p5_mix_identity.json,sha2-256:f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107
+paper_pdf,docs/papers/p5-multi-seed-p4/paper_outputs/paper.pdf,sha2-256:e305eab57cd90d47a0a5b5fabc6f4f72a0c269e0dd33a55efee3e0664b06021e
+tables_json,results/p5/tables.json,sha2-256:9f3a184c737424b6d626f28cc578535cb6b15a27a55336c49fd2a294decd06b4
+unblinding_event,docs/run-cards/p5/.../P5_UNBLINDING_EVENT.json,sha2-256:3380f75bb6d21ace0cdd80529a7a08aa623b3e2e1bc40999395f6d2d362c97f3
+validation_seal_s1,released/seed-1/p5-s1-validation-seal.json,sha2-256:4f843ca7b5bb6935baf0ad4e8d636accb49c88d43ce6b32f5fb6f0aaeb170874
+validation_seal_s2,released/seed-2/p5-s2-validation-seal.json,sha2-256:75c5ab56804c937a1436d538c3b4350830bd239924de76e4a877aa0988edfea0
+validation_seal_s3,released/seed-3/p5-s3-validation-seal.json,sha2-256:df15915f2c5855691b6e0a4a5b9c0e62aa9229b8a246d932a7f4926074561cf5

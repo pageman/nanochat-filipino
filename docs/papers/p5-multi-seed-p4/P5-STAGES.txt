@@ -1,0 +1,513 @@
+P5-P4-MULTI-SEED stages
+Draft only. Not filed. No P5_RUN_ID. No training.
+Does not amend AsPredicted 306780, 306935, 307342, 307591.
+Does not load P1.1, P2, P3, or P4 weights.
+Does not retune q_TL, delta, D_phase2, tokenizer, or the P4 C3 stream.
+Recommended panel: parent-init seeds 1, 2, 3 in that order. P4 seed 0 is historical disclosure only, not a P5 cell.
+C0 is not Gate 0. C3 is not P3 B3.
+Every gate is a hard stop. No seed-level unblinding. No early stop. No replacement seed.
+
+================================================================
+HOW THE STAGES ARE GROUPED
+================================================================
+
+SHARED ONCE (laptop / CPU, then one CUDA smoke)
+  Stage 0
+  Stage A
+  Stage B
+  Stage C
+  Stage D
+  Stage F
+  Stage E
+  Stage G
+  Stage H
+
+ONCE PER SEED s IN FILED ORDER 1 THEN 2 THEN 3 (CUDA; seals stay closed)
+  Stage I_s
+  Stage P0-T_s
+  Stage Q_s          (only if P0-T_s PASS)
+  Stage R_s          (only if P0-T_s PASS)
+  Stage S_s          (only if P0-T_s PASS)
+  Stage T_s          (only if P0-T_s PASS)
+  Stage U_s          (only if P0-T_s PASS)
+  Stage V_s          (only if P0-T_s PASS)
+  If P0-T_s BLOCKED: card that seed ineligible_parent; skip Q_s through V_s; do not replace the seed; continue to the next filed seed.
+
+ONCE AT THE END (laptop)
+  Stage X            (one panel unblinding after every seed has V_s or ineligible_parent)
+  Stage W            (archive, paper, Hub, ResearchBox; no new P5 science)
+
+================================================================
+SERIAL DAG (do not reorder)
+================================================================
+
+0 -> A -> B -> C -> D -> F -> E -> G -> H
+H -> I_1 -> P0-T_1
+P0-T_1 PASS -> Q_1 -> R_1 -> S_1 -> T_1 -> U_1 -> V_1 -> I_2
+P0-T_1 BLOCKED -> I_2
+I_2 -> P0-T_2
+P0-T_2 PASS -> Q_2 -> R_2 -> S_2 -> T_2 -> U_2 -> V_2 -> I_3
+P0-T_2 BLOCKED -> I_3
+I_3 -> P0-T_3
+P0-T_3 PASS -> Q_3 -> R_3 -> S_3 -> T_3 -> U_3 -> V_3 -> X
+P0-T_3 BLOCKED -> X
+Any completed V_s also converges on X after the last filed seed is finished.
+X -> W
+
+No path from P4 C0 into any C0_s.
+No path from an opened seed-1 seal into seed 2.
+
+================================================================
+STAGE 0  FILE P5, FREEZE HASHES, INSTALL THE PANEL LOCKBOX
+Host: laptop. GPU: no.
+================================================================
+
+Purpose: Level-1 instrument. Creates study identity. Does not create a parent.
+Do not start Stage A until Stage 0 passes.
+
+Steps:
+  1. Sign F5-01 through F5-22 into the AsPredicted form and one hashed addendum.
+  2. File the P5 AsPredicted PDF. Do not file with decide-later on K, the seed list, or the unblinding rule.
+  3. Sentence 1 of the form must say P4 results were known when P5 was designed.
+  4. Save the PDF. Hash the PDF, the gate plan, and the addendum.
+  5. Mint P5_RUN_ID only after filing.
+  6. Install the panel lockbox (shared/ plus seed-1, seed-2, seed-3). Dummy tests only.
+  7. Run dummy lockbox tests and dummy C3-test refuse tests.
+  8. Confirm no data/cache/p5-* train outputs exist.
+  9. Stop. Do not copy the tokenizer. Do not rent a GPU.
+
+Pass: PDF filed; hashes recorded; dummy lockbox tests pass; P5_RUN_ID minted.
+Forbidden: Gate A+, tokenizer copy, stream reuse, smoke, any training, any val_bpb_full, any test.
+
+================================================================
+STAGE A  SOURCE PIN AND ISOLATED P5 WORKSPACE
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage 0 pass.
+
+Steps:
+  1. Create scripts/p5/ (post-filing wiring, not science). Do not copy scripts/p4/env.sh and only rename the prefix.
+  2. Pin nanochat to 92d63d4e8bb4df75c3b71618f31ddde2378b2bcd (file the actual pin in Stage 0).
+  3. Hook only: patches/nanochat-NANOCHAT_DATA_DIR.patch. Do not edit attention, loss, optimizer, or evaluate_bpb semantics.
+  4. Create an isolated P5 cache. Never write P5 outputs to P1.1, P2, P3, or P4 cache paths.
+  5. Prove the parent-init seed knob for unused seeds 1, 2, 3 before I_1.
+  6. Never source scripts/p1/env.sh, scripts/p2/env.sh, scripts/p3/env.sh, or scripts/p4/env.sh.
+
+Pass: pin verified; P5 workspace exists; seed knob proven unused for 1, 2, 3.
+Forbidden: training, loading prior-study weights, inventing a run ID before filing (already done at 0).
+
+================================================================
+STAGE B  NAMED SOURCE ACQUISITION
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage A pass.
+
+Steps:
+  1. Acquire the named frozen Tagalog and English archives used by P4.
+  2. Hash-verify the six JSONLs (do not re-measure to confirm prior papers).
+     TL train  2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687
+     TL val    4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c
+     TL test   3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf
+     EN train  09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a
+     EN val    874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b
+     EN test   2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e
+  3. Hash mismatch is a protocol stop.
+
+Pass: all six hashes match P4 / P1.1 / P2 identity.
+Forbidden: python -m nanochat.dataset; new crawls; using P3 B3 as C3.
+
+================================================================
+STAGE C  HYGIENE, LEAKAGE, LINEAGE
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage B pass.
+
+Steps:
+  1. Hygiene and leakage checks on the P5 workspace.
+  2. Lineage reject list: refuse P4 C0/C1/C2/C3 SHAs as parents
+     P4 C0 34e06964...  P4 C1 87b9f551...  P4 C2 0787aed0...  P4 C3 eef9a4e1...
+  3. Refuse P1.1, P2, P3 weights. Refuse ratio=-1.
+  4. Confirm tests are holdouts and not in train/val streams.
+
+Pass: hygiene card; P4 SHA reject list in force.
+Forbidden: loading any prior confirmatory checkpoint as a P5 parent.
+
+================================================================
+STAGE D  DOCUMENT-SPLIT FREEZE
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage C pass.
+
+Steps:
+  1. Freeze the same six JSONLs as P4 by hash (byte-identical).
+  2. chmod read-only.
+  3. Hash mismatch = stop.
+
+Pass: split-freeze receipt with the six SHAs.
+Forbidden: rebuilding splits; mixing P3 document-equal B3 construction.
+
+================================================================
+STAGE F  FROZEN TOKENIZER (VERIFY ONLY)
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage D pass. F before E.
+
+Steps:
+  1. Carry-forward both P3/P4 tokenizer artifacts. Verify both hashes.
+     tokenizer.pkl    04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8
+     token_bytes.pt   a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132
+  2. If either hash cannot be verified, do not carry-forward. Do not rebuild a new tokenizer to "get close."
+  3. Reusing the tokenizer is not reusing P3 or P4 weights.
+
+Pass: both hashes match; tokenizer in the P5 cache read-only.
+Forbidden: training a new tokenizer; Stage E before both hashes verify.
+
+================================================================
+STAGE E  ACCEPT THE P4 C3 STREAM AND C1/C2 PACKS BY HASH
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage F pass.
+
+Steps:
+  1. Reuse the P4 packed C3 stream by SHA. Do not rebuild unless the rebuild is byte-identical.
+  2. Quotas: TL 9633792 / EN 9633792 source-content tokens. q_TL = 0.50. Interleave / document-order seed 42 (shared treatment; do not re-draw per seed).
+  3. Mix-manifest SHA-256 f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107
+  4. Copy/verify P4 C1 extra-Tagalog and C2 pure-English packs the same way.
+  5. Write p5_mix_identity.json (identity of the reused stream, not a new mix).
+  6. C3 remains a tokenizer-token-share-locked mixture. It is not P3 B3. It is not a byte-balanced arm (that is P6-B).
+
+Pass: C1, C2, C3 pack hashes match P4; mix identity frozen.
+Forbidden: a new mix; fertility-informed q; per-seed reshuffle of the C3 stream.
+
+================================================================
+STAGE G  BUDGET AND COMMAND FREEZE
+Host: laptop / CPU. GPU: no.
+================================================================
+
+Preconditions: Stage E pass.
+
+Steps:
+  1. Freeze argv identical to P4.
+     Context T=2048; batch B=65536; phase-two N=294; D_phase2=19267584 for all children.
+     d8 is eligibility / P0-T only. d20 is C0_s.
+     Terminal save: --save-every=-1 to model_000294.pt
+     Fresh Muon+AdamW; load_optimizer=False; --resume-from-step=-1; peak LR = 0.3 x parent; warmup 14.
+     delta = 0.01 BPB; equality counts; six decimals.
+  2. File confirmatory GPU class: NVIDIA CUDA A40 48 GB. File a class, not a live pod ID.
+  3. Accept the ~3x P4 GPU budget in writing on the run card before H.
+  4. Stop. Authorization JSON for H only.
+
+Pass: budget/command freeze card; H not yet started.
+Forbidden: retuning N, D, q, or delta from P4 magnitudes; starting I_s from G.
+
+================================================================
+STAGE H  d4 TAGALOG-PATH CUDA SMOKE
+Host: NVIDIA CUDA (recommended A40). GPU: yes. Once only, not per seed.
+================================================================
+
+Preconditions: Stage G pass; H authorization JSON.
+
+Steps:
+  1. d4 Tagalog-path CUDA smoke of the P5 wrappers.
+  2. Smoke seed 0; nonconfirmatory; quarantine the smoke checkpoint.
+  3. Not a parent. Not per-seed. Not EN0. Not I_s.
+  4. Stop. Authorization JSON for I_1 only.
+
+Pass: smoke finite, reload_ok, quarantined; no confirmatory BPB released.
+Forbidden: declaring a parent; starting seed 2 because smoke looked fine; Apple MPS; CPU smoke as confirmatory.
+
+================================================================
+STAGE I_s  FRESH P5 TAGALOG PARENT d8 AND d20, SEED s
+Host: NVIDIA CUDA. GPU: yes. Once per seed. Order: I_1, then I_2, then I_3.
+================================================================
+
+Preconditions: shared H pass; authorization JSON for this seed only.
+I_2 must not start because I_1 "looked fine." I_2 starts only after V_1 or ineligible_parent on seed 1.
+
+Steps:
+  1. Train a fresh Tagalog parent from random initialization with parent-init seed s.
+  2. Same s for both depths. d8 first, then d20.
+  3. Do not load P4 C0 or any other prior weight.
+  4. Safe progress: seed id, step, bytes, sha256, reload_ok, finite/nonfinite. Never BPB.
+  5. Keep meta_*.json val_bpb in the seed lockbox or strip it from operator-visible copies.
+
+Artifacts:
+  p5-s{s}-tl0-d8/model_000294.pt
+  p5-s{s}-tl0-d20/model_000294.pt
+
+Pass: both depths exist, hashes recorded, reload_ok.
+Forbidden: using seed 0 as a P5 confirmatory parent; peeking val_bpb_full.
+
+================================================================
+STAGE P0-T_s  TAGALOG PARENT ELIGIBILITY FOR SEED s
+Host: NVIDIA CUDA only for official status. GPU: yes. Once per seed.
+================================================================
+
+Preconditions: I_s pass.
+
+Steps:
+  1. Official P0-T on CUDA only. CPU P0-T must not set status.
+  2. Untrained floor seed 0 (floor definition, every seed). Same packing as P4 F4-21.
+  3. Safe emit only: PASS or BLOCKED or TECHNICAL BLOCK. No BPB, no contrast signs.
+  4. If PASS: authorize Q_s.
+  5. If BLOCKED: card ineligible_parent; children of that seed MUST NOT run; seed MUST NOT be replaced; remaining filed seeds MUST still run.
+  6. If TECHNICAL BLOCK: hardware/path/integrity; not a scientific finding; do not convert it into ineligible_parent without the predeclared rule.
+
+Pass: status word recorded in safe_progress.
+Forbidden: releasing P0-T magnitudes; skipping the rest of the panel after one BLOCKED seed.
+
+================================================================
+STAGE Q_s  IMMUTABLE C0_s FREEZE
+Host: CPU or CUDA (copy/hash). No extra train. Once per seed, only if P0-T_s PASS.
+================================================================
+
+Preconditions: P0-T_s PASS.
+
+Steps:
+  1. Freeze d20 as immutable C0_s (copy of p5-s{s}-tl0-d20).
+  2. Artifact: p5-s{s}-c0-tl-d20/model_000294.pt
+  3. additional_train_tokens=0; whitelist; load_optimizer=false.
+  4. Children must load this C0_s only. Refuse non-C0_s parents.
+
+Pass: freeze receipt with SHA; immutable=true.
+Forbidden: training more parent tokens after freeze; using P4 C0 as C0_s.
+
+================================================================
+SHARED CHILD PREFLIGHT (required before each of R_s, S_s, T_s)
+================================================================
+
+Each child MUST:
+  load C0_s only
+  load_optimizer=False
+  --resume-from-step=-1
+  fresh Muon+AdamW
+  peak LR = 0.3 x parent
+  warmup 14
+  N=294, B=65536, T=2048
+  refuse P4 / P3 / P2 / P1.1 weights
+  refuse writing into the frozen C0_s directory
+Partial child after technical failure: quarantine; default clean restart from immutable C0_s with fresh optimizer and the full phase-two budget.
+
+================================================================
+STAGE R_s  C1_s EXTRA-TAGALOG CONTROL
+Host: NVIDIA CUDA. GPU: yes. Once per seed, only if P0-T_s PASS.
+Order within seed: R then S then T.
+================================================================
+
+Steps:
+  1. Continue C0_s on the frozen extra-Tagalog C1 pack (P4-identical stream).
+  2. New empty output tag: p5-s{s}-c1-tl-d20/model_000294.pt
+  3. Safe receipt only.
+
+Pass: terminal checkpoint, hash, reload_ok.
+Forbidden: mid-run selection; optimizer resume from the parent.
+
+================================================================
+STAGE S_s  C2_s PURE-ENGLISH INTERVENTION
+Host: NVIDIA CUDA. GPU: yes. Once per seed, only if P0-T_s PASS.
+================================================================
+
+Steps:
+  1. Continue C0_s on the frozen pure-English C2 pack (P4-identical stream).
+  2. Artifact: p5-s{s}-c2-en-d20/model_000294.pt
+  3. Same budget as R_s and T_s.
+
+Pass: terminal checkpoint, hash, reload_ok.
+Forbidden: starting T_s before S_s; peeking English val to decide whether to run T.
+
+================================================================
+STAGE T_s  C3_s ON THE SAME P4 MIX STREAM
+Host: NVIDIA CUDA. GPU: yes. Once per seed, only if P0-T_s PASS.
+================================================================
+
+Steps:
+  1. Continue C0_s on the same P4-frozen token-share mix stream.
+  2. Artifact: p5-s{s}-c3-mix-d20/model_000294.pt
+  3. Do not rebuild or reshuffle the mix for this seed.
+
+Pass: terminal checkpoint, hash, reload_ok.
+Forbidden: a new mix; treating C3_s as P3 B3.
+
+================================================================
+STAGE U_s  SIX CHILD VALIDATIONS PLUS C0_s ENGLISH PLUS SEED SEAL
+Host: NVIDIA CUDA. GPU: yes. Once per seed, only if P0-T_s PASS.
+================================================================
+
+Steps:
+  1. Official val_bpb_full for C1_s, C2_s, C3_s on EN and TL (six child validations).
+  2. Collect C0_s English val once at U_s (descriptive).
+  3. Write lockbox/seed-{s}/c{1,2,3}_{en,tl}_val_bpb_full.json and c0_en_val_bpb_full.json
+  4. Write lockbox/seed-{s}/p5-s{s}-validation-seal.json
+  5. Seal stays closed. Safe emit: seal created. Never BPB, never contrast signs, never "looks like P4."
+  6. Finishing U_s does not authorize opening the seal.
+
+Pass: seal created; test_access_count[s] still 0.
+Forbidden: computing R_TL or A_EN; unblinding this seed; a seed-level Gate X.
+
+================================================================
+STAGE V_s  EXACTLY ONE C3-ONLY SECONDARY TEST EVENT FOR SEED s
+Host: NVIDIA CUDA. GPU: yes. Once per seed, only if P0-T_s PASS.
+================================================================
+
+Preconditions: U_s seal exists; test_access_count[s] = 0.
+
+Steps:
+  1. Policy A per eligible seed: C3-only, one event, after that seed's U.
+  2. Holdouts EN 2bccabc0... / TL 3bd19345...
+  3. Artifact: lockbox/seed-{s}/gate-v-s{s}-test.json
+  4. After success: test_access_count[s] = 1.
+  5. Do not open the seal. Do not compute a preview contrast.
+  6. Do not test C1_s or C2_s.
+  7. After V_1: authorize I_2 only (or panel X if this was the last filed seed). After V_2: authorize I_3. After V_3: authorize panel X.
+  8. Power down the pod if idle (stop, do not terminate) unless the next seed is authorized to start immediately.
+
+Pass: one C3-only test event recorded; count is 1; seal still closed.
+Forbidden: seed-level unblinding; a "seed 1 paper draft" between seed 1 and seed 2; adding seed 4 after seeing 1-3.
+
+================================================================
+SEED 1 BLOCK (s=1)
+================================================================
+
+H authorization -> I_1 (d8 then d20, seed 1) -> P0-T_1
+  PASS -> Q_1 -> R_1 -> S_1 -> T_1 -> U_1 (seal closed) -> V_1 (C3-only; test_access_count[1]=1) -> I_2
+  BLOCKED -> ineligible_parent card -> I_2
+Do not open the seed-1 seal. Do not preview contrasts.
+
+================================================================
+SEED 2 BLOCK (s=2)
+================================================================
+
+Repeat the seed 1 block with s=2.
+Same mix. Same tokenizer. New empty output tags. New authorization JSONs.
+V_2 or ineligible_parent -> I_3
+
+================================================================
+SEED 3 BLOCK (s=3)
+================================================================
+
+Repeat with s=3.
+V_3 or ineligible_parent -> panel Stage X
+
+================================================================
+STAGE X  FORMAL P5 PANEL UNBLINDING
+Host: laptop. GPU: no. Once. After every filed seed has V_s or ineligible_parent.
+================================================================
+
+Preconditions:
+  1. Every filed seed is in a lawful terminal state.
+  2. Outcome access before X is zero.
+  3. No seed-level X has occurred.
+
+Steps:
+  1. Safe-only preflight (hashes, counters, parentage). No scalar BPB printed.
+  2. One unblinding event. Write P5_UNBLINDING_EVENT.
+  3. Per eligible seed, compute
+       R_TL^(s) = TL(C3_s) - TL(C2_s)
+       A_EN^(s) = EN(C3_s) - EN(C1_s)
+     delta=0.01; equality counts.
+  4. Per-seed four-way classification: both / only-R / only-A / neither.
+  5. Panel primary result: a count table over eligible seeds, plus an ineligible column for P0-T BLOCKED seeds.
+  6. No mean, no CI, no p, no "P5 confirms P4."
+  7. Historical disclosure of P4 both-observed cells is not a P5 success target.
+
+Pass: unblinding event exists; count table frozen.
+Forbidden: opening one seed early; retuning delta; importing P4 seed 0 as a confirmatory cell.
+
+================================================================
+STAGE W  ARCHIVE, PAPER, RESEARCHBOX, CODE, HUB
+Host: laptop. GPU: no. No new P5 science.
+================================================================
+
+Steps:
+  1. Paper with post-P4 and one-seed-per-cell limits. C3 is not B3. No silent amendment of 307591.
+  2. New ResearchBox (not 8869). New AsCollected. Not Make Public until you choose that separately.
+  3. Hub: new ID. C0+C1+C2+C3 together per seed (or all eligible seeds together). Never C3 alone. Never write onto pageman/nanochat-filipino-p4-token-share-mix or the P1.1/P2/P3 Hub IDs.
+  4. Super-exhaustive local pull of GPU-host artifacts.
+  5. Stop pods (do not terminate).
+  6. Closeout manifest + SHA256SUMS. Exclude raw tests, secrets, SSH, .env. Optimizer states are local archive only unless the PDF says otherwise.
+
+Pass: closeout manifest; pods stopped; Hub rule respected.
+Forbidden: a C4 arm; adding a seed after X; making ResearchBox public as part of W by default.
+
+================================================================
+OPERATOR CALENDAR (AFTER FILING)
+================================================================
+
+Day -1 laptop
+  Read plan and hashed addendum against the PDF.
+  Confirm F5-01 through F5-22.
+  Confirm no p5 train outputs.
+  File. Hash. Mint P5_RUN_ID.
+  Dummy lockbox + dummy C3-test refuse tests.
+  Stop.
+
+Day 0 CPU, shared A-G
+  A pin + seed-knob proof
+  B six JSONL hashes
+  C hygiene including P4 SHA reject list
+  D split freeze
+  F tokenizer both hashes
+  E copy/verify P4 C1/C2/C3 packs; write p5_mix_identity.json
+  G freeze argv
+  Stop. Authorization JSON for H only.
+
+Day 0 evening CUDA, shared H
+  H d4 smoke. Quarantine.
+  Stop. Authorization JSON for I_1 only.
+
+Seed 1 CUDA
+  I_1, P0-T_1, then Q_1 R_1 S_1 T_1 U_1 V_1 or ineligible_parent
+  Do not open the seal.
+
+Seed 2 CUDA
+  Same block with s=2.
+
+Seed 3 CUDA
+  Same block with s=3.
+
+Panel close laptop
+  X preflight then one unblinding then frozen table then grammar
+  W archive / paper / Hub / ResearchBox
+  Local pull; stop pods (do not terminate)
+
+================================================================
+PER-SEED ARTIFACT NAMES
+================================================================
+
+p5-s{s}-tl0-d8/model_000294.pt
+p5-s{s}-tl0-d20/model_000294.pt
+p5-s{s}-c0-tl-d20/model_000294.pt
+p5-s{s}-c1-tl-d20/model_000294.pt
+p5-s{s}-c2-en-d20/model_000294.pt
+p5-s{s}-c3-mix-d20/model_000294.pt
+lockbox/seed-{s}/c{1,2,3}_{en,tl}_val_bpb_full.json
+lockbox/seed-{s}/c0_en_val_bpb_full.json
+lockbox/seed-{s}/p5-s{s}-validation-seal.json
+lockbox/seed-{s}/gate-v-s{s}-test.json
+
+================================================================
+HARD BANS
+================================================================
+
+Do not start A until 0 passes.
+Do not start E until F verifies both tokenizer hashes.
+Do not start I_s until H passes and that seed's authorization JSON exists.
+Do not start children if P0-T_s is not PASS.
+Do not unblind any seed before panel X.
+Do not stop the panel because the first two seeds recurred.
+Do not replace a seed.
+Do not load P4 weights.
+Do not amend 306780, 306935, 307342, or 307591.
+Do not write onto prior Hub IDs.
+Do not use ratio=-1.
+Do not run python -m nanochat.dataset.
+Do not source p1/p2/p3/p4 env scripts.
+Do not treat C3 as B3.
+Do not file a CI at K=3 (recommended against).
+Do not add seed 4 after seeing seeds 1-3.

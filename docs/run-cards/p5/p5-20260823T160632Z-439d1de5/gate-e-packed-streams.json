@@ -1,0 +1,140 @@
+{
+  "study_id": "NANOCHAT-FILIPINO-P5-P4-MULTI-SEED",
+  "aspredicted_id": 307836,
+  "gate": "E",
+  "status": "pass",
+  "at_utc": "2026-08-23T16:17:08Z",
+  "host": "Mac/CPU",
+  "gpu": false,
+  "blinded": true,
+  "p5_run_id": "p5-20260823T160632Z-439d1de5",
+  "script": "scripts/p5/gate_e_streams.py",
+  "checks": [
+    {
+      "id": "E1_c1_hashes",
+      "ok": true,
+      "detail": [
+        {
+          "file": "train_00000.parquet",
+          "expected": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de",
+          "sha256": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de",
+          "ok": true
+        },
+        {
+          "file": "train_00001.parquet",
+          "expected": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6",
+          "sha256": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6",
+          "ok": true
+        },
+        {
+          "file": "train_00002.parquet",
+          "expected": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271",
+          "sha256": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271",
+          "ok": true
+        },
+        {
+          "file": "train_00003.parquet",
+          "expected": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234",
+          "sha256": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234",
+          "ok": true
+        },
+        {
+          "file": "val.parquet",
+          "expected": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+          "sha256": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "E2_c2_hashes",
+      "ok": true,
+      "detail": [
+        {
+          "file": "train_00000.parquet",
+          "expected": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861",
+          "sha256": "9bdee964368da85a9b97af0d8cd50c4cd13ec392a8045dbec602ce31bd587861",
+          "ok": true
+        },
+        {
+          "file": "train_00001.parquet",
+          "expected": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c",
+          "sha256": "7331e6219eec3bf619b92c38f686778395b77b500d267cfb25412abb41c6379c",
+          "ok": true
+        },
+        {
+          "file": "train_00002.parquet",
+          "expected": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7",
+          "sha256": "59bc144b0191d10009baa7698bbb96ba25c2c750b7ab8cdbc9bba52998c4d9f7",
+          "ok": true
+        },
+        {
+          "file": "train_00003.parquet",
+          "expected": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b",
+          "sha256": "ac693bfc6c1820e9f978f90958b1afb4bf82d91c9bcbba682467d6a357ebcb0b",
+          "ok": true
+        },
+        {
+          "file": "val.parquet",
+          "expected": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+          "sha256": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "E3_c3_train_shard_hashes",
+      "ok": true,
+      "detail": [
+        {
+          "file": "train_00000.parquet",
+          "expected": "249e2c5e9d06bf17fe14e03c02e622c9e68d90ba337e1e6e33c237fc723252f5",
+          "sha256": "249e2c5e9d06bf17fe14e03c02e622c9e68d90ba337e1e6e33c237fc723252f5",
+          "ok": true
+        },
+        {
+          "file": "train_00001.parquet",
+          "expected": "d24fe7f933abeb38b277b099385518718d2d57e330e5f9b5fd8b1a534e43444e",
+          "sha256": "d24fe7f933abeb38b277b099385518718d2d57e330e5f9b5fd8b1a534e43444e",
+          "ok": true
+        },
+        {
+          "file": "train_00002.parquet",
+          "expected": "a56a729a0e3c7fd2d1e2e99236a4225bf9a86e55d6d97153063de9d6455fa523",
+          "sha256": "a56a729a0e3c7fd2d1e2e99236a4225bf9a86e55d6d97153063de9d6455fa523",
+          "ok": true
+        },
+        {
+          "file": "train_00003.parquet",
+          "expected": "4adbf8f9afcc9870f46f6298ac22f3691ec073d2f452f73aa65322e3ff6331de",
+          "sha256": "4adbf8f9afcc9870f46f6298ac22f3691ec073d2f452f73aa65322e3ff6331de",
+          "ok": true
+        },
+        {
+          "file": "val.parquet",
+          "expected": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+          "sha256": "b20942ae71823fa52ec0f8d019a76960059798958716184d923f646f64cc648f",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "E4_language_origin_mask",
+      "ok": true,
+      "detail": {
+        "got": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46",
+        "expected": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46"
+      }
+    },
+    {
+      "id": "E5_p4_mix_manifest_reference",
+      "ok": true,
+      "detail": {
+        "sha256": "f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107"
+      }
+    }
+  ],
+  "mix_identity": "manifests/p5/p5_mix_identity.json",
+  "no_p5_outcomes": true,
+  "next_gate": "G"
+}

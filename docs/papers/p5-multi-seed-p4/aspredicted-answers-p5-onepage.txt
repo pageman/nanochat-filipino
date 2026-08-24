@@ -1,0 +1,28 @@
+P5 AsPredicted ONE-PAGE cut. Use these boxes if the 2-page preview is still too long.
+Q1 radio stays: It's complicated.
+Related: Overlapping #306935 #307342 #307591. Independent #307532. No Drafts.
+Disclose Overlapping #306780 in Q8. ASCII only. Do not amend those IDs.
+Author: Paul Pajo / paulamerigo.pajojr@benilde.edu.ph / De La Salle - College of Saint Benilde
+Type: Observational/archival. Data source: Other.
+Title: P5: multi-seed panel of the P4 token-share mix after fresh TL parents
+
+2)
+P5 is designed after released P4 findings (#307591; Gate X 2026-08-21; both co-primary criteria in one init). It does not amend #306780, #306935, #307342, or #307591. Not an independent confirmation of P4. Not a population estimate, CI, or inferential test. For each parent-init seed s in {1,2,3}, the P5 wrapper sets torch.manual_seed(s) and torch.cuda.manual_seed(s) before GPT.init_weights(); constructs GPT only after that RNG state is set; records wrapper SHA and initial-state SHA before parent training; wrapper Python/NumPy RNG fixed at 424242. If P0-T PASSes, freeze d20 as C0_s and continue on C1/C2/C3 P4-frozen mix q_TL=0.50 (stream by SHA; 9633792/9633792; interleave 42). Does C3_s yield lower held-out TL BPB than C2_s and lower held-out EN BPB than C1_s? R_TL(s) and A_EN(s) as in full pack. Panel = counts both / only-R / only-A / neither (plus ineligible). P4 seed 0 historical only. No early stop. One panel unblinding.
+
+3)
+Primary DVs: official val_bpb_full as in P4. TL val 4d51644b...; EN val 874dec29.... scripts/p5/evaluate_bpb.py, T=2048, CUDA. Per eligible seed: six cells; R_TL(s) and A_EN(s). After val seal: one C3-only secondary test per eligible seed (zero to three total; not one for whole panel); post-seal, descriptive, excluded from classification. Before panel X: P0-T/U/V scalars and evaluator logs lockboxed.
+
+4)
+Pin 92d63d4; A40 48GB, CUDA 12.8, torch 2.9.1+cu128. scripts/p5/* only. K=3 seeds 1 then 2 then 3. Per seed: parent N=294; C0_s after P0-T PASS; children D=19267584. C3 must match P4 trainer train shards 249e2c5e..., d24fe7f9..., a56a729a..., 4adbf8f9... and language_origin_mask_sha256 140e174a...; manifest alone insufficient. P0-T untrained floor uses same seed s as parent.
+
+5)
+Seed order 1 then 2 then 3; all filed seeds run. P0-T safe output PASS/BLOCKED/TECHNICAL_STOP only. BLOCKED => ineligible, no replacement. PASS => six-cell seal then contrasts. Panel count table. One panel Gate X after every seed's V or ineligible stop. Up to three C3-only tests, one per eligible seed.
+
+6)
+Shared split/C3-trainer-input/tokenizer/test breach = panel-level protocol stop. Seed-isolated staging breach = seed-level protocol stop; re-verify shared registry; remaining seeds continue. Technical quarantine: restart from C0_s if no terminal ckpt and no accessed scalar. Never exclude finite official terminal results for outcome.
+
+7)
+K=3 seeds {1,2,3} named before filing. Per seed: d8+d20 parent N=294; if eligible, three children N=294; six val cells; one C3-only test. No fourth seed. No early stop.
+
+8)
+No P5 parent/children/val/test computed. P5 = first predeclared multi-new-seed recurrence panel for P4 token-share C3. P1.1 measurement instrument; P2 EN stream lineage; P3 fresh-TL-parent architecture; P4 C3 treatment. Archived public text; new models; no human participants. Gate-plan d51115aa... Addendum 839fcaa3dd6e94bd9546df4880a5892851a54ea31743cb0359adc8faebbe9258. Pin 92d63d4. Mix-manifest f203c615...
