@@ -107,3 +107,29 @@ Gates 0 / A–I / P0-T / Q–W are complete (Gate X released). Confirmatory dept
 Trainer in-loop `val_bpb` is **not** the primary DV. The registered table is under [results/p4/released/](results/p4/released/) · [results/p4/tables.json](results/p4/tables.json).
 
 P4 is a **post-P3** prospective token-share mixture study. Weights live on Hugging Face (`pageman/nanochat-filipino-p4-token-share-mix`), not in this git tree.
+
+## Start here (P5)
+
+Does **not** amend AsPredicted #306780 / #306935 / #307342 / #307591, ResearchBox 8735 / 8763 / 8834 / 8869, or Hub `p1-fixed-d20-3x` / `p2-en-then-tl` / `p3-tl-then-en` / `p4-token-share-mix`. Never use `scripts/p1/env.sh`, `scripts/p2/env.sh`, `scripts/p3/env.sh`, or `scripts/p4/env.sh` for P5. Closed panel of unused parent-init seeds `{1,2,3}`: fresh Tagalog parent (TL0/C0) per seed, then matched C1/C2/C3. **C3 is not P3 B3.** P4 seed 0 is historical, not a P5 confirmatory cell.
+
+**Study record:** [docs/p5/](docs/p5/) · https://github.com/pageman/nanochat-filipino/tree/main/docs/p5  
+**Lock:** [docs/papers/p5-multi-seed-p4/LOCK.json](docs/papers/p5-multi-seed-p4/LOCK.json)  
+**Paper (source / PDF):** [docs/papers/p5-multi-seed-p4/paper.tex](docs/papers/p5-multi-seed-p4/paper.tex) · [paper.pdf](docs/papers/p5-multi-seed-p4/paper_outputs/paper.pdf)  
+**Paper (ResearchGate):** https://www.researchgate.net/publication/413546596_How_Often_a_Frozen_Mix_Recurs_across_Unused_Initializations_A_Closed_Three-Seed_Count_Not_a_Population_Estimate  
+**Hub model card (paper + P5 subtree links):** https://huggingface.co/pageman/nanochat-filipino-p5-p4-multi-seed/commit/798829e250ece06615195432d91efd6f657dab3a  
+**AsPredicted #307836:** https://aspredicted.org/k6ib64.pdf (anonymous)  
+**ResearchBox #8904:** https://researchbox.org/8904  
+**AsCollected #2503 v1:** https://ascollected.org/HC8_G2F (`NANOCHAT-FILIPINO P5`)  
+**Results:** [results/p5/](results/p5/)  
+**Hub documentation pack:** [docs/hub/p5-p4-multi-seed/](docs/hub/p5-p4-multi-seed/)  
+**Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p5-p4-multi-seed/  
+**Environment:** [scripts/p5/env.sh](scripts/p5/env.sh) · [scripts/p5/env.cuda.sh](scripts/p5/env.cuda.sh)  
+**Data/code notices:** [DATA_AND_CODE_NOTICES.md](DATA_AND_CODE_NOTICES.md)
+
+## Status (P5)
+
+Gates 0 / A–H / I₁–V₃ / X / W are complete (panel unblinded). Confirmatory depth is d20. Primary result is the **count table** only (`K=3`): eligible 3; both 3; only-R 0; only-A 0; neither 0; ineligible 0 (\(k_{\mathrm{both}}=3\) of \(K_{\mathrm{elig}}=3\)). No mean, CI, \(p\)-value, or “P5 confirms P4.” C3-only secondary tests are descriptive and excluded from classification. This repo is the P5 audit trail under `docs/p5/`, `docs/papers/p5-multi-seed-p4/`, `docs/run-cards/p5/`, `scripts/p5/`, `results/p5/`, `docs/hub/p5-p4-multi-seed/`, and `manifests/p5/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+
+Trainer in-loop `val_bpb` is **not** the primary DV. The registered count table is under [results/p5/](results/p5/).
+
+P5 is a **post-P4** confirmatory closed three-seed panel. Weights live on Hugging Face (`pageman/nanochat-filipino-p5-p4-multi-seed`), not in this git tree.
