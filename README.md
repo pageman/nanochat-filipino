@@ -143,7 +143,7 @@ Does **not** amend AsPredicted #306780 / #306935 / #307342 / #307591 / #307836, 
 **Paper (source / PDF):** [docs/papers/p6-m-schedule-topology/paper.tex](docs/papers/p6-m-schedule-topology/paper.tex) · [paper.pdf](docs/papers/p6-m-schedule-topology/paper_outputs/paper.pdf)  
 **AsPredicted #307969:** https://aspredicted.org/bk6m9d.pdf (anonymous)  
 **ResearchBox #8918:** https://researchbox.org/8918  
-**AsCollected #2541:** `NANOCHAT-FILIPINO P6-M` (create share URL when ready)  
+**AsCollected #2541 v1:** https://ascollected.org/XZ8_TI5 (`NANOCHAT-FILIPINO P6-M`)  
 **Results:** [results/p6/](results/p6/)  
 **Hub documentation pack:** [docs/hub/p6-m-schedule-topology/](docs/hub/p6-m-schedule-topology/)  
 **Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology  

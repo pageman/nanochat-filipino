@@ -41,7 +41,7 @@ Science claims remain AsPredicted #307969 / Gate X / released contrasts. Hub top
 ## Identity
 
 - AsPredicted [#307969](https://aspredicted.org/bk6m9d.pdf)
-- ResearchBox [#8918](https://researchbox.org/8918) · AsCollected [#2541](https://ascollected.org/) (`NANOCHAT-FILIPINO P6-M`; create share URL when ready)
+- ResearchBox [#8918](https://researchbox.org/8918) · AsCollected [#2541 v1](https://ascollected.org/XZ8_TI5) (`NANOCHAT-FILIPINO P6-M`; Box #8918 link updated)
 - Run ID `p6-20260824T155226Z-769f807a`
 - nanochat pin `92d63d4e8bb4df75c3b71618f31ddde2378b2bcd`
 

@@ -18,7 +18,7 @@
 | Hub weights | https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology |
 | AsPredicted | https://aspredicted.org/bk6m9d.pdf (#307969) |
 | ResearchBox | https://researchbox.org/8918 |
-| AsCollected | #2541 (`NANOCHAT-FILIPINO P6-M`) |
+| AsCollected | [#2541 v1](https://ascollected.org/XZ8_TI5) (`NANOCHAT-FILIPINO P6-M`; linked from ResearchBox #8918) |
 
 ## Status
 

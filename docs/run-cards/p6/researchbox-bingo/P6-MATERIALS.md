@@ -18,7 +18,7 @@ P6-M is a **post-P5**, prospectively preregistered **one-seed schedule-topology*
 | `HF-HUB-STUB.md` | Hub deferral card |
 | `paper.tex` / `paper.pdf` | Manuscript from released Gate X artifacts |
 | `DEAR-READER-8918.md` | Source for the online Dear Reader field |
-| `ASCOLLECTED-PENDING.md` | AsCollected link status (create before Make Public) |
+| `ASCOLLECTED-2541.md` | AsCollected #2541 v1 — https://ascollected.org/XZ8_TI5 |
 
 ## Primary registered result
 
