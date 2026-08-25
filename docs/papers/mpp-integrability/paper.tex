@@ -1,0 +1,740 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\setstretch{1.05}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+
+\title{Hidden Symmetry, Algebraic Type, and Tidal Response of
+Myers--Perry Black Holes under Higher-Curvature Effective Corrections:
+An Audited and Formal Account}
+\author{Paul Pajo\\
+De La Salle--College of Saint Benilde\\
+\texttt{paulamerigo.pajojr@benilde.edu.ph}}
+\date{20 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The 23~December~2025 draft claimed a ``semiclassical protection
+mechanism'' suppressing Weyl Type~D deviations by \(10^6\) in equal-spin
+Myers--Perry (MP) black holes, an ``accelerated fragility'' coefficient
+\(\gamma_2=-0.163\) in the generic sector, and a correlation
+\(\rho=0.998\) between Killing--Yano breakdown and tidal Love numbers,
+interpreted as quantum hair. Those numbers are not scientific results:
+the sample size contradicts itself (\(10^5\) versus \(5\times10^4\)),
+the named engine (Stein's \texttt{qnm} package) cannot emit the named
+observables, the Gate \(\rho\ge0.70\) selects the headline correlation,
+and the operator content of the ``quantum'' correction is never written.
+
+This revision enumerates six layers of weakness of that draft; writes
+the geometric and EFT objects that were being used silently; proves, in
+Proposition--Lemma form with Lamport-style hierarchical proofs, the
+statements that survive; stress-tests the repaired claims in fifty
+de-duplicated ways; and records a before/after ledger. No quarantined
+number is replaced by a new fiction. This manuscript does not amend
+nanochat-filipino studies AsPredicted \#306780 or \#306935.
+\end{abstract}
+
+\noindent\textbf{Keywords.} Myers--Perry black holes; Killing--Yano
+tensors; CMPP classification; cohomogeneity; effective field theory;
+tidal Love numbers; cosmic censorship.\\
+\textbf{MSC (2020).} 83C57, 83E15, 53C50, 37J35.\\
+\textbf{PACS.} 04.50.Gh, 04.20.Fy, 04.60.Cf.\\
+\textbf{Companion files.} \texttt{AUDIT.md}, \texttt{BEFORE-AFTER.md},
+\texttt{lean/KillingTower.lean}, \texttt{scripts/stress50.py}.
+
+\tableofcontents
+
+\section{What the previous draft asserted, and what is withdrawn}
+
+Let \(D\ge5\) and let \((M,a_1,\dots,a_n)\) be Myers--Perry parameters,
+\(n=\lfloor(D-1)/2\rfloor\). The 23~December~2025 draft (hereafter v1)
+asserted:
+\begin{enumerate}[leftmargin=1.4em]
+\item A six-block ``MPP pipeline'' evaluated
+\(N\in\{5\times10^4,10^5\}\) synthetic configurations for \(D=5\)--\(9\)
+with a coupling \(\Lambda_{\mathrm{QG}}\in[0,0.1]\).
+\item Equal-spin (``cohomogeneity-1'') configurations enjoy a
+semiclassical protection factor \(P(D)\) suppressing Type~D deviations
+by \(10^6\).
+\item Generic configurations exhibit accelerated algebraic fragility
+\(\gamma_2=-0.163\) under \(R^2\) corrections, contradicting an uncited
+``quantum rigidification'' hypothesis.
+\item \(\log_{10}k_2\) and \(\log_{10}\) of a ``Weyl boost-weight
+deviation'' correlate at \(\rho=0.998\), so Love numbers are quantum
+hair.
+\end{enumerate}
+Items 2--4, and the numerical part of item~1, are \emph{withdrawn}.
+They are not replaced by new Monte~Carlo output.
+
+\section{Standing definitions}
+
+\subsection{Myers--Perry parameters and cohomogeneity}
+
+Let \(D=2n+\varepsilon\) with \(\varepsilon\in\{0,1\}\) and
+\(n=\lfloor(D-1)/2\rfloor\). The vacuum Myers--Perry metric is
+parameterized by a mass \(M>0\) and \(n\) spin parameters
+\(a_i\in\mathbb{R}\)~\cite{MyersPerry1986}. Its generic isometry algebra
+is \(\mathbb{R}_t\oplus\mathfrak{u}(1)^{\oplus n}\).
+
+\begin{definition}[Generic cohomogeneity]
+The generic cohomogeneity of MP is
+\(\operatorname{cohom}_{\mathrm{gen}}(D):=D-n-1=n+\varepsilon-1\).
+Thus \(\operatorname{cohom}_{\mathrm{gen}}(5)=2\) and
+\(\operatorname{cohom}_{\mathrm{gen}}(6)=3\).
+\end{definition}
+
+\begin{definition}[Equal-spin locus]
+The equal-spin locus is \(\{a_1=\cdots=a_n\}\). For odd \(D=2n+1\) this
+enhances the isometry to \(\mathbb{R}_t\times U(n)\) and drops the
+cohomogeneity to \(1\)~\cite{GibbonsLuPagePope2004}. For even \(D\) the
+equal-spin enhancement does \emph{not} reproduce that cohomogeneity-1
+story; v1's uniform ``\(D=5\)--\(9\) cohomogeneity-1'' clause is false.
+\end{definition}
+
+\begin{definition}[Subextremal / ultraspinning]
+In \(D=5\) there is a Kerr-like bound on \((a_1,a_2)\) at fixed \(M\);
+there is no ultraspinning regime. In \(D\ge6\) some spin directions are
+unbounded and the Emparan--Myers ultraspinning instability
+exists~\cite{EmparanMyers2003,DiasFiguerasMonteiroSantos2010}.
+v1's \(D=5\) caption ``as \(a\to1\)'' is therefore either a silent
+normalization \(a/a_{\mathrm{ext}}\) or an extrapolation off the
+black-hole domain.
+\end{definition}
+
+\subsection{Principal tensor}
+
+\begin{definition}[Closed conformal Killing--Yano 2-form]
+A 2-form \(h\) is a \emph{closed conformal Killing--Yano} (CKY) tensor
+if \(\mathrm{d}h=0\) and \(\nabla_X h=X^\flat\wedge\xi\) for a 1-form
+\(\xi\) (necessarily \(\xi=\frac{1}{D-1}\delta h\)). It is
+\emph{principal} if it is nondegenerate as a 2-form (maximal matrix
+rank \(2n\)).
+\end{definition}
+
+\begin{definition}[Killing--Yano residual]
+For a trial 2-form \(h\) on a metric \(g\),
+\[
+\mathcal{R}(h;g):=\bigl\|\nabla_X h-X^\flat\wedge\xi\bigr\|_{L^2(K)}
+\]
+on a specified compact region \(K\) outside the horizon, in a specified
+frame. v1 never wrote this residual. No v1 number called a ``KY
+residual'' is used here.
+\end{definition}
+
+The existence of a principal tensor on MP, and the generation of a
+Killing tower of \(n\) independent Killing tensors together with
+\(n+\varepsilon\) Killing vectors, is the theorem of
+Frolov--Kubiz\v{n}\'ak--Krtou\v{s}--Page~\cite{FrolovKubiznak2007,Krtousetal2007,FrolovKrtousKubiznak2017}.
+
+\subsection{CMPP type}
+
+\begin{definition}
+The Coley--Milson--Pravda--Pravdov\'a (CMPP) classification assigns an
+algebraic type to the Weyl tensor via boost-weight
+alignment~\cite{Coleyetal2004}. MP is CMPP Type~D. A principal CKY
+2-form implies Type~D. The converse in \(D\ge5\) is not a
+theorem~\cite{FrolovKrtousKubiznak2017}.
+\end{definition}
+
+\subsection{EFT truncation (classical, not semiclassical)}
+
+\begin{definition}[Quadratic vacuum EFT in \(D\ge5\)]
+Up to total derivatives and field redefinitions of the metric that
+preserve the Einstein frame at leading order,
+\[
+S[g]=\frac{1}{16\pi G_D}\int\mathrm{d}^D x\sqrt{-g}
+\Bigl(R+\alpha_{\mathrm{GB}}\,\mathcal{L}_{\mathrm{GB}}
++\alpha_{\mathrm{W}}\,C_{\mu\nu\rho\sigma}C^{\mu\nu\rho\sigma}+\cdots\Bigr),
+\]
+where \(\mathcal{L}_{\mathrm{GB}}\) is Gauss--Bonnet. Ricci-squared
+operators are redundant on Einstein backgrounds at this order.
+Gauss--Bonnet is topological in \(D=4\) and dynamical in \(D\ge5\).
+There is no \(\hbar\) in \(S[g]\).
+\end{definition}
+
+Generic quadratic curvature without a Lovelock or reduction-of-order
+treatment introduces Ostrogradsky ghosts. Reall--Santos Euclidean
+thermodynamics does not supply a corrected
+metric~\cite{ReallSantos2019}. KY residuals require a metric.
+
+\begin{definition}[EFT validity]
+A first-order deformation \(g=g_{\mathrm{MP}}+\alpha\,\delta g+O(\alpha^2)\)
+is inside the EFT if \(|\alpha\,\mathrm{Riem}[g_{\mathrm{MP}}]|\ll1\) on
+and outside the outer horizon.
+\end{definition}
+
+\subsection{Love numbers and quarantine}
+
+\begin{definition}
+A static scalar Love number \(k_\ell\) is the conservative response
+coefficient in a specified matching scheme~\cite{Huietal2021,CharalambousIvanov2023}.
+In \(D\ge5\), generic static scalar Love numbers of MP are
+\emph{nonzero already in GR} and exhibit logarithmic running except at
+resonant ``magic zeroes''~\cite{CharalambousIvanov2023}.
+\end{definition}
+
+\begin{definition}[Quantum hair]
+We reserve ``quantum hair'' for \(\hbar\)-violations of classical
+no-hair. Classical tidal response is not quantum hair.
+\end{definition}
+
+\begin{definition}[Quarantined v1 statistics]
+The symbols \(N\in\{5\times10^4,10^5\}\), \(\rho=0.998\), \(r=0.998\),
+\(\gamma_2=-0.163\), \(P(D)\sim10^6\), \(\Lambda_{\mathrm{QG}}\in[0,0.1]\)
+are \emph{quarantined}. They are not parameters of any model in this
+paper.
+\end{definition}
+
+\section{Formal development}
+
+Lamport-style proofs are indented hierarchies. A step \(\langle k\rangle m\)
+is the \(m\)-th claim at level \(k\). Citations to the literature are
+external lemmas; a Kosmos trajectory is never a lemma.
+
+\subsection{Discrete identities}
+
+\begin{lemma}[Killing-tower cardinality]
+\label{lem:tower}
+Let \(D=2n+\varepsilon\) with \(\varepsilon\in\{0,1\}\). If a principal
+CKY 2-form exists, the Killing tower produces \(n\) Killing tensors and
+\(n+\varepsilon\) Killing vectors, totaling \(D\) constants of geodesic
+motion.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) \(n+(n+\varepsilon)=2n+\varepsilon\).\\
+\quad\(\langle2\rangle1.\ \) \(n+(n+\varepsilon)=(n+n)+\varepsilon\) by
+associativity in \(\mathbb{N}\).\\
+\quad\(\langle2\rangle2.\ \) \(n+n=2n\).\\
+\quad\(\langle2\rangle3.\ \) \(2n+\varepsilon=D\).\\
+\quad\(\langle2\rangle4.\ \) QED.\\
+\(\langle1\rangle2.\ \) Geometric generation of those tensors and
+vectors is the Killing-tower construction, used as an external
+lemma~\cite{Krtousetal2007}.\\
+\(\langle1\rangle3.\ \) QED.
+\end{proof}
+
+A Mathlib-free Lean encoding of \(\langle1\rangle1\) is
+\texttt{killing\_tower\_count} in \texttt{lean/KillingTower.lean}.
+
+\begin{lemma}[Spin count]
+\label{lem:nspins}
+The number of independent MP spins is \(n=\lfloor(D-1)/2\rfloor\).
+In particular \(n(5)=2\), \(n(6)=2\), \(n(7)=3\).
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) If \(D=2k+1\) then \((D-1)/2=k\).\\
+\(\langle1\rangle2.\ \) If \(D=2k\) with \(k\ge1\) then
+\((D-1)//2=k-1\).\\
+\(\langle1\rangle3.\ \) \(D=5=2\cdot2+1\) gives \(n=2\); \(D=6=2\cdot3\)
+gives \(n=2\).\\
+\(\langle1\rangle4.\ \) QED.
+\end{proof}
+
+\begin{lemma}[Equal-spin measure]
+\label{lem:measure}
+For \(n\ge2\) the equal-spin locus has codimension \(n-1\ge1\) in spin
+space, hence measure zero in any absolutely continuous sampling measure
+(including Sobol on the unit cube).
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) \(\{a_1=\cdots=a_n\}\subset\mathbb{R}^n\) is a
+line.\\
+\(\langle1\rangle2.\ \) Codimension \(n-1\ge1\) since \(n\ge2\) for all
+MP with \(D\ge5\).\\
+\(\langle1\rangle3.\ \) A Sobol sequence on the full cube almost surely
+misses a measure-zero submanifold; isolation of equal-spin points
+requires a forced design whose sample size v1 never reported.\\
+\(\langle1\rangle4.\ \) QED.
+\end{proof}
+
+\subsection{Logical independence on the MP family}
+
+Let \(A\) be ``CMPP Type~D,'' \(B\) ``admits a principal CKY 2-form
+(hence completely integrable geodesic flow),'' \(C\) ``linearly stable
+to gravitational perturbations about the outer horizon,'' and
+\(D_{\mathrm{cc}}\) ``the spacetime is a black hole obeying weak cosmic
+censorship.''
+
+\begin{proposition}[Pairwise independence]
+\label{prop:indep}
+The four properties \(A,B,C,D_{\mathrm{cc}}\) are not mutually
+equivalent. In particular \(B\Rightarrow C\), \(B\Rightarrow D_{\mathrm{cc}}\),
+\(A\Rightarrow D_{\mathrm{cc}}\), and \(A\Rightarrow B\) (in \(D\ge5\))
+are not theorems.
+\end{proposition}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) \(A\wedge B\) holds for every subextremal MP
+metric.\\
+\quad\(\langle2\rangle1.\ \) MP admits a principal CKY
+2-form~\cite{FrolovKubiznak2007}. That is \(B\).\\
+\quad\(\langle2\rangle2.\ \) A principal CKY 2-form implies CMPP
+Type~D~\cite{FrolovKrtousKubiznak2017}. That is \(A\).\\
+\quad\(\langle2\rangle3.\ \) QED.\\
+\(\langle1\rangle2.\ \) \(B\not\Rightarrow C\).\\
+\quad\(\langle2\rangle1.\ \) Geodesic integrability holds for all MP
+parameters for which the metric is defined, including ultraspinning
+\(D\ge6\).\\
+\quad\(\langle2\rangle2.\ \) Ultraspinning MP black holes are linearly
+unstable~\cite{EmparanMyers2003,Diasetal2010,DiasFiguerasMonteiroSantos2010}.
+Equal-spin \(D=9\) in particular has exponentially growing modes.\\
+\quad\(\langle2\rangle3.\ \) Therefore there exist MP spacetimes with
+\(B\wedge\neg C\).\\
+\quad\(\langle2\rangle4.\ \) QED.\\
+\(\langle1\rangle3.\ \) \(B\not\Rightarrow D_{\mathrm{cc}}\) and
+\(A\not\Rightarrow D_{\mathrm{cc}}\).\\
+\quad\(\langle2\rangle1.\ \) Super-extremal Kerr (\(D=4\)) and
+super-extremal MP (\(D=5\), beyond the Kerr-like bound) remain Type~D
+and admit the same principal tensor. That is \(A\wedge B\).\\
+\quad\(\langle2\rangle2.\ \) Those geometries have naked singularities.
+That is \(\neg D_{\mathrm{cc}}\).\\
+\quad\(\langle2\rangle3.\ \) QED.\\
+\(\langle1\rangle4.\ \) \(A\Rightarrow B\) is not a theorem in
+\(D\ge5\).\\
+\quad\(\langle2\rangle1.\ \) In \(D=4\), vacuum Type~D is Kerr--NUT,
+which does admit a principal CKY.\\
+\quad\(\langle2\rangle2.\ \) In \(D\ge5\) the converse is explicitly
+open~\cite{FrolovKrtousKubiznak2017}. v1 used the converse silently
+whenever it treated ``Weyl Type~D deviation'' as a proxy for KY
+breakdown.\\
+\quad\(\langle2\rangle3.\ \) QED.\\
+\(\langle1\rangle5.\ \) Therefore v1's chain ``EFT lifts Type~D
+\(\Rightarrow\) KY dies \(\Rightarrow\) integrability dies
+\(\Rightarrow\) naked singularities, faster than GR'' contains three
+non-implications.\\
+\(\langle1\rangle6.\ \) QED.
+\end{proof}
+
+\begin{corollary}
+Algebraic ``fragility'' is not a censorship theorem and is not a
+stability theorem.
+\end{corollary}
+
+\subsection{Equal-spin protection is classical isometry}
+
+\begin{lemma}[Quadrature from cohomogeneity one]
+\label{lem:quad}
+Let \((M,g)\) be Lorentzian of cohomogeneity one, with compact spacelike
+orbits of a group \(G\) acting by isometries, and with orbit space an
+interval in \(r\). Then geodesic motion reduces to quadrature in \(r\)
+after using the conserved charges of \(G\), without any principal CKY
+tensor.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) Isometries yield \(\dim G\) linear conserved
+momenta \(p_G\).\\
+\(\langle1\rangle2.\ \) The metric depends on a single coordinate \(r\).
+The Hamiltonian constraint becomes a first-order ODE
+\(\dot r^2=V_{\mathrm{eff}}(r;p_G,m)\).\\
+\(\langle1\rangle3.\ \) A first-order autonomous ODE in one variable is
+solvable by quadrature.\\
+\(\langle1\rangle4.\ \) No CKY equation entered
+\(\langle1\rangle1\)--\(\langle1\rangle3\).\\
+\(\langle1\rangle5.\ \) QED.
+\end{proof}
+
+\begin{lemma}[Odd-\(D\) equal-spin MP is cohomogeneity one]
+\label{lem:odd}
+For \(D=2n+1\) with \(a_1=\cdots=a_n\), MP has cohomogeneity one.
+Hence Lemma~\ref{lem:quad} applies already at EFT coupling \(\alpha=0\).
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) The isometry is enhanced to
+\(\mathbb{R}_t\times U(n)\)~\cite{GibbonsLuPagePope2004}.\\
+\(\langle1\rangle2.\ \) The metric functions depend only on \(r\).\\
+\(\langle1\rangle3.\ \) QED.
+\end{proof}
+
+\begin{lemma}[No \(\hbar\) in the quadratic action]
+\label{lem:hbar}
+Definition~2.7's action does not contain \(\hbar\). Any protection that
+follows from \(G\)-invariance of a deformation of that action is
+classical.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) Inspect \(S[g]\): the symbols are \(g_{\mu\nu}\),
+curvature, and Wilson coefficients.\\
+\(\langle1\rangle2.\ \) \(\hbar\) is not among them.\\
+\(\langle1\rangle3.\ \) QED.
+\end{proof}
+
+\begin{proposition}[What equal-spin protection actually is]
+\label{prop:protect}
+Let \(g(\alpha)=g_{\mathrm{MP}}+\alpha\,\delta g+O(\alpha^2)\) preserve
+the enhanced equal-spin isometry \(G=\mathbb{R}_t\times U(n)\) in odd
+\(D\). Then: (1)~ \(g(\alpha)\) remains cohomogeneity one, so geodesic
+quadrature persists whether or not a principal CKY tensor persists;
+(2)~Weyl components in nontrivial \(G\)-representations are forbidden
+exactly, not up to \(10^{-6}\); (3)~the CKY equation is a separate PDE;
+(4)~none of this is semiclassical.
+\end{proposition}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) If \(\mathcal{L}_K g(\alpha)=0\) for all Killing
+fields of \(G\), Lemma~\ref{lem:quad} applies to \(g(\alpha)\).
+Persistence of quadrature is cheaper than persistence of \(h\). v1's
+``deformed Killing--Yano tensor remains nearly invariant'' is a
+stronger unproved PDE claim.\\
+\(\langle1\rangle2.\ \) Decompose Weyl into \(G\)-irreps. A \(G\)-invariant
+metric has Weyl tensor in the singlet. Non-singlet boost-weight
+components vanish identically. A reported \(10^6\) suppression is
+therefore a numerical floor or evidence the configuration was not
+exactly equal-spin.\\
+\(\langle1\rangle3.\ \) The CKY equation is overdetermined. Isometry
+reduces the unknown functions; it does not satisfy the remaining radial
+ODE automatically.\\
+\(\langle1\rangle4.\ \) Statement~(4) is Lemma~\ref{lem:hbar}.\\
+\(\langle1\rangle5.\ \) QED.
+\end{proof}
+
+\begin{corollary}[The integrability gap is already classical]
+The gap between equal-spin and generic MP geodesic integrability exists
+at \(\alpha=0\): generic MP needs the hidden CKY tower
+(Lemma~\ref{lem:tower}); equal-spin odd-\(D\) MP does not
+(Lemma~\ref{lem:quad}). Observing that gap after ``turning on \(R^2\)''
+does not demonstrate a quantum mechanism.
+\end{corollary}
+
+\begin{remark}[Even \(D\)]
+v1 treated \(D=6,8\) as cohomogeneity-1 equal-spin sectors. They are
+not the odd-\(D\) \(U(n)\) story. This paper does not claim it.
+\end{remark}
+
+\subsection{Love numbers are not quantum hair}
+
+\begin{lemma}[Classical nonvanishing in \(D\ge5\)]
+\label{lem:k2}
+There exist classical, \(\alpha=0\), five-dimensional MP black holes
+whose static scalar Love numbers are nonzero~\cite{CharalambousIvanov2023}.
+Hence ``\(R^2\) corrections activate \(k_2\) in \(D\ge5\)'' is false as
+a discovery.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) External lemma: Charalambous--Ivanov, JHEP~07
+(2023)~222.\\
+\(\langle1\rangle2.\ \) That computation is classical GR
+(\(\alpha=0\)).\\
+\(\langle1\rangle3.\ \) Therefore a nonzero \(k_2\) in \(D\ge5\) is the
+GR baseline, not an EFT activation, and not \(\hbar\)-hair.\\
+\(\langle1\rangle4.\ \) QED.
+\end{proof}
+
+\begin{lemma}[Magic zeroes break faithfulness]
+\label{lem:magic}
+There exist resonant conditions under which those Love numbers vanish
+without restoration of a lost principal tensor in an EFT deformation.
+Therefore \(k_2=0\) is not equivalent to ``KY intact.''
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) Magic zeroes are documented in the same 5D MP
+analysis~\cite{CharalambousIvanov2023}.\\
+\(\langle1\rangle2.\ \) Those zeroes are explained by near-zone
+\(\mathfrak{sl}(2,\mathbb{R})\) truncated symmetries, which are not the
+principal CKY 2-form.\\
+\(\langle1\rangle3.\ \) A map that sends both ``KY intact, non-resonant''
+and ``KY broken, resonant'' to overlapping \(k_2\) values cannot be an
+isomorphism onto ``quantum hair.''\\
+\(\langle1\rangle4.\ \) QED.
+\end{proof}
+
+\begin{lemma}[\texttt{qnm} inapplicability]
+\label{lem:qnm}
+Stein's package \texttt{qnm}~\cite{Stein2019} computes Kerr QNM
+frequencies labeled by \((s,\ell,m,n;a)\) in \(D=4\). It does not
+accept a dimension \(D\), a spin vector \((a_i)\), a CKY trial 2-form,
+or a Love-number matching condition.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) The JOSS paper (correct pagination 1683, not
+v1's 1692) and the package documentation.\\
+\(\langle1\rangle2.\ \) The input alphabet \(\{s,\ell,m,n,a\}\) is
+disjoint from \(\{D,h_{\mu\nu},k_2,a_i\}\).\\
+\(\langle1\rangle3.\ \) QED.
+\end{proof}
+
+\begin{proposition}[v1's \(\rho=0.998\) cannot be a discovery]
+\label{prop:rho}
+Let a pipeline (i)~generate labels from an unspecified function \(L\),
+(ii)~discard samples with Pearson \(|\rho|<\tau\) for \(\tau=0.70\),
+and (iii)~report \(\rho=0.998\) between \(\log|k_2|\) and \(\log|W|\).
+Then the reported \(\rho\) is not an independent test of a KY--Love law.
+\end{proposition}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) Conditioning on \(|\rho|\ge\tau\) is
+Berkson/collider selection.\\
+\(\langle1\rangle2.\ \) If \(L\) computes \(k_2\) as a monotone function
+of the same residual that defines \(W\), then \(\rho\approx1\) by
+construction. Independent noise at the claimed \(N\) cannot produce
+\(|\rho|=0.998\) (stress test T50).\\
+\(\langle1\rangle3.\ \) \(\log_{10}W\) is undefined for \(W\le0\).\\
+\(\langle1\rangle4.\ \) The named engine \texttt{qnm} cannot emit
+\(k_2\) or \(W\) (Lemma~\ref{lem:qnm}).\\
+\(\langle1\rangle5.\ \) Even a genuine correlation would not identify
+\(k_2\) as quantum hair (Lemma~\ref{lem:k2}) nor as a faithful KY
+tracer (Lemma~\ref{lem:magic}).\\
+\(\langle1\rangle6.\ \) QED.
+\end{proof}
+
+\subsection{EFT, ghosts, thermodynamics, and singularities}
+
+\begin{lemma}[Field-redefinition redundancy]
+On an Einstein background, Ricci-squared operators can be removed by a
+metric field redefinition at leading order in \(\alpha\). A pipeline
+that ``turns on \(R^2\)'' without specifying Gauss--Bonnet versus
+Weyl-squared versus redundant Ricci-squared has not specified an
+EFT~\cite{ReallSantos2019,CanoRuiperez2019}.
+\end{lemma}
+
+\begin{lemma}[Ostrogradsky]
+A generic \(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\) term without
+Lovelock structure or reduction of order yields extra ghost modes. An
+observed ``fragility'' of such a system may be an artifact of those
+modes.
+\end{lemma}
+
+\begin{lemma}[Reall--Santos does not give KY residuals]
+The Reall--Santos method computes first-order thermodynamic corrections
+without constructing \(\delta g_{\mu\nu}\)~\cite{ReallSantos2019}. The
+CKY residual is a tensor constructed from \(g\). Therefore RS output
+cannot be the Label Engine of v1.
+\end{lemma}
+
+\begin{lemma}[Truncated EFT does not resolve \(r=0\)]
+\label{lem:sing}
+A finite-order curvature expansion is an infrared expansion about a GR
+solution. It is not a UV completion and does not replace the curvature
+singularity of MP by a regular core.
+\end{lemma}
+
+\begin{proof}[Lamport-style]
+\(\langle1\rangle1.\ \) By definition of a truncated EFT, operators of
+dimension \(>N\) are omitted.\\
+\(\langle1\rangle2.\ \) Near a curvature singularity, omitted operators
+are not small.\\
+\(\langle1\rangle3.\ \) Therefore the truncation cannot be used
+\emph{at} the singularity.\\
+\(\langle1\rangle4.\ \) Nonperturbative RG improvement is a different
+theory, not a theorem of the \(R^2\) truncation. v1's conclusion that
+``perturbative truncations are insufficient for singularity resolution''
+is a tautology of the action, not a numerical discovery.\\
+\(\langle1\rangle5.\ \) QED.
+\end{proof}
+
+\begin{proposition}[Accelerated fragility is not a defined estimator]
+There is no unique coefficient \(\gamma_2\) until one specifies a
+response \(Y\), a spin coordinate \(x\), a quadratic model, an error
+law, a domain, and a sample. v1 specified none. The number
+\(-0.163\) is quarantined. A negative \(\gamma_2\) near extremality is
+confounded by EFT breakdown.
+\end{proposition}
+
+\begin{proposition}[Rigidification was never a hypothesis]
+A hypothesis that is neither cited nor formalized cannot be rejected at
+\(\gamma_2=-0.163\).
+\end{proposition}
+
+\begin{proposition}[Minimal valid pipeline]
+\label{prop:pipeline}
+A computational study entitled to report KY residuals and Love numbers
+of EFT-corrected MP must, at minimum: (1)~freeze and hash an operator
+basis and a reduction-of-order or Lovelock treatment; (2)~sample \(D\)
+as an integer, sample dimensionless spins on the subextremal domain, and
+force the equal-spin locus as a separate stratum whose \(N_{\mathrm{eq}}\)
+is reported; (3)~construct \(g(\alpha)\); (4)~define
+\(\mathcal{R}(h;g)\) and a CMPP-frame Weyl deviation, including the
+logarithm convention; (5)~compute Love numbers of a named spin, parity,
+and matching scheme, at a named scale if they run; (6)~not filter on
+the headline correlation; (7)~not call Stein \texttt{qnm};
+(8)~report \(|\alpha\,\mathrm{Riem}|\); (9)~deposit code, seeds, and
+data with a real DOI. v1 satisfied none of (1)--(9). This paper does
+not pretend that (1)--(9) have been executed.
+\end{proposition}
+
+\section{Fifty stress tests of the repaired paper}
+
+The repaired claims were stress-tested in fifty mutually distinct ways,
+de-duplicated by name and by scientific target. Implementation:
+\texttt{scripts/stress50.py}. Result on this revision:
+\textbf{50/50 passed}. The tests fail the revision if a later draft
+reintroduces a quarantined number, calls \texttt{qnm} a KY solver, or
+identifies Type~D with censorship.
+
+The fifty targets are: (T01)~JHEP~11~(2022)~161 is Aalsma--Shiu;
+(T02)~Stein JOSS page 1683; (T03)~sample-size contradiction;
+(T04)~Gate Berkson bias; (T05)~ \(|\rho|\le1\); (T06)~ \(\log_{10}\)
+domain; (T07)~ \(D=5\) is not ultraspinning; (T08)~ultraspinning onset
+\(D\ge6\); (T09)--(T10)~odd vs even cohomogeneity; (T11)~tower count;
+(T12)~open converse Type~D \(\Rightarrow\) CKY; (T13)~integrable but
+unstable; (T14)~\texttt{qnm} alphabet; (T15)--(T16)~field redefinitions
+and Gauss--Bonnet; (T17)~no \(\hbar\); (T18)--(T20)~Love numbers,
+quantum hair, \(\mathfrak{sl}(2,\mathbb{R})\); (T21)~Sobol is not an
+Einstein solver; (T22)~circular bootstrap; (T23)~Pearson vs Spearman;
+(T24)~six-block forking paths; (T25)~ \(\Lambda_{\mathrm{QG}}\) units;
+(T26)~EFT control; (T27)--(T28)~ghosts and allowed methods;
+(T29)--(T30)~horizon taxonomy and Type vs censorship;
+(T31)--(T36)~Love-number spin, static/dynamical, gauge, running, magic
+zeroes, missing intercept; (T37)--(T42)~duplicate figures, \(r\) vs
+\(\rho\), undefined \(\beta_a\), fake preregistration, fake DOI;
+(T43)--(T47)~Kosmos URL, \texttt{joblib}, uncited rigidification, EFT
+tautology, underived \(10^6\); (T48)--(T50)~measure zero, two designs,
+planting bound.
+
+\section{Before and after}
+
+\textbf{Before (v1).} A five-page AI-assisted note asserted that
+equal-spin MP black holes are semiclassically protected by a factor
+\(10^6\), that generic MP is algebraically fragile under \(R^2\) with
+\(\gamma_2=-0.163\), and that Love numbers are quantum hair tracking KY
+breakdown at \(\rho=0.998\). The method named a 4D Kerr QNM package, a
+missing YAML freeze, a missing DOI, a self-contradictory sample size,
+and a Gate that selected the headline correlation. Four inequivalent
+geometric properties were treated as one. ``Quantum'' meant a classical
+quadratic action.
+
+\textbf{After (this paper).} The numbers are quarantined and not
+replaced. The surviving theorems are Lemmas~\ref{lem:tower}--\ref{lem:sing}
+and Propositions~\ref{prop:indep}, \ref{prop:protect}, \ref{prop:rho},
+\ref{prop:pipeline}. Fifty distinct stress tests pass. The bibliography
+is corrected. Nothing in the after-state is a new measurement of a
+black hole.
+
+\section{Conclusion}
+
+The draft's scientific content, once the pipeline theater is stripped,
+is a cluster of identifications that do not hold. The one geometric
+fact that \emph{does} hold, and that v1 was pointing at, is elementary:
+odd-dimensional equal-spin Myers--Perry is cohomogeneity one, so
+explicit isometry already gives geodesic quadrature, while generic MP
+needs the hidden Killing tower. That gap is classical. It does not
+require a factor \(10^6\), a Kosmos trajectory, or a Love-number
+oracle. A subsequent empirical paper is possible only along
+Proposition~\ref{prop:pipeline}. Until that pipeline exists, the
+correct report is the one given here.
+
+\section*{Acknowledgments}
+
+GPT-5.2 (OpenAI), AI Studio (Google), and Kosmos AI (Edison Scientific)
+assisted v1. They are not sources of KY residuals, Love numbers, or
+confidence intervals. The Kosmos trajectory cited in v1 remains a chat
+log, not a dataset.
+
+\begin{thebibliography}{99}
+
+\bibitem{MyersPerry1986}
+R.~C. Myers and M.~J. Perry,
+\emph{Black holes in higher dimensional space-times,}
+Ann.\ Phys.\ \textbf{172}, 304 (1986).
+
+\bibitem{EmparanMyers2003}
+R.~Emparan and R.~C. Myers,
+\emph{Instability of ultra-spinning black holes,}
+JHEP \textbf{03}, 025 (2003).
+
+\bibitem{Coleyetal2004}
+A.~Coley, R.~Milson, V.~Pravda, and A.~Pravdov\'a,
+\emph{Classification of the Weyl tensor in higher dimensions,}
+Class.\ Quant.\ Grav.\ \textbf{21}, 3181 (2004).
+
+\bibitem{GibbonsLuPagePope2004}
+G.~W. Gibbons, H.~L\"u, D.~N. Page, and C.~N. Pope,
+\emph{The general Kerr--de Sitter metrics in all dimensions,}
+J.\ Geom.\ Phys.\ \textbf{53}, 49 (2005).
+
+\bibitem{FrolovKubiznak2007}
+V.~P. Frolov and D.~Kubiz\v{n}\'ak,
+\emph{Hidden symmetries of higher-dimensional rotating black holes,}
+Phys.\ Rev.\ Lett.\ \textbf{98}, 011101 (2007).
+
+\bibitem{Krtousetal2007}
+P.~Krtou\v{s}, D.~Kubiz\v{n}\'ak, D.~N. Page, and V.~P. Frolov,
+\emph{Killing--Yano tensors, rank-2 Killing tensors, and conserved
+quantities in higher dimensions,}
+JHEP \textbf{02}, 004 (2007).
+
+\bibitem{FrolovKrtousKubiznak2017}
+V.~P. Frolov, P.~Krtou\v{s}, and D.~Kubiz\v{n}\'ak,
+\emph{Black holes, hidden symmetries, and complete integrability,}
+Living Rev.\ Relativ.\ \textbf{20}, 6 (2017).
+
+\bibitem{Diasetal2010}
+O.~J.~C. Dias, P.~Figueras, R.~Monteiro, J.~E. Santos, and R.~Emparan,
+\emph{An instability of higher-dimensional rotating black holes,}
+JHEP \textbf{05}, 076 (2010).
+
+\bibitem{DiasFiguerasMonteiroSantos2010}
+O.~J.~C. Dias, P.~Figueras, R.~Monteiro, and J.~E. Santos,
+\emph{Ultraspinning instability of rotating black holes,}
+Phys.\ Rev.\ D \textbf{82}, 104025 (2010).
+
+\bibitem{ReallSantos2019}
+H.~S. Reall and J.~E. Santos,
+\emph{Higher derivative corrections to Kerr black hole thermodynamics,}
+JHEP \textbf{04}, 021 (2019).
+
+\bibitem{CanoRuiperez2019}
+P.~A. Cano and A.~Ruip\'erez,
+\emph{Leading higher-derivative corrections to Kerr geometry,}
+JHEP \textbf{05}, 189 (2019).
+
+\bibitem{AalsmaShiu2022}
+L.~Aalsma and G.~Shiu,
+\emph{From rotating to charged black holes and back again,}
+JHEP \textbf{11}, 161 (2022).
+\emph{(This is v1's ``[4]''; it is not a Cano paper.)}
+
+\bibitem{Stein2019}
+L.~C. Stein,
+\emph{qnm: A Python package for calculating Kerr quasinormal modes,}
+J.\ Open Source Softw.\ \textbf{4}, 1683 (2019).
+
+\bibitem{CharalambousIvanov2023}
+P.~Charalambous and M.~M. Ivanov,
+\emph{Scalar Love numbers and Love symmetries of 5-dimensional
+Myers--Perry black holes,}
+JHEP \textbf{07}, 222 (2023).
+
+\bibitem{Huietal2021}
+L.~Hui, A.~Joyce, R.~Penco, L.~Santoni, and A.~R. Solomon,
+\emph{Static response and Love numbers of Schwarzschild black holes,}
+JCAP \textbf{04}, 052 (2021).
+
+\bibitem{Barbosaetal2025}
+S.~Barbosa, P.~Brax, S.~Fichet, and L.~de Souza,
+\emph{Running Love numbers and the Effective Field Theory of gravity,}
+JCAP \textbf{07}, 071 (2025).
+
+\bibitem{WuLu2025}
+P.-Y.~Wu and H.~L\"u,
+\emph{Quadratic curvature correction and its breakdown to thermodynamics
+of rotating black holes,}
+Phys.\ Rev.\ D \textbf{111}, 104026 (2025).
+
+\end{thebibliography}
+
+\end{document}
