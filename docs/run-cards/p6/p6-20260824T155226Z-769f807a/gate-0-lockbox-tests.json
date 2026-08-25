@@ -1,0 +1,150 @@
+{
+  "all_pass": true,
+  "aspredicted_id": 307969,
+  "gate": "0",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "no_p6_outcomes": true,
+  "no_real_val_test_text": true,
+  "note": "Dummy lockbox under gitignored data/cache. Seed-4 lockbox + Tier-2 kit present. Dummy C3 paths exercise lockbox machinery only; Policy A science is M-fine.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "scripts_p6_sha256": {
+    "scripts/p6/break_glass.py": "ab2e1b5e3e505f9407a12f84c6339c2cefca5b708ac7fbfc89921695f2818ea3",
+    "scripts/p6/dummy_c3_test.py": "40cbec85a3c4b2df9a073e52789348553056acf930b88743f18dba7a7a1cfef2",
+    "scripts/p6/dummy_p0t.py": "d34c9e85eb33904de92ab928bbe877d8cdd0d4e40a7b438ba201bd6285e9e9ba",
+    "scripts/p6/env.cuda.sh": "5a1b0246fb67cbabeee71c7820cfeab4144492d512fd23b26b38fd9bcbe35000",
+    "scripts/p6/env.sh": "42919b175e5d2a4775ae38e67b29d792e74e68c390b6b0783cd0db8eb8ab761e",
+    "scripts/p6/evaluate_bpb.py": "83946c96f2f445c852e3ec984073650eeb2ebb2d75ba08f4a86d2454423f4467",
+    "scripts/p6/forbidden_parents.py": "895cab9fca84282d5192b494b6af4aa3a27b9f89e7fdf4d93984b79dcf18432d",
+    "scripts/p6/gate0_accept.py": "f1488929a2d944e8f64259c71130ae3b069c7b00ed1f280b4229781d6021c604",
+    "scripts/p6/gate0_filing_lock.py": "a2135354b3b51986b3a7dfc3fe8359879d2e5fe74bbb732a5a4574dffe6ffbfc",
+    "scripts/p6/gate_a_source_pin.py": "96e968bb9b759361c0b4154499e84eff7a20d6094513d38c6723f8a4b64c43c4",
+    "scripts/p6/gate_b_raw_assets.py": "554e04b38b942e5de642f1630952130f548a1fa87c6f065961cf32213a55c8a7",
+    "scripts/p6/gate_c_hygiene.py": "521af1a97ff4a12b2b6fd59062abfc89112956479d10b3830a4231942faa8650",
+    "scripts/p6/gate_child_common.sh": "d874b94f0caed5d3a5c253d5c04b1fc13f3d11dd702fce977846a69c24c725c8",
+    "scripts/p6/gate_d_split_freeze.py": "3973f6a2b18dee4b0bea44b40300e0c68e8795e27e5bccca37a9768055731f6a",
+    "scripts/p6/gate_e_streams.py": "ff69451981f126a16f9d62bafa338f37019c0579b9ba72b03b01455c8764b8cb",
+    "scripts/p6/gate_f_tokenizer.py": "70dccc18010b248e9b1b7bc1f03ebbf3dedf8dc94d54250ad6c6ea3fa91e14ee",
+    "scripts/p6/gate_g_budget.py": "97091bea864db800334ce48f7cdbdaaf86cb0515414b324f624cbce002f07315",
+    "scripts/p6/gate_h_accept.py": "9cb3ea2b16ccb171571087d92c327b09f58ec83de5605d3988e1d8a8ce5fa0f4",
+    "scripts/p6/gate_h_authorize.py": "492f43ca95a574366e0af006596b442e003b036e2ce3d644b49e1fed4e350ada",
+    "scripts/p6/gate_h_preflight.py": "97b65cad6f4b1ed5d614603610438e0c31f334837864441ed7b6391e0406de9e",
+    "scripts/p6/gate_h_smoke.sh": "635109b05e49f60787f7d290c35ee0ee59c519a7d527585a7ce41c8265dba8da",
+    "scripts/p6/gate_i_accept.py": "20cefc7acb9090494774f64cd7710d47e7ccae33b2c29664d9022b38aaf02a2e",
+    "scripts/p6/gate_i_authorize.py": "31876b4eb4a09b362ccb708ffca18f2ff101ff25b177486c8fde560cf9fae5cf",
+    "scripts/p6/gate_i_preflight.py": "202110786c51d4060e3267db1d24ecb5d3fd722ce41221442a3cd79f0b6dffe8",
+    "scripts/p6/gate_i_tl0.sh": "d8f1fc63d81559cdc53524cdc57f90deab0cfa99770b51098330e03956da103c",
+    "scripts/p6/gate_p0t.sh": "f0d1f5c9c56df7a72a0641bb99d5d07615db320c65c9d3aeba953c21084d90d0",
+    "scripts/p6/gate_p0t_accept.py": "5add8cd415cc6b4f43ca26f8d62d1db75212a938087b314000b77102323ff187",
+    "scripts/p6/gate_phase2_accept.py": "c2e1c425055e38bb5a4d2b92bafccc0f51f386518085cd9ff9d191bd91f9a9a7",
+    "scripts/p6/gate_q_c0_freeze.py": "1e15821e6b5754e41dc3a36c5abd986dbf66aa06b3619de155183ad0855162fe",
+    "scripts/p6/gate_r_c1.sh": "0bc0f394eb60e194271802b4e4ea7242478ca8e168a471e734119fbb76db87e9",
+    "scripts/p6/gate_s_c2.sh": "3eb3a081ef318227d9bda9be794862379b75e6d9ba71112a5098de349be4b4bc",
+    "scripts/p6/gate_t_c3.sh": "a8a858c1539481adb3bc7cc375255c00bcebc48e07476e1c1e370b1f93f16cfd",
+    "scripts/p6/gate_u_seal.py": "4353380640fce043e4cee7ad1acdb4bb0c327a23b7fd69468af6b81854dca2ae",
+    "scripts/p6/gate_v_c3_test.py": "344991d6e276b28222d59d97bc7a04baaef42b080ad701a1149623869a5ac64d",
+    "scripts/p6/gate_w_closeout.py": "2f9ef4c02ad30ac8fa7d1050bfc2499f009d805928529555c11726b21be76ed7",
+    "scripts/p6/gate_x_preflight.py": "a32b05e2c8ebba9c4cf3e1f5944849109bdbef04af54c3f6105e88a1e92303ad",
+    "scripts/p6/gate_x_unblind.py": "c6b69ea0500daddd20b0fea140dc8b8899accf5080226a9b6dccec1a3f8a726b",
+    "scripts/p6/make_validation_seal.py": "b7366420a5e455200a832b0c637f0f084056cbefdad06aa4b9d1ad19b16f64e0",
+    "scripts/p6/mix_construct_dummy.py": "d8bdca7d0ab5b4469abbfef7cc6b141a586eccd8e3e365951b60b6d0d5d85366",
+    "scripts/p6/p6_common.py": "a3ed40ff983538f55ea43e8dfb656f195d7bc8e25353a1b99961172891f72c06",
+    "scripts/p6/pack_parquet.py": "c5004edefb1c5273497f672f830e905659dcd8d39050ff0c153832a4a5e41f18",
+    "scripts/p6/parent_train.py": "ec31db4b17cd13ee0b75b955ea707cd91caeff06bb8ab78f0ad1839966082c6e",
+    "scripts/p6/prefile_topology_schedules.py": "c83aa6508a7cbb53853415808419b2fa5957800a930e3923cdef619a4cd6f643",
+    "scripts/p6/prove_parent_seed_knob.py": "9db33ff7ddaba40c166f7865fdd0609ff76c57aa88401c96772b1424615340d6",
+    "scripts/p6/refuse_nanochat_dataset.py": "0f0387770fb254b8bfeb902cfd4757e59f477c44999053d941e89d2faaa464e6",
+    "scripts/p6/refuse_ratio.py": "d4e5dcf5f0d9b519dffdc3cca00a5bfbc709d0ca3325782fa410093903b222e7",
+    "scripts/p6/release_bundle.py": "0f080703fb8ba4d9024f357c0217c34288791b9441b093e61b7ecf9e839bc6bc",
+    "scripts/p6/sync_tier2_resume_kit.py": "ec99b926857de57c72d501e1ce45571fed5e029e3aafa1c6488a8a3bcb943ebb",
+    "scripts/p6/validate_prefile_topology_schedules.py": "e00dcab48f3b19580090483c97df6d4c0c01af5d8bc0be57c71cbfc7c3677673"
+  },
+  "scripts_p6_tree_sha256": "39efa8bb23d017ac333a44d3d67a1edb003d323d7da4614a7bc1d7661359045d",
+  "tests": {
+    "1": {
+      "addendum_filed_sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+      "addendum_local_matches_filed": true,
+      "addendum_local_sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+      "evaluate_bpb_stub_sha256": "83946c96f2f445c852e3ec984073650eeb2ebb2d75ba08f4a86d2454423f4467",
+      "gate_plan_sha256": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79",
+      "name": "filing/lock/config/evaluator + seed-4 lockbox + tier2",
+      "pass": true,
+      "pdf_sha256": "769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7"
+    },
+    "10": {
+      "name": "dummy test evaluator accepts C3 only after U seal",
+      "pass": true
+    },
+    "11": {
+      "name": "release refuses incomplete inventory",
+      "pass": true
+    },
+    "12": {
+      "name": "dummy released hashes match manifest",
+      "pass": true
+    },
+    "13": {
+      "name": "break-glass dummy writes audit without printing dummy BPB",
+      "pass": true
+    },
+    "14": {
+      "name": "mix-construction dummy refuses val/test documents",
+      "pass": true
+    },
+    "15": {
+      "name": "mix-construction dummy refuses to start if tokenizer hash unset",
+      "pass": true
+    },
+    "16": {
+      "name": "env refuses if scripts/p4/env.sh was sourced",
+      "pass": true
+    },
+    "17": {
+      "name": "ratio=-1 and python -m nanochat.dataset wrappers refuse",
+      "pass": true
+    },
+    "18": {
+      "name": "C3 reconstruction from P3 B3 mix-order SHA is refused",
+      "pass": true
+    },
+    "19": {
+      "name": "tier2 resume-kit init writes host-independent manifest",
+      "pass": true,
+      "stderr": ""
+    },
+    "2": {
+      "name": "steward cannot open dummy lockbox result",
+      "pass": true
+    },
+    "3": {
+      "name": "dummy BPB string absent from safe_progress",
+      "pass": true
+    },
+    "4": {
+      "name": "opaque job labels omit C1/C2/C3",
+      "pass": true
+    },
+    "5": {
+      "name": "train env cannot resolve test path",
+      "pass": true,
+      "stderr": "",
+      "stdout": "P6_ROOT=/Users/paulpajo/Projects/nanochat-filipino\nP6_RUN_ID=p6-20260824T155226Z-769f807a\nNANOCHAT_BASE_DIR=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a\nP6_SAFE_PROGRESS_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a/safe_progress\nP6_LOCKBOX_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a/lockbox\nP6_TIER2_LOCAL_ROOT=/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a/tier2-resume-kit\nP6_NETWORK_VOLUME_ID=3xuadadrph\nP6_NETWORK_VOLUME_DC=CA-MTL-3\nNANOCHAT_DATA_DIR=<unset>\nP6_TEST_JSONL_EN=<UNSET>\nP6_TEST_JSONL_TL=<UNSET>\nNOTE: Gate 0 filed. Shared gates A\u2013G next; GPU only after authorization. Lockout-resistant Tier-2 is mandatory.\nTEST_EN=UNSET\nTEST_TL=UNSET"
+    },
+    "6": {
+      "name": "P1.1/P2/P3/P4/P5 weight SHA256s rejected as parent",
+      "pass": true
+    },
+    "7": {
+      "name": "dummy P0-T emits only PASS/BLOCKED/TECHNICAL BLOCK outside lockbox",
+      "pass": true
+    },
+    "8": {
+      "name": "contrast refuses until six child + C0 EN exist",
+      "pass": true
+    },
+    "9": {
+      "name": "dummy test evaluator rejects C1/C2 and missing U seal",
+      "pass": true
+    }
+  }
+}

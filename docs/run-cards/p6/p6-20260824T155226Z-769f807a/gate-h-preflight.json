@@ -1,0 +1,173 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:36:20Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": "Linux",
+      "id": "H0_not_darwin",
+      "ok": true
+    },
+    {
+      "detail": {
+        "path": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/gate-h-authorization.json"
+      },
+      "id": "H0_authorization",
+      "ok": true
+    },
+    {
+      "detail": {
+        "token_bytes.pt": true,
+        "tokenizer.pkl": true,
+        "train_00000.parquet": true,
+        "train_00001.parquet": true,
+        "train_00002.parquet": true,
+        "train_00003.parquet": true,
+        "val.parquet": true
+      },
+      "id": "H0_hashes",
+      "ok": true
+    },
+    {
+      "detail": {
+        "expected": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "head": null
+      },
+      "id": "H0_pin",
+      "ok": false
+    },
+    {
+      "detail": "empty",
+      "id": "H0_flash_attention_unpatched",
+      "ok": true
+    },
+    {
+      "detail": [
+        "train_00000.parquet",
+        "train_00001.parquet",
+        "train_00002.parquet",
+        "train_00003.parquet",
+        "val.parquet"
+      ],
+      "id": "H0_last_shard_val",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "H0_no_test_in_c1",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "H0_not_c3_data_dir",
+      "ok": true
+    },
+    {
+      "detail": {
+        "gpu": "NVIDIA A40",
+        "sm": [
+          8,
+          6
+        ]
+      },
+      "id": "H0_cuda",
+      "ok": true
+    },
+    {
+      "detail": "Mon Aug 24 16:36:20 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.159.04             Driver Version: 580.159.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A40                     On  |   00000000:D5:00.0 Off |                    0 |\n|  0%   32C    P8             32W /  300W |       3MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+",
+      "id": "H0_nvidia_smi",
+      "ok": true
+    },
+    {
+      "detail": "NVIDIA A40",
+      "id": "H0_gpu_class_a40",
+      "ok": true
+    },
+    {
+      "detail": {
+        "free_bytes": 45934985216,
+        "total_bytes": 53687091200
+      },
+      "id": "H0_disk",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "H0_no_stray_base_train",
+      "ok": true
+    },
+    {
+      "detail": "3 < 30",
+      "id": "H0_warmup_legal",
+      "ok": true
+    },
+    {
+      "detail": {
+        "forbidden_prefixes": [
+          "p6-c0-",
+          "p6-tl0-",
+          "p6-c1-",
+          "p6-c2-",
+          "p6-c3-",
+          "p6-s1-",
+          "p6-s2-",
+          "p6-s3-"
+        ],
+        "model_tag": "p6-smoke-tl-d4"
+      },
+      "id": "H0_tag_is_smoke",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "H0_tl0_not_started",
+      "ok": true
+    }
+  ],
+  "gate": "H-preflight",
+  "hashes": {
+    "token_bytes.pt": {
+      "expected": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "got": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "ok": true
+    },
+    "tokenizer.pkl": {
+      "expected": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "ok": true
+    },
+    "train_00000.parquet": {
+      "expected": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de",
+      "got": "be3cecd0e7138666a8c87e8023a6d13411b6c02553cd307b9f9239b3d1c6d2de",
+      "ok": true
+    },
+    "train_00001.parquet": {
+      "expected": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6",
+      "got": "08fbfba33b57e8c7e1a376edc43ac99e40eb5a7f74e5a8d774c696cb175a89a6",
+      "ok": true
+    },
+    "train_00002.parquet": {
+      "expected": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271",
+      "got": "8ce8aca7042b37feeee038f22a1a77c2d66de749567dab7a31b32471fc5fe271",
+      "ok": true
+    },
+    "train_00003.parquet": {
+      "expected": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234",
+      "got": "44dbade713110a5071a1c5fc7a8a0c6cfb5c98314e66e880dabbbed2a34fc234",
+      "ok": true
+    },
+    "val.parquet": {
+      "expected": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+      "got": "13409b3cb78dca87abf1cb1766cd68082b53b704951c38b5d618e97ba7bcfe02",
+      "ok": true
+    }
+  },
+  "host": "638620de6971",
+  "nanochat_head": null,
+  "no_p5_outcomes": true,
+  "note": "Exit 0 authorizes scripts/p6/gate_h_smoke.sh only. Not Gate H pass. TL0/C0 have not started.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "status": "not_ready",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

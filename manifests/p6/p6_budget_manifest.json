@@ -1,0 +1,34 @@
+{
+  "B": 65536,
+  "D_phase2": 19267584,
+  "N_TL0": 294,
+  "N_phase2": 294,
+  "T": 2048,
+  "argv_receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/gate-g-budget-command-freeze.json",
+  "child_arms": [
+    "c1",
+    "c2",
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand"
+  ],
+  "delta_bpb": 0.01,
+  "frozen_at_gate": "G",
+  "load_optimizer": false,
+  "parent_seed": 4,
+  "peak_lr_child_fraction": 0.3,
+  "policy_a_test_arm": "m-fine",
+  "q_TL": 0.5,
+  "quota_en": 9633792,
+  "quota_tl": 9633792,
+  "t_tl_train": 6401013,
+  "topology_arms": [
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand"
+  ],
+  "warmup_child": 14,
+  "warmup_parent": 14
+}

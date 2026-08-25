@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-08-25T16:40:00Z",
+  "gate": "W5",
+  "status": "blocked_incomplete_inventory",
+  "repo_id": "pageman/nanochat-filipino-p6-m-schedule-topology",
+  "rule": "refuse_partial_topology_sibling_set",
+  "expected_weightish": 9,
+  "present_local": ["c0", "c1", "c2", "tokenizer.pkl", "token_bytes.pt"],
+  "missing_local": ["m-fine", "m-coarse", "m-blocked", "m-rand"],
+  "pod_recovery": {
+    "pod_id": "o82o3p6dr3trzh",
+    "started_utc": "2026-08-25T16:34:39Z",
+    "stopped_after_inventory": true,
+    "workspace_findings": "nanochat-filipino tree ~40MB; tokenizer only under run cache; no model_000294.pt anywhere under /workspace"
+  },
+  "manifest": "docs/hub/p6-m-schedule-topology/RELEASE_MANIFEST.json",
+  "packer_exit": 3,
+  "hub_created": false,
+  "upload_performed": false
+}

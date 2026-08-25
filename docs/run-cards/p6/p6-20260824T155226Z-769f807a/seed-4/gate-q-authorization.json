@@ -1,0 +1,21 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T17:57:50Z",
+  "authorized_by": "operator chat: do Gate Q (freeze C0)",
+  "authorizes_children": false,
+  "gate": "Q",
+  "host_class": "CPU ok (file freeze); CUDA host optional for path parity",
+  "must_not": [
+    "train",
+    "print BPB",
+    "start R/S/T children",
+    "amend parent seed",
+    "load_optimizer=True"
+  ],
+  "note": "Does not authorize children, validation seal, test, unblinding, or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "freeze eligible TL0 d20 as immutable C0 for seed 4; zero additional train tokens",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

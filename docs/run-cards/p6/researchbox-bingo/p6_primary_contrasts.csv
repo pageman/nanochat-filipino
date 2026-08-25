@@ -1,0 +1,4 @@
+seed,tau,delta_tl,delta_tl_class,delta_en,delta_en_class,delta,reference_arm,primary
+4,m-coarse,-0.041617,better_than_m_fine_by_delta,0.047305,worse_than_m_fine_by_delta,0.01,m-fine,true
+4,m-blocked,0.202606,worse_than_m_fine_by_delta,0.089027,worse_than_m_fine_by_delta,0.01,m-fine,true
+4,m-rand,0.001087,within_delta,0.001075,within_delta,0.01,m-fine,true

@@ -1,0 +1,8 @@
+seed,arm,role,tl_val_bpb_full,en_val_bpb_full,en_note,m_fine_en_test_bpb,m_fine_tl_test_bpb,test_excluded_from_topology,not_p5_recurrence_primary
+4,C0,frozen_TL0_d20_parent,,2.683814,descriptive_only_excluded_from_topology,,,,true
+4,C1,extra_Tagalog_control,0.564548,2.892551,,,,,true
+4,C2,pure_English_comparator,2.219915,1.269724,,,,,true
+4,M-fine,fine_EN_first_2048_blocks,1.256292,1.440084,,1.450423,1.260475,true,true
+4,M-coarse,coarse_EN_first_1204224_blocks,1.214675,1.487389,,,,,true
+4,M-blocked,all_TL_then_all_EN,1.458898,1.529111,,,,,true
+4,M-rand,precomputed_Random42_blocks,1.257379,1.441159,,,,,true

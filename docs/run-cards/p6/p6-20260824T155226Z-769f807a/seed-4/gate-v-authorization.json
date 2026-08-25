@@ -1,0 +1,22 @@
+{
+  "arm": "m-fine",
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-25T06:10:33Z",
+  "authorized_by": "operator chat: Do Gate U to V",
+  "authorizes_unblind": false,
+  "gate": "V",
+  "host_class": "NVIDIA CUDA (A40 class)",
+  "must_not": [
+    "test C0/C1/C2/m-coarse/m-blocked/m-rand",
+    "print BPB",
+    "unblind",
+    "pod stop",
+    "repeat test"
+  ],
+  "note": "Does not authorize Gate X unblinding or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "exactly one restricted-test event for m-fine (EN+TL components) after Gate U seal for seed 4; secondary; excluded from topology",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

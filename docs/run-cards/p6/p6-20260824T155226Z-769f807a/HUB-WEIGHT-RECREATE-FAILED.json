@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-08-25T17:53:20Z",
+  "gate": "W5-recreate",
+  "status": "failed_sha_mismatch",
+  "pod_id": "i9m7tabod1b34y",
+  "arm": "m-fine",
+  "train_exit_code": 0,
+  "got_sha256": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+  "expect_sha256": "a0139607a8fdf2772d4b8e722b449b6a8db04056a8dc38cd177708af8f15eeab",
+  "note": "Training completed cleanly; terminal checkpoint is bitwise different from filed Gate T receipt. CUDA/non-determinism expected. Filed SHA gate correctly refused. Hub upload not started. Remaining arms not trained.",
+  "pod_still_running": true,
+  "cost_per_hour_usd": 0.44
+}

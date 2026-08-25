@@ -1,0 +1,20 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-25T09:01:13Z",
+  "authorized_by": "operator chat: Do Gate W to X",
+  "authorizes_unblind": true,
+  "authorizes_w": true,
+  "gate": "X",
+  "must_not": [
+    "second unblinding",
+    "amend filing",
+    "upload Hub without staging",
+    "push public git without W3 check"
+  ],
+  "note": "Filed order is X then W. Primary analysis is topology contrasts, not P5 recurrence counts.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "one Gate X unblinding of sealed validation contrasts; then Gate W archive/paper; Hub/ResearchBox/git push remain deferred unless separately executed",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

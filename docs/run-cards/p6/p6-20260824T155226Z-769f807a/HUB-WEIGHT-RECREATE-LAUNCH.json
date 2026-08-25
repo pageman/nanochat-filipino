@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-08-25T17:22:35Z",
+  "authorized_by": "operator chat: Authorize technical recreate (option 2) for W5 Hub",
+  "gate": "W5-recreate",
+  "pod_id": "i9m7tabod1b34y",
+  "host": "69.30.85.16:22087",
+  "gpu": "NVIDIA A40",
+  "data_center": "CA-MTL-1",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "seed": 4,
+  "arms": ["m-fine", "m-coarse", "m-blocked", "m-rand"],
+  "accept_rule": "terminal model SHA-256 must match docs/hub/p6-m-schedule-topology/RELEASE_MANIFEST.json",
+  "script": "scripts/p6/hub_recreate_topology_arms.sh",
+  "log_on_pod": "/workspace/p6-w5-recreate.log",
+  "status": "running"
+}

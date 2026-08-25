@@ -1,0 +1,30 @@
+{
+  "arms": [
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand"
+  ],
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T20:32:36Z",
+  "authorized_by": "operator chat: Do Gate T",
+  "authorizes_validation": false,
+  "gate": "T",
+  "host_class": "NVIDIA CUDA (A40 class)",
+  "must_not": [
+    "print BPB",
+    "start Gate U validation",
+    "resume with optimizer state",
+    "amend parent seed",
+    "use sibling as parent",
+    "test access",
+    "unblind",
+    "pod stop"
+  ],
+  "note": "Does not authorize U/V, test, unblinding, or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "train topology arms ['m-fine', 'm-coarse', 'm-blocked', 'm-rand'] serially from frozen C0 for seed 4; exact phase-two budget; load_optimizer=False",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

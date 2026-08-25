@@ -1,0 +1,24 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T17:47:27Z",
+  "authorized_by": "operator chat: go Gate P0-T",
+  "authorizes_children": false,
+  "authorizes_q": false,
+  "authorizes_test": false,
+  "gate": "P0-T",
+  "host_class": "NVIDIA CUDA A40",
+  "must_not": [
+    "print BPB scalars outside lockbox",
+    "read test split",
+    "freeze C0",
+    "start children",
+    "replace seed",
+    "Mac MPS"
+  ],
+  "note": "Does not authorize Q, children, Gate V test, unblinding, public release, or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "Tagalog validation eligibility only for seed 4; scalars lockboxed; safe output PASS/BLOCKED/TECHNICAL BLOCK",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

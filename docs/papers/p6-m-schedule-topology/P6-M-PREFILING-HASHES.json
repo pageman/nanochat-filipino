@@ -1,0 +1,25 @@
+{
+  "status": "prefiling_no_outcomes",
+  "addendum": {
+    "path": "docs/papers/p6-m-schedule-topology/P6-M-PREFILING-ADDENDUM.md",
+    "sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082"
+  },
+  "gate_plan": {
+    "path": "docs/papers/p6-m-schedule-topology/P6-M-GATE-PLAN-FILED.md",
+    "working_path_note": "/Users/paulpajo/.cursor/plans/p6-m_gate_plan_29fa4469.plan.md may drift via YAML todo statuses",
+    "sha256": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79"
+  },
+  "topology_manifest": {
+    "path": "manifests/p6/p6_topology_schedule_manifest.json",
+    "sha256": "d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606",
+    "combined_schedule_files_sha256": "165d7084be485299b305935a6b76e80c53a03bd75ba5f90a74f5ca0714e8278d"
+  },
+  "schedule_generator": {
+    "path": "scripts/p6/prefile_topology_schedules.py",
+    "sha256": "c83aa6508a7cbb53853415808419b2fa5957800a930e3923cdef619a4cd6f643"
+  },
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "gate_plan_filed_copy": "docs/papers/p6-m-schedule-topology/P6-M-GATE-PLAN-FILED.md",
+  "outcomes_accessed": false,
+  "gate_0_note": "Filed gate-plan bytes frozen in-repo; Cursor working plan may drift via YAML todo statuses"
+}

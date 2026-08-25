@@ -1,0 +1,153 @@
+{
+  "artifacts": {
+    "en_test": {
+      "bytes": 1310320,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/holdouts/en/test.jsonl",
+      "expected": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "is_test": true,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": false,
+      "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "src": "data/interim/wikitext-103/english_test.jsonl",
+      "utc": "2026-08-24T16:10:26Z"
+    },
+    "en_train": {
+      "bytes": 550097242,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/splits/en/train.jsonl",
+      "expected": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "is_test": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": false,
+      "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "src": "data/interim/wikitext-103/english_train.jsonl",
+      "utc": "2026-08-24T16:10:26Z"
+    },
+    "en_val": {
+      "bytes": 1166451,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/splits/en/val.jsonl",
+      "expected": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "is_test": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": false,
+      "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "src": "data/interim/wikitext-103/english_val.jsonl",
+      "utc": "2026-08-24T16:10:26Z"
+    },
+    "tl_test": {
+      "bytes": 7763750,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/holdouts/tl/test.jsonl",
+      "expected": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "is_test": true,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": true,
+      "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "src": "data/processed/wikitext-tl39/test/test.jsonl",
+      "utc": "2026-08-24T16:10:25Z"
+    },
+    "tl_train": {
+      "bytes": 36229497,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/splits/tl/train.jsonl",
+      "expected": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "is_test": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": true,
+      "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "src": "data/interim/wikitext-tl39/splits/train.jsonl",
+      "utc": "2026-08-24T16:10:25Z"
+    },
+    "tl_val": {
+      "bytes": 8289625,
+      "dst": "data/cache/p6-20260824T155226Z-769f807a/splits/tl/val.jsonl",
+      "expected": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "is_test": false,
+      "license": "wikitext / cc-by-sa-family as recorded in source dumps",
+      "ok": true,
+      "p11_split_reuse": true,
+      "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "src": "data/interim/wikitext-tl39/splits/val.jsonl",
+      "utc": "2026-08-24T16:10:25Z"
+    }
+  },
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:10:26Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": {
+        "en_test": {
+          "ok": true,
+          "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e"
+        },
+        "en_train": {
+          "ok": true,
+          "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a"
+        },
+        "en_val": {
+          "ok": true,
+          "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b"
+        },
+        "tl_test": {
+          "ok": true,
+          "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf"
+        },
+        "tl_train": {
+          "ok": true,
+          "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687"
+        },
+        "tl_val": {
+          "ok": true,
+          "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c"
+        }
+      },
+      "id": "B1_six_confirmatory_shas",
+      "ok": true
+    },
+    {
+      "detail": {
+        "p11_split_reuse": true,
+        "split_origin": "p11_reuse"
+      },
+      "id": "B2_p11_split_reuse",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "B3_en_test_not_used_as_train",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "B4_tests_unmounted",
+      "ok": true
+    },
+    {
+      "detail": {
+        "base_train": false,
+        "packing": false,
+        "tok_train": false
+      },
+      "id": "B5_no_train_or_eval_started",
+      "ok": true
+    }
+  ],
+  "gate": "B",
+  "gpu": false,
+  "hf_config": "wikitext-103-raw-v1",
+  "hf_dataset": "Salesforce/wikitext",
+  "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "host": "Mac/CPU",
+  "next_gate": "C",
+  "no_train_or_eval_started": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "researchbox_url": null,
+  "script": "scripts/p6/gate_b_raw_assets.py",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "tests_unmounted": true
+}

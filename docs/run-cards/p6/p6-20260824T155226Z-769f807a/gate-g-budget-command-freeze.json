@@ -1,0 +1,178 @@
+{
+  "B": 65536,
+  "D_phase2": 19267584,
+  "N_TL0": 294,
+  "N_TL0_computed_from_3x": 294,
+  "N_phase2": 294,
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:13:18Z",
+  "blinded": true,
+  "checks": [
+    {
+      "id": "G1_vocab_32768",
+      "ok": true
+    },
+    {
+      "id": "G2_n_tl0_filed_294",
+      "ok": true
+    },
+    {
+      "detail": {
+        "N_TL0": 294,
+        "n_computed": 294,
+        "t_tl_train": 6401013
+      },
+      "id": "G3_computed_equals_filed",
+      "ok": true
+    },
+    {
+      "id": "G4_warmup_lt_n",
+      "ok": true
+    },
+    {
+      "id": "G5_d_phase2_locked",
+      "ok": true
+    },
+    {
+      "detail": {
+        "arms": [
+          "m-fine",
+          "m-coarse",
+          "m-blocked",
+          "m-rand"
+        ],
+        "en": 9633792,
+        "tl": 9633792
+      },
+      "id": "G6_topology_quotas",
+      "ok": true
+    },
+    {
+      "id": "G7_parent_seed_4",
+      "ok": true
+    },
+    {
+      "id": "G8_policy_a_m_fine",
+      "ok": true
+    },
+    {
+      "id": "G9_no_bpb",
+      "ok": true
+    }
+  ],
+  "commands": {
+    "parent": {
+      "class": "python -m scripts.base_train",
+      "core_metric_every": -1,
+      "depths": [
+        8,
+        20
+      ],
+      "device_batch_size": 8,
+      "device_type": "cuda",
+      "eval_every": -1,
+      "max_seq_len": 2048,
+      "model_tags": [
+        "p6-s4-tl0-d8",
+        "p6-s4-tl0-d20"
+      ],
+      "note": "terminal checkpoint only; save-every=-1 writes model_{N:06d}.pt at last step on pin 92d63d4",
+      "num_iterations": 294,
+      "parent_init_seed": 4,
+      "runs": [
+        "p6-s4-tl0-d8",
+        "p6-s4-tl0-d20"
+      ],
+      "sample_every": -1,
+      "save_every": -1,
+      "total_batch_size": 65536,
+      "warmup_steps": 14,
+      "window_pattern": "SSSL"
+    },
+    "phase2": {
+      "allowed_model_tags": [
+        "p6-s4-c1-tl-d20",
+        "p6-s4-c2-en-d20",
+        "p6-s4-m-fine-d20",
+        "p6-s4-m-coarse-d20",
+        "p6-s4-m-blocked-d20",
+        "p6-s4-m-rand-d20"
+      ],
+      "child_arms": [
+        "c1",
+        "c2",
+        "m-fine",
+        "m-coarse",
+        "m-blocked",
+        "m-rand"
+      ],
+      "core_metric_every": -1,
+      "depth": 20,
+      "device_batch_size": 8,
+      "eval_every": -1,
+      "fresh_muon_adamw": true,
+      "init_from": "$NANOCHAT_BASE_DIR/p6-s4/c0/frozen/p6-s4-c0-tl-d20",
+      "init_step": 294,
+      "load_optimizer": false,
+      "lr_peak_rule": "0.3 * parent scheduled peak",
+      "max_seq_len": 2048,
+      "num_iterations": 294,
+      "policy_a_test_arm": "m-fine",
+      "resume_from_step": -1,
+      "sample_every": -1,
+      "total_batch_size": 65536,
+      "warmup_steps": 14,
+      "window_pattern": "SSSL",
+      "wrapper": "python scripts/p6/continue_from_frozen.py"
+    }
+  },
+  "computed_bpb": false,
+  "cost_note": {
+    "class": "NVIDIA CUDA A40",
+    "expected_gpus": "H + I(d8) + I(d20) + R + S + T1..T4 + U + V",
+    "must_not_shrink_N": true,
+    "network_volume_gb": 200,
+    "parent_seed": 4,
+    "tier2_resume_kit_mandatory": true,
+    "vram_gb": 48
+  },
+  "d_3x_tl": 19203039,
+  "d_actual_tl0": 19267584,
+  "depths": [
+    {
+      "depth": 8,
+      "num_iterations_tl0": 294,
+      "p_scaling": 41943232
+    },
+    {
+      "depth": 20,
+      "num_iterations_tl0": 294,
+      "p_scaling": 435160240
+    }
+  ],
+  "gate": "G",
+  "gpu": false,
+  "host": "Mac/CPU",
+  "next_gate": "H",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "parent_seed": 4,
+  "policy_a_test_arm": "m-fine",
+  "quota_en": 9633792,
+  "quota_tl": 9633792,
+  "script": "scripts/p6/gate_g_budget.py",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "t_tl_train": 6401013,
+  "tokenizer_pkl_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+  "train": {
+    "bos_prepended": false,
+    "crop": false,
+    "n_bytes": 29165137,
+    "n_chars": 29165137,
+    "n_docs": 37602,
+    "n_tokens": 6401013,
+    "packing": false
+  },
+  "warmup_parent": 14,
+  "warmup_phase2": 14
+}

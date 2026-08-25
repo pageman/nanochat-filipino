@@ -1,0 +1,126 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:10:40Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": {
+        "test": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+        "train": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+        "val": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c"
+      },
+      "id": "D1_tl_hashes_match_pdf",
+      "ok": true
+    },
+    {
+      "detail": {
+        "test": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+        "train": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+        "val": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b"
+      },
+      "id": "D2_en_hashes_match_pdf",
+      "ok": true
+    },
+    {
+      "detail": {
+        "english": "wikitext103_official_raw_splits",
+        "legacy_external_holdout": true,
+        "tagalog": "p11_reuse"
+      },
+      "id": "D3_split_origin_p11_reuse",
+      "ok": true
+    },
+    {
+      "detail": {
+        "en_overlap": 0,
+        "tl_overlap": 0
+      },
+      "id": "D4_overlap_zero",
+      "ok": true
+    },
+    {
+      "detail": {
+        "note": "test jsonl stay in processed/holdout paths, not NANOCHAT_DATA_DIR"
+      },
+      "id": "D5_no_test_in_train_paths",
+      "ok": true
+    },
+    {
+      "detail": {
+        "en_train_rows": 28472,
+        "en_train_unique_text_sha256": 28232,
+        "note": "Official EN train jsonl has intra-split duplicate rows (frozen identity). MUST NOT drop them. Cross-split overlap is D4."
+      },
+      "id": "D6_frozen_files_not_deduped",
+      "ok": true
+    }
+  ],
+  "english": {
+    "test": {
+      "n_doc_ids": 60,
+      "n_rows": 60,
+      "n_unique_doc_ids": 60,
+      "n_unique_text_sha256": 60,
+      "path": "data/interim/wikitext-103/english_test.jsonl",
+      "sha256": "2bccabc020cbb8d09273cccdc42ed926957b83824ca767c96fb588041b8d434e",
+      "utf8_bytes": 1289062
+    },
+    "train": {
+      "n_doc_ids": 28472,
+      "n_rows": 28472,
+      "n_unique_doc_ids": 28232,
+      "n_unique_text_sha256": 28232,
+      "path": "data/interim/wikitext-103/english_train.jsonl",
+      "sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+      "utf8_bytes": 539903397
+    },
+    "val": {
+      "n_doc_ids": 60,
+      "n_rows": 60,
+      "n_unique_doc_ids": 60,
+      "n_unique_text_sha256": 60,
+      "path": "data/interim/wikitext-103/english_val.jsonl",
+      "sha256": "874dec29844b3d46fc39e5479ee2dc4b3ba37309d9baf3bba4b5654697f3ae3b",
+      "utf8_bytes": 1145486
+    }
+  },
+  "gate": "D",
+  "gpu": false,
+  "host": "Mac/CPU",
+  "next_gate": "F",
+  "no_bpb": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "script": "scripts/p6/gate_d_split_freeze.py",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "tagalog": {
+    "test": {
+      "n_doc_ids": 8058,
+      "n_rows": 8058,
+      "n_unique_doc_ids": 8058,
+      "n_unique_text_sha256": 8058,
+      "path": "data/processed/wikitext-tl39/test/test.jsonl",
+      "sha256": "3bd193458f4c494d84dae345548c0c01cb6cd7275e98d6ed39a41d517a093baf",
+      "utf8_bytes": 6249461
+    },
+    "train": {
+      "n_doc_ids": 37602,
+      "n_rows": 37602,
+      "n_unique_doc_ids": 37602,
+      "n_unique_text_sha256": 37602,
+      "path": "data/interim/wikitext-tl39/splits/train.jsonl",
+      "sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+      "utf8_bytes": 29165137
+    },
+    "val": {
+      "n_doc_ids": 8058,
+      "n_rows": 8058,
+      "n_unique_doc_ids": 8058,
+      "n_unique_text_sha256": 8058,
+      "path": "data/interim/wikitext-tl39/splits/val.jsonl",
+      "sha256": "4d51644b84d05050bfc8c515079e60f6e437082b6cce2122e9ed00e7b1db2b1c",
+      "utf8_bytes": 6771275
+    }
+  }
+}

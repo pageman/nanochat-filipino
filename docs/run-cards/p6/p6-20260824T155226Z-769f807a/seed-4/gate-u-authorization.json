@@ -1,0 +1,21 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-25T06:10:33Z",
+  "authorized_by": "operator chat: Do Gate U to V",
+  "authorizes_test": false,
+  "gate": "U",
+  "host_class": "NVIDIA CUDA (A40 class)",
+  "must_not": [
+    "print BPB",
+    "run Gate V",
+    "unblind",
+    "pod stop",
+    "test access"
+  ],
+  "note": "Does not authorize V/X, unblinding, or pod stop by itself; V needs same chat auth.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "12-cell validation BPB matrix + lockboxed topology contrasts for seed 4; seal hashes only; no restricted test",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

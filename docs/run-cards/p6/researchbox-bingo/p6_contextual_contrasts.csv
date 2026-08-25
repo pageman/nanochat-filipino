@@ -1,0 +1,5 @@
+seed,tau,R_TL,A_EN,R_TL_def,A_EN_def,role
+4,m-fine,-0.963623,-1.452467,TL(M-tau)-TL(C2),EN(M-tau)-EN(C1),descriptive_secondary_contextual
+4,m-coarse,-1.005239,-1.405162,TL(M-tau)-TL(C2),EN(M-tau)-EN(C1),descriptive_secondary_contextual
+4,m-blocked,-0.761016,-1.363439,TL(M-tau)-TL(C2),EN(M-tau)-EN(C1),descriptive_secondary_contextual
+4,m-rand,-0.962536,-1.451392,TL(M-tau)-TL(C2),EN(M-tau)-EN(C1),descriptive_secondary_contextual

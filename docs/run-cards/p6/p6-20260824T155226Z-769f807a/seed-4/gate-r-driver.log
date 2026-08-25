@@ -1,0 +1,21 @@
+P6_ROOT=/root/p6-study
+P6_RUN_ID=p6-20260824T155226Z-769f807a
+NANOCHAT_BASE_DIR=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a
+P6_SAFE_PROGRESS_ROOT=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/safe_progress
+P6_LOCKBOX_ROOT=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/lockbox
+P6_TIER2_LOCAL_ROOT=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/tier2-resume-kit
+P6_NETWORK_VOLUME_ID=3xuadadrph
+P6_NETWORK_VOLUME_DC=CA-MTL-3
+NANOCHAT_DATA_DIR=<unset>
+P6_TEST_JSONL_EN=<UNSET>
+P6_TEST_JSONL_TL=<UNSET>
+NOTE: Gate 0 filed. Shared gates A–G next; GPU only after authorization. Lockout-resistant Tier-2 is mandatory.
+NANOCHAT_DATA_DIR_TL=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/streams/c1_tl
+NANOCHAT_DATA_DIR_EN=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/streams/c2_en
+NANOCHAT_DATA_DIR_C3=/root/p6-study/data/cache/p6-20260824T155226Z-769f807a/streams/c3_mix
+NANOCHAT_DATA_DIR=<unset>
+NOTE: P6 CUDA env only. Parent/children have not started. Confirmatory class is NVIDIA CUDA (A40 class).
+cuda NVIDIA A40
+gate_r_started seed=4 tag=p6-s4-c1-tl-d20 utc=2026-08-24T18:20:59Z
+gate_r_exit_code=0
+{"arm": "c1", "at_utc": "2026-08-24T18:47:48Z", "gate": "R", "health": "pass", "reload_ok": true, "seed": 4, "status": "pass"}

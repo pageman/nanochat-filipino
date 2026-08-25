@@ -1,0 +1,97 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:10:29Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": {
+        "n_files": 31
+      },
+      "id": "C-01_cache_sentinel",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "C-02_no_climbmix_fineweb_dclm_oscar",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "C-03_no_prior_checkpoint_in_p5_cache",
+      "ok": true
+    },
+    {
+      "detail": {
+        "hits": []
+      },
+      "id": "C-04_tests_absent_from_train_roots",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "C-05_no_secrets_gitignore",
+      "ok": true
+    },
+    {
+      "detail": {
+        "mode": "0o444"
+      },
+      "id": "C-06_pdf_not_writable",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "C-07_hubs_not_write_targets",
+      "ok": true
+    },
+    {
+      "detail": {
+        "lockbox": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a/lockbox",
+        "safe": "/Users/paulpajo/Projects/nanochat-filipino/data/cache/p6-20260824T155226Z-769f807a/safe_progress"
+      },
+      "id": "C-08_lockbox_vs_safe",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "C-09_prior_env_not_sourced",
+      "ok": true
+    },
+    {
+      "detail": {
+        "p3_b3_mix_order_sha_refused": "b6ae432b625b6768f84db3f45c411378d1d5a5fdbd15cbfc0e5f6c511196b1a0",
+        "p3_mix_order_exists": true
+      },
+      "id": "C-10_p3_b3_not_aliased_as_c3",
+      "ok": true
+    },
+    {
+      "detail": {
+        "en_overlap": 0,
+        "tl_overlap": 0
+      },
+      "id": "C-11_document_overlap_zero",
+      "ok": true
+    },
+    {
+      "detail": {
+        "hf_revision_sha": "b08601e04326c79dfdd32d625aee71d232d685c3"
+      },
+      "id": "C-12_source_revision_readonly",
+      "ok": true
+    }
+  ],
+  "gate": "C",
+  "gpu": false,
+  "host": "Mac/CPU",
+  "next_gate": "D",
+  "no_p5_outcomes": true,
+  "p6_outcome_access_count": 0,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "script": "scripts/p6/gate_c_hygiene.py",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "test_access_count": 0,
+  "validation_scalar_access_count": 0
+}

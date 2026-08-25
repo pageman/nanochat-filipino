@@ -1,0 +1,18 @@
+{
+  "arm": "m-fine",
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-25T07:32:19Z",
+  "authorized_touches": 1,
+  "blinded": true,
+  "component_evaluations": 2,
+  "gate": "V",
+  "gpu": true,
+  "next_gate": "X",
+  "no_bpb_in_receipt": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "seed": 4,
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "test_access": 1
+}

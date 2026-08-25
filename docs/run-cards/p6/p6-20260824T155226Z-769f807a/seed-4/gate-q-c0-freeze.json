@@ -1,0 +1,50 @@
+{
+  "additional_train_tokens": 0,
+  "allowed_child_tags": [
+    "p6-s4-c1-tl-d20",
+    "p6-s4-c2-en-d20",
+    "p6-s4-m-fine-d20",
+    "p6-s4-m-coarse-d20",
+    "p6-s4-m-blocked-d20",
+    "p6-s4-m-rand-d20"
+  ],
+  "arm": "C0",
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T17:57:53Z",
+  "blinded": true,
+  "checkpoint_sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+  "child_parent_whitelist": [
+    "p6-s4-c0-tl-d20"
+  ],
+  "copied": {
+    "meta_000294.json": {
+      "bytes": 1344,
+      "path": "data/cache/p6-20260824T155226Z-769f807a/p6-s4/c0/frozen/p6-s4-c0-tl-d20/meta_000294.json",
+      "sha256": "9b7c9a3480aa45cf6f0042afb51acdeb543ccd8c9ce7e0caba4f000c7d7735c3"
+    },
+    "model_000294.pt": {
+      "bytes": 2663446486,
+      "path": "data/cache/p6-20260824T155226Z-769f807a/p6-s4/c0/frozen/p6-s4-c0-tl-d20/model_000294.pt",
+      "sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9"
+    }
+  },
+  "fresh_optimizer_required": true,
+  "frozen_dir": "data/cache/p6-20260824T155226Z-769f807a/p6-s4/c0/frozen/p6-s4-c0-tl-d20",
+  "gate": "Q",
+  "gpu": false,
+  "host": "PaulPajos-MacBook-Pro.local",
+  "immutable": true,
+  "load_optimizer": false,
+  "model_tag": "p6-s4-c0-tl-d20",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "next_gate": "R_4",
+  "p0_t_status": "PASS",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "seed": 4,
+  "source_tag": "p6-s4-tl0-d20",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "test_access": 0,
+  "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+}

@@ -1,0 +1,107 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:47:54Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": "Linux",
+      "id": "I0_not_darwin",
+      "ok": true
+    },
+    {
+      "detail": "fresh Tagalog TL0 d8 then d20; parent-init seed 4 only; tag p6-s4-tl0-d{8,20}",
+      "id": "I0_authorization",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "I0_gate_h_pass",
+      "ok": true
+    },
+    {
+      "detail": "first/only panel seed",
+      "id": "I0_prior_seed_terminal",
+      "ok": true
+    },
+    {
+      "detail": {
+        "token_bytes.pt": true,
+        "tokenizer.pkl": true,
+        "train_00000.parquet": true,
+        "train_00001.parquet": true,
+        "train_00002.parquet": true,
+        "train_00003.parquet": true,
+        "val.parquet": true
+      },
+      "id": "I0_hashes",
+      "ok": true
+    },
+    {
+      "detail": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+      "id": "I0_pin",
+      "ok": true
+    },
+    {
+      "detail": [
+        "train_00000.parquet",
+        "train_00001.parquet",
+        "train_00002.parquet",
+        "train_00003.parquet",
+        "val.parquet"
+      ],
+      "id": "I0_last_shard_val",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "I0_no_test_in_c1",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "I0_data_dir_not_c3",
+      "ok": true
+    },
+    {
+      "detail": {
+        "p6-s4-tl0-d20": [],
+        "p6-s4-tl0-d8": []
+      },
+      "id": "I0_tl0_dirs_empty",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "I0_forbidden_reject_live",
+      "ok": true
+    },
+    {
+      "detail": 294,
+      "id": "I0_n_tl0_locked",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "id": "I0_warmup_legal",
+      "ok": true
+    },
+    {
+      "detail": "NVIDIA A40",
+      "id": "I0_cuda",
+      "ok": true
+    },
+    {
+      "detail": "NVIDIA A40",
+      "id": "I0_gpu_class_a40",
+      "ok": true
+    }
+  ],
+  "gate": "I-preflight",
+  "host": "638620de6971",
+  "note": "Exit 0 authorizes Gate I_4 TL0 only.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "seed": 4,
+  "status": "ready_for_tl0",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

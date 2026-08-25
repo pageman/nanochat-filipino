@@ -1,0 +1,21 @@
+name,type,definition
+seed,int,Parent-init seed (always 4)
+arm,string,C0/C1/C2/M-fine/M-coarse/M-blocked/M-rand
+tau,string,Topology alternative key
+role,string,Registered role of the arm
+tl_val_bpb_full,float,Tagalog full-validation BPB
+en_val_bpb_full,float,English full-validation BPB
+delta_tl,float,TL(M-tau)-TL(M-fine)
+delta_en,float,EN(M-tau)-EN(M-fine)
+delta_tl_class,string,better/worse/within_delta vs M-fine
+delta_en_class,string,better/worse/within_delta vs M-fine
+R_TL,float,TL(M-tau)-TL(C2); contextual
+A_EN,float,EN(M-tau)-EN(C1); contextual
+m_fine_en_test_bpb,float,Secondary English holdout BPB; M-fine only
+m_fine_tl_test_bpb,float,Secondary Tagalog holdout BPB; M-fine only
+variable,string,Long-facts variable name
+value,string,Long-facts value
+description,string,Long-facts description
+artifact,string,Hashed artifact role
+path_or_label,string,Relative path or label
+sha2_256,string,SHA-256 of a FILE with sha2-256: prefix; not a participant ID

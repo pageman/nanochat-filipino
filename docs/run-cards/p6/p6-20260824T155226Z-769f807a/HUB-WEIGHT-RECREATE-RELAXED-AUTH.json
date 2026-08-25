@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-08-25T19:07:00Z",
+  "authorized_by": "operator chat: Relax the accept rule; finish four arms; document new SHAs; Hub-upload recreate set",
+  "gate": "W5-recreate-relaxed",
+  "pod_id": "i9m7tabod1b34y",
+  "accept_rule": "new_sha_ok_not_original_gate_t",
+  "scope": "Complete m-fine (keep existing recreate), m-coarse, m-blocked, m-rand; update RELEASE_MANIFEST to recreate SHAs; upload pageman/nanochat-filipino-p6-m-schedule-topology",
+  "must_not": ["claim bitwise identity with original Gate T", "amend AsPredicted primary analysis"],
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "seed": 4
+}

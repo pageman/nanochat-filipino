@@ -1,0 +1,111 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:10:03Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": {
+        "expected": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      },
+      "id": "A1_pin_checkout",
+      "ok": true
+    },
+    {
+      "detail": {
+        "disallowed": []
+      },
+      "id": "A2_allowed_diff_only_data_hook",
+      "ok": true
+    },
+    {
+      "detail": "data/cache/p6-20260824T155226Z-769f807a/SENTINEL_P6_ONLY",
+      "id": "A3_sentinel",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "A4_base_dir_is_p6_cache",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "A5_p6_env_refuses_prior",
+      "ok": true
+    },
+    {
+      "detail": {
+        "NANOCHAT_BASE_DIR": null
+      },
+      "id": "A6_env_scan_no_prior_cache",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "id": "A7_no_checkpoints_in_p6_cache",
+      "ok": true
+    },
+    {
+      "detail": {
+        "p5_official_reference": "78e77d9761fa4473344abd4773129e56f04561e615bdbcfad144ab8730ded977",
+        "sha256": "a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481"
+      },
+      "id": "A8_evaluator_formula_frozen",
+      "ok": true
+    },
+    {
+      "detail": "scripts/p6/forbidden_parents.py",
+      "id": "A9_forbidden_parents",
+      "ok": true
+    },
+    {
+      "detail": {
+        "distinct": true,
+        "path": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/seed-knob-proof.json",
+        "status": "pass"
+      },
+      "id": "A10_seed_knob_proof",
+      "ok": true
+    },
+    {
+      "detail": "docs/hub/p6-m-schedule-topology/RELEASE_MANIFEST.json",
+      "id": "A11_release_manifest_skeleton",
+      "ok": true
+    },
+    {
+      "detail": "manifests/p6/p6_gate_skill_registry.json",
+      "id": "A12_skill_registry",
+      "ok": true
+    },
+    {
+      "detail": {
+        "returncode": 0,
+        "stdout_tail": "{\n  \"status\": \"pass\",\n  \"skills\": 17,\n  \"manual_skills\": 6,\n  \"references\": 4\n}\n"
+      },
+      "id": "A13_skill_validator",
+      "ok": true
+    }
+  ],
+  "child_arms": [
+    "c1",
+    "c2",
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand"
+  ],
+  "evaluator_sha256": "a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481",
+  "gate": "A",
+  "gpu": false,
+  "host": "Mac/CPU",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "next_gate": "B",
+  "no_p6_outcomes": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "parent_seed": 4,
+  "release_manifest": "docs/hub/p6-m-schedule-topology/RELEASE_MANIFEST.json",
+  "script": "scripts/p6/gate_a_source_pin.py",
+  "skill_registry": "manifests/p6/p6_gate_skill_registry.json",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

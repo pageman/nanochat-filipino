@@ -1,0 +1,28 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T17:50:15Z",
+  "blinded": true,
+  "depths": {
+    "20": {
+      "checkpoint_sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+      "pass_both_floors": true
+    },
+    "8": {
+      "checkpoint_sha256": "fbf6ff1b2ee278a98c57c7510676a27bf9480ca9585e273d75e53b8c72ae07f8",
+      "pass_both_floors": true
+    }
+  },
+  "gate": "P0-T",
+  "gpu": true,
+  "host": "638620de6971",
+  "lockbox_sha256": "ef9c65c27882796694814f8edd06f9aa73092d44d2aba3a746e1975fb2a3bc6e",
+  "next_gate": "Q_4",
+  "no_bpb_in_receipt": true,
+  "p0_t_status": "PASS",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "researchbox_id": null,
+  "seed": 4,
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "untrained_floor_policy": "seed_matched"
+}

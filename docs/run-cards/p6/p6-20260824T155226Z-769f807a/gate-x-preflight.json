@@ -1,0 +1,66 @@
+{
+  "at_utc": "2026-08-25T09:01:23Z",
+  "blinded": true,
+  "checks": [
+    {
+      "check": "outcome_access_zero",
+      "detail": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "panel_not_yet_unblinded",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "auth_present",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "no_prior_event",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_terminal",
+      "detail": "V",
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_test_access_1",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_seal_exists",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_no_seed_level_x",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_v_arm_m_fine",
+      "detail": null,
+      "status": "PASS"
+    },
+    {
+      "check": "seed_4_twelve_plus_c0_cells",
+      "detail": {
+        "missing_count": 0
+      },
+      "status": "PASS"
+    }
+  ],
+  "gate": "X-preflight",
+  "no_bpb_printed": true,
+  "p5_recurrence_not_primary": true,
+  "primary_analysis": "topology_contrasts_vs_m_fine",
+  "ready_for_unblinding": true,
+  "terminals": {
+    "4": "V"
+  }
+}

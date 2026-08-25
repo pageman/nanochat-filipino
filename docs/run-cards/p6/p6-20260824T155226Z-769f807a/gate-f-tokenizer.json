@@ -1,0 +1,73 @@
+{
+  "aspredicted_id": 307969,
+  "at_utc": "2026-08-24T16:10:40Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": {
+        "src": "data/cache/p4-20260821T060032Z-92d63d4/tokenizer"
+      },
+      "id": "F0_carry_forward_sources_exist",
+      "ok": true
+    },
+    {
+      "detail": {
+        "expected": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+        "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+      },
+      "id": "F1_tokenizer_pkl_sha",
+      "ok": true
+    },
+    {
+      "detail": {
+        "expected": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+        "got": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132"
+      },
+      "id": "F2_token_bytes_sha",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "F3_write_probe_pkl",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "F4_write_probe_bytes",
+      "ok": true
+    },
+    {
+      "detail": true,
+      "id": "F5_not_p2_english_tokenizer",
+      "ok": true
+    },
+    {
+      "detail": {
+        "fertility": "deferred_optional_lockbox_after_E"
+      },
+      "id": "F6_no_p5_bpb",
+      "ok": true
+    }
+  ],
+  "gate": "F",
+  "gpu": false,
+  "hashes": {
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+  },
+  "host": "Mac/CPU",
+  "input_manifest": {
+    "reuse_tokenizer_artifacts": true,
+    "reuse_weights": false,
+    "src_tokenizer_dir": "data/cache/p4-20260821T060032Z-92d63d4/tokenizer"
+  },
+  "next_gate": "E",
+  "no_p5_bpb": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "policy": "carry_forward",
+  "researchbox_id": null,
+  "script": "scripts/p6/gate_f_tokenizer.py",
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY",
+  "tokenizer_dir": "data/cache/p6-20260824T155226Z-769f807a/tokenizer"
+}

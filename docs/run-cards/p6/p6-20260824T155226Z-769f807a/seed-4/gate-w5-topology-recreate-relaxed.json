@@ -1,0 +1,39 @@
+{
+  "accept_rule": "relaxed_new_sha",
+  "arms": {
+    "m-blocked": {
+      "bytes": 2663446486,
+      "matches_original_gate_t": false,
+      "original_gate_t_sha256": "5ec45216eb0a09b5bc04f04f4622d85f7d8f7ff8861fdea6de5487f7c18fa526",
+      "sha256": "ebfc4853b51cc8c81480ffb57640487d3fe344d38ec51ad5bb1eb7cf159272d2",
+      "source_relpath": "base_checkpoints/p6-s4-m-blocked-d20/model_000294.pt"
+    },
+    "m-coarse": {
+      "bytes": 2663446486,
+      "matches_original_gate_t": false,
+      "original_gate_t_sha256": "86588ee9f72ea4a85a821c2c882a363d55d3e50ccb325bdabaa0706e1e911dfe",
+      "sha256": "c09072fe764f1debd9607f697e2aa8484ef394a96d2ef096f05bb1f0d6c518f7",
+      "source_relpath": "base_checkpoints/p6-s4-m-coarse-d20/model_000294.pt"
+    },
+    "m-fine": {
+      "bytes": 2663446486,
+      "matches_original_gate_t": false,
+      "original_gate_t_sha256": "a0139607a8fdf2772d4b8e722b449b6a8db04056a8dc38cd177708af8f15eeab",
+      "sha256": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+      "source_relpath": "base_checkpoints/p6-s4-m-fine-d20/model_000294.pt"
+    },
+    "m-rand": {
+      "bytes": 2663446486,
+      "matches_original_gate_t": false,
+      "original_gate_t_sha256": "38580cd501c0d87a1a502397697f7c7e427134eb7cb64bdce2ba6be1a036f108",
+      "sha256": "16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d",
+      "source_relpath": "base_checkpoints/p6-s4-m-rand-d20/model_000294.pt"
+    }
+  },
+  "at_utc": "2026-08-25T20:28:55Z",
+  "c0_sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+  "gate": "W5-recreate-relaxed",
+  "note": "Technical recreate for Hub deposit. New SHAs supersede original Gate T bits for Hub only; science claims remain Gate X / filed receipts.",
+  "seed": 4,
+  "status": "pass"
+}

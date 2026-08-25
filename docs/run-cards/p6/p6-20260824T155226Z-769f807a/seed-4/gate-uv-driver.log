@@ -1,0 +1,51 @@
+gate_u_start utc=2026-08-25T07:28:03Z
+2026-08-25 07:28:07,262 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-08-25 07:28:07,263 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-c1-tl-d20 with step 294
+2026-08-25 07:28:09,288 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+Gate U_4 evaluating p6-s4-c1-tl-d20 (scalars -> lockbox)
+2026-08-25 07:28:11,282 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-c1-tl-d20 with step 294
+2026-08-25 07:28:12,855 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-c1-tl-d20/english_val bpb=2.892551 bytes=548831 tokens=155642 3.7s
+p6-s4-c1-tl-d20/tagalog_val bpb=0.564548 bytes=5868797 tokens=1286864 26.7s
+Gate U_4 evaluating p6-s4-c2-en-d20 (scalars -> lockbox)
+2026-08-25 07:28:43,526 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-c2-en-d20 with step 294
+2026-08-25 07:28:45,219 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-c2-en-d20/english_val bpb=1.269724 bytes=548831 tokens=155642 3.4s
+p6-s4-c2-en-d20/tagalog_val bpb=2.219915 bytes=5868797 tokens=1286864 26.8s
+Gate U_4 evaluating p6-s4-m-fine-d20 (scalars -> lockbox)
+2026-08-25 07:29:15,762 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-fine-d20 with step 294
+2026-08-25 07:29:17,686 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-fine-d20/english_val bpb=1.440084 bytes=548831 tokens=155642 3.4s
+p6-s4-m-fine-d20/tagalog_val bpb=1.256292 bytes=5868797 tokens=1286864 26.9s
+Gate U_4 evaluating p6-s4-m-coarse-d20 (scalars -> lockbox)
+2026-08-25 07:29:48,245 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-coarse-d20 with step 294
+2026-08-25 07:29:50,675 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-coarse-d20/english_val bpb=1.487389 bytes=548831 tokens=155642 3.4s
+p6-s4-m-coarse-d20/tagalog_val bpb=1.214675 bytes=5868797 tokens=1286864 26.9s
+Gate U_4 evaluating p6-s4-m-blocked-d20 (scalars -> lockbox)
+2026-08-25 07:30:21,697 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-blocked-d20 with step 294
+2026-08-25 07:30:24,185 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-blocked-d20/english_val bpb=1.529111 bytes=548831 tokens=155642 3.4s
+p6-s4-m-blocked-d20/tagalog_val bpb=1.458898 bytes=5868797 tokens=1286864 26.9s
+Gate U_4 evaluating p6-s4-m-rand-d20 (scalars -> lockbox)
+2026-08-25 07:30:55,173 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-rand-d20 with step 294
+2026-08-25 07:30:57,184 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-rand-d20/english_val bpb=1.441159 bytes=548831 tokens=155642 3.4s
+p6-s4-m-rand-d20/tagalog_val bpb=1.257379 bytes=5868797 tokens=1286864 26.9s
+Gate U_4 evaluating C0 English descriptive (scalars -> lockbox)
+2026-08-25 07:31:28,608 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-tl0-d20 with step 294
+2026-08-25 07:31:30,555 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-tl0-d20/english_val bpb=2.683814 bytes=548831 tokens=155642 3.4s
+Gate U_4: seal created; contrasts lockboxed; test_access=0
+gate_u_done rc=0 utc=2026-08-25T07:31:35Z
+gate_v_start utc=2026-08-25T07:31:35Z
+2026-08-25 07:31:39,415 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-08-25 07:31:39,416 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-fine-d20 with step 294
+2026-08-25 07:31:41,025 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-fine-d20/english_test bpb=1.450423 bytes=384739 tokens=108537 2.8s
+2026-08-25 07:31:47,633 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 1
+2026-08-25 07:31:47,633 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Loading model from /root/p6-study/data/cache/p6-20260824T155226Z-769f807a/base_checkpoints/p6-s4-m-fine-d20 with step 294
+2026-08-25 07:31:49,191 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Building model with config: {'sequence_len': 2048, 'vocab_size': 32768, 'n_layer': 20, 'n_head': 10, 'n_kv_head': 10, 'n_embd': 1280, 'window_pattern': 'SSSL'}
+p6-s4-m-fine-d20/tagalog_test bpb=1.260475 bytes=5428863 tokens=1198803 25.1s
+one authorized m-fine-only test event completed for seed 4
+gate_v_done rc=0 utc=2026-08-25T07:32:20Z

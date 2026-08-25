@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-08-25T20:45:17Z",
+  "independent_rehash": {
+    "seed-4/c0/p6-s4-c0-tl-d20-model_000294.pt": {
+      "expect": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+      "got": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+      "ok": true
+    },
+    "seed-4/m-fine/p6-s4-m-fine-d20-model_000294.pt": {
+      "expect": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+      "got": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+      "ok": true
+    },
+    "seed-4/m-rand/p6-s4-m-rand-d20-model_000294.pt": {
+      "expect": "16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d",
+      "got": "16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d",
+      "ok": true
+    },
+    "token_bytes.pt": {
+      "expect": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "got": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "ok": true
+    },
+    "tokenizer.pkl": {
+      "expect": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "got": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "ok": true
+    }
+  },
+  "inventory": 9,
+  "repo_id": "pageman/nanochat-filipino-p6-m-schedule-topology",
+  "status": "uploaded_verified",
+  "weight_lineage": "technical_recreate_w5_relaxed",
+  "weights_commit": "5d3872b000fe3aa7ed2d25e2e73927330002cb9b",
+  "weights_commit_url": "https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology/commit/5d3872b000fe3aa7ed2d25e2e73927330002cb9b"
+}

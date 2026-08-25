@@ -1,0 +1,25 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T16:43:14Z",
+  "authorized_by": "operator chat: do Gate I",
+  "authorizes_children": false,
+  "authorizes_other_seeds": false,
+  "authorizes_p0t": false,
+  "gate": "I",
+  "host_class": "NVIDIA CUDA A40",
+  "must_not": [
+    "p6-s0-*",
+    "p4-c0-*",
+    "print BPB",
+    "Mac MPS",
+    "start other seeds",
+    "P0-T",
+    "children"
+  ],
+  "note": "Does not authorize P0-T, Q, children, test access, unblinding, or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "fresh Tagalog TL0 d8 then d20; parent-init seed 4 only; tag p6-s4-tl0-d{8,20}",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

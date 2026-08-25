@@ -1,0 +1,43 @@
+{
+  "gate": "H",
+  "status": "waiting_capacity",
+  "at_utc": "2026-08-24T16:21:10Z",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "host_class": "NVIDIA A40",
+  "authorization": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/gate-h-authorization.json",
+  "create_attempts": [
+    {
+      "cloud": "SECURE",
+      "result": "400 no instances"
+    },
+    {
+      "cloud": "COMMUNITY",
+      "result": "400 no instances"
+    },
+    {
+      "cloud": "SECURE",
+      "dataCenters": [
+        "CA-MTL-1",
+        "CA-MTL-3",
+        "EU-SE-1",
+        "EU-NL-1",
+        "US-CA-2",
+        "EUR-IS-1"
+      ],
+      "result": "400 no instances"
+    },
+    {
+      "cloud": "SECURE",
+      "volume": "container-only",
+      "result": "400 no instances"
+    }
+  ],
+  "live_availability": {
+    "CA-MTL-1": "LOW",
+    "EU-SE-1": "LOW",
+    "overall": "NONE/contested",
+    "cuda_12.8_catalog": "Low"
+  },
+  "policy": "Do not substitute GPU class. Poll and retry A40 only. Network volume 3xuadadrph not mounted (DC mismatch).",
+  "next": "retry create-pod A40 until capacity or operator abort"
+}

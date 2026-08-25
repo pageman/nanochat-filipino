@@ -133,3 +133,30 @@ Gates 0 / A–H / I₁–V₃ / X / W are complete (panel unblinded). Confirmato
 Trainer in-loop `val_bpb` is **not** the primary DV. The registered count table is under [results/p5/](results/p5/).
 
 P5 is a **post-P4** confirmatory closed three-seed panel. Weights live on Hugging Face (`pageman/nanochat-filipino-p5-p4-multi-seed`), not in this git tree.
+
+## Start here (P6-M)
+
+Does **not** amend AsPredicted #306780 / #306935 / #307342 / #307591 / #307836, prior ResearchBoxes, or Hub `p1`–`p5` IDs. Never use `scripts/p1`–`p5` env for P6. One unused parent-init seed **4**: frozen Tagalog C0, then C1/C2 plus four filed schedule-topology children (M-fine / M-coarse / M-blocked / M-rand) under a fixed phase-2 token budget.
+
+**Study record:** [docs/p6/](docs/p6/) · https://github.com/pageman/nanochat-filipino/tree/main/docs/p6  
+**Lock:** [docs/papers/p6-m-schedule-topology/LOCK.json](docs/papers/p6-m-schedule-topology/LOCK.json)  
+**Paper (source / PDF):** [docs/papers/p6-m-schedule-topology/paper.tex](docs/papers/p6-m-schedule-topology/paper.tex) · [paper.pdf](docs/papers/p6-m-schedule-topology/paper_outputs/paper.pdf)  
+**AsPredicted #307969:** https://aspredicted.org/bk6m9d.pdf (anonymous)  
+**ResearchBox #8918:** https://researchbox.org/8918  
+**AsCollected #2541:** `NANOCHAT-FILIPINO P6-M` (create share URL when ready)  
+**Results:** [results/p6/](results/p6/)  
+**Hub documentation pack:** [docs/hub/p6-m-schedule-topology/](docs/hub/p6-m-schedule-topology/)  
+**Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology  
+**Weights commit:** [`5d3872b0`](https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology/commit/5d3872b000fe3aa7ed2d25e2e73927330002cb9b)  
+**Environment:** [scripts/p6/env.sh](scripts/p6/env.sh) · [scripts/p6/env.cuda.sh](scripts/p6/env.cuda.sh)  
+**Data/code notices:** [DATA_AND_CODE_NOTICES.md](DATA_AND_CODE_NOTICES.md)
+
+## Status (P6-M)
+
+Gates **0 / A–X / W** complete for run `p6-20260824T155226Z-769f807a` (seed **4** only). Primary result: topology contrasts ΔTL/ΔEN vs M-fine (`δ=0.01`). Policy A: M-fine test is secondary only. This repo is the P6-M audit trail under `docs/p6/`, `docs/papers/p6-m-schedule-topology/`, `docs/run-cards/p6/`, `scripts/p6/`, `results/p6/`, `docs/hub/p6-m-schedule-topology/`, and `manifests/p6/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+
+**Hub weight lineage:** C0/C1/C2/tokenizer are original study artifacts. The four topology children on Hub are a **2026-08-25 technical recreate** (new SHA-256; not bitwise identical to the original Gate T terminals, which were lost from the sticky pod volume). Science claims remain Gate X / filed receipts.
+
+Trainer in-loop `val_bpb` is **not** the primary DV. Machine-readable contrasts: [results/p6/p6-s4-released-contrasts.json](results/p6/p6-s4-released-contrasts.json).
+
+P6-M is a **post-P5** one-seed schedule-topology study. Weights live on Hugging Face (`pageman/nanochat-filipino-p6-m-schedule-topology`), not in this git tree.

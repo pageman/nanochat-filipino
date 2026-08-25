@@ -1,0 +1,173 @@
+{
+  "created_utc": "2026-08-24T16:10:03Z",
+  "gates": {
+    "0": {
+      "host": "laptop",
+      "script": "scripts/p6/gate0_accept.py",
+      "skills": [
+        "nanochat-gate-spine",
+        "nanochat-lockbox-blinding",
+        "nanochat-study-identity"
+      ]
+    },
+    "A": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_a_source_pin.py",
+      "skills": [
+        "nanochat-new-study-from-prior",
+        "nanochat-study-identity",
+        "nanochat-bpb-eval"
+      ]
+    },
+    "B": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_b_raw_assets.py",
+      "skills": [
+        "nanochat-study-identity",
+        "nanochat-mix-identity",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "C": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_c_hygiene.py",
+      "skills": [
+        "nanochat-study-identity",
+        "nanochat-mix-identity",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "D": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_d_split_freeze.py",
+      "skills": [
+        "nanochat-study-identity",
+        "nanochat-mix-identity",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "E": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_e_streams.py",
+      "skills": [
+        "nanochat-mix-identity"
+      ]
+    },
+    "F": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_f_tokenizer.py",
+      "skills": [
+        "nanochat-bpb-eval",
+        "nanochat-study-identity"
+      ]
+    },
+    "G": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_g_budget.py",
+      "skills": [
+        "nanochat-gate-spine",
+        "nanochat-bpb-eval",
+        "nanochat-frozen-parent-continue",
+        "nanochat-runpod-study-pod"
+      ]
+    },
+    "H": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_h_smoke.sh",
+      "skills": [
+        "nanochat-runpod-study-pod"
+      ]
+    },
+    "I": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_i_tl0.sh",
+      "skills": [
+        "nanochat-runpod-study-pod",
+        "nanochat-study-identity",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "P0-T": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_p0t.sh",
+      "skills": [
+        "nanochat-bpb-eval",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "Q": {
+      "host": "cpu",
+      "script": "scripts/p6/gate_q_c0_freeze.py",
+      "skills": [
+        "nanochat-frozen-parent-continue"
+      ]
+    },
+    "R": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_r_c1.sh",
+      "skills": [
+        "nanochat-frozen-parent-continue",
+        "nanochat-runpod-study-pod",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "S": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_s_c2.sh",
+      "skills": [
+        "nanochat-frozen-parent-continue",
+        "nanochat-runpod-study-pod",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "T1-T4": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_t_topology.sh",
+      "skills": [
+        "nanochat-frozen-parent-continue",
+        "nanochat-mix-identity",
+        "nanochat-runpod-study-pod",
+        "nanochat-lockbox-blinding"
+      ]
+    },
+    "U": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_u_seal.py",
+      "skills": [
+        "nanochat-bpb-eval",
+        "nanochat-lockbox-blinding",
+        "nanochat-gate-spine"
+      ]
+    },
+    "V": {
+      "host": "gpu",
+      "script": "scripts/p6/gate_v_c3_test.py",
+      "skills": [
+        "nanochat-c3-only-test"
+      ]
+    },
+    "W": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_w_closeout.py",
+      "skills": [
+        "nanochat-paper-lock-build",
+        "nanochat-closeout-archive",
+        "nanochat-deposit-split",
+        "nanochat-hub-weights",
+        "nanochat-researchbox-bingo"
+      ]
+    },
+    "X": {
+      "host": "laptop",
+      "script": "scripts/p6/gate_x_unblind.py",
+      "skills": [
+        "nanochat-lockbox-blinding",
+        "nanochat-panel-count",
+        "nanochat-paper-lock-build",
+        "nanochat-gate-spine"
+      ]
+    }
+  },
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "study": "P6-M"
+}

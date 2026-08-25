@@ -1,0 +1,55 @@
+{
+  "entries": [
+    {
+      "at_utc": "2026-08-24T16:37:14Z",
+      "gate": "H",
+      "next": "I_1",
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/gate-h-cuda-smoke.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-24T17:21:12Z",
+      "gate": "I_4",
+      "next": "P0-T_4",
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/seed-4/gate-i-tl0.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-24T17:50:15Z",
+      "gate": "P0-T_4",
+      "next": "Q_4",
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/seed-4/gate-p0-t.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-24T17:57:53Z",
+      "gate": "Q_4",
+      "next": "R_4",
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/seed-4/gate-q-c0-freeze.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-25T09:01:23Z",
+      "gate": "X",
+      "next": "W",
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/P6_UNBLINDING_EVENT.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-25T09:06:19Z",
+      "gate": "W",
+      "next": null,
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/p6_closeout_manifest.json",
+      "status": "pass"
+    },
+    {
+      "at_utc": "2026-08-25T09:08:04Z",
+      "gate": "W",
+      "next": null,
+      "receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/p6_closeout_manifest.json",
+      "status": "pass"
+    }
+  ],
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "study": "P6-M"
+}

@@ -1,0 +1,146 @@
+{
+  "ascollected": 2541,
+  "aspredicted": 307969,
+  "checksums": {
+    "seed-4/c0/p6-s4-c0-tl-d20-model_000294.pt": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+    "seed-4/c1/p6-s4-c1-tl-d20-model_000294.pt": "6223c116779ce3128c1e4cae0f2e03744b3068169ad7bb88f75a5146671a99bd",
+    "seed-4/c2/p6-s4-c2-en-d20-model_000294.pt": "04c06c195e513c7b30752637b80591c29e740879d91c35c323fb75fafca8747d",
+    "seed-4/m-blocked/p6-s4-m-blocked-d20-model_000294.pt": "ebfc4853b51cc8c81480ffb57640487d3fe344d38ec51ad5bb1eb7cf159272d2",
+    "seed-4/m-coarse/p6-s4-m-coarse-d20-model_000294.pt": "c09072fe764f1debd9607f697e2aa8484ef394a96d2ef096f05bb1f0d6c518f7",
+    "seed-4/m-fine/p6-s4-m-fine-d20-model_000294.pt": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+    "seed-4/m-rand/p6-s4-m-rand-d20-model_000294.pt": "16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d",
+    "token_bytes.pt": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+    "tokenizer.pkl": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8"
+  },
+  "created_utc": "2026-08-24T16:10:03Z",
+  "entries": {
+    "c0": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/c0/p6-s4-c0-tl-d20-model_000294.pt",
+      "model_tag": "p6-s4-c0-tl-d20",
+      "role": "parent",
+      "seed": 4,
+      "sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+      "source_relpath": "p6-s4/c0/frozen/p6-s4-c0-tl-d20/model_000294.pt"
+    },
+    "c1": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/c1/p6-s4-c1-tl-d20-model_000294.pt",
+      "model_tag": "p6-s4-c1-tl-d20",
+      "role": "child",
+      "seed": 4,
+      "sha256": "6223c116779ce3128c1e4cae0f2e03744b3068169ad7bb88f75a5146671a99bd",
+      "source_relpath": "base_checkpoints/p6-s4-c1-tl-d20/model_000294.pt"
+    },
+    "c2": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/c2/p6-s4-c2-en-d20-model_000294.pt",
+      "model_tag": "p6-s4-c2-en-d20",
+      "role": "child",
+      "seed": 4,
+      "sha256": "04c06c195e513c7b30752637b80591c29e740879d91c35c323fb75fafca8747d",
+      "source_relpath": "base_checkpoints/p6-s4-c2-en-d20/model_000294.pt"
+    },
+    "m-blocked": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/m-blocked/p6-s4-m-blocked-d20-model_000294.pt",
+      "matches_original_gate_t": false,
+      "model_tag": "p6-s4-m-blocked-d20",
+      "original_gate_t_sha256": "5ec45216eb0a09b5bc04f04f4622d85f7d8f7ff8861fdea6de5487f7c18fa526",
+      "role": "topology_child",
+      "seed": 4,
+      "sha256": "ebfc4853b51cc8c81480ffb57640487d3fe344d38ec51ad5bb1eb7cf159272d2",
+      "source_relpath": "base_checkpoints/p6-s4-m-blocked-d20/model_000294.pt",
+      "technical_recreate": true
+    },
+    "m-coarse": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/m-coarse/p6-s4-m-coarse-d20-model_000294.pt",
+      "matches_original_gate_t": false,
+      "model_tag": "p6-s4-m-coarse-d20",
+      "original_gate_t_sha256": "86588ee9f72ea4a85a821c2c882a363d55d3e50ccb325bdabaa0706e1e911dfe",
+      "role": "topology_child",
+      "seed": 4,
+      "sha256": "c09072fe764f1debd9607f697e2aa8484ef394a96d2ef096f05bb1f0d6c518f7",
+      "source_relpath": "base_checkpoints/p6-s4-m-coarse-d20/model_000294.pt",
+      "technical_recreate": true
+    },
+    "m-fine": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/m-fine/p6-s4-m-fine-d20-model_000294.pt",
+      "matches_original_gate_t": false,
+      "model_tag": "p6-s4-m-fine-d20",
+      "original_gate_t_sha256": "a0139607a8fdf2772d4b8e722b449b6a8db04056a8dc38cd177708af8f15eeab",
+      "role": "topology_child",
+      "seed": 4,
+      "sha256": "69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7",
+      "source_relpath": "base_checkpoints/p6-s4-m-fine-d20/model_000294.pt",
+      "technical_recreate": true
+    },
+    "m-rand": {
+      "bytes": 2663446486,
+      "hub_path": "seed-4/m-rand/p6-s4-m-rand-d20-model_000294.pt",
+      "matches_original_gate_t": false,
+      "model_tag": "p6-s4-m-rand-d20",
+      "original_gate_t_sha256": "38580cd501c0d87a1a502397697f7c7e427134eb7cb64bdce2ba6be1a036f108",
+      "role": "topology_child",
+      "seed": 4,
+      "sha256": "16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d",
+      "source_relpath": "base_checkpoints/p6-s4-m-rand-d20/model_000294.pt",
+      "technical_recreate": true
+    },
+    "token_bytes.pt": {
+      "bytes": 132649,
+      "hub_path": "token_bytes.pt",
+      "role": "tokenizer",
+      "sha256": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+      "source_relpath": "tokenizer/token_bytes.pt"
+    },
+    "tokenizer.pkl": {
+      "bytes": 411541,
+      "hub_path": "tokenizer.pkl",
+      "role": "tokenizer",
+      "sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+      "source_relpath": "tokenizer/tokenizer.pkl"
+    }
+  },
+  "expected_weightish_object_count": 9,
+  "logical_keys": [
+    "c0",
+    "c1",
+    "c2",
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand",
+    "tokenizer.pkl",
+    "token_bytes.pt"
+  ],
+  "never_single_topology_arm": true,
+  "never_write_onto_prior_hub_ids": true,
+  "note": "Topology children are technical-recreate weights (new SHAs). C0/C1/C2/tokenizer remain original study artifacts. Not bitwise identical to original Gate T terminals.",
+  "panel_seeds": [
+    4
+  ],
+  "path_scheme": {
+    "cache_root_default_relative": "data/cache/{run_id}",
+    "cache_root_env": [
+      "P6_CACHE_ROOT",
+      "NANOCHAT_BASE_DIR"
+    ],
+    "hub_root_is_repo": true,
+    "note": "Sources resolve as cache_root / source_relpath. Hub objects use hub_path only \u2014 no machine-local absolute paths."
+  },
+  "recreate_receipt": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/seed-4/gate-w5-topology-recreate-relaxed.json",
+  "repo_id": "pageman/nanochat-filipino-p6-m-schedule-topology",
+  "researchbox": 8918,
+  "rule": "upload_c0_c1_c2_m-fine_m-coarse_m-blocked_m-rand_tokenizer_together",
+  "run_id": "p6-20260824T155226Z-769f807a",
+  "status": "uploaded",
+  "study": "P6-M",
+  "updated_utc": "2026-08-25T20:53:32Z",
+  "weight_lineage": "technical_recreate_w5_relaxed",
+  "weights_commit": "5d3872b000fe3aa7ed2d25e2e73927330002cb9b",
+  "weights_commit_url": "https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology/commit/5d3872b000fe3aa7ed2d25e2e73927330002cb9b",
+  "weights_uploaded_at_utc": "2026-08-25T20:38:41Z"
+}

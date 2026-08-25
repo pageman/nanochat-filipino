@@ -1,0 +1,25 @@
+{
+  "shutdown_utc": "2026-08-25T09:10:34Z",
+  "shutdown_gmt8": "2026-08-25T17:10:34+0800",
+  "reason": "P6-M Gate W archive and paper hashes verified; stop A40 GPU billing. Network volume 3xuadadrph not deleted.",
+  "pod": {
+    "id": "o82o3p6dr3trzh",
+    "name": "p6-m-gate-h-smoke",
+    "data_center": "CA-MTL-1",
+    "gpu": "NVIDIA A40",
+    "cost_per_hour_usd": 0.44,
+    "status_after_stop": "EXITED",
+    "deleted": false
+  },
+  "archive_oracle": {
+    "closeout": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/p6_closeout_manifest.json",
+    "closeout_at_utc": "2026-08-25T09:08:04Z",
+    "n_artifacts": 47,
+    "paper_pdf_sha256": "e627f73c901af8c0a672055255ae6ce8a4b94cda4e75fec12062f08db53930c0",
+    "paper_tex_sha256": "c1a4e379ffee73bd48e38b1ee99ee1be7047f1918a736cee589bbd38b7ff6d63",
+    "sha256sums": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/SHA256SUMS"
+  },
+  "deferred": ["W3_git_push", "W4_researchbox_submit", "W5_hub_upload"],
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

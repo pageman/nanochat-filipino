@@ -1,0 +1,133 @@
+{
+  "authority_note": "This manifest becomes controlling only if its SHA-256 is bound by the filed AsPredicted PDF or its SHA-bound addendum.",
+  "combined_schedule_files_sha256": "165d7084be485299b305935a6b76e80c53a03bd75ba5f90a74f5ca0714e8278d",
+  "fixed_exposure": {
+    "d_phase2_model_visible_tokens": 19267584,
+    "document_revisit_policy": "carry forward P4 cyclic_per_language quota construction unchanged; P6-M does not vary this policy",
+    "english_document_order_seed": 42,
+    "english_train_split_sha256": "09ae691caebb33a4bb81db4e570f630cac9ede11cb4116b2e08a3dbe08ef775a",
+    "q_en_source_content": 0.5,
+    "q_tl_source_content": 0.5,
+    "rounding_rule": "round-half-to-even TL target; EN is the exact residual",
+    "tagalog_document_order_seed": 42,
+    "tagalog_train_split_sha256": "2b0474c5700dc1eba14def572aa23cc227e4c59c10c2de3ce6b7bda75d137687",
+    "target_en_source_content_tokens": 9633792,
+    "target_tl_source_content_tokens": 9633792,
+    "token_bytes_sha256": "a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132",
+    "tokenizer_sha256": "04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8",
+    "trainer_consumption_rule": "consume the final mixed schedule once in stored block-index order with no trainer wrap or runtime reshuffle",
+    "within_language_document_order_rule": "sort eligible train documents by SHA-256 of raw UTF-8 text, then independently apply Python random.Random(42).shuffle per language",
+    "within_language_quota_fill_rule": "follow the shuffled document list cyclically until the exact language quota is reached; truncate only the final document at a token boundary",
+    "within_language_stream_rule": "all arms consume the same preconstructed P4-lineage EN and TL token streams; only the cross-language block schedule differs"
+  },
+  "generator": "scripts/p6/prefile_topology_schedules.py",
+  "generator_sha256": "c83aa6508a7cbb53853415808419b2fa5957800a930e3923cdef619a4cd6f643",
+  "outcomes_accessed": false,
+  "p4_positive_control_reference": {
+    "block_schedule_digest": "9a2c828d79ebd8c4c3a3463eb69c27345c55796d29002929583abe31f13878f2",
+    "interleave_algorithm": "alternate_en_tl_blocks_of_K_blk_en_first",
+    "k_blk": 2048,
+    "language_origin_mask_sha256": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46"
+  },
+  "schedule_serialization": "UTF-8 TSV with one header and ordered rows: block_index, language, source_offset_tokens, length_tokens",
+  "schema": "p6-m-prefiling-topology-schedules-v1",
+  "source_plan_sha256": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79",
+  "status": "prefiling_no_outcomes",
+  "study": "P6-M schedule-topology mechanism study",
+  "topologies": [
+    {
+      "algorithm": "alternate EN then TL blocks until both exact quotas are exhausted",
+      "block_count": 9408,
+      "block_unit": "source-content tokens under the carried-forward tokenizer",
+      "english_block_count": 4704,
+      "final_partial_block_rule": "for each language, use min(nominal_block_length, remaining_quota); the filed quotas are exactly divisible, so no partial block occurs",
+      "id": "m-fine",
+      "language_origin_mask_sha256": "140e174a427a7ddf2126553c53352ec049f72fbed475e2404cd4ef122b309c46",
+      "no_wrap_rule": "consume this precomputed schedule exactly once in block_index order; no runtime reshuffle, epoch regeneration, or wrap",
+      "nominal_block_length_tokens": 2048,
+      "randomization": {
+        "seed": null,
+        "used": false
+      },
+      "role": "schedule_topology",
+      "schedule_file": "manifests/p6/topology-schedules/m-fine.tsv",
+      "schedule_file_sha256": "2503f5abead67264c1e180507b4f8fbc5454283f2dcafd150cb73f66b1076789",
+      "start_rule": "EN first; then strict EN/TL alternation",
+      "tagalog_block_count": 4704,
+      "target_en_tokens": 9633792,
+      "target_tl_tokens": 9633792
+    },
+    {
+      "algorithm": "alternate eight EN and eight TL blocks until both exact quotas are exhausted",
+      "block_count": 16,
+      "block_unit": "source-content tokens under the carried-forward tokenizer",
+      "english_block_count": 8,
+      "final_partial_block_rule": "for each language, use min(nominal_block_length, remaining_quota); the filed quotas are exactly divisible, so no partial block occurs",
+      "id": "m-coarse",
+      "language_origin_mask_sha256": "2f739be813ef6c9e23eb3bc5a70e3bf508cbab4441c84f8b69e5421409a01453",
+      "no_wrap_rule": "consume this precomputed schedule exactly once in block_index order; no runtime reshuffle, epoch regeneration, or wrap",
+      "nominal_block_length_tokens": 1204224,
+      "randomization": {
+        "seed": null,
+        "used": false
+      },
+      "role": "schedule_topology",
+      "schedule_file": "manifests/p6/topology-schedules/m-coarse.tsv",
+      "schedule_file_sha256": "3f5073e6afbc02bf3ec98c7da737e3f06d8a78fc9ec8f82adc10282ea02955dc",
+      "start_rule": "EN first; then strict EN/TL alternation",
+      "tagalog_block_count": 8,
+      "target_en_tokens": 9633792,
+      "target_tl_tokens": 9633792
+    },
+    {
+      "algorithm": "consume the complete TL quota, then the complete EN quota",
+      "block_count": 2,
+      "block_unit": "source-content tokens under the carried-forward tokenizer",
+      "english_block_count": 1,
+      "final_partial_block_rule": "for each language, use min(nominal_block_length, remaining_quota); the filed quotas are exactly divisible, so no partial block occurs",
+      "id": "m-blocked",
+      "language_origin_mask_sha256": "e6c0ff201dfa2b7546bea113c9f20933758b966e1cc1506c8bd7cc8eb637367d",
+      "no_wrap_rule": "consume this precomputed schedule exactly once in block_index order; no runtime reshuffle, epoch regeneration, or wrap",
+      "nominal_block_length_tokens": 9633792,
+      "randomization": {
+        "seed": null,
+        "used": false
+      },
+      "role": "schedule_topology",
+      "schedule_file": "manifests/p6/topology-schedules/m-blocked.tsv",
+      "schedule_file_sha256": "eedcea17699ac911c76373c3a05494cbd79555785cb70820a82bbb37821942dd",
+      "start_rule": "TL first; the language boundary is exactly token 9,633,792",
+      "tagalog_block_count": 1,
+      "target_en_tokens": 9633792,
+      "target_tl_tokens": 9633792
+    },
+    {
+      "algorithm": "create 4,704 EN and 4,704 TL blocks of 2,048 tokens, shuffle the 9,408-label multiset once, then persist the resulting sequence",
+      "block_count": 9408,
+      "block_unit": "source-content tokens under the carried-forward tokenizer",
+      "english_block_count": 4704,
+      "final_partial_block_rule": "for each language, use min(nominal_block_length, remaining_quota); the filed quotas are exactly divisible, so no partial block occurs",
+      "id": "m-rand",
+      "language_origin_mask_sha256": "923ecfe50353811a52f3492beea503c431118c03aafd1ffeee8435a2c03e3c7c",
+      "no_wrap_rule": "consume this precomputed schedule exactly once in block_index order; no runtime reshuffle, epoch regeneration, or wrap",
+      "nominal_block_length_tokens": 2048,
+      "randomization": {
+        "library": "Python standard-library random.Random (MT19937)",
+        "operation": "random.Random(42).shuffle on the complete block-label list",
+        "precomputed_once": true,
+        "python_version_used": "3.9.6",
+        "runtime_randomization_forbidden": true,
+        "seed": 42,
+        "unit": "2,048-source-content-token language block",
+        "used": true
+      },
+      "role": "schedule_topology",
+      "schedule_file": "manifests/p6/topology-schedules/m-rand.tsv",
+      "schedule_file_sha256": "bf7e3c329d780ba0941d664deaa37a8bfb34c3b2641e0d6e0797b32b62f1d4c1",
+      "start_rule": "the first language is fixed by the persisted shuffled schedule",
+      "tagalog_block_count": 4704,
+      "target_en_tokens": 9633792,
+      "target_tl_tokens": 9633792
+    }
+  ]
+}

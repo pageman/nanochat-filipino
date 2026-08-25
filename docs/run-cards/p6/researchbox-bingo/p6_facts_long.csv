@@ -1,0 +1,41 @@
+variable,value,description
+study_id,NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY,Study identifier
+aspredicted_id,307969,AsPredicted registration number
+researchbox_id,8918,ResearchBox deposit number
+researchbox_url,https://researchbox.org/8918,FOR PEER REVIEW; not Make Public
+researchbox_code,RAOZFR,Peer-review access code (not a secret passcode file)
+ascollected_id,,Pending — Results Provenance NOT DOCUMENTED yet
+p6_run_id,p6-20260824T155226Z-769f807a,Execution run id
+parent_seed,4,Exactly one parent-init seed
+nanochat_pin,92d63d4e8bb4df75c3b71618f31ddde2378b2bcd,Pinned nanochat commit
+designed_after_p5,true,Post-P5; not confirmation of P4/P5
+does_not_confirm_p4,true,Filed claim discipline
+does_not_confirm_p5,true,Filed claim discipline
+not_p5_recurrence_primary,true,Primary is topology Δ vs M-fine
+q_tl,0.50,Fixed Tagalog source-content token share
+quota_tl,9633792,Exact Tagalog source-content tokens per mixed arm
+quota_en,9633792,Exact English source-content tokens per mixed arm
+d_phase2,19267584,Model-visible phase-two tokens per child
+n_steps,294,Updates per child
+delta_bpb,0.01,Primary classification cutoff
+policy_a_test_arm,m-fine,One restricted-test arm only
+test_access_count_seed4,1,Authorized touches
+eligible_n,1,One-seed apparatus
+no_mean,true,No across-seed mean
+no_ci,true,No confidence interval
+no_pvalue,true,No p-value
+hub_status,deferred,Nine sibling objects together or none
+raw_test_text_in_box,false,Held-out text not redistributed
+aspredicted_pdf_sha256,769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7,Local prereg PDF digest
+addendum_sha256,df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082,Filed addendum digest
+gate_plan_sha256,d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79,Filed gate-plan digest
+topology_manifest_sha256,d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606,Topology manifest digest
+c0_sha256,7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9,Frozen parent
+m_coarse_delta_tl_class,better_than_m_fine_by_delta,Primary class
+m_coarse_delta_en_class,worse_than_m_fine_by_delta,Primary class
+m_blocked_delta_tl_class,worse_than_m_fine_by_delta,Primary class
+m_blocked_delta_en_class,worse_than_m_fine_by_delta,Primary class
+m_rand_delta_tl_class,within_delta,Primary class
+m_rand_delta_en_class,within_delta,Primary class
+u_contrasts_match,true,Seal vs X match
+gate_x_script_hash_match_gate0,false,Documented deviation; filed analysis authority

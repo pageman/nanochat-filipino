@@ -1,0 +1,37 @@
+{
+  "all_distinct_d20": true,
+  "all_distinct_d8": true,
+  "at_utc": "2026-08-24T16:10:02Z",
+  "blinded": true,
+  "compare_seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate": "A-seed-knob",
+  "no_training": true,
+  "parent_seed": 4,
+  "parent_seed_distinct_from_1_2_3": true,
+  "rows": {
+    "1": {
+      "d20_initial_state_sha256": "f0390d28cbb56fea478c6c150daa57ad2beb8979b0dfe7c2a4335ab9531a252b",
+      "d8_initial_state_sha256": "0b5df8dc0d7095ff5a41568db8bf3a9bbd1dda6cc7c59a12c84dda55bd574ef9"
+    },
+    "2": {
+      "d20_initial_state_sha256": "06dd6b3f299d4ab25a950570f2c4797a8a03dbc7fbb04d639e75b552732d2275",
+      "d8_initial_state_sha256": "14a181bebfab62e26cd4172d0a4ae54302a90bc88057ac5030c10c1bc3aadd0f"
+    },
+    "3": {
+      "d20_initial_state_sha256": "8c85c04999b34e596fbf05042b1d36f5d595e111a59f82d077102ec258c2ff70",
+      "d8_initial_state_sha256": "cfa84eefb633dfd678b50212d06d29af80203b87c7e88b814aff468c1f74ef43"
+    },
+    "4": {
+      "d20_initial_state_sha256": "dec362243c093f600407ec988829b483b5f3b40c999fff999cc9559f2bce32e8",
+      "d8_initial_state_sha256": "1fb9d4aa9a6b2851ce09f969f31853f327596457ab507ca8424cab25345e60f3"
+    }
+  },
+  "status": "pass",
+  "wrapper_numpy_rng_seed": 424242,
+  "wrapper_script_sha256": "ba00a24e19b1b1a0cdd17c35c28481aa3f19ab87e786e295dfb56449a0183a71"
+}

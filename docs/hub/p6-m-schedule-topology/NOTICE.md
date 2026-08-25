@@ -1,0 +1,1 @@
+P6-M research checkpoints (uploaded). Wikipedia-derived text. Not a chat model. Ship C0+C1+C2+M-fine+M-coarse+M-blocked+M-rand together. Topology children on Hub are a 2026-08-25 technical recreate (new SHAs); C0/C1/C2/tokenizer are original. Never a single topology arm. Never write onto P1.1–P5 Hub IDs. Weights commit: 5d3872b000fe3aa7ed2d25e2e73927330002cb9b.

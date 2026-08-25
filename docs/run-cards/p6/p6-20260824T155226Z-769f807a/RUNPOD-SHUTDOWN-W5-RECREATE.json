@@ -1,0 +1,11 @@
+{
+  "shutdown_utc": "2026-08-25T20:53:32Z",
+  "reason": "P6-M W5 Hub upload verified; stop recreate A40 billing",
+  "pod": {
+    "id": "i9m7tabod1b34y",
+    "name": "p6-m-topology-recreate-w5",
+    "status_after_stop": "EXITED"
+  },
+  "hub_commit": "5d3872b000fe3aa7ed2d25e2e73927330002cb9b",
+  "p6_run_id": "p6-20260824T155226Z-769f807a"
+}

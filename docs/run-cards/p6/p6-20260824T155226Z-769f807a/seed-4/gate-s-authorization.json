@@ -1,0 +1,25 @@
+{
+  "arm": "c2",
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T19:26:46Z",
+  "authorized_by": "operator chat: Do Gate S",
+  "authorizes_siblings": false,
+  "gate": "S",
+  "host_class": "NVIDIA CUDA (A40 class)",
+  "must_not": [
+    "print BPB",
+    "start T topology children",
+    "resume with optimizer state",
+    "amend parent seed",
+    "use C1 or sibling as parent",
+    "test access",
+    "unblind",
+    "pod stop"
+  ],
+  "note": "Does not authorize T, validation seal, test, unblinding, or pod stop.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "train C2 (pure English) from frozen C0 for seed 4; exact phase-two budget; load_optimizer=False; never from C1",
+  "seed": 4,
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

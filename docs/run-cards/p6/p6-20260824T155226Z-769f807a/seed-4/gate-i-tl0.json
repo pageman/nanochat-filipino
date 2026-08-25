@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-08-24T17:21:12Z",
+  "blinded": true,
+  "c0_not_frozen": true,
+  "depths": {
+    "d20": {
+      "checkpoint_bytes": 2663446486,
+      "checkpoint_sha256": "7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9",
+      "health": "pass",
+      "reload_ok": true,
+      "status": "pass"
+    },
+    "d8": {
+      "checkpoint_bytes": 335570367,
+      "checkpoint_sha256": "fbf6ff1b2ee278a98c57c7510676a27bf9480ca9585e273d75e53b8c72ae07f8",
+      "health": "pass",
+      "reload_ok": true,
+      "status": "pass"
+    }
+  },
+  "gate": "I",
+  "next_gate": "P0-T_4",
+  "seed": 4,
+  "status": "pass",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

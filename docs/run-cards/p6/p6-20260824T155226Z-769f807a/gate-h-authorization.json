@@ -1,0 +1,29 @@
+{
+  "aspredicted_id": 307969,
+  "authorized": true,
+  "authorized_at_utc": "2026-08-24T16:18:22Z",
+  "authorized_by": "operator chat: do Gate H",
+  "authorizes_children": false,
+  "authorizes_gate_i": false,
+  "authorizes_parent": false,
+  "gate": "H",
+  "host_class": "NVIDIA CUDA A40",
+  "must_not": [
+    "p6-s4-*",
+    "p6-tl0-*",
+    "p6-c0-*",
+    "p6-c1-*",
+    "p6-c2-*",
+    "p6-m-fine-*",
+    "p6-m-coarse-*",
+    "p6-m-blocked-*",
+    "p6-m-rand-*",
+    "print BPB",
+    "Mac MPS",
+    "CPU confirmatory"
+  ],
+  "note": "Does not authorize Gate I. Network volume 3xuadadrph not required for H live mount.",
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "scope": "d4 Tagalog-path CUDA smoke only; tag p6-smoke-tl-d4; seed 0; 30 steps; warmup 3; eval/sample/core-metric off",
+  "study_id": "NANOCHAT-FILIPINO-P6-M-SCHEDULE-TOPOLOGY"
+}

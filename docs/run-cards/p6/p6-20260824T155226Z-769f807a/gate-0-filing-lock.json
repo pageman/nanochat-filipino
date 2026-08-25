@@ -1,0 +1,130 @@
+{
+  "addendum_filed_sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+  "addendum_local_matches_filed": true,
+  "addendum_local_sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+  "addendum_note": "local addendum matches filed SHA",
+  "addendum_path": "docs/papers/p6-m-schedule-topology/P6-M-PREFILING-ADDENDUM.md",
+  "architecture_note": "docs/operator/P6-M-LOCKOUT-RESISTANT-ARCHITECTURE.md",
+  "aspredicted_id": 307969,
+  "aspredicted_pdf_local": "docs/run-cards/p6/AsPredicted-307969.pdf",
+  "aspredicted_pdf_sha256": "769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7",
+  "aspredicted_url": "https://aspredicted.org/bk6m9d.pdf",
+  "at_utc": "2026-08-24T15:59:42Z",
+  "blinded": true,
+  "checks": [
+    {
+      "detail": "769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7",
+      "id": "0_pdf_sha",
+      "ok": true
+    },
+    {
+      "detail": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79",
+      "id": "0_gate_plan_sha",
+      "ok": true
+    },
+    {
+      "detail": "769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7",
+      "id": "0_lock_pdf_binding",
+      "ok": true
+    },
+    {
+      "detail": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79",
+      "id": "0_lock_plan_binding",
+      "ok": true
+    },
+    {
+      "detail": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+      "id": "0_lock_addendum_binding",
+      "ok": true
+    },
+    {
+      "detail": "d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606",
+      "id": "0_topology_manifest_sha",
+      "ok": true
+    },
+    {
+      "detail": "d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606",
+      "id": "0_lock_topology_binding",
+      "ok": true
+    },
+    {
+      "detail": {
+        "panel_seeds": [
+          4
+        ],
+        "parent_seed": 4
+      },
+      "id": "0_parent_seed",
+      "ok": true
+    },
+    {
+      "detail": [
+        "seed-4"
+      ],
+      "id": "0_panel_lockbox_dirs",
+      "ok": true
+    },
+    {
+      "detail": {
+        "lockbox": "0o700",
+        "safe": "0o755"
+      },
+      "id": "0_lockbox_mode",
+      "ok": true
+    },
+    {
+      "detail": "data/cache/p6-20260824T155226Z-769f807a/tier2-resume-kit",
+      "id": "0_tier2_dir",
+      "ok": true
+    },
+    {
+      "detail": "scan cache/lockbox",
+      "id": "0_no_p6_outcomes",
+      "ok": true
+    },
+    {
+      "detail": "p6-20260824T155226Z-769f807a",
+      "id": "0_run_id_matches_pdf8",
+      "ok": true
+    }
+  ],
+  "designed_after_p5_gate_w": true,
+  "does_not_amend_306780": true,
+  "does_not_amend_306935": true,
+  "does_not_amend_307342": true,
+  "does_not_amend_307591": true,
+  "does_not_amend_307836": true,
+  "gate": "0",
+  "gate_plan_note": "Cursor working plan may mutate YAML todo statuses; filed bytes are frozen at gate_plan_path.",
+  "gate_plan_path": "docs/papers/p6-m-schedule-topology/P6-M-GATE-PLAN-FILED.md",
+  "gate_plan_sha256": "d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79",
+  "gate_plan_working_matches_filed": false,
+  "gate_plan_working_path": "/Users/paulpajo/.cursor/plans/p6-m_gate_plan_29fa4469.plan.md",
+  "gate_plan_working_sha256": "57889b396360d9aa914db9c6e590c306b68ab1379270a5cfa3700a091b8bffc0",
+  "gpu": false,
+  "host": "Mac/CPU",
+  "lockbox_acceptance_tests": "pass",
+  "lockbox_tests_at_utc": "2026-08-24T15:59:43Z",
+  "lockbox_tests_json": "docs/run-cards/p6/p6-20260824T155226Z-769f807a/gate-0-lockbox-tests.json",
+  "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+  "network_volume_dc": "CA-MTL-3",
+  "network_volume_id": "3xuadadrph",
+  "next": "gate-0-lockbox-tests then Gate A",
+  "no_p6_outcomes": true,
+  "p6_run_id": "p6-20260824T155226Z-769f807a",
+  "panel_seeds": [
+    4
+  ],
+  "parent_seed": 4,
+  "researchbox_id": null,
+  "status": "pass",
+  "tier2_local": "data/cache/p6-20260824T155226Z-769f807a/tier2-resume-kit",
+  "topology_arms": [
+    "m-fine",
+    "m-coarse",
+    "m-blocked",
+    "m-rand"
+  ],
+  "topology_manifest_path": "manifests/p6/p6_topology_schedule_manifest.json",
+  "topology_manifest_sha256": "d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606"
+}
