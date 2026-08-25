@@ -2,7 +2,27 @@
 
 **arXiv categories:** cs.CL, cs.LG.
 
-**Registration and deposits (P6-M):** AsPredicted #307969 (<https://aspredicted.org/bk6m9d.pdf>); ResearchBox #8918 (<https://researchbox.org/8918>; FOR PEER REVIEW, not Make Public); AsCollected #2541 Version 1 (<https://ascollected.org/XZ8_TI5>; project `NANOCHAT-FILIPINO P6-M`; linked from box #8918); study record <https://github.com/pageman/nanochat-filipino/tree/main/docs/p6>; GitHub trees `scripts/p6/`, `docs/run-cards/p6/`, `manifests/p6/`, `results/p6/`, `docs/hub/p6-m-schedule-topology/` under <https://github.com/pageman/nanochat-filipino>; Hub <https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology> (uploaded commit `5d3872b0`; topology children technical recreate). Run ID: `p6-20260824T155226Z-769f807a`. Manuscript version: v1.0.
+**Registration and deposits (P6-M):**
+
+- AsPredicted #307969: <https://aspredicted.org/bk6m9d.pdf>
+
+- ResearchBox #8918 (<https://researchbox.org/8918>; FOR PEER REVIEW, not Make Public)
+
+- AsCollected #2541 Version 1:\
+  <https://ascollected.org/XZ8_TI5>\
+  (project `NANOCHAT-FILIPINO P6-M`; linked from box #8918)
+
+- Study record: <https://github.com/pageman/nanochat-filipino/tree/main/docs/p6>
+
+- GitHub trees under <https://github.com/pageman/nanochat-filipino>:\
+  `scripts/p6/`, `docs/papers/p6-m-schedule-topology/`,\
+  `docs/run-cards/p6/`, `manifests/p6/`, `results/p6/`,\
+  `docs/hub/p6-m-schedule-topology/`
+
+- Hub: <https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology>\
+  (uploaded commit `5d3872b0`; C0/C1/C2/tokenizer original; four topology children technical recreate)
+
+- Run ID: `p6-20260824T155226Z-769f807a`. Manuscript version: v1.1.
 
 # Introduction {#sec:intro}
 
@@ -29,26 +49,30 @@ AsPredicted #307969 governs [@aspredicted307969].
 - PDF: <https://aspredicted.org/bk6m9d.pdf>
 
 - PDF SHA-256:\
+  [769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7](769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7){.uri}
 
 - Prefiling addendum SHA-256:\
+  [df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082](df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082){.uri}
 
 - Unmodified gate-plan SHA-256:\
+  [d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79](d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79){.uri}
 
 - Topology-manifest SHA-256:\
+  [d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606](d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606){.uri}
 
-Authority order: filed PDF $\gg$ SHA-bound addendum $\gg$ unmodified gate plan $\gg$ `LOCK.json`, manifests, and deterministic receipts $\gg$ this manuscript (v1.0). The study does not amend #306780, #306935, #307342, #307591, or #307836. ResearchBox #8918 remains FOR PEER REVIEW and is not made public by this paper. AsCollected #2541 Version 1 (<https://ascollected.org/XZ8_TI5>) records public-corpus provenance and is linked from the box. Hub weights were uploaded after Gate W with independent remote re-hash; topology children on Hub are a technical recreate (new SHAs).
+Authority order: filed PDF $\gg$ SHA-bound addendum $\gg$ unmodified gate plan $\gg$ `LOCK.json`, manifests, and deterministic receipts $\gg$ this manuscript (v1.1). The study does not amend #306780, #306935, #307342, #307591, or #307836. ResearchBox #8918 remains FOR PEER REVIEW and is not made public by this paper. AsCollected #2541 Version 1 (<https://ascollected.org/XZ8_TI5>) records public-corpus provenance and is linked from the box. Hub weights were uploaded after Gate W with independent remote re-hash; the four topology children on Hub are a technical recreate (new SHAs), while C0, C1, C2, and the tokenizer pair remain the original study artifacts.
 
 ## Sources, tokenizer, and hosts
 
-Tagalog train/val/test documents are the frozen WikiText-TL-39 P1.1-eligible splits. English train/val/test documents are the frozen WikiText-103 P2-eligible splits. The tokenizer is the carry-forward P4 pair: `tokenizer.pkl` and `token_bytes.pt` . P1.1--P5 weights were not loaded as parents. Official GPU gates used NVIDIA CUDA A40. Official evaluation used `scripts/p6/evaluate_bpb.py` with formula-equivalent hash .
+Tagalog train/val/test documents are the frozen WikiText-TL-39 P1.1-eligible splits. English train/val/test documents are the frozen WikiText-103 P2-eligible splits. The tokenizer is the carry-forward P4 pair: `tokenizer.pkl` [04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8](04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8){.uri} and `token_bytes.pt` [a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132](a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132){.uri}. P1.1--P5 weights were not loaded as parents. Official GPU gates used NVIDIA CUDA A40. Official evaluation used `scripts/p6/evaluate_bpb.py` with formula-equivalent hash [a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481](a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481){.uri}.
 
 ## Parent, P0-T, and C0 freeze
 
-Parent-initialization seed is exactly $s=4$. After P0-T PASS, d20 was copied to an immutable C0 directory with `additional_train_tokens`=0. C0 SHA-256: . Smoke and d8 checkpoints are not C0.
+Parent-initialization seed is exactly $s=4$. After P0-T PASS, d20 was copied to an immutable C0 directory with `additional_train_tokens`=0. C0 SHA-256: [7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9](7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9){.uri}. Smoke and d8 checkpoints are not C0.
 
 ## Children and fixed topology treatments
 
-C1, C2, M-fine, M-coarse, M-blocked, and M-rand each continued the same frozen C0 for $N=294$ steps, $B=65{,}536$, $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens, serial R$\to$S$\to$T1--T4, `load_optimizer=False`, child peak learning rate $0.3\times$ the parent peak, warmup 14, terminal checkpoint only. Mixed arms share identical within-language streams and stored no-wrap schedules:
+C1, C2, M-fine, M-coarse, M-blocked, and M-rand each continued the same frozen C0 for $N=294$ steps with $B=65{,}536$ and $D_{\mathrm{phase2}}=19{,}267{,}584$ tokens. Launches were serial R$\to$S$\to$T1--T4 with `load_optimizer=False`, child peak learning rate $0.3\times$ the parent peak, warmup 14, and terminal checkpoint only. Mixed arms share identical within-language streams and stored no-wrap schedules:
 
 - **M-fine:** EN-first alternating blocks of $2{,}048$ tokens ($4{,}704$ blocks per language).
 
@@ -58,7 +82,8 @@ C1, C2, M-fine, M-coarse, M-blocked, and M-rand each continued the same frozen C
 
 - **M-rand:** one precomputed shuffle of $4{,}704$ EN and $4{,}704$ TL blocks of length $2{,}048$, shuffled once with Python `random.Random(42)` and hash-pinned before filing.
 
-Each mixed arm uses exactly $9{,}633{,}792$ Tagalog and $9{,}633{,}792$ English source-content tokens. Mix-manifest SHA-256: .
+Each mixed arm uses exactly $9{,}633{,}792$ Tagalog and $9{,}633{,}792$ English source-content tokens. Mix-manifest SHA-256:\
+[f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107](f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107){.uri}.
 
 ## Lockbox, analysis, and tests
 
@@ -80,13 +105,13 @@ P0-T status is **PASS** for seed 4. All six children completed with reload-verif
 
   : Full-split validation BPB after terminal d20 checkpoints. Six-decimal reporting as filed. C0 English is descriptive and excluded from topology classification. {#tab:cells}
 
-  $\tau$       $\Delta$TL               TL class              $\Delta$EN             EN class
-  ----------- ------------- -------------------------------- ------------ -------------------------------
-  M-coarse     $-0.041617$   better than M-fine by $\delta$   $0.047305$   worse than M-fine by $\delta$
-  M-blocked    $0.202606$    worse than M-fine by $\delta$    $0.089027$   worse than M-fine by $\delta$
-  M-rand       $0.001087$           within $\delta$           $0.001075$          within $\delta$
+  $\tau$       $\Delta$TL         TL class        $\Delta$EN       EN class
+  ----------- ------------- -------------------- ------------ -------------------
+  M-coarse     $-0.041617$   better by $\delta$   $0.047305$   worse by $\delta$
+  M-blocked    $0.202606$    worse by $\delta$    $0.089027$   worse by $\delta$
+  M-rand       $0.001087$     within $\delta$     $0.001075$    within $\delta$
 
-  : Primary contrasts versus M-fine at $\delta=0.01$. $\Delta=\mathrm{BPB}(M\textrm{-}\tau)-\mathrm{BPB}(\textrm{M-fine})$. Lower BPB is better. {#tab:primary}
+  : Primary contrasts versus M-fine at $\delta=0.01$. $\Delta=\mathrm{BPB}(M\textrm{-}\tau)-\mathrm{BPB}(\textrm{M-fine})$. Lower BPB is better. Class labels: better/worse than M-fine by $\delta$, or within $\delta$. {#tab:primary}
 
   $\tau$       $R_{\mathrm{TL}}$   $A_{\mathrm{EN}}$
   ----------- ------------------- -------------------
@@ -107,30 +132,34 @@ With token share held fixed, block order was not inert in this apparatus: coarse
 
 # Limitations {#sec:limit}
 
-One seed; one tokenizer; WikiText-family text only; no chat, SFT, CORE, FilBench, or larger-model transfer. Confirmatory GPU work used a rented NVIDIA A40. Raw test JSONL remains restricted. Hub weight release, if any, must ship C0+C1+C2+topology children together with tokenizer and meta; never overwrite P4/P5 Hub IDs. Document-revisit (P7-M), optimizer-state (P8-M), replay/protection, and tokenizer/transfer studies remain separate filings.
+One seed; one tokenizer; WikiText-family text only; no chat, SFT, CORE, FilBench, or larger-model transfer. Confirmatory GPU work used a rented NVIDIA A40. Raw test JSONL remains restricted. Hub weights ship C0+C1+C2+all four topology children together with tokenizer and meta; never overwrite P4/P5 Hub IDs. The Hub topology children are a post-loss technical recreate and are not bitwise identical to the original Gate T terminals that produced the sealed BPB table. Document-revisit (P7-M), optimizer-state (P8-M), replay/protection, and tokenizer/transfer studies remain separate filings.
 
 # Deviations {#sec:dev}
 
-No protocol stop. No break-glass. No additional confirmatory validation or test eval after Gate X. Gate S attempt 1 failed as a *preflight* block when the C2 English packed stream was missing on the pod path ($checkpoint\_sha256=\texttt{null}$); after syncing the filed stream, one clean authorized C2 launch completed. M-rand wrote a valid terminal model checkpoint, then hit ENOSPC during optimizer save; the terminal model was hash- and reload-verified and accepted without retraining (`technical_accept=true`). Gate 0 had pinned a P5-rename unblind script hash that reads `c3_*` cells and emits recurrence counts; Gate U wrote topology-named cells, so Gate X executed a topology-contrast script under filed-analysis authority. The script-hash mismatch is documented in the unblinding event; the filed primary remains $\Delta$TL/$\Delta$EN versus M-fine. Frozen English train JSONL contains intra-split duplicate rows ($28{,}472$ rows / $28{,}232$ unique); they were not dropped. Cross-split overlap was 0.
+No protocol stop. No break-glass. No additional confirmatory validation or test eval after Gate X. Gate S attempt 1 failed as a *preflight* block when the C2 English packed stream was missing on the pod path ($checkpoint\_sha256=\texttt{null}$); after syncing the filed stream, one clean authorized C2 launch completed. M-rand wrote a valid terminal model checkpoint, then hit ENOSPC during optimizer save; the terminal model was hash- and reload-verified and accepted without retraining (`technical_accept=true`). Gate 0 had pinned a P5-rename unblind script hash that reads `c3_*` cells and emits recurrence counts; Gate U wrote topology-named cells, so Gate X executed a topology-contrast script under filed-analysis authority. The script-hash mismatch is documented in the unblinding event; the filed primary remains $\Delta$TL/$\Delta$EN versus M-fine. Frozen English train JSONL contains intra-split duplicate rows ($28{,}472$ rows / $28{,}232$ unique); they were not dropped. Cross-split overlap was 0. After Gate W, original Gate T topology terminals were lost from the sticky study volume; under separate authorization, M-fine/M-coarse/M-blocked/M-rand were technically recreated for Hub deposit only (new SHAs). Science claims remain Gate X / filed Gate T receipts.
 
 # Availability {#availability .unnumbered}
 
 - AsPredicted #307969: <https://aspredicted.org/bk6m9d.pdf>
 
 - Study record (GitHub):\
-  <https://github.com/pageman/nanochat-filipino/tree/main/docs/papers/p6-m-schedule-topology>
+  <https://github.com/pageman/nanochat-filipino/tree/main/docs/p6>\
+  Paper tree: <https://github.com/pageman/nanochat-filipino/tree/main/docs/papers/p6-m-schedule-topology>
 
-- Code and audit trees (GitHub):\
-  <https://github.com/pageman/nanochat-filipino>\
-  P6-only: `scripts/p6/`, `docs/papers/p6-m-schedule-topology/`, `docs/run-cards/p6/`, `manifests/p6/`, `docs/hub/p6-m-schedule-topology/`
+- Code and audit trees (GitHub): <https://github.com/pageman/nanochat-filipino>\
+  P6-only: `scripts/p6/`, `docs/papers/p6-m-schedule-topology/`,\
+  `docs/run-cards/p6/`, `manifests/p6/`, `results/p6/`,\
+  `docs/hub/p6-m-schedule-topology/`
 
 - Weights (Hugging Face Hub):\
   <https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology>\
-  (uploaded; commit `5d3872b0`; topology children technical recreate; never write onto P4/P5 Hub IDs).
+  Uploaded commit `5d3872b0`; topology children technical recreate; never write onto P4/P5 Hub IDs.
 
-- ResearchBox #8918: <https://researchbox.org/8918> (FOR PEER REVIEW; not Make Public).
+- ResearchBox #8918: <https://researchbox.org/8918>\
+  (FOR PEER REVIEW; not Make Public).
 
-- AsCollected #2541 Version 1: <https://ascollected.org/XZ8_TI5> (project `NANOCHAT-FILIPINO P6-M`; linked from box #8918).
+- AsCollected #2541 Version 1: <https://ascollected.org/XZ8_TI5>\
+  (project `NANOCHAT-FILIPINO P6-M`; linked from box #8918).
 
 Held-out test text is not redistributed. Host credentials are not published. GitHub holds protocol, receipts, sealed/released JSON, and paper; Hugging Face holds the weight bundle after independent remote re-hash.
 
@@ -148,33 +177,55 @@ No dedicated grant. GPU time (Runpod A40) was paid by the author.
 
 # Selected hashes {#app:hashes}
 
-- Pin / nanochat:
+- Pin / nanochat:\
+  [92d63d4e8bb4df75c3b71618f31ddde2378b2bcd](92d63d4e8bb4df75c3b71618f31ddde2378b2bcd){.uri}
 
-- AsPredicted PDF:
+- AsPredicted PDF:\
+  [769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7](769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7){.uri}
 
-- Gate plan:
+- Gate plan:\
+  [d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79](d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79){.uri}
 
-- Addendum:
+- Addendum:\
+  [df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082](df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082){.uri}
 
-- Topology manifest:
+- Topology manifest:\
+  [d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606](d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606){.uri}
 
-- Mix manifest:
+- Mix manifest:\
+  [f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107](f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107){.uri}
 
-- Evaluator (P6 path):
+- Evaluator (P6 path):\
+  [a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481](a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481){.uri}
 
-- C0:
+- C0 (original / Hub):\
+  [7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9](7fbd24de792aa4ee27d841866db2114e0fb45b1fdcaa4edcc9b24582220123c9){.uri}
 
-- C1 / C2: /
+- C1 / C2 (original / Hub):\
+  [6223c116779ce3128c1e4cae0f2e03744b3068169ad7bb88f75a5146671a99bd](6223c116779ce3128c1e4cae0f2e03744b3068169ad7bb88f75a5146671a99bd){.uri}\
+  [04c06c195e513c7b30752637b80591c29e740879d91c35c323fb75fafca8747d](04c06c195e513c7b30752637b80591c29e740879d91c35c323fb75fafca8747d){.uri}
 
-- M-fine / M-coarse / M-blocked / M-rand: / / /
+- M-fine / M-coarse / M-blocked / M-rand (original Gate T; science):\
+  [a0139607a8fdf2772d4b8e722b449b6a8db04056a8dc38cd177708af8f15eeab](a0139607a8fdf2772d4b8e722b449b6a8db04056a8dc38cd177708af8f15eeab){.uri}\
+  [86588ee9f72ea4a85a821c2c882a363d55d3e50ccb325bdabaa0706e1e911dfe](86588ee9f72ea4a85a821c2c882a363d55d3e50ccb325bdabaa0706e1e911dfe){.uri}\
+  [5ec45216eb0a09b5bc04f04f4622d85f7d8f7ff8861fdea6de5487f7c18fa526](5ec45216eb0a09b5bc04f04f4622d85f7d8f7ff8861fdea6de5487f7c18fa526){.uri}\
+  [38580cd501c0d87a1a502397697f7c7e427134eb7cb64bdce2ba6be1a036f108](38580cd501c0d87a1a502397697f7c7e427134eb7cb64bdce2ba6be1a036f108){.uri}
 
-- U seal:
+- M-fine / M-coarse / M-blocked / M-rand (Hub technical recreate):\
+  [69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7](69a5046ee756faba84f0f5e9c6a0f1330f886f9dd0344f02797798d1d2d0bfe7){.uri}\
+  [c09072fe764f1debd9607f697e2aa8484ef394a96d2ef096f05bb1f0d6c518f7](c09072fe764f1debd9607f697e2aa8484ef394a96d2ef096f05bb1f0d6c518f7){.uri}\
+  [ebfc4853b51cc8c81480ffb57640487d3fe344d38ec51ad5bb1eb7cf159272d2](ebfc4853b51cc8c81480ffb57640487d3fe344d38ec51ad5bb1eb7cf159272d2){.uri}\
+  [16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d](16f6679310c379ce2403e587620eb0ef7d162d6e92ddfc9589d272915eff981d){.uri}
 
-- Released contrasts:
+- U seal:\
+  [23f9a94483532f5b7d51f4a27f77436cafd440f30c11fac5e0ea2dfa0aa095ae](23f9a94483532f5b7d51f4a27f77436cafd440f30c11fac5e0ea2dfa0aa095ae){.uri}
+
+- Released contrasts:\
+  [d376643af19969f2ee127afcc4696de3a4821c8188fa6e7003d190d5f4031911](d376643af19969f2ee127afcc4696de3a4821c8188fa6e7003d190d5f4031911){.uri}
 
 # GitHub versus Hugging Face {#app:split}
 
-GitHub `pageman/nanochat-filipino` is the study record: scripts, paper, lock, ledgers, run-card receipts, sealed/released JSON, and Hub *documentation*. Hugging Face `pageman/nanochat-filipino-p6-m-schedule-topology` is the weight deposit: C0+C1+C2+topology children plus tokenizer and evaluation JSON (uploaded; topology children technical recreate). Never a single topology child alone. Never write onto P1.1/P2/P3/P4/P5 Hub IDs. Raw test JSONL, passcodes, SSH keys, optimizer states, and HOST operator cards belong in neither public tree.
+GitHub `pageman/nanochat-filipino` is the study record: scripts, paper, lock, ledgers, run-card receipts, sealed/released JSON, and Hub documentation. Hugging Face hosts the weight deposit at <https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology> (C0+C1+C2+topology children plus tokenizer and evaluation JSON; uploaded; topology children technical recreate). Never a single topology child alone. Never write onto prior Hub IDs (P1.1, P2, P3, P4, or P5). Raw test JSONL, passcodes, SSH keys, optimizer states, and HOST operator cards belong in neither public tree.
 
 ::: thebibliography
 99
