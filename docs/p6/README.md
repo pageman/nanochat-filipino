@@ -22,7 +22,7 @@
 
 ## Status
 
-Gates **0 / A–X / W** complete for run `p6-20260824T155226Z-769f807a` (seed **4** only). Primary: ΔTL/ΔEN vs M-fine (`δ=0.01`). Hub W5 uploaded (commit `5d3872b0`); topology children on Hub are a **technical recreate** (new SHAs). C0/C1/C2/tokenizer on Hub are original.
+Gates **0 / A–X / W** complete for run `p6-20260824T155226Z-769f807a` (seed **4** only). Primary: ΔTL/ΔEN vs M-fine (`δ=0.01`). ResearchBox [#8918](https://researchbox.org/8918) (FOR PEER REVIEW). AsCollected [#2541 v1](https://ascollected.org/XZ8_TI5) linked from the box. Hub W5 uploaded (commit `5d3872b0`); topology children on Hub are a **technical recreate** (new SHAs). C0/C1/C2/tokenizer on Hub are original. GitHub P6-M subtrees published on `main`.
 
 Does **not** amend P1.1–P5 registrations. Never source `scripts/p1`–`p5` env for P6.
 

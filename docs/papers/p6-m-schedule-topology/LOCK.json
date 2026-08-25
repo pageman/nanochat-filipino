@@ -1,6 +1,9 @@
 {
   "addendum_path": "docs/papers/p6-m-schedule-topology/P6-M-PREFILING-ADDENDUM.md",
   "addendum_sha256": "df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082",
+  "ascollected_id": 2541,
+  "ascollected_url": "https://ascollected.org/XZ8_TI5",
+  "ascollected_version": 1,
   "aspredicted_id": 307969,
   "aspredicted_pdf_local": "docs/run-cards/p6/AsPredicted-307969.pdf",
   "aspredicted_pdf_sha256": "769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7",
@@ -75,7 +78,7 @@
   "mix_manifest_sha256": "f203c615266bc8c33c358c1de397715791cae33536a9743c8a6bf8cd543cb107",
   "n_steps": 294,
   "nanochat_pin": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
-  "note": "P6-M closed at Gate W archive/paper. Hub/ResearchBox/public git deferred. Primary result is topology contrasts vs M-fine, not P5 recurrence counts.",
+  "note": "P6-M closed at Gate W archive/paper. Hub uploaded (5d3872b0); GitHub P6 subtrees on main; ResearchBox #8918 FOR PEER REVIEW; AsCollected #2541 v1 (XZ8_TI5) linked from box. Primary result is topology contrasts vs M-fine, not P5 recurrence counts.",
   "outcome_access_count": 1,
   "p6_mix_identity": "manifests/p6/p6_mix_identity.json",
   "p6_run_id": "p6-20260824T155226Z-769f807a",
@@ -109,5 +112,7 @@
   ],
   "topology_manifest_path": "manifests/p6/p6_topology_schedule_manifest.json",
   "topology_manifest_sha256": "d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606",
-  "updated_utc": "2026-08-25T09:01:23Z"
+  "researchbox_id": 8918,
+  "researchbox_url": "https://researchbox.org/8918",
+  "updated_utc": "2026-08-26T05:15:00Z"
 }

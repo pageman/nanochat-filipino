@@ -4,7 +4,8 @@ aspredicted_id,307969,AsPredicted registration number
 researchbox_id,8918,ResearchBox deposit number
 researchbox_url,https://researchbox.org/8918,FOR PEER REVIEW; not Make Public
 researchbox_code,RAOZFR,Peer-review access code (not a secret passcode file)
-ascollected_id,,Pending — Results Provenance NOT DOCUMENTED yet
+ascollected_id,2541,AsCollected project number
+ascollected_url,https://ascollected.org/XZ8_TI5,AsCollected Version 1 public URL (linked from ResearchBox #8918)
 p6_run_id,p6-20260824T155226Z-769f807a,Execution run id
 parent_seed,4,Exactly one parent-init seed
 nanochat_pin,92d63d4e8bb4df75c3b71618f31ddde2378b2bcd,Pinned nanochat commit
@@ -24,7 +25,7 @@ eligible_n,1,One-seed apparatus
 no_mean,true,No across-seed mean
 no_ci,true,No confidence interval
 no_pvalue,true,No p-value
-hub_status,deferred,Nine sibling objects together or none
+hub_status,uploaded,Nine sibling objects on Hub (commit 5d3872b0; topology children technical recreate)
 raw_test_text_in_box,false,Held-out text not redistributed
 aspredicted_pdf_sha256,769f807a00264a996b02c38b83ee2cf6c23c4981e36fb477dfc1959fa918a1e7,Local prereg PDF digest
 addendum_sha256,df49664809ada69d23dcd2c799e75b30f0fdb9afd7aee12b071ac24ef2f81082,Filed addendum digest

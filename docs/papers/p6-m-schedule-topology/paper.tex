@@ -37,7 +37,7 @@ Holding English--Tagalog source-content token quotas, tokenizer, parent type, ph
 
 \noindent\textbf{arXiv categories:} cs.CL, cs.LG.
 
-\noindent\textbf{Registration and deposits (P6-M):} AsPredicted \#307969 (\url{https://aspredicted.org/bk6m9d.pdf}); study record \url{https://github.com/pageman/nanochat-filipino/tree/main/docs/papers/p6-m-schedule-topology}; GitHub trees \texttt{scripts/p6/}, \texttt{docs/run-cards/p6/}, \texttt{manifests/p6/}, \texttt{docs/hub/p6-m-schedule-topology/} under \url{https://github.com/pageman/nanochat-filipino}; provisional Hub ID \texttt{pageman/nanochat-filipino-p6-m-schedule-topology} (upload deferred). ResearchBox and AsCollected deposit IDs are deferred at Gate~W closeout. Run ID: \texttt{p6-20260824T155226Z-769f807a}. Manuscript version: v1.0.
+\noindent\textbf{Registration and deposits (P6-M):} AsPredicted \#307969 (\url{https://aspredicted.org/bk6m9d.pdf}); ResearchBox \#8918 (\url{https://researchbox.org/8918}; FOR PEER REVIEW, not Make Public); AsCollected \#2541 Version~1 (\url{https://ascollected.org/XZ8_TI5}; project \texttt{NANOCHAT-FILIPINO P6-M}; linked from box \#8918); study record \url{https://github.com/pageman/nanochat-filipino/tree/main/docs/p6}; GitHub trees \texttt{scripts/p6/}, \texttt{docs/run-cards/p6/}, \texttt{manifests/p6/}, \texttt{results/p6/}, \texttt{docs/hub/p6-m-schedule-topology/} under \url{https://github.com/pageman/nanochat-filipino}; Hub \url{https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology} (uploaded commit \texttt{5d3872b0}; topology children technical recreate). Run ID: \texttt{p6-20260824T155226Z-769f807a}. Manuscript version: v1.0.
 
 \section{Introduction}
 \label{sec:intro}
@@ -71,7 +71,7 @@ AsPredicted \#307969 governs~\cite{aspredicted307969}.
 \item Unmodified gate-plan SHA-256:\\\sha{d8a63608608c59d2c4d9882e5346625462056c331094942a8a01d496697a1c79}
 \item Topology-manifest SHA-256:\\\sha{d1e7d5af7247a572e319ee003b5f4e3da5d1fb1592e5ed9ff6b22eeec15ea606}
 \end{itemize}
-Authority order: filed PDF $\gg$ SHA-bound addendum $\gg$ unmodified gate plan $\gg$ \texttt{LOCK.json}, manifests, and deterministic receipts $\gg$ this manuscript (v1.0). The study does not amend \#306780, \#306935, \#307342, \#307591, or \#307836. ResearchBox and Hub uploads were deferred at Gate~W; local archive and paper hashes are recorded in the run-card closeout.
+Authority order: filed PDF $\gg$ SHA-bound addendum $\gg$ unmodified gate plan $\gg$ \texttt{LOCK.json}, manifests, and deterministic receipts $\gg$ this manuscript (v1.0). The study does not amend \#306780, \#306935, \#307342, \#307591, or \#307836. ResearchBox \#8918 remains FOR PEER REVIEW and is not made public by this paper. AsCollected \#2541 Version~1 (\url{https://ascollected.org/XZ8_TI5}) records public-corpus provenance and is linked from the box. Hub weights were uploaded after Gate~W with independent remote re-hash; topology children on Hub are a technical recreate (new SHAs).
 
 \subsection{Sources, tokenizer, and hosts}
 Tagalog train/val/test documents are the frozen WikiText-TL-39 P1.1-eligible splits. English train/val/test documents are the frozen WikiText-103 P2-eligible splits. The tokenizer is the carry-forward P4 pair: \texttt{tokenizer.pkl} \sha{04436b854e0841025a3dd2b46baaeeea07a7ccc252e9f99a19171306f00bc5a8} and \texttt{token\_bytes.pt} \sha{a5dbc1c88f6292696108263072d77115718cc2d8357f7ad4859adfa517cc2132}. P1.1--P5 weights were not loaded as parents. Official GPU gates used NVIDIA CUDA A40. Official evaluation used \texttt{scripts/p6/evaluate\_bpb.py} with formula-equivalent hash \sha{a22a566b71ac9b768543e052e78576f6b079d5c88066f3ec2f8bfef600e17481}.
@@ -176,15 +176,16 @@ No protocol stop. No break-glass. No additional confirmatory validation or test 
 P6-only: \texttt{scripts/p6/}, \texttt{docs/papers/p6-m-schedule-topology/},
 \texttt{docs/run-cards/p6/}, \texttt{manifests/p6/},
 \texttt{docs/hub/p6-m-schedule-topology/}
-\item Weights (Hugging Face Hub): provisional ID\\
+\item Weights (Hugging Face Hub):\\
 \url{https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology}\\
-(upload deferred at Gate~W; never write onto P4/P5 Hub IDs).
-\item ResearchBox / AsCollected: deferred at Gate~W closeout.
+(uploaded; commit \texttt{5d3872b0}; topology children technical recreate; never write onto P4/P5 Hub IDs).
+\item ResearchBox \#8918: \url{https://researchbox.org/8918} (FOR PEER REVIEW; not Make Public).
+\item AsCollected \#2541 Version~1: \url{https://ascollected.org/XZ8_TI5} (project \texttt{NANOCHAT-FILIPINO P6-M}; linked from box \#8918).
 \end{itemize}
-Held-out test text is not redistributed. Host credentials are not published. GitHub holds protocol, receipts, sealed/released JSON, and paper; Hugging Face is reserved for optional weight bundles after independent remote re-hash.
+Held-out test text is not redistributed. Host credentials are not published. GitHub holds protocol, receipts, sealed/released JSON, and paper; Hugging Face holds the weight bundle after independent remote re-hash.
 
 \section*{Ethics}
-Public Wikipedia-derived corpora. No human-subjects experiment. Any future ResearchBox remains passcode-protected for peer review until explicitly made public.
+Public Wikipedia-derived corpora. No human-subjects experiment. ResearchBox \#8918 remains passcode-protected for peer review until explicitly made public.
 
 \section*{Acknowledgements}
 Thanks to Manus 1.6 and Cursor.com(Auto) for the drafting, formatting, and solutioning of the paper. WikiText-TL-39 is due to Cruz and Cheng~\cite{cruz2019eval}. WikiText-103 is due to Merity et al.~\cite{merity2017pointer}. nanochat is due to Karpathy~\cite{karpathy2026nanochat}. Errors remain the author's.
@@ -212,7 +213,7 @@ No dedicated grant. GPU time (Runpod A40) was paid by the author.
 
 \section{GitHub versus Hugging Face}
 \label{app:split}
-GitHub \texttt{pageman/nanochat-filipino} is the study record: scripts, paper, lock, ledgers, run-card receipts, sealed/released JSON, and Hub \emph{documentation}. Hugging Face \texttt{pageman/nanochat-filipino-p6-m-schedule-topology} is the optional weight deposit (deferred): C0+C1+C2+topology children plus tokenizer and evaluation JSON. Never a single topology child alone. Never write onto P1.1/P2/P3/P4/P5 Hub IDs. Raw test JSONL, passcodes, SSH keys, optimizer states, and HOST operator cards belong in neither public tree.
+GitHub \texttt{pageman/nanochat-filipino} is the study record: scripts, paper, lock, ledgers, run-card receipts, sealed/released JSON, and Hub \emph{documentation}. Hugging Face \texttt{pageman/nanochat-filipino-p6-m-schedule-topology} is the weight deposit: C0+C1+C2+topology children plus tokenizer and evaluation JSON (uploaded; topology children technical recreate). Never a single topology child alone. Never write onto P1.1/P2/P3/P4/P5 Hub IDs. Raw test JSONL, passcodes, SSH keys, optimizer states, and HOST operator cards belong in neither public tree.
 
 \begin{thebibliography}{99}
 

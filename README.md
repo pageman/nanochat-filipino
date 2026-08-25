@@ -143,7 +143,7 @@ Does **not** amend AsPredicted #306780 / #306935 / #307342 / #307591 / #307836, 
 **Paper (source / PDF):** [docs/papers/p6-m-schedule-topology/paper.tex](docs/papers/p6-m-schedule-topology/paper.tex) · [paper.pdf](docs/papers/p6-m-schedule-topology/paper_outputs/paper.pdf)  
 **AsPredicted #307969:** https://aspredicted.org/bk6m9d.pdf (anonymous)  
 **ResearchBox #8918:** https://researchbox.org/8918  
-**AsCollected #2541 v1:** https://ascollected.org/XZ8_TI5 (`NANOCHAT-FILIPINO P6-M`)  
+**AsCollected #2541 v1:** https://ascollected.org/XZ8_TI5 (`NANOCHAT-FILIPINO P6-M`; linked from ResearchBox #8918)  
 **Results:** [results/p6/](results/p6/)  
 **Hub documentation pack:** [docs/hub/p6-m-schedule-topology/](docs/hub/p6-m-schedule-topology/)  
 **Weights (not in this repo):** https://huggingface.co/pageman/nanochat-filipino-p6-m-schedule-topology  
@@ -153,7 +153,7 @@ Does **not** amend AsPredicted #306780 / #306935 / #307342 / #307591 / #307836, 
 
 ## Status (P6-M)
 
-Gates **0 / A–X / W** complete for run `p6-20260824T155226Z-769f807a` (seed **4** only). Primary result: topology contrasts ΔTL/ΔEN vs M-fine (`δ=0.01`). Policy A: M-fine test is secondary only. This repo is the P6-M audit trail under `docs/p6/`, `docs/papers/p6-m-schedule-topology/`, `docs/run-cards/p6/`, `scripts/p6/`, `results/p6/`, `docs/hub/p6-m-schedule-topology/`, and `manifests/p6/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
+Gates **0 / A–X / W** complete for run `p6-20260824T155226Z-769f807a` (seed **4** only). Primary result: topology contrasts ΔTL/ΔEN vs M-fine (`δ=0.01`). Policy A: M-fine test is secondary only. ResearchBox [#8918](https://researchbox.org/8918) (FOR PEER REVIEW). AsCollected [#2541 v1](https://ascollected.org/XZ8_TI5) linked from the box. This repo is the P6-M audit trail under `docs/p6/`, `docs/papers/p6-m-schedule-topology/`, `docs/run-cards/p6/`, `scripts/p6/`, `results/p6/`, `docs/hub/p6-m-schedule-topology/`, and `manifests/p6/`. Checkpoints stay on Hugging Face. Held-out `test.jsonl` and ResearchBox credentials are not published here.
 
 **Hub weight lineage:** C0/C1/C2/tokenizer are original study artifacts. The four topology children on Hub are a **2026-08-25 technical recreate** (new SHA-256; not bitwise identical to the original Gate T terminals, which were lost from the sticky pod volume). Science claims remain Gate X / filed receipts.
 

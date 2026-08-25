@@ -8,7 +8,7 @@ Dear Reader,
 
 Thank you for opening **ResearchBox #8918**, the deposit box for **NANOCHAT-FILIPINO P6-M** (“Block Order under a Fixed English–Tagalog Token Budget: A One-Seed Schedule-Topology Study with nanochat”).
 
-Results provenance on AsCollected: **not yet documented** in this box — please create/link an AsCollected record before any Make Public step.
+Results provenance on AsCollected: **#2541 Version 1** — https://ascollected.org/XZ8_TI5 (project `NANOCHAT-FILIPINO P6-M`; ResearchBox #8918 link updated automatically).
 
 This note exists because (1) P6-M is easy to confuse with P4/P5, (2) ResearchBox’s bingo columns are awkward for a computational LM study, (3) several absences are intentional, and (4) **P6-M does not confirm P4 or P5** — it reports filed schedule-topology contrasts on one seed under a fixed token budget.
 
@@ -26,7 +26,7 @@ This note exists because (1) P6-M is easy to confuse with P4/P5, (2) ResearchBox
 - **Not** ResearchBox #8904 (P5 recurrence panel) or #8869 (P4 token-share trade-off).  
 - **Not** a human-subjects study.  
 - **Not** raw held-out `test.jsonl` text.  
-- **Not** model `.pt` weights (Hub deferred: C0+C1+C2+four topologies + tokenizer together).  
+- **Not** model `.pt` weights in this box (on Hugging Face: C0+C1+C2+four topologies + tokenizer together; commit `5d3872b0`).
 - **Not** an amendment to P1.1–P5 registrations.
 
 ## Bingo column map

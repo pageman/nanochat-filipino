@@ -3,7 +3,7 @@
 **Study:** P6-M — schedule topology under a fixed English–Tagalog token budget (one seed)  
 **AsPredicted:** #307969 — https://aspredicted.org/bk6m9d.pdf  
 **Box:** https://researchbox.org/8918 (CODE `RAOZFR`; FOR PEER REVIEW; not Make Public)  
-**AsCollected:** not yet linked (Results Provenance currently NOT DOCUMENTED — create/link before Make Public)  
+**AsCollected:** [#2541 v1](https://ascollected.org/XZ8_TI5) (`NANOCHAT-FILIPINO P6-M`; linked from ResearchBox #8918)  
 **Does not amend:** #306780 / #8735 / #306935 / #8763 / #307342 / #8834 / #307591 / #8869 / #307836 / #8904
 
 This deposit is **documentation + sealed tables**. It does **not** contain raw `test.jsonl`, ResearchBox passcodes, SSH keys, API tokens, or model `.pt` weights. **Not a P5 recurrence-count study.** Keep the box **FOR PEER REVIEW**, passcode-protected, and anonymous.
@@ -49,7 +49,7 @@ From `transfer/p6-researchbox-8918-bingo/Data/` — **one chip per file**:
 ### Hard exclusions
 
 - Raw Tagalog/English **test** text  
-- Model weights (Hub deferred; C0+C1+C2+M-fine+M-coarse+M-blocked+M-rand + tokenizer together)  
+- Model weights (on Hugging Face: C0+C1+C2+M-fine+M-coarse+M-blocked+M-rand + tokenizer together; commit `5d3872b0`)  
 - Passcodes / API keys / SSH private material  
 - P5 recurrence-count tables as primary  
 - Writing onto P4/P5 Hub IDs  
